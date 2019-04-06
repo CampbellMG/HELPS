@@ -1,15 +1,27 @@
 const workshop = {
     type: "object",
-    required: ["id", "name"],
+    required: ["id", "title", "time", "duration"],
     properties: {
         id: {
             type: "integer",
             initialOffset: 1,
             autoIncrement: true
         },
-        name: {
+        studentId: {
+            type: "integer"
+        },
+        title: {
             type: "string",
             faker: "name.jobDescriptor"
+        },
+        time: {
+            type: "string",
+            faker: "date.recent"
+        },
+        duration: {
+            type: "integer",
+            minimum: 0,
+            maximum: 120
         }
     }
 };
@@ -62,8 +74,8 @@ const schema = {
         },
         workshops: {
             type: "array",
-            minItems: 50,
-            maxItems: 50,
+            minItems: 5,
+            maxItems: 20,
             items: workshop
         },
         users: {
@@ -76,9 +88,7 @@ const schema = {
             type: "array",
             minItems: 0,
             maxItems: 0,
-            items: {
-                type: "object"
-            }
+            items: workshop
         }
     }
 };

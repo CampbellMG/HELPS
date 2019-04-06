@@ -1,5 +1,4 @@
 import {Dispatch} from 'redux';
-import {Student} from '../../types/model/Student';
 import {LS_STORAGE_KEY} from './AuthActions';
 import {WorkshopAction, WorkshopActionType} from '../../types/store/actions/WorkshopActionTypes';
 import {Workshop} from '../../types/model/Workshop';
@@ -36,8 +35,8 @@ const workshopError = (message: string): WorkshopAction => ({
     payload: message
 });
 
-async function getUserWorkshops(student: Student, token: string): Promise<Workshop[]> {
-    const workshopResponse = await fetch(`api/students/${student.id}/workshops`, {
+async function getUserWorkshops(token: string): Promise<Workshop[]> {
+    const workshopResponse = await fetch(`api/students/workshops`, {
         headers: new Headers({
             'Authorization': `Bearer ${token}`
         })
@@ -80,7 +79,7 @@ export const retrieveWorkshops = () => async (dispatch: Dispatch<any>) => {
     dispatch(receiveWorkshops(workshops));
 };
 
-export const retrieveUserWorkshops = (student: Student) => async (dispatch: Dispatch<any>) => {
+export const retrieveUserWorkshops = () => async (dispatch: Dispatch<any>) => {
     dispatch(requestUserWorkshops());
 
     const token = localStorage.getItem(LS_STORAGE_KEY);
@@ -91,15 +90,16 @@ export const retrieveUserWorkshops = (student: Student) => async (dispatch: Disp
     }
 
     try {
-        const workshops = await getUserWorkshops(student, token);
+        const workshops = await getUserWorkshops(token);
         dispatch(receiveUserWorkshops(workshops));
     } catch (e) {
         dispatch(workshopError(e.message));
     }
 };
 
-export const bookWorkshop = (student: Student, workshop: Workshop) => async (dispatch: Dispatch<any>) => {
-    dispatch(requestUserWorkshops());
+export const bookWorkshop = (workshop: Workshop) => async (dispatch: Dispatch<any>) => {
+    dispatch(bookUserWorkshop());
+    console.log(JSON.stringify(workshop));
 
     const token = localStorage.getItem(LS_STORAGE_KEY);
 
@@ -108,10 +108,11 @@ export const bookWorkshop = (student: Student, workshop: Workshop) => async (dis
         return;
     }
 
-    const bookResponse = await fetch(`api/students/${student.id}/workshops`, {
+    const bookResponse = await fetch(`api/students/workshops`, {
         method: 'POST',
         headers: new Headers({
-            'Authorization': `Bearer ${token}`
+            'Authorization': `Bearer ${token}`,
+            'content-type': 'application/json'
         }),
         body: JSON.stringify(workshop)
     });
@@ -124,7 +125,7 @@ export const bookWorkshop = (student: Student, workshop: Workshop) => async (dis
     }
 
     try {
-        const workshops = await getUserWorkshops(student, token);
+        const workshops = await getUserWorkshops(token);
         dispatch(receiveBookWorkshop(workshops));
     } catch (e) {
         dispatch(workshopError(e.message));

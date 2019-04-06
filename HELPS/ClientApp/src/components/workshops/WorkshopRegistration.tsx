@@ -1,12 +1,12 @@
 import {connect} from 'react-redux';
 import * as React from 'react';
 import {Component} from 'react';
-import {HomeDispatchProps, HomeStateProps} from '../../types/components/HomeTypes';
 import {AppState} from '../../types/store/StoreTypes';
 import {Dispatch} from 'redux';
-import {login} from '../../store/actions/AuthActions';
 import {
-    WorkshopRegistrationDispatchProps, WorkshopRegistrationProps,
+    WorkshopEvent,
+    WorkshopRegistrationDispatchProps,
+    WorkshopRegistrationProps,
     WorkshopRegistrationStateProps
 } from '../../types/components/WorkshopRegistrationTypes';
 import {
@@ -14,14 +14,59 @@ import {
     retrieveUserWorkshops,
     retrieveWorkshops
 } from '../../store/actions/WorkshopActions';
+import BigCalendar from 'react-big-calendar';
+import moment from 'moment';
+import 'react-big-calendar/lib/css/react-big-calendar.css';
+import './WorkshopRegistration.css';
 
 class WorkshopRegistration extends Component<WorkshopRegistrationProps> {
+    private localizer = BigCalendar.momentLocalizer(moment);
+
+    private get events(): WorkshopEvent[] {
+        return this.props.workshops.map(workshop => {
+            const startTime = moment(workshop.time);
+            const endTime = startTime.clone().add(workshop.duration, 'minute');
+
+            return {
+                ...workshop,
+                start: startTime.toDate(),
+                end: endTime.toDate()
+            };
+        });
+    }
+
+    componentDidMount(): void {
+        this.props.retrieveWorkshops();
+        this.props.retrieveUserWorkshops();
+    }
+
     render(): React.ReactNode {
         return (
             <div>
+                {this.props.error && <p>{this.props.error}</p>}
+                {!this.props.authenticated && <p>Not authenticated</p>}
+                {
+                    this.props.authenticated &&
+                    <BigCalendar
+                        localizer={this.localizer}
+                        events={this.events}
+                        onSelectEvent={this.onSelectEvent}/>
+                }
             </div>
         );
     }
+
+    private eventSelected(event: WorkshopEvent) {
+        return this.props.userWorkshops.findIndex(workshop => workshop.id === event.id) !== -1;
+    }
+
+    private onSelectEvent = (event: WorkshopEvent) => {
+        if (this.eventSelected(event)) {
+            alert('Already assigned to event');
+            return;
+        }
+        this.props.bookWorkshop(event);
+    };
 }
 
 const mapStateToProps = (state: AppState): WorkshopRegistrationStateProps => ({
@@ -33,8 +78,8 @@ const mapStateToProps = (state: AppState): WorkshopRegistrationStateProps => ({
 
 const mapDispatchToProps = (dispatch: Dispatch<{}>): WorkshopRegistrationDispatchProps => ({
     retrieveWorkshops: () => dispatch(retrieveWorkshops()),
-    retrieveUserWorkshops: (student) => dispatch(retrieveUserWorkshops(student)),
-    bookWorkshop: (student, workshop) => dispatch(bookWorkshop(student, workshop))
+    retrieveUserWorkshops: () => dispatch(retrieveUserWorkshops()),
+    bookWorkshop: (workshop) => dispatch(bookWorkshop(workshop))
 });
 
 export default connect<WorkshopRegistrationStateProps, WorkshopRegistrationDispatchProps, {}, AppState>(
