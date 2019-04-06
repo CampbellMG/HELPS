@@ -1,13 +1,8 @@
 const workshop = {
     type: "object",
-    required: ["id", "studentId", "name"],
+    required: ["id", "name"],
     properties: {
         id: {
-            type: "integer",
-            initialOffset: 1,
-            autoIncrement: true
-        },
-        studentId: {
             type: "integer",
             initialOffset: 1,
             autoIncrement: true
@@ -57,7 +52,7 @@ const user = {
 
 const schema = {
     type: "object",
-    required: ["students", "workshops", "users"],
+    required: ["students", "workshops", "users", "studentWorkshops"],
     properties: {
         students: {
             type: "array",
@@ -76,6 +71,14 @@ const schema = {
             minItems: 1,
             maxItems: 5,
             items: user
+        },
+        studentWorkshops: {
+            type: "array",
+            minItems: 0,
+            maxItems: 0,
+            items: {
+                type: "object"
+            }
         }
     }
 };
