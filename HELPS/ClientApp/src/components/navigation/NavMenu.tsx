@@ -47,6 +47,9 @@ export default class NavMenu extends Component<any, any> {
                                     <NavLink tag={Link} className='text-dark' to='/fetch-data'>Fetch
                                         data</NavLink>
                                 </NavItem>
+                                <NavItem>
+                                    <NavLink tag={Link} className='text-dark' to='/logout-user'>Log out</NavLink>
+                                </NavItem>
                             </ul>
                         </Collapse>
                     </Container>

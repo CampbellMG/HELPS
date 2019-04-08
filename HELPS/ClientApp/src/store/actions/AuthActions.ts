@@ -39,3 +39,29 @@ export const login = (username: string, password: string) => async (dispatch: Di
 
     dispatch(receiveLogin());
 };
+
+const requestLogout = (): AuthAction => ({
+    type: AuthActionType.REQUEST_LOGOUT
+});
+
+const receiveLogout = (): AuthAction => ({
+    type: AuthActionType.RECEIVE_LOGOUT
+});
+
+/*export const logoutUser = () =>
+    (dispatch: Dispatch<any>) => {
+    dispatch(requestLogout())
+    localStorage.removeItem('id_token')
+    localStorage.removeItem('access_token')
+    dispatch(receiveLogout())
+    }*/
+
+export function logoutUser() {
+  return (dispatch: Dispatch<any>) => {
+    dispatch(requestLogout())
+    localStorage.removeItem('id_token')
+    localStorage.removeItem('access_token')
+    dispatch(receiveLogout())
+    console.log("something")
+  }
+}

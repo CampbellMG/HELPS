@@ -28,6 +28,12 @@ export function AuthReducer(state: AuthState = initialState, action: AuthAction)
                 authenticated: false,
                 error: action.payload
             };
+        case AuthActionType.LOGOUT_USER:
+            return {
+                ...state,
+                isAuthenticating: true,
+                authenticated: false,
+            };
         default:
             return state;
     }
