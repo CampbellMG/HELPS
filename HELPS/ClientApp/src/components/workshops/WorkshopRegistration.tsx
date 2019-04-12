@@ -30,7 +30,8 @@ class WorkshopRegistration extends Component<WorkshopRegistrationProps> {
             return {
                 ...workshop,
                 start: startTime.toDate(),
-                end: endTime.toDate()
+                end: endTime.toDate(),
+                
             };
         });
     }
@@ -50,7 +51,28 @@ class WorkshopRegistration extends Component<WorkshopRegistrationProps> {
                     <BigCalendar
                         localizer={this.localizer}
                         events={this.events}
-                        onSelectEvent={this.onSelectEvent}/>
+                        onSelectEvent={this.onSelectEvent}
+                        eventPropGetter={(event, start, end, isSelected) => {
+                            let newStyle = {
+                              backgroundColor: "lightgrey",
+                              color: 'black',
+                              borderRadius: "0px",
+                              border: "none",
+                              opacity: 1
+                            };
+                      
+                            if (this.props.userWorkshops.findIndex(workshop => workshop.id === event.id) !== -1){
+                              newStyle.backgroundColor = "lightgreen"
+                              newStyle.opacity = .5
+                            }
+                      
+                            return {
+                              className: "",
+                              style: newStyle
+                            };
+                            }
+                        }
+                          />
                 }
             </div>
         );
@@ -62,7 +84,6 @@ class WorkshopRegistration extends Component<WorkshopRegistrationProps> {
 
     private onSelectEvent = (event: WorkshopEvent) => {
         if (this.eventSelected(event)) {
-            alert('Already assigned to event');
             return;
         }
         this.props.bookWorkshop(event);
