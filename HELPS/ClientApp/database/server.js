@@ -22,14 +22,47 @@ const json = JSON.stringify(jsf.generate(databaseSchema));
 fs.writeFileSync(DATABASE_DEST, json);
 
 const server = jsonServer.create();
-const router = jsonServer.router(DATABASE_DEST);
 
 server.use(bodyParser.urlencoded({extended: true}));
 server.use(bodyParser.json());
-server.use(jsonServer.defaults());
-server.use(jsonServer.rewriter({
-    '/api/*': '/$1'
-}));
+
+server.all('/api/*', (req, res, next) => {
+    req.url = req.url.replace(/\/api/g, '');
+    server.handle(req, res, next)
+});
+
+server.all(/^(?!(\/register|\/login)).*$/, (req, res, next) => {
+    if (req.headers.authorization === undefined || req.headers.authorization.split(' ')[0] !== 'Bearer') {
+        const status = 401;
+        const message = 'Missing or invalid authorization';
+        res.status(status).json({status, message});
+        return
+    }
+
+    jwt.verify(req.headers.authorization.split(' ')[1], SECRET_KEY, (err, decode) => {
+        if (decode === undefined || decode.userId === undefined || decode.username === undefined || decode.password === undefined) {
+            const status = 401;
+            const message = 'Access token invalid';
+            res.status(status).json({status, message});
+            return
+        }
+
+        if (/students/g.test(req.url) && !/students\/[0-9]+/g.test(req.url)) {
+            req.url = req.url.replace(/students/g, `students/${decode.userId}`);
+            req.url = req.url.replace(/workshops/g, 'studentWorkshops');
+
+            req.body = {
+                ...req.body,
+                studentId: decode.userId
+            };
+
+            server.handle(req, res, next);
+            return
+        }
+
+        next()
+    })
+});
 
 server.post('/login', (req, res) => {
     const {username, password} = req.body;
@@ -46,7 +79,7 @@ server.post('/login', (req, res) => {
     const userId = database.users[userIndex].id;
     const access_token = jwt.sign({userId, username, password}, SECRET_KEY, {expiresIn});
     res.status(200).json({access_token})
-})
+});
 
 server.post('/register', (req, res) => {
     const {username, password} = req.body;
@@ -72,32 +105,9 @@ server.post('/register', (req, res) => {
     res.status(200)
 });
 
-server.use(/^(?!(\/register|\/login)).*$/, (req, res, next) => {
-    if (req.headers.authorization === undefined || req.headers.authorization.split(' ')[0] !== 'Bearer') {
-        const status = 401;
-        const message = 'Missing or invalid authorization';
-        res.status(status).json({status, message});
-        return
-    }
+server.use(jsonServer.defaults());
+server.use(jsonServer.router(DATABASE_DEST));
 
-    jwt.verify(req.headers.authorization.split(' ')[1], SECRET_KEY, (err, decode) => {
-        if (decode === undefined || decode.userId === undefined || decode.username === undefined || decode.password === undefined) {
-            const status = 401;
-            const message = 'Access token invalid';
-            res.status(status).json({status, message});
-            return
-        }
-
-        if (/students/g.test(req.originalUrl) && !/students\/[0-9]+/g.test(req.originalUrl)) {
-            const redirect = req.originalUrl.replace(/students/g, `students/${decode.userId}`);
-            res.redirect(307, redirect)
-        }
-
-        next()
-    })
-});
-
-server.use(router);
 server.listen(3001, () => {
     console.log('Running mock database on http://localhost:3001')
 });

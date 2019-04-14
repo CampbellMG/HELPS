@@ -1,6 +1,6 @@
 const workshop = {
     type: "object",
-    required: ["id", "studentId", "name"],
+    required: ["id", "title", "time", "duration"],
     properties: {
         id: {
             type: "integer",
@@ -8,13 +8,20 @@ const workshop = {
             autoIncrement: true
         },
         studentId: {
-            type: "integer",
-            initialOffset: 1,
-            autoIncrement: true
+            type: "integer"
         },
-        name: {
+        title: {
             type: "string",
             faker: "name.jobDescriptor"
+        },
+        time: {
+            type: "string",
+            faker: "date.recent"
+        },
+        duration: {
+            type: "integer",
+            minimum: 0,
+            maximum: 120
         }
     }
 };
@@ -57,7 +64,7 @@ const user = {
 
 const schema = {
     type: "object",
-    required: ["students", "workshops", "users"],
+    required: ["students", "workshops", "users", "studentWorkshops"],
     properties: {
         students: {
             type: "array",
@@ -67,8 +74,8 @@ const schema = {
         },
         workshops: {
             type: "array",
-            minItems: 50,
-            maxItems: 50,
+            minItems: 5,
+            maxItems: 20,
             items: workshop
         },
         users: {
@@ -76,6 +83,12 @@ const schema = {
             minItems: 1,
             maxItems: 5,
             items: user
+        },
+        studentWorkshops: {
+            type: "array",
+            minItems: 0,
+            maxItems: 0,
+            items: workshop
         }
     }
 };
