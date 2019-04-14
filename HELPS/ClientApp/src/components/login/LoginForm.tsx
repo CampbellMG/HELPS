@@ -19,22 +19,22 @@ class LoginForm extends React.Component<InjectedFormProps<LoginFields>> {
         return (
             <Form onSubmit={this.props.handleSubmit}>
                 <Form.Group>
-                    <Form.Label>First Name</Form.Label>
+                    <Form.Label>Username</Form.Label>
                     <Field
                         name='username'
                         component={this.TextInput}
                         type='text'
                         placeholder='Username'/>
                 </Form.Group>
-                <Form.Group>
-                    <Form.Label>Last Name</Form.Label>
+                <Form.Group className='mt-3'>
+                    <Form.Label>Password</Form.Label>
                     <Field
                         name='password'
                         component={this.TextInput}
                         type='password'
                         placeholder='Password'/>
                 </Form.Group>
-                <Button type='submit' className='w-100'>
+                <Button type='submit' className='w-100 mt-4'>
                     Login
                 </Button>
             </Form>
