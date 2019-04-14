@@ -21,7 +21,7 @@ class Login extends Component<HomeProps> {
     render(): React.ReactNode {
         const {error} = this.props;
         return (
-            <div>
+            <div className='login'>
                 <LoginForm onSubmit={this.onLogin}/>
             </div>
         );

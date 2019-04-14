@@ -1,9 +1,9 @@
-import {Container} from 'reactstrap';
 import NavMenu from './NavMenu';
 import * as React from 'react';
 import {AppState} from '../../types/store/StoreTypes';
 import {connect} from 'react-redux';
 import {LayoutProps} from '../../types/components/LayoutTypes';
+import Container from 'react-bootstrap/Container';
 
 class Layout extends React.Component<LayoutProps> {
     render(): React.ReactNode {

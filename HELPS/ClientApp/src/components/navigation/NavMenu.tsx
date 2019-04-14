@@ -1,62 +1,36 @@
-import {
-    Collapse,
-    Container,
-    Navbar,
-    NavbarBrand,
-    NavbarToggler,
-    NavItem,
-    NavLink
-} from 'reactstrap';
-import {Link} from 'react-router-dom';
 import './NavMenu.css';
 import * as React from 'react';
 import {Component} from 'react';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import Container from 'react-bootstrap/Container';
 
-export default class NavMenu extends Component<any, any> {
-    constructor(props: any) {
-        super(props);
-
-        this.toggle = this.toggle.bind(this);
-        this.state = {
-            isOpen: false
-        };
-    }
-
-    toggle() {
-        this.setState({
-            isOpen: !this.state.isOpen
-        });
-    }
-
+export default class NavMenu extends Component<{}> {
     render() {
         return (
             <header>
                 <Navbar
                     className='navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3'
-                    light>
+                    bg='light'>
                     <Container>
-                        <NavbarBrand tag={Link} to='/'>HELPS</NavbarBrand>
-                        <NavbarToggler onClick={this.toggle} className='mr-2'/>
-                        <Collapse className='d-sm-inline-flex flex-sm-row-reverse'
-                                  isOpen={this.state.isOpen} navbar>
-                            <ul className='navbar-nav flex-grow'>
-                                <NavItem>
-                                    <NavLink tag={Link} className='text-dark' to='/workshop_registration'>
-                                        Workshop Registration
-                                    </NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink tag={Link} className='text-dark' to='/user'>
-                                        My Information
-                                    </NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink tag={Link} className='text-dark' to='/'>
-                                        Logout
-                                    </NavLink>
-                                </NavItem>
-                            </ul>
-                        </Collapse>
+                        <Navbar.Brand href='/'>HELPS</Navbar.Brand>
+                        <ul className='navbar-nav flex-grow'>
+                            <Nav.Item>
+                                <Nav.Link className='text-dark' href='/workshop_registration'>
+                                    Workshop Registration
+                                </Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item>
+                                <Nav.Link className='text-dark' href='/user'>
+                                    My Information
+                                </Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item>
+                                <Nav.Link className='text-dark' href='/'>
+                                    Logout
+                                </Nav.Link>
+                            </Nav.Item>
+                        </ul>
                     </Container>
                 </Navbar>
             </header>
