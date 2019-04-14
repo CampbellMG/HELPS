@@ -28,7 +28,26 @@ const workshop = {
 
 const student = {
     type: "object",
-    required: ["id", "name"],
+    required: [
+        "id",
+        "name",
+        "prefFirstName",
+        "faculty",
+        "course",
+        "email",
+        "homePhone",
+        "mobile",
+        "bestContactNumber",
+        "dob",
+        "gender",
+        "degree",
+        "year",
+        "status",
+        "firstLanguage",
+        "countryOfOrigin",
+        "educationalBackground",
+        "other",
+    ],
     properties: {
         id: {
             type: "integer",
@@ -36,6 +55,70 @@ const student = {
             autoIncrement: true
         },
         name: {
+            type: "string",
+            faker: "name.findName"
+        },
+        prefFirstName: {
+            type: "string",
+            faker: "name.findName"
+        },
+        faculty: {
+            type: "string",
+            faker: "name.findName"
+        },
+        course: {
+            type: "string",
+            faker: "name.findName"
+        },
+        email: {
+            type: "string",
+            faker: "name.findName"
+        },
+        homePhone: {
+            type: "string",
+            faker: "name.findName"
+        },
+        mobile: {
+            type: "string",
+            faker: "name.findName"
+        },
+        bestContactNumber: {
+            type: "string",
+            faker: "name.findName"
+        },
+        dob: {
+            type: "string",
+            faker: "name.findName"
+        },
+        gender: {
+            type: "string",
+            faker: "name.findName"
+        },
+        degree: {
+            type: "string",
+            faker: "name.findName"
+        },
+        year: {
+            type: "string",
+            faker: "name.findName"
+        },
+        status: {
+            type: "string",
+            faker: "name.findName"
+        },
+        firstLanguage: {
+            type: "string",
+            faker: "name.findName"
+        },
+        countryOfOrigin: {
+            type: "string",
+            faker: "name.findName"
+        },
+        educationalBackground: {
+            type: "string",
+            faker: "name.findName"
+        },
+        other: {
             type: "string",
             faker: "name.findName"
         }

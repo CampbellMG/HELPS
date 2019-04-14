@@ -4,7 +4,8 @@ import * as React from 'react';
 import {Component} from 'react';
 import {UserDispatchProps, UserProps, UserStateProps} from '../../types/components/UserTypes';
 import {AppState} from '../../types/store/StoreTypes';
-import {retrieveUser} from '../../store/actions/UserActions';
+import {retrieveUser, updateUser} from '../../store/actions/UserActions';
+import UserDetailsForm from './UserDetailsForm';
 
 class User extends Component<UserProps> {
 
@@ -28,8 +29,8 @@ class User extends Component<UserProps> {
         if (this.props.authenticated && this.props.student) {
             return (
                 <div>
-                    <p>id: {this.props.student.id}</p>
-                    <p>name: {this.props.student.name}</p>
+                    <UserDetailsForm onSubmit={this.props.updateUser}
+                                     initialValues={this.props.student}/>
                 </div>
             );
         }
@@ -47,7 +48,8 @@ const mapStateToProps = (state: AppState): UserStateProps => ({
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<{}>): UserDispatchProps => ({
-    loadUserDetails: () => dispatch(retrieveUser())
+    loadUserDetails: () => dispatch(retrieveUser()),
+    updateUser: student => dispatch(updateUser(student))
 });
 
 export default connect<UserStateProps, UserDispatchProps, {}, AppState>(
