@@ -8,6 +8,7 @@ export interface UserStateProps {
 
 export interface UserDispatchProps {
     loadUserDetails: () => void
+    updateUser: (user: Student) => void
 }
 
 export interface UserProps extends UserStateProps, UserDispatchProps {

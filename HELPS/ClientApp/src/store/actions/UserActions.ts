@@ -17,6 +17,37 @@ const userError = (message: string): UserAction => ({
     payload: message
 });
 
+export const updateUser = (user: Student) => async (dispatch: Dispatch<any>) => {
+    dispatch(requestUser());
+
+    const token = localStorage.getItem(LS_STORAGE_KEY);
+
+    if (token === null) {
+        dispatch(userError('No token, have you authenticated?'));
+        return;
+    }
+
+    const userResponse = await fetch('api/students', {
+        method: 'POST',
+        headers: new Headers({
+            'Authorization': `Bearer ${token}`,
+            'content-type': 'application/json'
+        }),
+        body: JSON.stringify(user)
+    });
+
+    const userResult = await userResponse.json();
+
+    if (!userResponse.ok || !userResult.id || !userResult.name) {
+        dispatch(userError(userResult.message ? userResult.message : 'Login request failed'));
+        return;
+    }
+
+    const student = userResult as Student;
+
+    dispatch(receiveUser(student));
+};
+
 export const retrieveUser = () => async (dispatch: Dispatch<any>) => {
     dispatch(requestUser());
 
