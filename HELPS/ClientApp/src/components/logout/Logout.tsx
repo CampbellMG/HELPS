@@ -1,22 +1,35 @@
+import {Dispatch} from 'redux';
+import {connect} from 'react-redux';
 import * as React from 'react';
 import {Component} from 'react';
 import {AppState} from '../../types/store/StoreTypes';
-import {UserDispatchProps, UserProps, UserStateProps} from '../../types/components/UserTypes';
 import { logoutUser } from '../../store/actions/AuthActions';
 import Home from '../home/Home';
-import { retrieveUser } from '../../store/actions/UserActions';
+import { LogoutStateProps, LogoutDispatchProps, LogoutProps } from '../../types/components/LogoutTypes';
 
-export default class Logout extends Component<UserProps> {
+class Logout extends Component<LogoutProps> {
+
+  componentDidMount() {
+    if (this.props.authenticated) {
+      this.props.logOut();
+    }
+  }
 
   render() {
-    //console.log("output");
     return (
       <Home />
     )}
 }
 
-retrieveUser();
-
-const mapStateToProps = (state: AppState): UserStateProps => ({
-  authenticated: state.auth.authenticated,
+const mapStateToProps = (state: AppState): LogoutStateProps => ({
+  authenticated: state.auth.authenticated
 });
+
+const mapDispatchToProps = (dispatch: Dispatch<{}>): LogoutDispatchProps => ({
+  logOut: () => dispatch(logoutUser())
+});
+
+export default connect<LogoutStateProps, LogoutDispatchProps, {}, AppState>(
+  mapStateToProps,
+  mapDispatchToProps
+)(Logout);

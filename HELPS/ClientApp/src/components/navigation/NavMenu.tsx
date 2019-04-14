@@ -9,10 +9,16 @@ import {
 } from 'reactstrap';
 import {Link} from 'react-router-dom';
 import './NavMenu.css';
+import {Dispatch} from 'redux';
+import {connect} from 'react-redux';
 import * as React from 'react';
 import {Component} from 'react';
+import { logoutUser } from '../../store/actions/AuthActions';
+import { LogoutStateProps, LogoutDispatchProps, LogoutProps } from '../../types/components/LogoutTypes';
+import { AppState } from '../../types/store/StoreTypes';
+import Logout from '../logout/Logout';
 
-export default class NavMenu extends Component<any, any> {
+class NavMenu extends Component<any, any> {
     constructor(props: any) {
         super(props);
 
@@ -48,7 +54,7 @@ export default class NavMenu extends Component<any, any> {
                                         data</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink tag={Link} className='text-dark' to='/logout-user'>Log out</NavLink>
+                                    <NavLink tag={Link} className='text-dark' to='/logout-user'>Log Out</NavLink>
                                 </NavItem>
                             </ul>
                         </Collapse>
@@ -58,3 +64,16 @@ export default class NavMenu extends Component<any, any> {
         );
     }
 }
+
+const mapStateToProps = (state: AppState): LogoutStateProps => ({
+    authenticated: state.auth.authenticated
+  });
+  
+  const mapDispatchToProps = (dispatch: Dispatch<{}>): LogoutDispatchProps => ({
+    logOut: () => dispatch(logoutUser())
+  });
+  
+  export default connect<LogoutStateProps, LogoutDispatchProps, {}, AppState>(
+    mapStateToProps,
+    mapDispatchToProps
+)(NavMenu);

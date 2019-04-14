@@ -28,7 +28,7 @@ export function AuthReducer(state: AuthState = initialState, action: AuthAction)
                 authenticated: false,
                 error: action.payload
             };
-        case AuthActionType.LOGOUT_USER:
+        case AuthActionType.RECEIVE_LOGOUT:
             return {
                 ...state,
                 isAuthenticating: true,

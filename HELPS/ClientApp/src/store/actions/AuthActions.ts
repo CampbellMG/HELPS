@@ -61,6 +61,8 @@ export function logoutUser() {
     dispatch(requestLogout())
     localStorage.removeItem('id_token')
     localStorage.removeItem('access_token')
+    localStorage.removeItem('loginResult.access_token')
+    localStorage.removeItem(LS_STORAGE_KEY)
     dispatch(receiveLogout())
     console.log("something")
   }
