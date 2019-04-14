@@ -23,7 +23,7 @@ class Login extends Component<HomeProps> {
     render(): React.ReactNode {
         return (
             <div className='d-flex h-100 justify-content-center'>
-                <div className='align-self-center w-75 h-50'>
+                <div className='align-self-center w-50 h-50'>
                     <div className='shadow bg-white rounded d-flex h-100 justify-content-center flex-column'>
                         <div className='logo-wrapper'>
                             <img src={uts} className='logo' alt='UTS Logo' width='30%'/>

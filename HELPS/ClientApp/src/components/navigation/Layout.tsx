@@ -3,20 +3,19 @@ import * as React from 'react';
 import {AppState} from '../../types/store/StoreTypes';
 import {connect} from 'react-redux';
 import {LayoutProps} from '../../types/components/LayoutTypes';
-import Container from 'react-bootstrap/Container';
-import './Layout.css'
+import './Layout.css';
 
 class Layout extends React.Component<LayoutProps> {
     render(): React.ReactNode {
         return (
-            <div className='h-100 full-container'>
+            <div className='h-100 full-container m-3 shadow-lg rounded'>
                 {
                     this.props.authenticated &&
                     <NavMenu/>
                 }
-                <Container className='h-100'>
+                <div className='m-3 h-100'>
                     {this.props.children}
-                </Container>
+                </div>
             </div>
         );
     }
