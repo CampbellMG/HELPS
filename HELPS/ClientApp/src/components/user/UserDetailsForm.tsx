@@ -1,193 +1,177 @@
 import * as React from 'react';
 import {Field, InjectedFormProps, reduxForm} from 'redux-form';
 import {Student} from '../../types/model/Student';
+import Form from 'react-bootstrap/Form';
 
 class UserDetailsForm extends React.Component<InjectedFormProps<Student>> {
+    TextInput = (props: any) => (
+        <Form.Group controlId='login'>
+            <Form.Control name='email'
+                          placeholder='Login'
+                          value={props.input.value}
+                          onChange={props.input.onChange}
+                          {...props}/>
+        </Form.Group>
+    );
+
     render() {
         return (
             <form onSubmit={this.props.handleSubmit}>
-                <div>
-                    <label>ID</label>
-                    <div>
+                <div className='row'>
+                    <Form.Group className='col'>
+                        <Form.Label>Student ID</Form.Label>
                         <Field
                             name='id'
-                            component='input'
+                            component={this.TextInput}
                             type='text'
-                            placeholder='Username'/>
-                    </div>
-                </div>
-                <div>
-                    <label>First Name</label>
-                    <div>
+                            placeholder='Id'/>
+                    </Form.Group>
+                    <Form.Group className='col'>
+                        <Form.Label>First Name</Form.Label>
                         <Field
                             name='name'
-                            component='input'
+                            component={this.TextInput}
                             type='text'
-                            placeholder='Username'/>
-                    </div>
-                </div>
-                <div>
-                    <label>Preferred First Name</label>
-                    <div>
+                            placeholder='First Name'/>
+                    </Form.Group>
+                    <Form.Group className='col'>
+                        <Form.Label>Preferred First Name</Form.Label>
                         <Field
                             name='prefFirstName'
-                            component='input'
+                            component={this.TextInput}
                             type='text'
-                            placeholder='Preferred first name'/>
-                    </div>
+                            placeholder='Preferred First Name'/>
+                    </Form.Group>
                 </div>
-                <div>
-                    <label>Faculty</label>
-                    <div>
+                <div className='row'>
+                    <Form.Group className='col'>
+                        <Form.Label>Faculty</Form.Label>
                         <Field
                             name='faculty'
-                            component='input'
+                            component={this.TextInput}
                             type='text'
                             placeholder='Faculty'/>
-                    </div>
-                </div>
-                <div>
-                    <label>Course</label>
-                    <div>
+                    </Form.Group>
+                    <Form.Group className='col'>
+                        <Form.Label>Course</Form.Label>
                         <Field
                             name='course'
-                            component='input'
+                            component={this.TextInput}
                             type='text'
-                            placeholder='Faculty'/>
-                    </div>
-                </div>
-                <div>
-                    <label>Email</label>
-                    <div>
+                            placeholder='Course'/>
+                    </Form.Group>
+                    <Form.Group className='col'>
+                        <Form.Label>Email</Form.Label>
                         <Field
                             name='email'
-                            component='input'
+                            component={this.TextInput}
                             type='text'
                             placeholder='Email'/>
-                    </div>
+                    </Form.Group>
                 </div>
-                <div>
-                    <label>Home Phone</label>
-                    <div>
+                <div className='row'>
+                    <Form.Group className='col'>
+                        <Form.Label>Home Phone</Form.Label>
                         <Field
                             name='homePhone'
-                            component='input'
+                            component={this.TextInput}
                             type='text'
-                            placeholder='>Home Phone'/>
-                    </div>
-                </div>
-                <div>
-                    <label>Mobile</label>
-                    <div>
+                            placeholder='Home Phone'/>
+                    </Form.Group>
+                    <Form.Group className='col'>
+                        <Form.Label>Mobile</Form.Label>
                         <Field
                             name='mobile'
-                            component='input'
+                            component={this.TextInput}
                             type='text'
                             placeholder='Mobile'/>
-                    </div>
-                </div>
-                <div>
-                    <label>Best Contact Number</label>
-                    <div>
+                    </Form.Group>
+                    <Form.Group className='col'>
+                        <Form.Label>Best Contact Number</Form.Label>
                         <Field
                             name='bestContactNumber'
-                            component='input'
+                            component={this.TextInput}
                             type='text'
                             placeholder='Best Contact Number'/>
-                    </div>
+                    </Form.Group>
                 </div>
-                <div>
-                    <label>Date of Birth</label>
-                    <div>
+                <div className='row'>
+                    <Form.Group className='col'>
+                        <Form.Label>Date of Birth</Form.Label>
                         <Field
                             name='dob'
-                            component='input'
+                            component={this.TextInput}
                             type='text'
                             placeholder='Date of Birth'/>
-                    </div>
-                </div>
-                <div>
-                    <label>Gender</label>
-                    <div>
+                    </Form.Group>
+                    <Form.Group className='col'>
+                        <Form.Label>Gender</Form.Label>
                         <Field
                             name='gender'
-                            component='input'
+                            component={this.TextInput}
                             type='text'
                             placeholder='Gender'/>
-                    </div>
-                </div>
-                <div>
-                    <label>Degree</label>
-                    <div>
+                    </Form.Group>
+                    <Form.Group className='col'>
+                        <Form.Label>Degree</Form.Label>
                         <Field
                             name='degree'
-                            component='input'
+                            component={this.TextInput}
                             type='text'
                             placeholder='Degree'/>
-                    </div>
+                    </Form.Group>
                 </div>
-                <div>
-                    <label>Year</label>
-                    <div>
+                <div className='row'>
+                    <Form.Group className='col'>
+                        <Form.Label>Year</Form.Label>
                         <Field
                             name='year'
-                            component='input'
+                            component={this.TextInput}
                             type='text'
                             placeholder='Year'/>
-                    </div>
-                </div>
-                <div>
-                    <label>Status</label>
-                    <div>
+                    </Form.Group>
+                    <Form.Group className='col'>
+                        <Form.Label>Status</Form.Label>
                         <Field
                             name='status'
-                            component='input'
+                            component={this.TextInput}
                             type='text'
                             placeholder='Status'/>
-                    </div>
-                </div>
-                <div>
-                    <label>First Language</label>
-                    <div>
+                    </Form.Group>
+                    <Form.Group className='col'>
+                        <Form.Label>First Language</Form.Label>
                         <Field
                             name='firstLanguage'
-                            component='input'
+                            component={this.TextInput}
                             type='text'
                             placeholder='First Language'/>
-                    </div>
+                    </Form.Group>
                 </div>
-                <div>
-                    <label>Country of Origin</label>
-                    <div>
+                <div className='row'>
+                    <Form.Group className='col'>
+                        <Form.Label>Country of Origin</Form.Label>
                         <Field
                             name='countryOfOrigin'
-                            component='input'
+                            component={this.TextInput}
                             type='text'
-                            placeholder='Country of Origin'/>
-                    </div>
-                </div>
-                <div>
-                    <label>Education Background</label>
-                    <div>
+                            placeholder='Country Of Origin'/>
+                    </Form.Group>
+                    <Form.Group className='col'>
+                        <Form.Label>Educational Background</Form.Label>
                         <Field
                             name='educationalBackground'
-                            component='input'
+                            component={this.TextInput}
                             type='text'
-                            placeholder='Education Background'/>
-                    </div>
-                </div>
-                <div>
-                    <label>Other</label>
-                    <div>
+                            placeholder='Educational Background'/>
+                    </Form.Group>
+                    <Form.Group className='col'>
+                        <Form.Label>Other</Form.Label>
                         <Field
                             name='other'
-                            component='input'
+                            component={this.TextInput}
                             type='text'
                             placeholder='Other'/>
-                    </div>
-                </div>
-                <div>
-                    <button type='submit'>Login</button>
+                    </Form.Group>
                 </div>
             </form>
         );

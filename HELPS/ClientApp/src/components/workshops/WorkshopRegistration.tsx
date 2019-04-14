@@ -30,8 +30,8 @@ class WorkshopRegistration extends Component<WorkshopRegistrationProps> {
             return {
                 ...workshop,
                 start: startTime.toDate(),
-                end: endTime.toDate(),
-                
+                end: endTime.toDate()
+
             };
         });
     }
@@ -52,27 +52,27 @@ class WorkshopRegistration extends Component<WorkshopRegistrationProps> {
                         localizer={this.localizer}
                         events={this.events}
                         onSelectEvent={this.onSelectEvent}
-                        eventPropGetter={(event, start, end, isSelected) => {
+                        eventPropGetter={(event) => {
                             let newStyle = {
-                              backgroundColor: "lightgrey",
-                              color: 'black',
-                              borderRadius: "0px",
-                              border: "none",
-                              opacity: 1
+                                backgroundColor: 'lightgrey',
+                                color: 'black',
+                                borderRadius: '0px',
+                                border: 'none',
+                                opacity: 1
                             };
-                      
-                            if (this.props.userWorkshops.findIndex(workshop => workshop.id === event.id) !== -1){
-                              newStyle.backgroundColor = "lightgreen"
-                              newStyle.opacity = .5
+
+                            if (this.props.userWorkshops.findIndex(workshop => workshop.id === event.id) !== -1) {
+                                newStyle.backgroundColor = '#FF5168';
+                                newStyle.opacity = .5;
                             }
-                      
+
                             return {
-                              className: "",
-                              style: newStyle
+                                className: '',
+                                style: newStyle
                             };
-                            }
                         }
-                          />
+                        }
+                    />
                 }
             </div>
         );
@@ -87,7 +87,7 @@ class WorkshopRegistration extends Component<WorkshopRegistrationProps> {
             return;
         }
         this.props.bookWorkshop(event);
-    };
+    }
 }
 
 const mapStateToProps = (state: AppState): WorkshopRegistrationStateProps => ({

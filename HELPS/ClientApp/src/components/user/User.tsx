@@ -18,7 +18,6 @@ class User extends Component<UserProps> {
     render() {
         return (
             <div>
-                <h1>Student</h1>
                 {this.props.error && <p>{this.props.error}</p>}
                 {this.getUserDetails()}
             </div>

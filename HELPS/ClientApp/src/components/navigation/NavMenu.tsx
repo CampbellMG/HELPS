@@ -4,6 +4,7 @@ import {Component} from 'react';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import uts from '../../res/uts-white.png';
+import {LinkContainer} from 'react-router-bootstrap';
 
 export default class NavMenu extends Component<{}> {
     render() {
@@ -11,28 +12,25 @@ export default class NavMenu extends Component<{}> {
             <header>
                 <Navbar className='rounded-top navbar-custom d-flex shadow'>
                     <Navbar.Brand href='/' className='text-light'>
-                        <div>
-                            <img src={uts} alt='UTS Logo' width='20%'/>
-                        </div>
+                        <img src={uts} alt='UTS Logo' width='20%'/>
                     </Navbar.Brand>
                     <ul className='navbar-nav col ml-5'>
-                        <Nav.Item>
-                            <Nav.Link className='text-light font-weight-bold'
-                                      href='/workshop_registration'>
-                                Workshop Registration
-                            </Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <Nav.Link className='text-light font-weight-bold' href='/user'>
+                        <LinkContainer to='/user' className='text-light font-weight-bold'>
+                            <Nav.Item className='mr-5'>
                                 My Information
-                            </Nav.Link>
-                        </Nav.Item>
+                            </Nav.Item>
+                        </LinkContainer>
+                        <LinkContainer to='/workshop_registration' className='text-light font-weight-bold'>
+                            <Nav.Item className='mr-3'>
+                                Workshop Registration
+                            </Nav.Item>
+                        </LinkContainer>
                     </ul>
-                    <Nav.Item>
-                        <Nav.Link className='text-light font-weight-bold' href='/'>
+                    <LinkContainer to='/' className='text-light font-weight-bold'>
+                        <Nav.Item className='mr-3'>
                             Logout
-                        </Nav.Link>
-                    </Nav.Item>
+                        </Nav.Item>
+                    </LinkContainer>
                 </Navbar>
             </header>
         );

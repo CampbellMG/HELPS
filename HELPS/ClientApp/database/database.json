@@ -1055,5 +1055,51 @@
       "password": "caUQLg4t7K1wsMf"
     }
   ],
-  "studentWorkshops": []
+  "studentWorkshops": [
+    {
+      "id": 5,
+      "title": "Principal",
+      "time": "Sat Apr 13 2019 23:07:56 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 86,
+      "start": "2019-04-13T13:07:56.000Z",
+      "end": "2019-04-13T14:33:56.000Z",
+      "studentId": "1"
+    },
+    {
+      "id": 3,
+      "title": "Regional",
+      "time": "Sat Apr 13 2019 17:09:03 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 47,
+      "start": "2019-04-13T07:09:03.000Z",
+      "end": "2019-04-13T07:56:03.000Z",
+      "studentId": "1"
+    },
+    {
+      "id": 4,
+      "title": "District",
+      "time": "Sat Apr 13 2019 18:56:54 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 42,
+      "start": "2019-04-13T08:56:54.000Z",
+      "end": "2019-04-13T09:38:54.000Z",
+      "studentId": "1"
+    },
+    {
+      "id": 2,
+      "title": "District",
+      "time": "Sun Apr 14 2019 01:11:21 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 1,
+      "start": "2019-04-13T15:11:21.000Z",
+      "end": "2019-04-13T15:12:21.000Z",
+      "studentId": "1"
+    },
+    {
+      "id": 1,
+      "title": "Customer",
+      "time": "Sun Apr 14 2019 04:05:38 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 55,
+      "start": "2019-04-13T18:05:38.000Z",
+      "end": "2019-04-13T19:00:38.000Z",
+      "studentId": "1"
+    }
+  ]
 }

@@ -8,7 +8,7 @@ import './Layout.css';
 class Layout extends React.Component<LayoutProps> {
     render(): React.ReactNode {
         return (
-            <div className='h-100 full-container m-3 shadow-lg rounded'>
+            <div className='h-100 full-container shadow-lg rounded'>
                 {
                     this.props.authenticated &&
                     <NavMenu/>
