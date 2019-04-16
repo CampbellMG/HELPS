@@ -6,6 +6,7 @@ import {Workshop} from '../../types/model/Workshop';
 
 interface WorkshopDetailsFormProps {
     disabled: boolean
+    booked: boolean
 }
 
 class WorkshopDetailsForm extends React.Component<WorkshopDetailsFormProps & InjectedFormProps<Workshop, WorkshopDetailsFormProps>> {
@@ -73,7 +74,7 @@ class WorkshopDetailsForm extends React.Component<WorkshopDetailsFormProps & Inj
                 <Button type='submit'
                         className='w-100 mt-4'
                         disabled={this.props.disabled}>
-                    Book
+                    {this.props.booked ? 'CANCEL' : 'BOOK'}
                 </Button>
             </form>
         );

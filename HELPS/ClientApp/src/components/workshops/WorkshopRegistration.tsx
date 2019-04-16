@@ -10,7 +10,7 @@ import {
     WorkshopRegistrationStateProps
 } from '../../types/components/WorkshopRegistrationTypes';
 import {
-    bookWorkshop,
+    bookWorkshop, cancelWorkshop,
     retrieveUserWorkshops,
     retrieveWorkshops
 } from '../../store/actions/WorkshopActions';
@@ -58,8 +58,9 @@ class WorkshopRegistration extends Component<WorkshopRegistrationProps, Workshop
         return (
             <div className='row h-100'>
                 <div className='col-lg-2 border-right'>
-                    <WorkshopDetailsForm onSubmit={this.onBookEvent}
-                                         disabled={!selectedWorkshop || this.eventSelected(selectedWorkshop)}
+                    <WorkshopDetailsForm onSubmit={this.onEventSubmitted}
+                                         disabled={selectedWorkshop === undefined}
+                                         booked={selectedWorkshop !== undefined && this.eventSelected(selectedWorkshop)}
                                          initialValues={this.state.selectedWorkshop}/>
                 </div>
                 <div className='col m-3'>
@@ -105,10 +106,11 @@ class WorkshopRegistration extends Component<WorkshopRegistrationProps, Workshop
 
     private onSelectEvent = (event: Workshop) => this.setState({selectedWorkshop: event});
 
-    private onBookEvent = (event: Workshop) => {
+    private onEventSubmitted = (event: Workshop) => {
         if (this.eventSelected(event)) {
-            return;
+            return this.props.cancelWorkshop(event);
         }
+
         this.props.bookWorkshop(event);
     };
 }
@@ -123,7 +125,8 @@ const mapStateToProps = (state: AppState): WorkshopRegistrationStateProps => ({
 const mapDispatchToProps = (dispatch: Dispatch<{}>): WorkshopRegistrationDispatchProps => ({
     retrieveWorkshops: () => dispatch(retrieveWorkshops()),
     retrieveUserWorkshops: () => dispatch(retrieveUserWorkshops()),
-    bookWorkshop: (workshop) => dispatch(bookWorkshop(workshop))
+    bookWorkshop: (workshop) => dispatch(bookWorkshop(workshop)),
+    cancelWorkshop: workshop => dispatch(cancelWorkshop(workshop))
 });
 
 export default connect<WorkshopRegistrationStateProps, WorkshopRegistrationDispatchProps, {}, AppState>(
