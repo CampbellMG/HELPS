@@ -17,8 +17,7 @@ class User extends Component<UserProps> {
 
     render() {
         return (
-            <div>
-                <h1>Student</h1>
+            <div className='p-3'>
                 {this.props.error && <p>{this.props.error}</p>}
                 {this.getUserDetails()}
             </div>
@@ -28,7 +27,7 @@ class User extends Component<UserProps> {
     private getUserDetails() {
         if (this.props.authenticated && this.props.student) {
             return (
-                <div>
+                <div className='bg-white'>
                     <UserDetailsForm onSubmit={this.props.updateUser}
                                      initialValues={this.props.student}/>
                 </div>

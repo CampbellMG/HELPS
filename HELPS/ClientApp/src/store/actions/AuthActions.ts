@@ -1,5 +1,6 @@
 import {AuthAction, AuthActionType} from '../../types/store/actions/AuthActionTypes';
 import {Dispatch} from 'redux';
+import {push} from 'react-router-redux';
 
 const requestLogin = (): AuthAction => ({
     type: AuthActionType.REQUEST_LOGIN
@@ -18,9 +19,19 @@ const loginError = (message: string): AuthAction => ({
     payload: message
 });
 
-
-
 export const LS_STORAGE_KEY = 'id_token';
+
+export const getExistingSession = () => async (dispatch: Dispatch<any>) => {
+    dispatch(requestLogin());
+
+    const token = localStorage.getItem(LS_STORAGE_KEY);
+
+    if (token !== null) {
+        dispatch(receiveLogin());
+        dispatch(push('/user'));
+        return;
+    }
+};
 
 export const login = (username: string, password: string) => async (dispatch: Dispatch<any>) => {
     dispatch(requestLogin());
@@ -44,6 +55,8 @@ export const login = (username: string, password: string) => async (dispatch: Di
     localStorage.setItem(LS_STORAGE_KEY, loginResult.access_token);
 
     dispatch(receiveLogin());
+
+    dispatch(push('/user'));
 };
 
 export const logout = () => async (dispatch: Dispatch<any>) => {

@@ -2,9 +2,10 @@ export interface LayoutStateProps {
     authenticated: boolean
 }
 
-export interface UserDispatchProps {
+export interface LayoutDispatchProps {
+    login: () => void
 }
 
-export interface LayoutProps extends LayoutStateProps, UserDispatchProps {
+export interface LayoutProps extends LayoutStateProps, LayoutDispatchProps {
 
 }
