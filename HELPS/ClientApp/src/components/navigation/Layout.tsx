@@ -2,29 +2,43 @@ import NavMenu from './NavMenu';
 import * as React from 'react';
 import {AppState} from '../../types/store/StoreTypes';
 import {connect} from 'react-redux';
-import {LayoutProps} from '../../types/components/LayoutTypes';
+import {LayoutDispatchProps, LayoutProps, LayoutStateProps} from '../../types/components/LayoutTypes';
 import './Layout.css';
+import {Dispatch} from 'redux';
+import {getExistingSession} from '../../store/actions/AuthActions';
 
 class Layout extends React.Component<LayoutProps> {
+    componentWillMount(): void {
+        this.props.login();
+    }
+
     render(): React.ReactNode {
         return (
-            <div className='h-100 full-container shadow-lg rounded'>
+            <div className='h-100 full-container full-wrapper shadow-lg d-flex flex-column'>
                 {
                     this.props.authenticated &&
                     <NavMenu/>
                 }
-                <div className='m-3 h-100'>
-                    {this.props.children}
-                </div>
+                {
+                    <div className={(this.props.authenticated ? 'bg-white content-wrapper' : ' full-container') + ' flex-fill d-flex flex-column'}>
+                        {this.props.children}
+                    </div>
+                }
+
             </div>
         );
     }
 }
 
-const mapStateToProps = (state: AppState): LayoutProps => ({
+const mapStateToProps = (state: AppState): LayoutStateProps => ({
     authenticated: state.auth.authenticated
 });
 
-export default connect<LayoutProps, {}, {}, AppState>(
-    mapStateToProps
+const mapDispatchToProps = (dispatch: Dispatch<{}>): LayoutDispatchProps => ({
+    login: () => dispatch(getExistingSession())
+});
+
+export default connect<LayoutStateProps, LayoutDispatchProps, {}, AppState>(
+    mapStateToProps,
+    mapDispatchToProps
 )(Layout);

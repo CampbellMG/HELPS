@@ -9,7 +9,7 @@ export interface HomeStateProps {
 }
 
 export interface HomeDispatchProps {
-    login: (username: string, password: string) => void,
+    login: (username: string, password: string) => void
     logout: () => void
 }
 

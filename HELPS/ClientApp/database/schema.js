@@ -21,8 +21,20 @@ const workshop = {
         duration: {
             type: "integer",
             minimum: 0,
-            maximum: 120
-        }
+            maximum: 240
+        },
+        room: {
+            type: "string"
+        },
+        targetGroup: {
+            type: "string"
+        },
+        description: {
+            type: "string"
+        },
+        availablePlaces: {
+            type: "string"
+        },
     }
 };
 
@@ -60,19 +72,19 @@ const student = {
         },
         prefFirstName: {
             type: "string",
-            faker: "name.findName"
+            faker: "name.firstName"
         },
         faculty: {
             type: "string",
-            faker: "name.findName"
+            faker: "name.jobTitle"
         },
         course: {
             type: "string",
-            faker: "name.findName"
+            faker: "company.companyName"
         },
         email: {
             type: "string",
-            faker: "name.findName"
+            faker: "internet.email"
         },
         homePhone: {
             type: "string",
@@ -80,47 +92,40 @@ const student = {
         },
         mobile: {
             type: "string",
-            faker: "name.findName"
+            faker: "phone.phoneNumber"
         },
         bestContactNumber: {
             type: "string",
-            faker: "name.findName"
+            faker: "phone.phoneNumber"
         },
         dob: {
             type: "string",
-            faker: "name.findName"
+            faker: "date.past"
         },
         gender: {
-            type: "string",
-            faker: "name.findName"
+            type: "string"
         },
         degree: {
             type: "string",
-            faker: "name.findName"
+            faker: "company.companyName"
         },
         year: {
-            type: "string",
-            faker: "name.findName"
+            type: "string"
         },
         status: {
-            type: "string",
-            faker: "name.findName"
+            type: "string"
         },
         firstLanguage: {
-            type: "string",
-            faker: "name.findName"
+            type: "string"
         },
         countryOfOrigin: {
-            type: "string",
-            faker: "name.findName"
+            type: "string"
         },
         educationalBackground: {
-            type: "string",
-            faker: "name.findName"
+            type: "string"
         },
         other: {
-            type: "string",
-            faker: "name.findName"
+            type: "string"
         }
     }
 };

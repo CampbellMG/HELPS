@@ -15,6 +15,8 @@ html {
 
 .navbar-custom {
     background: #FF5168;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
 }
 
 .navbar-custom .navbar-brand,
@@ -29,4 +31,8 @@ html {
 .navbar-custom .nav-item.active .nav-link,
 .navbar-custom .nav-item:hover .nav-link {
     color: white;
+}
+
+.link {
+    cursor: pointer;
 }

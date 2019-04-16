@@ -4,33 +4,33 @@ import {Component} from 'react';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import uts from '../../res/uts-white.png';
-import {LinkContainer} from 'react-router-bootstrap';
+import {IndexLinkContainer} from 'react-router-bootstrap';
 
 export default class NavMenu extends Component<{}> {
     render() {
         return (
-            <header>
-                <Navbar className='rounded-top navbar-custom d-flex shadow'>
-                    <Navbar.Brand href='/' className='text-light'>
-                        <img src={uts} alt='UTS Logo' width='20%'/>
+            <header className='nav-menu'>
+                <Navbar className='navbar-custom d-flex shadow'>
+                    <Navbar.Brand href='/user' className='text-light ml-3'>
+                        <img src={uts} alt='UTS Logo'/>
                     </Navbar.Brand>
                     <ul className='navbar-nav col ml-5'>
-                        <LinkContainer to='/user' className='text-light font-weight-bold'>
+                        <IndexLinkContainer to='/user' className='text-light font-weight-bold link'>
                             <Nav.Item className='mr-5'>
                                 My Information
                             </Nav.Item>
-                        </LinkContainer>
-                        <LinkContainer to='/workshop_registration' className='text-light font-weight-bold'>
+                        </IndexLinkContainer>
+                        <IndexLinkContainer to='/workshop_registration' className='text-light font-weight-bold link'>
                             <Nav.Item className='mr-3'>
                                 Workshop Registration
                             </Nav.Item>
-                        </LinkContainer>
+                        </IndexLinkContainer>
                     </ul>
-                    <LinkContainer to='/' className='text-light font-weight-bold'>
+                    <IndexLinkContainer to='/' className='text-light font-weight-bold link'>
                         <Nav.Item className='mr-3'>
                             Logout
                         </Nav.Item>
-                    </LinkContainer>
+                    </IndexLinkContainer>
                 </Navbar>
             </header>
         );

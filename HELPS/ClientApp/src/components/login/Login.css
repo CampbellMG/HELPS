@@ -19,3 +19,7 @@
     right: 0;
     margin: auto;
 }
+
+.login-container {
+    border-radius: 20px;
+}
