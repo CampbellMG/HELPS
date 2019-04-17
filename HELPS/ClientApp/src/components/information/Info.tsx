@@ -2,12 +2,7 @@ import * as React from 'react';
 import {Component} from 'react';
 import ListGroup from 'react-bootstrap/ListGroup';
 import ListGroupItem from 'react-bootstrap/ListGroupItem';
-
-type ContentType = 'PROGRAMS' | 'FAQ';
-
-interface InfoState {
-    activeContent: ContentType
-}
+import {InfoState} from '../../types/components/InfoTypes';
 
 export default class Info extends Component<{}, InfoState> {
 

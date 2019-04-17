@@ -6,11 +6,12 @@ import {Dispatch} from 'redux';
 import {
     WorkshopEvent,
     WorkshopRegistrationDispatchProps,
-    WorkshopRegistrationProps,
+    WorkshopRegistrationProps, WorkshopRegistrationState,
     WorkshopRegistrationStateProps
 } from '../../types/components/WorkshopRegistrationTypes';
 import {
-    bookWorkshop, cancelWorkshop,
+    bookWorkshop,
+    cancelWorkshop,
     retrieveUserWorkshops,
     retrieveWorkshops
 } from '../../store/actions/WorkshopActions';
@@ -21,14 +22,7 @@ import './WorkshopRegistration.css';
 import WorkshopDetailsForm from './WorkshopDetailsForm';
 import {Workshop} from '../../types/model/Workshop';
 import InputGroup from 'react-bootstrap/InputGroup';
-import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-
-interface WorkshopRegistrationState {
-    selectedWorkshop?: Workshop
-    searchTerm: string
-    filterNotBooked: boolean
-}
 
 class WorkshopRegistration extends Component<WorkshopRegistrationProps, WorkshopRegistrationState> {
     private localizer = BigCalendar.momentLocalizer(moment);

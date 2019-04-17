@@ -3,11 +3,7 @@ import {Field, InjectedFormProps, reduxForm} from 'redux-form';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import {Workshop} from '../../types/model/Workshop';
-
-interface WorkshopDetailsFormProps {
-    disabled: boolean
-    booked: boolean
-}
+import {WorkshopDetailsFormProps} from '../../types/components/WorkshopRegistrationTypes';
 
 class WorkshopDetailsForm extends React.Component<WorkshopDetailsFormProps & InjectedFormProps<Workshop, WorkshopDetailsFormProps>> {
     TextInput = (props: any) => (

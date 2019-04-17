@@ -1,6 +1,11 @@
 import {Workshop} from '../model/Workshop';
 import {Event} from 'react-big-calendar';
 
+export interface WorkshopDetailsFormProps {
+    disabled: boolean
+    booked: boolean
+}
+
 export interface WorkshopEvent extends Event, Workshop {
     start: Date
     end: Date
@@ -22,4 +27,10 @@ export interface WorkshopRegistrationDispatchProps {
 
 export interface WorkshopRegistrationProps extends WorkshopRegistrationStateProps, WorkshopRegistrationDispatchProps {
 
+}
+
+export interface WorkshopRegistrationState {
+    selectedWorkshop?: Workshop
+    searchTerm: string
+    filterNotBooked: boolean
 }
