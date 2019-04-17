@@ -6,11 +6,12 @@ import {Dispatch} from 'redux';
 import {
     WorkshopEvent,
     WorkshopRegistrationDispatchProps,
-    WorkshopRegistrationProps,
+    WorkshopRegistrationProps, WorkshopRegistrationState,
     WorkshopRegistrationStateProps
 } from '../../types/components/WorkshopRegistrationTypes';
 import {
     bookWorkshop,
+    cancelWorkshop,
     retrieveUserWorkshops,
     retrieveWorkshops
 } from '../../store/actions/WorkshopActions';
@@ -20,26 +21,29 @@ import 'react-big-calendar/lib/css/react-big-calendar.css';
 import './WorkshopRegistration.css';
 import WorkshopDetailsForm from './WorkshopDetailsForm';
 import {Workshop} from '../../types/model/Workshop';
-
-interface WorkshopRegistrationState {
-    selectedWorkshop?: Workshop
-}
+import InputGroup from 'react-bootstrap/InputGroup';
+import Form from 'react-bootstrap/Form';
 
 class WorkshopRegistration extends Component<WorkshopRegistrationProps, WorkshopRegistrationState> {
     private localizer = BigCalendar.momentLocalizer(moment);
 
     private get events(): WorkshopEvent[] {
-        return this.props.workshops.map(workshop => {
-            const startTime = moment(workshop.time);
-            const endTime = startTime.clone().add(workshop.duration, 'minute');
+        const {filterNotBooked, searchTerm} = this.state;
 
-            return {
-                ...workshop,
-                start: startTime.toDate(),
-                end: endTime.toDate()
+        return this.props.workshops
+            .filter(workshop => !filterNotBooked || this.eventSelected(workshop))
+            .filter(workshop => searchTerm.length === 0 || workshop.title.toLowerCase().includes(searchTerm.toLowerCase()))
+            .map(workshop => {
+                const startTime = moment(workshop.time);
+                const endTime = startTime.clone().add(workshop.duration, 'minute');
 
-            };
-        });
+                return {
+                    ...workshop,
+                    start: startTime.toDate(),
+                    end: endTime.toDate()
+
+                };
+            });
     }
 
     componentDidMount(): void {
@@ -50,54 +54,65 @@ class WorkshopRegistration extends Component<WorkshopRegistrationProps, Workshop
     constructor(props: WorkshopRegistrationProps) {
         super(props);
 
-        this.state = {};
+        this.state = {
+            searchTerm: '',
+            filterNotBooked: false
+        };
     }
 
     render(): React.ReactNode {
         const {selectedWorkshop} = this.state;
         return (
-            <div className='row h-100'>
+            <div className='row h-100 overflow-auto'>
+                {this.props.error && <p>{this.props.error}</p>}
+                {!this.props.authenticated && <p>Not authenticated</p>}
                 <div className='col-lg-2 border-right'>
-                    <WorkshopDetailsForm onSubmit={this.onBookEvent}
-                                         disabled={!selectedWorkshop || this.eventSelected(selectedWorkshop)}
-                                         initialValues={this.state.selectedWorkshop}/>
+                    <div className='sticky-top'>
+                        <WorkshopDetailsForm onSubmit={this.onEventSubmitted}
+                                             disabled={selectedWorkshop === undefined}
+                                             booked={selectedWorkshop !== undefined && this.eventSelected(selectedWorkshop)}
+                                             initialValues={this.state.selectedWorkshop}/>
+                    </div>
                 </div>
                 <div className='col m-3'>
-                    {this.props.error && <p>{this.props.error}</p>}
-                    {!this.props.authenticated && <p>Not authenticated</p>}
                     {
                         this.props.authenticated &&
-                        <BigCalendar
-                            className='h-100'
-                            localizer={this.localizer}
-                            events={this.events}
-                            onSelectEvent={this.onSelectEvent}
-                            eventPropGetter={(event) => {
-                                let newStyle = {
-                                    backgroundColor: 'lightgrey',
-                                    color: 'black',
-                                    borderRadius: '0px',
-                                    border: 'none',
-                                    opacity: 1
-                                };
+                        <div className='h-100 flex-column'>
 
-                                if (this.props.userWorkshops.findIndex(workshop => workshop.id === event.id) !== -1) {
-                                    newStyle.backgroundColor = '#FF5168';
-                                    newStyle.opacity = .5;
-                                }
+                            <InputGroup className='align-self-stretch d-flex pb-3 sticky-top'>
+                                <Form.Control type='text'
+                                              className='flex-fill'
+                                              placeholder='Search...'
+                                              value={this.state.searchTerm}
+                                              onChange={this.onSearchUpdated}
+                                />
+                                <InputGroup.Append>
+                                    <InputGroup.Text>
+                                        Already booked
+                                        <input type='checkbox'
+                                               className='ml-3'
+                                               checked={this.state.filterNotBooked}
+                                               onChange={this.onFilterNotBookedToggled}/>
+                                    </InputGroup.Text>
+                                </InputGroup.Append>
+                            </InputGroup>
 
-                                return {
-                                    className: '',
-                                    style: newStyle
-                                };
-                            }
-                            }
-                        />
+                            <BigCalendar
+                                localizer={this.localizer}
+                                events={this.events}
+                                onSelectEvent={this.onSelectEvent}
+                                eventPropGetter={this.getEventStyle}
+                            />
+
+                        </div>
                     }
                 </div>
             </div>
         );
     }
+
+    private onSearchUpdated = (event: any) => this.setState({searchTerm: event.target.value});
+    private onFilterNotBookedToggled = () => this.setState({filterNotBooked: !this.state.filterNotBooked});
 
     private eventSelected(event: Workshop) {
         return this.props.userWorkshops.findIndex(workshop => workshop.id === event.id) !== -1;
@@ -105,11 +120,32 @@ class WorkshopRegistration extends Component<WorkshopRegistrationProps, Workshop
 
     private onSelectEvent = (event: Workshop) => this.setState({selectedWorkshop: event});
 
-    private onBookEvent = (event: Workshop) => {
+    private onEventSubmitted = (event: Workshop) => {
         if (this.eventSelected(event)) {
-            return;
+            return this.props.cancelWorkshop(event);
         }
+
         this.props.bookWorkshop(event);
+    };
+
+    private getEventStyle = (event: WorkshopEvent) => {
+        let newStyle = {
+            backgroundColor: 'lightgrey',
+            color: 'black',
+            borderRadius: '0px',
+            border: 'none',
+            opacity: 1
+        };
+
+        if (this.eventSelected(event)) {
+            newStyle.backgroundColor = '#FF5168';
+            newStyle.opacity = .5;
+        }
+
+        return {
+            className: '',
+            style: newStyle
+        };
     };
 }
 
@@ -123,7 +159,8 @@ const mapStateToProps = (state: AppState): WorkshopRegistrationStateProps => ({
 const mapDispatchToProps = (dispatch: Dispatch<{}>): WorkshopRegistrationDispatchProps => ({
     retrieveWorkshops: () => dispatch(retrieveWorkshops()),
     retrieveUserWorkshops: () => dispatch(retrieveUserWorkshops()),
-    bookWorkshop: (workshop) => dispatch(bookWorkshop(workshop))
+    bookWorkshop: (workshop) => dispatch(bookWorkshop(workshop)),
+    cancelWorkshop: workshop => dispatch(cancelWorkshop(workshop))
 });
 
 export default connect<WorkshopRegistrationStateProps, WorkshopRegistrationDispatchProps, {}, AppState>(

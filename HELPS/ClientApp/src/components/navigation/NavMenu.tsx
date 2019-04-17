@@ -21,8 +21,13 @@ export default class NavMenu extends Component<{}> {
                             </Nav.Item>
                         </IndexLinkContainer>
                         <IndexLinkContainer to='/workshop_registration' className='text-light font-weight-bold link'>
-                            <Nav.Item className='mr-3'>
+                            <Nav.Item className='mr-5'>
                                 Workshop Registration
+                            </Nav.Item>
+                        </IndexLinkContainer>
+                        <IndexLinkContainer to='/info' className='text-light font-weight-bold link'>
+                            <Nav.Item className='mr-3'>
+                                Information
                             </Nav.Item>
                         </IndexLinkContainer>
                     </ul>

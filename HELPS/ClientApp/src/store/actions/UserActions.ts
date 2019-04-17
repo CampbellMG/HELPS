@@ -28,7 +28,7 @@ export const updateUser = (user: Student) => async (dispatch: Dispatch<any>) => 
     }
 
     const userResponse = await fetch('api/students', {
-        method: 'POST',
+        method: 'PUT',
         headers: new Headers({
             'Authorization': `Bearer ${token}`,
             'content-type': 'application/json'
@@ -39,7 +39,7 @@ export const updateUser = (user: Student) => async (dispatch: Dispatch<any>) => 
     const userResult = await userResponse.json();
 
     if (!userResponse.ok || !userResult.id || !userResult.name) {
-        dispatch(userError(userResult.message ? userResult.message : 'Login request failed'));
+        dispatch(userError(userResult.message ? userResult.message : 'Update request failed'));
         return;
     }
 
@@ -67,7 +67,7 @@ export const retrieveUser = () => async (dispatch: Dispatch<any>) => {
     const userResult = await userResponse.json();
 
     if (!userResponse.ok || !userResult.id || !userResult.name) {
-        dispatch(userError(userResult.message ? userResult.message : 'Login request failed'));
+        dispatch(userError(userResult.message ? userResult.message : 'Retrieve user request failed'));
         return;
     }
 

@@ -1,5 +1,3 @@
-import {UserState} from '../../types/store/reducers/UserReducerTypes';
-import {UserAction, UserActionType} from '../../types/store/actions/UserActionTypes';
 import {WorkshopState} from '../../types/store/reducers/WorkshopReducerTypes';
 import {WorkshopAction, WorkshopActionType} from '../../types/store/actions/WorkshopActionTypes';
 
@@ -44,6 +42,19 @@ export function WorkshopReducer(state: WorkshopState = initialState, action: Wor
                 error: undefined
             };
         case WorkshopActionType.RECEIVE_BOOK_WORKSHOP:
+            return {
+                ...state,
+                userWorkshops: action.payload,
+                isLoading: false,
+                error: undefined
+            };
+        case WorkshopActionType.CANCEL_WORKSHOP:
+            return {
+                ...state,
+                isLoading: true,
+                error: undefined
+            };
+        case WorkshopActionType.RECEIVE_CANEL_WORKSHOP:
             return {
                 ...state,
                 userWorkshops: action.payload,

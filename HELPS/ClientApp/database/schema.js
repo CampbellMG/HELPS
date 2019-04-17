@@ -1,6 +1,15 @@
 const workshop = {
     type: "object",
-    required: ["id", "title", "time", "duration"],
+    required: [
+        "id",
+        "title",
+        "time",
+        "duration",
+        "room",
+        "targetGroup",
+        "description",
+        "availablePlaces"
+    ],
     properties: {
         id: {
             type: "integer",

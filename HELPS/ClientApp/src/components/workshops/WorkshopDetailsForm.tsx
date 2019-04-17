@@ -3,10 +3,7 @@ import {Field, InjectedFormProps, reduxForm} from 'redux-form';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import {Workshop} from '../../types/model/Workshop';
-
-interface WorkshopDetailsFormProps {
-    disabled: boolean
-}
+import {WorkshopDetailsFormProps} from '../../types/components/WorkshopRegistrationTypes';
 
 class WorkshopDetailsForm extends React.Component<WorkshopDetailsFormProps & InjectedFormProps<Workshop, WorkshopDetailsFormProps>> {
     TextInput = (props: any) => (
@@ -64,7 +61,7 @@ class WorkshopDetailsForm extends React.Component<WorkshopDetailsFormProps & Inj
                            type='text'/>
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label>AvailablePlaces</Form.Label>
+                    <Form.Label>Available Places</Form.Label>
                     <Field
                         name='availablePlaces'
                         component={this.TextInput}
@@ -73,7 +70,7 @@ class WorkshopDetailsForm extends React.Component<WorkshopDetailsFormProps & Inj
                 <Button type='submit'
                         className='w-100 mt-4'
                         disabled={this.props.disabled}>
-                    Book
+                    {this.props.booked ? 'Cancel' : 'Book'}
                 </Button>
             </form>
         );
