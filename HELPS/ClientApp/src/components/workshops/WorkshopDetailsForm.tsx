@@ -70,7 +70,7 @@ class WorkshopDetailsForm extends React.Component<WorkshopDetailsFormProps & Inj
                 <Button type='submit'
                         className='w-100 mt-4'
                         disabled={this.props.disabled}>
-                    {this.props.booked ? 'CANCEL' : 'BOOK'}
+                    {this.props.booked ? 'Cancel' : 'Book'}
                 </Button>
             </form>
         );
