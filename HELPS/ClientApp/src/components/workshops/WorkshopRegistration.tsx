@@ -20,26 +20,36 @@ import 'react-big-calendar/lib/css/react-big-calendar.css';
 import './WorkshopRegistration.css';
 import WorkshopDetailsForm from './WorkshopDetailsForm';
 import {Workshop} from '../../types/model/Workshop';
+import InputGroup from 'react-bootstrap/InputGroup';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
 interface WorkshopRegistrationState {
     selectedWorkshop?: Workshop
+    searchTerm: string
+    filterNotBooked: boolean
 }
 
 class WorkshopRegistration extends Component<WorkshopRegistrationProps, WorkshopRegistrationState> {
     private localizer = BigCalendar.momentLocalizer(moment);
 
     private get events(): WorkshopEvent[] {
-        return this.props.workshops.map(workshop => {
-            const startTime = moment(workshop.time);
-            const endTime = startTime.clone().add(workshop.duration, 'minute');
+        const {filterNotBooked, searchTerm} = this.state;
 
-            return {
-                ...workshop,
-                start: startTime.toDate(),
-                end: endTime.toDate()
+        return this.props.workshops
+            .filter(workshop => !filterNotBooked || this.eventSelected(workshop))
+            .filter(workshop => searchTerm.length === 0 || workshop.title.toLowerCase().includes(searchTerm.toLowerCase()))
+            .map(workshop => {
+                const startTime = moment(workshop.time);
+                const endTime = startTime.clone().add(workshop.duration, 'minute');
 
-            };
-        });
+                return {
+                    ...workshop,
+                    start: startTime.toDate(),
+                    end: endTime.toDate()
+
+                };
+            });
     }
 
     componentDidMount(): void {
@@ -50,38 +60,65 @@ class WorkshopRegistration extends Component<WorkshopRegistrationProps, Workshop
     constructor(props: WorkshopRegistrationProps) {
         super(props);
 
-        this.state = {};
+        this.state = {
+            searchTerm: '',
+            filterNotBooked: false
+        };
     }
 
     render(): React.ReactNode {
         const {selectedWorkshop} = this.state;
         return (
             <div className='row h-100 overflow-auto'>
+                {this.props.error && <p>{this.props.error}</p>}
+                {!this.props.authenticated && <p>Not authenticated</p>}
                 <div className='col-lg-2 border-right'>
                     <div className='sticky-top'>
-                    <WorkshopDetailsForm onSubmit={this.onEventSubmitted}
-                                         disabled={selectedWorkshop === undefined}
-                                         booked={selectedWorkshop !== undefined && this.eventSelected(selectedWorkshop)}
-                                         initialValues={this.state.selectedWorkshop}/>
+                        <WorkshopDetailsForm onSubmit={this.onEventSubmitted}
+                                             disabled={selectedWorkshop === undefined}
+                                             booked={selectedWorkshop !== undefined && this.eventSelected(selectedWorkshop)}
+                                             initialValues={this.state.selectedWorkshop}/>
                     </div>
                 </div>
                 <div className='col m-3'>
-                    {this.props.error && <p>{this.props.error}</p>}
-                    {!this.props.authenticated && <p>Not authenticated</p>}
                     {
                         this.props.authenticated &&
-                        <BigCalendar
-                            className='h-100'
-                            localizer={this.localizer}
-                            events={this.events}
-                            onSelectEvent={this.onSelectEvent}
-                            eventPropGetter={this.getEventStyle}
-                        />
+                        <div className='h-100 flex-column'>
+
+                            <InputGroup className='align-self-stretch d-flex pb-3 sticky-top'>
+                                <Form.Control type='text'
+                                              className='flex-fill'
+                                              placeholder='Search...'
+                                              value={this.state.searchTerm}
+                                              onChange={this.onSearchUpdated}
+                                />
+                                <InputGroup.Append>
+                                    <InputGroup.Text>
+                                        Already booked
+                                        <input type='checkbox'
+                                               className='ml-3'
+                                               checked={this.state.filterNotBooked}
+                                               onChange={this.onFilterNotBookedToggled}/>
+                                    </InputGroup.Text>
+                                </InputGroup.Append>
+                            </InputGroup>
+
+                            <BigCalendar
+                                localizer={this.localizer}
+                                events={this.events}
+                                onSelectEvent={this.onSelectEvent}
+                                eventPropGetter={this.getEventStyle}
+                            />
+
+                        </div>
                     }
                 </div>
             </div>
         );
     }
+
+    private onSearchUpdated = (event: any) => this.setState({searchTerm: event.target.value});
+    private onFilterNotBookedToggled = () => this.setState({filterNotBooked: !this.state.filterNotBooked});
 
     private eventSelected(event: Workshop) {
         return this.props.userWorkshops.findIndex(workshop => workshop.id === event.id) !== -1;
