@@ -56,12 +56,14 @@ class WorkshopRegistration extends Component<WorkshopRegistrationProps, Workshop
     render(): React.ReactNode {
         const {selectedWorkshop} = this.state;
         return (
-            <div className='row h-100'>
+            <div className='row h-100 overflow-auto'>
                 <div className='col-lg-2 border-right'>
+                    <div className='sticky-top'>
                     <WorkshopDetailsForm onSubmit={this.onEventSubmitted}
                                          disabled={selectedWorkshop === undefined}
                                          booked={selectedWorkshop !== undefined && this.eventSelected(selectedWorkshop)}
                                          initialValues={this.state.selectedWorkshop}/>
+                    </div>
                 </div>
                 <div className='col m-3'>
                     {this.props.error && <p>{this.props.error}</p>}
@@ -73,26 +75,7 @@ class WorkshopRegistration extends Component<WorkshopRegistrationProps, Workshop
                             localizer={this.localizer}
                             events={this.events}
                             onSelectEvent={this.onSelectEvent}
-                            eventPropGetter={(event) => {
-                                let newStyle = {
-                                    backgroundColor: 'lightgrey',
-                                    color: 'black',
-                                    borderRadius: '0px',
-                                    border: 'none',
-                                    opacity: 1
-                                };
-
-                                if (this.props.userWorkshops.findIndex(workshop => workshop.id === event.id) !== -1) {
-                                    newStyle.backgroundColor = '#FF5168';
-                                    newStyle.opacity = .5;
-                                }
-
-                                return {
-                                    className: '',
-                                    style: newStyle
-                                };
-                            }
-                            }
+                            eventPropGetter={this.getEventStyle}
                         />
                     }
                 </div>
@@ -112,6 +95,26 @@ class WorkshopRegistration extends Component<WorkshopRegistrationProps, Workshop
         }
 
         this.props.bookWorkshop(event);
+    };
+
+    private getEventStyle = (event: WorkshopEvent) => {
+        let newStyle = {
+            backgroundColor: 'lightgrey',
+            color: 'black',
+            borderRadius: '0px',
+            border: 'none',
+            opacity: 1
+        };
+
+        if (this.eventSelected(event)) {
+            newStyle.backgroundColor = '#FF5168';
+            newStyle.opacity = .5;
+        }
+
+        return {
+            className: '',
+            style: newStyle
+        };
     };
 }
 

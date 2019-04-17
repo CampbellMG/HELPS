@@ -65,7 +65,7 @@ class WorkshopDetailsForm extends React.Component<WorkshopDetailsFormProps & Inj
                            type='text'/>
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label>AvailablePlaces</Form.Label>
+                    <Form.Label>Available Places</Form.Label>
                     <Field
                         name='availablePlaces'
                         component={this.TextInput}
