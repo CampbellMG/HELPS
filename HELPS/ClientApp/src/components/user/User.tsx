@@ -8,6 +8,7 @@ import {retrieveUser, updateUser} from '../../store/actions/UserActions';
 import UserDetailsForm from './UserDetailsForm';
 import Button from 'react-bootstrap/Button';
 import {submit} from 'redux-form';
+import { ThunkDispatch } from 'redux-thunk';
 
 class User extends Component<UserProps> {
 
@@ -90,7 +91,7 @@ const mapStateToProps = (state: AppState): UserStateProps => ({
     loading: state.user.isLoading
 });
 
-const mapDispatchToProps = (dispatch: Dispatch<{}>): UserDispatchProps => ({
+const mapDispatchToProps = (dispatch: ThunkDispatch<{}, {}, any>): UserDispatchProps => ({
     loadUserDetails: () => dispatch(retrieveUser()),
     updateUser: student => dispatch(updateUser(student)),
     submit: () => dispatch(submit('user_details'))
