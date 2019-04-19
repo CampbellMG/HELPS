@@ -23,6 +23,5 @@ namespace HELPS.Controllers
         {
             return _context.Students.ToList();
         }
-        
     }
 }

@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System.Data.SqlClient;
 
 namespace HELPS
 {
@@ -59,6 +60,10 @@ namespace HELPS
 
             app.UseMvc(routes =>
             {
+                routes.MapRoute(
+                    name: "Process",
+                    template: "{controller}/{action=Index}/{id?}");
+
                 routes.MapRoute(
                     name: "default",
                     template: "{controller}/{action=Index}/{id?}");
