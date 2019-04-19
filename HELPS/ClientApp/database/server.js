@@ -76,13 +76,15 @@ server.post('/login', (req, res) => {
         return
     }
 
-    const userId = database.users[userIndex].id;
-    const access_token = jwt.sign({userId, username, password}, SECRET_KEY, {expiresIn});
-    res.status(200).json({access_token})
+    const user = database.users[userIndex];
+    const userId = user.id;
+    const isAdmin = user.isAdmin;
+    const accessToken = jwt.sign({userId, username, password, isAdmin}, SECRET_KEY, {expiresIn});
+    res.status(200).json({accessToken, isAdmin})
 });
 
 server.post('/register', (req, res) => {
-    const {username, password} = req.body;
+    const {username, password, isAdmin} = req.body;
 
     if (username === undefined || password === undefined) {
         const status = 401;
@@ -97,7 +99,8 @@ server.post('/register', (req, res) => {
     users.push({
         id: nextId,
         username: username,
-        password: password
+        password: password,
+        isAdmin: isAdmin
     });
 
     fs.writeFileSync(DATABASE_DEST, JSON.stringify(database));
