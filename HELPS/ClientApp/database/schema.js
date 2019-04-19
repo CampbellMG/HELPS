@@ -5,7 +5,8 @@ const workshop = {
         "title",
         "time",
         "duration",
-        "room",
+        "roomId",
+        "maximum",
         "targetGroup",
         "description",
         "availablePlaces"
@@ -32,8 +33,11 @@ const workshop = {
             minimum: 0,
             maximum: 240
         },
-        room: {
-            type: "string"
+        roomId: {
+            type: "integer"
+        },
+        maximum: {
+            type: 'integer'
         },
         targetGroup: {
             type: "string"
@@ -42,7 +46,7 @@ const workshop = {
             type: "string"
         },
         availablePlaces: {
-            type: "string"
+            type: "number"
         },
     }
 };
@@ -53,6 +57,7 @@ const student = {
         "id",
         "name",
         "prefFirstName",
+        "registeredDate",
         "faculty",
         "course",
         "email",
@@ -67,6 +72,8 @@ const student = {
         "firstLanguage",
         "countryOfOrigin",
         "educationalBackground",
+        "CAFCompleted",
+        "specialNeeds",
         "other",
     ],
     properties: {
@@ -82,6 +89,10 @@ const student = {
         prefFirstName: {
             type: "string",
             faker: "name.firstName"
+        },
+        registeredDate: {
+            type: "string",
+            faker: "date.past"
         },
         faculty: {
             type: "string",
@@ -133,6 +144,12 @@ const student = {
         educationalBackground: {
             type: "string"
         },
+        CAFCompleted: {
+            type: "boolean"
+        },
+        specialNeeds: {
+            type: "boolean"
+        },
         other: {
             type: "string"
         }
@@ -159,14 +176,208 @@ const user = {
     }
 };
 
+const session  = {
+    type: "object",
+    required: [
+        "id",
+        "startTime",
+        "duration",
+        "roomId",
+        "advisorId",
+        "studentId",
+        "type"
+    ],
+    properties: {
+        id: {
+            type: "integer",
+            initialOffset: 1,
+            autoIncrement: true
+        },
+        startTime: {
+            type: "string",
+            faker: "date.recent"
+        },
+        duration: {
+            type: "integer",
+            minimum: 0,
+            maximum: 240
+        },
+        roomId: {
+            type: "integer"
+        },
+        advisorId: {
+            type: "integer"
+        },
+        studentId: {
+            type: "integer"
+        },
+        type: {
+            type: "string"
+        }
+    }
+};
+
+const advisor  = {
+    type: "object",
+    required: [
+        "id",
+        "email",
+        "firstName",
+        "lastName",
+        "isActive"
+    ],
+    properties: {
+        id: {
+            type: "integer",
+            initialOffset: 1,
+            autoIncrement: true
+        },
+        email: {
+            type: "string",
+            faker: "internet.email"
+        },
+        firstName: {
+            type: "string",
+            faker: "name.firstName"
+        },
+        lastName: {
+            type: "string",
+            faker: "name.lastName"
+        },
+        isActive: {
+            type: "boolean"
+        }
+    }
+};
+
+const room  = {
+    type: "object",
+    required: [
+        "id",
+        "title"
+    ],
+    properties: {
+        id: {
+            type: "integer",
+            initialOffset: 1,
+            autoIncrement: true
+        },
+        title: {
+            type: "string"
+        }
+    }
+};
+
+const message  = {
+    type: "object",
+    required: [
+        "id",
+        "title",
+        "content"
+    ],
+    properties: {
+        id: {
+            type: "integer",
+            initialOffset: 1,
+            autoIncrement: true
+        },
+        title: {
+            type: "string"
+        },
+        content: {
+            type: "string"
+        }
+    }
+};
+
+const email  = {
+    type: "object",
+    required: [
+        "id",
+        "title",
+        "content",
+        "variables"
+    ],
+    properties: {
+        id: {
+            type: "integer",
+            initialOffset: 1,
+            autoIncrement: true
+        },
+        title: {
+            type: "string"
+        },
+        content: {
+            type: "string"
+        },
+        variables: {
+            type: "array",
+            minItems: 5,
+            maxItems: 20,
+            items: {
+                type: "object",
+                required: [
+                    "variable",
+                    "example"
+                ],
+                properties: {
+                    variable: {
+                        type: "string"
+                    },
+                    example: {
+                        type: "string"
+                    }
+                }
+            }
+        }
+    }
+};
+
+const report  = {
+    type: "object",
+    required: [
+        "id",
+        "title",
+        "skillSet",
+        "topic"
+    ],
+    properties: {
+        id: {
+            type: "integer",
+            initialOffset: 1,
+            autoIncrement: true
+        },
+        title: {
+            type: "string"
+        },
+        skillSet: {
+            type: "string"
+        },
+        topic: {
+            type: "string"
+        }
+    }
+};
+
 const schema = {
     type: "object",
-    required: ["students", "workshops", "users", "studentWorkshops"],
+    required: [
+        "students",
+        "workshops",
+        "users",
+        "studentWorkshops",
+        "sessions",
+        "advisors",
+        "rooms",
+        "messages",
+        "emails",
+        "reports"
+    ],
     properties: {
         students: {
             type: "array",
-            minItems: 50,
-            maxItems: 50,
+            minItems: 5,
+            maxItems: 20,
             items: student
         },
         workshops: {
@@ -186,6 +397,42 @@ const schema = {
             minItems: 0,
             maxItems: 0,
             items: workshop
+        },
+        sessions: {
+            type: "array",
+            minItems: 5,
+            maxItems: 20,
+            items: session
+        },
+        advisors: {
+            type: "array",
+            minItems: 1,
+            maxItems: 10,
+            items: advisor
+        },
+        rooms: {
+            type: "array",
+            minItems: 5,
+            maxItems: 20,
+            items: room
+        },
+        messages: {
+            type: "array",
+            minItems: 1,
+            maxItems: 10,
+            items: message
+        },
+        emails: {
+            type: "array",
+            minItems: 1,
+            maxItems: 10,
+            items: email
+        },
+        reports: {
+            type: "array",
+            minItems: 1,
+            maxItems: 5,
+            items: report
         }
     }
 };
