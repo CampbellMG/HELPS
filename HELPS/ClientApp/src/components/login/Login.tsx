@@ -8,6 +8,7 @@ import {login, logout} from '../../store/actions/AuthActions';
 import {HomeDispatchProps, HomeProps, HomeStateProps, LoginFields} from '../../types/components/LoginTypes';
 import uts from '../../res/uts.png';
 import './Login.css';
+import { ThunkDispatch } from 'redux-thunk';
 
 class Login extends Component<HomeProps> {
 
@@ -42,7 +43,7 @@ const mapStateToProps = (state: AppState): HomeStateProps => ({
     error: state.auth.error
 });
 
-const mapDispatchToProps = (dispatch: Dispatch<{}>): HomeDispatchProps => ({
+const mapDispatchToProps = (dispatch: ThunkDispatch<{}, {}, any>): HomeDispatchProps => ({
     login: (username, password) => dispatch(login(username, password)),
     logout: () => dispatch(logout())
 });
