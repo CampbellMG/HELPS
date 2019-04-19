@@ -7,6 +7,7 @@ import * as serviceWorker from './serviceWorker';
 import * as React from 'react';
 import {render} from 'react-dom';
 import configureStore from './store/Store';
+import './App.scss';
 
 // Create browser history to use in the Redux store
 const baseUrl = document.getElementsByTagName('base')[0].getAttribute('href');

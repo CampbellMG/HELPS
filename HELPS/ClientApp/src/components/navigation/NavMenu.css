@@ -1,9 +1,4 @@
-﻿a.navbar-brand {
-    white-space: normal;
-    text-align: center;
-    word-break: break-all;
-}
-
+﻿
 html {
     font-size: 14px;
 }
@@ -18,4 +13,26 @@ html {
     box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
 
+.navbar-custom {
+    background: #dc001a;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
 
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: white;
+}
+
+.navbar-custom .navbar-nav .nav-link {
+    color: white;
+}
+
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+    color: white;
+}
+
+.link {
+    cursor: pointer;
+}

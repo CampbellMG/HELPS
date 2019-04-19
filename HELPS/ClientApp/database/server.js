@@ -22,57 +22,16 @@ const json = JSON.stringify(jsf.generate(databaseSchema));
 fs.writeFileSync(DATABASE_DEST, json);
 
 const server = jsonServer.create();
-const router = jsonServer.router(DATABASE_DEST);
 
 server.use(bodyParser.urlencoded({extended: true}));
 server.use(bodyParser.json());
-server.use(jsonServer.defaults());
-server.use(jsonServer.rewriter({
-    '/api/*': '/$1'
-}));
 
-server.post('/login', (req, res) => {
-    const {username, password} = req.body;
-    const database = JSON.parse(fs.readFileSync(DATABASE_DEST));
-    const userIndex = database.users.findIndex(user => user.username === username && user.password === password);
-
-    if (userIndex === -1) {
-        const status = 401;
-        const message = 'Incorrect username or password';
-        res.status(status).json({status, message});
-        return
-    }
-
-    const userId = database.users[userIndex].id;
-    const access_token = jwt.sign({userId, username, password}, SECRET_KEY, {expiresIn});
-    res.status(200).json({access_token})
-})
-
-server.post('/register', (req, res) => {
-    const {username, password} = req.body;
-
-    if (username === undefined || password === undefined) {
-        const status = 401;
-        const message = 'Missing username or password';
-        res.status(status).json({status, message})
-    }
-
-    const database = JSON.parse(fs.readFileSync(DATABASE_DEST));
-    let users = database.users;
-    const nextId = Math.max(...users.map(user => user.id)) + 1;
-
-    users.push({
-        id: nextId,
-        username: username,
-        password: password
-    });
-
-    fs.writeFileSync(DATABASE_DEST, JSON.stringify(database));
-
-    res.status(200)
+server.all('/api/*', (req, res, next) => {
+    req.url = req.url.replace(/\/api/g, '');
+    server.handle(req, res, next)
 });
 
-server.use(/^(?!(\/register|\/login)).*$/, (req, res, next) => {
+server.all(/^(?!(\/register|\/login)).*$/, (req, res, next) => {
     if (req.headers.authorization === undefined || req.headers.authorization.split(' ')[0] !== 'Bearer') {
         const status = 401;
         const message = 'Missing or invalid authorization';
@@ -88,16 +47,70 @@ server.use(/^(?!(\/register|\/login)).*$/, (req, res, next) => {
             return
         }
 
-        if (/students/g.test(req.originalUrl) && !/students\/[0-9]+/g.test(req.originalUrl)) {
-            const redirect = req.originalUrl.replace(/students/g, `students/${decode.userId}`);
-            res.redirect(307, redirect)
+        if (/students/g.test(req.url) && !/students\/[0-9]+/g.test(req.url)) {
+            req.url = req.url.replace(/students/g, `students/${decode.userId}`);
+            req.url = req.url.replace(/workshops/g, 'studentWorkshops');
+
+            req.body = {
+                ...req.body,
+                studentId: decode.userId
+            };
+
+            server.handle(req, res, next);
+            return
         }
 
         next()
     })
 });
 
-server.use(router);
+server.post('/login', (req, res) => {
+    const {username, password} = req.body;
+    const database = JSON.parse(fs.readFileSync(DATABASE_DEST));
+    const userIndex = database.users.findIndex(user => user.username === username && user.password === password);
+
+    if (userIndex === -1) {
+        const status = 401;
+        const message = 'Incorrect username or password';
+        res.status(status).json({status, message});
+        return
+    }
+
+    const user = database.users[userIndex];
+    const userId = user.id;
+    const isAdmin = user.isAdmin;
+    const accessToken = jwt.sign({userId, username, password, isAdmin}, SECRET_KEY, {expiresIn});
+    res.status(200).json({accessToken, isAdmin})
+});
+
+server.post('/register', (req, res) => {
+    const {username, password, isAdmin} = req.body;
+
+    if (username === undefined || password === undefined) {
+        const status = 401;
+        const message = 'Missing username or password';
+        res.status(status).json({status, message})
+    }
+
+    const database = JSON.parse(fs.readFileSync(DATABASE_DEST));
+    let users = database.users;
+    const nextId = Math.max(...users.map(user => user.id)) + 1;
+
+    users.push({
+        id: nextId,
+        username: username,
+        password: password,
+        isAdmin: isAdmin
+    });
+
+    fs.writeFileSync(DATABASE_DEST, JSON.stringify(database));
+
+    res.status(200)
+});
+
+server.use(jsonServer.defaults());
+server.use(jsonServer.router(DATABASE_DEST));
+
 server.listen(3001, () => {
     console.log('Running mock database on http://localhost:3001')
 });
