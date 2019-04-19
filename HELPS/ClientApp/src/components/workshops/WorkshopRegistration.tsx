@@ -23,6 +23,7 @@ import WorkshopDetailsForm from './WorkshopDetailsForm';
 import {Workshop} from '../../types/model/Workshop';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Form from 'react-bootstrap/Form';
+import { ThunkDispatch } from 'redux-thunk';
 
 class WorkshopRegistration extends Component<WorkshopRegistrationProps, WorkshopRegistrationState> {
     private localizer = BigCalendar.momentLocalizer(moment);
@@ -156,7 +157,7 @@ const mapStateToProps = (state: AppState): WorkshopRegistrationStateProps => ({
     error: state.workshops.error
 });
 
-const mapDispatchToProps = (dispatch: Dispatch<{}>): WorkshopRegistrationDispatchProps => ({
+const mapDispatchToProps = (dispatch: ThunkDispatch<{}, {}, any>): WorkshopRegistrationDispatchProps => ({
     retrieveWorkshops: () => dispatch(retrieveWorkshops()),
     retrieveUserWorkshops: () => dispatch(retrieveUserWorkshops()),
     bookWorkshop: (workshop) => dispatch(bookWorkshop(workshop)),

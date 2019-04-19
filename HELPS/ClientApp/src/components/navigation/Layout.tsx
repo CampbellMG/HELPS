@@ -6,6 +6,7 @@ import {LayoutDispatchProps, LayoutProps, LayoutStateProps} from '../../types/co
 import './Layout.css';
 import {Dispatch} from 'redux';
 import {getExistingSession} from '../../store/actions/AuthActions';
+import { ThunkDispatch } from 'redux-thunk';
 
 class Layout extends React.Component<LayoutProps> {
     componentWillMount(): void {
@@ -34,7 +35,7 @@ const mapStateToProps = (state: AppState): LayoutStateProps => ({
     authenticated: state.auth.authenticated
 });
 
-const mapDispatchToProps = (dispatch: Dispatch<{}>): LayoutDispatchProps => ({
+const mapDispatchToProps = (dispatch: ThunkDispatch<{}, {}, any>): LayoutDispatchProps => ({
     login: () => dispatch(getExistingSession())
 });
 
