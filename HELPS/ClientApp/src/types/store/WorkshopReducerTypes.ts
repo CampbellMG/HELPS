@@ -1,4 +1,4 @@
-import {Workshop} from '../../model/Workshop';
+import {Workshop} from '../model/Workshop';
 
 export interface WorkshopState {
     isLoading: boolean,

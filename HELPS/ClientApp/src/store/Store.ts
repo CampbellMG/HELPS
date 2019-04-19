@@ -6,13 +6,15 @@ import {applyMiddleware, combineReducers, compose, createStore} from 'redux';
 import { reducer as reduxFormReducer } from 'redux-form';
 import {UserReducer} from './reducers/UserReducer';
 import {WorkshopReducer} from './reducers/WorkshopReducer';
+import {EmailReducer} from './reducers/EmailReducer';
 
 export default function configureStore(history: History) {
     const reducers = {
         auth: AuthReducer,
         user: UserReducer,
+        email: EmailReducer,
         workshops: WorkshopReducer,
-        form: reduxFormReducer,
+        form: reduxFormReducer
     };
 
     const middleware = [

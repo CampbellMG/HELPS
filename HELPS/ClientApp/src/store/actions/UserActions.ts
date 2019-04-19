@@ -1,5 +1,5 @@
 import {Dispatch} from 'redux';
-import {UserAction, UserActionType} from '../../types/store/actions/UserActionTypes';
+import {UserAction, UserActionType} from '../../types/store/UserActionTypes';
 import {Student} from '../../types/model/Student';
 import {LS_STORAGE_KEY} from './AuthActions';
 

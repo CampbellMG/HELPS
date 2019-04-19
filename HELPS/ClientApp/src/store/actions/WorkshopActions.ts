@@ -1,6 +1,6 @@
 import {Dispatch} from 'redux';
 import {LS_STORAGE_KEY} from './AuthActions';
-import {WorkshopAction, WorkshopActionType} from '../../types/store/actions/WorkshopActionTypes';
+import {WorkshopAction, WorkshopActionType} from '../../types/store/WorkshopActionTypes';
 import {Workshop} from '../../types/model/Workshop';
 
 const requestWorkshops = (): WorkshopAction => ({

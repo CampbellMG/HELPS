@@ -8,7 +8,7 @@ import {login, logout} from '../../store/actions/AuthActions';
 import {HomeDispatchProps, HomeProps, HomeStateProps, LoginFields} from '../../types/components/LoginTypes';
 import uts from '../../res/uts.png';
 import './Login.css';
-import { ThunkDispatch } from 'redux-thunk';
+import {ThunkDispatch} from 'redux-thunk';
 
 class Login extends Component<HomeProps> {
 
