@@ -5,90 +5,65 @@ import {ThunkDispatch} from 'redux-thunk';
 import {connect} from 'react-redux';
 import {
     EmailDispatchProps,
-    EmailProps,
-    EmailState,
+    EmailEditProps,
+    EmailEditState,
     EmailStateProps
 } from '../../types/components/EmailTypes';
 import {retrieveEmails, updateEmail} from '../../store/actions/EmailActions';
-import ListGroupItem from 'react-bootstrap/ListGroupItem';
-import ListGroup from 'react-bootstrap/ListGroup';
-import './EmailEdit.css';
 import {DragDropContext, Draggable, Droppable, DropResult} from 'react-beautiful-dnd';
 import {EmailVariable} from '../../types/model/Email';
 
-class EmailEdit extends Component<EmailProps, EmailState> {
+class EmailEdit extends Component<EmailEditProps, EmailEditState> {
 
     private get words(): string[] {
-        if (!this.state.selectedEmail) {
+        if (!this.props.email) {
             return [];
         }
 
-        return this.state.selectedEmail.content.split(' ');
+        return this.props.email.content.split(' ');
     }
 
     private get variables(): EmailVariable[] {
-        if (!this.state.selectedEmail) {
+        if (!this.props.email) {
             return [];
         }
 
-        return this.state.selectedEmail.variables;
+        return this.props.email.variables;
     }
 
-    constructor(props: EmailProps) {
+    constructor(props: EmailEditProps) {
         super(props);
 
         this.state = {
-            hoveredWordIndex: -1,
-            draggingVariableIndex: -1
+            isEditing: true
         };
-    }
-
-    componentWillReceiveProps(nextProps: Readonly<EmailProps>, nextContext: any): void {
-        if (!this.state.selectedEmail) {
-            this.setState({selectedEmail: nextProps.emails.length > 0 ? nextProps.emails[0] : undefined});
-        }
-    }
-
-    componentDidMount(): void {
-        this.props.requestEmails();
     }
 
     render() {
         return (
-            <div
-                className={'row h-100 overflow-auto' + (this.state.hoveredWordIndex === -1 ? '' : ' no-cursor')}>
-                <div className='col-lg-2 border-right'>
-                    {this.getEmailList()}
-                </div>
-                <div className='col m-3'>
-                    <DragDropContext onDragEnd={this.onVariableDropped}>
+            <DragDropContext onDragEnd={this.onVariableDropped}>
+                <div className='row w-100 flex-fill'>
+                    <div className='col border mr-2'>
                         {this.getEmailContent()}
+                    </div>
+                    <div className='col-lg-2 border'>
                         {this.getEmailVariables()}
-                    </DragDropContext>
+                    </div>
                 </div>
-
-            </div>
-        );
-    }
-
-    private getEmailList() {
-        const {emails} = this.props;
-        const {selectedEmail} = this.state;
-
-        return (
-            <ListGroup className='m-3 sticky-top'>
-                {emails.map(email => (
-                    <ListGroupItem onClick={() => this.setState({selectedEmail: email})}
-                                   style={{cursor: 'pointer'}}
-                                   active={selectedEmail && selectedEmail.id === email.id}>
-                        {email.title}
-                    </ListGroupItem>
-                ))}
-            </ListGroup>
+            </DragDropContext>
         );
     }
 
     private getEmailContent() {
+        if (this.state.isEditing) {
+            return (
+                <div contentEditable onBlur={() => this.setState({isEditing: false})}>
+                    {this.words.map(word => <span>{word}&nbsp;</span>)}
+                </div>
+            );
+
+        }
+
         return (
             <Droppable droppableId='CONTENT' direction='horizontal'>
                 {provided => {
@@ -134,7 +109,7 @@ class EmailEdit extends Component<EmailProps, EmailState> {
     }
 
     private getVariables() {
-        return this.state.selectedEmail && this.state.selectedEmail.variables.map((variable, index) => (
+        return this.props.email && this.props.email.variables.map((variable, index) => (
             <Draggable index={index}
                        draggableId={index.toString() + variable.variable}>
                 {draggableProvided =>
@@ -151,7 +126,7 @@ class EmailEdit extends Component<EmailProps, EmailState> {
 
     private onVariableDropped = (result: DropResult) => {
         if (!result.destination
-            || !this.state.selectedEmail
+            || !this.props.email
             || result.destination.droppableId !== 'CONTENT'
             || result.source.droppableId !== 'VARIABLES') {
             return;
@@ -165,8 +140,19 @@ class EmailEdit extends Component<EmailProps, EmailState> {
             this.variables[result.source.index].variable
         );
 
-        this.state.selectedEmail.content = words.join(' ');
+        this.props.email.content = words.join(' ');
+
+        this.props.onEmailChanged(this.props.email);
+
+        this.setState({isEditing: true});
     };
+
+    private isVariable(value: string) {
+        return this.props.email
+            && this.props.email.variables.findIndex(variable => {
+                return variable.variable === value;
+            }) !== -1;
+    }
 }
 
 const mapStateToProps = (state: AppState): EmailStateProps => ({

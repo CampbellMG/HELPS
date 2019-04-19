@@ -14,7 +14,15 @@ export interface EmailProps extends EmailStateProps, EmailDispatchProps {
 }
 
 export interface EmailState {
-    hoveredWordIndex: number
-    draggingVariableIndex: number
     selectedEmail?: Email
+    isEditingText: boolean
+}
+
+export interface EmailEditProps {
+    email?: Email
+    onEmailChanged: (email: Email) => void
+}
+
+export interface EmailEditState {
+    isEditing: boolean
 }
