@@ -319,37 +319,37 @@ const email  = {
                 enum: [
                     {
                         name: 'Student Given Name',
-                        variable: '[% student_givenname %]',
+                        variable: '[%student_givenname%]',
                         example: 'Steve'
                     },
                     {
                         name: 'Student Surname',
-                        variable: '[% student_surname %]',
+                        variable: '[%student_surname%]',
                         example: 'Smith'
                     },
                     {
                         name: 'Campus',
-                        variable: '[% campus %]',
+                        variable: '[%campus%]',
                         example: 'Ultimo'
                     },
                     {
                         name: 'Lecturer Email',
-                        variable: '[% lecturer_email %]',
+                        variable: '[%lecturer_email%]',
                         example: 'Steve.Smith@test.com'
                     },
                     {
                         name: 'Date',
-                        variable: '[% date %]',
+                        variable: '[%date%]',
                         example: '12 July 2019'
                     },
                     {
                         name: 'Start Time',
-                        variable: '[% start_time %]',
+                        variable: '[%start_time%]',
                         example: '11:15 am'
                     },
                     {
                         name: 'End Time',
-                        variable: '[% end_time %]',
+                        variable: '[%end_time%]',
                         example: '12:30 pm'
                     }
                 ]
