@@ -3,20 +3,20 @@ import {Component} from 'react';
 import {AppState} from '../../types/store/StoreTypes';
 import {ThunkDispatch} from 'redux-thunk';
 import {connect} from 'react-redux';
-import {
-    EmailDispatchProps,
-    EmailProps,
-    EmailState,
-    EmailStateProps
-} from '../../types/components/EmailTypes';
+import {EmailDispatchProps, EmailProps, EmailState, EmailStateProps} from '../../types/components/EmailTypes';
 import {retrieveEmails, updateEmail} from '../../store/actions/EmailActions';
 import ListGroupItem from 'react-bootstrap/ListGroupItem';
 import ListGroup from 'react-bootstrap/ListGroup';
-import {DragDropContext, Draggable, Droppable, DropResult} from 'react-beautiful-dnd';
 import {Email, EmailVariable} from '../../types/model/Email';
 import EmailEdit from './EmailEdit';
+import {CompositeDecorator, ContentState, EditorState, ContentBlock} from 'draft-js';
+import {Editor} from 'react-draft-wysiwyg';
 
 class EmailList extends Component<EmailProps, EmailState> {
+
+    private get variables(): EmailVariable[] {
+        return !this.state.selectedEmail ? [] : this.state.selectedEmail.variables;
+    }
 
     private get formattedEmail(): string {
         const {selectedEmail} = this.state;
@@ -25,31 +25,29 @@ class EmailList extends Component<EmailProps, EmailState> {
             return '';
         }
 
-        return selectedEmail.content
-            .split(' ')
-            .map(word => {
-                const index = selectedEmail.variables.findIndex(variable => variable.variable === word);
+        let formattedEmailContent = selectedEmail.content;
 
-                if (index === -1) {
-                    return word;
-                }
+        selectedEmail.variables.forEach(variable => {
+            formattedEmailContent = formattedEmailContent.replace(variable.variable, variable.example);
+        });
 
-                return selectedEmail.variables[index].example;
-            })
-            .join(' ');
+        return formattedEmailContent;
     }
 
     constructor(props: EmailProps) {
         super(props);
 
         this.state = {
-            isEditingText: true
+            isEditingText: true,
+            editorState: EditorState.createEmpty()
         };
     }
 
     componentWillReceiveProps(nextProps: Readonly<EmailProps>, nextContext: any): void {
         if (!this.state.selectedEmail) {
-            this.setState({selectedEmail: nextProps.emails.length > 0 ? nextProps.emails[0] : undefined});
+            this.setState({
+                selectedEmail: nextProps.emails.length > 0 ? nextProps.emails[0] : undefined
+            });
         }
     }
 
@@ -65,10 +63,15 @@ class EmailList extends Component<EmailProps, EmailState> {
                 </div>
                 <div className='col m-3 d-flex flex-column'>
                     <EmailEdit email={this.state.selectedEmail}
+                               onContentChanged={this.onEmailContentChanged}
                                onEmailChanged={this.onEmailChanged}/>
                     <div className='row border w-100 mt-2 flex-fill'>
-                        <p>{this.formattedEmail}</p>
+                        <Editor editorState={this.state.editorState}
+                                toolbarHidden
+                                customDecorators={this.previewDecorator}
+                                readOnly/>
                     </div>
+
                 </div>
 
             </div>
@@ -92,6 +95,12 @@ class EmailList extends Component<EmailProps, EmailState> {
         );
     }
 
+    private onEmailContentChanged = (contentState: ContentState) => {
+        this.setState({
+            editorState: EditorState.createWithContent(contentState)
+        });
+    };
+
     private onEmailChanged = (email: Email) => {
         this.setState({
             selectedEmail: {
@@ -100,6 +109,26 @@ class EmailList extends Component<EmailProps, EmailState> {
             }
         });
     };
+
+    private variableStrategy = (block: ContentBlock, callback: (start: number, end: number) => void, contentState: ContentState) => {
+        const text = block.getText();
+        this.variables.forEach(variable => {
+            const index = text.indexOf(variable.variable);
+            if (index !== -1) {
+                callback(index, index + variable.variable.length);
+            }
+        });
+    };
+
+    private variableSpan = (props: any) => {
+        const index = this.variables.findIndex(variable => variable.variable === props.decoratedText);
+        return <span>{index === -1 ? props.decoratedText : this.variables[index].example}</span>;
+    };
+
+    private previewDecorator = [{
+        strategy: this.variableStrategy,
+        component: this.variableSpan
+    }];
 }
 
 const mapStateToProps = (state: AppState): EmailStateProps => ({
