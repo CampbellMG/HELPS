@@ -14,6 +14,8 @@ import {Editor} from 'react-draft-wysiwyg';
 
 class EmailList extends Component<EmailProps, EmailState> {
 
+    private static readonly VARIABLE_REGEX = /\[(?:.|\n)*?]/g;
+
     private get variables(): EmailVariable[] {
         return !this.state.selectedEmail ? [] : this.state.selectedEmail.variables;
     }
@@ -65,8 +67,9 @@ class EmailList extends Component<EmailProps, EmailState> {
                     <EmailEdit email={this.state.selectedEmail}
                                onContentChanged={this.onEmailContentChanged}
                                onEmailChanged={this.onEmailChanged}/>
-                    <div className='row border w-100 mt-2 flex-fill'>
+                    <div className='row border w-100 mt-2 flex-fill d-flex p-1'>
                         <Editor editorState={this.state.editorState}
+                                wrapperClassName='flex-fill'
                                 toolbarHidden
                                 customDecorators={this.previewDecorator}
                                 readOnly/>
@@ -110,14 +113,13 @@ class EmailList extends Component<EmailProps, EmailState> {
         });
     };
 
-    private variableStrategy = (block: ContentBlock, callback: (start: number, end: number) => void, contentState: ContentState) => {
+    private variableStrategy = (block: ContentBlock, callback: (start: number, end: number) => void) => {
         const text = block.getText();
-        this.variables.forEach(variable => {
-            const index = text.indexOf(variable.variable);
-            if (index !== -1) {
-                callback(index, index + variable.variable.length);
-            }
-        });
+        let matchArr, start;
+        while ((matchArr = EmailList.VARIABLE_REGEX.exec(text)) !== null) {
+            start = matchArr.index;
+            callback(start, start + matchArr[0].length);
+        }
     };
 
     private variableSpan = (props: any) => {

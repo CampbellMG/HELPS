@@ -3,16 +3,19 @@ import {Component} from 'react';
 import {EmailEditProps, EmailEditState} from '../../types/components/EmailTypes';
 import {Email, EmailVariable} from '../../types/model/Email';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
-import {ContentState, convertToRaw, EditorState, Modifier} from 'draft-js';
+import {ContentBlock, ContentState, convertToRaw, EditorState, Modifier} from 'draft-js';
 // @ts-ignore
 import draftToHtml from 'draftjs-to-html';
 import {Editor} from 'react-draft-wysiwyg';
+import './EmailEdit.css';
+import Button from 'react-bootstrap/Button';
 
 export default class EmailEdit extends Component<EmailEditProps, EmailEditState> {
 
+    private static readonly VARIABLE_REGEX = /\[(?:.|\n)*?]/g;
+
     private get variables(): EmailVariable[] {
         return !this.props.email ? [] : this.props.email.variables;
-
     }
 
     constructor(props: EmailEditProps) {
@@ -28,10 +31,10 @@ export default class EmailEdit extends Component<EmailEditProps, EmailEditState>
     render() {
         return (
             <div className='row w-100 flex-fill'>
-                <div className='col border mr-2 d-flex flex-column'>
+                <div className='col border mr-2 d-flex flex-column overflow-hidden p-1'>
                     {this.getEmailContent()}
                 </div>
-                <div className='col-lg-2 border'>
+                <div className='col-lg-2 border overflow-auto pt-2 pb-2'>
                     {this.getEmailVariables()}
                 </div>
             </div>
@@ -56,6 +59,7 @@ export default class EmailEdit extends Component<EmailEditProps, EmailEditState>
         return (
             <Editor editorState={this.state.editorState}
                     wrapperClassName='flex-fill'
+                    customDecorators={this.editorDecorator}
                     onEditorStateChange={this.onContentUpdated}
                     mention={this.getMentions()}/>
         );
@@ -63,9 +67,7 @@ export default class EmailEdit extends Component<EmailEditProps, EmailEditState>
 
     private getEmailVariables() {
         return this.variables.map(variable => (
-            <div onClick={() => this.onVariableSelected(variable)} >
-                {variable.name}
-            </div>
+            this.renderVariable(variable, () => this.onVariableSelected(variable))
         ));
     }
 
@@ -80,19 +82,19 @@ export default class EmailEdit extends Component<EmailEditProps, EmailEditState>
     }
 
     private onVariableSelected = (variable: EmailVariable) => {
-        const { editorState } = this.state;
+        const {editorState} = this.state;
         const selection = editorState.getSelection();
         const contentState = editorState.getCurrentContent();
         let nextEditorState = EditorState.createEmpty();
         if (selection.isCollapsed()) {
-            const nextContentState = Modifier.insertText(contentState, selection, variable.variable);
+            const nextContentState = Modifier.insertText(contentState, selection, variable.variable + ' ');
             nextEditorState = EditorState.push(
                 editorState,
                 nextContentState,
                 'insert-characters'
             );
         } else {
-            const nextContentState = Modifier.replaceText(contentState, selection, variable.variable);
+            const nextContentState = Modifier.replaceText(contentState, selection, variable.variable + ' ');
             nextEditorState = EditorState.push(
                 editorState,
                 nextContentState,
@@ -111,4 +113,36 @@ export default class EmailEdit extends Component<EmailEditProps, EmailEditState>
 
         this.setState({editorState: editorState});
     };
+
+    private variableStrategy = (block: ContentBlock, callback: (start: number, end: number) => void) => {
+        const text = block.getText();
+        let matchArr, start;
+        while ((matchArr = EmailEdit.VARIABLE_REGEX.exec(text)) !== null) {
+            start = matchArr.index;
+            callback(start, start + matchArr[0].length);
+        }
+    };
+
+    private variableSpan = (props: any) => {
+        const index = this.variables.findIndex(variable => variable.variable === props.decoratedText);
+        if (index === -1) {
+            return <span>{props.decoratedText}</span>;
+        }
+
+        return this.renderVariable(this.variables[index]);
+    };
+
+    private editorDecorator = [{
+        strategy: this.variableStrategy,
+        component: this.variableSpan
+    }];
+
+    private renderVariable(variable: EmailVariable, onClick?: () => void) {
+        return (
+            <Button onClick={onClick}
+                    contentEditable={false}>
+                {variable.name}
+            </Button>
+        );
+    }
 }
