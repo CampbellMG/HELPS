@@ -10,16 +10,15 @@ import {
     EmailStateProps
 } from '../../types/components/EmailTypes';
 import {retrieveEmails, updateEmail} from '../../store/actions/EmailActions';
-import ListGroupItem from 'react-bootstrap/ListGroupItem';
-import ListGroup from 'react-bootstrap/ListGroup';
 import {Email, EmailVariable} from '../../types/model/Email';
 import EmailEdit from './EmailEdit';
-import {CompositeDecorator, ContentState, EditorState, ContentBlock, convertToRaw} from 'draft-js';
+import {ContentBlock, ContentState, convertToRaw, EditorState} from 'draft-js';
 import {Editor} from 'react-draft-wysiwyg';
 import {DialogButtons} from '../../types/components/DialogTypes';
 import Dialog from '../dialog/Dialog';
 // @ts-ignore
 import draftToHtml from 'draftjs-to-html';
+import EditorList from '../editorlist/EditorList';
 
 class EmailList extends Component<EmailProps, EmailState> {
 
@@ -78,7 +77,7 @@ class EmailList extends Component<EmailProps, EmailState> {
         }];
 
         this.state = {
-            isEditingText: true,
+            filteredEmails: props.emails,
             editorState: EditorState.createEmpty(),
             dialogVisible: false
         };
@@ -87,7 +86,8 @@ class EmailList extends Component<EmailProps, EmailState> {
     componentWillReceiveProps(nextProps: Readonly<EmailProps>, nextContext: any): void {
         if (!this.state.selectedEmail) {
             this.setState({
-                selectedEmail: nextProps.emails.length > 0 ? nextProps.emails[0] : undefined
+                selectedEmail: nextProps.emails.length > 0 ? nextProps.emails[0] : undefined,
+                filteredEmails: nextProps.emails
             });
         }
     }
@@ -98,51 +98,38 @@ class EmailList extends Component<EmailProps, EmailState> {
 
     render() {
         return (
-            <div className='row h-100 overflow-auto'>
-                <div className='col-lg-2 border-right'>
-                    {this.getEmailList()}
-                </div>
-                <div className='col m-3 d-flex flex-column'>
-                    <EmailEdit email={this.state.selectedEmail}
-                               onContentChanged={this.onEmailContentChanged}/>
-                    <div className='row border w-100 mt-2 flex-fill d-flex p-1'>
-                        <Editor editorState={this.state.editorState}
-                                wrapperClassName='flex-fill'
-                                toolbarHidden
-                                customDecorators={this.previewDecorator}
-                                readOnly/>
-                    </div>
-                </div>
+            <EditorList items={this.state.filteredEmails}
+                        activeItem={this.state.selectedEmail}
+                        onSelect={this.onEmailSelected}
+                        renderEditor={this.renderEmailEditor}
+                        keyExtractor={email => email.id.toString()}
+                        onFilter={this.onEmailsFiltered}
+                        titleExtractor={email => email.title}/>
+        );
+    }
 
-                <Dialog visible={this.state.dialogVisible}
-                        onHidden={() => this.setState({dialogVisible: false})}
-                        title='Are you sure?'
-                        content='You have unsaved changes, do you want discard the current email content?'
-                        buttons={this.dialogButtons}/>
-
+    private renderEmailEditor = () => (
+        <div className='col m-3 d-flex flex-column'>
+            <EmailEdit email={this.state.selectedEmail}
+                       onContentChanged={this.onEmailContentChanged}/>
+            <div className='row border w-100 mt-2 flex-fill d-flex p-1'>
+                <Editor editorState={this.state.editorState}
+                        wrapperClassName='flex-fill'
+                        toolbarHidden
+                        customDecorators={this.previewDecorator}
+                        readOnly/>
             </div>
-        );
-    }
-
-    private getEmailList() {
-        const {emails} = this.props;
-        const {selectedEmail} = this.state;
-
-        return (
-            <ListGroup className='m-3 sticky-top'>
-                {emails.map(email => (
-                    <ListGroupItem onClick={() => this.onEmailSelected(email)}
-                                   style={{cursor: 'pointer'}}
-                                   active={selectedEmail && selectedEmail.id === email.id}>
-                        {email.title}
-                    </ListGroupItem>
-                ))}
-            </ListGroup>
-        );
-    }
+            <Dialog visible={this.state.dialogVisible}
+                    onHidden={() => this.setState({dialogVisible: false})}
+                    title='Are you sure?'
+                    content='You have unsaved changes, do you want discard the current email content?'
+                    buttons={this.dialogButtons}/>
+        </div>
+    );
 
     private onEmailSelected = (email: Email) => {
         const {selectedEmail} = this.state;
+
         if (!selectedEmail || selectedEmail.id === email.id) {
             return;
         }
@@ -153,6 +140,20 @@ class EmailList extends Component<EmailProps, EmailState> {
         }
 
         this.onEmailUpdated(email);
+    };
+
+    private onEmailsFiltered = (filter: string) => {
+        let filteredEmails: Email[];
+
+        if (filter.length > 0) {
+            filteredEmails = this.props.emails.filter(email => {
+                return email.title.toLowerCase().indexOf(filter) !== -1;
+            });
+        } else {
+            filteredEmails = this.props.emails;
+        }
+
+        this.setState({filteredEmails: filteredEmails});
     };
 
     private onEmailUpdated = (newEmail?: Email) => {

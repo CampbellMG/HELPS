@@ -16,8 +16,8 @@ export interface EmailProps extends EmailStateProps, EmailDispatchProps {
 }
 
 export interface EmailState {
+    filteredEmails: Email[]
     selectedEmail?: Email
-    isEditingText: boolean
     editorState: EditorState
     dialogVisible: boolean
 }
