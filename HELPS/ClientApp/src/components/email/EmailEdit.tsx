@@ -3,17 +3,14 @@ import {Component} from 'react';
 import {EmailEditProps, EmailEditState} from '../../types/components/EmailTypes';
 import {Email, EmailVariable} from '../../types/model/Email';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
-import {ContentBlock, ContentState, convertToRaw, EditorState, Modifier} from 'draft-js';
+import {ContentState, EditorState, Modifier} from 'draft-js';
 import {Editor} from 'react-draft-wysiwyg';
 import './EmailEdit.css';
 import Button from 'react-bootstrap/Button';
 // @ts-ignore
-import draftToHtml from 'draftjs-to-html';
-// @ts-ignore
 import htmlToDraft from 'html-to-draftjs';
-import {DialogButtons} from '../../types/components/DialogTypes';
-import Dialog from '../dialog/Dialog';
 import EmailList from './EmailList';
+import {MdSave, MdSend} from 'react-icons/md';
 
 export default class EmailEdit extends Component<EmailEditProps, EmailEditState> {
 
@@ -27,7 +24,10 @@ export default class EmailEdit extends Component<EmailEditProps, EmailEditState>
     private static renderVariable(variable: EmailVariable, onClick?: () => void) {
         return (
             <Button onClick={onClick}
-                    contentEditable={false}>
+                    className='mr-1 ml-1'
+                    contentEditable={false}
+                    size={onClick ? undefined : 'sm'}
+                    disabled={onClick === undefined}>
                 {variable.name}
             </Button>
         );
@@ -89,6 +89,7 @@ export default class EmailEdit extends Component<EmailEditProps, EmailEditState>
             <Editor editorState={this.state.editorState}
                     wrapperClassName='flex-fill'
                     customDecorators={this.editorDecorator}
+                    toolbarCustomButtons={this.renderExtraButtons()}
                     onEditorStateChange={this.onContentUpdated}
                     mention={this.getMentions()}/>
         );
@@ -109,6 +110,23 @@ export default class EmailEdit extends Component<EmailEditProps, EmailEditState>
             )
         };
     }
+
+    private renderExtraButtons() {
+        return [
+            <div className='rdw-remove-wrapper'>
+                <div className='rdw-option-wrapper pl-2 pr-2 text-danger'
+                     onClick={() => {/*todo*/}}>
+                    <MdSend color='red'/>
+                </div>
+            </div>,
+            <div className='rdw-remove-wrapper'>
+                <div className='rdw-option-wrapper pl-2 pr-2 text-success'
+                     onClick={() => this.props.onEmailSaved(this.props.email)}>
+                    <MdSave/>
+                </div>
+            </div>
+        ];
+    };
 
     private onVariableSelected = (variable: EmailVariable) => {
         const {editorState} = this.state;

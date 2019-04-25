@@ -25,6 +25,7 @@ export interface EmailState {
 export interface EmailEditProps {
     email?: Email
     onContentChanged: (editorState: ContentState) => void
+    onEmailSaved: (email?: Email) => void
 }
 
 export interface EmailEditState {
