@@ -76,7 +76,7 @@ export const updateEmail = (email: Email) => async (dispatch: Dispatch<any>) => 
     }
 
     const emailResponse = await fetch(`api/emails/${email.id}`, {
-        method: 'POST',
+        method: 'PUT',
         headers: new Headers({
             'Authorization': `Bearer ${token}`,
             'content-type': 'application/json'

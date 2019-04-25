@@ -4,28 +4,55 @@ import {EmailEditProps, EmailEditState} from '../../types/components/EmailTypes'
 import {Email, EmailVariable} from '../../types/model/Email';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import {ContentBlock, ContentState, convertToRaw, EditorState, Modifier} from 'draft-js';
-// @ts-ignore
-import draftToHtml from 'draftjs-to-html';
 import {Editor} from 'react-draft-wysiwyg';
 import './EmailEdit.css';
 import Button from 'react-bootstrap/Button';
+// @ts-ignore
+import draftToHtml from 'draftjs-to-html';
+// @ts-ignore
+import htmlToDraft from 'html-to-draftjs';
+import {DialogButtons} from '../../types/components/DialogTypes';
+import Dialog from '../dialog/Dialog';
+import EmailList from './EmailList';
 
 export default class EmailEdit extends Component<EmailEditProps, EmailEditState> {
-
-    private static readonly VARIABLE_REGEX = /\[(?:.|\n)*?]/g;
 
     private get variables(): EmailVariable[] {
         return !this.props.email ? [] : this.props.email.variables;
     }
 
+    private originalEmailText: string = '';
+    private readonly editorDecorator: object[];
+
+    private static renderVariable(variable: EmailVariable, onClick?: () => void) {
+        return (
+            <Button onClick={onClick}
+                    contentEditable={false}>
+                {variable.name}
+            </Button>
+        );
+    }
+
     constructor(props: EmailEditProps) {
         super(props);
+
+        this.editorDecorator = [{
+            strategy: EmailList.variableStrategy,
+            component: this.variableSpan
+        }];
 
         this.state = {
             editorState: EditorState.createEmpty()
         };
 
         this.updateEditorState(props.email);
+    }
+
+    componentWillReceiveProps(nextProps: Readonly<EmailEditProps>, nextContext: any): void {
+        if (nextProps.email &&
+            (!this.state.editorState.getCurrentContent().hasText() || nextProps.email.content !== this.originalEmailText)) {
+            return this.updateEditorState(nextProps.email);
+        }
     }
 
     render() {
@@ -37,20 +64,22 @@ export default class EmailEdit extends Component<EmailEditProps, EmailEditState>
                 <div className='col-lg-2 border overflow-auto pt-2 pb-2'>
                     {this.getEmailVariables()}
                 </div>
+
             </div>
         );
     }
 
-    componentWillReceiveProps(nextProps: Readonly<EmailEditProps>, nextContext: any): void {
-        //this.updateEditorState(nextProps.email);
-    }
-
     private updateEditorState(email?: Email) {
         if (email) {
+            const editorState = EditorState.createWithContent(
+                ContentState.createFromBlockArray(htmlToDraft(email.content))
+            );
+
+            this.originalEmailText = email.content;
+            this.props.onContentChanged(editorState.getCurrentContent());
+
             this.setState({
-                editorState: EditorState.createWithContent(
-                    ContentState.createFromText(email.content)
-                )
+                editorState: editorState
             });
         }
     }
@@ -67,7 +96,7 @@ export default class EmailEdit extends Component<EmailEditProps, EmailEditState>
 
     private getEmailVariables() {
         return this.variables.map(variable => (
-            this.renderVariable(variable, () => this.onVariableSelected(variable))
+            EmailEdit.renderVariable(variable, () => this.onVariableSelected(variable))
         ));
     }
 
@@ -86,6 +115,7 @@ export default class EmailEdit extends Component<EmailEditProps, EmailEditState>
         const selection = editorState.getSelection();
         const contentState = editorState.getCurrentContent();
         let nextEditorState = EditorState.createEmpty();
+
         if (selection.isCollapsed()) {
             const nextContentState = Modifier.insertText(contentState, selection, variable.variable + ' ');
             nextEditorState = EditorState.push(
@@ -101,6 +131,7 @@ export default class EmailEdit extends Component<EmailEditProps, EmailEditState>
                 'insert-characters'
             );
         }
+
         this.onContentUpdated(nextEditorState);
     };
 
@@ -114,35 +145,13 @@ export default class EmailEdit extends Component<EmailEditProps, EmailEditState>
         this.setState({editorState: editorState});
     };
 
-    private variableStrategy = (block: ContentBlock, callback: (start: number, end: number) => void) => {
-        const text = block.getText();
-        let matchArr, start;
-        while ((matchArr = EmailEdit.VARIABLE_REGEX.exec(text)) !== null) {
-            start = matchArr.index;
-            callback(start, start + matchArr[0].length);
-        }
-    };
-
     private variableSpan = (props: any) => {
         const index = this.variables.findIndex(variable => variable.variable === props.decoratedText);
         if (index === -1) {
             return <span>{props.decoratedText}</span>;
         }
 
-        return this.renderVariable(this.variables[index]);
+        return EmailEdit.renderVariable(this.variables[index]);
     };
 
-    private editorDecorator = [{
-        strategy: this.variableStrategy,
-        component: this.variableSpan
-    }];
-
-    private renderVariable(variable: EmailVariable, onClick?: () => void) {
-        return (
-            <Button onClick={onClick}
-                    contentEditable={false}>
-                {variable.name}
-            </Button>
-        );
-    }
 }

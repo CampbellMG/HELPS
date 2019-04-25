@@ -19,11 +19,11 @@ export interface EmailState {
     selectedEmail?: Email
     isEditingText: boolean
     editorState: EditorState
+    dialogVisible: boolean
 }
 
 export interface EmailEditProps {
     email?: Email
-    onEmailChanged: (email: Email) => void
     onContentChanged: (editorState: ContentState) => void
 }
 
