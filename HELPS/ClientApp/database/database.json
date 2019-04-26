@@ -1135,5 +1135,24 @@
       "end": "2019-04-16T18:14:48.000Z",
       "studentId": "1"
     }
+  ],
+  "rooms": [
+    {
+      "id": 1,
+      "title": "room 1"
+    },
+    {
+      "id": 2,
+      "title": "room 2"
+    },{
+      "id": 3,
+      "title": "room 3"
+    },{
+      "id": 4,
+      "title": "room 4"
+    },{
+      "id": 4,
+      "title": "room 4"
+    }
   ]
 }

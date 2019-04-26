@@ -1,0 +1,9 @@
+.plus-button {
+    height: 10px;
+    width: 10px;
+}
+
+.right-pad {
+    padding-right: 15px;
+    padding-left: 0px;
+}
