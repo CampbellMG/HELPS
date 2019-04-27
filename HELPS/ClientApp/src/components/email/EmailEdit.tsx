@@ -24,7 +24,7 @@ export default class EmailEdit extends Component<EmailEditProps, EmailEditState>
     private static renderVariable(variable: EmailVariable, onClick?: () => void) {
         return (
             <Button onClick={onClick}
-                    className='mr-1 ml-1'
+                    className='mr-1 ml-1 mb-1'
                     contentEditable={false}
                     size={onClick ? undefined : 'sm'}
                     disabled={onClick === undefined}>
@@ -64,7 +64,6 @@ export default class EmailEdit extends Component<EmailEditProps, EmailEditState>
                 <div className='col-lg-2 border overflow-auto pt-2 pb-2'>
                     {this.getEmailVariables()}
                 </div>
-
             </div>
         );
     }

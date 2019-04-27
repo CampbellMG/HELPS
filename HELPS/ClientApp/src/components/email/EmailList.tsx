@@ -77,18 +77,25 @@ class EmailList extends Component<EmailProps, EmailState> {
         }];
 
         this.state = {
-            filteredEmails: props.emails,
+            filter: '',
             editorState: EditorState.createEmpty(),
             dialogVisible: false
         };
     }
 
     componentWillReceiveProps(nextProps: Readonly<EmailProps>, nextContext: any): void {
-        if (!this.state.selectedEmail) {
-            this.setState({
-                selectedEmail: nextProps.emails.length > 0 ? nextProps.emails[0] : undefined,
-                filteredEmails: nextProps.emails
+        const {selectedEmail} = this.state;
+
+        if (!selectedEmail) {
+            return this.setState({
+                selectedEmail: nextProps.emails.length > 0 ? nextProps.emails[0] : undefined
             });
+        }
+
+        const selectedEmailIndex = nextProps.emails.findIndex(email => email.id === selectedEmail.id);
+
+        if (selectedEmailIndex !== -1) {
+            this.setState({selectedEmail: nextProps.emails[selectedEmailIndex]});
         }
     }
 
@@ -97,13 +104,21 @@ class EmailList extends Component<EmailProps, EmailState> {
     }
 
     render() {
+        let {emails, filter, selectedEmail} = {...this.props, ...this.state};
+
+        if (this.state.filter.length > 0) {
+            emails = emails.filter(email => {
+                return email.title.toLowerCase().indexOf(filter) !== -1;
+            });
+        }
+
         return (
-            <EditorList items={this.state.filteredEmails}
-                        activeItem={this.state.selectedEmail}
+            <EditorList items={emails}
+                        activeItem={selectedEmail}
                         onSelect={this.onEmailSelected}
                         renderEditor={this.renderEmailEditor}
                         keyExtractor={email => email.id.toString()}
-                        onFilter={this.onEmailsFiltered}
+                        onFilter={newFilter => this.setState({filter: newFilter})}
                         titleExtractor={email => email.title}/>
         );
     }
@@ -141,20 +156,6 @@ class EmailList extends Component<EmailProps, EmailState> {
         }
 
         this.onEmailUpdated(email);
-    };
-
-    private onEmailsFiltered = (filter: string) => {
-        let filteredEmails: Email[];
-
-        if (filter.length > 0) {
-            filteredEmails = this.props.emails.filter(email => {
-                return email.title.toLowerCase().indexOf(filter) !== -1;
-            });
-        } else {
-            filteredEmails = this.props.emails;
-        }
-
-        this.setState({filteredEmails: filteredEmails});
     };
 
     private onEmailUpdated = (newEmail?: Email) => {
