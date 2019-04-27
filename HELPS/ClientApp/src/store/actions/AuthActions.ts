@@ -46,13 +46,13 @@ export const login = (username: string, password: string) => async (dispatch: Di
 
     const loginResult = await loginResponse.json();
 
-    if (!loginResponse.ok || !loginResult.access_token) {
+    if (!loginResponse.ok || !loginResult.accessToken) {
         dispatch(loginError(loginResult.message ? loginResult.message : 'Login request failed'));
         return;
     }
 
     // This is a bit sketchy but will work for now
-    localStorage.setItem(LS_STORAGE_KEY, loginResult.access_token);
+    localStorage.setItem(LS_STORAGE_KEY, loginResult.accessToken);
 
     dispatch(receiveLogin());
 
