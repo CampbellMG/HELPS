@@ -26,8 +26,13 @@ export default class NavMenu extends Component<{}> {
                             </Nav.Item>
                         </IndexLinkContainer>
                         <IndexLinkContainer to='/info' className='text-light font-weight-bold link'>
-                            <Nav.Item className='mr-3'>
+                            <Nav.Item className='mr-5'>
                                 Information
+                            </Nav.Item>
+                        </IndexLinkContainer>
+                        <IndexLinkContainer to='/email' className='text-light font-weight-bold link'>
+                            <Nav.Item className='mr-5'>
+                                Email
                             </Nav.Item>
                         </IndexLinkContainer>
                     </ul>

@@ -1,4 +1,4 @@
-import {AuthAction, AuthActionType} from '../../types/store/actions/AuthActionTypes';
+import {AuthAction, AuthActionType} from '../../types/store/AuthActionTypes';
 import {Dispatch} from 'redux';
 import {push} from 'react-router-redux';
 
