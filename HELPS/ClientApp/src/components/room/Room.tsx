@@ -4,11 +4,12 @@ import { connect } from 'react-redux';
 import { ThunkDispatch } from 'redux-thunk';
 import { RoomStateProps, RoomDispatchProps, RoomProps } from '../../types/components/RoomTypes';
 import { AppState } from '../../types/store/StoreTypes';
-import { addRoom, deleteRoom } from '../../store/actions/RoomActions';
+import { addRoom, deleteRoom, getRooms as retrieveRooms } from '../../store/actions/RoomActions';
 import { RoomState } from '../../types/store/reducers/RoomReducerTypes';
 import { BsPrefixProps, ReplaceProps } from 'react-bootstrap/helpers';
 import plus from '../../res/plus.png';
 import './Room.css';
+import { RoomModel } from '../../types/model/Room';
 
 export class Room extends React.Component<RoomProps, RoomState> {
 
@@ -18,6 +19,7 @@ export class Room extends React.Component<RoomProps, RoomState> {
     constructor(props: Readonly<RoomProps>) {
         super(props);
         this.state = { rooms: props.rooms, selectedRoom: props.rooms[0], editing: false };
+        retrieveRooms();
     }
 
     render(): React.ReactNode {
@@ -42,7 +44,7 @@ export class Room extends React.Component<RoomProps, RoomState> {
             <div className='col m-3'>
                 <Form.Control type='text'
                     className='flex-fill'
-                    value={this.state.selectedRoom}
+                    value={this.state.selectedRoom.title}
                     disabled={!this.state.editing}
                     onChange={(e: any) => this.updateSearch(e)}
                 />
@@ -59,9 +61,9 @@ export class Room extends React.Component<RoomProps, RoomState> {
         </div>);
     }
 
-    private addRoom(event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
-        this.props.addRoom(event.currentTarget.innerText);
-    }
+    // private addRoom(event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
+    //     this.props.addRoom(event.currentTarget.innerText);
+    // }
 
     private editOrSaveText(): string {
         return this.state.editing ? Room.SAVE_TEXT : Room.EDIT_TEXT;
@@ -71,7 +73,7 @@ export class Room extends React.Component<RoomProps, RoomState> {
         if (this.state.editing) {
             const confirmSave = confirm(`Confirm action - Change ${this.state.selectedRoom} to ${this.state.newRoomName}`);
             if (confirmSave) {
-                updateRoomName(this.state.selectedRoom, this.state.newRoomName);
+                // updateRoomName(this.state.selectedRoom, this.state.newRoomName);
             }
         }
         this.setState({ editing: !this.state.editing });
@@ -80,7 +82,6 @@ export class Room extends React.Component<RoomProps, RoomState> {
     private deleteRoom() {
         const confirmDelete = confirm(`Confirm action - Delete ${this.state.selectedRoom}`);
         if (confirmDelete) {
-            console.error(this.props);
             this.props.deleteRoom(this.state.selectedRoom);
         }
     }
@@ -89,7 +90,7 @@ export class Room extends React.Component<RoomProps, RoomState> {
         const roomsElements: React.ReactElement[] = [];
         this.props.rooms.forEach((room) => roomsElements.push(
             <ListGroupItem
-                key={room}
+                key={room.id}
                 style={{ cursor: 'pointer' }}
                 active={this.isActive(room)}
                 onClick={() => this.selectRoom(room)}>
@@ -100,12 +101,12 @@ export class Room extends React.Component<RoomProps, RoomState> {
         return roomsElements;
     }
 
-    private selectRoom(room: string) {
+    private selectRoom(room: RoomModel) {
         this.setState({ selectedRoom: room });
     }
 
-    private isActive(roomName: string): boolean {
-        return this.state.selectedRoom === roomName;
+    private isActive(room: RoomModel): boolean {
+        return this.state.selectedRoom.title === room.title;
     }
 
     private updateSearch(event: React.FormEvent<ReplaceProps<'input', BsPrefixProps<'input'> & FormControlProps>>
@@ -119,13 +120,12 @@ export class Room extends React.Component<RoomProps, RoomState> {
 }
 
 const mapStateToProps = (state: AppState): RoomStateProps => {
-    console.error(state);
     return ({ rooms: state.room.rooms });
 };
 
 const mapDispatchToProps = (dispatch: ThunkDispatch<{}, {}, any>): RoomDispatchProps => ({
-    addRoom: (roomName: string) => dispatch(addRoom(roomName)),
-    deleteRoom: (roomName: string) => dispatch(deleteRoom(roomName))
+    addRoom: (room: RoomModel) => dispatch(addRoom(room)),
+    deleteRoom: (room: RoomModel) => dispatch(deleteRoom(room))
 });
 
 export default connect<RoomStateProps, RoomDispatchProps, {}, AppState>(

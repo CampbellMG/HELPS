@@ -35,6 +35,11 @@ export function AuthReducer(state: AuthState = initialState, action: AuthAction)
                 authenticated: false,
                 error: action.payload
             };
+        case AuthActionType.REGISTER_ERROR:
+            return {
+                ...state,
+                error: action.payload
+            };
         default:
             return state;
     }

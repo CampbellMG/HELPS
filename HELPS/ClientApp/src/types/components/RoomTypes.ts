@@ -1,10 +1,12 @@
+import { RoomModel } from '../model/Room';
+
 export interface RoomStateProps {
-    rooms: string[]
+    rooms: RoomModel[]
 }
 
 export interface RoomDispatchProps {
-    addRoom: (roomName: string) => void;
-    deleteRoom: (roomName: string) => void;
+    addRoom: (room: RoomModel) => void;
+    deleteRoom: (room: RoomModel) => void;
 }
 
 export interface RoomProps extends RoomStateProps, RoomDispatchProps {}

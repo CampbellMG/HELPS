@@ -1,6 +1,8 @@
-import {AuthAction, AuthActionType} from '../../types/store/actions/AuthActionTypes';
-import {Dispatch} from 'redux';
-import {push} from 'react-router-redux';
+import { AuthAction, AuthActionType } from '../../types/store/actions/AuthActionTypes';
+import { Dispatch } from 'redux';
+import { push } from 'react-router-redux';
+import { RegisterFields } from '../../types/components/LoginTypes';
+import { isUndefined } from 'util';
 
 const requestLogin = (): AuthAction => ({
     type: AuthActionType.REQUEST_LOGIN
@@ -50,7 +52,7 @@ export const login = (username: string, password: string) => async (dispatch: Di
         headers: new Headers({
             'content-type': 'application/json'
         }),
-        body: JSON.stringify({username, password})
+        body: JSON.stringify({ username, password })
     });
 
     const loginResult = await loginResponse.json();
@@ -73,25 +75,30 @@ export const logout = () => async (dispatch: Dispatch<any>) => {
     dispatch(doLogout());
 };
 
-export const register = (username: string, password: string) => async (dispatch: Dispatch<any>) => {
-
-    console.error(`registering username: ${username}, password: ${password}`);
-
-    const registerResponse = await fetch('api/register', {
-        method: 'POST',
-        headers: new Headers({
-            'content-type': 'application/json'
-        }),
-        body: JSON.stringify({username, password})
-    });
-
-    const result = await registerResponse.json();
-
-    if (!registerResponse.ok) {
-        dispatch(registerError(result.message ? result.message : 'Register failed'));
+export const register = (registerRequest: RegisterFields | undefined) => async (dispatch: Dispatch<any>) => {
+    if (isUndefined(registerRequest)) {
+        dispatch(registerError('Did you properly fill all fields?'));
     } else {
-        dispatch(receiveRegister());
-        dispatch(push('/user'));
+        const registerResponse = await fetch('api/register', {
+            method: 'POST',
+            headers: new Headers({
+                'content-type': 'application/json'
+            }),
+            body: JSON.stringify(registerRequest)
+        });
+
+        const result = await registerResponse.json();
+
+        if (!registerResponse.ok) {
+            dispatch(registerError(result.message ? result.message : 'Register failed'));
+        } else {
+            dispatch(receiveRegister());
+            dispatch(push('/'));
+        }
     }
 
 };
+
+export function fetchToken(): string | null {
+    return localStorage.getItem(LS_STORAGE_KEY);
+}
