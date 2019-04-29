@@ -6,6 +6,7 @@ import WorkshopRegistration from './components/workshops/WorkshopRegistration';
 import Login from './components/login/Login';
 import Info from './components/information/Info';
 import EmailList from './components/email/EmailList';
+import AdvisorsDetailsList from './components/advisors/AdvisorsDetailsList';
 
 export default () => (
     <div className='p-3 h-100'>
@@ -15,6 +16,7 @@ export default () => (
             <Route path='/workshop_registration/' component={WorkshopRegistration}/>
             <Route path='/info/' component={Info}/>
             <Route path='/email' component={EmailList}/>
+            <Route path='/advisors/' component={AdvisorsDetailsList}/>
         </Layout>
     </div>
 );
