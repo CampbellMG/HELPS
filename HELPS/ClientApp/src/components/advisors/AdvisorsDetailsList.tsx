@@ -18,36 +18,15 @@ class AdvisorsDetailsList extends React.Component<InjectedFormProps<Advisor>> {
         </Form.Group>
     );
 
-    /*render() {
-        return (
-            <div className='row h-100 overflow-auto'>
-                <div className='col-sm-2 m-3'>
-                    {this.createSearch()}
-                </div>
-                <div className='ml-n3 pt-0.5 m-3 border-right'>
-                    <Button variant="light">+</Button>
-                </div>
-                <div className='col m-3 my-auto'>
-                    {this.getAdvisorDetails()}
-                </div>
-            </div>
-        );
-    }*/
-
     render() {
         return (
             <div className='row h-100 overflow-auto'>
-                <Container className='col-lg-2 border-right'>
+                <Container className='col-lg-2 mx-3 border-right'>
                     <Row>
-                        <div className='col-lg-10 m-3'>
-                            {this.createSearch()}
-                        </div>
-                        <div className='pt-0.5 ml-n3 m-3'>
-                            <Button variant="light">+</Button>
-                        </div>
+                        {this.createSearch()}
                     </Row>
                     <Row>
-                        <div className='col m-5'>
+                        <div className='col mt-3'>
                             {this.getAdvisors()}
                         </div>
                     </Row>
@@ -61,11 +40,16 @@ class AdvisorsDetailsList extends React.Component<InjectedFormProps<Advisor>> {
 
     private createSearch() {
         return (
-            <Field
-                name='searchAdvisor'
-                component={this.TextInput}
-                type='text'
-                placeholder='Search Advisors'/>
+            <Row className='m-3 flex-fill'>
+                <div className='flex-fill'>
+                    <Field
+                        name='searchAdvisor'
+                        component={this.TextInput}
+                        type='text'
+                        placeholder='Search Advisors'/>
+                </div>
+                <Button className='ml-3 mb-3' variant="light">+</Button>
+            </Row>   
         );
     }
 
