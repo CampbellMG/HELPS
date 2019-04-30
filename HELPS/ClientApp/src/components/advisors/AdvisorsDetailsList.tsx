@@ -1,5 +1,7 @@
 import * as React from 'react';
 import {Component} from 'react';
+import {Dispatch} from 'redux';
+import {connect} from 'react-redux';
 import {Field, InjectedFormProps, reduxForm} from 'redux-form';
 import Form from 'react-bootstrap/Form';
 import { Advisor } from '../../types/model/Advisor';
@@ -7,8 +9,12 @@ import Button from 'react-bootstrap/Button';
 import AdvisorDatabase from '../../../database/database.json'
 import AdvisorsDetailsForm from './AdvisorsDetailsForm'
 import { Container, Col, Row } from 'react-bootstrap';
+import { AdvisorStateProps, AdvisorDispatchProps, AdvisorProps } from '../../types/components/AdvisorTypes';
+import {AppState} from '../../types/store/StoreTypes';
+import { ThunkDispatch } from 'redux-thunk';
+import { retrieveAdvisorList, retrieveAdvisor } from '../../store/actions/AdvisorActions';
 
-class AdvisorsDetailsList extends React.Component<InjectedFormProps<Advisor>> {
+class AdvisorsDetailsList extends Component<AdvisorProps> {
     TextInput = (props: any) => (
         <Form.Group controlId='login'>
             <Form.Control value={props.input.value}
@@ -68,7 +74,18 @@ class AdvisorsDetailsList extends React.Component<InjectedFormProps<Advisor>> {
     }
 }
 
+const mapStateToProps = (state: AppState): AdvisorStateProps => ({
+    authenticated: state.auth.authenticated,
+    advisors: state.advisors.advisors,
+    error:state.advisors.error
+});
 
-export default reduxForm<Advisor>({
-    form: 'searchAdvisor'
-})(AdvisorsDetailsList);
+const mapDispatchToProps = (dispatch: ThunkDispatch<{},{}, any>): AdvisorDispatchProps => ({
+    loadAdvisorList: () => dispatch(retrieveAdvisorList()), //TODO EMPTY FUNCTION
+    loadAdvisorDetails: () => dispatch(retrieveAdvisor()) //TODO EMPTY FUNCTION
+})
+
+export default connect<AdvisorStateProps, AdvisorDispatchProps, {}, AppState>(
+    mapStateToProps,
+    mapDispatchToProps
+)(AdvisorsDetailsList);

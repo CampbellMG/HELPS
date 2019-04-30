@@ -1,6 +1,6 @@
 export interface Advisor {
     id: number,
-    email: string
+    email: string,
     firstName: string,
     lastName: string,
     isActive: boolean
