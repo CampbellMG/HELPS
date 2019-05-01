@@ -7,6 +7,7 @@ import { reducer as reduxFormReducer } from 'redux-form';
 import {UserReducer} from './reducers/UserReducer';
 import {WorkshopReducer} from './reducers/WorkshopReducer';
 import {EmailReducer} from './reducers/EmailReducer';
+import {AdvisorReducer} from './reducers/AdvisorReducer';
 
 export default function configureStore(history: History) {
     const reducers = {
@@ -14,7 +15,8 @@ export default function configureStore(history: History) {
         user: UserReducer,
         email: EmailReducer,
         workshops: WorkshopReducer,
-        form: reduxFormReducer
+        form: reduxFormReducer,
+        advisors: AdvisorReducer
     };
 
     const middleware = [
