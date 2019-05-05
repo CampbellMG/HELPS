@@ -1,7 +1,7 @@
-import { RoomAction, RoomActionTypes } from '../../types/store/actions/RoomActionTypes';
-import { RoomState } from '../../types/store/reducers/RoomReducerTypes';
-import { Reducer } from 'redux';
+import { RoomAction, RoomActionTypes } from '../../types/store/RoomActionTypes';
+import { RoomState } from '../../types/store/RoomReducerTypes';
 import { RoomModel } from '../../types/model/Room';
+import { isUndefined } from 'util';
 
 const room1: RoomModel = { id: 1, title: 'room1' };
 const initialState: RoomState = {
@@ -12,25 +12,41 @@ const initialState: RoomState = {
 };
 
 export function RoomReducer(state: RoomState = initialState, action: RoomAction): RoomState {
-    if (action.roomName) {
-        switch (action.type) {
-            // case (RoomActionTypes.ADD):
-            //     console.error(`adding ${action.roomName}`);
-            //     state.rooms.push(action.roomName);
-            //     return { ...state };
-            // case (RoomActionTypes.DELETE):
-            //     console.error(`deleting ${action.roomName}`);
-            //     state.rooms.forEach((room) => {
-            //         if (room === action.roomName) {
-            //             state.rooms.splice(state.rooms.indexOf(room));
-            //         }
-            //     });
-            //     return { ...state };
-            case (RoomActionTypes.RECEIVE_ROOMS):
-                return { ...state, rooms: state.rooms };
-            default:
-                console.error('failed to reduce room');
+    switch (action.type) {
+        case (RoomActionTypes.ADD):
+            if (isUndefined(action.room)) {
+                return { ...state, error: `Can't add undefined room` };
+            } else {
+                state.rooms.push(action.room);
                 return { ...state };
-        }
-    } else { return state; }
+            }
+        case (RoomActionTypes.DELETE):
+            const roomToDelete = action.room;
+            if (isUndefined(roomToDelete)) {
+                return { ...state, error: `Can't delete undefined room` };
+            } else {
+                state.rooms.forEach((room) => {
+                    if (room.id === room.id) {
+                        state.rooms.splice(state.rooms.indexOf(room));
+                    }
+                });
+                return { ...state };
+            }
+        case (RoomActionTypes.RECEIVE_ROOMS):
+            return { ...state, rooms: state.rooms };
+        case (RoomActionTypes.UPDATE):
+            if (isUndefined(action.room)) {
+                return { ...state, error: `Can't update undefined room` };
+            } else {
+                const roomIndex: number = getRoomIndexById(state, action.room.id);
+                state.rooms.splice(roomIndex, 1, action.room);
+                return state;
+            }
+        default:
+            return state;
+    }
 }
+
+const getRoomIndexById = (state: RoomState, roomId: number) =>
+    state.rooms.findIndex((room) => room.id === roomId);
+    

@@ -1,18 +1,20 @@
-import {History} from 'history';
-import {AuthReducer} from './reducers/AuthReducer';
+import { History } from 'history';
+import { AuthReducer } from './reducers/AuthReducer';
 import thunk from 'redux-thunk';
-import {routerMiddleware, routerReducer} from 'react-router-redux';
-import {applyMiddleware, combineReducers, compose, createStore} from 'redux';
+import { routerMiddleware, routerReducer } from 'react-router-redux';
+import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
 import { reducer as reduxFormReducer } from 'redux-form';
-import {UserReducer} from './reducers/UserReducer';
-import {WorkshopReducer} from './reducers/WorkshopReducer';
+import { UserReducer } from './reducers/UserReducer';
+import { WorkshopReducer } from './reducers/WorkshopReducer';
 import { RoomReducer } from './reducers/RoomReducer';
+import { EmailReducer } from './reducers/EmailReducer';
 
 export default function configureStore(history: History) {
     const reducers = {
         auth: AuthReducer,
         room: RoomReducer,
         user: UserReducer,
+        email: EmailReducer,
         workshops: WorkshopReducer,
         form: reduxFormReducer
     };

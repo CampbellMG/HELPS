@@ -1,11 +1,16 @@
-import {AuthState} from './reducers/AuthReducerTypes';
-import {UserState} from './reducers/UserReducerTypes';
-import {WorkshopState} from './reducers/WorkshopReducerTypes';
-import { RoomState } from './reducers/RoomReducerTypes';
+import { AuthState } from './AuthReducerTypes';
+import { UserState } from './UserReducerTypes';
+import { WorkshopState } from './WorkshopReducerTypes';
+import { EmailState } from './EmailReducerTypes';
+import { MessageState } from './MessageReducerTypes';
+import { RoomState } from './RoomReducerTypes';
 
 export interface AppState {
     auth: AuthState,
     user: UserState,
-    workshops: WorkshopState,
-    room: RoomState
+    room: RoomState;
+    email: EmailState
+    workshops: WorkshopState
+    message: MessageState
+
 }

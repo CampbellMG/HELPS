@@ -312,22 +312,47 @@ const email  = {
         },
         variables: {
             type: "array",
-            minItems: 5,
-            maxItems: 20,
+            minItems: 1,
+            maxItems: 2,
             items: {
                 type: "object",
-                required: [
-                    "variable",
-                    "example"
-                ],
-                properties: {
-                    variable: {
-                        type: "string"
+                enum: [
+                    {
+                        name: 'Student Given Name',
+                        variable: '[%student_givenname%]',
+                        example: 'Steve'
                     },
-                    example: {
-                        type: "string"
+                    {
+                        name: 'Student Surname',
+                        variable: '[%student_surname%]',
+                        example: 'Smith'
+                    },
+                    {
+                        name: 'Campus',
+                        variable: '[%campus%]',
+                        example: 'Ultimo'
+                    },
+                    {
+                        name: 'Lecturer Email',
+                        variable: '[%lecturer_email%]',
+                        example: 'Steve.Smith@test.com'
+                    },
+                    {
+                        name: 'Date',
+                        variable: '[%date%]',
+                        example: '12 July 2019'
+                    },
+                    {
+                        name: 'Start Time',
+                        variable: '[%start_time%]',
+                        example: '11:15 am'
+                    },
+                    {
+                        name: 'End Time',
+                        variable: '[%end_time%]',
+                        example: '12:30 pm'
                     }
-                }
+                ]
             }
         }
     }

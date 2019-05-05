@@ -1,5 +1,5 @@
-import {WorkshopState} from '../../types/store/reducers/WorkshopReducerTypes';
-import {WorkshopAction, WorkshopActionType} from '../../types/store/actions/WorkshopActionTypes';
+import {WorkshopState} from '../../types/store/WorkshopReducerTypes';
+import {WorkshopAction, WorkshopActionType} from '../../types/store/WorkshopActionTypes';
 
 const initialState: WorkshopState = {
     isLoading: false,

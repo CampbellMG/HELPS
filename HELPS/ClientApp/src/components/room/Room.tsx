@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { ThunkDispatch } from 'redux-thunk';
 import { RoomStateProps, RoomDispatchProps, RoomProps } from '../../types/components/RoomTypes';
 import { AppState } from '../../types/store/StoreTypes';
-import { addRoom, deleteRoom, getRooms as retrieveRooms } from '../../store/actions/RoomActions';
+import { addRoom, deleteRoom, fetchRooms } from '../../store/actions/RoomActions';
 import { RoomState } from '../../types/store/reducers/RoomReducerTypes';
 import { BsPrefixProps, ReplaceProps } from 'react-bootstrap/helpers';
 import plus from '../../res/plus.png';
@@ -19,7 +19,7 @@ export class Room extends React.Component<RoomProps, RoomState> {
     constructor(props: Readonly<RoomProps>) {
         super(props);
         this.state = { rooms: props.rooms, selectedRoom: props.rooms[0], editing: false };
-        retrieveRooms();
+        fetchRooms();
     }
 
     render(): React.ReactNode {
@@ -94,7 +94,7 @@ export class Room extends React.Component<RoomProps, RoomState> {
                 style={{ cursor: 'pointer' }}
                 active={this.isActive(room)}
                 onClick={() => this.selectRoom(room)}>
-                {room}
+                {room.title}
             </ListGroupItem>
         ));
 

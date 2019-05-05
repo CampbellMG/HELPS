@@ -1,5 +1,5 @@
-import {AuthState} from '../../types/store/reducers/AuthReducerTypes';
-import {AuthAction, AuthActionType} from '../../types/store/actions/AuthActionTypes';
+import {AuthState} from '../../types/store/AuthReducerTypes';
+import {AuthAction, AuthActionType} from '../../types/store/AuthActionTypes';
 
 const initialState: AuthState = {
     isAuthenticating: false,

@@ -7,7 +7,8 @@ import Login from './components/login/Login';
 import Info from './components/information/Info';
 import Register from './components/register/Register';
 import Room from './components/room/Room';
-// import Message from './components/message/Message';
+import Message from './components/message/Message';
+import EmailList from './components/email/EmailList';
 
 export default () => (
     <div className='p-3 h-100'>
@@ -17,8 +18,13 @@ export default () => (
             <Route path='/workshop_registration/' component={WorkshopRegistration} />
             <Route path='/info/' component={Info} />
             <Route path='/register/' component={Register} />
-            {/* <Route path='/message/' component={Message} /> */} 
+            <Route path='/message/' component={Message} />
             <Route path='/room/' component={Room} />
+            <Route exact path='/' component={Login}/>
+            <Route path='/user/' component={User}/>
+            <Route path='/workshop_registration/' component={WorkshopRegistration}/>
+            <Route path='/info/' component={Info}/>
+            <Route path='/email' component={EmailList}/>
         </Layout>
     </div>
 );

@@ -2,14 +2,14 @@ import { connect } from 'react-redux';
 import { ThunkDispatch } from 'redux-thunk';
 import * as React from 'react';
 import { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 import LoginForm from './LoginForm';
 import { AppState } from '../../types/store/StoreTypes';
 import { login, logout } from '../../store/actions/AuthActions';
 import { HomeDispatchProps, HomeProps, HomeStateProps, LoginFields } from '../../types/components/LoginTypes';
 import uts from '../../res/uts.png';
 import './Login.css';
-import { Link } from 'react-router-dom';
-import { Button } from 'react-bootstrap';
 
 class Login extends Component<HomeProps> {
 
