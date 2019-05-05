@@ -102,3 +102,12 @@ export const register = (registerRequest: RegisterFields | undefined) => async (
 export function fetchToken(): string | null {
     return localStorage.getItem(LS_STORAGE_KEY);
 }
+
+export const NO_TOKEN_MESSAGE: string = 'No token, have you authenticated?';
+
+export const fetchWithAuthHeader = (token: string, path: string): Promise<Response> =>
+    fetch(path, {
+        headers: new Headers({
+            'Authorization': `Bearer ${token}`
+        })
+    });

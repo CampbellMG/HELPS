@@ -2,9 +2,10 @@ import { Component, ReactElement } from 'react';
 import { connect } from 'react-redux';
 import { AppState } from '../../types/store/StoreTypes';
 import { InputGroup, Form, ListGroup } from 'react-bootstrap';
-import { MessageStateProps, MessageDispatchProps } from '../../types/components/MessageTypes';
+import { MessageStateProps, MessageDispatchProps, MessageProps } from '../../types/components/MessageTypes';
+import { ListGroupItem } from 'react-bootstrap';
 
-export class Message extends Component {
+export class Message extends Component<MessageProps> {
     render(): React.ReactNode {
         return (<div><div className='col-lg-2 border-right'>
             <div>
@@ -26,17 +27,25 @@ export class Message extends Component {
     }
 
     private updateSearch(e: any): void {
-        const messageElements: ReactElement[] = [];
-        this.
     }
 
     private makeMessagesDisplayList(): ReactElement[] {
-        return [];
+        const messageElements: ReactElement[] = [];
+        this.props.messages.forEach((message) => {
+            messageElements.push(<ListGroupItem
+                key={message.id}>
+            {message.title}
+            </ListGroupItem>);
+        });
+        return messageElements;
     }
 }
 
-const mapStateToProps = (state: AppState) => { messages: state.message.message };
+const mapStateToProps = (state: AppState): MessageStateProps => ({ messages: state.message.messages });
+
+const mapDispatchToProps = () => ({});
 
 export default connect<MessageStateProps, MessageDispatchProps, any, AppState>({
-    mapStateToProps
+    mapStateToProps,
+    mapDispatchToProps
 } as any)(Message);

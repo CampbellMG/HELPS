@@ -5,11 +5,11 @@ import { ThunkDispatch } from 'redux-thunk';
 import { RoomStateProps, RoomDispatchProps, RoomProps } from '../../types/components/RoomTypes';
 import { AppState } from '../../types/store/StoreTypes';
 import { addRoom, deleteRoom, fetchRooms } from '../../store/actions/RoomActions';
-import { RoomState } from '../../types/store/reducers/RoomReducerTypes';
 import { BsPrefixProps, ReplaceProps } from 'react-bootstrap/helpers';
 import plus from '../../res/plus.png';
 import './Room.css';
 import { RoomModel } from '../../types/model/Room';
+import { RoomState } from '../../types/store/RoomReducerTypes';
 
 export class Room extends React.Component<RoomProps, RoomState> {
 
@@ -71,7 +71,7 @@ export class Room extends React.Component<RoomProps, RoomState> {
 
     private editOrSave(): void {
         if (this.state.editing) {
-            const confirmSave = confirm(`Confirm action - Change ${this.state.selectedRoom} to ${this.state.newRoomName}`);
+            const confirmSave = confirm(`Confirm action - Change ${this.state.oldRoomName} to ${this.state.selectedRoom.title}`);
             if (confirmSave) {
                 // updateRoomName(this.state.selectedRoom, this.state.newRoomName);
             }
