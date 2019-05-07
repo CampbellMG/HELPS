@@ -1,5 +1,5 @@
-import {AuthState} from '../../types/store/reducers/AuthReducerTypes';
-import {AuthAction, AuthActionType} from '../../types/store/actions/AuthActionTypes';
+import {AuthState} from '../../types/store/AuthReducerTypes';
+import {AuthAction, AuthActionType} from '../../types/store/AuthActionTypes';
 
 const initialState: AuthState = {
     isAuthenticating: false,
@@ -8,6 +8,13 @@ const initialState: AuthState = {
 
 export function AuthReducer(state: AuthState = initialState, action: AuthAction) {
     switch (action.type) {
+        case AuthActionType.LOGOUT:
+            return {
+                ...state,
+                isAuthenticating: false,
+                authenticated: false,
+                error: undefined
+            };
         case AuthActionType.REQUEST_LOGIN:
             return {
                 ...state,

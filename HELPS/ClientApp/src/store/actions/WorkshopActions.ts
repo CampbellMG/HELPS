@@ -1,6 +1,6 @@
 import {Dispatch} from 'redux';
 import {LS_STORAGE_KEY} from './AuthActions';
-import {WorkshopAction, WorkshopActionType} from '../../types/store/actions/WorkshopActionTypes';
+import {WorkshopAction, WorkshopActionType} from '../../types/store/WorkshopActionTypes';
 import {Workshop} from '../../types/model/Workshop';
 
 const requestWorkshops = (): WorkshopAction => ({
@@ -27,6 +27,15 @@ const bookUserWorkshop = (): WorkshopAction => ({
 
 const receiveBookWorkshop = (workShops: Workshop[]): WorkshopAction => ({
     type: WorkshopActionType.RECEIVE_BOOK_WORKSHOP,
+    payload: workShops
+});
+
+const cancelUserWorkshop = (): WorkshopAction => ({
+    type: WorkshopActionType.CANCEL_WORKSHOP
+});
+
+const receiveCancelkWorkshop = (workShops: Workshop[]): WorkshopAction => ({
+    type: WorkshopActionType.RECEIVE_CANEL_WORKSHOP,
     payload: workShops
 });
 
@@ -99,7 +108,6 @@ export const retrieveUserWorkshops = () => async (dispatch: Dispatch<any>) => {
 
 export const bookWorkshop = (workshop: Workshop) => async (dispatch: Dispatch<any>) => {
     dispatch(bookUserWorkshop());
-    console.log(JSON.stringify(workshop));
 
     const token = localStorage.getItem(LS_STORAGE_KEY);
 
@@ -127,6 +135,40 @@ export const bookWorkshop = (workshop: Workshop) => async (dispatch: Dispatch<an
     try {
         const workshops = await getUserWorkshops(token);
         dispatch(receiveBookWorkshop(workshops));
+    } catch (e) {
+        dispatch(workshopError(e.message));
+    }
+};
+
+export const cancelWorkshop = (workshop: Workshop) => async (dispatch: Dispatch<any>) => {
+    dispatch(cancelUserWorkshop());
+
+    const token = localStorage.getItem(LS_STORAGE_KEY);
+
+    if (token === null) {
+        dispatch(workshopError('No token, have you authenticated?'));
+        return;
+    }
+
+    // TODO - Fix this api endpoint, temporary for the client meeting
+    const deleteResponse = await fetch(`api/studentWorkshops/${workshop.id}`, {
+        method: 'DELETE',
+        headers: new Headers({
+            'Authorization': `Bearer ${token}`,
+            'content-type': 'application/json'
+        })
+    });
+
+    const deleteResult = await deleteResponse.json();
+
+    if (!deleteResponse.ok) {
+        dispatch(workshopError(deleteResult.message ? deleteResult.message : 'Book workshop failed'));
+        return;
+    }
+
+    try {
+        const workshops = await getUserWorkshops(token);
+        dispatch(receiveCancelkWorkshop(workshops));
     } catch (e) {
         dispatch(workshopError(e.message));
     }

@@ -4,7 +4,8 @@ import {AdminWorkshopAction, AdminWorkshopActionType} from '../../types/store/ac
 
 const initialState: AdminWorkshopState = {
     workshops: [],
-    skills: []
+    skills: [],
+    isCurrent: true
 };
 
 export function AdminWorkshopReducer(state: AdminWorkshopState = initialState, action: AdminWorkshopAction): AdminWorkshopState {
@@ -12,6 +13,17 @@ export function AdminWorkshopReducer(state: AdminWorkshopState = initialState, a
         case AdminWorkshopActionType.ADD_SKILL:
             return {
                 ...state,
+                skills: action.payload
+            };
+        case AdminWorkshopActionType.SHOW_ARCHIVED:
+            return {
+                ...state,
+                isCurrent: false
+            };
+        case AdminWorkshopActionType.SHOW_CURRENT:
+            return {
+                ...state,
+                isCurrent: true
             };
         default:
             return state;

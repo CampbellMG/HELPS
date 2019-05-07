@@ -1,5 +1,5 @@
 import {Dispatch} from 'redux';
-import {UserAction, UserActionType} from '../../types/store/actions/UserActionTypes';
+import {UserAction, UserActionType} from '../../types/store/UserActionTypes';
 import {Student} from '../../types/model/Student';
 import {LS_STORAGE_KEY} from './AuthActions';
 
@@ -16,6 +16,37 @@ const userError = (message: string): UserAction => ({
     type: UserActionType.USER_ERROR,
     payload: message
 });
+
+export const updateUser = (user: Student) => async (dispatch: Dispatch<any>) => {
+    dispatch(requestUser());
+
+    const token = localStorage.getItem(LS_STORAGE_KEY);
+
+    if (token === null) {
+        dispatch(userError('No token, have you authenticated?'));
+        return;
+    }
+
+    const userResponse = await fetch('api/students', {
+        method: 'PUT',
+        headers: new Headers({
+            'Authorization': `Bearer ${token}`,
+            'content-type': 'application/json'
+        }),
+        body: JSON.stringify(user)
+    });
+
+    const userResult = await userResponse.json();
+
+    if (!userResponse.ok || !userResult.id || !userResult.name) {
+        dispatch(userError(userResult.message ? userResult.message : 'Update request failed'));
+        return;
+    }
+
+    const student = userResult as Student;
+
+    dispatch(receiveUser(student));
+};
 
 export const retrieveUser = () => async (dispatch: Dispatch<any>) => {
     dispatch(requestUser());
@@ -36,7 +67,7 @@ export const retrieveUser = () => async (dispatch: Dispatch<any>) => {
     const userResult = await userResponse.json();
 
     if (!userResponse.ok || !userResult.id || !userResult.name) {
-        dispatch(userError(userResult.message ? userResult.message : 'Login request failed'));
+        dispatch(userError(userResult.message ? userResult.message : 'Retrieve user request failed'));
         return;
     }
 

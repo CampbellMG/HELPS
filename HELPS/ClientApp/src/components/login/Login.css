@@ -1,0 +1,25 @@
+.logo-wrapper {
+    position: absolute;
+    border: 3px #DC001A solid;
+    height: 250px;
+    width: 250px;
+    top: 25%;
+    left: 50%;
+    background-size: cover;
+    transform: translate(-50%, -50%);
+    background: white;
+    border-radius: 50%;
+}
+
+.logo {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.login-container {
+    border-radius: 20px;
+}

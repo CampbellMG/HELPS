@@ -1,5 +1,5 @@
-import {UserState} from '../../types/store/reducers/UserReducerTypes';
-import {UserAction, UserActionType} from '../../types/store/actions/UserActionTypes';
+import {UserState} from '../../types/store/UserReducerTypes';
+import {UserAction, UserActionType} from '../../types/store/UserActionTypes';
 
 const initialState: UserState = {
     isLoading: false

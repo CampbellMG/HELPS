@@ -8,4 +8,8 @@ export interface Workshop {
 
 export interface Skill {
     skillName: string
+    room: string,
+    targetGroup: string,
+    description: string,
+    availablePlaces: number
 }

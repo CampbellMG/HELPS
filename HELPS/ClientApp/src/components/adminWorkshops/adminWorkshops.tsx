@@ -48,12 +48,11 @@ class AdminWorkshops extends Component{
     }
 
     isCurrent = () => {
-    //if state isCurrent === true
-        return( 
-            <text>CURRENT!!!</text>
-        )
-           
-        
+        if(this.isCurrent === true){
+            return( 
+                <text>CURRENT!!!</text>
+            )
+        }
     }
     render() {
        
@@ -72,31 +71,31 @@ class AdminWorkshops extends Component{
                     </FormGroup>
                     
                 </Form>
-              <text>Skill-sets:</text>
-              <div>
-                <Input type="radio" name="radioSelect"/>
-                <text>Improve your writing</text>
-                <Input type="textarea" rows="1" name="shortTitle"/>
-                <Button onClick={() => this.setWorkshops()} >Set Workshops</Button>
-              </div>
-              <div>
-                <Button>Update</Button>
-                <Button>Archive</Button>
-              </div>
+                <text>Skill-sets:</text>
+                <div>
+                    <Input type="radio" name="radioSelect"/>
+                    <text>Improve your writing</text>
+                    <Input type="textarea" rows="1" name="shortTitle"/>
+                    <Button onClick={() => this.setWorkshops()} >Set Workshops</Button>
+                </div>
+                <div>
+                    <Button>Update</Button>
+                    <Button>Archive</Button>
+                </div>
             </Container>
         );
     }
 }
 
 const mapStateToProps = (state: AppState): AdminWorkshopStateProps => ({
-    //workshops:
-    //isCurrent:
-   //skills
+    workshops: state.admin.workshops,
+    isCurrent: state.admin.isCurrent,
+    skills: state.admin.skills
 });
 
+
 const mapDispatchToProps = (dispatch: Dispatch<{}>): AdminWorkshopDispatchProps => ({
-    //addSKill: () => dispatch(addSkill()),
-   
+    addSKill: () => dispatch(addSkill()),
 });
 
 export default connect<AdminWorkshopStateProps, AdminWorkshopDispatchProps, {}, AppState>(

@@ -101,7 +101,8 @@
     "semicolon": [
       true,
       "always",
-      "ignore-interfaces"
+      "ignore-interfaces",
+      "ignore-bound-class-methods"
     ],
     "variable-name": [
       true,
