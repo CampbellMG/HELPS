@@ -39,7 +39,7 @@ export const getExistingSession = () => async (dispatch: Dispatch<any>) => {
 
     if (token !== null) {
         dispatch(receiveLogin());
-        dispatch(push('/user'));
+        // dispatch(push('/user'));
         return;
     }
 };

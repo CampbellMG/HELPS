@@ -5,7 +5,7 @@ export interface MessageStateProps {
 }
 
 export interface MessageDispatchProps {
-
+    fetchMessages: () => void;
 }
 
 export interface MessageProps extends MessageStateProps, MessageDispatchProps {}

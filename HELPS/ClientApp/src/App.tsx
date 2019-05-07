@@ -13,10 +13,6 @@ import EmailList from './components/email/EmailList';
 export default () => (
     <div className='p-3 h-100'>
         <Layout>
-            <Route exact path='/' component={Login} />
-            <Route path='/user/' component={User} />
-            <Route path='/workshop_registration/' component={WorkshopRegistration} />
-            <Route path='/info/' component={Info} />
             <Route path='/register/' component={Register} />
             <Route path='/message/' component={Message} />
             <Route path='/room/' component={Room} />

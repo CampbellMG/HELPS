@@ -8,6 +8,7 @@ import { UserReducer } from './reducers/UserReducer';
 import { WorkshopReducer } from './reducers/WorkshopReducer';
 import { RoomReducer } from './reducers/RoomReducer';
 import { EmailReducer } from './reducers/EmailReducer';
+import { MessageReducer } from './reducers/MessageReducer';
 
 export default function configureStore(history: History) {
     const reducers = {
@@ -16,7 +17,8 @@ export default function configureStore(history: History) {
         user: UserReducer,
         email: EmailReducer,
         workshops: WorkshopReducer,
-        form: reduxFormReducer
+        form: reduxFormReducer,
+        message: MessageReducer
     };
 
     const middleware = [
