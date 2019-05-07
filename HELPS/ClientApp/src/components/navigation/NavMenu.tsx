@@ -53,6 +53,11 @@ export default class NavMenu extends Component<any, any> {
                                         User
                                     </NavLink>
                                 </NavItem>
+                                <NavItem>
+                                    <NavLink tag={Link} className='text-dark' to='/admin_workshops'>
+                                        Admin Workshops
+                                    </NavLink>
+                                </NavItem>
                             </ul>
                         </Collapse>
                     </Container>
