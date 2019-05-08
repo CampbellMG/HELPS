@@ -30,3 +30,11 @@ export const fetchMessages = () => async (dispatch: Dispatch<any>) => {
         }
     }
 };
+
+export const updateMessage = (message: MessageModel) => async (dispatch: Dispatch<any>) => {
+    console.error('updating message');
+};
+
+export const deleteMessage = (id: number) => async (dispatch: Dispatch<any>) => {
+    console.error('deleting message of id ' + id);
+};

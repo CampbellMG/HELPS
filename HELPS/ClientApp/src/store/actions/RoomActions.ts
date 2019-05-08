@@ -67,17 +67,16 @@ export const deleteRoom = (room: RoomModel) => async (dispatch: Dispatch<any>) =
     }
 };
 
-export const updateRoomName = (roomId: number, newName: string | undefined) => async (dispatch: Dispatch<RoomAction>) => {
+export const updateRoomName = (room: RoomModel) => async (dispatch: Dispatch<RoomAction>) => {
     const token = fetchToken();
 
     if (token === null) {
         dispatch(roomError(NO_TOKEN_MESSAGE));
-    } else if (newName === undefined) {
-        dispatch(roomError(`Failed to update room - can't set name to undefined`));
+    } else if (room === undefined) {
+        dispatch(roomError(`Failed to update room - room undefined`));
     } else {
 
-        const room: RoomModel = { id: roomId, title: newName };
-        const updateNameResponse = await fetch(`${API_ROOM_PATH}/${roomId}`, {
+        const updateNameResponse = await fetch(`${API_ROOM_PATH}/${room.id}`, {
             method: 'PUT',
             headers: new Headers({
                 'Authorization': `Bearer ${token}`

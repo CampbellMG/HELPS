@@ -3,7 +3,9 @@ import { MessageAction, MessageActionTypes } from '../../types/store/MessageActi
 import { isUndefined } from 'util';
 
 const initialState: MessageState = {
-    messages: []
+    messages: [],
+    selectedMessage: {} as any,
+    editing: false
 };
 
 export function MessageReducer(state: MessageState = initialState, action: MessageAction): MessageState {

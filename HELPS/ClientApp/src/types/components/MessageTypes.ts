@@ -6,6 +6,8 @@ export interface MessageStateProps {
 
 export interface MessageDispatchProps {
     fetchMessages: () => void;
+    updateMessage: (message: MessageModel) => void;
+    deleteMessage: (messageId: number) => void;
 }
 
 export interface MessageProps extends MessageStateProps, MessageDispatchProps {}
