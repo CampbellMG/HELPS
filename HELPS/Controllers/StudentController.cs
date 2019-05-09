@@ -9,6 +9,7 @@ using AppContext = System.AppContext;
 namespace HELPS.Controllers
 {
     [Route("api/[controller]")]
+    //Initial commit comment
     public class StudentController : Controller
     {
         private readonly HelpsContext _context;
