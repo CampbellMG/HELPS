@@ -52,20 +52,19 @@ export class Message extends Component<MessageProps, MessageState> {
                     </ListGroup>
                 </div>
 
-                <div className='col m-3'>
-
-                    {this.getInputFieldsIfLoaded()}
-
-                    <div className='row'>
-                        <div className='col-lg-3 col-lg-offset-3'>
+                <div className='col-lg-10'>
+                    <div className='row justify-content-center'>
+                        <div className='col-lg-5'>
+                            {this.getInputFieldsIfLoaded()}
                             {this.renderEditButtons()}
-                            <Button onClick={(e: any) => this.deleteMessage(e)} className='w-100 mt-4'>
+                            <Button onClick={(e: any) => this.deleteMessage(e)} className='w-100 mt-2'>
                                 Delete
                     </Button>
                         </div>
+
                     </div>
 
-                    <div className='row'>
+                    <div className='row mt-2'>
                         <div className='col m-10'>
                             <div className='d-flex h-100 justify-content-center'>
                                 <div className='shadow h-100 login-container'>
@@ -99,7 +98,7 @@ export class Message extends Component<MessageProps, MessageState> {
         if (this.props.isLoaded) {
             return <div><Form.Control
                 type='text'
-                className='flex-fill'
+                className='flex-fill mt-4'
                 value={this.props.newMessage.title}
                 disabled={!this.props.editing}
                 onChange={(e: any) => this.editMessage(e, 'title')}
@@ -107,7 +106,7 @@ export class Message extends Component<MessageProps, MessageState> {
 
                 <Form.Control
                     as='textarea'
-                    className='flex-fill'
+                    className='flex-fill mt-2'
                     value={this.props.newMessage.content}
                     disabled={!this.props.editing}
                     onChange={(e: any) => this.editMessage(e, 'content')}
