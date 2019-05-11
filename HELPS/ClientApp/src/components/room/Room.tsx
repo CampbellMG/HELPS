@@ -26,7 +26,7 @@ export class Room extends React.Component<RoomProps, RoomState> {
             <div className='row h-100 overflow-auto'>
                 <div className='col-lg-2 border-right'>
                     <div>
-                        <InputGroup className='align-self-stretch d-flex pb-3 sticky-top right-pad'>
+                        <InputGroup className='align-self-stretch d-flex pb-3 sticky-top'>
                             <Form.Control type='text'
                                 className='flex-fill'
                                 placeholder='Search...'

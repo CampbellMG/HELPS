@@ -37,7 +37,7 @@ class Login extends Component<HomeProps> {
 
     private onLogin = (loginFields: LoginFields) => {
         this.props.login(loginFields.username, loginFields.password);
-    }
+    };
 }
 
 const mapStateToProps = (state: AppState): HomeStateProps => ({
