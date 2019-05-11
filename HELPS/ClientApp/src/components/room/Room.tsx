@@ -10,7 +10,8 @@ import plus from '../../res/plus.png';
 import './Room.css';
 import { RoomModel } from '../../types/model/Room';
 import { RoomState } from '../../types/store/RoomReducerTypes';
-import { getEditOrSaveText, editOrSave } from '../../types/util/Editable';
+import { getEditOrSaveText, editOrSave, deleteEntity } from '../../types/util/Editable';
+import { NOOP } from '../../types/util/Util';
 
 export class Room extends React.Component<RoomProps, RoomState> {
 
@@ -66,18 +67,15 @@ export class Room extends React.Component<RoomProps, RoomState> {
 
     private editOrSave(): void {
         editOrSave(
-            this.state,
+            this.props,
             `Edit Room Title`,
             () => updateRoomName(this.state.selectedRoom),
-            this.setState.bind(this)
+            NOOP
         );
     }
 
     private deleteRoom() {
-        const confirmDelete = confirm(`Confirm action - Delete ${this.state.selectedRoom}`);
-        if (confirmDelete) {
-            this.props.deleteRoom(this.state.selectedRoom);
-        }
+        deleteEntity('Room', (room: RoomModel) => this.props.deleteRoom(room), () => this.state.selectedRoom);
     }
 
     private makeRoomsDisplayList(): React.ReactElement[] {
@@ -114,7 +112,10 @@ export class Room extends React.Component<RoomProps, RoomState> {
 }
 
 const mapStateToProps = (state: AppState): RoomStateProps => {
-    return ({ rooms: state.room.rooms });
+    return ({
+        rooms: state.room.rooms,
+        editing: state.room.editing
+    });
 };
 
 const mapDispatchToProps = (dispatch: ThunkDispatch<{}, {}, any>): RoomDispatchProps => ({

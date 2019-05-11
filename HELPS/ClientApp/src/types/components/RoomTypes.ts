@@ -1,6 +1,7 @@
 import { RoomModel } from '../model/Room';
+import { Editable } from '../util/Editable';
 
-export interface RoomStateProps {
+export interface RoomStateProps extends Editable {
     rooms: RoomModel[]
 }
 

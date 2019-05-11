@@ -7,18 +7,25 @@ export function getEditOrSaveText<S extends Editable>(state: S): string {
 }
 
 export const editOrSave = <S extends Editable>(
-    state: S,
+    props: S,
     actionName: string,
     save: () => void,
-    setState: (editing: Editable) => void
+    callback: () => void
 ): void => {
-    if (state.editing) {
+    if (props.editing) {
         const confirmSave = confirm(`Confirm action - ${actionName}`);
         if (confirmSave) {
             save();
         }
     }
-    setState({ editing: !state.editing });
+    callback();
+};
+
+export const deleteEntity = <S>(entityType: string, doDelete: (item: S) => void, fetchItem: () => S) => {
+    const confirmDelete = confirm(`Confirm action - Delete ${entityType}`);
+    if (confirmDelete) {
+        doDelete(fetchItem());
+    }
 };
 
 const EDIT_TEXT: string = 'Edit',
