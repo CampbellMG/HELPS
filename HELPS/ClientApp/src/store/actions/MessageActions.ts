@@ -78,6 +78,7 @@ export const deleteMessage = (id: number) => async (dispatch: Dispatch<any>) => 
         });
         if (deleteResponse.ok) {
             alert('Message deleted successfully');
+            fetchMessages();
         } else {
             const errorMessage = await deleteResponse.text();
             dispatch(messageError(`Failed to delete message: ${errorMessage}`));

@@ -97,21 +97,28 @@ export class Message extends Component<MessageProps, MessageState> {
 
     private getInputFieldsIfLoaded = (): JSX.Element => {
         if (this.props.isLoaded) {
-            return <div><Form.Control
-                type='text'
-                className='flex-fill mt-4'
-                value={this.props.newMessage.title}
-                disabled={!this.props.editing}
-                onChange={(e: any) => this.editMessage(e, 'title')}
-            />
+            return <div>
+                <Form.Group controlId='formTitle'>
+                    <Form.Label className='mt-4'>Title</Form.Label>
+                    <Form.Control
+                        type='text'
+                        className='flex-fill'
+                        value={this.props.newMessage.title}
+                        disabled={!this.props.editing}
+                        onChange={(e: any) => this.editMessage(e, 'title')}
+                    />
+                </Form.Group>
+                <Form.Group controlId='formContent'>
+                    <Form.Label className='mt-1'>Message Content</Form.Label>
 
-                <Form.Control
-                    as='textarea'
-                    className='flex-fill mt-2'
-                    value={this.props.newMessage.content}
-                    disabled={!this.props.editing}
-                    onChange={(e: any) => this.editMessage(e, 'content')}
-                /></div>;
+                    <Form.Control
+                        as='textarea'
+                        className='flex-fill'
+                        value={this.props.newMessage.content}
+                        disabled={!this.props.editing}
+                        onChange={(e: any) => this.editMessage(e, 'content')}
+                    />
+                </Form.Group></div>;
         } else {
             return <div></div>;
         }
