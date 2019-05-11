@@ -11,7 +11,7 @@ import './Room.css';
 import { RoomModel } from '../../types/model/Room';
 import { RoomState } from '../../types/store/RoomReducerTypes';
 import { getEditOrSaveText, editOrSave, deleteEntity } from '../../types/util/Editable';
-import { NOOP } from '../../types/util/Util';
+import { NOOP } from '../../util';
 
 export class Room extends React.Component<RoomProps, RoomState> {
 

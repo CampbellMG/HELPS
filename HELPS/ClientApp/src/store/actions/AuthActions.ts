@@ -85,18 +85,15 @@ export const register = (registerRequest: RegisterFields | undefined) => async (
                 'content-type': 'application/json'
             }),
             body: JSON.stringify(registerRequest)
-        });
+        }).then((response) => response.json());
 
-        const result = await registerResponse.json();
-
-        if (!registerResponse.ok) {
-            dispatch(registerError(result.message ? result.message : 'Register failed'));
+        if (registerResponse.ok) {
+            alert('Registration success!');
+            push('/');
         } else {
-            dispatch(receiveRegister());
-            dispatch(push('/'));
+            alert('Register failed: ' + registerResponse.statusText);
         }
     }
-
 };
 
 export function fetchToken(): string | null {

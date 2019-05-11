@@ -2,6 +2,7 @@ import { Dispatch } from 'redux';
 import { MessageModel } from '../../types/model/Message';
 import { MessageActionTypes, MessageAction } from '../../types/store/MessageActionTypes';
 import { fetchToken, NO_TOKEN_MESSAGE, fetchWithAuthHeader } from './AuthActions';
+import { fetchRequest as fetchJson } from '../../util';
 
 const receiveMessages = (messages: MessageModel[]): MessageAction => ({
     type: MessageActionTypes.RECEIVE_MESSAGES,
@@ -20,7 +21,11 @@ const receiveMessages = (messages: MessageModel[]): MessageAction => ({
         type: MessageActionTypes.EDIT_MESSAGE,
         message
     }),
-    cancelOrCommenceEditPayload = () => ({ type: MessageActionTypes.CANCEL_OR_COMMENCE_EDIT_MESSAGE });
+    cancelOrCommenceEditPayload = () => ({ type: MessageActionTypes.CANCEL_OR_COMMENCE_EDIT_MESSAGE }),
+    saveMessagePayload = (message: MessageModel) => ({
+        type: MessageActionTypes.SAVE_MESSAGE,
+        message
+    });
 
 export const fetchMessages = () => async (dispatch: Dispatch<any>) => {
 
@@ -41,7 +46,23 @@ export const fetchMessages = () => async (dispatch: Dispatch<any>) => {
 };
 
 export const saveMessage = (message: MessageModel) => async (dispatch: Dispatch<any>) => {
-    console.error('saving message');
+    const token = fetchToken();
+    if (token === null) {
+        dispatch(messageError(NO_TOKEN_MESSAGE));
+    } else {
+        const saveResponse = await fetchJson(
+            'api/messages',
+            'POST',
+            token,
+            message,
+            true
+        );
+        if (saveResponse.ok) {
+            dispatch(saveMessagePayload(message));
+        } else {
+            dispatch(messageError('Failed to save message: ' + saveResponse.statusText));
+        }
+    }
 };
 
 export const deleteMessage = (id: number) => async (dispatch: Dispatch<any>) => {

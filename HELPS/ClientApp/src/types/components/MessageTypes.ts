@@ -5,6 +5,7 @@ export interface MessageStateProps extends Editable {
     messages: MessageModel[];
     selectedMessage: MessageModel;
     newMessage: MessageModel;
+    isLoaded: boolean;
 }
 
 export interface MessageDispatchProps {

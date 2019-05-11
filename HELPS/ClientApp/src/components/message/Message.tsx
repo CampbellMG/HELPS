@@ -34,9 +34,6 @@ export class Message extends Component<MessageProps, MessageState> {
     }
 
     render(): ReactNode {
-        const messageContent: string = this.props.selectedMessage.title;
-        console.error(messageContent);
-
         return (
             <div className='row h-100 overflow-auto'>
                 <div className='col-lg-2 border-right'>
@@ -57,21 +54,7 @@ export class Message extends Component<MessageProps, MessageState> {
 
                 <div className='col m-3'>
 
-                    <Form.Control
-                        type='text'
-                        className='flex-fill'
-                        value={this.props.newMessage.title}
-                        disabled={!this.props.editing}
-                        onChange={(e: any) => this.editMessage(e, 'title')}
-                    />
-
-                    <Form.Control
-                        as='textarea'
-                        className='flex-fill'
-                        value={this.props.newMessage.content}
-                        disabled={!this.props.editing}
-                        onChange={(e: any) => this.editMessage(e, 'content')}
-                    />
+                    {this.getInputFieldsIfLoaded()}
 
                     <div className='row'>
                         <div className='col-lg-3 col-lg-offset-3'>
@@ -93,6 +76,7 @@ export class Message extends Component<MessageProps, MessageState> {
                     </div>
                 </div >
             </div >);
+
     }
 
     private renderEditButtons = () => {
@@ -112,21 +96,22 @@ export class Message extends Component<MessageProps, MessageState> {
     }
 
     private getInputFieldsIfLoaded = (): JSX.Element => {
-        if (this.state.isLoaded) {
-            return (<div><Form.Control
+        if (this.props.isLoaded) {
+            return <div><Form.Control
                 type='text'
                 className='flex-fill'
-                defaultValue={this.props.selectedMessage.title}
+                value={this.props.newMessage.title}
                 disabled={!this.props.editing}
                 onChange={(e: any) => this.editMessage(e, 'title')}
             />
+
                 <Form.Control
                     as='textarea'
                     className='flex-fill'
-                    defaultValue={this.props.selectedMessage.content}
+                    value={this.props.newMessage.content}
                     disabled={!this.props.editing}
                     onChange={(e: any) => this.editMessage(e, 'content')}
-                /></div>);
+                /></div>;
         } else {
             return <div></div>;
         }
@@ -147,10 +132,7 @@ export class Message extends Component<MessageProps, MessageState> {
     }
 
     private editMessage<S extends keyof MessageModel>(e: any, property: S): void {
-        const newMessage = this.props.newMessage;
-        newMessage[property] = e.target.value;
-        this.props.editMessage(newMessage);
-        // this.render();
+        this.props.editMessage(Object.assign({}, this.props.newMessage, { [property]: e.target.value }));
     }
 
     private deleteMessage(e: any): void {
@@ -191,7 +173,8 @@ const mapStateToProps = (state: AppState): MessageStateProps => {
         messages: state.message.messages,
         selectedMessage: state.message.selectedMessage,
         newMessage: state.message.newMessage,
-        editing: state.message.editing
+        editing: state.message.editing,
+        isLoaded: state.message.isLoaded
     };
 };
 

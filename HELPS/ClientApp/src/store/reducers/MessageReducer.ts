@@ -36,11 +36,12 @@ export function MessageReducer(state: MessageState = initialState, action: Messa
             }
         case (MessageActionTypes.EDIT_MESSAGE):
             if (isUndefined(action.message)) {
-                return errorState(state, 'Failed to edit undefined message');
+                return errorState(state, 'Failed to reduce editing of undefined message');
             } else {
+                console.error(action.message);
                 return {
                     ...state,
-                    newMessage: Object.assign({}, action.message)
+                    newMessage: action.message
                 };
             }
         case (MessageActionTypes.CANCEL_OR_COMMENCE_EDIT_MESSAGE):
@@ -54,6 +55,21 @@ export function MessageReducer(state: MessageState = initialState, action: Messa
                     ...state,
                     editing: true
                 });
+        case (MessageActionTypes.SAVE_MESSAGE):
+            if (isUndefined(action.message)) {
+                return errorState(state, 'Failed to edit undefined message');
+            } else {
+                console.error(action.message);
+                const message = action.message;
+                state.messages
+                    .filter((listMessage) => listMessage.id === message.id)
+                    .map((_matchedMessage) => message);
+                return {
+                    ...state,
+                    selectedMessage: message,
+                    newMessage: message
+                };
+            }
         default:
             return state;
     }
