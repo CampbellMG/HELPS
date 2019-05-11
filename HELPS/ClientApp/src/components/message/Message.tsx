@@ -31,6 +31,7 @@ export class Message extends Component<MessageProps, MessageState> {
             messages: mockMessages,
             isLoaded: false
         };
+        this.props.fetchMessages();
     }
 
     render(): ReactNode {
@@ -64,10 +65,10 @@ export class Message extends Component<MessageProps, MessageState> {
 
                     </div>
 
-                    <div className='row mt-2'>
-                        <div className='col m-10'>
+                    <div className='row mt-5 h-25 justify-content-center'>
+                        <div className='w-50'>
                             <div className='d-flex h-100 justify-content-center'>
-                                <div className='shadow h-100 login-container'>
+                                <div className='shadow h-100 w-100 login-container'>
                                     <p dangerouslySetInnerHTML={{ __html: this.props.newMessage.content }} />
                                 </div>
                             </div>
@@ -81,10 +82,10 @@ export class Message extends Component<MessageProps, MessageState> {
     private renderEditButtons = () => {
         return this.props.editing ?
             (<div>
-                <Button onClick={(e: any) => this.props.cancelOrCommenceEdit()} className='w-50 mt-4'>
+                <Button onClick={(e: any) => this.props.cancelOrCommenceEdit()} className='w-50 mt-4 p-1'>
                     Cancel
                 </Button>
-                <Button onClick={(e: any) => this.editOrSave()} className='w-50 mt-4' disabled={this.editOrSaveIsDisabled()}>
+                <Button onClick={(e: any) => this.editOrSave()} className='w-50 mt-4 p-1' disabled={this.editOrSaveIsDisabled()}>
                     {getEditOrSaveText(this.props)}
                 </Button>
             </div>) :

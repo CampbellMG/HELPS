@@ -31,7 +31,8 @@ export function MessageReducer(state: MessageState = initialState, action: Messa
                 return {
                     ...state,
                     selectedMessage: action.message,
-                    newMessage: Object.assign({}, action.message)
+                    newMessage: Object.assign({}, action.message),
+                    editing: false
                 };
             }
         case (MessageActionTypes.EDIT_MESSAGE):
