@@ -3,6 +3,10 @@ export interface LoginFields {
     password: string
 }
 
+export interface RegisterFields extends LoginFields {
+    isAdmin: boolean;
+}
+
 export interface HomeStateProps {
     authenticated: boolean,
     error?: string
