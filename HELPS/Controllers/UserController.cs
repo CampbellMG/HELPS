@@ -2,12 +2,13 @@
 using Microsoft.AspNetCore.Authorization;
 using HELPS.Services;
 using HELPS.Models;
+using System.Collections.Generic;
 
 namespace HELPS.Controllers
 {
     [Authorize]
     [ApiController]
-    [Route("api/[controller]")] //change route to desired
+    [Route("api/login")] 
     public class UsersController : ControllerBase
     {
         private IUserService _userService;
@@ -24,11 +25,14 @@ namespace HELPS.Controllers
             var user = _userService.Authenticate(userParam.Username, userParam.Password);
 
             if (user == null)
-                return BadRequest(new { message = "Username or password is incorrect" });
+                return Unauthorized();
 
-            return Ok(user);
+            var returndata = new { acessToken = user.Token, isAdmin = user.admin };
+            return Ok(returndata);
         }
 
+
+        //for testing only
         [HttpGet]
         public IActionResult GetAll()
         {

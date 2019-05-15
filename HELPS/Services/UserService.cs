@@ -22,7 +22,7 @@ namespace HELPS.Services
         // users hardcoded for simplicity, store in a db with hashed passwords
         private List<User> _users = new List<User>
         {
-            new User { Id = 1, FirstName = "Test", LastName = "User", Username = "test", Password = "test" }
+            new User { Id = 1, FirstName = "Test", LastName = "User", Username = "test", Password = "test", admin = false }
         };
 
         private readonly AppSettings _appSettings;
@@ -32,6 +32,7 @@ namespace HELPS.Services
             _appSettings = appSettings.Value;
         }
 
+        //remember to attach is the user is an admin when registering.
         public User Authenticate(string username, string password)
         {
             var user = _users.SingleOrDefault(x => x.Username == username && x.Password == password);
@@ -60,6 +61,8 @@ namespace HELPS.Services
 
             return user;
         }
+
+        //this is for testing purposes
 
         public IEnumerable<User> GetAll()
         {
