@@ -32,7 +32,7 @@ const registerError = (message: string): AuthAction => ({
 });
 
 export const LS_STORAGE_KEY = 'id_token';
-export const LS_ADMIN_KEY = 'id_token';
+export const LS_ADMIN_KEY = 'id_admin';
 
 export const getExistingSession = () => async (dispatch: Dispatch<any>) => {
     dispatch(requestLogin());

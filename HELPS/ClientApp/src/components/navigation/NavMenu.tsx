@@ -17,7 +17,6 @@ class NavMenu extends Component<NavMenuProps> {
 
     render() {
         const menuItems = this.props.isAdmin ? AdminMenu : StudentMenu;
-        console.log(menuItems);
         return (
             <header className='nav-menu'>
                 <Navbar className='navbar-custom d-flex shadow'>
