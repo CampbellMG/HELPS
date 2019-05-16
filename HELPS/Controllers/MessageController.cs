@@ -9,20 +9,20 @@ using AppContext = System.AppContext;
 namespace HELPS.Controllers
 {
     [Route("api/[controller]")]
-
-    public class StudentController : Controller
+    //The Message class
+    public class MessageController : Controller
     {
         private readonly HelpsContext _context;
 
-        public StudentController(HelpsContext context)
+        public MessageController(HelpsContext context)
         {
             _context = context;
         }
 
         [HttpGet("[action]")]
-        public List<Student> Students()
+        public List<Message> Messages()
         {
-            return _context.Students.ToList();
+            return _context.Messages.ToList();
         }
         
     }
