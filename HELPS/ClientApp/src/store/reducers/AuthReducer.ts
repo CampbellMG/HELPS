@@ -3,7 +3,8 @@ import {AuthAction, AuthActionType} from '../../types/store/AuthActionTypes';
 
 const initialState: AuthState = {
     isAuthenticating: false,
-    authenticated: false
+    authenticated: false,
+    isAdmin: false
 };
 
 export function AuthReducer(state: AuthState = initialState, action: AuthAction): AuthState {
@@ -26,7 +27,8 @@ export function AuthReducer(state: AuthState = initialState, action: AuthAction)
             return {
                 ...state,
                 isAuthenticating: false,
-                authenticated: true
+                authenticated: true,
+                isAdmin: action.payload
             };
         case AuthActionType.LOGIN_ERROR:
             return {

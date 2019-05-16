@@ -8,8 +8,9 @@ const requestLogin = (): AuthAction => ({
     type: AuthActionType.REQUEST_LOGIN
 });
 
-const receiveLogin = (): AuthAction => ({
-    type: AuthActionType.RECEIVE_LOGIN
+const receiveLogin = (isAdmin: boolean): AuthAction => ({
+    type: AuthActionType.RECEIVE_LOGIN,
+    payload: isAdmin
 });
 
 const doLogout = (): AuthAction => ({
@@ -31,14 +32,16 @@ const registerError = (message: string): AuthAction => ({
 });
 
 export const LS_STORAGE_KEY = 'id_token';
+export const LS_ADMIN_KEY = 'id_token';
 
 export const getExistingSession = () => async (dispatch: Dispatch<any>) => {
     dispatch(requestLogin());
 
     const token = localStorage.getItem(LS_STORAGE_KEY);
+    const isAdmin = localStorage.getItem(LS_ADMIN_KEY) == '1';
 
     if (token !== null) {
-        dispatch(receiveLogin());
+        dispatch(receiveLogin(isAdmin));
         // dispatch(push('/user')); // locally I have this line commented out because it breaks things. WS
         return;
     }
@@ -64,8 +67,9 @@ export const login = (username: string, password: string) => async (dispatch: Di
 
     // This is a bit sketchy but will work for now
     localStorage.setItem(LS_STORAGE_KEY, loginResult.accessToken);
+    localStorage.setItem(LS_ADMIN_KEY, loginResult.isAdmin ? '1' : '0');
 
-    dispatch(receiveLogin());
+    dispatch(receiveLogin(loginResult.isAdmin));
 
     dispatch(push('/user'));
 };

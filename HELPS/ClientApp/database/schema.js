@@ -158,7 +158,7 @@ const student = {
 
 const user = {
     type: "object",
-    required: ["id", "username", "password"],
+    required: ["id", "username", "password", "isAdmin"],
     properties: {
         id: {
             type: "integer",
@@ -172,6 +172,9 @@ const user = {
         password: {
             type: "string",
             faker: "internet.password"
+        },
+        isAdmin: {
+            type: "boolean"
         }
     }
 };
