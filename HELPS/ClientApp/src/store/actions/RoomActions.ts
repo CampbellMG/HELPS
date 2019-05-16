@@ -1,7 +1,7 @@
 import { RoomActionTypes, RoomAction } from '../../types/store/RoomActionTypes';
 import { Dispatch } from 'react';
 import { fetchToken } from './AuthActions';
-import { RoomModel } from '../../types/model/Room';
+import { Room } from '../../types/model/Room';
 
 const NO_TOKEN_MESSAGE: string = 'No token, have you authenticated?',
     API_ROOM_PATH = `api/rooms`;
@@ -11,12 +11,12 @@ const roomError = (message: string): RoomAction => ({
     error: message
 });
 
-const receiveRooms = (rooms: RoomModel[]): RoomAction => ({
+const receiveRooms = (rooms: Room[]): RoomAction => ({
     type: RoomActionTypes.RECEIVE_ROOMS,
     rooms
 });
 
-const updateRoom = (room: RoomModel): RoomAction => ({
+const updateRoom = (room: Room): RoomAction => ({
     type: RoomActionTypes.UPDATE,
     room
 });
@@ -34,7 +34,7 @@ export const fetchRooms = () => async (dispatch: Dispatch<RoomAction>) => {
         });
 
         if (roomsResponse.ok) {
-            const rooms: RoomModel[] = await roomsResponse.json();
+            const rooms: Room[] = await roomsResponse.json();
             dispatch(receiveRooms(rooms));
         } else {
             const text: string = await roomsResponse.text();
@@ -43,10 +43,10 @@ export const fetchRooms = () => async (dispatch: Dispatch<RoomAction>) => {
     }
 };
 
-export const addRoom = (room: RoomModel) =>
+export const addRoom = (room: Room) =>
     async (dispatch: Dispatch<any>) => dispatch({ type: RoomActionTypes.ADD, room });
 
-export const deleteRoom = (room: RoomModel) => async (dispatch: Dispatch<any>) => {
+export const deleteRoom = (room: Room) => async (dispatch: Dispatch<any>) => {
     const token = fetchToken();
     if (token === null) {
         dispatch(roomError(NO_TOKEN_MESSAGE));
@@ -67,7 +67,7 @@ export const deleteRoom = (room: RoomModel) => async (dispatch: Dispatch<any>) =
     }
 };
 
-export const updateRoomName = (room: RoomModel) => async (dispatch: Dispatch<RoomAction>) => {
+export const updateRoomName = (room: Room) => async (dispatch: Dispatch<RoomAction>) => {
     const token = fetchToken();
 
     if (token === null) {

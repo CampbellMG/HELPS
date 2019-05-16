@@ -10,15 +10,13 @@ import {EditorListProps} from '../../types/components/EditorListTypes';
 export default class EditorList<T> extends Component<EditorListProps<T>> {
 
     render() {
-        const {renderEditor, activeItem} = this.props;
-
         return (
             <div className='row h-100 overflow-auto'>
                 <div className='col-lg-2 border-right'>
                     {this.renderList()}
                 </div>
                 <div className='col m-3 d-flex flex-column'>
-                    {renderEditor(activeItem)}
+                    {this.props.children}
                 </div>
             </div>
         );

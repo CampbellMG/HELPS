@@ -1,13 +1,13 @@
-import { RoomModel } from '../model/Room';
+import { Room } from '../model/Room';
 import { Editable } from '../util/Editable';
 
 export interface RoomStateProps extends Editable {
-    rooms: RoomModel[]
+    rooms: Room[]
 }
 
 export interface RoomDispatchProps {
-    addRoom: (room: RoomModel) => void;
-    deleteRoom: (room: RoomModel) => void;
+    addRoom: (room: Room) => void;
+    deleteRoom: (room: Room) => void;
 }
 
 export interface RoomProps extends RoomStateProps, RoomDispatchProps {}

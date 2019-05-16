@@ -116,32 +116,31 @@ class EmailList extends Component<EmailProps, EmailState> {
             <EditorList items={emails}
                         activeItem={selectedEmail}
                         onSelect={this.onEmailSelected}
-                        renderEditor={this.renderEmailEditor}
                         keyExtractor={email => email.id.toString()}
                         onFilter={newFilter => this.setState({filter: newFilter})}
-                        titleExtractor={email => email.title}/>
+                        titleExtractor={email => email.title}>
+
+                <div className='col m-3 d-flex flex-column'>
+                    <EmailEdit email={this.state.selectedEmail}
+                               onEmailSaved={this.onEmailUpdated}
+                               onContentChanged={this.onEmailContentChanged}/>
+                    <div className='row border w-100 mt-2 flex-fill d-flex p-1'>
+                        <Editor editorState={this.state.editorState}
+                                wrapperClassName='flex-fill'
+                                toolbarHidden
+                                customDecorators={this.previewDecorator}
+                                readOnly/>
+                    </div>
+                    <Dialog visible={this.state.dialogVisible}
+                            onHidden={() => this.setState({dialogVisible: false})}
+                            title='Are you sure?'
+                            content='You have unsaved changes, do you want discard the current email content?'
+                            buttons={this.dialogButtons}/>
+                </div>
+
+            </EditorList>
         );
     }
-
-    private renderEmailEditor = () => (
-        <div className='col m-3 d-flex flex-column'>
-            <EmailEdit email={this.state.selectedEmail}
-                       onEmailSaved={this.onEmailUpdated}
-                       onContentChanged={this.onEmailContentChanged}/>
-            <div className='row border w-100 mt-2 flex-fill d-flex p-1'>
-                <Editor editorState={this.state.editorState}
-                        wrapperClassName='flex-fill'
-                        toolbarHidden
-                        customDecorators={this.previewDecorator}
-                        readOnly/>
-            </div>
-            <Dialog visible={this.state.dialogVisible}
-                    onHidden={() => this.setState({dialogVisible: false})}
-                    title='Are you sure?'
-                    content='You have unsaved changes, do you want discard the current email content?'
-                    buttons={this.dialogButtons}/>
-        </div>
-    );
 
     private onEmailSelected = (email: Email) => {
         const {selectedEmail} = this.state;
