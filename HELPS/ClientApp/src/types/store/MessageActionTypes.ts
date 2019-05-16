@@ -1,9 +1,9 @@
-import { MessageModel } from '../model/Message';
+import { Message } from '../model/Message';
 
 export interface MessageAction {
     type: MessageActionTypes;
-    messages?: MessageModel[];
-    message?: MessageModel;
+    messages?: Message[];
+    message?: Message;
     payload?: any;
 }
 

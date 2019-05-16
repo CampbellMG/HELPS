@@ -1,10 +1,10 @@
 import { Dispatch } from 'redux';
-import { MessageModel } from '../../types/model/Message';
+import { Message } from '../../types/model/Message';
 import { MessageActionTypes, MessageAction } from '../../types/store/MessageActionTypes';
 import { fetchToken, NO_TOKEN_MESSAGE, fetchWithAuthHeader } from './AuthActions';
 import { fetchRequest as fetchJson } from '../../util';
 
-const receiveMessages = (messages: MessageModel[]): MessageAction => ({
+const receiveMessages = (messages: Message[]): MessageAction => ({
     type: MessageActionTypes.RECEIVE_MESSAGES,
     messages: messages
 }),
@@ -13,16 +13,16 @@ const receiveMessages = (messages: MessageModel[]): MessageAction => ({
         payload: error
     }),
     MESSAGES_PATH = 'api/messages',
-    selectMessagePayload = (message: MessageModel) => ({
+    selectMessagePayload = (message: Message) => ({
         type: MessageActionTypes.SELECT_MESSAGE,
         message
     }),
-    editMessagePayload = (message: MessageModel) => ({
+    editMessagePayload = (message: Message) => ({
         type: MessageActionTypes.EDIT_MESSAGE,
         message
     }),
     cancelOrCommenceEditPayload = () => ({ type: MessageActionTypes.CANCEL_OR_COMMENCE_EDIT_MESSAGE }),
-    saveMessagePayload = (message: MessageModel) => ({
+    saveMessagePayload = (message: Message) => ({
         type: MessageActionTypes.SAVE_MESSAGE,
         message
     });
@@ -45,7 +45,7 @@ export const fetchMessages = () => async (dispatch: Dispatch<any>) => {
     }
 };
 
-export const saveMessage = (message: MessageModel) => async (dispatch: Dispatch<any>) => {
+export const saveMessage = (message: Message) => async (dispatch: Dispatch<any>) => {
     const token = fetchToken();
     if (token === null) {
         dispatch(messageError(NO_TOKEN_MESSAGE));
@@ -87,10 +87,10 @@ export const deleteMessage = (id: number) => async (dispatch: Dispatch<any>) => 
     console.error('deleting message of id ' + id);
 };
 
-export const selectMessage = (message: MessageModel) => async (dispatch: Dispatch<any>) =>
+export const selectMessage = (message: Message) => async (dispatch: Dispatch<any>) =>
     dispatch(selectMessagePayload(message));
 
-export const editMessage = (message: MessageModel) => async (dispatch: Dispatch<any>) =>
+export const editMessage = (message: Message) => async (dispatch: Dispatch<any>) =>
     dispatch(editMessagePayload(message));
 
 export const cancelOrCommenceEdit = () => async (dispatch: Dispatch<any>) =>

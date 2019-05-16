@@ -6,15 +6,15 @@ import WorkshopRegistration from './components/workshops/WorkshopRegistration';
 import Login from './components/login/Login';
 import Info from './components/information/Info';
 import Register from './components/register/Register';
-import Message from './components/message/Message';
 import EmailList from './components/email/EmailList';
 import RoomEdit from "./components/room/RoomEdit";
+import MessageEdit from "./components/message/MessageEdit";
 
 export default () => (
     <div className='p-3 h-100'>
         <Layout>
             <Route path='/register/' component={Register} />
-            <Route path='/message/' component={Message} />
+            <Route path='/message/' component={MessageEdit} />
             <Route path='/room/' component={RoomEdit} />
             <Route exact path='/' component={Login}/>
             <Route path='/user/' component={User}/>

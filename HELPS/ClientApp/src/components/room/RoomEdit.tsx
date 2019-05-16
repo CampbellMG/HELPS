@@ -29,6 +29,7 @@ class RoomEdit extends React.Component<RoomProps, RoomState> {
                         onSelect={room => this.selectRoom(room)}
                         keyExtractor={room => room.id.toString()}
                         titleExtractor={room => room.title}>
+
                 <div className='col m-3'>
 
                     <Form.Control type='text'
@@ -47,6 +48,7 @@ class RoomEdit extends React.Component<RoomProps, RoomState> {
                     </div>
 
                 </div>
+
             </EditorList>
         );
     }
