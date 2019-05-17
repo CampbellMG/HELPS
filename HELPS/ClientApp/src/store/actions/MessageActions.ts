@@ -19,7 +19,6 @@ const receiveMessages = (messages: MessageModel[]): MessageAction => ({
     });
 
 export const fetchMessages = () => async (dispatch: Dispatch<any>) => {
-    console.error('fetching');
     const token = fetchToken();
     if (token === null) {
         dispatch(messageError(NO_TOKEN_MESSAGE));

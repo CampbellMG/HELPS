@@ -5,7 +5,6 @@ import { ThunkDispatch } from 'redux-thunk';
 import { RoomStateProps, RoomDispatchProps, RoomProps } from '../../types/components/RoomTypes';
 import { AppState } from '../../types/store/StoreTypes';
 import { deleteRoom, fetchRooms, updateRoomName, selectRoom } from '../../store/actions/RoomActions';
-import './Room.css';
 import { RoomModel } from '../../types/model/Room';
 import { RoomState } from '../../types/store/RoomReducerTypes';
 import { editOrSave, deleteEntity, renderEditButtons, getHiddenProperty } from '../../types/util/Editable';

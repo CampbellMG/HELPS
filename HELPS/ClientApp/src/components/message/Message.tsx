@@ -1,4 +1,4 @@
-import { Component, ReactElement, ReactNode } from 'react';
+import { Component, ReactNode } from 'react';
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { AppState } from '../../types/store/StoreTypes';

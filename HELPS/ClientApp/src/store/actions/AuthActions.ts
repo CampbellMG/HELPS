@@ -85,11 +85,9 @@ export const register = (registerRequest: RegisterFields | undefined) => async (
                 'content-type': 'application/json'
             }),
             body: JSON.stringify(registerRequest)
-        }).then((response) => response.json());
-
+        });
         if (registerResponse.ok) {
-            alert('Registration success!');
-            push('/');
+            dispatch(push('/user'));
         } else {
             alert('Register failed: ' + registerResponse.statusText);
         }
