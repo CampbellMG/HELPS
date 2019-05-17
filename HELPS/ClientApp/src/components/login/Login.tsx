@@ -1,14 +1,15 @@
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
+import { ThunkDispatch } from 'redux-thunk';
 import * as React from 'react';
-import {Component} from 'react';
+import { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 import LoginForm from './LoginForm';
-import {AppState} from '../../types/store/StoreTypes';
-import {Dispatch} from 'redux';
-import {login, logout} from '../../store/actions/AuthActions';
-import {HomeDispatchProps, HomeProps, HomeStateProps, LoginFields} from '../../types/components/LoginTypes';
+import { AppState } from '../../types/store/StoreTypes';
+import { login, logout } from '../../store/actions/AuthActions';
+import { HomeDispatchProps, HomeProps, HomeStateProps, LoginFields } from '../../types/components/LoginTypes';
 import uts from '../../res/uts.png';
 import './Login.css';
-import {ThunkDispatch} from 'redux-thunk';
 
 class Login extends Component<HomeProps> {
 
@@ -22,10 +23,11 @@ class Login extends Component<HomeProps> {
                 <div className='align-self-center w-50 h-50'>
                     <div className='shadow bg-white d-flex h-100 justify-content-center flex-column login-container'>
                         <div className='logo-wrapper'>
-                            <img src={uts} className='logo' alt='UTS Logo' width='30%'/>
+                            <img src={uts} className='logo' alt='UTS Logo' width='30%' />
                         </div>
                         <div className='align-self-center w-50 mt-5'>
-                            <LoginForm onSubmit={this.onLogin}/>
+                            <LoginForm onSubmit={this.onLogin} />
+                            <Link to='register/'><Button className='w-100 mt-4'>Register</Button></Link>
                         </div>
                     </div>
                 </div>

@@ -6,7 +6,7 @@ const initialState: AuthState = {
     authenticated: false
 };
 
-export function AuthReducer(state: AuthState = initialState, action: AuthAction) {
+export function AuthReducer(state: AuthState = initialState, action: AuthAction): AuthState {
     switch (action.type) {
         case AuthActionType.LOGOUT:
             return {
@@ -33,6 +33,11 @@ export function AuthReducer(state: AuthState = initialState, action: AuthAction)
                 ...state,
                 isAuthenticating: false,
                 authenticated: false,
+                error: action.payload
+            };
+        case AuthActionType.REGISTER_ERROR:
+            return {
+                ...state,
                 error: action.payload
             };
         default:

@@ -1,6 +1,8 @@
-import {AuthAction, AuthActionType} from '../../types/store/AuthActionTypes';
-import {Dispatch} from 'redux';
-import {push} from 'react-router-redux';
+import { AuthAction, AuthActionType } from '../../types/store/AuthActionTypes';
+import { Dispatch } from 'redux';
+import { push } from 'react-router-redux';
+import { RegisterFields } from '../../types/components/LoginTypes';
+import { isUndefined } from 'util';
 
 const requestLogin = (): AuthAction => ({
     type: AuthActionType.REQUEST_LOGIN
@@ -19,6 +21,15 @@ const loginError = (message: string): AuthAction => ({
     payload: message
 });
 
+const receiveRegister = (): AuthAction => ({
+    type: AuthActionType.RECEIVE_REGISTER
+});
+
+const registerError = (message: string): AuthAction => ({
+    type: AuthActionType.REGISTER_ERROR,
+    payload: message
+});
+
 export const LS_STORAGE_KEY = 'id_token';
 
 export const getExistingSession = () => async (dispatch: Dispatch<any>) => {
@@ -28,7 +39,7 @@ export const getExistingSession = () => async (dispatch: Dispatch<any>) => {
 
     if (token !== null) {
         dispatch(receiveLogin());
-        dispatch(push('/user'));
+        // dispatch(push('/user')); // locally I have this line commented out because it breaks things. WS
         return;
     }
 };
@@ -41,7 +52,7 @@ export const login = (username: string, password: string) => async (dispatch: Di
         headers: new Headers({
             'content-type': 'application/json'
         }),
-        body: JSON.stringify({username, password})
+        body: JSON.stringify({ username, password })
     });
 
     const loginResult = await loginResponse.json();
@@ -63,3 +74,37 @@ export const logout = () => async (dispatch: Dispatch<any>) => {
     localStorage.removeItem(LS_STORAGE_KEY);
     dispatch(doLogout());
 };
+
+export const register = (registerRequest: RegisterFields | undefined) => async (dispatch: Dispatch<any>) => {
+    if (isUndefined(registerRequest)) {
+        dispatch(registerError('Did you properly fill all fields?'));
+    } else {
+        const registerResponse = await fetch('api/register', {
+            method: 'POST',
+            headers: new Headers({
+                'content-type': 'application/json'
+            }),
+            body: JSON.stringify(registerRequest)
+        }).then((response) => response.json());
+
+        if (registerResponse.ok) {
+            alert('Registration success!');
+            push('/');
+        } else {
+            alert('Register failed: ' + registerResponse.statusText);
+        }
+    }
+};
+
+export function fetchToken(): string | null {
+    return localStorage.getItem(LS_STORAGE_KEY);
+}
+
+export const NO_TOKEN_MESSAGE: string = 'No token, have you authenticated?';
+
+export const fetchWithAuthHeader = (token: string, path: string): Promise<Response> =>
+    fetch(path, {
+        headers: new Headers({
+            'Authorization': `Bearer ${token}`
+        })
+    });
