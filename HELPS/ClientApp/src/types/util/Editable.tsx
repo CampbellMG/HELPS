@@ -3,6 +3,7 @@ import { Button } from 'react-bootstrap';
 
 export interface Editable {
     editing: boolean;
+    isNewMode: boolean;
 }
 
 const EDIT_TEXT: string = 'Edit',
@@ -53,3 +54,7 @@ export const renderEditButtons = <T extends Editable>(
             {getEditOrSaveText(props)}
         </Button>);
 };
+
+export const getHiddenProperty = <T extends Editable>(state: T): React.CSSProperties | undefined => {
+    return state.isNewMode ? {display: 'none'} : undefined;
+}

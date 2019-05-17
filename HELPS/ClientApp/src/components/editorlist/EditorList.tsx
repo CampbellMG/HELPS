@@ -45,7 +45,8 @@ export default class EditorList<T> extends Component<EditorListProps<T>> {
                     {items.map(item => (
                         <ListGroupItem onClick={() => onSelect(item)}
                             style={{ cursor: 'pointer' }}
-                            active={activeItem && keyExtractor(item) === keyExtractor(activeItem)}>
+                            active={activeItem && keyExtractor(item) === keyExtractor(activeItem)}
+                            key={keyExtractor(item)}>
                             {titleExtractor(item)}
                         </ListGroupItem>
                     ))}

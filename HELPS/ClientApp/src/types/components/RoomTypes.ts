@@ -7,11 +7,10 @@ export interface RoomStateProps extends Editable {
 }
 
 export interface RoomDispatchProps {
-    addRoom: (room: RoomModel) => void;
     deleteRoom: (room: RoomModel) => void;
     fetchRooms: () => void;
     selectRoom: (room: RoomModel) => void;
-    updateRoom: (id: number, title: string, isNewMode: boolean) => void;
+    saveRoom: (id: number, title: string, isNewMode: boolean) => void;
 }
 
 export interface RoomProps extends RoomStateProps, RoomDispatchProps {}

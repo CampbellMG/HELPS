@@ -5,7 +5,7 @@ import { fetchToken, NO_TOKEN_MESSAGE, fetchWithAuthHeader } from './AuthActions
 import { fetchRequest } from '../../util';
 
 const receiveMessages = (messages: MessageModel[]): MessageAction => ({
-    type: MessageActionTypes.RECEIVE_MESSAGES,
+    type: MessageActionTypes.RECEIVE,
     messages: messages
 }),
     messageError = (error: string) => ({
@@ -14,53 +14,54 @@ const receiveMessages = (messages: MessageModel[]): MessageAction => ({
     }),
     MESSAGES_PATH = 'api/messages',
     selectMessagePayload = (message: MessageModel) => ({
-        type: MessageActionTypes.SELECT_MESSAGE,
-        message
-    }),
-    editMessagePayload = (message: MessageModel) => ({
-        type: MessageActionTypes.EDIT_MESSAGE,
-        message
-    }),
-    cancelOrCommenceEditPayload = () => ({ type: MessageActionTypes.CANCEL_OR_COMMENCE_EDIT_MESSAGE }),
-    saveMessagePayload = (message: MessageModel) => ({
-        type: MessageActionTypes.SAVE_MESSAGE,
+        type: MessageActionTypes.SELECT,
         message
     });
 
 export const fetchMessages = () => async (dispatch: Dispatch<any>) => {
-
+    console.error('fetching');
     const token = fetchToken();
     if (token === null) {
         dispatch(messageError(NO_TOKEN_MESSAGE));
     } else {
-        const messageResponse: Response = await fetchWithAuthHeader(token, MESSAGES_PATH);
-
-        if (messageResponse.ok) {
-            const responseJson = await messageResponse.json();
-            dispatch(receiveMessages(responseJson.messages));
-        } else {
-            const responseText = await messageResponse.text();
-            dispatch(messageError(responseText));
+        try {
+            const messages: MessageModel[] = await fetchRequest(
+                MESSAGES_PATH,
+                'GET',
+                token
+            );
+            dispatch(receiveMessages(messages));
+        } catch (e) {
+            dispatch(messageError(`Error fetching messges list`));
         }
     }
 };
 
-export const saveMessage = (message: MessageModel) => async (dispatch: Dispatch<any>) => {
+export const saveMessage = (messageId: number, message: MessageModel, isNewMode: boolean) => async (dispatch: Dispatch<any>) => {
     const token = fetchToken();
     if (token === null) {
         dispatch(messageError(NO_TOKEN_MESSAGE));
     } else {
-        const saveResponse = await fetchRequest(
-            'api/messages',
-            'POST',
-            token,
-            message,
-            true
-        );
-        if (saveResponse.ok) {
-            dispatch(saveMessagePayload(message));
-        } else {
-            dispatch(messageError('Failed to save message: ' + saveResponse.statusText));
+        try {
+            if (isNewMode) {
+                await fetchRequest(
+                    MESSAGES_PATH,
+                    'POST',
+                    token,
+                    message,
+                    true
+                );
+            } else {
+                await fetchRequest(
+                    `${MESSAGES_PATH}/${messageId}`,
+                    'PUT',
+                    token,
+                    message,
+                    true
+                );
+            }
+        } catch (e) {
+            dispatch(messageError('Failed to save message'));
         }
     }
 };
@@ -88,9 +89,3 @@ export const deleteMessage = (id: number) => async (dispatch: Dispatch<any>) => 
 
 export const selectMessage = (message: MessageModel) => async (dispatch: Dispatch<any>) =>
     dispatch(selectMessagePayload(message));
-
-export const editMessage = (message: MessageModel) => async (dispatch: Dispatch<any>) =>
-    dispatch(editMessagePayload(message));
-
-export const cancelOrCommenceEdit = () => async (dispatch: Dispatch<any>) =>
-    dispatch(cancelOrCommenceEditPayload());

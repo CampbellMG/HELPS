@@ -1,3 +1,4 @@
+import { Identifiable } from './types/model/Identifiable';
 
 export function isEmpty<T>(object: string | T[]): boolean {
     return object.length === 0;
@@ -37,3 +38,6 @@ export const fetchRequest = (
 };
 
 export const NO_MATCH: number = -1;
+
+export const getIdentifiableIndexById = <T extends Identifiable>(itemsFetcher: () => T[], id: number) =>
+itemsFetcher().findIndex((item) => item.id === id);

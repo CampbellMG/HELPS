@@ -13,13 +13,8 @@ const roomError = (message: string): RoomAction => ({
 });
 
 const receiveRooms = (rooms: RoomModel[]): RoomAction => ({
-    type: RoomActionTypes.RECEIVE_ROOMS,
+    type: RoomActionTypes.RECEIVE,
     rooms
-});
-
-const updateRoom = (room: RoomModel): RoomAction => ({
-    type: RoomActionTypes.UPDATE,
-    room
 });
 
 const selectRoomAction = (room: RoomModel): RoomAction => ({
@@ -45,25 +40,20 @@ export const fetchRooms = () => async (dispatch: Dispatch<RoomAction>) => {
     }
 };
 
-export const addRoom = (room: RoomModel) =>
-    async (dispatch: Dispatch<any>) => dispatch({ type: RoomActionTypes.ADD, room });
-
 export const deleteRoom = (room: RoomModel) => async (dispatch: Dispatch<any>) => {
     const token = fetchToken();
     if (token === null) {
         dispatch(roomError(NO_TOKEN_MESSAGE));
     } else {
-        const deleteRoomResponse = await fetch(`${API_ROOM_PATH}/${room.id}`, {
-            method: 'DELETE',
-            headers: new Headers({
-                'Authorization': `Bearer ${token}`
-            })
-        });
-        if (deleteRoomResponse.ok) {
-            dispatch({ type: RoomActionTypes.DELETE, room });
-        } else {
-            const errorText: string = await deleteRoomResponse.text();
-            dispatch(roomError(`Error deleting room - ${errorText}`));
+        try {
+            await fetch(`${API_ROOM_PATH}/${room.id}`, {
+                method: 'DELETE',
+                headers: new Headers({
+                    'Authorization': `Bearer ${token}`
+                })
+            });
+        } catch (e) {
+            dispatch(roomError(`Error deleting room - ${e}`));
         }
     }
 };

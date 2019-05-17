@@ -108,12 +108,6 @@ server.post('/register', (req, res) => {
     res.status(200)
 });
 
-server.get('/messages', (req, res) => {
-    const database = JSON.parse(fs.readFileSync(DATABASE_DEST));
-    const messages = database.messages;
-    res.json({ messages });
-});
-
 server.use(jsonServer.defaults());
 server.use(jsonServer.router(DATABASE_DEST));
 

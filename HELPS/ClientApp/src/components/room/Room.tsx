@@ -4,11 +4,11 @@ import { connect } from 'react-redux';
 import { ThunkDispatch } from 'redux-thunk';
 import { RoomStateProps, RoomDispatchProps, RoomProps } from '../../types/components/RoomTypes';
 import { AppState } from '../../types/store/StoreTypes';
-import { addRoom, deleteRoom, fetchRooms, updateRoomName, selectRoom } from '../../store/actions/RoomActions';
+import { deleteRoom, fetchRooms, updateRoomName, selectRoom } from '../../store/actions/RoomActions';
 import './Room.css';
 import { RoomModel } from '../../types/model/Room';
 import { RoomState } from '../../types/store/RoomReducerTypes';
-import { editOrSave, deleteEntity, renderEditButtons } from '../../types/util/Editable';
+import { editOrSave, deleteEntity, renderEditButtons, getHiddenProperty } from '../../types/util/Editable';
 import EditorList from '../editorlist/EditorList';
 
 export class Room extends React.Component<RoomProps, RoomState> {
@@ -29,7 +29,9 @@ export class Room extends React.Component<RoomProps, RoomState> {
     componentWillReceiveProps(newProps: RoomProps) {
         this.setState({
             selectedRoom: newProps.selectedRoom,
-            newRoomTitle: newProps.selectedRoom.title
+            newRoomTitle: newProps.selectedRoom.title,
+            isNewMode: newProps.isNewMode,
+            editing: newProps.editing
         });
     }
 
@@ -44,9 +46,9 @@ export class Room extends React.Component<RoomProps, RoomState> {
             activeItem={this.state.selectedRoom}
             onSelect={this.selectRoom}
             renderEditor={this.renderRoomEditor}
-            keyExtractor={email => email.id.toString()}
+            keyExtractor={(room) => room.id.toString()}
             onFilter={newFilter => this.setState({ filter: newFilter })}
-            titleExtractor={email => email.title}
+            titleExtractor={(room) => room.title}
             addItem={this.newRoom} />);
     }
 
@@ -62,7 +64,7 @@ export class Room extends React.Component<RoomProps, RoomState> {
                             onChange={(e: any) => this.editTitle(e)}
                         />
                         {this.renderEditButtons()}
-                        <Button style={this.getHiddenProperty()} onClick={(e: any) => this.deleteRoom()} className='w-100 mt-2'>
+                        <Button style={getHiddenProperty(this.state)} onClick={(e: any) => this.deleteRoom()} className='w-100 mt-2'>
                             Delete
                         </Button>
                     </div>
@@ -74,10 +76,6 @@ export class Room extends React.Component<RoomProps, RoomState> {
 
     private newRoom = (): void => {
         this.setState({
-            selectedRoom: {
-                title: '',
-                id: Number.MAX_SAFE_INTEGER
-            },
             newRoomTitle: 'New Room',
             editing: true,
             isNewMode: true
@@ -102,7 +100,7 @@ export class Room extends React.Component<RoomProps, RoomState> {
             this.state,
             `Edit Room Title`,
             () => {
-                this.props.updateRoom(this.state.selectedRoom.id, this.state.newRoomTitle, this.state.isNewMode);
+                this.props.saveRoom(this.state.selectedRoom.id, this.state.newRoomTitle, this.state.isNewMode);
                 this.props.fetchRooms();
             },
             () => this.cancelOrCommenceEdit()
@@ -133,27 +131,22 @@ export class Room extends React.Component<RoomProps, RoomState> {
     private selectRoom = (room: RoomModel): void => {
         this.props.selectRoom(room);
     }
-
-    private getHiddenProperty = (): React.CSSProperties | undefined => {
-        return this.state.isNewMode ? {display: 'none'} : undefined;
-    }
-
 }
 
 const mapStateToProps = (state: AppState): RoomStateProps => {
     return ({
         rooms: state.room.rooms,
         editing: state.room.editing,
-        selectedRoom: state.room.selectedRoom
+        selectedRoom: state.room.selectedRoom,
+        isNewMode: state.room.isNewMode
     });
 };
 
 const mapDispatchToProps = (dispatch: ThunkDispatch<{}, {}, any>): RoomDispatchProps => ({
-    addRoom: (room: RoomModel) => dispatch(addRoom(room)),
     deleteRoom: (room: RoomModel) => dispatch(deleteRoom(room)),
     fetchRooms: () => dispatch(fetchRooms()),
     selectRoom: (room: RoomModel) => dispatch(selectRoom(room)),
-    updateRoom: (id: number, newName: string, isNewMode: boolean) => dispatch(updateRoomName(id, newName, isNewMode))
+    saveRoom: (id: number, newName: string, isNewMode: boolean) => dispatch(updateRoomName(id, newName, isNewMode))
 });
 
 export default connect<RoomStateProps, RoomDispatchProps, {}, AppState>(
