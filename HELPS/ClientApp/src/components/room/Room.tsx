@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ListGroupItem, Form, InputGroup, FormControlProps, Button } from 'react-bootstrap';
+import { Form, Button } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { ThunkDispatch } from 'redux-thunk';
 import { RoomStateProps, RoomDispatchProps, RoomProps } from '../../types/components/RoomTypes';
@@ -21,7 +21,8 @@ export class Room extends React.Component<RoomProps, RoomState> {
             selectedRoom: props.rooms[0],
             editing: false,
             filter: '',
-            newRoomTitle: props.rooms[0].title
+            newRoomTitle: props.rooms[0].title,
+            isNewMode: false
         };
     }
 
@@ -45,7 +46,8 @@ export class Room extends React.Component<RoomProps, RoomState> {
             renderEditor={this.renderRoomEditor}
             keyExtractor={email => email.id.toString()}
             onFilter={newFilter => this.setState({ filter: newFilter })}
-            titleExtractor={email => email.title} />);
+            titleExtractor={email => email.title}
+            addItem={this.newRoom} />);
     }
 
     private renderRoomEditor = () => {
@@ -60,7 +62,7 @@ export class Room extends React.Component<RoomProps, RoomState> {
                             onChange={(e: any) => this.editTitle(e)}
                         />
                         {this.renderEditButtons()}
-                        <Button onClick={(e: any) => this.deleteRoom()} className='w-100 mt-2'>
+                        <Button style={this.getHiddenProperty()} onClick={(e: any) => this.deleteRoom()} className='w-100 mt-2'>
                             Delete
                         </Button>
                     </div>
@@ -68,6 +70,18 @@ export class Room extends React.Component<RoomProps, RoomState> {
                 </div>
             </div>
         );
+    }
+
+    private newRoom = (): void => {
+        this.setState({
+            selectedRoom: {
+                title: '',
+                id: Number.MAX_SAFE_INTEGER
+            },
+            newRoomTitle: 'New Room',
+            editing: true,
+            isNewMode: true
+        });
     }
 
     private editTitle = (e: any): void => {
@@ -88,7 +102,7 @@ export class Room extends React.Component<RoomProps, RoomState> {
             this.state,
             `Edit Room Title`,
             () => {
-                this.props.updateRoom(this.state.selectedRoom.id, this.state.newRoomTitle);
+                this.props.updateRoom(this.state.selectedRoom.id, this.state.newRoomTitle, this.state.isNewMode);
                 this.props.fetchRooms();
             },
             () => this.cancelOrCommenceEdit()
@@ -120,6 +134,10 @@ export class Room extends React.Component<RoomProps, RoomState> {
         this.props.selectRoom(room);
     }
 
+    private getHiddenProperty = (): React.CSSProperties | undefined => {
+        return this.state.isNewMode ? {display: 'none'} : undefined;
+    }
+
 }
 
 const mapStateToProps = (state: AppState): RoomStateProps => {
@@ -135,7 +153,7 @@ const mapDispatchToProps = (dispatch: ThunkDispatch<{}, {}, any>): RoomDispatchP
     deleteRoom: (room: RoomModel) => dispatch(deleteRoom(room)),
     fetchRooms: () => dispatch(fetchRooms()),
     selectRoom: (room: RoomModel) => dispatch(selectRoom(room)),
-    updateRoom: (id: number, newName: string) => dispatch(updateRoomName(id, newName))
+    updateRoom: (id: number, newName: string, isNewMode: boolean) => dispatch(updateRoomName(id, newName, isNewMode))
 });
 
 export default connect<RoomStateProps, RoomDispatchProps, {}, AppState>(

@@ -8,4 +8,5 @@ export interface RoomState extends Editable {
     newRoomTitle: string;
     error?: string;
     filter: string;
+    isNewMode: boolean;
 }

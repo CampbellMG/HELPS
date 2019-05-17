@@ -68,22 +68,31 @@ export const deleteRoom = (room: RoomModel) => async (dispatch: Dispatch<any>) =
     }
 };
 
-export const updateRoomName = (roomId: number, newTitle: string) => async (dispatch: Dispatch<RoomAction>) => {
+export const updateRoomName = (roomId: number, newTitle: string, isNewMode: boolean) => async (dispatch: Dispatch<RoomAction>) => {
     const token = fetchToken();
 
     if (token === null) {
         dispatch(roomError(NO_TOKEN_MESSAGE));
     } else {
-
-        const updatedRoom = { id: roomId, title: newTitle };
         try {
-            await fetchRequest(
-                `${API_ROOM_PATH}/${roomId}`,
-                'PUT',
-                token,
-                updatedRoom,
-                true
-            );
+            if (isNewMode) {
+                await fetchRequest(
+                    `${API_ROOM_PATH}`,
+                    'POST',
+                    token,
+                    { title: newTitle },
+                    true
+                );
+            } else {
+                const updatedRoom = { id: roomId, title: newTitle };
+                await fetchRequest(
+                    `${API_ROOM_PATH}/${roomId}`,
+                    'PUT',
+                    token,
+                    updatedRoom,
+                    true
+                );
+            }
         } catch (e) {
             dispatch(roomError(`Error updating room title: ${e}`));
         }

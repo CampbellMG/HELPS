@@ -11,7 +11,8 @@ const initialState: RoomState = {
     searchTerm: '',
     editing: false,
     filter: '',
-    newRoomTitle: room1.title
+    newRoomTitle: room1.title,
+    isNewMode: false
 };
 
 export function RoomReducer(state: RoomState = initialState, action: RoomAction): RoomState {
