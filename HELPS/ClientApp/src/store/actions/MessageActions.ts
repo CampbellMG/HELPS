@@ -2,7 +2,7 @@ import { Dispatch } from 'redux';
 import { MessageModel } from '../../types/model/Message';
 import { MessageActionTypes, MessageAction } from '../../types/store/MessageActionTypes';
 import { fetchToken, NO_TOKEN_MESSAGE, fetchWithAuthHeader } from './AuthActions';
-import { fetchRequest as fetchJson } from '../../util';
+import { fetchRequest } from '../../util';
 
 const receiveMessages = (messages: MessageModel[]): MessageAction => ({
     type: MessageActionTypes.RECEIVE_MESSAGES,
@@ -50,7 +50,7 @@ export const saveMessage = (message: MessageModel) => async (dispatch: Dispatch<
     if (token === null) {
         dispatch(messageError(NO_TOKEN_MESSAGE));
     } else {
-        const saveResponse = await fetchJson(
+        const saveResponse = await fetchRequest(
             'api/messages',
             'POST',
             token,
@@ -84,7 +84,6 @@ export const deleteMessage = (id: number) => async (dispatch: Dispatch<any>) => 
             dispatch(messageError(`Failed to delete message: ${errorMessage}`));
         }
     }
-    console.error('deleting message of id ' + id);
 };
 
 export const selectMessage = (message: MessageModel) => async (dispatch: Dispatch<any>) =>

@@ -5,6 +5,7 @@ export interface RoomState extends Editable {
     rooms: RoomModel[];
     searchTerm?: string;
     selectedRoom: RoomModel;
-    oldRoomName?: string;
+    newRoomTitle: string;
     error?: string;
+    filter: string;
 }

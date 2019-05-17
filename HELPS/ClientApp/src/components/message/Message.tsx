@@ -10,7 +10,7 @@ import { ThunkDispatch } from 'redux-thunk';
 import { MessageState } from '../../types/store/MessageReducerTypes';
 import { MessageModel, messageEquals } from '../../types/model/Message';
 import { isUndefined } from 'util';
-import { getEditOrSaveText, editOrSave, deleteEntity } from '../../types/util/Editable';
+import { getEditOrSaveText, editOrSave, deleteEntity, renderEditButtons } from '../../types/util/Editable';
 
 export class Message extends Component<MessageProps, MessageState> {
 
@@ -79,19 +79,26 @@ export class Message extends Component<MessageProps, MessageState> {
 
     }
 
-    private renderEditButtons = () => {
-        return this.props.editing ?
-            (<div>
-                <Button onClick={(e: any) => this.props.cancelOrCommenceEdit()} className='w-50 mt-4 p-1'>
-                    Cancel
-                </Button>
-                <Button onClick={(e: any) => this.editOrSave()} className='w-50 mt-4 p-1' disabled={this.editOrSaveIsDisabled()}>
-                    {getEditOrSaveText(this.props)}
-                </Button>
-            </div>) :
-            (<Button onClick={(e: any) => this.editOrSave()} className='w-100 mt-4' disabled={this.editOrSaveIsDisabled()}>
-                {getEditOrSaveText(this.props)}
-            </Button>);
+    private renderEditButtons = (): JSX.Element => {
+        return renderEditButtons(
+            this.props.editing,
+            this.props.cancelOrCommenceEdit,
+            this.props,
+            this.editOrSaveIsDisabled,
+            this.editOrSave
+            );
+        // this.props.editing ?
+        //     (<div>
+        //         <Button onClick={(e: any) => this.props.cancelOrCommenceEdit()} className='w-50 mt-4 p-1'>
+        //             Cancel
+        //         </Button>
+        //         <Button onClick={(e: any) => this.editOrSave()} className='w-50 mt-4 p-1' disabled={this.editOrSaveIsDisabled()}>
+        //             {getEditOrSaveText(this.props)}
+        //         </Button>
+        //     </div>) :
+        //     (<Button onClick={(e: any) => this.editOrSave()} className='w-100 mt-4' disabled={this.editOrSaveIsDisabled()}>
+        //         {getEditOrSaveText(this.props)}
+        //     </Button>);
 
     }
 

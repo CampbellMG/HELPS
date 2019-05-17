@@ -5,7 +5,8 @@ export enum RoomActionTypes {
     DELETE = 'ROOM_ACTION_DELETE',
     UPDATE = 'ROOM_ACTION_UPDATE_NAME',
     ERROR = 'ROOM_ERROR',
-    RECEIVE_ROOMS = 'RECEIVE_ROOMS'
+    RECEIVE_ROOMS = 'RECEIVE_ROOMS',
+    SELECT = 'ROOM_ACTION_SELECT'
 }
 
 export interface RoomAction {

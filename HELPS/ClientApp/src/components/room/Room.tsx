@@ -1,126 +1,141 @@
 import * as React from 'react';
-import { ListGroup, ListGroupItem, Form, InputGroup, FormControlProps, Button } from 'react-bootstrap';
+import { ListGroupItem, Form, InputGroup, FormControlProps, Button } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { ThunkDispatch } from 'redux-thunk';
 import { RoomStateProps, RoomDispatchProps, RoomProps } from '../../types/components/RoomTypes';
 import { AppState } from '../../types/store/StoreTypes';
-import { addRoom, deleteRoom, fetchRooms, updateRoomName } from '../../store/actions/RoomActions';
-import { BsPrefixProps, ReplaceProps } from 'react-bootstrap/helpers';
-import plus from '../../res/plus.png';
+import { addRoom, deleteRoom, fetchRooms, updateRoomName, selectRoom } from '../../store/actions/RoomActions';
 import './Room.css';
 import { RoomModel } from '../../types/model/Room';
 import { RoomState } from '../../types/store/RoomReducerTypes';
-import { getEditOrSaveText, editOrSave, deleteEntity } from '../../types/util/Editable';
-import { NOOP } from '../../util';
+import { editOrSave, deleteEntity, renderEditButtons } from '../../types/util/Editable';
+import EditorList from '../editorlist/EditorList';
 
 export class Room extends React.Component<RoomProps, RoomState> {
 
     constructor(props: Readonly<RoomProps>) {
         super(props);
-        this.state = { rooms: props.rooms, selectedRoom: props.rooms[0], editing: false };
-        fetchRooms();
+        this.props.fetchRooms();
+        this.state = {
+            rooms: props.rooms,
+            selectedRoom: props.rooms[0],
+            editing: false,
+            filter: '',
+            newRoomTitle: props.rooms[0].title
+        };
+    }
+
+    componentWillReceiveProps(newProps: RoomProps) {
+        this.setState({
+            selectedRoom: newProps.selectedRoom,
+            newRoomTitle: newProps.selectedRoom.title
+        });
     }
 
     render(): React.ReactNode {
-        return (
-            <div className='row h-100 overflow-auto'>
-                <div className='col-lg-2 border-right'>
-                    <div>
-                        <InputGroup className='align-self-stretch d-flex pb-3 sticky-top'>
-                            <Form.Control type='text'
-                                className='flex-fill'
-                                placeholder='Search...'
-                                onChange={(e: any) => this.updateSearch(e)}
-                            />
-                        </InputGroup>
-                        <img src={plus} className='plus-button' alt='Add Room Button' />
-                    </div>
-
-                    <ListGroup className='m-3 sticky-top'>
-                        {this.makeRoomsDisplayList()}
-                    </ListGroup>
-                </div>
-
-                <div className='col m-3'>
-                    <Form.Control type='text'
-                        className='flex-fill'
-                        value={this.state.selectedRoom.title}
-                        disabled={!this.state.editing}
-                        onChange={(e: any) => this.updateSearch(e)}
-                    />
-                    <div className='w-40'>
-                        <Button onClick={(e: any) => this.editOrSave()} className='w-100 mt-4'>
-                            {getEditOrSaveText(this.state)}
-                        </Button>
-                        <Button onClick={(e: any) => this.deleteRoom()} className='w-100 mt-4'>
-                            Delete
-                    </Button>
-                    </div>
-                </div>
-
-            </div>);
+        const filteredRooms: RoomModel[] = [];
+        this.props.rooms.forEach((room) => {
+            if (room.title.includes(this.state.filter)) {
+                filteredRooms.push(room);
+            }
+        });
+        return (<EditorList items={filteredRooms}
+            activeItem={this.state.selectedRoom}
+            onSelect={this.selectRoom}
+            renderEditor={this.renderRoomEditor}
+            keyExtractor={email => email.id.toString()}
+            onFilter={newFilter => this.setState({ filter: newFilter })}
+            titleExtractor={email => email.title} />);
     }
 
-    // private addRoom(event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
-    //     this.props.addRoom(event.currentTarget.innerText);
-    // }
+    private renderRoomEditor = () => {
+        return (
+            <div className='col-lg-10'>
+                <div className='row justify-content-center'>
+                    <div className='col-lg-5'>
+                        <Form.Control type='text'
+                            className='flex-fill'
+                            value={this.state.newRoomTitle}
+                            disabled={!this.state.editing}
+                            onChange={(e: any) => this.editTitle(e)}
+                        />
+                        {this.renderEditButtons()}
+                        <Button onClick={(e: any) => this.deleteRoom()} className='w-100 mt-2'>
+                            Delete
+                        </Button>
+                    </div>
 
-    private editOrSave(): void {
-        editOrSave(
-            this.props,
-            `Edit Room Title`,
-            () => updateRoomName(this.state.selectedRoom),
-            NOOP
+                </div>
+            </div>
         );
     }
 
-    private deleteRoom() {
-        deleteEntity('Room', (room: RoomModel) => this.props.deleteRoom(room), () => this.state.selectedRoom);
+    private editTitle = (e: any): void => {
+        this.setState({ newRoomTitle: e.target.value });
     }
 
-    private makeRoomsDisplayList(): React.ReactElement[] {
-        const roomsElements: React.ReactElement[] = [];
-        this.props.rooms.forEach((room) => roomsElements.push(
-            <ListGroupItem
-                key={room.id}
-                style={{ cursor: 'pointer' }}
-                active={this.isActive(room)}
-                onClick={() => this.selectRoom(room)}>
-                {room.title}
-            </ListGroupItem>
-        ));
+    private renderEditButtons = (): JSX.Element =>
+        renderEditButtons(
+            this.state.editing,
+            this.cancelOrCommenceEdit,
+            this.state,
+            this.editOrSaveIsDisabled,
+            this.editOrSave
+        )
 
-        return roomsElements;
+    private editOrSave = (): void => {
+        editOrSave(
+            this.state,
+            `Edit Room Title`,
+            () => {
+                this.props.updateRoom(this.state.selectedRoom.id, this.state.newRoomTitle);
+                this.props.fetchRooms();
+            },
+            () => this.cancelOrCommenceEdit()
+        );
     }
 
-    private selectRoom(room: RoomModel) {
-        this.setState({ selectedRoom: room });
+    private editOrSaveIsDisabled = (): boolean =>
+        this.state.editing && this.state.selectedRoom.title === this.state.newRoomTitle
+
+    private cancelOrCommenceEdit = (): void => {
+        if (this.state.editing) {
+            this.setState({ newRoomTitle: this.state.selectedRoom.title });
+        }
+        this.setState({ editing: !this.state.editing });
     }
 
-    private isActive(room: RoomModel): boolean {
-        return this.state.selectedRoom.title === room.title;
+    private deleteRoom = () => {
+        deleteEntity(
+            'Room',
+            (room: RoomModel) => {
+                this.props.deleteRoom(room);
+                this.props.fetchRooms();
+            },
+            () => this.state.selectedRoom
+        );
     }
 
-    private updateSearch(event: React.FormEvent<ReplaceProps<'input', BsPrefixProps<'input'> & FormControlProps>>
-    ) {
-        this.setState({ searchTerm: event.currentTarget.value });
+    private selectRoom = (room: RoomModel): void => {
+        this.props.selectRoom(room);
     }
 
-    private show(roomName: string): boolean {
-        return this.state.searchTerm == undefined || roomName.includes(this.state.searchTerm);
-    }
 }
 
 const mapStateToProps = (state: AppState): RoomStateProps => {
     return ({
         rooms: state.room.rooms,
-        editing: state.room.editing
+        editing: state.room.editing,
+        selectedRoom: state.room.selectedRoom
     });
 };
 
 const mapDispatchToProps = (dispatch: ThunkDispatch<{}, {}, any>): RoomDispatchProps => ({
     addRoom: (room: RoomModel) => dispatch(addRoom(room)),
-    deleteRoom: (room: RoomModel) => dispatch(deleteRoom(room))
+    deleteRoom: (room: RoomModel) => dispatch(deleteRoom(room)),
+    fetchRooms: () => dispatch(fetchRooms()),
+    selectRoom: (room: RoomModel) => dispatch(selectRoom(room)),
+    updateRoom: (id: number, newName: string) => dispatch(updateRoomName(id, newName))
 });
 
 export default connect<RoomStateProps, RoomDispatchProps, {}, AppState>(

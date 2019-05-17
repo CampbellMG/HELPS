@@ -2,6 +2,7 @@ import { RoomActionTypes, RoomAction } from '../../types/store/RoomActionTypes';
 import { Dispatch } from 'react';
 import { fetchToken } from './AuthActions';
 import { RoomModel } from '../../types/model/Room';
+import { fetchRequest } from '../../util';
 
 const NO_TOKEN_MESSAGE: string = 'No token, have you authenticated?',
     API_ROOM_PATH = `api/rooms`;
@@ -21,24 +22,25 @@ const updateRoom = (room: RoomModel): RoomAction => ({
     room
 });
 
+const selectRoomAction = (room: RoomModel): RoomAction => ({
+    type: RoomActionTypes.SELECT,
+    room
+});
+
 export const fetchRooms = () => async (dispatch: Dispatch<RoomAction>) => {
     const token = fetchToken();
     if (token === null) {
         dispatch(roomError(NO_TOKEN_MESSAGE));
     } else {
-        const roomsResponse: Response = await fetch(API_ROOM_PATH, {
-            method: 'GET',
-            headers: new Headers({
-                'Authorization': `Bearer ${token}`
-            })
-        });
-
-        if (roomsResponse.ok) {
-            const rooms: RoomModel[] = await roomsResponse.json();
+        try {
+            const rooms: RoomModel[] = await fetchRequest(
+                API_ROOM_PATH,
+                'GET',
+                token
+            );
             dispatch(receiveRooms(rooms));
-        } else {
-            const text: string = await roomsResponse.text();
-            dispatch(roomError(`Error fetching rooms list - ${text}`));
+        } catch (e) {
+            dispatch(roomError(`Error fetching rooms list`));
         }
     }
 };
@@ -59,7 +61,6 @@ export const deleteRoom = (room: RoomModel) => async (dispatch: Dispatch<any>) =
         });
         if (deleteRoomResponse.ok) {
             dispatch({ type: RoomActionTypes.DELETE, room });
-            fetchRooms();
         } else {
             const errorText: string = await deleteRoomResponse.text();
             dispatch(roomError(`Error deleting room - ${errorText}`));
@@ -67,26 +68,26 @@ export const deleteRoom = (room: RoomModel) => async (dispatch: Dispatch<any>) =
     }
 };
 
-export const updateRoomName = (room: RoomModel) => async (dispatch: Dispatch<RoomAction>) => {
+export const updateRoomName = (roomId: number, newTitle: string) => async (dispatch: Dispatch<RoomAction>) => {
     const token = fetchToken();
 
     if (token === null) {
         dispatch(roomError(NO_TOKEN_MESSAGE));
-    } else if (room === undefined) {
-        dispatch(roomError(`Failed to update room - room undefined`));
     } else {
 
-        const updateNameResponse = await fetch(`${API_ROOM_PATH}/${room.id}`, {
-            method: 'PUT',
-            headers: new Headers({
-                'Authorization': `Bearer ${token}`
-            }),
-            body: JSON.stringify(room)
-        });
-
-        if (updateNameResponse.ok) {
-            dispatch(updateRoom(room));
-            fetchRooms();
+        const updatedRoom = { id: roomId, title: newTitle };
+        try {
+            await fetchRequest(
+                `${API_ROOM_PATH}/${roomId}`,
+                'PUT',
+                token,
+                updatedRoom,
+                true
+            );
+        } catch (e) {
+            dispatch(roomError(`Error updating room title: ${e}`));
         }
     }
 };
+
+export const selectRoom = (room: RoomModel) => async (dispatch: Dispatch<RoomAction>) => dispatch(selectRoomAction(room));

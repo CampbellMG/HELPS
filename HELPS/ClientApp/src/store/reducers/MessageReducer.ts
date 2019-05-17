@@ -39,7 +39,6 @@ export function MessageReducer(state: MessageState = initialState, action: Messa
             if (isUndefined(action.message)) {
                 return errorState(state, 'Failed to reduce editing of undefined message');
             } else {
-                console.error(action.message);
                 return {
                     ...state,
                     newMessage: action.message
@@ -60,7 +59,6 @@ export function MessageReducer(state: MessageState = initialState, action: Messa
             if (isUndefined(action.message)) {
                 return errorState(state, 'Failed to edit undefined message');
             } else {
-                console.error(action.message);
                 const message = action.message;
                 state.messages
                     .filter((listMessage) => listMessage.id === message.id)
