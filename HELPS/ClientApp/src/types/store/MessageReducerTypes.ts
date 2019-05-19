@@ -6,5 +6,5 @@ export interface MessageState extends Editable {
     selectedMessage: MessageModel;
     newMessage: MessageModel;
     messages: MessageModel[];
-    isLoaded: boolean;
+    filter: string;
 }

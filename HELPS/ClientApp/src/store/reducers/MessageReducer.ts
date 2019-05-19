@@ -1,30 +1,39 @@
 import { MessageState } from '../../types/store/MessageReducerTypes';
 import { MessageAction, MessageActionTypes } from '../../types/store/MessageActionTypes';
 import { isUndefined } from 'util';
+import { getIdentifiableIndexById, NO_MATCH } from '../../util';
+import { MessageModel, makeMockMessage } from '../../types/model/Message';
 
+const mockMessage = makeMockMessage();
 const initialState: MessageState = {
-    messages: [],
-    selectedMessage: {} as any,
+    messages: [ mockMessage ],
+    selectedMessage: mockMessage,
     editing: false,
-    newMessage: {} as any,
-    isLoaded: false
+    newMessage: Object.assign({}, mockMessage),
+    filter: '',
+    isNewMode: false
 };
 
 export function MessageReducer(state: MessageState = initialState, action: MessageAction): MessageState {
     switch (action.type) {
-        case (MessageActionTypes.RECEIVE_MESSAGES):
+        case (MessageActionTypes.RECEIVE):
             if (isUndefined(action.messages)) {
                 return errorState(state, `Message list was undefined when fetched`);
             } else {
+                let selectedMessage: MessageModel = action.messages.length > 0 ? action.messages[0] : { id: Number.MAX_SAFE_INTEGER, title: 'Undefined title', content: 'Undefined content' };
+                const selectedMessageId = state.selectedMessage.id;
+                const maybeSelectedMessageIndex = getIdentifiableIndexById(() => state.messages, selectedMessageId);
+                if (maybeSelectedMessageIndex !== NO_MATCH) {
+                    selectedMessage = action.messages[maybeSelectedMessageIndex];
+                }
                 return {
                     ...state,
                     messages: action.messages,
-                    selectedMessage: Object.assign({}, action.messages[0]),
-                    newMessage: action.messages[0],
-                    isLoaded: true
+                    selectedMessage,
+                    newMessage: action.messages[0]
                 };
             }
-        case (MessageActionTypes.SELECT_MESSAGE):
+        case (MessageActionTypes.SELECT):
             if (isUndefined(action.message)) {
                 return errorState(state, 'Failed to select undefined message');
             } else {
@@ -32,43 +41,8 @@ export function MessageReducer(state: MessageState = initialState, action: Messa
                     ...state,
                     selectedMessage: action.message,
                     newMessage: Object.assign({}, action.message),
-                    editing: false
-                };
-            }
-        case (MessageActionTypes.EDIT_MESSAGE):
-            if (isUndefined(action.message)) {
-                return errorState(state, 'Failed to reduce editing of undefined message');
-            } else {
-                console.error(action.message);
-                return {
-                    ...state,
-                    newMessage: action.message
-                };
-            }
-        case (MessageActionTypes.CANCEL_OR_COMMENCE_EDIT_MESSAGE):
-            return state.editing ?
-                ({
-                    ...state,
-                    newMessage: state.selectedMessage,
-                    editing: false
-                }) :
-                ({
-                    ...state,
-                    editing: true
-                });
-        case (MessageActionTypes.SAVE_MESSAGE):
-            if (isUndefined(action.message)) {
-                return errorState(state, 'Failed to edit undefined message');
-            } else {
-                console.error(action.message);
-                const message = action.message;
-                state.messages
-                    .filter((listMessage) => listMessage.id === message.id)
-                    .map((_matchedMessage) => message);
-                return {
-                    ...state,
-                    selectedMessage: message,
-                    newMessage: message
+                    editing: false,
+                    isNewMode: false
                 };
             }
         default:
