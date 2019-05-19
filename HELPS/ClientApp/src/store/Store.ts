@@ -9,6 +9,7 @@ import { WorkshopReducer } from './reducers/WorkshopReducer';
 import { RoomReducer } from './reducers/RoomReducer';
 import { EmailReducer } from './reducers/EmailReducer';
 import { MessageReducer } from './reducers/MessageReducer';
+import {AdvisorReducer} from './reducers/AdvisorReducer';
 
 export default function configureStore(history: History) {
     const reducers = {
@@ -18,6 +19,7 @@ export default function configureStore(history: History) {
         email: EmailReducer,
         workshops: WorkshopReducer,
         form: reduxFormReducer,
+        advisors: AdvisorReducer,
         message: MessageReducer
     };
 
