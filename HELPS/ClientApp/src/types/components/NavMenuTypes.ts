@@ -1,8 +1,10 @@
+import {RouteComponentProps} from 'react-router';
+
 export interface NavMenuStateProps {
     isAdmin: boolean
 }
 
-export interface NavMenuProps extends NavMenuStateProps {
+export interface NavMenuProps extends NavMenuStateProps, RouteComponentProps {
 
 }
 
