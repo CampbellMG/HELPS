@@ -24,11 +24,11 @@ export const AdminMenu: MenuItem[] = [
     {
         route: 'workshop_registration',
         title: 'Events'
+    },
+    {
+        route: 'reports',
+        title: 'Reports'
     }
-    // {
-    //     route: 'reports',
-    //     title: 'Reports'
-    // }
 ];
 
 export const StudentMenu: MenuItem[] = [

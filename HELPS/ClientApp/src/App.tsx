@@ -10,6 +10,7 @@ import EmailList from './components/email/EmailList';
 import RoomEdit from './components/room/RoomEdit';
 import MessageEdit from './components/message/MessageEdit';
 import AdvisorEdit from './components/advisors/AdvisorEdit';
+import ReportGenerate from "./components/reports/ReportGenerate";
 
 export default () => (
     <div className='p-3 h-100'>
@@ -23,6 +24,7 @@ export default () => (
             <Route path='/info/' component={Info}/>
             <Route path='/email' component={EmailList}/>
             <Route path='/advisors/' component={AdvisorEdit}/>
+            <Route path='/reports/' component={ReportGenerate}/>
         </Layout>
     </div>
 );
