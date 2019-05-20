@@ -7,9 +7,9 @@ import Login from './components/login/Login';
 import Info from './components/information/Info';
 import Register from './components/register/Register';
 import EmailList from './components/email/EmailList';
-import RoomEdit from "./components/room/RoomEdit";
-import MessageEdit from "./components/message/MessageEdit";
-import AdvisorsDetailsList from './components/advisors/AdvisorsDetailsList';
+import RoomEdit from './components/room/RoomEdit';
+import MessageEdit from './components/message/MessageEdit';
+import AdvisorEdit from './components/advisors/AdvisorEdit';
 
 export default () => (
     <div className='p-3 h-100'>
@@ -22,7 +22,7 @@ export default () => (
             <Route path='/workshop_registration/' component={WorkshopRegistration}/>
             <Route path='/info/' component={Info}/>
             <Route path='/email' component={EmailList}/>
-            <Route path='/advisors/' component={AdvisorsDetailsList}/>
+            <Route path='/advisors/' component={AdvisorEdit}/>
         </Layout>
     </div>
 );

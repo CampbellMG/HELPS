@@ -25,7 +25,6 @@ class Layout extends React.Component<LayoutProps> {
                         {this.props.children}
                     </div>
                 }
-
             </div>
         );
     }

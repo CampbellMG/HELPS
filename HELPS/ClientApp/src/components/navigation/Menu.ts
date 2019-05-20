@@ -1,4 +1,4 @@
-import {MenuItem} from "../../types/components/NavMenuTypes";
+import {MenuItem} from '../../types/components/NavMenuTypes';
 
 export const AdminMenu: MenuItem[] = [
     {
@@ -16,7 +16,19 @@ export const AdminMenu: MenuItem[] = [
     {
         route: 'room',
         title: 'Rooms'
+    },
+    {
+        route: 'advisors',
+        title: 'Advisors'
+    },
+    {
+        route: 'workshop_registration',
+        title: 'Events'
     }
+    // {
+    //     route: 'reports',
+    //     title: 'Reports'
+    // }
 ];
 
 export const StudentMenu: MenuItem[] = [

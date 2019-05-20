@@ -1,15 +1,15 @@
-import { RoomModel } from '../model/Room';
+import { Room } from '../model/Room';
 import { Editable } from '../util/Editable';
 
 export interface RoomStateProps extends Editable {
-    rooms: RoomModel[];
-    selectedRoom: RoomModel;
+    rooms: Room[];
+    selectedRoom: Room;
 }
 
 export interface RoomDispatchProps {
-    deleteRoom: (room: RoomModel) => void;
+    deleteRoom: (room: Room) => void;
     fetchRooms: () => void;
-    selectRoom: (room: RoomModel) => void;
+    selectRoom: (room: Room) => void;
     saveRoom: (id: number, title: string, isNewMode: boolean) => void;
 }
 

@@ -5,13 +5,10 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import uts from '../../res/uts-white.png';
 import {IndexLinkContainer} from 'react-router-bootstrap';
-import {AppState} from "../../types/store/StoreTypes";
-import {EmailDispatchProps, EmailStateProps} from "../../types/components/EmailTypes";
-import {ThunkDispatch} from "redux-thunk";
-import {retrieveEmails, updateEmail} from "../../store/actions/EmailActions";
-import {connect} from "react-redux";
-import {MenuItem, NavMenuProps, NavMenuStateProps} from "../../types/components/NavMenuTypes";
-import {AdminMenu, StudentMenu} from "./Menu";
+import {AppState} from '../../types/store/StoreTypes';
+import {connect} from 'react-redux';
+import {NavMenuProps, NavMenuStateProps} from '../../types/components/NavMenuTypes';
+import {AdminMenu, StudentMenu} from './Menu';
 
 class NavMenu extends Component<NavMenuProps> {
 

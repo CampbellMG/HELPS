@@ -179,5 +179,6 @@ class UserDetailsForm extends React.Component<InjectedFormProps<Student>> {
 }
 
 export default reduxForm<Student>({
-    form: 'user_details'
+    form: 'user_details',
+    enableReinitialize: true
 })(UserDetailsForm);

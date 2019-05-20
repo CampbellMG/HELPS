@@ -1,5 +1,5 @@
 import { Identifiable } from './Identifiable';
 
-export interface RoomModel extends Identifiable {
+export interface Room extends Identifiable {
     title: string;
 }

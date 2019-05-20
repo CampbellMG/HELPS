@@ -2,17 +2,23 @@ import {Student} from '../model/Student';
 
 export interface UserStateProps {
     authenticated: boolean
-    student?: Student
+    students?: Student[]
     error?: string
     loading: boolean
+    isAdmin: boolean
 }
 
 export interface UserDispatchProps {
-    loadUserDetails: () => void
+    loadUserDetails: (isAdmin: boolean) => void
     updateUser: (user: Student) => void
     submit: () => void
 }
 
 export interface UserProps extends UserStateProps, UserDispatchProps {
 
+}
+
+export interface UserState {
+    selectedStudent?: Student
+    filter: string
 }

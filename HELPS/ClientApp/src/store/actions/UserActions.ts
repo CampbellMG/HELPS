@@ -7,7 +7,7 @@ const requestUser = (): UserAction => ({
     type: UserActionType.REQUEST_USER
 });
 
-const receiveUser = (user: Student): UserAction => ({
+const receiveUser = (user: Student[]): UserAction => ({
     type: UserActionType.RECEIVE_USER,
     payload: user
 });
@@ -36,19 +36,23 @@ export const updateUser = (user: Student) => async (dispatch: Dispatch<any>) => 
         body: JSON.stringify(user)
     });
 
-    const userResult = await userResponse.json();
+    let userResult = await userResponse.json();
 
     if (!userResponse.ok || !userResult.id || !userResult.name) {
         dispatch(userError(userResult.message ? userResult.message : 'Update request failed'));
         return;
     }
 
-    const student = userResult as Student;
+    if (!Array.isArray(userResult)) {
+        userResult = [userResult];
+    }
 
-    dispatch(receiveUser(student));
+    const students = userResult as Student[];
+
+    dispatch(receiveUser(students));
 };
 
-export const retrieveUser = () => async (dispatch: Dispatch<any>) => {
+export const retrieveUser = (isAdmin: boolean) => async (dispatch: Dispatch<any>) => {
     dispatch(requestUser());
 
     const token = localStorage.getItem(LS_STORAGE_KEY);
@@ -64,14 +68,18 @@ export const retrieveUser = () => async (dispatch: Dispatch<any>) => {
         })
     });
 
-    const userResult = await userResponse.json();
+    let userResult = await userResponse.json();
 
-    if (!userResponse.ok || !userResult.id || !userResult.name) {
+    if (!userResponse.ok) {
         dispatch(userError(userResult.message ? userResult.message : 'Retrieve user request failed'));
         return;
     }
 
-    const student = userResult as Student;
+    if (!Array.isArray(userResult)) {
+        userResult = [userResult];
+    }
 
-    dispatch(receiveUser(student));
+    const students = userResult as Student[];
+
+    dispatch(receiveUser(students));
 };

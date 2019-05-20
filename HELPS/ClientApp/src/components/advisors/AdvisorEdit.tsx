@@ -7,15 +7,15 @@ import Form from 'react-bootstrap/Form';
 import { Advisor } from '../../types/model/Advisor';
 import Button from 'react-bootstrap/Button';
 import AdvisorDatabase from '../../../database/database.json'
-import AdvisorsDetailsForm from './AdvisorsDetailsForm'
 import { Container, Col, Row } from 'react-bootstrap';
 import { AdvisorStateProps, AdvisorDispatchProps, AdvisorProps } from '../../types/components/AdvisorTypes';
 import {AppState} from '../../types/store/StoreTypes';
 import { ThunkDispatch } from 'redux-thunk';
 import { retrieveAdvisorList, retrieveAdvisor } from '../../store/actions/AdvisorActions';
 import { AdvisorState } from '../../types/store/AdvisorReducerTypes';
+import AdvisorForm from './AdvisorForm';
 
-class AdvisorsDetailsList extends Component<AdvisorProps, AdvisorState> {
+class AdvisorEdit extends Component<AdvisorProps, AdvisorState> {
     TextInput = (props: any) => (
         <Form.Group controlId='login'>
             <Form.Control value={props.input.value}
@@ -32,7 +32,7 @@ class AdvisorsDetailsList extends Component<AdvisorProps, AdvisorState> {
 
     render() {
         return (
-            <AdvisorsDetailsForm/>
+            <AdvisorForm/>
             );
     }
 }
@@ -51,4 +51,4 @@ const mapDispatchToProps = (dispatch: ThunkDispatch<{},{}, any>): AdvisorDispatc
 export default connect<AdvisorStateProps, AdvisorDispatchProps, {}, AppState>(
     mapStateToProps,
     mapDispatchToProps
-)(AdvisorsDetailsList);
+)(AdvisorEdit);

@@ -1,16 +1,16 @@
-import { MessageModel } from '../model/Message';
+import { Message } from '../model/Message';
 import { Editable } from '../util/Editable';
 
 export interface MessageStateProps extends Editable {
-    messages: MessageModel[];
-    selectedMessage: MessageModel;
+    messages: Message[];
+    selectedMessage: Message;
 }
 
 export interface MessageDispatchProps {
     fetchMessages: () => void;
-    saveMessage: (messageId: number, newMessage: MessageModel, isNewMode: boolean) => void;
+    saveMessage: (messageId: number, newMessage: Message, isNewMode: boolean) => void;
     deleteMessage: (messageId: number) => void;
-    selectMessage: (message: MessageModel) => void;
+    selectMessage: (message: Message) => void;
 }
 
 export interface MessageProps extends MessageStateProps, MessageDispatchProps {}

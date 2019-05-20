@@ -9,7 +9,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { Container, Col, Row } from 'react-bootstrap';
 
-class AdvisorsDetailsForm extends React.Component<InjectedFormProps<Advisor>> {
+class AdvisorForm extends React.Component<InjectedFormProps<Advisor>> {
     TextInput = (props: any) => (
         <Form.Group controlId='login'>
             <Form.Control value={props.input.value}
@@ -119,4 +119,4 @@ class AdvisorsDetailsForm extends React.Component<InjectedFormProps<Advisor>> {
 
 export default reduxForm<Advisor>({
     form: 'advisorDetails'
-})(AdvisorsDetailsForm);
+})(AdvisorForm);

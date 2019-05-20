@@ -47,7 +47,7 @@ server.all(/^(?!(\/register|\/login)).*$/, (req, res, next) => {
             return
         }
 
-        if (/students/g.test(req.url) && !/students\/[0-9]+/g.test(req.url)) {
+        if (!decode.isAdmin && /students/g.test(req.url) && !/students\/[0-9]+/g.test(req.url)) {
             req.url = req.url.replace(/students/g, `students/${decode.userId}`);
             req.url = req.url.replace(/workshops/g, 'studentWorkshops');
 
