@@ -12,11 +12,11 @@ export default class EditorList<T> extends Component<EditorListProps<T>> {
 
     render() {
         return (
-            <div className='h-100 overflow-auto d-flex'>
-                <div className='col-lg-2 border-right list shadow'>
+            <div className='h-100 d-flex flex-fill'>
+                <div className='col-lg-2 border-right overflow-auto list shadow'>
                     {this.renderList()}
                 </div>
-                <div className='d-flex flex-column flex-fill content'>
+                <div className='d-flex flex-column flex-fill overflow-auto content'>
                     {this.props.children}
                 </div>
             </div>

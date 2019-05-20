@@ -1,11 +1,19 @@
 import * as React from 'react';
-import {Field, InjectedFormProps, reduxForm} from 'redux-form';
+import {Field, reduxForm, submit} from 'redux-form';
 import Form from 'react-bootstrap/Form';
 import {renderEditButtons} from '../../types/util/Editable';
-import {AdvisorFormData, AdvisorFormState} from '../../types/components/AdvisorTypes';
+import {
+    AdvisorFormData,
+    AdvisorFormDispatcProps,
+    AdvisorFormProps,
+    AdvisorFormState
+} from '../../types/components/AdvisorTypes';
 import {Button} from 'react-bootstrap';
+import {AppState} from "../../types/store/StoreTypes";
+import {ThunkDispatch} from "redux-thunk";
+import {connect} from "react-redux";
 
-class AdvisorForm extends React.Component<InjectedFormProps<AdvisorFormData>, AdvisorFormState> {
+class AdvisorForm extends React.Component<AdvisorFormProps, AdvisorFormState> {
     TextInput = (props: any) => (
         <Form.Group controlId='login'>
             <Form.Control value={props.input.value}
@@ -14,7 +22,7 @@ class AdvisorForm extends React.Component<InjectedFormProps<AdvisorFormData>, Ad
         </Form.Group>
     );
 
-    constructor(props: InjectedFormProps<AdvisorFormData>) {
+    constructor(props: AdvisorFormProps) {
         super(props);
 
         this.state = {
@@ -24,6 +32,7 @@ class AdvisorForm extends React.Component<InjectedFormProps<AdvisorFormData>, Ad
     }
 
     render() {
+        const {editing} = this.state;
         return (
             <form onSubmit={this.props.handleSubmit}>
                 <div className='row no-gutters'>
@@ -32,6 +41,7 @@ class AdvisorForm extends React.Component<InjectedFormProps<AdvisorFormData>, Ad
                         <Field
                             name='id'
                             component={this.TextInput}
+                            disabled={!editing}
                             type='text'
                             placeholder='123456789'/>
                     </Form.Group>
@@ -40,6 +50,7 @@ class AdvisorForm extends React.Component<InjectedFormProps<AdvisorFormData>, Ad
                         <Field
                             name='email'
                             component={this.TextInput}
+                            disabled={!editing}
                             type='text'
                             placeholder='Steve.Smith@uts.edu.au'/>
                     </Form.Group>
@@ -50,6 +61,7 @@ class AdvisorForm extends React.Component<InjectedFormProps<AdvisorFormData>, Ad
                         <Field
                             name='firstName'
                             component={this.TextInput}
+                            disabled={!editing}
                             type='text'
                             placeholder='Steve'/>
                     </Form.Group>
@@ -58,6 +70,7 @@ class AdvisorForm extends React.Component<InjectedFormProps<AdvisorFormData>, Ad
                         <Field
                             name='lastName'
                             component={this.TextInput}
+                            disabled={!editing}
                             type='text'
                             placeholder='Smith'/>
                     </Form.Group>
@@ -68,12 +81,15 @@ class AdvisorForm extends React.Component<InjectedFormProps<AdvisorFormData>, Ad
                         <Field
                             name='isActive'
                             component={this.TextInput}
+                            disabled={!editing}
                             type='text'
                             placeholder='Active'/>
                     </Form.Group>
-                    <div className='row'>
+                </div>
+                <div className='row '>
+                    <div className='col-lg-4 mx-auto mt-4'>
                         {this.renderEditButtons()}
-                        <Button className='col-lg-4 mx-auto mt-4'
+                        <Button className='w-100 mt-1'
                                 onClick={() => this.props.change('delete', true)}
                                 type='submit'>
                             Delete
@@ -94,7 +110,9 @@ class AdvisorForm extends React.Component<InjectedFormProps<AdvisorFormData>, Ad
     private editOrSave = (): void => {
         if (this.state.editing) {
             this.props.change('delete', false);
+            this.props.submit();
         }
+
         this.setState({editing: !this.state.editing});
     };
 
@@ -104,7 +122,16 @@ class AdvisorForm extends React.Component<InjectedFormProps<AdvisorFormData>, Ad
     };
 }
 
+const mapDispatchToProps = (dispatch: ThunkDispatch<{}, {}, any>): AdvisorFormDispatcProps => ({
+    submit: () => dispatch(submit('advisor_details'))
+});
+
+const advisorForm = connect<{}, AdvisorFormDispatcProps, {}, AppState>(
+    undefined,
+    mapDispatchToProps
+)(AdvisorForm);
+
 export default reduxForm<AdvisorFormData>({
-    form: 'advisorDetails',
+    form: 'advisor_details',
     enableReinitialize: true
-})(AdvisorForm);
+})(advisorForm);

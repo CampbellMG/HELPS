@@ -1,5 +1,6 @@
 import {Advisor} from '../model/Advisor';
 import {Editable} from '../util/Editable';
+import {InjectedFormProps} from "redux-form";
 
 export interface AdvisorStateProps {
     authenticated: boolean
@@ -28,4 +29,12 @@ export interface AdvisorFormState extends Editable {
 
 export interface AdvisorFormData extends Advisor {
     delete: boolean
+}
+
+export interface AdvisorFormDispatcProps {
+    submit: () => void
+}
+
+export interface AdvisorFormProps extends InjectedFormProps<AdvisorFormData>, AdvisorFormDispatcProps{
+
 }

@@ -18,7 +18,7 @@ import {Advisor} from '../../types/model/Advisor';
 class AdvisorEdit extends Component<AdvisorProps, AdvisorState> {
 
     private static readonly EMPTY_ADVISOR: Advisor = {
-        id: -1,
+        id: 0,
         email: '',
         firstName: '',
         lastName: '',
