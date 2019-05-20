@@ -1,52 +1,102 @@
 import * as React from 'react';
 import {Component} from 'react';
-import {Dispatch} from 'redux';
 import {connect} from 'react-redux';
-import {Field, InjectedFormProps, reduxForm} from 'redux-form';
-import Form from 'react-bootstrap/Form';
-import { Advisor } from '../../types/model/Advisor';
-import Button from 'react-bootstrap/Button';
-import AdvisorDatabase from '../../../database/database.json'
-import { Container, Col, Row } from 'react-bootstrap';
-import { AdvisorStateProps, AdvisorDispatchProps, AdvisorProps } from '../../types/components/AdvisorTypes';
+import {
+    AdvisorDispatchProps,
+    AdvisorFormData,
+    AdvisorProps,
+    AdvisorState,
+    AdvisorStateProps
+} from '../../types/components/AdvisorTypes';
 import {AppState} from '../../types/store/StoreTypes';
-import { ThunkDispatch } from 'redux-thunk';
-import { retrieveAdvisorList, retrieveAdvisor } from '../../store/actions/AdvisorActions';
-import { AdvisorState } from '../../types/store/AdvisorReducerTypes';
+import {ThunkDispatch} from 'redux-thunk';
+import {addAdvisor, deleteAdvisor, retrieveAdvisorList, updateAdvisor} from '../../store/actions/AdvisorActions';
 import AdvisorForm from './AdvisorForm';
+import EditorList from '../editorlist/EditorList';
+import {Advisor} from '../../types/model/Advisor';
 
 class AdvisorEdit extends Component<AdvisorProps, AdvisorState> {
-    TextInput = (props: any) => (
-        <Form.Group controlId='login'>
-            <Form.Control value={props.input.value}
-                          onChange={props.input.onChange}
-                          containerStyle={{flexGrow: 1}}
-                          {...props}/>
-        </Form.Group>
-    );
+
+    private static readonly EMPTY_ADVISOR: Advisor = {
+        id: -1,
+        email: '',
+        firstName: '',
+        lastName: '',
+        isActive: false
+    };
+
+    private get filteredAdvisors(): Advisor[] {
+        let {advisors, filter} = {...this.state, ...this.props};
+        if (!advisors) return [];
+
+        filter = filter.trim().toLowerCase();
+
+        if (filter.length === 0) {
+            return advisors;
+        }
+
+        return advisors.filter(advisor => (
+            advisor.id.toString().toLowerCase().includes(filter) ||
+            advisor.firstName.toLowerCase().includes(filter) ||
+            advisor.lastName.toLowerCase().includes(filter)
+        ));
+    }
+
+    constructor(props: AdvisorProps) {
+        super(props);
+
+        this.state = {
+            filter: ''
+        };
+    }
 
     componentDidMount(): void {
         this.props.loadAdvisorList();
-        this.props.loadAdvisorDetails();
     }
 
     render() {
         return (
-            <AdvisorForm/>
-            );
+            <EditorList items={this.filteredAdvisors}
+                        activeItem={this.state.selectedAdvisor}
+                        onFilter={filter => this.setState({filter})}
+                        onAdd={() => this.setState({selectedAdvisor: AdvisorEdit.EMPTY_ADVISOR})}
+                        onSelect={selectedAdvisor => this.setState({selectedAdvisor})}
+                        keyExtractor={advisor => advisor.id.toString()}
+                        titleExtractor={advisor => `[${advisor.id}] ${advisor.firstName} ${advisor.lastName}`}>
+
+                <div className='col-lg-10 mx-auto flex-fill d-flex flex-column justify-content-center'>
+                    <AdvisorForm initialValues={{...this.state.selectedAdvisor, delete: false}}
+                                 onSubmit={this.onSubmit}/>
+                </div>
+            </EditorList>
+        );
     }
+
+    private onSubmit = (advisorFormData: AdvisorFormData) => {
+        if (advisorFormData.delete) {
+            return this.props.deleteAdvisor(advisorFormData);
+        }
+
+        if (advisorFormData.id === AdvisorEdit.EMPTY_ADVISOR.id) {
+            return this.props.addAdvisor(advisorFormData);
+        }
+
+        this.props.updateAdvisor(advisorFormData);
+    };
 }
 
 const mapStateToProps = (state: AppState): AdvisorStateProps => ({
     authenticated: state.auth.authenticated,
     advisors: state.advisors.advisors,
-    error:state.advisors.error
+    error: state.advisors.error
 });
 
-const mapDispatchToProps = (dispatch: ThunkDispatch<{},{}, any>): AdvisorDispatchProps => ({
+const mapDispatchToProps = (dispatch: ThunkDispatch<{}, {}, any>): AdvisorDispatchProps => ({
     loadAdvisorList: () => dispatch(retrieveAdvisorList()),
-    loadAdvisorDetails: () => dispatch(retrieveAdvisor())
-})
+    deleteAdvisor: advisor => dispatch(deleteAdvisor(advisor)),
+    updateAdvisor: advisor => dispatch(updateAdvisor(advisor)),
+    addAdvisor: advisor => dispatch(addAdvisor(advisor))
+});
 
 export default connect<AdvisorStateProps, AdvisorDispatchProps, {}, AppState>(
     mapStateToProps,

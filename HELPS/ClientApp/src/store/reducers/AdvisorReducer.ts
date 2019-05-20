@@ -21,19 +21,6 @@ export function AdvisorReducer(state: AdvisorState = initialState, action: Advis
                 advisors: action.payload,
                 error: undefined
             };
-        case AdvisorActionType.REQUEST_ADVISOR_DETAILS:
-            return {
-                ...state,
-                isLoading: true,
-                error: undefined
-            };
-        case AdvisorActionType.RECEIVE_ADVISOR_DETAILS:
-            return {
-                ...state,
-                isLoading: false,
-                advisors: action.payload,
-                error: undefined
-            };
         case AdvisorActionType.ADVISOR_ERROR:
             return {
                 ...state,

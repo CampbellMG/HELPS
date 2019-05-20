@@ -385,20 +385,6 @@
       "isActive": false
     },
     {
-      "id": 3,
-      "email": "Spencer_Shields10@gmail.com",
-      "firstName": "Katrine",
-      "lastName": "Hudson",
-      "isActive": false
-    },
-    {
-      "id": 4,
-      "email": "Howell0@gmail.com",
-      "firstName": "Kirstin",
-      "lastName": "Franecki",
-      "isActive": true
-    },
-    {
       "id": 5,
       "email": "Aylin_Reynolds88@hotmail.com",
       "firstName": "Eryn",
@@ -452,7 +438,7 @@
     },
     {
       "id": 5,
-      "title": "ipsum cupidatat Duis in"
+      "title": "ipsum cupidatat Duis ind"
     },
     {
       "id": 6,

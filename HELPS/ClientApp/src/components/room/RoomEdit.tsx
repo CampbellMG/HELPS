@@ -89,10 +89,9 @@ class RoomEdit extends React.Component<RoomProps, RoomState> {
 
     private renderEditButtons = (): JSX.Element =>
         renderEditButtons(
-            this.state.editing,
-            this.cancelOrCommenceEdit,
             this.state,
-            this.editOrSaveIsDisabled,
+            this.editOrSaveIsDisabled(),
+            this.cancelOrCommenceEdit,
             this.editOrSave
         );
 

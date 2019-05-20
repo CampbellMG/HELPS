@@ -21,8 +21,10 @@ class NavMenu extends Component<NavMenuProps> {
                         <img src={uts} alt='UTS Logo'/>
                     </Navbar.Brand>
                     <ul className='navbar-nav col ml-5'>
-                        {menuItems.map(menuItem => (
-                            <IndexLinkContainer to={`/${menuItem.route}`} className='text-light font-weight-bold link'>
+                        {menuItems.map((menuItem, index) => (
+                            <IndexLinkContainer to={`/${menuItem.route}`}
+                                                key={`${menuItem.route} ${index}`}
+                                                className='text-light font-weight-bold link'>
                                 <Nav.Item className='mr-5'>
                                     {menuItem.title}
                                 </Nav.Item>

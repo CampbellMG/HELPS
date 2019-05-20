@@ -1,122 +1,110 @@
 import * as React from 'react';
-import { Component } from 'react';
-import ListGroup from 'react-bootstrap/ListGroup';
-import ListGroupItem from 'react-bootstrap/ListGroupItem';
-import { InfoState } from '../../types/components/InfoTypes';
-import { Advisor } from '../../types/model/Advisor';
-import { Field, InjectedFormProps, reduxForm } from 'redux-form';
+import {Field, InjectedFormProps, reduxForm} from 'redux-form';
 import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import { Container, Col, Row } from 'react-bootstrap';
+import {renderEditButtons} from '../../types/util/Editable';
+import {AdvisorFormData, AdvisorFormState} from '../../types/components/AdvisorTypes';
+import {Button} from 'react-bootstrap';
 
-class AdvisorForm extends React.Component<InjectedFormProps<Advisor>> {
+class AdvisorForm extends React.Component<InjectedFormProps<AdvisorFormData>, AdvisorFormState> {
     TextInput = (props: any) => (
         <Form.Group controlId='login'>
             <Form.Control value={props.input.value}
-                onChange={props.input.onChange}
-                {...props} />
+                          onChange={props.input.onChange}
+                          {...props} />
         </Form.Group>
     );
 
+    constructor(props: InjectedFormProps<AdvisorFormData>) {
+        super(props);
+
+        this.state = {
+            editing: false,
+            isNewMode: false
+        };
+    }
+
     render() {
         return (
-            <div className='row h-100 overflow-auto'>
-                <Container className='col-lg-2 mx-3 border-right'>
-                    <Row>
-                        <Row className='m-3'>
-                            <div>
-                                <Field
-                                    name='searchAdvisor'
-                                    component={this.TextInput}
-                                    type='text'
-                                    placeholder='Search Advisors' />
-                            </div>
-                            <Button className='ml-3 mb-3' variant="light">+</Button>
-                        </Row>
-                    </Row>
-                    <Row>
-                        <div className='col mt-3'>
-                            <h1>Advisors</h1>
-                        </div>
-                    </Row>
-                </Container>
-                <div className='col m-3 my-auto'>
-                    <div style={{ height: '100%' }} className='bg-white'>
-                        <form onSubmit={this.props.handleSubmit}>
-                            <div className='row no-gutters'>
-                                <Form.Group className='col-lg-4 col mx-auto'>
-                                    <Form.Label>Staff Number</Form.Label>
-                                    <Field
-                                        name='id'
-                                        component={this.TextInput}
-                                        type='text'
-                                        placeholder='123456789' />
-                                </Form.Group>
-                                <Form.Group className='col-lg-4 col mx-auto'>
-                                    <Form.Label>Email</Form.Label>
-                                    <Field
-                                        name='email'
-                                        component={this.TextInput}
-                                        type='text'
-                                        placeholder='Steve.Smith@uts.edu.au' />
-                                </Form.Group>
-                            </div>
-                            <div className='row no-gutters'>
-                                <Form.Group className='col-lg-4 col mx-auto'>
-                                    <Form.Label>First Name</Form.Label>
-                                    <Field
-                                        name='firstName'
-                                        component={this.TextInput}
-                                        type='text'
-                                        placeholder='Steve' />
-                                </Form.Group>
-                                <Form.Group className='col-lg-4 col mx-auto'>
-                                    <Form.Label>Last Name</Form.Label>
-                                    <Field
-                                        name='lastName'
-                                        component={this.TextInput}
-                                        type='text'
-                                        placeholder='Smith' />
-                                </Form.Group>
-                            </div>
-                            <div className='row no-gutters'>
-                                <Form.Group className='col-lg-4 col mx-auto'>
-                                    <Form.Label>Status</Form.Label>
-                                    <Field
-                                        name='isActive'
-                                        component={this.TextInput}
-                                        type='text'
-                                        placeholder='Active' />
-                                </Form.Group>
-                            </div>
-                            <div className='row'>
-                                <Button className='col-lg-4 mx-auto mt-4' type='submit'>
-                                    Delete
-                                </Button>
-                            </div>
-                        </form>
+            <form onSubmit={this.props.handleSubmit}>
+                <div className='row no-gutters'>
+                    <Form.Group className='col-lg-4 col mx-auto'>
+                        <Form.Label>Staff Number</Form.Label>
+                        <Field
+                            name='id'
+                            component={this.TextInput}
+                            type='text'
+                            placeholder='123456789'/>
+                    </Form.Group>
+                    <Form.Group className='col-lg-4 col mx-auto'>
+                        <Form.Label>Email</Form.Label>
+                        <Field
+                            name='email'
+                            component={this.TextInput}
+                            type='text'
+                            placeholder='Steve.Smith@uts.edu.au'/>
+                    </Form.Group>
+                </div>
+                <div className='row no-gutters'>
+                    <Form.Group className='col-lg-4 col mx-auto'>
+                        <Form.Label>First Name</Form.Label>
+                        <Field
+                            name='firstName'
+                            component={this.TextInput}
+                            type='text'
+                            placeholder='Steve'/>
+                    </Form.Group>
+                    <Form.Group className='col-lg-4 col mx-auto'>
+                        <Form.Label>Last Name</Form.Label>
+                        <Field
+                            name='lastName'
+                            component={this.TextInput}
+                            type='text'
+                            placeholder='Smith'/>
+                    </Form.Group>
+                </div>
+                <div className='row no-gutters'>
+                    <Form.Group className='col-lg-4 col mx-auto'>
+                        <Form.Label>Status</Form.Label>
+                        <Field
+                            name='isActive'
+                            component={this.TextInput}
+                            type='text'
+                            placeholder='Active'/>
+                    </Form.Group>
+                    <div className='row'>
+                        {this.renderEditButtons()}
+                        <Button className='col-lg-4 mx-auto mt-4'
+                                onClick={() => this.props.change('delete', true)}
+                                type='submit'>
+                            Delete
+                        </Button>
                     </div>
                 </div>
-            </div>
+            </form>
         );
     }
 
-    private createSearch = () => {
-        return (
-            <Row className='m-3 flex-fill'>
-                <div className='flex-fill'>
-                    <Field
-                        name='searchAdvisor'
-                        component={this.TextInput}
-                        type='text'
-                        placeholder='Search Advisors' />
-                </div>
-                <Button className='ml-3 mb-3' variant="light">+</Button>
-            </Row>
-        );
-    }
+    private renderEditButtons = (): JSX.Element => renderEditButtons(
+        this.state,
+        this.state.editing && this.props.pristine,
+        this.onCancel,
+        this.editOrSave
+    );
+
+    private editOrSave = (): void => {
+        if (this.state.editing) {
+            this.props.change('delete', false);
+        }
+        this.setState({editing: !this.state.editing});
+    };
+
+    private onCancel = () => {
+        this.setState({editing: false});
+        this.props.reset();
+    };
 }
 
-export default reduxForm<Advisor>({
-    form: 'advisorDetails'
+export default reduxForm<AdvisorFormData>({
+    form: 'advisorDetails',
+    enableReinitialize: true
 })(AdvisorForm);

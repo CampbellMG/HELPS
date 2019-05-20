@@ -56,15 +56,20 @@ class MessageEdit extends Component<MessageProps, MessageState> {
                 filteredMessages.push(message);
             }
         });
-        return (<EditorList items={filteredMessages}
-                            activeItem={this.state.selectedMessage}
-                            onSelect={this.selectMessage}
-                            keyExtractor={email => email.id.toString()}
-                            onFilter={newFilter => this.setState({filter: newFilter})}
-                            titleExtractor={(message) => message.title}
-                            onAdd={this.newMessage}>
-            {this.renderMessageEditor()}
-        </EditorList>);
+
+        return (
+            <EditorList items={filteredMessages}
+                        activeItem={this.state.selectedMessage}
+                        onSelect={this.selectMessage}
+                        keyExtractor={email => email.id.toString()}
+                        onFilter={newFilter => this.setState({filter: newFilter})}
+                        titleExtractor={(message) => message.title}
+                        onAdd={this.newMessage}>
+
+                {this.renderMessageEditor()}
+
+            </EditorList>
+        );
     }
 
     private renderMessageEditor = () => {
@@ -99,10 +104,9 @@ class MessageEdit extends Component<MessageProps, MessageState> {
 
     private renderEditButtons = (): JSX.Element =>
         renderEditButtons(
-            this.state.editing,
-            this.cancelOrCommenceEdit,
             this.state,
-            this.editOrSaveIsDisabled,
+            this.editOrSaveIsDisabled(),
+            this.cancelOrCommenceEdit,
             this.editOrSave
         );
 
@@ -129,28 +133,31 @@ class MessageEdit extends Component<MessageProps, MessageState> {
     };
 
     private getInputFields = (): JSX.Element => {
-        return (<div>
-            <Form.Group controlId='formTitle'>
-                <Form.Label className='mt-4'>Title</Form.Label>
-                <Form.Control
-                    type='text'
-                    className='flex-fill'
-                    value={this.state.newMessage.title}
-                    disabled={!this.state.editing}
-                    onChange={(e: any) => this.editMessage(e, 'title')}
-                />
-            </Form.Group>
-            <Form.Group controlId='formContent'>
-                <Form.Label className='mt-1'>Message Content</Form.Label>
+        return (
+            <div>
+                <Form.Group controlId='formTitle'>
+                    <Form.Label className='mt-4'>Title</Form.Label>
+                    <Form.Control
+                        type='text'
+                        className='flex-fill'
+                        value={this.state.newMessage.title}
+                        disabled={!this.state.editing}
+                        onChange={(e: any) => this.editMessage(e, 'title')}
+                    />
+                </Form.Group>
+                <Form.Group controlId='formContent'>
+                    <Form.Label className='mt-1'>Message Content</Form.Label>
 
-                <Form.Control
-                    as='textarea'
-                    className='flex-fill'
-                    value={this.state.newMessage.content}
-                    disabled={!this.state.editing}
-                    onChange={(e: any) => this.editMessage(e, 'content')}
-                />
-            </Form.Group></div>);
+                    <Form.Control
+                        as='textarea'
+                        className='flex-fill'
+                        value={this.state.newMessage.content}
+                        disabled={!this.state.editing}
+                        onChange={(e: any) => this.editMessage(e, 'content')}
+                    />
+                </Form.Group>
+            </div>
+        );
     };
 
     private newMessage = (): void => {
