@@ -55,8 +55,8 @@ class User extends Component<UserProps, UserState> {
         }
 
         return students.filter(student => (
-            student.id.toString().toLowerCase().indexOf(filter) !== -1 ||
-            student.name.toLowerCase().indexOf(filter) !== -1
+            student.id.toString().toLowerCase().includes(filter) ||
+            student.name.toLowerCase().includes(filter)
         ));
     }
 
@@ -115,10 +115,8 @@ class User extends Component<UserProps, UserState> {
 
     private getUserDetails() {
         return (
-            <div className='bg-white'>
-                <UserDetailsForm onSubmit={this.props.updateUser}
-                                 initialValues={this.state.selectedStudent}/>
-            </div>
+            <UserDetailsForm onSubmit={this.props.updateUser}
+                             initialValues={this.state.selectedStudent}/>
         );
     }
 }

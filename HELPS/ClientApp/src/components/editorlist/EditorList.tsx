@@ -6,16 +6,17 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
 import {Form} from 'react-bootstrap';
 import {EditorListProps} from '../../types/components/EditorListTypes';
+import './EditorList.css';
 
 export default class EditorList<T> extends Component<EditorListProps<T>> {
 
     render() {
         return (
-            <div className='row h-100 overflow-auto'>
-                <div className='col-lg-2 border-right'>
+            <div className='h-100 overflow-auto d-flex'>
+                <div className='col-lg-2 border-right list shadow'>
                     {this.renderList()}
                 </div>
-                <div className='col m-3 d-flex flex-column'>
+                <div className='d-flex flex-column flex-fill content'>
                     {this.props.children}
                 </div>
             </div>

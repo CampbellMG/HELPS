@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button } from 'react-bootstrap';
+import {Button} from 'react-bootstrap';
 
 export interface Editable {
     editing: boolean;
@@ -42,19 +42,22 @@ export const renderEditButtons = <T extends Editable>(
     editOrSaveIsDisabled: () => boolean,
     getEditOrSave: () => void
 ) => {
-    return isEditing ? (<div>
-        <Button onClick={(e: any) => cancelOrCommenceEdit()} className='w-50 mt-4 p-1' >
-            Cancel
+    return isEditing ? (
+        <div className='d-flex justify-content-around'>
+            <Button onClick={(e: any) => cancelOrCommenceEdit()} className='flex-fill mt-4 p-1 mr-1'>
+                Cancel
+            </Button>
+            < Button onClick={(e: any) => getEditOrSave()} className='flex-fill mt-4 p-1 ml-1' disabled={editOrSaveIsDisabled()}>
+                {getEditOrSaveText(props)}
+            </ Button>
+        </div>
+    ) : (
+        <Button onClick={(e: any) => getEditOrSave()} className='w-100 mt-4' disabled={editOrSaveIsDisabled()}>
+            {getEditOrSaveText(props)}
         </Button>
-        < Button onClick={(e: any) => getEditOrSave()} className='w-50 mt-4 p-1' disabled={editOrSaveIsDisabled()} >
-            {getEditOrSaveText(props)}
-        </ Button>
-    </div>) :
-        (<Button onClick={(e: any) => getEditOrSave()} className='w-100 mt-4' disabled={editOrSaveIsDisabled()} >
-            {getEditOrSaveText(props)}
-        </Button>);
+    );
 };
 
 export const getHiddenProperty = <T extends Editable>(state: T): React.CSSProperties | undefined => {
     return state.isNewMode ? {display: 'none'} : undefined;
-}
+};

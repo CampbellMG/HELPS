@@ -1,13 +1,13 @@
 import * as React from 'react';
-import { Form, Button } from 'react-bootstrap';
-import { connect } from 'react-redux';
-import { ThunkDispatch } from 'redux-thunk';
-import { RoomStateProps, RoomDispatchProps, RoomProps } from '../../types/components/RoomTypes';
-import { AppState } from '../../types/store/StoreTypes';
-import { deleteRoom, fetchRooms, updateRoomName, selectRoom } from '../../store/actions/RoomActions';
-import { Room } from '../../types/model/Room';
-import { RoomState } from '../../types/store/RoomReducerTypes';
-import { editOrSave, deleteEntity, renderEditButtons, getHiddenProperty } from '../../types/util/Editable';
+import {Form, Button} from 'react-bootstrap';
+import {connect} from 'react-redux';
+import {ThunkDispatch} from 'redux-thunk';
+import {RoomStateProps, RoomDispatchProps, RoomProps} from '../../types/components/RoomTypes';
+import {AppState} from '../../types/store/StoreTypes';
+import {deleteRoom, fetchRooms, updateRoomName, selectRoom} from '../../store/actions/RoomActions';
+import {Room} from '../../types/model/Room';
+import {RoomState} from '../../types/store/RoomReducerTypes';
+import {editOrSave, deleteEntity, renderEditButtons, getHiddenProperty} from '../../types/util/Editable';
 import EditorList from '../editorlist/EditorList';
 
 class RoomEdit extends React.Component<RoomProps, RoomState> {
@@ -41,38 +41,39 @@ class RoomEdit extends React.Component<RoomProps, RoomState> {
                 filteredRooms.push(room);
             }
         });
-        return (<EditorList items={filteredRooms}
-                            activeItem={this.state.selectedRoom}
-                            onSelect={this.selectRoom}
-                            keyExtractor={(room) => room.id.toString()}
-                            onFilter={newFilter => this.setState({ filter: newFilter })}
-                            titleExtractor={(room) => room.title}
-                            onAdd={this.newRoom} >
-            {this.renderRoomEditor()}
-        </EditorList>);
+
+        return (
+            <EditorList items={filteredRooms}
+                        activeItem={this.state.selectedRoom}
+                        onSelect={this.selectRoom}
+                        keyExtractor={(room) => room.id.toString()}
+                        onFilter={newFilter => this.setState({filter: newFilter})}
+                        titleExtractor={(room) => room.title}
+                        onAdd={this.newRoom}>
+                {this.renderRoomEditor()}
+            </EditorList>
+        );
     }
 
     private renderRoomEditor = () => {
         return (
-            <div className='col-lg-10'>
-                <div className='row justify-content-center'>
-                    <div className='col-lg-5'>
-                        <Form.Control type='text'
-                                      className='flex-fill'
-                                      value={this.state.newRoomTitle}
-                                      disabled={!this.state.editing}
-                                      onChange={(e: any) => this.editTitle(e)}
-                        />
-                        {this.renderEditButtons()}
-                        <Button style={getHiddenProperty(this.state)} onClick={(e: any) => this.deleteRoom()} className='w-100 mt-2'>
-                            Delete
-                        </Button>
-                    </div>
+            <div className='col-lg-5 mx-auto flex-fill d-flex flex-column justify-content-center'>
+                <Form.Control type='text'
+                              value={this.state.newRoomTitle}
+                              disabled={!this.state.editing}
+                              onChange={(e: any) => this.editTitle(e)}/>
 
-                </div>
+                {this.renderEditButtons()}
+
+                <Button style={getHiddenProperty(this.state)}
+                        onClick={() => this.deleteRoom()}
+                        className='w-100 mt-2'>
+                    Delete
+                </Button>
+
             </div>
         );
-    }
+    };
 
     private newRoom = (): void => {
         this.setState({
@@ -80,11 +81,11 @@ class RoomEdit extends React.Component<RoomProps, RoomState> {
             editing: true,
             isNewMode: true
         });
-    }
+    };
 
     private editTitle = (e: any): void => {
-        this.setState({ newRoomTitle: e.target.value });
-    }
+        this.setState({newRoomTitle: e.target.value});
+    };
 
     private renderEditButtons = (): JSX.Element =>
         renderEditButtons(
@@ -93,7 +94,7 @@ class RoomEdit extends React.Component<RoomProps, RoomState> {
             this.state,
             this.editOrSaveIsDisabled,
             this.editOrSave
-        )
+        );
 
     private editOrSave = (): void => {
         editOrSave(
@@ -105,17 +106,17 @@ class RoomEdit extends React.Component<RoomProps, RoomState> {
             },
             () => this.cancelOrCommenceEdit()
         );
-    }
+    };
 
     private editOrSaveIsDisabled = (): boolean =>
-        this.state.editing && this.state.selectedRoom.title === this.state.newRoomTitle
+        this.state.editing && this.state.selectedRoom.title === this.state.newRoomTitle;
 
     private cancelOrCommenceEdit = (): void => {
         if (this.state.editing) {
-            this.setState({ newRoomTitle: this.state.selectedRoom.title });
+            this.setState({newRoomTitle: this.state.selectedRoom.title});
         }
-        this.setState({ editing: !this.state.editing });
-    }
+        this.setState({editing: !this.state.editing});
+    };
 
     private deleteRoom = () => {
         deleteEntity(
@@ -126,11 +127,11 @@ class RoomEdit extends React.Component<RoomProps, RoomState> {
             },
             () => this.state.selectedRoom
         );
-    }
+    };
 
     private selectRoom = (room: Room): void => {
         this.props.selectRoom(room);
-    }
+    };
 }
 
 const mapStateToProps = (state: AppState): RoomStateProps => {

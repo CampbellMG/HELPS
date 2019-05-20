@@ -346,107 +346,7 @@
       "other": "Excepteur"
     }
   ],
-  "workshops": [
-    {
-      "id": 1,
-      "title": "Corporate",
-      "time": "Sun May 19 2019 16:58:26 GMT+1000 (AUS Eastern Standard Time)",
-      "duration": 34,
-      "roomId": 96181223,
-      "maximum": -22738549,
-      "targetGroup": "magna cupidatat irure eu",
-      "description": "nisi sunt minim ea laboris",
-      "availablePlaces": 29619585.87302509
-    },
-    {
-      "id": 2,
-      "title": "Dynamic",
-      "time": "Sun May 19 2019 19:58:40 GMT+1000 (AUS Eastern Standard Time)",
-      "duration": 92,
-      "roomId": -75195931,
-      "maximum": 8735440,
-      "targetGroup": "consectetur",
-      "description": "minim irure",
-      "availablePlaces": -75888386.17880467
-    },
-    {
-      "id": 3,
-      "title": "Investor",
-      "time": "Sun May 19 2019 13:42:01 GMT+1000 (AUS Eastern Standard Time)",
-      "duration": 138,
-      "roomId": 44751593,
-      "maximum": 62995189,
-      "targetGroup": "eu reprehenderit officia enim",
-      "description": "commodo officia",
-      "availablePlaces": -70480320.42207946
-    },
-    {
-      "id": 4,
-      "title": "Lead",
-      "time": "Sun May 19 2019 15:41:54 GMT+1000 (AUS Eastern Standard Time)",
-      "duration": 212,
-      "roomId": 18086909,
-      "maximum": 11663679,
-      "targetGroup": "",
-      "description": "ex magna dolor fugiat Ut",
-      "availablePlaces": -19396206.05313088
-    },
-    {
-      "id": 5,
-      "title": "National",
-      "time": "Sun May 19 2019 22:50:42 GMT+1000 (AUS Eastern Standard Time)",
-      "duration": 9,
-      "roomId": 89631884,
-      "maximum": 4691781,
-      "targetGroup": "consequat ut eu",
-      "description": "nostrud est labore conse",
-      "availablePlaces": -83564898.01768899
-    },
-    {
-      "id": 6,
-      "title": "Dynamic",
-      "time": "Sun May 19 2019 16:39:18 GMT+1000 (AUS Eastern Standard Time)",
-      "duration": 30,
-      "roomId": -70759593,
-      "maximum": -10786970,
-      "targetGroup": "in laboris exercitation tempor enim",
-      "description": "aliqua",
-      "availablePlaces": 11690898.769579843
-    },
-    {
-      "id": 7,
-      "title": "Customer",
-      "time": "Mon May 20 2019 04:51:01 GMT+1000 (AUS Eastern Standard Time)",
-      "duration": 34,
-      "roomId": 94828768,
-      "maximum": 87310488,
-      "targetGroup": "aliquip reprehenderit",
-      "description": "dolor Excepteur elit esse",
-      "availablePlaces": 38941374.98261979
-    },
-    {
-      "id": 8,
-      "title": "Senior",
-      "time": "Sun May 19 2019 17:32:50 GMT+1000 (AUS Eastern Standard Time)",
-      "duration": 133,
-      "roomId": 53298752,
-      "maximum": 17830123,
-      "targetGroup": "in eiusmod commodo ea cupidatat",
-      "description": "reprehenderit la",
-      "availablePlaces": 99177162.75929838
-    },
-    {
-      "id": 9,
-      "title": "Legacy",
-      "time": "Mon May 20 2019 05:44:12 GMT+1000 (AUS Eastern Standard Time)",
-      "duration": 89,
-      "roomId": 74009738,
-      "maximum": -82828506,
-      "targetGroup": "Ut",
-      "description": "ut",
-      "availablePlaces": -76979375.06464231
-    }
-  ],
+  "workshops": [],
   "users": [
     {
       "id": 1,
@@ -468,161 +368,7 @@
     }
   ],
   "studentWorkshops": [],
-  "sessions": [
-    {
-      "id": 1,
-      "startTime": "Sun May 19 2019 12:42:56 GMT+1000 (AUS Eastern Standard Time)",
-      "duration": 184,
-      "roomId": 99511999,
-      "advisorId": -84019742,
-      "studentId": 20261405,
-      "type": "laboris ipsum"
-    },
-    {
-      "id": 2,
-      "startTime": "Mon May 20 2019 03:43:42 GMT+1000 (AUS Eastern Standard Time)",
-      "duration": 116,
-      "roomId": 70611363,
-      "advisorId": 15485693,
-      "studentId": 17378642,
-      "type": "occaecat aliquip"
-    },
-    {
-      "id": 3,
-      "startTime": "Mon May 20 2019 00:13:27 GMT+1000 (AUS Eastern Standard Time)",
-      "duration": 182,
-      "roomId": 4962149,
-      "advisorId": -49238221,
-      "studentId": 36269908,
-      "type": "sint esse exercitation"
-    },
-    {
-      "id": 4,
-      "startTime": "Mon May 20 2019 02:02:13 GMT+1000 (AUS Eastern Standard Time)",
-      "duration": 8,
-      "roomId": -80034233,
-      "advisorId": 292825,
-      "studentId": -31357732,
-      "type": "sed commodo reprehenderit ipsum "
-    },
-    {
-      "id": 5,
-      "startTime": "Sun May 19 2019 21:01:38 GMT+1000 (AUS Eastern Standard Time)",
-      "duration": 64,
-      "roomId": -22845948,
-      "advisorId": 64938792,
-      "studentId": 63759595,
-      "type": "in deserunt voluptate laboris"
-    },
-    {
-      "id": 6,
-      "startTime": "Sun May 19 2019 20:25:12 GMT+1000 (AUS Eastern Standard Time)",
-      "duration": 223,
-      "roomId": 91961997,
-      "advisorId": -82198101,
-      "studentId": -99338949,
-      "type": "amet id exercitation"
-    },
-    {
-      "id": 7,
-      "startTime": "Sun May 19 2019 17:38:58 GMT+1000 (AUS Eastern Standard Time)",
-      "duration": 81,
-      "roomId": 83037086,
-      "advisorId": -82658174,
-      "studentId": -2465877,
-      "type": "non cupidatat consectetur sint incididunt"
-    },
-    {
-      "id": 8,
-      "startTime": "Sun May 19 2019 23:26:17 GMT+1000 (AUS Eastern Standard Time)",
-      "duration": 226,
-      "roomId": 49751041,
-      "advisorId": -57142150,
-      "studentId": 36766176,
-      "type": "ut fugiat consectetur dolor ad"
-    },
-    {
-      "id": 9,
-      "startTime": "Sun May 19 2019 18:35:28 GMT+1000 (AUS Eastern Standard Time)",
-      "duration": 4,
-      "roomId": -65781620,
-      "advisorId": -51476715,
-      "studentId": 36788841,
-      "type": "eiusmod adipisicing incididunt"
-    },
-    {
-      "id": 10,
-      "startTime": "Sun May 19 2019 21:43:56 GMT+1000 (AUS Eastern Standard Time)",
-      "duration": 43,
-      "roomId": 11051226,
-      "advisorId": 63803559,
-      "studentId": -55648434,
-      "type": "ad adipisicing exercitation non dolor"
-    },
-    {
-      "id": 11,
-      "startTime": "Sun May 19 2019 12:32:59 GMT+1000 (AUS Eastern Standard Time)",
-      "duration": 61,
-      "roomId": 42261351,
-      "advisorId": -98234348,
-      "studentId": 3732024,
-      "type": "aliquip eu tempor c"
-    },
-    {
-      "id": 12,
-      "startTime": "Sun May 19 2019 18:57:02 GMT+1000 (AUS Eastern Standard Time)",
-      "duration": 198,
-      "roomId": -52801,
-      "advisorId": 97184141,
-      "studentId": 22414458,
-      "type": "culpa"
-    },
-    {
-      "id": 13,
-      "startTime": "Mon May 20 2019 01:21:56 GMT+1000 (AUS Eastern Standard Time)",
-      "duration": 22,
-      "roomId": 75252296,
-      "advisorId": 33867269,
-      "studentId": -42055941,
-      "type": "irure"
-    },
-    {
-      "id": 14,
-      "startTime": "Sun May 19 2019 14:53:53 GMT+1000 (AUS Eastern Standard Time)",
-      "duration": 132,
-      "roomId": -10564906,
-      "advisorId": -82274248,
-      "studentId": -9579889,
-      "type": "sit mollit"
-    },
-    {
-      "id": 15,
-      "startTime": "Sun May 19 2019 16:00:34 GMT+1000 (AUS Eastern Standard Time)",
-      "duration": 40,
-      "roomId": -15944736,
-      "advisorId": -50726864,
-      "studentId": -99663517,
-      "type": "et dolor est in aute"
-    },
-    {
-      "id": 16,
-      "startTime": "Sun May 19 2019 20:03:19 GMT+1000 (AUS Eastern Standard Time)",
-      "duration": 51,
-      "roomId": 11724872,
-      "advisorId": 38737486,
-      "studentId": -48713195,
-      "type": "nulla aute non"
-    },
-    {
-      "id": 17,
-      "startTime": "Sun May 19 2019 12:05:55 GMT+1000 (AUS Eastern Standard Time)",
-      "duration": 102,
-      "roomId": 64549899,
-      "advisorId": 67175690,
-      "studentId": -98587692,
-      "type": "sint laboris"
-    }
-  ],
+  "sessions": [],
   "advisors": [
     {
       "id": 1,
@@ -697,16 +443,8 @@
   ],
   "rooms": [
     {
-      "id": 1,
-      "title": "culpa Lorem"
-    },
-    {
       "id": 2,
-      "title": "aliqua labore anim"
-    },
-    {
-      "id": 3,
-      "title": "aute voluptate adipisicing sed"
+      "title": "aliqua labore animdcd"
     },
     {
       "id": 4,
@@ -783,7 +521,7 @@
   "emails": [
     {
       "id": 1,
-      "title": "Email 1",
+      "title": "",
       "content": "ullamco",
       "variables": [
         {

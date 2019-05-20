@@ -16,7 +16,7 @@ class UserDetailsForm extends React.Component<InjectedFormProps<Student>> {
 
     render() {
         return (
-            <form onSubmit={this.props.handleSubmit}>
+            <form onSubmit={this.props.handleSubmit} className='m-5'>
                 <div className='row'>
                     <Form.Group className='col'>
                         <Form.Label>Student ID</Form.Label>
