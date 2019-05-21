@@ -3,6 +3,7 @@ import {Event} from 'react-big-calendar';
 import {InjectedFormProps} from 'redux-form';
 import {HELPSEvent} from '../model/HELPSEvent';
 import {Session} from '../model/Session';
+import * as React from 'react';
 
 export type EventFormProps<E extends HELPSEvent, P> = P & InjectedFormProps<E, P>;
 
@@ -74,4 +75,26 @@ export interface EventViewState {
     filterNotBooked: boolean
     newEvent?: CalendarEvent
     newEventRef?: any
+}
+
+export type HELPSEventType = 'SESSION' | 'WORKSHOP'
+
+export interface NewEventOverlayProps {
+    newEventRef?: any
+    container?: React.ReactInstance | Node
+    onSelect: (type: HELPSEventType) => void
+}
+
+export interface CalendarFilterProps {
+    searchTerm: string,
+    filterNotBooked: boolean
+    onSearchUpdated: (event: any) => void
+    onFilterNotBookedToggled: (event: any) => void
+}
+
+export interface EventFormComponentProps {
+    selectedEvent?: CalendarEvent
+    isAdmin: boolean
+    onEventSubmitted: (event: HELPSEvent) => void
+    eventSelected: boolean
 }

@@ -8,7 +8,18 @@ export interface NavMenuProps extends NavMenuStateProps, RouteComponentProps {
 
 }
 
+export type HELPSRoute =
+    'register' |
+    'message' |
+    'room' |
+    'user' |
+    'events' |
+    'info' |
+    'email' |
+    'advisors' |
+    'reports';
+
 export interface MenuItem {
-    route: string
+    route: HELPSRoute
     title: string
 }

@@ -1,9 +1,7 @@
 import {Dispatch} from 'redux';
-import {LS_STORAGE_KEY} from './AuthActions';
 import {WorkshopAction, WorkshopActionType} from '../../types/store/WorkshopActionTypes';
 import {Workshop} from '../../types/model/Workshop';
 import {authenticatedFetch} from '../../util';
-import {act} from 'react-dom/test-utils';
 
 const ENDPOINT_WORKSHOP = 'api/workshops';
 const ENDPOINT_STUDENT_WORKSHOP = 'api/students/workshops';
@@ -32,17 +30,21 @@ async function dispatchUserWorkshops(dispatch: Dispatch<any>) {
     }
 }
 
-export const retrieveWorkshops = () => async (dispatch: Dispatch<any>) => {
+async function dispatchWorkshops(dispatch: Dispatch<any>) {
     try {
         const workshops: Workshop[] = await authenticatedFetch(ENDPOINT_WORKSHOP);
         dispatch(receiveWorkshops(workshops));
     } catch (e) {
         dispatch(workshopError(e.message));
     }
-};
+}
 
 export const retrieveUserWorkshops = () => async (dispatch: Dispatch<any>) => {
     await dispatchUserWorkshops(dispatch);
+};
+
+export const retrieveWorkshops = () => async (dispatch: Dispatch<any>) => {
+    await dispatchWorkshops(dispatch);
 };
 
 export const bookWorkshop = (workshop: Workshop) => async (dispatch: Dispatch<any>) => {
@@ -50,7 +52,7 @@ export const bookWorkshop = (workshop: Workshop) => async (dispatch: Dispatch<an
         await authenticatedFetch(
             ENDPOINT_STUDENT_WORKSHOP,
             'POST',
-            JSON.stringify(workshop),
+            workshop,
             true
         );
         await dispatchUserWorkshops(dispatch);
@@ -74,13 +76,13 @@ export const addWorkshop = (workshop: Workshop) => async (dispatch: Dispatch<any
         await authenticatedFetch(
             ENDPOINT_WORKSHOP,
             'POST',
-            JSON.stringify({
+            {
                 ...workshop,
                 id: undefined
-            }),
+            },
             true
         );
-        await dispatchUserWorkshops(dispatch);
+        await dispatchWorkshops(dispatch);
     } catch (e) {
         dispatch(workshopError(e.message));
     }

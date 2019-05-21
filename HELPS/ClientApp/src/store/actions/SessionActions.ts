@@ -32,17 +32,21 @@ async function dispatchUserSessions(dispatch: Dispatch<any>) {
     }
 }
 
-export const retrieveSessions = () => async (dispatch: Dispatch<any>) => {
+async function dispatchSessions(dispatch: Dispatch<any>) {
     try {
         const sessions: Session[] = await authenticatedFetch(ENDPOINT_SESSION);
         dispatch(receiveSessions(sessions));
     } catch (e) {
         dispatch(sessionError(e.message));
     }
-};
+}
 
 export const retrieveUserSessions = () => async (dispatch: Dispatch<any>) => {
     await dispatchUserSessions(dispatch);
+};
+
+export const retrieveSessions = () => async (dispatch: Dispatch<any>) => {
+    await dispatchSessions(dispatch);
 };
 
 export const bookSession = (session: Session) => async (dispatch: Dispatch<any>) => {
@@ -50,7 +54,7 @@ export const bookSession = (session: Session) => async (dispatch: Dispatch<any>)
         await authenticatedFetch(
             ENDPOINT_STUDENT_SESSION,
             'POST',
-            JSON.stringify(session),
+            session,
             true
         );
         await dispatchUserSessions(dispatch);
@@ -75,13 +79,13 @@ export const addSession = (session: Session) => async (dispatch: Dispatch<any>) 
         await authenticatedFetch(
             ENDPOINT_SESSION,
             'POST',
-            JSON.stringify({
+            {
                 ...session,
                 id: undefined
-            }),
+            },
             true
         );
-        await dispatchUserSessions(dispatch);
+        await dispatchSessions(dispatch);
     } catch (e) {
         dispatch(sessionError(e.message));
     }

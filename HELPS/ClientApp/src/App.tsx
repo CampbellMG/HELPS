@@ -15,12 +15,12 @@ import EventView from './components/events/EventView';
 export default () => (
     <div className='p-3 h-100'>
         <Layout>
+            <Route exact path='/' component={Login}/>
             <Route path='/register/' component={Register} />
+            <Route path='/events/' component={EventView}/>
             <Route path='/message/' component={MessageEdit} />
             <Route path='/room/' component={RoomEdit} />
-            <Route exact path='/' component={Login}/>
             <Route path='/user/' component={User}/>
-            <Route path='/workshop_registration/' component={EventView}/>
             <Route path='/info/' component={Info}/>
             <Route path='/email' component={EmailList}/>
             <Route path='/advisors/' component={AdvisorEdit}/>

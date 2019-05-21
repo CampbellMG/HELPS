@@ -366,6 +366,174 @@
       "targetGroup": "n",
       "description": "cillum",
       "availablePlaces": -8020054.525017664
+    },
+    {
+      "start": "2019-05-20T15:30:00.000Z",
+      "end": "2019-05-20T16:00:00.000Z",
+      "roomId": -1,
+      "time": "Tue May 21 2019 01:30:00 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 30,
+      "title": "",
+      "cutOff": 0,
+      "maximum": 0,
+      "targetGroup": "",
+      "description": "",
+      "availablePlaces": 0,
+      "id": 7
+    },
+    {
+      "start": "2019-05-20T14:00:00.000Z",
+      "end": "2019-05-20T14:30:00.000Z",
+      "roomId": -1,
+      "time": "Tue May 21 2019 00:00:00 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 30,
+      "title": "",
+      "cutOff": 0,
+      "maximum": 0,
+      "targetGroup": "",
+      "description": "",
+      "availablePlaces": 0,
+      "id": 8
+    },
+    {
+      "start": "2019-05-20T16:30:00.000Z",
+      "end": "2019-05-20T17:00:00.000Z",
+      "roomId": -1,
+      "time": "Tue May 21 2019 02:30:00 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 30,
+      "title": "",
+      "cutOff": 0,
+      "maximum": 0,
+      "targetGroup": "",
+      "description": "",
+      "availablePlaces": 0,
+      "id": 9
+    },
+    {
+      "start": "2019-05-21T06:30:00.000Z",
+      "end": "2019-05-21T07:00:00.000Z",
+      "roomId": -1,
+      "time": "Tue May 21 2019 16:30:00 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 30,
+      "title": "",
+      "cutOff": 0,
+      "maximum": 0,
+      "targetGroup": "",
+      "description": "",
+      "availablePlaces": 0,
+      "id": 10
+    },
+    {
+      "start": "2019-05-21T16:00:00.000Z",
+      "end": "2019-05-21T22:00:00.000Z",
+      "roomId": -1,
+      "time": "Wed May 22 2019 02:00:00 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 360,
+      "title": "",
+      "cutOff": 0,
+      "maximum": 0,
+      "targetGroup": "",
+      "description": "",
+      "availablePlaces": 0,
+      "id": 11
+    },
+    {
+      "start": "2019-05-21T07:30:00.000Z",
+      "end": "2019-05-21T08:00:00.000Z",
+      "roomId": -1,
+      "time": "Tue May 21 2019 17:30:00 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 30,
+      "title": "",
+      "cutOff": 0,
+      "maximum": 0,
+      "targetGroup": "",
+      "description": "",
+      "availablePlaces": 0,
+      "id": 12
+    },
+    {
+      "start": "2019-05-22T18:00:00.000Z",
+      "end": "2019-05-22T18:30:00.000Z",
+      "roomId": -1,
+      "time": "Thu May 23 2019 04:00:00 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 30,
+      "title": "",
+      "cutOff": 0,
+      "maximum": 0,
+      "targetGroup": "",
+      "description": "",
+      "availablePlaces": 0,
+      "id": 13
+    },
+    {
+      "start": "2019-05-23T16:30:00.000Z",
+      "end": "2019-05-24T01:30:00.000Z",
+      "roomId": -1,
+      "time": "Fri May 24 2019 02:30:00 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 540,
+      "title": "",
+      "cutOff": 0,
+      "maximum": 0,
+      "targetGroup": "",
+      "description": "",
+      "availablePlaces": 0,
+      "id": 14
+    },
+    {
+      "start": "2019-05-22T15:30:00.000Z",
+      "end": "2019-05-22T16:00:00.000Z",
+      "roomId": -1,
+      "time": "Thu May 23 2019 01:30:00 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 30,
+      "title": "",
+      "cutOff": 0,
+      "maximum": 0,
+      "targetGroup": "",
+      "description": "",
+      "availablePlaces": 0,
+      "id": 15
+    },
+    {
+      "start": "2019-05-23T00:00:00.000Z",
+      "end": "2019-05-23T03:30:00.000Z",
+      "roomId": -1,
+      "time": "Thu May 23 2019 10:00:00 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 210,
+      "title": "",
+      "cutOff": 0,
+      "maximum": 0,
+      "targetGroup": "",
+      "description": "",
+      "availablePlaces": 0,
+      "id": 16
+    },
+    {
+      "start": "2019-05-24T18:30:00.000Z",
+      "end": "2019-05-24T22:00:00.000Z",
+      "roomId": -1,
+      "time": "Sat May 25 2019 04:30:00 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 210,
+      "title": "",
+      "cutOff": 0,
+      "maximum": 0,
+      "targetGroup": "",
+      "description": "",
+      "availablePlaces": 0,
+      "id": 17
+    },
+    {
+      "start": "2019-05-19T17:30:00.000Z",
+      "end": "2019-05-19T20:30:00.000Z",
+      "roomId": -1,
+      "time": "Mon May 20 2019 03:30:00 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 180,
+      "title": "",
+      "cutOff": 0,
+      "maximum": 0,
+      "targetGroup": "",
+      "description": "",
+      "availablePlaces": 0,
+      "id": 18
     }
   ],
   "users": [
@@ -500,6 +668,72 @@
       "advisorId": -29723890,
       "studentId": 70293442,
       "type": "occaecat id "
+    },
+    {
+      "start": "2019-05-21T03:00:00.000Z",
+      "end": "2019-05-21T05:30:00.000Z",
+      "roomId": -1,
+      "time": "Tue May 21 2019 13:00:00 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 150,
+      "advisorId": -1,
+      "studentId": -1,
+      "type": "",
+      "id": 12
+    },
+    {
+      "start": "2019-05-22T04:00:00.000Z",
+      "end": "2019-05-22T04:30:00.000Z",
+      "roomId": -1,
+      "time": "Wed May 22 2019 14:00:00 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 30,
+      "advisorId": -1,
+      "studentId": -1,
+      "type": "",
+      "id": 13
+    },
+    {
+      "start": "2019-05-22T22:30:00.000Z",
+      "end": "2019-05-22T23:00:00.000Z",
+      "roomId": -1,
+      "time": "Thu May 23 2019 08:30:00 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 30,
+      "advisorId": -1,
+      "studentId": -1,
+      "type": "",
+      "id": 14
+    },
+    {
+      "start": "2019-05-22T15:30:00.000Z",
+      "end": "2019-05-22T16:00:00.000Z",
+      "roomId": -1,
+      "time": "Thu May 23 2019 01:30:00 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 30,
+      "advisorId": -1,
+      "studentId": -1,
+      "type": "",
+      "id": 15
+    },
+    {
+      "start": "2019-05-18T16:30:00.000Z",
+      "end": "2019-05-18T22:00:00.000Z",
+      "roomId": -1,
+      "time": "Sun May 19 2019 02:30:00 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 330,
+      "advisorId": -1,
+      "studentId": -1,
+      "type": "",
+      "id": 16
+    },
+    {
+      "start": "2019-05-19T22:00:00.000Z",
+      "end": "2019-05-20T00:00:00.000Z",
+      "roomId": -1,
+      "time": "Mon May 20 2019 08:00:00 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 120,
+      "advisorId": -1,
+      "studentId": -1,
+      "type": "",
+      "id": 17
     }
   ],
   "advisors": [
@@ -557,7 +791,7 @@
     },
     {
       "id": 3,
-      "title": "ad"
+      "title": "adss"
     },
     {
       "id": 4,
@@ -584,7 +818,7 @@
     {
       "id": 1,
       "title": "ex",
-      "content": "ut"
+      "content": "<p>This is the first message</p>\n"
     },
     {
       "id": 2,

@@ -1,13 +1,14 @@
 import {connect} from 'react-redux';
 import * as React from 'react';
-import {Children, cloneElement, Component, ReactElement, ReactPropTypes} from 'react';
+import {Children, cloneElement, Component, ReactElement} from 'react';
 import {AppState} from '../../types/store/StoreTypes';
 import {
+    CalendarEvent,
     EventViewDispatchProps,
     EventViewProps,
     EventViewState,
     EventViewStateProps,
-    CalendarEvent
+    HELPSEventType
 } from '../../types/components/WorkshopRegistrationTypes';
 import {
     addWorkshop,
@@ -19,16 +20,9 @@ import {
 import BigCalendar, {EventWrapperProps, stringOrDate} from 'react-big-calendar';
 import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
-import './EventView.css';
 import {isWorkshop, Workshop} from '../../types/model/Workshop';
-import InputGroup from 'react-bootstrap/InputGroup';
-import Form from 'react-bootstrap/Form';
 import {ThunkDispatch} from 'redux-thunk';
-import StudentWorkshopDetailForm from './forms/StudentWorkshopDetailForm';
 import {isSession, Session} from '../../types/model/Session';
-import AdminSessionDetailForm from './forms/AdminSessionDetailForm';
-import AdminWorkshopDetailForm from './forms/AdminWorkshopDetailForm';
-import StudentSessionDetailForm from './forms/StudentSessionDetailForm';
 import {
     addSession,
     bookSession,
@@ -37,21 +31,21 @@ import {
     retrieveUserSessions
 } from '../../store/actions/SessionActions';
 import {HELPSEvent} from '../../types/model/HELPSEvent';
-import {Button, Overlay, Popover} from 'react-bootstrap';
+import {NewEventOverlay} from './eventView/NewEventOverlay';
+import {CalendarFilter} from './eventView/CalendarFilter';
+import {EventForm} from './eventView/EventForm';
 
 class EventView extends Component<EventViewProps, EventViewState> {
     private localizer = BigCalendar.momentLocalizer(moment);
 
     private get sessions(): Session[] {
         const {filterNotBooked} = this.state;
-
         return this.props.sessions
             .filter(session => !filterNotBooked || this.eventSelected(session));
     }
 
     private get workshops(): Workshop[] {
         const {filterNotBooked, searchTerm} = this.state;
-
         return this.props.workshops
             .filter(workshop => !filterNotBooked || this.eventSelected(workshop))
             .filter(workshop => searchTerm.length === 0 || workshop.title.toLowerCase().includes(searchTerm.toLowerCase()));
@@ -59,7 +53,8 @@ class EventView extends Component<EventViewProps, EventViewState> {
 
     private get events(): CalendarEvent[] {
         const events: HELPSEvent[] = this.sessions;
-        const calendarEvents = events.concat(this.workshops)
+        const calendarEvents = events
+            .concat(this.workshops)
             .map(event => {
                 const startTime = moment(event.time);
                 const endTime = startTime.clone().add(event.duration, 'minute');
@@ -95,34 +90,22 @@ class EventView extends Component<EventViewProps, EventViewState> {
     }
 
     render(): React.ReactNode {
-        const {searchTerm, filterNotBooked, isAdmin, newEventRef} = {...this.props, ...this.state};
+        const {searchTerm, filterNotBooked, isAdmin, newEventRef, selectedEvent} = {...this.props, ...this.state};
         return (
-            <div className='row h-100 overflow-auto'>
+            <div className='row h-100 overflow-auto' >
 
-                <div className='col-lg-2 border-right sticky-top'>
-                    {this.renderForm()}
-                </div>
+                <EventForm isAdmin={isAdmin}
+                           selectedEvent={selectedEvent}
+                           onEventSubmitted={this.onEventSubmitted}
+                           eventSelected={selectedEvent !== undefined && this.eventSelected(selectedEvent)}/>
 
                 <div className='col m-3'>
                     <div className='h-100 flex-column'>
 
-                        <InputGroup className='align-self-stretch d-flex pb-3 sticky-top'>
-                            <Form.Control type='text'
-                                          className='flex-fill'
-                                          placeholder='Search...'
-                                          value={searchTerm}
-                                          onChange={this.onSearchUpdated}
-                            />
-                            <InputGroup.Append>
-                                <InputGroup.Text>
-                                    Already booked
-                                    <input type='checkbox'
-                                           className='ml-3'
-                                           checked={filterNotBooked}
-                                           onChange={this.onFilterNotBookedToggled}/>
-                                </InputGroup.Text>
-                            </InputGroup.Append>
-                        </InputGroup>
+                        <CalendarFilter searchTerm={searchTerm}
+                                        filterNotBooked={filterNotBooked}
+                                        onSearchUpdated={this.onSearchUpdated}
+                                        onFilterNotBookedToggled={this.onFilterNotBookedToggled}/>
 
                         <BigCalendar
                             localizer={this.localizer}
@@ -130,76 +113,32 @@ class EventView extends Component<EventViewProps, EventViewState> {
                             selectable={isAdmin}
                             onSelectSlot={this.onSelectSlot}
                             onSelectEvent={this.onSelectEvent}
-                            eventPropGetter={this.getEventStyle}
+                            eventPropGetter={event => this.getEventStyle(event, this.eventSelected(event))}
                             components={{
                                 eventWrapper: this.renderEventWrapper
                             }}/>
 
-                        <Overlay target={newEventRef}
-                                 show={newEventRef !== undefined}
-                                 placement='bottom'
-                                 container={this}>
-                            {(props: any) => (
-                                <Popover {...props} id='new-event-pop' title='Please select event type'>
-                                    <Button className='m-1'
-                                            onClick={() => this.onEventCreated('SESSION')}>Session</Button>
-                                    <Button className='m-1'
-                                            onClick={() => this.onEventCreated('WORKSHOP')}>Workshop</Button>
-                                </Popover>
-                            )}
-                        </Overlay>
+                        <NewEventOverlay container={this}
+                                         newEventRef={newEventRef}
+                                         onSelect={this.onEventCreated}/>
 
                     </div>
                 </div>
+
             </div>
         );
     }
 
-    private renderForm(): ReactElement {
-        const {selectedEvent, isAdmin} = {...this.state, ...this.props};
-
-        if (!selectedEvent) return <div/>;
-
-        const props = {
-            onSubmit: this.onEventSubmitted,
-            booked: this.eventSelected(selectedEvent),
-            initialValues: selectedEvent
-        };
-
-        if (isAdmin) {
-            if (isSession(selectedEvent)) {
-                return <AdminSessionDetailForm {...props}/>;
-            }
-
-            return <AdminWorkshopDetailForm {...props}/>;
-        }
-
-        if (isSession(selectedEvent)) {
-            return <StudentSessionDetailForm {...props}/>;
-        }
-
-        return <StudentWorkshopDetailForm {...props}/>;
-    }
-
-    private getEventStyle = (event: CalendarEvent) => {
-        let newStyle = {
-            backgroundColor: 'lightgrey',
+    private getEventStyle = (event: CalendarEvent, eventSelected: boolean) => ({
+        className: '',
+        style: {
+            backgroundColor: eventSelected ? '#FF5168' : 'lightgrey',
             color: 'black',
             borderRadius: '0px',
             border: 'none',
-            opacity: 1
-        };
-
-        if (this.eventSelected(event)) {
-            newStyle.backgroundColor = '#FF5168';
-            newStyle.opacity = .5;
+            opacity: eventSelected ? .5 : 1
         }
-
-        return {
-            className: '',
-            style: newStyle
-        };
-    };
+    });
 
     private renderEventWrapper: React.FunctionComponent<EventWrapperProps<CalendarEvent>> = (props) => {
         const childElement = Children.only(props.children) as ReactElement;
@@ -215,6 +154,7 @@ class EventView extends Component<EventViewProps, EventViewState> {
     private onFilterNotBookedToggled = () => this.setState({filterNotBooked: !this.state.filterNotBooked});
     private onSelectEvent = (event: CalendarEvent) => this.setState({selectedEvent: event});
     private populateRef = (newEventRef: any) => this.setState({newEventRef});
+    private clearNewEvent = () => this.setState({newEvent: undefined, newEventRef: undefined});
 
     private onEventSubmitted = (event: HELPSEvent) => {
         if (this.eventSelected(event)) {
@@ -253,9 +193,11 @@ class EventView extends Component<EventViewProps, EventViewState> {
         });
     };
 
-    private onEventCreated(type: 'SESSION' | 'WORKSHOP') {
+    private onEventCreated = (type: HELPSEventType) => {
         const {newEvent} = this.state;
         if (!newEvent) return;
+
+        this.clearNewEvent();
 
         if (type === 'SESSION') {
             return this.props.addSession({
@@ -275,7 +217,7 @@ class EventView extends Component<EventViewProps, EventViewState> {
             description: '',
             availablePlaces: 0
         });
-    }
+    };
 
     private eventSelected(event: HELPSEvent) {
         if (isSession(event)) {
