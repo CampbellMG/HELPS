@@ -9,12 +9,6 @@ const initialState: WorkshopState = {
 
 export function WorkshopReducer(state: WorkshopState = initialState, action: WorkshopAction): WorkshopState {
     switch (action.type) {
-        case WorkshopActionType.REQUEST_WORKSHOPS:
-            return {
-                ...state,
-                isLoading: true,
-                error: undefined
-            };
         case WorkshopActionType.RECEIVE_WORKSHOPS:
             return {
                 ...state,
@@ -22,39 +16,7 @@ export function WorkshopReducer(state: WorkshopState = initialState, action: Wor
                 isLoading: false,
                 error: undefined
             };
-        case WorkshopActionType.REQUEST_USER_WORKSHOPS:
-            return {
-                ...state,
-                isLoading: true,
-                error: undefined
-            };
         case WorkshopActionType.RECEIVE_USER_WORKSHOPS:
-            return {
-                ...state,
-                userWorkshops: action.payload,
-                isLoading: false,
-                error: undefined
-            };
-        case WorkshopActionType.BOOK_WORKSHOP:
-            return {
-                ...state,
-                isLoading: true,
-                error: undefined
-            };
-        case WorkshopActionType.RECEIVE_BOOK_WORKSHOP:
-            return {
-                ...state,
-                userWorkshops: action.payload,
-                isLoading: false,
-                error: undefined
-            };
-        case WorkshopActionType.CANCEL_WORKSHOP:
-            return {
-                ...state,
-                isLoading: true,
-                error: undefined
-            };
-        case WorkshopActionType.RECEIVE_CANEL_WORKSHOP:
             return {
                 ...state,
                 userWorkshops: action.payload,

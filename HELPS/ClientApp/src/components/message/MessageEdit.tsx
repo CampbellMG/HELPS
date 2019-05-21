@@ -8,9 +8,8 @@ import {Message} from '../../types/model/Message';
 import EditorList from '../editorlist/EditorList';
 import {fetchMessages, saveMessage} from '../../store/actions/MessageActions';
 import {Editor} from 'react-draft-wysiwyg';
-import {ContentState, EditorState, Modifier} from 'draft-js';
+import {ContentState, convertToRaw, EditorState} from 'draft-js';
 import {MdSave} from 'react-icons/md';
-import {convertToRaw} from 'draft-js';
 // @ts-ignore
 import draftToHtml from 'draftjs-to-html';
 // @ts-ignore
@@ -44,7 +43,6 @@ class MessageEdit extends Component<MessageProps, MessageState> {
 
     private get filteredMessages(): Message[] {
         let {messages, filter} = {...this.state, ...this.props};
-        console.log(messages);
         if (!messages) return [];
 
         filter = filter.trim().toLowerCase();

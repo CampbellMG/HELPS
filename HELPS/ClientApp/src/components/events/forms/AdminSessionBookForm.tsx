@@ -1,11 +1,11 @@
 import * as React from 'react';
-import {Field, InjectedFormProps, reduxForm} from 'redux-form';
+import {Field, reduxForm} from 'redux-form';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import {Workshop} from '../../types/model/Workshop';
-import {WorkshopDetailsFormProps} from '../../types/components/WorkshopRegistrationTypes';
+import {AdminSessionBookFormProps, AdminSessionBookProps} from '../../../types/components/WorkshopRegistrationTypes';
+import {Session} from '../../../types/model/Session';
 
-class WorkshopDetailsForm extends React.Component<WorkshopDetailsFormProps & InjectedFormProps<Workshop, WorkshopDetailsFormProps>> {
+class AdminSessionBookForm extends React.Component<AdminSessionBookFormProps> {
     TextInput = (props: any) => (
         <Form.Group controlId='login'>
             <Form.Control disabled
@@ -68,8 +68,7 @@ class WorkshopDetailsForm extends React.Component<WorkshopDetailsFormProps & Inj
                         type='text'/>
                 </Form.Group>
                 <Button type='submit'
-                        className='w-100 mt-4'
-                        disabled={this.props.disabled}>
+                        className='w-100 mt-4'>
                     {this.props.booked ? 'Cancel' : 'Book'}
                 </Button>
             </form>
@@ -77,7 +76,7 @@ class WorkshopDetailsForm extends React.Component<WorkshopDetailsFormProps & Inj
     }
 }
 
-export default reduxForm<Workshop, WorkshopDetailsFormProps>({
-    form: 'workshop_details',
+export default reduxForm<Session, AdminSessionBookProps>({
+    form: 'admin_book',
     enableReinitialize: true
-})(WorkshopDetailsForm);
+})(AdminSessionBookForm);

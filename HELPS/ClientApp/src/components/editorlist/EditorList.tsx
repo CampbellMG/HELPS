@@ -7,6 +7,7 @@ import Button from 'react-bootstrap/Button';
 import {Form} from 'react-bootstrap';
 import {EditorListProps} from '../../types/components/EditorListTypes';
 import './EditorList.css';
+import {MdAdd} from 'react-icons/md';
 
 export default class EditorList<T> extends Component<EditorListProps<T>> {
 
@@ -36,7 +37,7 @@ export default class EditorList<T> extends Component<EditorListProps<T>> {
                         {
                             onAdd &&
                             <InputGroup.Append>
-                                <Button onClick={onAdd}>Add</Button>
+                                <Button onClick={onAdd}><MdAdd size={22}/></Button>
                             </InputGroup.Append>
                         }
                     </InputGroup>

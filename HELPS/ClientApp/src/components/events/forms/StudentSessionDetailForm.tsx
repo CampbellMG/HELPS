@@ -2,9 +2,13 @@ import * as React from 'react';
 import {Field, reduxForm} from 'redux-form';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import {Workshop} from '../../types/model/Workshop';
+import {
+    StudentSessionDetailFormProps,
+    StudentSessionDetailProps
+} from '../../../types/components/WorkshopRegistrationTypes';
+import {Session} from '../../../types/model/Session';
 
-class ReportForm extends React.Component<any> {
+class StudentSessionDetailForm extends React.Component<StudentSessionDetailFormProps> {
     TextInput = (props: any) => (
         <Form.Group controlId='login'>
             <Form.Control disabled
@@ -67,8 +71,7 @@ class ReportForm extends React.Component<any> {
                         type='text'/>
                 </Form.Group>
                 <Button type='submit'
-                        className='w-100 mt-4'
-                        disabled={this.props.disabled}>
+                        className='w-100 mt-4'>
                     {this.props.booked ? 'Cancel' : 'Book'}
                 </Button>
             </form>
@@ -76,7 +79,7 @@ class ReportForm extends React.Component<any> {
     }
 }
 
-export default reduxForm<Workshop, any>({
-    form: 'workshop_details',
+export default reduxForm<Session, StudentSessionDetailProps>({
+    form: 'student_session_detail',
     enableReinitialize: true
-})(ReportForm);
+})(StudentSessionDetailForm);

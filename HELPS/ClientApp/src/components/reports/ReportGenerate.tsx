@@ -3,11 +3,11 @@ import * as React from 'react';
 import {Component} from 'react';
 import {AppState} from '../../types/store/StoreTypes';
 import {
-    WorkshopEvent,
-    WorkshopRegistrationDispatchProps,
-    WorkshopRegistrationProps,
-    WorkshopRegistrationState,
-    WorkshopRegistrationStateProps
+    CalendarEvent,
+    EventViewDispatchProps,
+    EventViewProps,
+    EventViewState,
+    EventViewStateProps
 } from '../../types/components/WorkshopRegistrationTypes';
 import {
     bookWorkshop,
@@ -24,34 +24,9 @@ import Form from 'react-bootstrap/Form';
 import {ThunkDispatch} from 'redux-thunk';
 import ReportForm from "./ReportForm";
 
-class ReportGenerate extends Component<WorkshopRegistrationProps, WorkshopRegistrationState> {
-    private localizer = BigCalendar.momentLocalizer(moment);
+export default class ReportGenerate extends Component<any, any> {
 
-    private get events(): WorkshopEvent[] {
-        const {filterNotBooked, searchTerm} = this.state;
-
-        return this.props.workshops
-            .filter(workshop => !filterNotBooked || this.eventSelected(workshop))
-            .filter(workshop => searchTerm.length === 0 || workshop.title.toLowerCase().includes(searchTerm.toLowerCase()))
-            .map(workshop => {
-                const startTime = moment(workshop.time);
-                const endTime = startTime.clone().add(workshop.duration, 'minute');
-
-                return {
-                    ...workshop,
-                    start: startTime.toDate(),
-                    end: endTime.toDate()
-
-                };
-            });
-    }
-
-    componentDidMount(): void {
-        this.props.retrieveWorkshops();
-        this.props.retrieveUserWorkshops();
-    }
-
-    constructor(props: WorkshopRegistrationProps) {
+    constructor(props: EventViewProps) {
         super(props);
 
         this.state = {
@@ -61,109 +36,53 @@ class ReportGenerate extends Component<WorkshopRegistrationProps, WorkshopRegist
     }
 
     render(): React.ReactNode {
-        const {selectedWorkshop} = this.state;
+        const {selectedEvent} = this.state;
         return (
             <div className='row h-100 overflow-auto'>
-                {this.props.error && <p>{this.props.error}</p>}
-                {!this.props.authenticated && <p>Not authenticated</p>}
-                <div className='col-lg-2 border-right'>
-                    <div className='sticky-top'>
-                        <ReportForm onSubmit={this.onEventSubmitted}
-                                             disabled={selectedWorkshop === undefined}
-                                             booked={selectedWorkshop !== undefined && this.eventSelected(selectedWorkshop)}
-                                             initialValues={this.state.selectedWorkshop}/>
-                    </div>
-                </div>
-                <div className='col m-3'>
-                    {
-                        this.props.authenticated &&
-                        <div className='h-100 flex-column'>
+                {/*{this.props.error && <p>{this.props.error}</p>}*/}
+                {/*{!this.props.authenticated && <p>Not authenticated</p>}*/}
+                {/*<div className='col-lg-2 border-right'>*/}
+                    {/*<div className='sticky-top'>*/}
+                        {/*<ReportForm onSubmit={this.onEventSubmitted}*/}
+                                             {/*disabled={selectedEvent === undefined}*/}
+                                             {/*booked={selectedEvent !== undefined && this.eventSelected(selectedEvent)}*/}
+                                             {/*initialValues={this.state.selectedEvent}/>*/}
+                    {/*</div>*/}
+                {/*</div>*/}
+                {/*<div className='col m-3'>*/}
+                    {/*{*/}
+                        {/*this.props.authenticated &&*/}
+                        {/*<div className='h-100 flex-column'>*/}
 
-                            <InputGroup className='align-self-stretch d-flex pb-3 sticky-top'>
-                                <Form.Control type='text'
-                                              className='flex-fill'
-                                              placeholder='Search...'
-                                              value={this.state.searchTerm}
-                                              onChange={this.onSearchUpdated}
-                                />
-                                <InputGroup.Append>
-                                    <InputGroup.Text>
-                                        Already booked
-                                        <input type='checkbox'
-                                               className='ml-3'
-                                               checked={this.state.filterNotBooked}
-                                               onChange={this.onFilterNotBookedToggled}/>
-                                    </InputGroup.Text>
-                                </InputGroup.Append>
-                            </InputGroup>
+                            {/*<InputGroup className='align-self-stretch d-flex pb-3 sticky-top'>*/}
+                                {/*<Form.Control type='text'*/}
+                                              {/*className='flex-fill'*/}
+                                              {/*placeholder='Search...'*/}
+                                              {/*value={this.state.searchTerm}*/}
+                                              {/*onChange={this.onSearchUpdated}*/}
+                                {/*/>*/}
+                                {/*<InputGroup.Append>*/}
+                                    {/*<InputGroup.Text>*/}
+                                        {/*Already booked*/}
+                                        {/*<input type='checkbox'*/}
+                                               {/*className='ml-3'*/}
+                                               {/*checked={this.state.filterNotBooked}*/}
+                                               {/*onChange={this.onFilterNotBookedToggled}/>*/}
+                                    {/*</InputGroup.Text>*/}
+                                {/*</InputGroup.Append>*/}
+                            {/*</InputGroup>*/}
 
-                            <BigCalendar
-                                localizer={this.localizer}
-                                events={this.events}
-                                onSelectEvent={this.onSelectEvent}
-                                eventPropGetter={this.getEventStyle}
-                            />
+                            {/*<BigCalendar*/}
+                                {/*localizer={this.localizer}*/}
+                                {/*events={this.events}*/}
+                                {/*onSelectEvent={this.onSelectEvent}*/}
+                                {/*eventPropGetter={this.getEventStyle}*/}
+                            {/*/>*/}
 
-                        </div>
-                    }
-                </div>
+                        {/*</div>*/}
+                    {/*}*/}
+                {/*</div>*/}
             </div>
         );
     }
-
-    private onSearchUpdated = (event: any) => this.setState({searchTerm: event.target.value});
-    private onFilterNotBookedToggled = () => this.setState({filterNotBooked: !this.state.filterNotBooked});
-
-    private eventSelected(event: Workshop) {
-        return this.props.userWorkshops.findIndex(workshop => workshop.id === event.id) !== -1;
-    }
-
-    private onSelectEvent = (event: Workshop) => this.setState({selectedWorkshop: event});
-
-    private onEventSubmitted = (event: Workshop) => {
-        if (this.eventSelected(event)) {
-            return this.props.cancelWorkshop(event);
-        }
-
-        this.props.bookWorkshop(event);
-    };
-
-    private getEventStyle = (event: WorkshopEvent) => {
-        let newStyle = {
-            backgroundColor: 'lightgrey',
-            color: 'black',
-            borderRadius: '0px',
-            border: 'none',
-            opacity: 1
-        };
-
-        if (this.eventSelected(event)) {
-            newStyle.backgroundColor = '#FF5168';
-            newStyle.opacity = .5;
-        }
-
-        return {
-            className: '',
-            style: newStyle
-        };
-    };
 }
-
-const mapStateToProps = (state: AppState): WorkshopRegistrationStateProps => ({
-    authenticated: state.auth.authenticated,
-    workshops: state.workshops.workshops,
-    userWorkshops: state.workshops.userWorkshops,
-    error: state.workshops.error
-});
-
-const mapDispatchToProps = (dispatch: ThunkDispatch<{}, {}, any>): WorkshopRegistrationDispatchProps => ({
-    retrieveWorkshops: () => dispatch(retrieveWorkshops()),
-    retrieveUserWorkshops: () => dispatch(retrieveUserWorkshops()),
-    bookWorkshop: (workshop) => dispatch(bookWorkshop(workshop)),
-    cancelWorkshop: workshop => dispatch(cancelWorkshop(workshop))
-});
-
-export default connect<WorkshopRegistrationStateProps, WorkshopRegistrationDispatchProps, {}, AppState>(
-    mapStateToProps,
-    mapDispatchToProps
-)(ReportGenerate);

@@ -1,10 +1,14 @@
-export interface Workshop {
-    id: number,
+import {HELPSEvent} from './HELPSEvent';
+
+export interface Workshop extends HELPSEvent {
     title: string
-    time: string,
-    duration: number,
-    room: string,
-    targetGroup: string,
-    description: string,
+    cutOff: number
+    maximum: number
+    targetGroup: string
+    description: string
     availablePlaces: number
+}
+
+export function isWorkshop(event: HELPSEvent): event is Workshop {
+    return 'title' in event;
 }

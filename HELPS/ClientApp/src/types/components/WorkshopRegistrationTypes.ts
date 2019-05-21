@@ -1,36 +1,77 @@
 import {Workshop} from '../model/Workshop';
 import {Event} from 'react-big-calendar';
+import {InjectedFormProps} from 'redux-form';
+import {HELPSEvent} from '../model/HELPSEvent';
+import {Session} from '../model/Session';
 
-export interface WorkshopDetailsFormProps {
-    disabled: boolean
+export type EventFormProps<E extends HELPSEvent, P> = P & InjectedFormProps<E, P>;
+
+export interface AdminSessionBookProps {
     booked: boolean
 }
 
-export interface WorkshopEvent extends Event, Workshop {
+export type AdminSessionBookFormProps = EventFormProps<Session, AdminSessionBookProps>;
+
+export interface AdminSessionDetailProps {
+    booked: boolean
+}
+
+export type AdminSessionDetailFormProps = EventFormProps<Session, AdminSessionDetailProps>;
+
+export interface AdminWorkshopDetailProps {
+    booked: boolean
+}
+
+export type AdminWorkshopDetailFormProps = EventFormProps<Workshop, AdminWorkshopDetailProps>;
+
+export interface StudentSessionDetailProps {
+    booked: boolean
+}
+
+export type StudentSessionDetailFormProps = EventFormProps<Session, StudentSessionDetailProps>;
+
+export interface StudentWorkshopDetailProps {
+    booked: boolean
+}
+
+export type StudentWorkshopDetailFormProps = EventFormProps<Workshop, StudentWorkshopDetailProps>;
+
+export interface CalendarEvent extends Event, HELPSEvent {
     start: Date
     end: Date
 }
 
-export interface WorkshopRegistrationStateProps {
+export interface EventViewStateProps {
     authenticated: boolean
     workshops: Workshop[]
     userWorkshops: Workshop[]
+    sessions: Session[]
+    userSessions: Session[]
     error?: string
+    isAdmin: boolean
 }
 
-export interface WorkshopRegistrationDispatchProps {
+export interface EventViewDispatchProps {
     retrieveWorkshops: () => void
     retrieveUserWorkshops: () => void
     bookWorkshop: (workshop: Workshop) => void
     cancelWorkshop: (workshop: Workshop) => void
+    addWorkshop: (workshop: Workshop) => void
+    retrieveSessions: () => void
+    retrieveUserSessions: () => void
+    bookSession: (session: Session) => void
+    cancelSession: (session: Session) => void
+    addSession: (session: Session) => void
 }
 
-export interface WorkshopRegistrationProps extends WorkshopRegistrationStateProps, WorkshopRegistrationDispatchProps {
+export interface EventViewProps extends EventViewStateProps, EventViewDispatchProps {
 
 }
 
-export interface WorkshopRegistrationState {
-    selectedWorkshop?: Workshop
+export interface EventViewState {
+    selectedEvent?: CalendarEvent
     searchTerm: string
     filterNotBooked: boolean
+    newEvent?: CalendarEvent
+    newEventRef?: any
 }
