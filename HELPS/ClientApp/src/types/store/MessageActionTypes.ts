@@ -9,6 +9,5 @@ export interface MessageAction {
 
 export enum MessageActionTypes {
     RECEIVE = 'MESSAGE_ACTION_RECEIVE_MESSAGES',
-    ERROR = 'MESSAGE_ACTION_ERROR',
-    SELECT = 'MESSAGE_ACTION_SELECT'
+    ERROR = 'MESSAGE_ACTION_ERROR'
 }

@@ -11,12 +11,6 @@ export const messageEquals = (messageA: Message, messageB: Message, compareIds: 
         (!compareIds || messageA.id === messageB.id);
 };
 
-export const makeMockMessage: () => Message = () => ({
-    id: Number.MAX_SAFE_INTEGER,
-    title: 'Mock Message Title',
-    content: 'Mock Message Content'
-});
-
 export const isMessage: (message: Message) => boolean = (message: Message) => {
     return !isUndefined(message.title) && !isUndefined(message.content);
 }

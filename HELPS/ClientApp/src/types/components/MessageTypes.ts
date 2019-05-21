@@ -1,16 +1,20 @@
-import { Message } from '../model/Message';
-import { Editable } from '../util/Editable';
+import {Message} from '../model/Message';
+import {EditorState} from 'react-draft-wysiwyg';
 
-export interface MessageStateProps extends Editable {
-    messages: Message[];
-    selectedMessage: Message;
+export interface MessageStateProps {
+    messages: Message[]
 }
 
 export interface MessageDispatchProps {
-    fetchMessages: () => void;
-    saveMessage: (messageId: number, newMessage: Message, isNewMode: boolean) => void;
-    deleteMessage: (messageId: number) => void;
-    selectMessage: (message: Message) => void;
+    fetchMessages: () => void
+    saveMessage: (message: Message) => void
 }
 
 export interface MessageProps extends MessageStateProps, MessageDispatchProps {}
+
+export interface MessageState {
+    editorState: EditorState
+    selectedMessage?: Message
+    newSelectedMessage?: Message
+    filter: string
+}
