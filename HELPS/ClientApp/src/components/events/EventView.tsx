@@ -83,11 +83,12 @@ class EventView extends Component<EventViewProps, EventViewState> {
 
         const calendarEvents = events
             .map(event => {
-                const startTime = moment(event.time);
+                const startTime = moment(event.startDate);
                 const endTime = startTime.clone().add(event.duration, 'minute');
 
                 return {
                     ...event,
+                    endDate: endTime.toISOString(),
                     start: startTime.toDate(),
                     end: endTime.toDate()
                 };
@@ -177,7 +178,7 @@ class EventView extends Component<EventViewProps, EventViewState> {
         return childElement;
     };
 
-    private onSearchUpdated = (event: any) => this.setState({searchTerm: event.target.value});
+    private onSearchUpdated = (searchTerm: string) => this.setState({searchTerm});
     private onFiltersUpdated = (filters: Filter[]) => this.setState({filters});
     private onSelectEvent = (event: CalendarEvent) => this.setState({selectedEvent: event});
     private populateRef = (newEventRef: any) => this.setState({newEventRef});
@@ -244,9 +245,11 @@ class EventView extends Component<EventViewProps, EventViewState> {
                 id: -1,
                 start: startTime.toDate(),
                 end: endTime.toDate(),
+                startDate: startTime.toISOString(),
+                endDate: endTime.toISOString(),
                 roomId: -1,
                 time: start.toString(),
-                duration: duration.asMinutes()
+                duration: duration.asMinutes().toString()
             }
         });
     };

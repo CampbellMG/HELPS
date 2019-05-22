@@ -3,6 +3,7 @@ import {Field, reduxForm} from 'redux-form';
 import Form from 'react-bootstrap/Form';
 import {
     AdminSessionDetailFormProps,
+    AdminSessionDetailFormState,
     AdminSessionDetailProps,
     SessionFormData
 } from '../../../types/components/WorkshopRegistrationTypes';
@@ -15,25 +16,24 @@ import {Button, ListGroup, Row} from 'react-bootstrap';
 import {MdDelete, MdFileDownload} from 'react-icons/md';
 import EmailSubmit from '../eventView/EmailSubmit';
 import Dropzone from 'react-dropzone';
-import {SessionFile} from '../../../types/model/Session';
-import './EventForm.css'
+import './EventForm.css';
 
-class AdminSessionDetailForm extends React.Component<AdminSessionDetailFormProps> {
-
-    private sessionFiles: SessionFile[] = [];
+class AdminSessionDetailForm extends React.Component<AdminSessionDetailFormProps, AdminSessionDetailFormState> {
 
     private get nextFileId(): number {
-        return Math.max(...this.sessionFiles.map(file => file.id)) + 1;
+        return Math.max(...this.state.sessionFiles.map(file => file.id)) + 1;
     }
 
-    componentWillReceiveProps(nextProps: Readonly<AdminSessionDetailFormProps>, nextContext: any): void {
-        if (this.sessionFiles.length === 0 && nextProps.initialValues.files) {
-            this.sessionFiles = nextProps.initialValues.files;
-        }
+    constructor(props: AdminSessionDetailFormProps) {
+        super(props);
+
+        this.state = {
+            sessionFiles: []
+        };
     }
 
     render() {
-        const {handleSubmit, initialValues} = this.props;
+        const {handleSubmit, sessionFiles} = {...this.props, ...this.state};
 
         return (
             <form onSubmit={handleSubmit} className='p-3 pl-4'>
@@ -43,14 +43,14 @@ class AdminSessionDetailForm extends React.Component<AdminSessionDetailFormProps
                            component={this.TextInput}/>
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label>Date / Time</Form.Label>
-                    <Field name='time'
+                    <Form.Label>Start</Form.Label>
+                    <Field name='startDate'
                            component={this.DatePickerInput}/>
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label>Duration</Form.Label>
-                    <Field name='duration'
-                           component={this.TextInput}/>
+                    <Form.Label>End</Form.Label>
+                    <Field name='endDate'
+                           component={this.DatePickerInput}/>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Room</Form.Label>
@@ -82,7 +82,7 @@ class AdminSessionDetailForm extends React.Component<AdminSessionDetailFormProps
                     <Field name='assignmentType'
                            component={this.AssignmentTypeInput}/>
                 </Form.Group>
-                <Form.Group as={Row}>
+                <Form.Group >
                     <Form.Label>Group Assignment</Form.Label>
                     <Field name='groupAssignment'
                            component={this.BooleanInput}/>
@@ -92,7 +92,7 @@ class AdminSessionDetailForm extends React.Component<AdminSessionDetailFormProps
                     <Field name='assistance'
                            component={this.TextInput}/>
                 </Form.Group>
-                <Form.Group as={Row}>
+                <Form.Group >
                     <Form.Label>Student Attendance</Form.Label>
                     <Field name='attendance'
                            component={this.BooleanInput}/>
@@ -103,13 +103,13 @@ class AdminSessionDetailForm extends React.Component<AdminSessionDetailFormProps
                            component={this.TextArea}/>
                 </Form.Group>
                 <ListGroup as='ul'>
-                    {initialValues.files && initialValues.files.map(file => (
-                        <ListGroup.Item>
+                    {sessionFiles.map(file => (
+                        <ListGroup.Item className='d-flex flex-column'>
                             {file.title}
-                            <Button>
+                            <Button className='m-1'>
                                 <MdFileDownload/>
                             </Button>
-                            <Button onClick={() => this.onFileDeleted(file.id)}>
+                            <Button onClick={() => this.onFileDeleted(file.id)} className='m-1'>
                                 <MdDelete/>
                             </Button>
                         </ListGroup.Item>
@@ -120,19 +120,21 @@ class AdminSessionDetailForm extends React.Component<AdminSessionDetailFormProps
                         <section>
                             <div {...getRootProps()} className='dropzone'>
                                 <input {...getInputProps()} />
-                                <p>Drag 'n' drop some files here, or click to select files</p>
+                                <p>Click here or drop files to add...</p>
                             </div>
                         </section>
                     )}
                 </Dropzone>
                 <EmailSubmit buttonText='Send' onSubmit={() => {
                 }}/>
-                <EmailSubmit buttonText='Cancel' onSubmit={() => this.props.change('delete', true)}/>
+                <EmailSubmit buttonText='Cancel'
+                             onSubmit={() => this.props.change('delete', true)}/>
             </form>
         );
     }
 
-    private TextArea = (props: any) => <Form.Control as='textarea' {...props} value={props.input.value}
+    private TextArea = (props: any) => <Form.Control as='textarea' {...props}
+                                                     value={props.input.value}
                                                      onChange={props.input.onChange}/>;
     private TextInput = (props: any) => <Form.Control {...props} value={props.input.value}
                                                       onChange={props.input.onChange}/>;
@@ -161,19 +163,23 @@ class AdminSessionDetailForm extends React.Component<AdminSessionDetailFormProps
     );
 
     private onFileAdded = (files: File[]) => {
+        const sessionFiles = this.state.sessionFiles;
         files.forEach(file => {
-            this.sessionFiles.push({
+            sessionFiles.push({
                 id: this.nextFileId,
                 title: file.name
             });
         });
 
-        this.props.change('files', this.sessionFiles);
+        this.props.change('files', sessionFiles);
+        this.setState({sessionFiles});
     };
 
     private onFileDeleted = (id: number) => {
-        this.sessionFiles = this.sessionFiles.filter(file => file.id !== id);
-        this.props.change('files', this.sessionFiles);
+        let sessionFiles = this.state.sessionFiles;
+        sessionFiles = sessionFiles.filter(file => file.id !== id);
+        this.props.change('files', sessionFiles);
+        this.setState({sessionFiles});
     };
 }
 

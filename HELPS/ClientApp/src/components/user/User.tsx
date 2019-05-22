@@ -74,12 +74,6 @@ class User extends Component<UserProps, UserState> {
         }
     }
 
-    componentDidUpdate(prevProps: Readonly<UserProps>, prevState: Readonly<UserState>, snapshot?: any): void {
-        if (this.props.students && !this.state.selectedStudent) {
-            this.setState({selectedStudent: this.props.students[0]});
-        }
-    }
-
     render() {
         const {isAdmin, error, loading} = this.props;
         if (!isAdmin) {
@@ -116,6 +110,7 @@ class User extends Component<UserProps, UserState> {
     private getUserDetails() {
         return (
             <UserDetailsForm onSubmit={this.props.updateUser}
+                             isAdmin={this.props.isAdmin}
                              initialValues={this.state.selectedStudent}/>
         );
     }

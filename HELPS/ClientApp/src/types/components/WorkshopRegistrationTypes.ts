@@ -2,7 +2,7 @@ import {Workshop} from '../model/Workshop';
 import {Event} from 'react-big-calendar';
 import {InjectedFormProps} from 'redux-form';
 import {HELPSEvent} from '../model/HELPSEvent';
-import {Session} from '../model/Session';
+import {Session, SessionFile} from '../model/Session';
 import * as React from 'react';
 import {Room} from '../model/Room';
 import {FormControlProps} from 'react-bootstrap';
@@ -17,10 +17,28 @@ export interface AdminSessionDetailProps {
 
 export type AdminSessionDetailFormProps = EventFormProps<SessionFormData, AdminSessionDetailProps>;
 
-export interface AdminWorkshopDetailProps {
+export interface AdminSessionDetailFormState {
+    sessionFiles: SessionFile[]
 }
 
-export type AdminWorkshopDetailFormProps = EventFormProps<WorkshopFormData, AdminWorkshopDetailProps>;
+export interface AdminWorkshopDetailFormState {
+    recurrenceModalVisible: boolean
+    recurrenceRule: string
+    workshopStudentIds: number[]
+}
+
+export interface AdminWorkshopFormStateProps {
+    students: Student[]
+}
+
+export interface AdminWorkshopFormDispatchProps {
+    retrieveStudents: () => void
+}
+
+export interface AdminWorkshopDetailProps{
+}
+
+export type AdminWorkshopDetailFormProps = EventFormProps<WorkshopFormData, AdminWorkshopDetailProps> &  AdminWorkshopFormDispatchProps & AdminWorkshopFormStateProps;
 
 export interface StudentSessionDetailProps {
     booked: boolean

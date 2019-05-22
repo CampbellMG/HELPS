@@ -11,5 +11,9 @@
     background-color: #fafafa;
     color: #bdbdbd;
     outline: none;
-    transition: border .24s ease-in-out;
+    transition: bord er .24s ease-in-out;
+}
+
+.recurrence-dialog {
+    min-width: auto;
 }

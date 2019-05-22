@@ -7,7 +7,6 @@ import {
     StudentSessionDetailFormProps,
     StudentSessionDetailProps
 } from '../../../types/components/WorkshopRegistrationTypes';
-import {Session} from '../../../types/model/Session';
 
 class StudentSessionDetailForm extends React.Component<StudentSessionDetailFormProps> {
     TextInput = (props: any) => (
@@ -35,8 +34,14 @@ class StudentSessionDetailForm extends React.Component<StudentSessionDetailFormP
                            type='text'/>
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label>Date / Time</Form.Label>
-                    <Field name='time'
+                    <Form.Label>Start</Form.Label>
+                    <Field name='startDate'
+                           component={this.TextInput}
+                           type='text'/>
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label>End</Form.Label>
+                    <Field name='endDate'
                            component={this.TextInput}
                            type='text'/>
                 </Form.Group>

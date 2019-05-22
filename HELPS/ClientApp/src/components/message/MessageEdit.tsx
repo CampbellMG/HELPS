@@ -2,7 +2,12 @@ import * as React from 'react';
 import {Component, ReactNode} from 'react';
 import {connect} from 'react-redux';
 import {AppState} from '../../types/store/StoreTypes';
-import {MessageDispatchProps, MessageProps, MessageState, MessageStateProps} from '../../types/components/MessageTypes';
+import {
+    MessageDispatchProps,
+    MessageProps,
+    MessageState,
+    MessageStateProps
+} from '../../types/components/MessageTypes';
 import {ThunkDispatch} from 'redux-thunk';
 import {Message} from '../../types/model/Message';
 import EditorList from '../editorlist/EditorList';
@@ -85,11 +90,14 @@ class MessageEdit extends Component<MessageProps, MessageState> {
                         onFilter={filter => this.setState({filter})}
                         titleExtractor={message => message.title}>
 
-                <Editor editorState={editorState}
-                        wrapperClassName='flex-fill'
-                        toolbarCustomButtons={this.renderExtraButtons()}
-                        onEditorStateChange={editorState => this.setState({editorState})}/>
+                <div className='m-2 p-1 border d-flex flex-fill'>
+                    <Editor editorState={editorState}
 
+                            wrapperClassName='flex-fill'
+                            toolbarCustomButtons={this.renderExtraButtons()}
+                            onEditorStateChange={editorState => this.setState({editorState})}/>
+
+                </div>
                 <Dialog visible={newSelectedMessage !== undefined}
                         onHidden={() => this.setState({newSelectedMessage: undefined})}
                         title='Are you sure?'

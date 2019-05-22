@@ -15,7 +15,7 @@ export default class EmailSubmit extends Component<EmailSubmitProps, EmailSubmit
     render() {
         const {onSubmit, buttonText, emailType} = {...this.state, ...this.props};
         return (
-            <ButtonGroup>
+            <ButtonGroup className='mt-4 d-flex'>
                 <DropdownButton as={ButtonGroup} title={emailType} id={buttonText + 'email.button'}>
                     {this.getOptions()}
                 </DropdownButton>
