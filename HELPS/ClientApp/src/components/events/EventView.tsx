@@ -3,12 +3,12 @@ import * as React from 'react';
 import {Children, cloneElement, Component, ReactElement} from 'react';
 import {AppState} from '../../types/store/StoreTypes';
 import {
-    CalendarEvent,
+    CalendarEvent, DeleteableHELPSEvent,
     EventViewDispatchProps,
     EventViewProps,
     EventViewState,
     EventViewStateProps,
-    HELPSEventType
+    HELPSEventType, WorkshopFormData
 } from '../../types/components/WorkshopRegistrationTypes';
 import {
     addWorkshop,
@@ -36,6 +36,7 @@ import {HELPSEvent} from '../../types/model/HELPSEvent';
 import {NewEventOverlay} from './eventView/NewEventOverlay';
 import {CalendarFilter} from './eventView/CalendarFilter';
 import {EventForm} from './eventView/EventForm';
+import RRule, {rrulestr} from 'rrule';
 
 class EventView extends Component<EventViewProps, EventViewState> {
     private localizer = BigCalendar.momentLocalizer(moment);
@@ -172,11 +173,15 @@ class EventView extends Component<EventViewProps, EventViewState> {
     private clearNewEvent = () => this.setState({newEvent: undefined, newEventRef: undefined});
     private onEventChanged = (selectedEvent: CalendarEvent) => this.setState({selectedEvent});
 
-    private onEventSubmitted = (event: HELPSEvent) => {
-        this.setState({selectedEvent: undefined})
+    private onEventSubmitted = (event: DeleteableHELPSEvent) => {
+        this.setState({selectedEvent: undefined});
 
         if (isSession(event)) {
             if (this.props.isAdmin) {
+                if (event.delete) {
+                    return this.props.cancelSession(event);
+                }
+
                 return this.props.updateSession(event);
             }
 
@@ -189,7 +194,11 @@ class EventView extends Component<EventViewProps, EventViewState> {
 
         if (isWorkshop(event)) {
             if (this.props.isAdmin) {
-                return this.props.updateWorkshop(event);
+                if (event.delete) {
+                    return this.props.cancelWorkshop(event);
+                }
+
+                return this.saveWorkshop(event);
             }
 
             if (this.eventSelected(event)) {
@@ -199,6 +208,20 @@ class EventView extends Component<EventViewProps, EventViewState> {
             this.props.bookWorkshop(event);
         }
     };
+
+    private saveWorkshop(workshopFormData: WorkshopFormData) {
+        if (workshopFormData.rRule) {
+            const rule = rrulestr(workshopFormData.rRule)
+            const workshops = rule.all().map(date => ({
+                ...workshopFormData,
+                time: date.toString()
+            }));
+
+            this.props.addWorkshops(workshops);
+        }
+
+        this.props.updateWorkshop(workshopFormData);
+    }
 
     private onSelectSlot = ({start, end}: { start: stringOrDate, end: stringOrDate }) => {
         const startTime = moment(start);
@@ -240,7 +263,7 @@ class EventView extends Component<EventViewProps, EventViewState> {
             });
         }
 
-        this.props.addWorkshop({
+        this.props.addWorkshops([{
             ...newEvent,
             title: '',
             cutOff: 0,
@@ -250,7 +273,7 @@ class EventView extends Component<EventViewProps, EventViewState> {
             availablePlaces: 0,
             skillId: -1,
             assignedStudentIds: []
-        });
+        }]);
     };
 
     private eventSelected(event: HELPSEvent) {
@@ -277,7 +300,7 @@ const mapDispatchToProps = (dispatch: ThunkDispatch<{}, {}, any>): EventViewDisp
     retrieveUserWorkshops: () => dispatch(retrieveUserWorkshops()),
     bookWorkshop: workshop => dispatch(bookWorkshop(workshop)),
     cancelWorkshop: workshop => dispatch(cancelWorkshop(workshop)),
-    addWorkshop: workshop => dispatch(addWorkshop(workshop)),
+    addWorkshops: workshop => dispatch(addWorkshop(workshop)),
     updateWorkshop: workshop => dispatch(updateWorkshop(workshop)),
 
     retrieveSessions: () => dispatch(retrieveSessions()),

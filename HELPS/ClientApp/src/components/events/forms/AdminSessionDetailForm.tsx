@@ -3,21 +3,38 @@ import {Field, reduxForm} from 'redux-form';
 import Form from 'react-bootstrap/Form';
 import {
     AdminSessionDetailFormProps,
-    AdminSessionDetailProps
+    AdminSessionDetailProps,
+    SessionFormData
 } from '../../../types/components/WorkshopRegistrationTypes';
-import {Session} from '../../../types/model/Session';
 import Datetime from 'react-datetime';
 import 'react-datetime/css/react-datetime.css';
 import RoomList from '../lists/RoomList';
 import StudentList from '../lists/StudentList';
 import AdvisorList from '../lists/AdvisorList';
-import {ListGroup, Row} from 'react-bootstrap';
+import {Button, ListGroup, Row} from 'react-bootstrap';
 import {MdDelete, MdFileDownload} from 'react-icons/md';
 import EmailSubmit from '../eventView/EmailSubmit';
+import Dropzone from 'react-dropzone';
+import {SessionFile} from '../../../types/model/Session';
+import './EventForm.css'
 
 class AdminSessionDetailForm extends React.Component<AdminSessionDetailFormProps> {
+
+    private sessionFiles: SessionFile[] = [];
+
+    private get nextFileId(): number {
+        return Math.max(...this.sessionFiles.map(file => file.id)) + 1;
+    }
+
+    componentWillReceiveProps(nextProps: Readonly<AdminSessionDetailFormProps>, nextContext: any): void {
+        if (this.sessionFiles.length === 0 && nextProps.initialValues.files) {
+            this.sessionFiles = nextProps.initialValues.files;
+        }
+    }
+
     render() {
         const {handleSubmit, initialValues} = this.props;
+
         return (
             <form onSubmit={handleSubmit} className='p-3 pl-4'>
                 <Form.Group>
@@ -89,25 +106,40 @@ class AdminSessionDetailForm extends React.Component<AdminSessionDetailFormProps
                     {initialValues.files && initialValues.files.map(file => (
                         <ListGroup.Item>
                             {file.title}
-                            <div>
-                               <MdFileDownload/>
-                            </div>
-                            <div>
+                            <Button>
+                                <MdFileDownload/>
+                            </Button>
+                            <Button onClick={() => this.onFileDeleted(file.id)}>
                                 <MdDelete/>
-                            </div>
+                            </Button>
                         </ListGroup.Item>
                     ))}
                 </ListGroup>
-                <EmailSubmit buttonText='Send' onSubmit={() => {}}/>
-                <EmailSubmit buttonText='Cancel' onSubmit={() => {}}/>
+                <Dropzone onDrop={this.onFileAdded}>
+                    {({getRootProps, getInputProps}) => (
+                        <section>
+                            <div {...getRootProps()} className='dropzone'>
+                                <input {...getInputProps()} />
+                                <p>Drag 'n' drop some files here, or click to select files</p>
+                            </div>
+                        </section>
+                    )}
+                </Dropzone>
+                <EmailSubmit buttonText='Send' onSubmit={() => {
+                }}/>
+                <EmailSubmit buttonText='Cancel' onSubmit={() => this.props.change('delete', true)}/>
             </form>
         );
     }
 
-    private TextArea = (props: any) => <Form.Control as="textarea" {...props} value={props.input.value} onChange={props.input.onChange}/>;
-    private TextInput = (props: any) => <Form.Control {...props} value={props.input.value} onChange={props.input.onChange}/>;
-    private BooleanInput = (props: any) => <Form.Check {...props} value={props.input.value} onChange={props.input.onChange}/>;
-    private DatePickerInput = (props: any) => <Datetime {...props} value={props.input.value} onChange={props.input.onChange}/>;
+    private TextArea = (props: any) => <Form.Control as='textarea' {...props} value={props.input.value}
+                                                     onChange={props.input.onChange}/>;
+    private TextInput = (props: any) => <Form.Control {...props} value={props.input.value}
+                                                      onChange={props.input.onChange}/>;
+    private BooleanInput = (props: any) => <Form.Check {...props} value={props.input.value}
+                                                       onChange={props.input.onChange}/>;
+    private DatePickerInput = (props: any) => <Datetime {...props} value={props.input.value}
+                                                        onChange={props.input.onChange}/>;
     private RoomListInput = (props: any) => <RoomList {...props}/>;
     private AdvisorListInput = (props: any) => <AdvisorList {...props}/>;
     private StudentListInput = (props: any) => <StudentList {...props}/>;
@@ -127,9 +159,25 @@ class AdminSessionDetailForm extends React.Component<AdminSessionDetailFormProps
             <option>Other</option>
         </Form.Control>
     );
+
+    private onFileAdded = (files: File[]) => {
+        files.forEach(file => {
+            this.sessionFiles.push({
+                id: this.nextFileId,
+                title: file.name
+            });
+        });
+
+        this.props.change('files', this.sessionFiles);
+    };
+
+    private onFileDeleted = (id: number) => {
+        this.sessionFiles = this.sessionFiles.filter(file => file.id !== id);
+        this.props.change('files', this.sessionFiles);
+    };
 }
 
-export default reduxForm<Session, AdminSessionDetailProps>({
+export default reduxForm<SessionFormData, AdminSessionDetailProps>({
     form: 'admin_session_detail',
     enableReinitialize: true
 })(AdminSessionDetailForm);

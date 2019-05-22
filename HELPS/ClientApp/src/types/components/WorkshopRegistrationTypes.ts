@@ -10,39 +10,46 @@ import {Student} from '../model/Student';
 import {Advisor} from '../model/Advisor';
 import {Skill} from '../model/Skill';
 
-export type EventFormProps<E extends HELPSEvent, P> = P & InjectedFormProps<E, P>;
-
-export interface AdminSessionBookProps {
-    booked: boolean
-}
-
-export type AdminSessionBookFormProps = EventFormProps<Session, AdminSessionBookProps>;
+export type EventFormProps<E extends DeleteableHELPSEvent, P> = P & InjectedFormProps<E, P>;
 
 export interface AdminSessionDetailProps {
 }
 
-export type AdminSessionDetailFormProps = EventFormProps<Session, AdminSessionDetailProps>;
+export type AdminSessionDetailFormProps = EventFormProps<SessionFormData, AdminSessionDetailProps>;
 
 export interface AdminWorkshopDetailProps {
 }
 
-export type AdminWorkshopDetailFormProps = EventFormProps<Workshop, AdminWorkshopDetailProps>;
+export type AdminWorkshopDetailFormProps = EventFormProps<WorkshopFormData, AdminWorkshopDetailProps>;
 
 export interface StudentSessionDetailProps {
     booked: boolean
 }
 
-export type StudentSessionDetailFormProps = EventFormProps<Session, StudentSessionDetailProps>;
+export type StudentSessionDetailFormProps = EventFormProps<SessionFormData, StudentSessionDetailProps>;
 
 export interface StudentWorkshopDetailProps {
     booked: boolean
 }
 
-export type StudentWorkshopDetailFormProps = EventFormProps<Workshop, StudentWorkshopDetailProps>;
+export type StudentWorkshopDetailFormProps = EventFormProps<WorkshopFormData, StudentWorkshopDetailProps>;
 
 export interface CalendarEvent extends Event, HELPSEvent {
     start: Date
     end: Date
+}
+
+export interface Deleteable {
+    delete: boolean
+    rRule?: string
+}
+
+export type DeleteableHELPSEvent = HELPSEvent & Deleteable;
+
+export interface WorkshopFormData extends Workshop, Deleteable {
+}
+
+export interface SessionFormData extends Session, Deleteable {
 }
 
 export interface EventViewStateProps {
@@ -60,7 +67,7 @@ export interface EventViewDispatchProps {
     retrieveUserWorkshops: () => void
     bookWorkshop: (workshop: Workshop) => void
     cancelWorkshop: (workshop: Workshop) => void
-    addWorkshop: (workshop: Workshop) => void
+    addWorkshops: (workshop: Workshop[]) => void
     updateWorkshop: (workshop: Workshop) => void
 
     retrieveSessions: () => void
@@ -84,12 +91,13 @@ export interface EventViewState {
 }
 
 export type HELPSEventType = 'SESSION' | 'WORKSHOP';
+
 export enum EmailType {
     NONE = "Don't Email",
     STUDENT = 'Email Student',
     ADVISOR = 'Email Advisor',
     BOTH = 'Email Both'
-} 
+}
 
 export interface NewEventOverlayProps {
     newEventRef?: any
@@ -116,7 +124,7 @@ export interface EmailSubmitState {
 export interface EventFormComponentProps {
     selectedEvent?: CalendarEvent
     isAdmin: boolean
-    onEventSubmitted: (event: HELPSEvent) => void
+    onEventSubmitted: (event: DeleteableHELPSEvent) => void
     eventSelected: boolean
     eventChanged: (event: CalendarEvent) => void
 }
@@ -124,6 +132,7 @@ export interface EventFormComponentProps {
 export interface RoomListStateProps {
     rooms: Room[]
 }
+
 export interface RoomListDispatchProps {
     loadRooms: () => void
 }
@@ -135,6 +144,7 @@ export interface RoomListProps extends RoomListDispatchProps, RoomListStateProps
 export interface SkillListStateProps {
     skills: Skill[]
 }
+
 export interface SkillListDispatchProps {
     loadSkills: () => void
 }
@@ -146,6 +156,7 @@ export interface SkillListProps extends SkillListDispatchProps, SkillListStatePr
 export interface StudentListStateProps {
     students: Student[]
 }
+
 export interface StudentListDispatchProps {
     loadStudents: () => void
 }
@@ -157,6 +168,7 @@ export interface StudentListProps extends StudentListDispatchProps, StudentListS
 export interface AdvisorListStateProps {
     advisors: Advisor[]
 }
+
 export interface AdvisorListDispatchProps {
     loadAdvisors: () => void
 }

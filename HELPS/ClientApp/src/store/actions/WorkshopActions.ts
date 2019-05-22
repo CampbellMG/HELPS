@@ -70,14 +70,16 @@ export const cancelWorkshop = (workshop: Workshop) => async (dispatch: Dispatch<
     }
 };
 
-export const addWorkshop = (workshop: Workshop) => async (dispatch: Dispatch<any>) => {
+export const addWorkshop = (workshops: Workshop[]) => async (dispatch: Dispatch<any>) => {
     try {
-        await authenticatedFetch(
-            ENDPOINT_WORKSHOP,
-            'POST',
-            {...workshop, id: undefined},
-            true
-        );
+        for (let workshop of workshops) {
+            await authenticatedFetch(
+                ENDPOINT_WORKSHOP,
+                'POST',
+                {...workshop, id: undefined},
+                true
+            );
+        }
         await dispatchWorkshops(dispatch);
     } catch (e) {
         dispatch(workshopError(e.message));

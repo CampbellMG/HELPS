@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import {Workshop} from '../../../types/model/Workshop';
 import {
     StudentWorkshopDetailFormProps,
-    StudentWorkshopDetailProps
+    StudentWorkshopDetailProps, WorkshopFormData
 } from '../../../types/components/WorkshopRegistrationTypes';
 
 class StudentWorkshopDetailForm extends React.Component<StudentWorkshopDetailFormProps> {
@@ -79,7 +79,7 @@ class StudentWorkshopDetailForm extends React.Component<StudentWorkshopDetailFor
     }
 }
 
-export default reduxForm<Workshop, StudentWorkshopDetailProps>({
+export default reduxForm<WorkshopFormData, StudentWorkshopDetailProps>({
     form: 'student_workshop_detail',
     enableReinitialize: true
 })(StudentWorkshopDetailForm);

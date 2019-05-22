@@ -3,6 +3,7 @@ import {Field, reduxForm} from 'redux-form';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import {
+    SessionFormData,
     StudentSessionDetailFormProps,
     StudentSessionDetailProps
 } from '../../../types/components/WorkshopRegistrationTypes';
@@ -79,7 +80,7 @@ class StudentSessionDetailForm extends React.Component<StudentSessionDetailFormP
     }
 }
 
-export default reduxForm<Session, StudentSessionDetailProps>({
+export default reduxForm<SessionFormData, StudentSessionDetailProps>({
     form: 'student_session_detail',
     enableReinitialize: true
 })(StudentSessionDetailForm);

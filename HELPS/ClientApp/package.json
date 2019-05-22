@@ -17,15 +17,18 @@
     "react-datetime": "^2.16.3",
     "react-dom": "^16.8.6",
     "react-draft-wysiwyg": "^1.13.2",
+    "react-dropzone": "^10.1.5",
     "react-icons": "^3.6.1",
     "react-redux": "^5.0.6",
     "react-router-bootstrap": "^0.24.4",
     "react-router-dom": "^4.2.2",
     "react-router-redux": "^5.0.0-alpha.8",
+    "react-rrule-generator": "^1.2.0",
     "react-scripts": "2.1.8",
     "redux": "^3.7.2",
     "redux-form": "^8.1.0",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "rrule": "^2.6.0"
   },
   "devDependencies": {
     "@types/bootstrap": "^4.3.0",

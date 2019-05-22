@@ -1,6 +1,6 @@
 import {HELPSEvent} from './HELPSEvent';
 
-export interface File {
+export interface SessionFile {
     id: number
     title: string
 }
@@ -16,7 +16,7 @@ export interface Session extends HELPSEvent {
     assistance: string
     attendance: boolean
     comments: string
-    files: File[]
+    files: SessionFile[]
 }
 
 export function isSession(event: HELPSEvent): event is Session {

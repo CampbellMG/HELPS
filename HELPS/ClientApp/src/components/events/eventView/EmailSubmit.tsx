@@ -19,7 +19,8 @@ export default class EmailSubmit extends Component<EmailSubmitProps, EmailSubmit
                 <DropdownButton as={ButtonGroup} title={emailType} id={buttonText + 'email.button'}>
                     {this.getOptions()}
                 </DropdownButton>
-                <Button onClick={() => onSubmit(emailType)}>
+                <Button onClick={() => onSubmit(emailType)}
+                        type='submit'>
                     {buttonText}
                 </Button>
             </ButtonGroup>
