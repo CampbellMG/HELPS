@@ -85,7 +85,7 @@ export interface EventViewProps extends EventViewStateProps, EventViewDispatchPr
 export interface EventViewState {
     selectedEvent?: CalendarEvent
     searchTerm: string
-    filterNotBooked: boolean
+    filters: Filter[]
     newEvent?: CalendarEvent
     newEventRef?: any
 }
@@ -105,11 +105,15 @@ export interface NewEventOverlayProps {
     onSelect: (type: HELPSEventType) => void
 }
 
+export type Filter = 'Booked' | 'Sessions' | 'Workshops';
+
 export interface CalendarFilterProps {
-    searchTerm: string,
-    filterNotBooked: boolean
     onSearchUpdated: (event: any) => void
-    onFilterNotBookedToggled: (event: any) => void
+    onFilterUpdated: (filters: Filter[]) => void
+}
+
+export interface CalendarFilterState {
+    filters: Filter[]
 }
 
 export interface EmailSubmitProps {

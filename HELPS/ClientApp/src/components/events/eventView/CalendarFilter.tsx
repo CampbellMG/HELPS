@@ -1,26 +1,35 @@
 import * as React from 'react';
-import {FunctionComponent} from 'react';
-import {CalendarFilterProps} from '../../../types/components/WorkshopRegistrationTypes';
-import {Form, InputGroup} from 'react-bootstrap';
+import {Component} from 'react';
+import {CalendarFilterProps, CalendarFilterState, Filter} from '../../../types/components/WorkshopRegistrationTypes';
+// @ts-ignore
+import Chips from 'react-chips';
 
-export const CalendarFilter: FunctionComponent<CalendarFilterProps> = ({searchTerm, filterNotBooked, onSearchUpdated, onFilterNotBookedToggled}) => (
-    <InputGroup className='align-self-stretch d-flex pb-3 sticky-top'>
+export class CalendarFilter extends Component<CalendarFilterProps, CalendarFilterState> {
 
-        <Form.Control type='text'
-                      className='flex-fill'
-                      placeholder='Search...'
-                      value={searchTerm}
-                      onChange={onSearchUpdated}/>
+    private static readonly FILTERS: Filter[] = ['Booked', 'Sessions', 'Workshops'];
 
-        <InputGroup.Append>
-            <InputGroup.Text>
-                Already booked
-                <input type='checkbox'
-                       className='ml-3'
-                       checked={filterNotBooked}
-                       onChange={onFilterNotBookedToggled}/>
-            </InputGroup.Text>
-        </InputGroup.Append>
+    constructor(props: CalendarFilterProps) {
+        super(props);
 
-    </InputGroup>
-);
+        this.state = {
+            filters: []
+        };
+    }
+
+    render() {
+        return (
+            <Chips
+                value={this.state.filters}
+                onChange={(filters: any) => this.setState({filters})}
+                fromSuggestionsOnly
+                fetchSuggestions={this.onSearchTermUpdated}/>
+        );
+    }
+
+    private onSearchTermUpdated = (searchTerm: string): string[] => {
+        this.props.onSearchUpdated(searchTerm);
+        return CalendarFilter.FILTERS.filter(filter => (
+            !this.state.filters.includes(filter) && filter.toLowerCase().includes(searchTerm.toLowerCase())
+        ));
+    };
+}

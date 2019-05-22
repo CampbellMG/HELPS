@@ -7,7 +7,7 @@ import {
     EventViewDispatchProps,
     EventViewProps,
     EventViewState,
-    EventViewStateProps,
+    EventViewStateProps, Filter,
     HELPSEventType, WorkshopFormData
 } from '../../types/components/WorkshopRegistrationTypes';
 import {
@@ -42,18 +42,23 @@ class EventView extends Component<EventViewProps, EventViewState> {
     private localizer = BigCalendar.momentLocalizer(moment);
 
     private get sessions(): Session[] {
-        let {filterNotBooked, selectedEvent, sessions} = {...this.state, ...this.props};
+        let {filters, searchTerm, selectedEvent, sessions} = {...this.state, ...this.props};
 
         if (selectedEvent && isSession(selectedEvent)) {
             sessions = sessions.filter(session => selectedEvent && session.id !== selectedEvent.id);
             sessions.push(selectedEvent);
         }
 
-        return sessions.filter(session => !filterNotBooked || this.eventSelected(session));
+        if (filters.includes('Booked')) {
+            sessions = sessions.filter(session => session.studentId);
+        }
+
+        return sessions
+            .filter(workshop => searchTerm.length === 0 || workshop.type.toLowerCase().includes(searchTerm.toLowerCase()));
     }
 
     private get workshops(): Workshop[] {
-        let {filterNotBooked, searchTerm, selectedEvent, workshops} = {...this.state, ...this.props};
+        let {searchTerm, selectedEvent, workshops} = {...this.state, ...this.props};
 
         if (selectedEvent && isWorkshop(selectedEvent)) {
             workshops = workshops.filter(workshop => selectedEvent && workshop.id !== selectedEvent.id);
@@ -61,14 +66,22 @@ class EventView extends Component<EventViewProps, EventViewState> {
         }
 
         return workshops
-            .filter(workshop => !filterNotBooked || this.eventSelected(workshop))
             .filter(workshop => searchTerm.length === 0 || workshop.title.toLowerCase().includes(searchTerm.toLowerCase()));
     }
 
     private get events(): CalendarEvent[] {
-        const events: HELPSEvent[] = this.sessions;
+        const {filters, newEvent} = this.state;
+        let events: HELPSEvent[] = [];
+
+        if (!filters.includes('Sessions')) {
+            events = events.concat(this.workshops);
+        }
+
+        if (!filters.includes('Workshops')) {
+            events = events.concat(this.sessions);
+        }
+
         const calendarEvents = events
-            .concat(this.workshops)
             .map(event => {
                 const startTime = moment(event.time);
                 const endTime = startTime.clone().add(event.duration, 'minute');
@@ -80,8 +93,8 @@ class EventView extends Component<EventViewProps, EventViewState> {
                 };
             });
 
-        if (this.state.newEvent) {
-            calendarEvents.push(this.state.newEvent);
+        if (newEvent) {
+            calendarEvents.push(newEvent);
         }
 
         return calendarEvents;
@@ -102,12 +115,12 @@ class EventView extends Component<EventViewProps, EventViewState> {
 
         this.state = {
             searchTerm: '',
-            filterNotBooked: false
+            filters: []
         };
     }
 
     render(): React.ReactNode {
-        const {searchTerm, filterNotBooked, isAdmin, newEventRef, selectedEvent} = {...this.props, ...this.state};
+        const {searchTerm, isAdmin, newEventRef, selectedEvent} = {...this.props, ...this.state};
         return (
             <div className='row h-100 overflow-auto'>
 
@@ -120,10 +133,8 @@ class EventView extends Component<EventViewProps, EventViewState> {
                 <div className='col m-3'>
                     <div className='h-100 flex-column'>
 
-                        <CalendarFilter searchTerm={searchTerm}
-                                        filterNotBooked={filterNotBooked}
-                                        onSearchUpdated={this.onSearchUpdated}
-                                        onFilterNotBookedToggled={this.onFilterNotBookedToggled}/>
+                        <CalendarFilter onSearchUpdated={this.onSearchUpdated}
+                                        onFilterUpdated={this.onFiltersUpdated}/>
 
                         <BigCalendar
                             localizer={this.localizer}
@@ -167,7 +178,7 @@ class EventView extends Component<EventViewProps, EventViewState> {
     };
 
     private onSearchUpdated = (event: any) => this.setState({searchTerm: event.target.value});
-    private onFilterNotBookedToggled = () => this.setState({filterNotBooked: !this.state.filterNotBooked});
+    private onFiltersUpdated = (filters: Filter[]) => this.setState({filters});
     private onSelectEvent = (event: CalendarEvent) => this.setState({selectedEvent: event});
     private populateRef = (newEventRef: any) => this.setState({newEventRef});
     private clearNewEvent = () => this.setState({newEvent: undefined, newEventRef: undefined});
@@ -211,7 +222,7 @@ class EventView extends Component<EventViewProps, EventViewState> {
 
     private saveWorkshop(workshopFormData: WorkshopFormData) {
         if (workshopFormData.rRule) {
-            const rule = rrulestr(workshopFormData.rRule)
+            const rule = rrulestr(workshopFormData.rRule);
             const workshops = rule.all().map(date => ({
                 ...workshopFormData,
                 time: date.toString()
