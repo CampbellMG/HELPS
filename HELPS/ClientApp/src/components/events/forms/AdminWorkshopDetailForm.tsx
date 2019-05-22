@@ -1,7 +1,6 @@
 import * as React from 'react';
 import {Field, reduxForm} from 'redux-form';
 import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
 import {Workshop} from '../../../types/model/Workshop';
 import {
     AdminWorkshopDetailFormProps,
@@ -10,18 +9,22 @@ import {
 import Datetime from 'react-datetime';
 import 'react-datetime/css/react-datetime.css';
 import RoomList from '../lists/RoomList';
-import {InputGroup, ListGroup} from 'react-bootstrap';
+import {ListGroup} from 'react-bootstrap';
 import SkillList from '../lists/SkillList';
 import {MdDelete, MdFileDownload} from 'react-icons/md';
+import EmailSubmit from '../eventView/EmailSubmit';
 
 class AdminWorkshopDetailForm extends React.Component<AdminWorkshopDetailFormProps> {
+
     render() {
         const {handleSubmit, initialValues} = this.props;
+        console.log(initialValues);
         return (
             <form onSubmit={handleSubmit} className='p-3 pl-4'>
                 <Form.Group>
                     <Form.Label>Workshop Title</Form.Label>
                     <Field name='title'
+                           type='text'
                            component={this.TextInput}/>
                 </Form.Group>
                 <Form.Group>
@@ -52,7 +55,7 @@ class AdminWorkshopDetailForm extends React.Component<AdminWorkshopDetailFormPro
                 <Form.Group>
                     <Form.Label>Description</Form.Label>
                     <Field name='description'
-                           component={this.TextInput}/>
+                           component={this.TextArea}/>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Available Places</Form.Label>
@@ -73,60 +76,15 @@ class AdminWorkshopDetailForm extends React.Component<AdminWorkshopDetailFormPro
                         </ListGroup.Item>
                     ))}
                 </ListGroup>
-                <InputGroup className='align-self-stretch d-flex pb-3 sticky-top'>
-
-                    <Button type='submit'
-                            className='w-100 mt-4'>
-                        Save
-                    </Button>
-
-                    <InputGroup.Append>
-                        <InputGroup.Text>
-                            Email Student
-                            <input type='checkbox'
-                                   className='ml-3'/>
-                        </InputGroup.Text>
-                    </InputGroup.Append>
-
-                    <InputGroup.Append>
-                        <InputGroup.Text>
-                            Email Advisor
-                            <input type='checkbox'
-                                   className='ml-3'/>
-                        </InputGroup.Text>
-                    </InputGroup.Append>
-
-                </InputGroup>
-                <InputGroup className='align-self-stretch d-flex pb-3 sticky-top'>
-
-                    <Button type='submit'
-                            className='w-100 mt-4'>
-                        Cancel
-                    </Button>
-
-                    <InputGroup.Append>
-                        <InputGroup.Text>
-                            Email Student
-                            <input type='checkbox'
-                                   className='ml-3'/>
-                        </InputGroup.Text>
-                    </InputGroup.Append>
-
-                    <InputGroup.Append>
-                        <InputGroup.Text>
-                            Email Advisor
-                            <input type='checkbox'
-                                   className='ml-3'/>
-                        </InputGroup.Text>
-                    </InputGroup.Append>
-
-                </InputGroup>
+                <EmailSubmit buttonText='Send' onSubmit={() => {}}/>
+                <EmailSubmit buttonText='Cancel' onSubmit={() => {}}/>
             </form>
         );
     }
 
-    private TextInput = (props: any) => <Form.Control {...props}/>;
-    private DatePickerInput = (props: any) => <Datetime {...props}/>;
+    private TextArea = (props: any) => <Form.Control as="textarea" {...props} value={props.input.value} onChange={props.input.onChange}/>;
+    private TextInput = (props: any) => <Form.Control {...props} value={props.input.value} onChange={props.input.onChange}/>;
+    private DatePickerInput = (props: any) => <Datetime {...props} value={props.input.value} onChange={props.input.onChange}/>;
     private RoomListInput = (props: any) => <RoomList {...props}/>;
     private SkillListInput = (props: any) => <SkillList {...props}/>;
 }

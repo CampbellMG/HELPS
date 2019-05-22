@@ -1,7 +1,6 @@
 import * as React from 'react';
 import {Field, reduxForm} from 'redux-form';
 import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
 import {
     AdminSessionDetailFormProps,
     AdminSessionDetailProps
@@ -12,8 +11,9 @@ import 'react-datetime/css/react-datetime.css';
 import RoomList from '../lists/RoomList';
 import StudentList from '../lists/StudentList';
 import AdvisorList from '../lists/AdvisorList';
-import {InputGroup, ListGroup} from 'react-bootstrap';
+import {ListGroup, Row} from 'react-bootstrap';
 import {MdDelete, MdFileDownload} from 'react-icons/md';
+import EmailSubmit from '../eventView/EmailSubmit';
 
 class AdminSessionDetailForm extends React.Component<AdminSessionDetailFormProps> {
     render() {
@@ -65,7 +65,7 @@ class AdminSessionDetailForm extends React.Component<AdminSessionDetailFormProps
                     <Field name='assignmentType'
                            component={this.AssignmentTypeInput}/>
                 </Form.Group>
-                <Form.Group>
+                <Form.Group as={Row}>
                     <Form.Label>Group Assignment</Form.Label>
                     <Field name='groupAssignment'
                            component={this.BooleanInput}/>
@@ -75,7 +75,7 @@ class AdminSessionDetailForm extends React.Component<AdminSessionDetailFormProps
                     <Field name='assistance'
                            component={this.TextInput}/>
                 </Form.Group>
-                <Form.Group>
+                <Form.Group as={Row}>
                     <Form.Label>Student Attendance</Form.Label>
                     <Field name='attendance'
                            component={this.BooleanInput}/>
@@ -83,7 +83,7 @@ class AdminSessionDetailForm extends React.Component<AdminSessionDetailFormProps
                 <Form.Group>
                     <Form.Label>Comments</Form.Label>
                     <Field name='comments'
-                           component={this.TextInput}/>
+                           component={this.TextArea}/>
                 </Form.Group>
                 <ListGroup as='ul'>
                     {initialValues.files && initialValues.files.map(file => (
@@ -98,61 +98,16 @@ class AdminSessionDetailForm extends React.Component<AdminSessionDetailFormProps
                         </ListGroup.Item>
                     ))}
                 </ListGroup>
-                <InputGroup className='align-self-stretch d-flex pb-3 sticky-top'>
-
-                    <Button type='submit'
-                            className='w-100 mt-4'>
-                        Save
-                    </Button>
-
-                    <InputGroup.Append>
-                        <InputGroup.Text>
-                            Email Student
-                            <input type='checkbox'
-                                   className='ml-3'/>
-                        </InputGroup.Text>
-                    </InputGroup.Append>
-
-                    <InputGroup.Append>
-                        <InputGroup.Text>
-                            Email Advisor
-                            <input type='checkbox'
-                                   className='ml-3'/>
-                        </InputGroup.Text>
-                    </InputGroup.Append>
-
-                </InputGroup>
-                <InputGroup className='align-self-stretch d-flex pb-3 sticky-top'>
-
-                    <Button type='submit'
-                            className='w-100 mt-4'>
-                        Cancel
-                    </Button>
-
-                    <InputGroup.Append>
-                        <InputGroup.Text>
-                            Email Student
-                            <input type='checkbox'
-                                   className='ml-3'/>
-                        </InputGroup.Text>
-                    </InputGroup.Append>
-
-                    <InputGroup.Append>
-                        <InputGroup.Text>
-                            Email Advisor
-                            <input type='checkbox'
-                                   className='ml-3'/>
-                        </InputGroup.Text>
-                    </InputGroup.Append>
-
-                </InputGroup>
+                <EmailSubmit buttonText='Send' onSubmit={() => {}}/>
+                <EmailSubmit buttonText='Cancel' onSubmit={() => {}}/>
             </form>
         );
     }
 
-    private TextInput = (props: any) => <Form.Control {...props}/>;
-    private BooleanInput = (props: any) => <Form.Check {...props}/>;
-    private DatePickerInput = (props: any) => <Datetime {...props}/>;
+    private TextArea = (props: any) => <Form.Control as="textarea" {...props} value={props.input.value} onChange={props.input.onChange}/>;
+    private TextInput = (props: any) => <Form.Control {...props} value={props.input.value} onChange={props.input.onChange}/>;
+    private BooleanInput = (props: any) => <Form.Check {...props} value={props.input.value} onChange={props.input.onChange}/>;
+    private DatePickerInput = (props: any) => <Datetime {...props} value={props.input.value} onChange={props.input.onChange}/>;
     private RoomListInput = (props: any) => <RoomList {...props}/>;
     private AdvisorListInput = (props: any) => <AdvisorList {...props}/>;
     private StudentListInput = (props: any) => <StudentList {...props}/>;

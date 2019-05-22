@@ -248,7 +248,8 @@ class EventView extends Component<EventViewProps, EventViewState> {
             targetGroup: '',
             description: '',
             availablePlaces: 0,
-            skillId: -1
+            skillId: -1,
+            assignedStudentIds: []
         });
     };
 

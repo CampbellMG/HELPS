@@ -83,7 +83,13 @@ export interface EventViewState {
     newEventRef?: any
 }
 
-export type HELPSEventType = 'SESSION' | 'WORKSHOP'
+export type HELPSEventType = 'SESSION' | 'WORKSHOP';
+export enum EmailType {
+    NONE = "Don't Email",
+    STUDENT = 'Email Student',
+    ADVISOR = 'Email Advisor',
+    BOTH = 'Email Both'
+} 
 
 export interface NewEventOverlayProps {
     newEventRef?: any
@@ -96,6 +102,15 @@ export interface CalendarFilterProps {
     filterNotBooked: boolean
     onSearchUpdated: (event: any) => void
     onFilterNotBookedToggled: (event: any) => void
+}
+
+export interface EmailSubmitProps {
+    buttonText: string
+    onSubmit: (emailType: EmailType) => void
+}
+
+export interface EmailSubmitState {
+    emailType: EmailType
 }
 
 export interface EventFormComponentProps {

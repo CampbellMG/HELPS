@@ -29,10 +29,10 @@ export const AdminMenu: MenuItem[] = [
         route: 'advisors',
         title: 'Advisors'
     },
-    {
-        route: 'reports',
-        title: 'Reports'
-    }
+    // {
+    //     route: 'reports',
+    //     title: 'Reports'
+    // }
 ];
 
 export const StudentMenu: MenuItem[] = [

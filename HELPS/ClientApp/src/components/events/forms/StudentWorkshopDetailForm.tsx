@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Field, InjectedFormProps, reduxForm} from 'redux-form';
+import {Field, reduxForm} from 'redux-form';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import {Workshop} from '../../../types/model/Workshop';
