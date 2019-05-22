@@ -72,59 +72,61 @@
   ],
   "workshops": [
     {
-      "id": 1,
-      "title": "Workshop 1",
-      "time": "Wed May 22 2019 17:27:57 GMT+1000 (Australian Eastern Standard Time)",
-      "duration": 120,
-      "roomId": 1,
-      "maximum": 30,
+      "start": "2019-05-23T17:00:00.000Z",
+      "end": "2019-05-23T21:00:00.000Z",
+      "startDate": "2019-05-23T17:00:00.000Z",
+      "endDate": "2019-05-23T21:00:00.000Z",
+      "roomId": -1,
+      "time": "Fri May 24 2019 03:00:00 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": "240",
+      "title": "Second Workshop Topic",
+      "cutOff": 0,
+      "maximum": 0,
       "targetGroup": "",
       "description": "",
-      "availablePlaces": 10
+      "availablePlaces": 0,
+      "skillId": -1,
+      "assignedStudentIds": [],
+      "id": 1
     },
     {
+      "start": "2019-05-22T18:30:00.000Z",
+      "end": "2019-05-22T22:00:00.000Z",
+      "startDate": "2019-05-22T16:00:00.000Z",
+      "endDate": "2019-05-23T00:00:00.000Z",
+      "roomId": "1",
+      "time": "Thu May 23 2019 04:30:00 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": "210",
+      "title": "Workshop topic",
+      "cutOff": 0,
+      "maximum": 0,
+      "targetGroup": "",
+      "description": "Description",
+      "availablePlaces": 0,
+      "skillId": "1",
+      "assignedStudentIds": [],
       "id": 2,
-      "title": "Workshop 2",
-      "time": "Tue May 21 2019 03:13:52 GMT+1000 (Australian Eastern Standard Time)",
-      "duration": 30,
-      "roomId": 1,
-      "maximum": 30,
-      "targetGroup": "",
-      "description": "",
-      "availablePlaces": 10
+      "studentIds": [
+        "1"
+      ]
     },
     {
-      "id": 3,
-      "title": "Workshop 3",
-      "time": "Mon May 20 2019 19:39:49 GMT+1000 (Australian Eastern Standard Time)",
-      "duration": 120,
-      "roomId": 1,
-      "maximum": 30,
+      "start": "2019-05-20T20:00:00.000Z",
+      "end": "2019-05-20T23:00:00.000Z",
+      "startDate": "2019-05-21T17:00:00.000Z",
+      "endDate": "2019-05-22T03:00:00.000Z",
+      "roomId": -1,
+      "time": "Tue May 21 2019 06:00:00 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": "180",
+      "title": "",
+      "cutOff": 0,
+      "maximum": 0,
       "targetGroup": "",
       "description": "",
-      "availablePlaces": 10
-    },
-    {
-      "id": 4,
-      "title": "Workshop 4",
-      "time": "Fri May 24 2019 01:23:21 GMT+1000 (Australian Eastern Standard Time)",
-      "duration": 60,
-      "roomId": 1,
-      "maximum": 30,
-      "targetGroup": "",
-      "description": "",
-      "availablePlaces": 10
-    },
-    {
-      "id": 5,
-      "title": "Workshop 5",
-      "time": "Wed May 22 2019 10:12:30 GMT+1000 (Australian Eastern Standard Time)",
-      "duration": 180,
-      "roomId": 1,
-      "maximum": 30,
-      "targetGroup": "",
-      "description": "ullamco sint ea do",
-      "availablePlaces": 10
+      "availablePlaces": 0,
+      "skillId": -1,
+      "assignedStudentIds": [],
+      "id": 3
     }
   ],
   "users": [
@@ -144,48 +146,46 @@
   "studentWorkshops": [],
   "sessions": [
     {
-      "id": 1,
-      "startTime": "Tue May 21 2019 09:40:45 GMT+1000 (Australian Eastern Standard Time)",
-      "duration": 120,
-      "roomId": 1,
-      "advisorId": 1,
-      "type": "Class"
+      "start": "2019-05-24T17:00:00.000Z",
+      "end": "2019-05-24T20:00:00.000Z",
+      "startDate": "Sat May 25 2019 03:00:00 GMT+1000 (Australian Eastern Standard Time)",
+      "endDate": "2019-05-24T20:00:00.000Z",
+      "roomId": "1",
+      "time": "Sat May 25 2019 03:00:00 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": "180",
+      "advisorId": "1",
+      "studentId": "2",
+      "type": "Session Type",
+      "purpose": "",
+      "subjectName": "Project Management",
+      "assignmentType": "",
+      "groupAssignment": true,
+      "assistance": "",
+      "attendance": false,
+      "comments": "",
+      "files": [],
+      "id": 1
     },
     {
-      "id": 2,
-      "startTime": "Wed May 22 2019 00:08:57 GMT+1000 (Australian Eastern Standard Time)",
-      "duration": 60,
-      "roomId": 1,
-      "advisorId": 1,
-      "studentId": 1,
-      "type": "Class"
-    },
-    {
-      "id": 3,
-      "startTime": "Fri May 24 2019 15:27:54 GMT+1000 (Australian Eastern Standard Time)",
-      "duration": 60,
-      "roomId": 1,
-      "advisorId": 1,
-      "studentId": 1,
-      "type": "eu"
-    },
-    {
-      "id": 4,
-      "startTime": "Mon May 20 2019 12:52:24 GMT+1000 (Australian Eastern Standard Time)",
-      "duration": 60,
-      "roomId": 1,
-      "advisorId": 1,
-      "studentId": 1,
-      "type": "Class"
-    },
-    {
-      "id": 5,
-      "startTime": "Wed May 22 2019 15:20:40 GMT+1000 (Australian Eastern Standard Time)",
-      "duration": 180,
-      "roomId": 1,
-      "advisorId": 1,
-      "studentId": 1,
-      "type": "Class"
+      "start": "2019-05-19T17:30:00.000Z",
+      "end": "2019-05-19T18:00:00.000Z",
+      "startDate": "2019-05-19T17:30:00.000Z",
+      "endDate": "2019-05-19T21:00:00.000Z",
+      "roomId": -1,
+      "time": "Mon May 20 2019 03:30:00 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": "30",
+      "advisorId": -1,
+      "studentId": -1,
+      "type": "",
+      "purpose": "",
+      "subjectName": "",
+      "assignmentType": "",
+      "groupAssignment": false,
+      "assistance": "",
+      "attendance": false,
+      "comments": "",
+      "files": [],
+      "id": 2
     }
   ],
   "advisors": [
@@ -216,6 +216,10 @@
     {
       "id": 3,
       "title": "CB01.01.22"
+    },
+    {
+      "title": "CB11.01.301",
+      "id": 4
     }
   ],
   "messages": [

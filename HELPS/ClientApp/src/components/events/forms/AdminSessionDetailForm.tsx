@@ -17,6 +17,7 @@ import {MdDelete, MdFileDownload} from 'react-icons/md';
 import EmailSubmit from '../eventView/EmailSubmit';
 import Dropzone from 'react-dropzone';
 import './EventForm.css';
+import moment from 'moment';
 
 class AdminSessionDetailForm extends React.Component<AdminSessionDetailFormProps, AdminSessionDetailFormState> {
 
@@ -120,7 +121,7 @@ class AdminSessionDetailForm extends React.Component<AdminSessionDetailFormProps
                         <section>
                             <div {...getRootProps()} className='dropzone'>
                                 <input {...getInputProps()} />
-                                <p>Click here or drop files to add...</p>
+                                <p>Click here or drop files to add</p>
                             </div>
                         </section>
                     )}
@@ -140,11 +141,14 @@ class AdminSessionDetailForm extends React.Component<AdminSessionDetailFormProps
                                                       onChange={props.input.onChange}/>;
     private BooleanInput = (props: any) => <Form.Check {...props} value={props.input.value}
                                                        onChange={props.input.onChange}/>;
-    private DatePickerInput = (props: any) => <Datetime {...props} value={props.input.value}
+    private DatePickerInput = (props: any) => <Datetime {...props} value={moment(props.input.value)}
                                                         onChange={props.input.onChange}/>;
-    private RoomListInput = (props: any) => <RoomList {...props}/>;
-    private AdvisorListInput = (props: any) => <AdvisorList {...props}/>;
-    private StudentListInput = (props: any) => <StudentList {...props}/>;
+    private RoomListInput = (props: any) => <RoomList {...props} value={props.input.value}
+                                                      onChange={props.input.onChange}/>;
+    private AdvisorListInput = (props: any) => <AdvisorList {...props} value={props.input.value}
+                                                            onChange={props.input.onChange}/>;
+    private StudentListInput = (props: any) => <StudentList {...props} value={props.input.value}
+                                                            onChange={props.input.onChange}/>;
 
     private ReasonListInput = (props: any) => (
         <Form.Control as='select' {...props}>

@@ -140,8 +140,10 @@ class AdminWorkshopDetailForm extends React.Component<AdminWorkshopDetailFormPro
                                                       onChange={props.input.onChange}/>;
     private DatePickerInput = (props: any) => <Datetime {...props} value={props.input.value}
                                                         onChange={props.input.onChange}/>;
-    private RoomListInput = (props: any) => <RoomList {...props}/>;
-    private SkillListInput = (props: any) => <SkillList {...props}/>;
+    private RoomListInput = (props: any) => <RoomList {...props} value={props.input.value}
+                                                      onChange={props.input.onChange}/>;
+    private SkillListInput = (props: any) => <SkillList {...props} value={props.input.value}
+                                                        onChange={props.input.onChange}/>;
 
     private onStudentSelected = (id: number) => {
         const workshopStudentIds = this.state.workshopStudentIds;

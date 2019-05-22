@@ -84,7 +84,7 @@ class EventView extends Component<EventViewProps, EventViewState> {
         const calendarEvents = events
             .map(event => {
                 const startTime = moment(event.startDate);
-                const endTime = startTime.clone().add(event.duration, 'minute');
+                const endTime = moment(event.endDate);
 
                 return {
                     ...event,
@@ -183,7 +183,10 @@ class EventView extends Component<EventViewProps, EventViewState> {
     private onSelectEvent = (event: CalendarEvent) => this.setState({selectedEvent: event});
     private populateRef = (newEventRef: any) => this.setState({newEventRef});
     private clearNewEvent = () => this.setState({newEvent: undefined, newEventRef: undefined});
-    private onEventChanged = (selectedEvent: CalendarEvent) => this.setState({selectedEvent});
+    private onEventChanged = (selectedEvent: CalendarEvent) => {
+        console.log(selectedEvent);
+        this.setState({selectedEvent});
+    }
 
     private onEventSubmitted = (event: DeleteableHELPSEvent) => {
         this.setState({selectedEvent: undefined});
@@ -245,8 +248,8 @@ class EventView extends Component<EventViewProps, EventViewState> {
                 id: -1,
                 start: startTime.toDate(),
                 end: endTime.toDate(),
-                startDate: startTime.toISOString(),
-                endDate: endTime.toISOString(),
+                startDate: start.toString(),
+                endDate: end.toString(),
                 roomId: -1,
                 time: start.toString(),
                 duration: duration.asMinutes().toString()
