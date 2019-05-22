@@ -18,8 +18,13 @@ namespace HELPS.Controllers
             _context = context;
         }
 
-        [HttpGet("[action]")]
-        public List<Student> Students()
+		/// <summary>
+		/// Returns students in a JSON format
+		/// Connect to https://localhost:PORT/api/student/
+		/// </summary>
+		/// <returns>JSON formatted list of students</returns>
+		[HttpGet]
+        public List<Student> GetAllStudents()
         {
             return _context.Students.ToList();
         }
