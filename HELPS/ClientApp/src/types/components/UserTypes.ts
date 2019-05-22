@@ -9,7 +9,7 @@ export interface UserStateProps {
 }
 
 export interface UserDispatchProps {
-    loadUserDetails: (isAdmin: boolean) => void
+    loadUserDetails: () => void
     updateUser: (user: Student) => void
     submit: () => void
 }

@@ -15,7 +15,8 @@ import {
     bookWorkshop,
     cancelWorkshop,
     retrieveUserWorkshops,
-    retrieveWorkshops
+    retrieveWorkshops,
+    updateWorkshop
 } from '../../store/actions/WorkshopActions';
 import BigCalendar, {EventWrapperProps, stringOrDate} from 'react-big-calendar';
 import moment from 'moment';
@@ -28,7 +29,8 @@ import {
     bookSession,
     cancelSession,
     retrieveSessions,
-    retrieveUserSessions
+    retrieveUserSessions,
+    updateSession
 } from '../../store/actions/SessionActions';
 import {HELPSEvent} from '../../types/model/HELPSEvent';
 import {NewEventOverlay} from './eventView/NewEventOverlay';
@@ -39,14 +41,25 @@ class EventView extends Component<EventViewProps, EventViewState> {
     private localizer = BigCalendar.momentLocalizer(moment);
 
     private get sessions(): Session[] {
-        const {filterNotBooked} = this.state;
-        return this.props.sessions
-            .filter(session => !filterNotBooked || this.eventSelected(session));
+        let {filterNotBooked, selectedEvent, sessions} = {...this.state, ...this.props};
+
+        if (selectedEvent && isSession(selectedEvent)) {
+            sessions = sessions.filter(session => selectedEvent && session.id !== selectedEvent.id);
+            sessions.push(selectedEvent);
+        }
+
+        return sessions.filter(session => !filterNotBooked || this.eventSelected(session));
     }
 
     private get workshops(): Workshop[] {
-        const {filterNotBooked, searchTerm} = this.state;
-        return this.props.workshops
+        let {filterNotBooked, searchTerm, selectedEvent, workshops} = {...this.state, ...this.props};
+
+        if (selectedEvent && isWorkshop(selectedEvent)) {
+            workshops = workshops.filter(workshop => selectedEvent && workshop.id !== selectedEvent.id);
+            workshops.push(selectedEvent);
+        }
+
+        return workshops
             .filter(workshop => !filterNotBooked || this.eventSelected(workshop))
             .filter(workshop => searchTerm.length === 0 || workshop.title.toLowerCase().includes(searchTerm.toLowerCase()));
     }
@@ -75,9 +88,12 @@ class EventView extends Component<EventViewProps, EventViewState> {
 
     componentDidMount(): void {
         this.props.retrieveWorkshops();
-        this.props.retrieveUserWorkshops();
         this.props.retrieveSessions();
-        this.props.retrieveUserSessions();
+
+        if (!this.props.isAdmin) {
+            this.props.retrieveUserSessions();
+            this.props.retrieveUserWorkshops();
+        }
     }
 
     constructor(props: EventViewProps) {
@@ -92,12 +108,13 @@ class EventView extends Component<EventViewProps, EventViewState> {
     render(): React.ReactNode {
         const {searchTerm, filterNotBooked, isAdmin, newEventRef, selectedEvent} = {...this.props, ...this.state};
         return (
-            <div className='row h-100 overflow-auto' >
+            <div className='row h-100 overflow-auto'>
 
                 <EventForm isAdmin={isAdmin}
                            selectedEvent={selectedEvent}
                            onEventSubmitted={this.onEventSubmitted}
-                           eventSelected={selectedEvent !== undefined && this.eventSelected(selectedEvent)}/>
+                           eventSelected={selectedEvent !== undefined && this.eventSelected(selectedEvent)}
+                           eventChanged={this.onEventChanged}/>
 
                 <div className='col m-3'>
                     <div className='h-100 flex-column'>
@@ -114,9 +131,7 @@ class EventView extends Component<EventViewProps, EventViewState> {
                             onSelectSlot={this.onSelectSlot}
                             onSelectEvent={this.onSelectEvent}
                             eventPropGetter={event => this.getEventStyle(event, this.eventSelected(event))}
-                            components={{
-                                eventWrapper: this.renderEventWrapper
-                            }}/>
+                            components={{eventWrapper: this.renderEventWrapper}}/>
 
                         <NewEventOverlay container={this}
                                          newEventRef={newEventRef}
@@ -155,23 +170,32 @@ class EventView extends Component<EventViewProps, EventViewState> {
     private onSelectEvent = (event: CalendarEvent) => this.setState({selectedEvent: event});
     private populateRef = (newEventRef: any) => this.setState({newEventRef});
     private clearNewEvent = () => this.setState({newEvent: undefined, newEventRef: undefined});
+    private onEventChanged = (selectedEvent: CalendarEvent) => this.setState({selectedEvent});
 
     private onEventSubmitted = (event: HELPSEvent) => {
-        if (this.eventSelected(event)) {
-            if (isSession(event)) {
+        this.setState({selectedEvent: undefined})
+
+        if (isSession(event)) {
+            if (this.props.isAdmin) {
+                return this.props.updateSession(event);
+            }
+
+            if (this.eventSelected(event)) {
                 return this.props.cancelSession(event);
             }
 
-            if (isWorkshop(event)) {
-                return this.props.cancelWorkshop(event);
-            }
-        }
-
-        if (isSession(event)) {
-            return this.props.bookSession(event);
+            this.props.bookSession(event);
         }
 
         if (isWorkshop(event)) {
+            if (this.props.isAdmin) {
+                return this.props.updateWorkshop(event);
+            }
+
+            if (this.eventSelected(event)) {
+                return this.props.cancelWorkshop(event);
+            }
+
             this.props.bookWorkshop(event);
         }
     };
@@ -204,7 +228,15 @@ class EventView extends Component<EventViewProps, EventViewState> {
                 ...newEvent,
                 advisorId: -1,
                 studentId: -1,
-                type: ''
+                type: '',
+                purpose: '',
+                subjectName: '',
+                assignmentType: '',
+                groupAssignment: false,
+                assistance: '',
+                attendance: false,
+                comments: '',
+                files: []
             });
         }
 
@@ -215,7 +247,8 @@ class EventView extends Component<EventViewProps, EventViewState> {
             maximum: 0,
             targetGroup: '',
             description: '',
-            availablePlaces: 0
+            availablePlaces: 0,
+            skillId: -1
         });
     };
 
@@ -230,12 +263,12 @@ class EventView extends Component<EventViewProps, EventViewState> {
 
 const mapStateToProps = (state: AppState): EventViewStateProps => ({
     authenticated: state.auth.authenticated,
+    error: state.workshops.error,
+    isAdmin: state.auth.isAdmin,
     workshops: state.workshops.workshops,
     userWorkshops: state.workshops.userWorkshops,
     sessions: state.session.sessions,
     userSessions: state.session.userSessions,
-    error: state.workshops.error,
-    isAdmin: state.auth.isAdmin
 });
 
 const mapDispatchToProps = (dispatch: ThunkDispatch<{}, {}, any>): EventViewDispatchProps => ({
@@ -244,11 +277,14 @@ const mapDispatchToProps = (dispatch: ThunkDispatch<{}, {}, any>): EventViewDisp
     bookWorkshop: workshop => dispatch(bookWorkshop(workshop)),
     cancelWorkshop: workshop => dispatch(cancelWorkshop(workshop)),
     addWorkshop: workshop => dispatch(addWorkshop(workshop)),
+    updateWorkshop: workshop => dispatch(updateWorkshop(workshop)),
+
     retrieveSessions: () => dispatch(retrieveSessions()),
     retrieveUserSessions: () => dispatch(retrieveUserSessions()),
     bookSession: session => dispatch(bookSession(session)),
     cancelSession: session => dispatch(cancelSession(session)),
-    addSession: session => dispatch(addSession(session))
+    addSession: session => dispatch(addSession(session)),
+    updateSession: session => dispatch(updateSession(session))
 });
 
 export default connect<EventViewStateProps, EventViewDispatchProps, {}, AppState>(

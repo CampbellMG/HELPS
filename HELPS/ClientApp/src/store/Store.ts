@@ -11,6 +11,7 @@ import { EmailReducer } from './reducers/EmailReducer';
 import { MessageReducer } from './reducers/MessageReducer';
 import {AdvisorReducer} from './reducers/AdvisorReducer';
 import {SessionReducer} from './reducers/SessionReducer';
+import {SkillReducer} from './reducers/SkillReducer';
 
 export default function configureStore(history: History) {
     const reducers = {
@@ -22,7 +23,8 @@ export default function configureStore(history: History) {
         form: reduxFormReducer,
         advisors: AdvisorReducer,
         message: MessageReducer,
-        session: SessionReducer
+        session: SessionReducer,
+        skill: SkillReducer
     };
 
     const middleware = [

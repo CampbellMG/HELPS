@@ -9,13 +9,13 @@ import AdminSessionDetailForm from '../forms/AdminSessionDetailForm';
 import '../../editorlist/EditorList.css'
 
 export const EventForm: FunctionComponent<EventFormComponentProps> = props => {
-    const {selectedEvent, isAdmin, onEventSubmitted, eventSelected} = props;
+    const {selectedEvent, isAdmin, onEventSubmitted, eventSelected, eventChanged} = props;
     if (!selectedEvent) return <div/>;
 
     function getForm(event: CalendarEvent): ReactElement {
         if (isAdmin) {
             if (isSession(event)) {
-                return <AdminSessionDetailForm {...formProps}/>;
+                return <AdminSessionDetailForm {...formProps} />;
             }
 
             return <AdminWorkshopDetailForm {...formProps}/>;
@@ -30,6 +30,7 @@ export const EventForm: FunctionComponent<EventFormComponentProps> = props => {
 
     const formProps = {
         onSubmit: onEventSubmitted,
+        onChange: eventChanged,
         booked: eventSelected,
         initialValues: selectedEvent
     };

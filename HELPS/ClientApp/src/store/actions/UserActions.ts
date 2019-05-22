@@ -52,7 +52,7 @@ export const updateUser = (user: Student) => async (dispatch: Dispatch<any>) => 
     dispatch(receiveUser(students));
 };
 
-export const retrieveUser = (isAdmin: boolean) => async (dispatch: Dispatch<any>) => {
+export const retrieveUser = () => async (dispatch: Dispatch<any>) => {
     dispatch(requestUser());
 
     const token = localStorage.getItem(LS_STORAGE_KEY);

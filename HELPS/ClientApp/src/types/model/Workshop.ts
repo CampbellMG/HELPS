@@ -7,6 +7,8 @@ export interface Workshop extends HELPSEvent {
     targetGroup: string
     description: string
     availablePlaces: number
+    skillId: number
+    assignedStudentIds: number[]
 }
 
 export function isWorkshop(event: HELPSEvent): event is Workshop {

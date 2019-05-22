@@ -22,6 +22,10 @@ export const AdminMenu: MenuItem[] = [
         title: 'Rooms'
     },
     {
+        route: 'skill',
+        title: 'Workshop Skill Sets'
+    },
+    {
         route: 'advisors',
         title: 'Advisors'
     },

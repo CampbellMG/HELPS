@@ -70,7 +70,7 @@ class User extends Component<UserProps, UserState> {
 
     componentDidMount() {
         if (this.props.authenticated) {
-            this.props.loadUserDetails(this.props.isAdmin);
+            this.props.loadUserDetails();
         }
     }
 
@@ -130,7 +130,7 @@ const mapStateToProps = (state: AppState): UserStateProps => ({
 });
 
 const mapDispatchToProps = (dispatch: ThunkDispatch<{}, {}, any>): UserDispatchProps => ({
-    loadUserDetails: isAdmin => dispatch(retrieveUser(isAdmin)),
+    loadUserDetails: () => dispatch(retrieveUser()),
     updateUser: student => dispatch(updateUser(student)),
     submit: () => dispatch(submit('user_details'))
 });

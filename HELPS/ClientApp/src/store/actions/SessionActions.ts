@@ -13,9 +13,9 @@ const receiveSessions = (sessions: Session[]): SessionAction => ({
     payload: sessions
 });
 
-const receiveUserSessions = (workShops: Session[]): SessionAction => ({
+const receiveUserSessions = (sessions: Session[]): SessionAction => ({
     type: SessionActionType.RECEIVE_USER_SESSIONS,
-    payload: workShops
+    payload: sessions
 });
 
 const sessionError = (message: string): SessionAction => ({
@@ -65,7 +65,6 @@ export const bookSession = (session: Session) => async (dispatch: Dispatch<any>)
 
 export const cancelSession = (session: Session) => async (dispatch: Dispatch<any>) => {
     try {
-        // TODO - Fix this api endpoint, temporary for the client meeting
         await authenticatedFetch(`api/studentSessions/${session.id}`, 'DELETE');
         await dispatchUserSessions(dispatch);
     } catch (e) {
@@ -75,14 +74,24 @@ export const cancelSession = (session: Session) => async (dispatch: Dispatch<any
 
 export const addSession = (session: Session) => async (dispatch: Dispatch<any>) => {
     try {
-        // TODO - Fix this api endpoint, temporary for the client meeting
         await authenticatedFetch(
             ENDPOINT_SESSION,
             'POST',
-            {
-                ...session,
-                id: undefined
-            },
+            {...session, id: undefined},
+            true
+        );
+        await dispatchSessions(dispatch);
+    } catch (e) {
+        dispatch(sessionError(e.message));
+    }
+};
+
+export const updateSession = (session: Session) => async (dispatch: Dispatch<any>) => {
+    try {
+        await authenticatedFetch(
+            `${ENDPOINT_SESSION}/${session.id}`,
+            'PUT',
+            session,
             true
         );
         await dispatchSessions(dispatch);

@@ -11,6 +11,7 @@ import MessageEdit from './components/message/MessageEdit';
 import AdvisorEdit from './components/advisors/AdvisorEdit';
 import ReportGenerate from './components/reports/ReportGenerate';
 import EventView from './components/events/EventView';
+import SkillEdit from './components/skill/SkillEdit';
 
 export default () => (
     <div className='p-3 h-100'>
@@ -24,6 +25,7 @@ export default () => (
             <Route path='/info/' component={Info}/>
             <Route path='/email' component={EmailList}/>
             <Route path='/advisors/' component={AdvisorEdit}/>
+            <Route path='/skill/' component={SkillEdit}/>
             <Route path='/reports/' component={ReportGenerate}/>
         </Layout>
     </div>

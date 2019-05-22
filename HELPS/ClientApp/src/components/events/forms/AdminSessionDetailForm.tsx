@@ -7,76 +7,171 @@ import {
     AdminSessionDetailProps
 } from '../../../types/components/WorkshopRegistrationTypes';
 import {Session} from '../../../types/model/Session';
+import Datetime from 'react-datetime';
+import 'react-datetime/css/react-datetime.css';
+import RoomList from '../lists/RoomList';
+import StudentList from '../lists/StudentList';
+import AdvisorList from '../lists/AdvisorList';
+import {InputGroup, ListGroup} from 'react-bootstrap';
+import {MdDelete, MdFileDownload} from 'react-icons/md';
 
 class AdminSessionDetailForm extends React.Component<AdminSessionDetailFormProps> {
-    TextInput = (props: any) => (
-        <Form.Group controlId='login'>
-            <Form.Control disabled
-                          value={props.input.value}
-                          onChange={props.input.onChange}
-                          {...props}/>
-        </Form.Group>
-    );
-
     render() {
+        const {handleSubmit, initialValues} = this.props;
         return (
-            <form onSubmit={this.props.handleSubmit} className='p-3 pl-4'>
+            <form onSubmit={handleSubmit} className='p-3 pl-4'>
                 <Form.Group>
-                    <Form.Label>Workshop ID</Form.Label>
-                    <Field name='id'
-                           component={this.TextInput}
-                           type='text'/>
-                </Form.Group>
-                <Form.Group>
-                    <Form.Label>Workshop Title</Form.Label>
-                    <Field name='title'
-                           component={this.TextInput}
-                           type='text'/>
+                    <Form.Label>Type</Form.Label>
+                    <Field name='type'
+                           component={this.TextInput}/>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Date / Time</Form.Label>
                     <Field name='time'
-                           component={this.TextInput}
-                           type='text'/>
+                           component={this.DatePickerInput}/>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Duration</Form.Label>
                     <Field name='duration'
-                           component={this.TextInput}
-                           type='text'/>
+                           component={this.TextInput}/>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Room</Form.Label>
-                    <Field name='room'
-                           component={this.TextInput}
-                           type='text'/>
+                    <Field name='roomId'
+                           component={this.RoomListInput}/>
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label>Target Group</Form.Label>
-                    <Field name='targetGroup'
-                           component={this.TextInput}
-                           type='text'/>
+                    <Form.Label>Advisor</Form.Label>
+                    <Field name='advisorId'
+                           component={this.AdvisorListInput}/>
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label>Description</Form.Label>
-                    <Field name='description'
-                           component={this.TextInput}
-                           type='text'/>
+                    <Form.Label>Student</Form.Label>
+                    <Field name='studentId'
+                           component={this.StudentListInput}/>
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label>Available Places</Form.Label>
-                    <Field
-                        name='availablePlaces'
-                        component={this.TextInput}
-                        type='text'/>
+                    <Form.Label>Appointment Purpose</Form.Label>
+                    <Field name='purpose'
+                           component={this.ReasonListInput}/>
                 </Form.Group>
-                <Button type='submit'
-                        className='w-100 mt-4'>
-                    {this.props.booked ? 'Cancel' : 'Book'}
-                </Button>
+                <Form.Group>
+                    <Form.Label>Subject Name</Form.Label>
+                    <Field name='subjectName'
+                           component={this.TextInput}/>
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label>Assignment Type</Form.Label>
+                    <Field name='assignmentType'
+                           component={this.AssignmentTypeInput}/>
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label>Group Assignment</Form.Label>
+                    <Field name='groupAssignment'
+                           component={this.BooleanInput}/>
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label>Student Assistance Requirements</Form.Label>
+                    <Field name='assistance'
+                           component={this.TextInput}/>
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label>Student Attendance</Form.Label>
+                    <Field name='attendance'
+                           component={this.BooleanInput}/>
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label>Comments</Form.Label>
+                    <Field name='comments'
+                           component={this.TextInput}/>
+                </Form.Group>
+                <ListGroup as='ul'>
+                    {initialValues.files && initialValues.files.map(file => (
+                        <ListGroup.Item>
+                            {file.title}
+                            <div>
+                               <MdFileDownload/>
+                            </div>
+                            <div>
+                                <MdDelete/>
+                            </div>
+                        </ListGroup.Item>
+                    ))}
+                </ListGroup>
+                <InputGroup className='align-self-stretch d-flex pb-3 sticky-top'>
+
+                    <Button type='submit'
+                            className='w-100 mt-4'>
+                        Save
+                    </Button>
+
+                    <InputGroup.Append>
+                        <InputGroup.Text>
+                            Email Student
+                            <input type='checkbox'
+                                   className='ml-3'/>
+                        </InputGroup.Text>
+                    </InputGroup.Append>
+
+                    <InputGroup.Append>
+                        <InputGroup.Text>
+                            Email Advisor
+                            <input type='checkbox'
+                                   className='ml-3'/>
+                        </InputGroup.Text>
+                    </InputGroup.Append>
+
+                </InputGroup>
+                <InputGroup className='align-self-stretch d-flex pb-3 sticky-top'>
+
+                    <Button type='submit'
+                            className='w-100 mt-4'>
+                        Cancel
+                    </Button>
+
+                    <InputGroup.Append>
+                        <InputGroup.Text>
+                            Email Student
+                            <input type='checkbox'
+                                   className='ml-3'/>
+                        </InputGroup.Text>
+                    </InputGroup.Append>
+
+                    <InputGroup.Append>
+                        <InputGroup.Text>
+                            Email Advisor
+                            <input type='checkbox'
+                                   className='ml-3'/>
+                        </InputGroup.Text>
+                    </InputGroup.Append>
+
+                </InputGroup>
             </form>
         );
     }
+
+    private TextInput = (props: any) => <Form.Control {...props}/>;
+    private BooleanInput = (props: any) => <Form.Check {...props}/>;
+    private DatePickerInput = (props: any) => <Datetime {...props}/>;
+    private RoomListInput = (props: any) => <RoomList {...props}/>;
+    private AdvisorListInput = (props: any) => <AdvisorList {...props}/>;
+    private StudentListInput = (props: any) => <StudentList {...props}/>;
+
+    private ReasonListInput = (props: any) => (
+        <Form.Control as='select' {...props}>
+            <option>Discussing an assignment draft</option>
+            <option>Practicing a seminar presentation</option>
+            <option>Other</option>
+        </Form.Control>
+    );
+
+    private AssignmentTypeInput = (props: any) => (
+        <Form.Control as='select' {...props}>
+            <option>Essay</option>
+            <option>Report</option>
+            <option>Other</option>
+        </Form.Control>
+    );
 }
 
 export default reduxForm<Session, AdminSessionDetailProps>({

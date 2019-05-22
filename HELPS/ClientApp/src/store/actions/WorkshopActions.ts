@@ -63,7 +63,6 @@ export const bookWorkshop = (workshop: Workshop) => async (dispatch: Dispatch<an
 
 export const cancelWorkshop = (workshop: Workshop) => async (dispatch: Dispatch<any>) => {
     try {
-        // TODO - Fix this api endpoint, temporary for the client meeting
         await authenticatedFetch(`api/studentWorkshops/${workshop.id}`, 'DELETE');
         await dispatchUserWorkshops(dispatch);
     } catch (e) {
@@ -76,10 +75,21 @@ export const addWorkshop = (workshop: Workshop) => async (dispatch: Dispatch<any
         await authenticatedFetch(
             ENDPOINT_WORKSHOP,
             'POST',
-            {
-                ...workshop,
-                id: undefined
-            },
+            {...workshop, id: undefined},
+            true
+        );
+        await dispatchWorkshops(dispatch);
+    } catch (e) {
+        dispatch(workshopError(e.message));
+    }
+};
+
+export const updateWorkshop = (workshop: Workshop) => async (dispatch: Dispatch<any>) => {
+    try {
+        await authenticatedFetch(
+            `${ENDPOINT_WORKSHOP}/${workshop.id}`,
+            'PUT',
+            workshop,
             true
         );
         await dispatchWorkshops(dispatch);

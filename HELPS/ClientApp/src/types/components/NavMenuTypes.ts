@@ -17,7 +17,8 @@ export type HELPSRoute =
     'info' |
     'email' |
     'advisors' |
-    'reports';
+    'reports' |
+    'skill';
 
 export interface MenuItem {
     route: HELPSRoute
