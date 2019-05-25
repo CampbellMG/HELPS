@@ -24,9 +24,9 @@ namespace HELPS.Models
 
     public class Message
     {
-        public int id { get; set; }
-        public string title { get; set; }
-        public string content { get; set; }
+        public int MessageId { get; set; }
+        public string Title { get; set; }
+        public string Content { get; set; }
     }
 
 

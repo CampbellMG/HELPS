@@ -47,12 +47,11 @@ namespace HELPS.Controllers
             return toDoItem;
         }
 
-
         [HttpPost("id")]
 
         public async Task<ActionResult> PutMessage(int id, Message message)
         {
-            if (id != message.id)
+            if (id != message.MessageId)
             {
                 return BadRequest();
             }
