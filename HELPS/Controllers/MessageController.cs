@@ -19,11 +19,68 @@ namespace HELPS.Controllers
             _context = context;
         }
 
-        [HttpGet("[action]")]
-        public List<Message> Messages()
+           [HttpGet("[action]")]
+           public List<Message> Messages()
+           {
+               return _context.Messages.ToList();
+           }
+
+
+
+        // Edited from here...
+            [HttpGet]
+        public async Task<ActionResult<IEnumerable<Message>>> GetMessages()
         {
-            return _context.Messages.ToList();
+            return await _context.Messages.ToListAsync();
         }
-        
+
+        [HttpGet("{id}")]
+
+        public async Task<ActionResult<Message>> GetMessage(int id)
+        {
+            var toDoItem = await _context.Messages.FindAsync(id);
+
+            if (toDoItem == null)
+            {
+                return NotFound();
+            }
+            return toDoItem;
+        }
+
+
+        [HttpPost("id")]
+
+        public async Task<ActionResult> PutMessage(int id, Message message)
+        {
+            if (id != message.id)
+            {
+                return BadRequest();
+            }
+            _context.Entry(message).State = EntityState.modified;
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
+        [HttpDelete("id")]
+
+        public async Task<ActionResult> DeleteMessage(int id)
+        {
+            var todoItem = await _context.Messages.FindAsync(id);
+
+            if (todoItem == null)
+            {
+                return NotFound();
+            }
+            _context.Messages.Remove(todoItem);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
+        // to here.
+
+
+
     }
 }

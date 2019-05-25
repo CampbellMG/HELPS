@@ -10,7 +10,9 @@ namespace HELPS.Models
         { }
 
         public DbSet<Student> Students { get; set; }
+       
         public DbSet<Message> Messages { get; set; }
+
     }
 
     public class Student
@@ -19,10 +21,15 @@ namespace HELPS.Models
         public string Name { get; set; }
     }
 
+
     public class Message
     {
-        public int MessageId { get; set; }
-        public string MessageTitle { get; set; }
-        public string MessageContent { get; set; }
+        public int id { get; set; }
+        public string title { get; set; }
+        public string content { get; set; }
     }
+
+
+
+
 }
