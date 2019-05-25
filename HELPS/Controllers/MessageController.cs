@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using HELPS.Models;
 using Microsoft.AspNetCore.Mvc;
 using AppContext = System.AppContext;
+using Microsoft.EntityFrameworkCore;
 
 namespace HELPS.Controllers
 {
@@ -55,7 +56,7 @@ namespace HELPS.Controllers
             {
                 return BadRequest();
             }
-            _context.Entry(message).State = EntityState.modified;
+            _context.Entry(message).State = EntityState.Modified;
             await _context.SaveChangesAsync();
 
             return NoContent();
