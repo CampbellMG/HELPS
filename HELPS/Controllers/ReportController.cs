@@ -22,9 +22,9 @@ namespace HELPS.Controllers
         public async Task<ActionResult<IEnumerable<Report>>> GetReports()
         {
             return await _context.Reports.ToListAsync();
-        }*/
+        }
 
-        /*[HttpGet({"id"})]
+        [HttpGet({"id"})]
         public async Task<ActionResult<Report>> GetReport(int id)
         {
             var reportItem = await _context.Reports.FindAsync(id);
