@@ -7,13 +7,13 @@ namespace HELPS.Models
 {
     public class student_workshops
     {
-        public int id { get; set; }
-        public string title { get; set; }
-        public string time { get; set; } //ISO 8601, no fractional seconds
-        public int duration { get; set; }
-        public string room_id { get; set; }
-        public string targetGroup { get; set; }
-        public string description { get; set; }
-        public int available_places { get; set; }
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public string Time { get; set; } //ISO 8601, no fractional seconds
+        public int Duration { get; set; }
+        public string Room_id { get; set; }
+        public string TargetGroup { get; set; }
+        public string Description { get; set; }
+        public int Available_places { get; set; }
     }
 }

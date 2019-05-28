@@ -34,24 +34,24 @@ namespace HELPS.Migrations
 
             modelBuilder.Entity("HELPS.Models.student_workshops", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("available_places");
+                    b.Property<int>("Available_places");
 
-                    b.Property<string>("description");
+                    b.Property<string>("Description");
 
-                    b.Property<int>("duration");
+                    b.Property<int>("Duration");
 
-                    b.Property<string>("room_id");
+                    b.Property<string>("Room_id");
 
-                    b.Property<string>("targetGroup");
+                    b.Property<string>("TargetGroup");
 
-                    b.Property<string>("time");
+                    b.Property<string>("Time");
 
-                    b.Property<string>("title");
+                    b.Property<string>("Title");
 
-                    b.HasKey("id");
+                    b.HasKey("Id");
 
                     b.ToTable("s_workshop");
                 });

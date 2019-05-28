@@ -11,19 +11,19 @@ namespace HELPS.Migrations
                 name: "s_workshop",
                 columns: table => new
                 {
-                    id = table.Column<int>(nullable: false)
+                    Id = table.Column<int>(nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
-                    title = table.Column<string>(nullable: true),
-                    time = table.Column<string>(nullable: true),
-                    duration = table.Column<int>(nullable: false),
-                    room_id = table.Column<string>(nullable: true),
-                    targetGroup = table.Column<string>(nullable: true),
-                    description = table.Column<string>(nullable: true),
-                    available_places = table.Column<int>(nullable: false)
+                    Title = table.Column<string>(nullable: true),
+                    Time = table.Column<string>(nullable: true),
+                    Duration = table.Column<int>(nullable: false),
+                    Room_id = table.Column<string>(nullable: true),
+                    TargetGroup = table.Column<string>(nullable: true),
+                    Description = table.Column<string>(nullable: true),
+                    Available_places = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_s_workshop", x => x.id);
+                    table.PrimaryKey("PK_s_workshop", x => x.Id);
                 });
         }
 
