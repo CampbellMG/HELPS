@@ -47,5 +47,34 @@ namespace HELPS.Controllers
             return CreatedAtAction(nameof(GetReport), new { id = report.Id }, report);
         }
 
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutReport(int id, Report report)
+        {
+            if (id != report.Id)
+            {
+                return BadRequest();
+            }
+
+            _context.Entry(report).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
+        public async Task<IActionResult> DeleteReport(int id)
+        {
+            var reportItem = await _context.Reports.FindAsync(id);
+
+            if (reportItem == null)
+            {
+                return NotFound();
+            }
+
+            _context.Reports.Remove(reportItem);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
     }
 }
