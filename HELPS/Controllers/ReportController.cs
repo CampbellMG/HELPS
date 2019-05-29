@@ -61,6 +61,7 @@ namespace HELPS.Controllers
             return NoContent();
         }
 
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteReport(int id)
         {
             var reportItem = await _context.Reports.FindAsync(id);
