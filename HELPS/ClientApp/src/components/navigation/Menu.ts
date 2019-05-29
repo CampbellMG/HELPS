@@ -2,8 +2,12 @@ import {MenuItem} from '../../types/components/NavMenuTypes';
 
 export const AdminMenu: MenuItem[] = [
     {
-        route: 'events',
-        title: 'Events'
+        route: 'consultations',
+        title: 'Consultations'
+    },
+    {
+        route: 'workshops',
+        title: 'Workshops'
     },
     {
         route: 'user',
@@ -28,16 +32,12 @@ export const AdminMenu: MenuItem[] = [
     {
         route: 'advisors',
         title: 'Advisors'
-    },
-    // {
-    //     route: 'reports',
-    //     title: 'Reports'
-    // }
+    }
 ];
 
 export const StudentMenu: MenuItem[] = [
     {
-        route: 'events',
+        route: 'workshopsConsultations',
         title: 'Events'
     },
     {

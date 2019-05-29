@@ -1,14 +1,16 @@
-import {connect} from 'react-redux';
 import * as React from 'react';
 import {Children, cloneElement, Component, ReactElement} from 'react';
 import {AppState} from '../../types/store/StoreTypes';
 import {
-    CalendarEvent, DeleteableHELPSEvent,
+    CalendarEvent,
+    DeleteableHELPSEvent,
     EventViewDispatchProps,
     EventViewProps,
     EventViewState,
-    EventViewStateProps, Filter,
-    HELPSEventType, WorkshopFormData
+    EventViewStateProps,
+    Filter,
+    HELPSEventType,
+    WorkshopFormData
 } from '../../types/components/WorkshopRegistrationTypes';
 import {
     addWorkshop,
@@ -36,9 +38,12 @@ import {HELPSEvent} from '../../types/model/HELPSEvent';
 import {NewEventOverlay} from './eventView/NewEventOverlay';
 import {CalendarFilter} from './eventView/CalendarFilter';
 import {EventForm} from './eventView/EventForm';
-import RRule, {rrulestr} from 'rrule';
+import {rrulestr} from 'rrule';
 
-class EventView extends Component<EventViewProps, EventViewState> {
+export default abstract class EventView extends Component<EventViewProps, EventViewState> {
+    abstract showWorkshops: boolean;
+    abstract showSessions: boolean;
+
     private localizer = BigCalendar.momentLocalizer(moment);
 
     private get sessions(): Session[] {
@@ -70,14 +75,14 @@ class EventView extends Component<EventViewProps, EventViewState> {
     }
 
     private get events(): CalendarEvent[] {
-        const {filters, newEvent} = this.state;
+        const {newEvent} = this.state;
         let events: HELPSEvent[] = [];
 
-        if (!filters.includes('Sessions')) {
+        if (this.showWorkshops) {
             events = events.concat(this.workshops);
         }
 
-        if (!filters.includes('Workshops')) {
+        if (this.showSessions) {
             events = events.concat(this.sessions);
         }
 
@@ -121,7 +126,7 @@ class EventView extends Component<EventViewProps, EventViewState> {
     }
 
     render(): React.ReactNode {
-        const {searchTerm, isAdmin, newEventRef, selectedEvent} = {...this.props, ...this.state};
+        const {isAdmin, newEventRef, selectedEvent} = {...this.props, ...this.state};
         return (
             <div className='row h-100 overflow-auto'>
 
@@ -186,7 +191,7 @@ class EventView extends Component<EventViewProps, EventViewState> {
     private onEventChanged = (selectedEvent: CalendarEvent) => {
         console.log(selectedEvent);
         this.setState({selectedEvent});
-    }
+    };
 
     private onEventSubmitted = (event: DeleteableHELPSEvent) => {
         this.setState({selectedEvent: undefined});
@@ -302,7 +307,7 @@ class EventView extends Component<EventViewProps, EventViewState> {
     }
 }
 
-const mapStateToProps = (state: AppState): EventViewStateProps => ({
+export const mapEventViewStateToProps = (state: AppState): EventViewStateProps => ({
     authenticated: state.auth.authenticated,
     error: state.workshops.error,
     isAdmin: state.auth.isAdmin,
@@ -312,7 +317,7 @@ const mapStateToProps = (state: AppState): EventViewStateProps => ({
     userSessions: state.session.userSessions,
 });
 
-const mapDispatchToProps = (dispatch: ThunkDispatch<{}, {}, any>): EventViewDispatchProps => ({
+export const mapEventViewDispatchToProps = (dispatch: ThunkDispatch<{}, {}, any>): EventViewDispatchProps => ({
     retrieveWorkshops: () => dispatch(retrieveWorkshops()),
     retrieveUserWorkshops: () => dispatch(retrieveUserWorkshops()),
     bookWorkshop: workshop => dispatch(bookWorkshop(workshop)),
@@ -327,8 +332,3 @@ const mapDispatchToProps = (dispatch: ThunkDispatch<{}, {}, any>): EventViewDisp
     addSession: session => dispatch(addSession(session)),
     updateSession: session => dispatch(updateSession(session))
 });
-
-export default connect<EventViewStateProps, EventViewDispatchProps, {}, AppState>(
-    mapStateToProps,
-    mapDispatchToProps
-)(EventView);

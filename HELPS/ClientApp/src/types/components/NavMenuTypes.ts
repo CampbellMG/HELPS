@@ -13,7 +13,9 @@ export type HELPSRoute =
     'message' |
     'room' |
     'user' |
-    'events' |
+    'consultations' |
+    'workshops' |
+    'workshopsConsultations' |
     'info' |
     'email' |
     'advisors' |

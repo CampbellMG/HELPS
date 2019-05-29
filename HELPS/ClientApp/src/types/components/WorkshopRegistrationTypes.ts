@@ -9,6 +9,7 @@ import {FormControlProps} from 'react-bootstrap';
 import {Student} from '../model/Student';
 import {Advisor} from '../model/Advisor';
 import {Skill} from '../model/Skill';
+import {RouteComponentProps} from 'react-router';
 
 export type EventFormProps<E extends DeleteableHELPSEvent, P> = P & InjectedFormProps<E, P>;
 
@@ -96,7 +97,7 @@ export interface EventViewDispatchProps {
     updateSession: (session: Session) => void
 }
 
-export interface EventViewProps extends EventViewStateProps, EventViewDispatchProps {
+export interface EventViewProps extends EventViewStateProps, EventViewDispatchProps, RouteComponentProps {
 
 }
 

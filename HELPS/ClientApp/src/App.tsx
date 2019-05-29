@@ -1,4 +1,4 @@
-import { Route } from 'react-router';
+import {Route} from 'react-router';
 import Layout from './components/navigation/Layout';
 import * as React from 'react';
 import User from './components/user/User';
@@ -10,15 +10,19 @@ import RoomEdit from './components/room/RoomEdit';
 import MessageEdit from './components/message/MessageEdit';
 import AdvisorEdit from './components/advisors/AdvisorEdit';
 import ReportGenerate from './components/reports/ReportGenerate';
-import EventView from './components/events/EventView';
 import SkillEdit from './components/skill/SkillEdit';
+import ConsultationView from './components/events/ConsultationView';
+import WorkshopView from './components/events/WorkshopView';
+import WorkshopConsultationView from './components/events/WorkshopConsultationView';
 
 export default () => (
     <div className='p-3 h-100'>
         <Layout>
             <Route exact path='/' component={Login}/>
             <Route path='/register/' component={Register} />
-            <Route path='/events/' component={EventView}/>
+            <Route path='/consultations/' component={ConsultationView}/>
+            <Route path='/workshops/' component={WorkshopView}/>
+            <Route path='/workshopsConsultations/' component={WorkshopConsultationView}/>
             <Route path='/message/' component={MessageEdit} />
             <Route path='/room/' component={RoomEdit} />
             <Route path='/user/' component={User}/>
