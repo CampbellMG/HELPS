@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Children, cloneElement, Component, ReactElement} from 'react';
+import {Component} from 'react';
 import {AppState} from '../../types/store/StoreTypes';
 import {
     CalendarEvent,
@@ -9,7 +9,6 @@ import {
     EventViewState,
     EventViewStateProps,
     Filter,
-    HELPSEventType,
     WorkshopFormData
 } from '../../types/components/WorkshopRegistrationTypes';
 import {
@@ -20,7 +19,7 @@ import {
     retrieveWorkshops,
     updateWorkshop
 } from '../../store/actions/WorkshopActions';
-import BigCalendar, {EventWrapperProps, stringOrDate} from 'react-big-calendar';
+import BigCalendar, {stringOrDate} from 'react-big-calendar';
 import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import {isWorkshop, Workshop} from '../../types/model/Workshop';
@@ -35,7 +34,6 @@ import {
     updateSession
 } from '../../store/actions/SessionActions';
 import {HELPSEvent} from '../../types/model/HELPSEvent';
-import {NewEventOverlay} from './eventView/NewEventOverlay';
 import {CalendarFilter} from './eventView/CalendarFilter';
 import {EventForm} from './eventView/EventForm';
 import {rrulestr} from 'rrule';
@@ -75,7 +73,6 @@ export default abstract class EventView extends Component<EventViewProps, EventV
     }
 
     private get events(): CalendarEvent[] {
-        const {newEvent} = this.state;
         let events: HELPSEvent[] = [];
 
         if (this.showWorkshops) {
@@ -86,7 +83,7 @@ export default abstract class EventView extends Component<EventViewProps, EventV
             events = events.concat(this.sessions);
         }
 
-        const calendarEvents = events
+        return events
             .map(event => {
                 const startTime = moment(event.startDate);
                 const endTime = moment(event.endDate);
@@ -98,12 +95,6 @@ export default abstract class EventView extends Component<EventViewProps, EventV
                     end: endTime.toDate()
                 };
             });
-
-        if (newEvent) {
-            calendarEvents.push(newEvent);
-        }
-
-        return calendarEvents;
     }
 
     componentDidMount(): void {
@@ -146,14 +137,10 @@ export default abstract class EventView extends Component<EventViewProps, EventV
                             localizer={this.localizer}
                             events={this.events}
                             selectable={isAdmin}
+                            defaultView='week'
                             onSelectSlot={this.onSelectSlot}
                             onSelectEvent={this.onSelectEvent}
-                            eventPropGetter={event => this.getEventStyle(event, this.eventSelected(event))}
-                            components={{eventWrapper: this.renderEventWrapper}}/>
-
-                        <NewEventOverlay container={this}
-                                         newEventRef={newEventRef}
-                                         onSelect={this.onEventCreated}/>
+                            eventPropGetter={event => this.getEventStyle(event, this.eventSelected(event))}/>
 
                     </div>
                 </div>
@@ -173,25 +160,10 @@ export default abstract class EventView extends Component<EventViewProps, EventV
         }
     });
 
-    private renderEventWrapper: React.FunctionComponent<EventWrapperProps<CalendarEvent>> = (props) => {
-        const childElement = Children.only(props.children) as ReactElement;
-
-        if (this.state.newEvent && props.event.id === this.state.newEvent.id) {
-            return cloneElement(childElement, {ref: this.populateRef});
-        }
-
-        return childElement;
-    };
-
     private onSearchUpdated = (searchTerm: string) => this.setState({searchTerm});
     private onFiltersUpdated = (filters: Filter[]) => this.setState({filters});
     private onSelectEvent = (event: CalendarEvent) => this.setState({selectedEvent: event});
-    private populateRef = (newEventRef: any) => this.setState({newEventRef});
-    private clearNewEvent = () => this.setState({newEvent: undefined, newEventRef: undefined});
-    private onEventChanged = (selectedEvent: CalendarEvent) => {
-        console.log(selectedEvent);
-        this.setState({selectedEvent});
-    };
+    private onEventChanged = (selectedEvent: CalendarEvent) => this.setState({selectedEvent});
 
     private onEventSubmitted = (event: DeleteableHELPSEvent) => {
         this.setState({selectedEvent: undefined});
@@ -247,30 +219,25 @@ export default abstract class EventView extends Component<EventViewProps, EventV
         const startTime = moment(start);
         const endTime = moment(end);
         const duration = moment.duration(endTime.diff(startTime));
+        const newEvent = {
+            id: -1,
+            start: startTime.toDate(),
+            end: endTime.toDate(),
+            startDate: start.toString(),
+            endDate: end.toString(),
+            roomId: -1,
+            time: start.toString(),
+            duration: duration.asMinutes().toString()
+        };
 
-        this.setState({
-            newEvent: {
-                id: -1,
-                start: startTime.toDate(),
-                end: endTime.toDate(),
-                startDate: start.toString(),
-                endDate: end.toString(),
-                roomId: -1,
-                time: start.toString(),
-                duration: duration.asMinutes().toString()
-            }
-        });
+        this.onEventCreated(newEvent);
     };
 
-    private onEventCreated = (type: HELPSEventType) => {
-        const {newEvent} = this.state;
-        if (!newEvent) return;
+    private onEventCreated = (event: CalendarEvent) => {
 
-        this.clearNewEvent();
-
-        if (type === 'SESSION') {
+        if (this.showSessions) {
             return this.props.addSession({
-                ...newEvent,
+                ...event,
                 advisorId: -1,
                 studentId: -1,
                 type: '',
@@ -286,7 +253,7 @@ export default abstract class EventView extends Component<EventViewProps, EventV
         }
 
         this.props.addWorkshops([{
-            ...newEvent,
+            ...event,
             title: '',
             cutOff: 0,
             maximum: 0,

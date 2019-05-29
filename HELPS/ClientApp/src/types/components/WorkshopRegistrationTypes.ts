@@ -105,7 +105,6 @@ export interface EventViewState {
     selectedEvent?: CalendarEvent
     searchTerm: string
     filters: Filter[]
-    newEvent?: CalendarEvent
     newEventRef?: any
 }
 

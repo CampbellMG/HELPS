@@ -127,6 +127,42 @@
       "skillId": -1,
       "assignedStudentIds": [],
       "id": 3
+    },
+    {
+      "start": "2019-05-28T18:30:00.000Z",
+      "end": "2019-05-28T21:30:00.000Z",
+      "startDate": "Wed May 29 2019 04:30:00 GMT+1000 (Australian Eastern Standard Time)",
+      "endDate": "Wed May 29 2019 07:30:00 GMT+1000 (Australian Eastern Standard Time)",
+      "roomId": -1,
+      "time": "Wed May 29 2019 04:30:00 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": "180",
+      "title": "",
+      "cutOff": 0,
+      "maximum": 0,
+      "targetGroup": "",
+      "description": "",
+      "availablePlaces": 0,
+      "skillId": -1,
+      "assignedStudentIds": [],
+      "id": 4
+    },
+    {
+      "start": "2019-05-29T18:30:00.000Z",
+      "end": "2019-05-29T19:00:00.000Z",
+      "startDate": "Thu May 30 2019 04:30:00 GMT+1000 (Australian Eastern Standard Time)",
+      "endDate": "Thu May 30 2019 05:00:00 GMT+1000 (Australian Eastern Standard Time)",
+      "roomId": -1,
+      "time": "Thu May 30 2019 04:30:00 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": "30",
+      "title": "",
+      "cutOff": 0,
+      "maximum": 0,
+      "targetGroup": "",
+      "description": "",
+      "availablePlaces": 0,
+      "skillId": -1,
+      "assignedStudentIds": [],
+      "id": 5
     }
   ],
   "users": [
@@ -186,6 +222,27 @@
       "comments": "",
       "files": [],
       "id": 2
+    },
+    {
+      "start": "2019-05-28T23:00:00.000Z",
+      "end": "2019-05-29T02:00:00.000Z",
+      "startDate": "Wed May 29 2019 09:00:00 GMT+1000 (Australian Eastern Standard Time)",
+      "endDate": "Wed May 29 2019 12:00:00 GMT+1000 (Australian Eastern Standard Time)",
+      "roomId": -1,
+      "time": "Wed May 29 2019 09:00:00 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": "180",
+      "advisorId": -1,
+      "studentId": -1,
+      "type": "",
+      "purpose": "",
+      "subjectName": "",
+      "assignmentType": "",
+      "groupAssignment": false,
+      "assistance": "",
+      "attendance": false,
+      "comments": "",
+      "files": [],
+      "id": 3
     }
   ],
   "advisors": [
