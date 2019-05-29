@@ -3,10 +3,12 @@
     border: 3px #DC001A solid;
     height: 250px;
     width: 250px;
-    top: 25%;
-    left: 50%;
+    top: -38%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
     background-size: cover;
-    transform: translate(-50%, -50%);
     background: white;
     border-radius: 50%;
 }
@@ -22,4 +24,5 @@
 
 .login-container {
     border-radius: 20px;
+    position: relative;
 }

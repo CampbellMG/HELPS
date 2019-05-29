@@ -1,1 +1,722 @@
-{"students":[{"id":1,"name":"Pearline Gislason","prefFirstName":"Xander","registeredDate":"Fri Oct 05 2018 18:05:49 GMT+1000 (Australian Eastern Standard Time)","faculty":"Lead Identity Coordinator","course":"Schmidt - Veum","email":"Marcel.Towne20@yahoo.com","homePhone":"Zoila Kautzer","mobile":"(357) 902-1021 x577","bestContactNumber":"042-377-2834 x247","dob":"Sun Dec 23 2018 04:04:01 GMT+1100 (Australian Eastern Daylight Time)","gender":"in nisi magna","degree":"Wyman, Ruecker and Hagenes","year":"aliqua dolore Excepteur","status":"voluptate","firstLanguage":"esse in","countryOfOrigin":"veniam aliqua et non","educationalBackground":"pariatur dolor","CAFCompleted":false,"specialNeeds":true,"other":"ad Lorem do veniam magna"},{"id":2,"name":"Bette Little","prefFirstName":"Catherine","registeredDate":"Fri Jan 04 2019 08:14:04 GMT+1100 (Australian Eastern Daylight Time)","faculty":"Chief Division Supervisor","course":"Haley LLC","email":"Magdalen.Kris@gmail.com","homePhone":"Miss Orpha Kuhlman","mobile":"1-921-837-9093 x88773","bestContactNumber":"(335) 966-4857","dob":"Mon Dec 24 2018 19:31:16 GMT+1100 (Australian Eastern Daylight Time)","gender":"Duis nulla voluptate et","degree":"Bernier, Hilll and Schowalter","year":"laborum in dolore voluptate quis","status":"ullamco","firstLanguage":"nisi commodo in ea","countryOfOrigin":"tempor dolore esse ut id","educationalBackground":"magna est qui esse","CAFCompleted":true,"specialNeeds":true,"other":"commodo irure nulla"},{"id":3,"name":"Weldon Ritchie III","prefFirstName":"Ramon","registeredDate":"Mon Nov 19 2018 23:15:11 GMT+1100 (Australian Eastern Daylight Time)","faculty":"Regional Group Administrator","course":"Simonis - Gulgowski","email":"Juanita_Bechtelar@gmail.com","homePhone":"Araceli Wisoky","mobile":"735.787.6115","bestContactNumber":"(131) 363-4449 x187","dob":"Tue Aug 21 2018 00:33:46 GMT+1000 (Australian Eastern Standard Time)","gender":"laborum","degree":"Bergstrom - Lindgren","year":"Duis minim laboris dolore","status":"qui in officia dolore","firstLanguage":"exercitation quis voluptate eni","countryOfOrigin":"a","educationalBackground":"nulla ullamco anim exercitation irure","CAFCompleted":false,"specialNeeds":false,"other":"non"},{"id":4,"name":"Maci Green","prefFirstName":"Alfredo","registeredDate":"Sun Nov 11 2018 01:36:09 GMT+1100 (Australian Eastern Daylight Time)","faculty":"Lead Configuration Strategist","course":"Block and Sons","email":"Joelle67@yahoo.com","homePhone":"Seamus Volkman","mobile":"1-985-210-2885","bestContactNumber":"394-851-4244","dob":"Mon Dec 03 2018 23:12:46 GMT+1100 (Australian Eastern Daylight Time)","gender":"ex","degree":"Reynolds and Sons","year":"proident Excepteur ipsum","status":"pariatur eu anim","firstLanguage":"cillum","countryOfOrigin":"","educationalBackground":"labore ad nulla irure","CAFCompleted":false,"specialNeeds":true,"other":"velit"},{"id":5,"name":"Terrell Olson","prefFirstName":"Beaulah","registeredDate":"Sat Nov 10 2018 10:05:23 GMT+1100 (Australian Eastern Daylight Time)","faculty":"International Response Developer","course":"Ruecker, Hermann and Thiel","email":"Maegan_Kohler@gmail.com","homePhone":"Kane Morar","mobile":"1-112-630-4352","bestContactNumber":"(304) 506-7652 x262","dob":"Wed Mar 27 2019 07:45:20 GMT+1100 (Australian Eastern Daylight Time)","gender":"in et dolore aliquip ut","degree":"Murray, Bruen and Barrows","year":"esse laborum","status":"ipsum ut nu","firstLanguage":"in irure et","countryOfOrigin":"cillum reprehenderit magna voluptate commodo","educationalBackground":"tempor et ut","CAFCompleted":true,"specialNeeds":false,"other":"sit ea in"},{"id":6,"name":"Peggie Leuschke","prefFirstName":"Cheyenne","registeredDate":"Mon Oct 15 2018 21:40:36 GMT+1100 (Australian Eastern Daylight Time)","faculty":"Corporate Interactions Director","course":"Mertz Inc","email":"Tracy.Grimes8@gmail.com","homePhone":"William Price","mobile":"171.620.0425 x281","bestContactNumber":"299-044-3144","dob":"Sun Sep 23 2018 11:44:45 GMT+1000 (Australian Eastern Standard Time)","gender":"ut Ut","degree":"Fadel, Cronin and Lueilwitz","year":"aute officia in dolore laborum","status":"sint","firstLanguage":"pariatur","countryOfOrigin":"sunt tempor ex","educationalBackground":"voluptate in consequat id tempor","CAFCompleted":true,"specialNeeds":false,"other":"Lorem tempor ut id"},{"id":7,"name":"Dante Konopelski","prefFirstName":"Cecile","registeredDate":"Thu Aug 09 2018 19:47:31 GMT+1000 (Australian Eastern Standard Time)","faculty":"Human Division Developer","course":"Parisian, Jast and Sipes","email":"Lafayette64@gmail.com","homePhone":"Citlalli Weissnat IV","mobile":"(953) 160-8672","bestContactNumber":"295-295-9434 x253","dob":"Sat Jul 14 2018 01:14:10 GMT+1000 (Australian Eastern Standard Time)","gender":"velit","degree":"Hamill Group","year":"tempor velit labore voluptate dolore","status":"laboris sunt","firstLanguage":"ad ipsum velit adipisicing","countryOfOrigin":"Ut aliqua sunt commodo","educationalBackground":"esse dolore","CAFCompleted":false,"specialNeeds":true,"other":"Lorem reprehenderit in"}],"workshops":[{"id":1,"title":"Chief","time":"Mon Apr 29 2019 09:23:11 GMT+1000 (Australian Eastern Standard Time)","duration":181,"roomId":-39962609,"maximum":50002726,"targetGroup":"minim cupidatat et","description":"cupidatat est e","availablePlaces":46383730.16756189},{"id":2,"title":"Regional","time":"Mon Apr 29 2019 13:41:08 GMT+1000 (Australian Eastern Standard Time)","duration":221,"roomId":-72926728,"maximum":-74080706,"targetGroup":"quis ad sed","description":"pariatur","availablePlaces":-90055250.6800857},{"id":3,"title":"Customer","time":"Mon Apr 29 2019 06:03:09 GMT+1000 (Australian Eastern Standard Time)","duration":118,"roomId":-59897935,"maximum":-28503604,"targetGroup":"sunt ut in proident","description":"consectetur est","availablePlaces":36053852.91767204},{"id":4,"title":"International","time":"Mon Apr 29 2019 01:51:03 GMT+1000 (Australian Eastern Standard Time)","duration":210,"roomId":-60558514,"maximum":-34290191,"targetGroup":"elit sint","description":"sint Lorem","availablePlaces":-41695092.46677281},{"id":5,"title":"District","time":"Mon Apr 29 2019 07:43:53 GMT+1000 (Australian Eastern Standard Time)","duration":129,"roomId":53283808,"maximum":81584267,"targetGroup":"occaecat esse laboris ut dolor","description":"aliqua ut non","availablePlaces":-90603538.33963317}],"users":[{"id":1,"username":"Rod85","password":"ITCXHUS18R6yXNm"},{"id":2,"username":"Carole.Deckow","password":"TkGwgwokIhPYCDA"},{"id":3,"username":"Royal_Swaniawski63","password":"CLLLQQkDLdPbuia"}],"studentWorkshops":[],"sessions":[{"id":1,"startTime":"Mon Apr 29 2019 14:01:27 GMT+1000 (Australian Eastern Standard Time)","duration":123,"roomId":-70937139,"advisorId":91603061,"studentId":50475152,"type":"Excepteur est mollit occaecat"},{"id":2,"startTime":"Mon Apr 29 2019 13:44:13 GMT+1000 (Australian Eastern Standard Time)","duration":198,"roomId":-51610667,"advisorId":-25448744,"studentId":-27320960,"type":"mollit anim deserunt consequat id"},{"id":3,"startTime":"Mon Apr 29 2019 20:53:32 GMT+1000 (Australian Eastern Standard Time)","duration":140,"roomId":48572202,"advisorId":73965755,"studentId":28608129,"type":"exercitation ipsum enim"},{"id":4,"startTime":"Mon Apr 29 2019 09:40:52 GMT+1000 (Australian Eastern Standard Time)","duration":56,"roomId":16615615,"advisorId":-11357113,"studentId":-95130501,"type":"do occaecat dolore ut"},{"id":5,"startTime":"Mon Apr 29 2019 03:09:30 GMT+1000 (Australian Eastern Standard Time)","duration":221,"roomId":-11753125,"advisorId":-28562434,"studentId":-27883358,"type":"aute ullamco occaecat"},{"id":6,"startTime":"Mon Apr 29 2019 05:08:43 GMT+1000 (Australian Eastern Standard Time)","duration":47,"roomId":-5958187,"advisorId":-11412877,"studentId":13585985,"type":"a"},{"id":7,"startTime":"Mon Apr 29 2019 00:01:33 GMT+1000 (Australian Eastern Standard Time)","duration":184,"roomId":80874810,"advisorId":81881671,"studentId":-86896153,"type":"sit nulla deserunt"},{"id":8,"startTime":"Mon Apr 29 2019 19:20:06 GMT+1000 (Australian Eastern Standard Time)","duration":135,"roomId":14418846,"advisorId":-82677066,"studentId":-52471954,"type":"laborum occaecat"},{"id":9,"startTime":"Mon Apr 29 2019 16:39:38 GMT+1000 (Australian Eastern Standard Time)","duration":39,"roomId":-69629975,"advisorId":-11721764,"studentId":-17250570,"type":"labore non consequat commodo ex"},{"id":10,"startTime":"Mon Apr 29 2019 01:37:00 GMT+1000 (Australian Eastern Standard Time)","duration":203,"roomId":-88765858,"advisorId":-18757601,"studentId":-23614785,"type":"anim veniam velit esse"},{"id":11,"startTime":"Mon Apr 29 2019 19:04:41 GMT+1000 (Australian Eastern Standard Time)","duration":53,"roomId":85918839,"advisorId":30599804,"studentId":-49996142,"type":"eiusmod"},{"id":12,"startTime":"Mon Apr 29 2019 02:28:20 GMT+1000 (Australian Eastern Standard Time)","duration":187,"roomId":-68681672,"advisorId":71905638,"studentId":96445719,"type":"voluptate pariatur mollit"}],"advisors":[{"id":1,"email":"Lindsay.Casper@gmail.com","firstName":"Ezra","lastName":"Schultz","isActive":false},{"id":2,"email":"Felicia.Davis35@yahoo.com","firstName":"Leora","lastName":"Jast","isActive":true},{"id":3,"email":"Jed_Larkin@gmail.com","firstName":"Rosetta","lastName":"Berge","isActive":true},{"id":4,"email":"Nash20@gmail.com","firstName":"Davonte","lastName":"Little","isActive":false},{"id":5,"email":"Deshawn_Lindgren@yahoo.com","firstName":"Melisa","lastName":"Murazik","isActive":false},{"id":6,"email":"Sasha69@gmail.com","firstName":"Marlen","lastName":"Bode","isActive":false},{"id":7,"email":"Chloe.Raynor@hotmail.com","firstName":"Chris","lastName":"Grady","isActive":true},{"id":8,"email":"Ephraim74@gmail.com","firstName":"Myriam","lastName":"Terry","isActive":true},{"id":9,"email":"Kennedy70@yahoo.com","firstName":"Eryn","lastName":"Brakus","isActive":false}],"rooms":[{"id":1,"title":"reprehenderit in est in Lorem"},{"id":2,"title":"consectetur id nulla"},{"id":3,"title":"dolore ad irure elit enim"},{"id":4,"title":"officia occaecat ut"},{"id":5,"title":"veniam"},{"id":6,"title":"tempor laboris sint"},{"id":7,"title":"esse velit anim"},{"id":8,"title":"laboris tempor"},{"id":9,"title":"ullamco aliquip anim sint temp"},{"id":10,"title":"mollit"}],"messages":[{"id":1,"title":"aute ut","content":"cupidatat"},{"id":2,"title":"in est","content":"sint deserunt vel"},{"id":3,"title":"amet ea cupidata","content":"cupidatat veniam aute Excepteur ullamco"},{"id":4,"title":"do sint ipsum irure","content":"nostrud consequat esse cupidatat anim"}],"emails":[{"id":1,"title":"ad non","content":"consequat","variables":[{"name":"Student Surname","variable":"[%student_surname%]","example":"Smith"}]},{"id":2,"title":"culpa Excepteur","content":"incididunt amet","variables":[{"name":"Student Given Name","variable":"[%student_givenname%]","example":"Steve"},{"name":"End Time","variable":"[%end_time%]","example":"12:30 pm"}]},{"id":3,"title":"et esse","content":"ut incididunt ipsu","variables":[{"name":"Student Surname","variable":"[%student_surname%]","example":"Smith"}]},{"id":4,"title":"enim dolore q","content":"Ut voluptate cillum reprehenderit ut","variables":[{"name":"Campus","variable":"[%campus%]","example":"Ultimo"}]},{"id":5,"title":"ipsum p","content":"fugiat in dolore","variables":[{"name":"Student Surname","variable":"[%student_surname%]","example":"Smith"},{"name":"End Time","variable":"[%end_time%]","example":"12:30 pm"}]},{"id":6,"title":"ut aliqua id quis","content":"dolore in","variables":[{"name":"Student Surname","variable":"[%student_surname%]","example":"Smith"},{"name":"Start Time","variable":"[%start_time%]","example":"11:15 am"}]},{"id":7,"title":"amet proident se","content":"eu aliquip enim sed","variables":[{"name":"Lecturer Email","variable":"[%lecturer_email%]","example":"Steve.Smith@test.com"},{"name":"Campus","variable":"[%campus%]","example":"Ultimo"}]},{"id":8,"title":"labore esse Duis","content":"laboris commodo","variables":[{"name":"Start Time","variable":"[%start_time%]","example":"11:15 am"},{"name":"Start Time","variable":"[%start_time%]","example":"11:15 am"}]}],"reports":[{"id":1,"title":"Duis sit ea en","skillSet":"Ut Lorem proident Excepteur sit","topic":"ex esse laboris"}]}
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "Ms. Hiram Haag",
+      "prefFirstName": "Brisa",
+      "registeredDate": "Sat Aug 11 2018 21:57:38 GMT+1000 (Australian Eastern Standard Time)",
+      "faculty": "Global Integration Producer",
+      "course": "Larkin - Crooks",
+      "email": "Jazmyn.Jast@gmail.com",
+      "homePhone": "Alverta Shields",
+      "mobile": "(507) 126-4332 x169",
+      "bestContactNumber": "(644) 733-3256",
+      "dob": "Sat Feb 16 2019 05:06:44 GMT+1100 (Australian Eastern Daylight Time)",
+      "gender": "est Excepteur occaecat adipisicing",
+      "degree": "Leannon - Okuneva",
+      "year": "nulla su",
+      "status": "in aliqua proident officia nos",
+      "firstLanguage": "consequat",
+      "countryOfOrigin": "aliqua minim dolor",
+      "educationalBackground": "in dolor",
+      "CAFCompleted": true,
+      "specialNeeds": false,
+      "other": "es"
+    },
+    {
+      "id": 2,
+      "name": "Kurt Moore",
+      "prefFirstName": "Milton",
+      "registeredDate": "Sat Apr 13 2019 22:39:37 GMT+1000 (Australian Eastern Standard Time)",
+      "faculty": "Dynamic Division Assistant",
+      "course": "Pagac, Harber and Simonis",
+      "email": "Rosetta71@gmail.com",
+      "homePhone": "Carmel Hayes",
+      "mobile": "1-125-951-0728",
+      "bestContactNumber": "707-650-2993 x9307",
+      "dob": "Mon Feb 04 2019 02:48:37 GMT+1100 (Australian Eastern Daylight Time)",
+      "gender": "dolore ipsum laborum",
+      "degree": "Pagac, Fadel and Abbott",
+      "year": "Ut anim",
+      "status": "voluptate",
+      "firstLanguage": "esse officia",
+      "countryOfOrigin": "ut mollit Ut aliqua eiusmod",
+      "educationalBackground": "labore ad sit",
+      "CAFCompleted": true,
+      "specialNeeds": true,
+      "other": "dolor tempor eu consequat aliqua"
+    },
+    {
+      "id": 3,
+      "name": "Dave Abbott",
+      "prefFirstName": "Domingo",
+      "registeredDate": "Wed May 30 2018 20:35:44 GMT+1000 (Australian Eastern Standard Time)",
+      "faculty": "Dynamic Optimization Planner",
+      "course": "Rempel Inc",
+      "email": "Gerald.Gulgowski@yahoo.com",
+      "homePhone": "Gabe Sauer",
+      "mobile": "020-841-2107 x287",
+      "bestContactNumber": "1-856-001-7783 x285",
+      "dob": "Tue Oct 09 2018 20:39:24 GMT+1100 (Australian Eastern Daylight Time)",
+      "gender": "dolor",
+      "degree": "Nolan LLC",
+      "year": "dolor minim laboris magna aute",
+      "status": "anim magna sint culpa ",
+      "firstLanguage": "aliquip incididunt dolore",
+      "countryOfOrigin": "comm",
+      "educationalBackground": "laboris",
+      "CAFCompleted": false,
+      "specialNeeds": false,
+      "other": "aliquip ullamco"
+    },
+    {
+      "id": 4,
+      "name": "Kaleb Hegmann",
+      "prefFirstName": "Maud",
+      "registeredDate": "Thu Apr 25 2019 18:57:06 GMT+1000 (Australian Eastern Standard Time)",
+      "faculty": "Lead Response Manager",
+      "course": "Nader - Mann",
+      "email": "Jessyca.Gaylord8@hotmail.com",
+      "homePhone": "Mr. Kianna Spencer",
+      "mobile": "970-328-9350",
+      "bestContactNumber": "(532) 984-7055",
+      "dob": "Mon Feb 18 2019 00:23:49 GMT+1100 (Australian Eastern Daylight Time)",
+      "gender": "eiusmod dolor in nulla",
+      "degree": "Conroy Group",
+      "year": "mollit in",
+      "status": "proident ut id ad minim",
+      "firstLanguage": "qui dolore m",
+      "countryOfOrigin": "incididunt proident elit",
+      "educationalBackground": "cupidatat voluptate amet",
+      "CAFCompleted": false,
+      "specialNeeds": false,
+      "other": "sint nisi fugiat do Excepteur"
+    },
+    {
+      "id": 5,
+      "name": "Earnest Feeney",
+      "prefFirstName": "Jermaine",
+      "registeredDate": "Thu Sep 13 2018 15:13:31 GMT+1000 (Australian Eastern Standard Time)",
+      "faculty": "Direct Data Designer",
+      "course": "Bahringer - Watsica",
+      "email": "Alysha.Volkman@yahoo.com",
+      "homePhone": "Jamie Crona",
+      "mobile": "877-413-4632",
+      "bestContactNumber": "975.405.0127 x32627",
+      "dob": "Thu Mar 21 2019 18:28:09 GMT+1100 (Australian Eastern Daylight Time)",
+      "gender": "ipsum aliquip laborum esse",
+      "degree": "Hudson, Nitzsche and Blick",
+      "year": "elit et deserunt commodo",
+      "status": "et ut esse",
+      "firstLanguage": "reprehenderit tempor mollit sunt labore",
+      "countryOfOrigin": "mollit sunt aliqua quis",
+      "educationalBackground": "magna et esse",
+      "CAFCompleted": false,
+      "specialNeeds": false,
+      "other": "commodo cupidatat sit"
+    }
+  ],
+  "workshops": [
+    {
+      "id": 1,
+      "title": "Human",
+      "time": "Wed May 22 2019 17:27:57 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 150,
+      "roomId": -63901136,
+      "maximum": -13477779,
+      "targetGroup": "non tempor pariatur",
+      "description": "id laboris",
+      "availablePlaces": 21028013.15779823
+    },
+    {
+      "id": 2,
+      "title": "Dynamic",
+      "time": "Wed May 22 2019 03:13:52 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 76,
+      "roomId": -12658163,
+      "maximum": 41445565,
+      "targetGroup": "adipisicing culpa minim est laborum",
+      "description": "Lorem proident Ut",
+      "availablePlaces": 42827563.88385162
+    },
+    {
+      "id": 3,
+      "title": "District",
+      "time": "Tue May 21 2019 19:39:49 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 14,
+      "roomId": -3482476,
+      "maximum": 59986027,
+      "targetGroup": "esse dolor ullamco eiusmod aute",
+      "description": "ad mollit ea ut",
+      "availablePlaces": -137554.28002886474
+    },
+    {
+      "id": 4,
+      "title": "Legacy",
+      "time": "Wed May 22 2019 01:23:21 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 18,
+      "roomId": -87031417,
+      "maximum": -78922880,
+      "targetGroup": "deserunt in",
+      "description": "quis do officia",
+      "availablePlaces": 2762206.1331892014
+    },
+    {
+      "id": 5,
+      "title": "Investor",
+      "time": "Wed May 22 2019 10:12:30 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 208,
+      "roomId": -3514993,
+      "maximum": -13907009,
+      "targetGroup": "ut",
+      "description": "ullamco sint ea do",
+      "availablePlaces": 61217705.3688145,
+      "endDate": "2019-05-14T17:28:00.000Z",
+      "start": "2019-05-14T14:00:00.000Z",
+      "end": "2019-05-14T17:28:00.000Z",
+      "startDate": "2019-05-14T14:00:00.000Z",
+      "studentIds": [
+        "1"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Investor",
+      "time": "Wed May 22 2019 18:10:22 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 166,
+      "roomId": 51592562,
+      "maximum": 2363573,
+      "targetGroup": "enim incididunt minim ullamco adipisicing",
+      "description": "dolor tempor mollit dolore",
+      "availablePlaces": 83755997.1050846
+    },
+    {
+      "id": 7,
+      "title": "Corporate",
+      "time": "Tue May 21 2019 20:55:07 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 16,
+      "roomId": 89061016,
+      "maximum": 68261323,
+      "targetGroup": "esse ut aliqua",
+      "description": "id elit",
+      "availablePlaces": 60968559.11850515
+    },
+    {
+      "id": 8,
+      "title": "National",
+      "time": "Wed May 22 2019 06:20:23 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 194,
+      "roomId": 72378878,
+      "maximum": 29612713,
+      "targetGroup": "culpa nulla minim ut esse",
+      "description": "ut in aliquip",
+      "availablePlaces": -15535857.773635924
+    },
+    {
+      "id": 9,
+      "title": "Customer",
+      "time": "Wed May 22 2019 17:56:00 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 206,
+      "roomId": -65985661,
+      "maximum": -22013657,
+      "targetGroup": "ut sed",
+      "description": "dolor Ut sit anim",
+      "availablePlaces": 22959546.898474813
+    },
+    {
+      "id": 10,
+      "title": "International",
+      "time": "Wed May 22 2019 05:37:47 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 89,
+      "roomId": -99951955,
+      "maximum": 94517447,
+      "targetGroup": "anim",
+      "description": "et ipsum",
+      "availablePlaces": -41035685.96946414
+    },
+    {
+      "id": 11,
+      "title": "Human",
+      "time": "Wed May 22 2019 06:10:07 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 64,
+      "roomId": -80110610,
+      "maximum": 5921129,
+      "targetGroup": "nisi ullamco ipsum pariatur",
+      "description": "do",
+      "availablePlaces": 39326317.26508999
+    },
+    {
+      "id": 12,
+      "title": "National",
+      "time": "Wed May 22 2019 03:47:38 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 169,
+      "roomId": 71914214,
+      "maximum": 96310860,
+      "targetGroup": "nisi ad",
+      "description": "dolor ex exercitation",
+      "availablePlaces": 70134783.08043107
+    },
+    {
+      "id": 13,
+      "title": "Product",
+      "time": "Wed May 22 2019 16:09:51 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 4,
+      "roomId": 69844326,
+      "maximum": 56043670,
+      "targetGroup": "ipsum consectetur et",
+      "description": "nulla consectetur",
+      "availablePlaces": -34036604.02584143
+    },
+    {
+      "id": 14,
+      "title": "District",
+      "time": "Wed May 22 2019 04:46:33 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 186,
+      "roomId": -20160112,
+      "maximum": -78104617,
+      "targetGroup": "occaecat culpa pariatur qui aliqua",
+      "description": "sit aliqua",
+      "availablePlaces": 3202205.673529595
+    },
+    {
+      "id": 15,
+      "title": "Chief",
+      "time": "Wed May 22 2019 04:01:56 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 38,
+      "roomId": -47790710,
+      "maximum": -27487815,
+      "targetGroup": "proident",
+      "description": "cupidatat est esse ipsum ut",
+      "availablePlaces": -41104308.66910302
+    },
+    {
+      "id": 16,
+      "title": "Central",
+      "time": "2019-05-08T14:00:00.000Z",
+      "duration": 213,
+      "roomId": -24897001,
+      "maximum": 6494928,
+      "targetGroup": "consectetur",
+      "description": "adipisicing",
+      "availablePlaces": 10626911.914177224,
+      "start": "2019-05-08T14:00:00.000Z",
+      "end": "2019-05-08T17:33:00.000Z"
+    },
+    {
+      "start": "2019-05-23T20:00:00.000Z",
+      "end": "2019-05-24T00:30:00.000Z",
+      "roomId": -1,
+      "time": "Fri May 24 2019 06:00:00 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 270,
+      "title": "",
+      "cutOff": 0,
+      "maximum": 0,
+      "targetGroup": "",
+      "description": "",
+      "availablePlaces": 0,
+      "skillId": -1,
+      "assignedStudentIds": [],
+      "id": 17
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "General_Hagenes66",
+      "password": "YaVt4h7qum8l7HN",
+      "isAdmin": true
+    },
+    {
+      "id": 2,
+      "username": "Alexandra.Beatty15",
+      "password": "y6J336mOIfCa7ec",
+      "isAdmin": true
+    }
+  ],
+  "studentWorkshops": [],
+  "sessions": [
+    {
+      "id": 1,
+      "startTime": "Wed May 22 2019 09:40:45 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 105,
+      "roomId": 93720140,
+      "advisorId": 14178354,
+      "studentId": 54076474,
+      "type": "laborum"
+    },
+    {
+      "id": 2,
+      "startTime": "Wed May 22 2019 00:08:57 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 129,
+      "roomId": 80856390,
+      "advisorId": 87356389,
+      "studentId": -41959192,
+      "type": "quis amet"
+    },
+    {
+      "id": 3,
+      "startTime": "Wed May 22 2019 15:27:54 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 232,
+      "roomId": 58973664,
+      "advisorId": 81045186,
+      "studentId": 96008054,
+      "type": "eu"
+    },
+    {
+      "id": 4,
+      "startTime": "Wed May 22 2019 12:52:24 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 23,
+      "roomId": 92024565,
+      "advisorId": -56599452,
+      "studentId": -67666553,
+      "type": "in Excepteur non"
+    },
+    {
+      "id": 5,
+      "startTime": "Wed May 22 2019 12:20:40 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 225,
+      "roomId": -94623840,
+      "advisorId": 4722515,
+      "studentId": -85807409,
+      "type": "quis eu"
+    },
+    {
+      "id": 6,
+      "startTime": "Wed May 22 2019 06:15:51 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 86,
+      "roomId": -11900654,
+      "advisorId": 32938050,
+      "studentId": 13687721,
+      "type": "minim cillum fugiat Lorem"
+    },
+    {
+      "id": 7,
+      "startTime": "Wed May 22 2019 01:18:35 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 103,
+      "roomId": -10802000,
+      "advisorId": 19837918,
+      "studentId": 50921443,
+      "type": "do aute occaec"
+    },
+    {
+      "id": 8,
+      "startTime": "Wed May 22 2019 15:47:36 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 51,
+      "roomId": 45413817,
+      "advisorId": -50877049,
+      "studentId": -80709871,
+      "type": "anim"
+    },
+    {
+      "id": 9,
+      "startTime": "Wed May 22 2019 13:47:24 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 240,
+      "roomId": -68468604,
+      "advisorId": -18303526,
+      "studentId": -27592075,
+      "type": "cillum"
+    },
+    {
+      "id": 10,
+      "startTime": "Wed May 22 2019 06:17:40 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 45,
+      "roomId": 76526225,
+      "advisorId": 31736574,
+      "studentId": -49494484,
+      "type": "proident"
+    },
+    {
+      "id": 11,
+      "startTime": "Wed May 22 2019 01:26:57 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 75,
+      "roomId": -35092766,
+      "advisorId": -64831623,
+      "studentId": 18880526,
+      "type": "velit"
+    },
+    {
+      "id": 12,
+      "startTime": "Wed May 22 2019 15:59:04 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 101,
+      "roomId": 77866828,
+      "advisorId": 23257668,
+      "studentId": -96461367,
+      "type": "veniam est Exce"
+    },
+    {
+      "id": 13,
+      "startTime": "Wed May 22 2019 12:02:32 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 225,
+      "roomId": 23246292,
+      "advisorId": 82733077,
+      "studentId": 47814210,
+      "type": "in dolor cillum et sint"
+    },
+    {
+      "id": 14,
+      "startTime": "Tue May 21 2019 22:05:24 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 64,
+      "roomId": 50168860,
+      "advisorId": -84114662,
+      "studentId": -71944109,
+      "type": "amet"
+    },
+    {
+      "id": 15,
+      "startTime": "Wed May 22 2019 03:44:35 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 118,
+      "roomId": -14351294,
+      "advisorId": 41642841,
+      "studentId": -16978299,
+      "type": "labore enim ut fugiat"
+    },
+    {
+      "id": 16,
+      "startTime": "Wed May 22 2019 09:22:32 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 168,
+      "roomId": -30251613,
+      "advisorId": -70436188,
+      "studentId": -52876357,
+      "type": "cillum nulla"
+    },
+    {
+      "id": 17,
+      "startTime": "Wed May 22 2019 03:38:02 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 150,
+      "roomId": -90048424,
+      "advisorId": -49519387,
+      "studentId": 51653488,
+      "type": "ut exercitation ea"
+    },
+    {
+      "id": 18,
+      "startTime": "Tue May 21 2019 20:36:25 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": 171,
+      "roomId": -25846322,
+      "advisorId": 70339453,
+      "studentId": -8078182,
+      "type": "nostrud Ut"
+    }
+  ],
+  "advisors": [
+    {
+      "id": 1,
+      "email": "Jan_Ondricka25@hotmail.com",
+      "firstName": "Thora",
+      "lastName": "VonRueden",
+      "isActive": true
+    },
+    {
+      "id": 2,
+      "email": "Edwin.Keeling@gmail.com",
+      "firstName": "Tiana",
+      "lastName": "Kuvalis",
+      "isActive": true
+    },
+    {
+      "id": 3,
+      "email": "Wayne.Kovacek@hotmail.com",
+      "firstName": "Verdie",
+      "lastName": "Gerhold",
+      "isActive": true
+    },
+    {
+      "id": 4,
+      "email": "Curtis_Corkery@hotmail.com",
+      "firstName": "Beulah",
+      "lastName": "Bosco",
+      "isActive": true
+    },
+    {
+      "id": 5,
+      "email": "Danika_Bernhard98@gmail.com",
+      "firstName": "Rickey",
+      "lastName": "Runolfsdottir",
+      "isActive": true
+    },
+    {
+      "id": 6,
+      "email": "Geovanny.Ryan46@yahoo.com",
+      "firstName": "Aaron",
+      "lastName": "Murphy",
+      "isActive": false
+    },
+    {
+      "id": 7,
+      "email": "Ilene.Wilderman45@hotmail.com",
+      "firstName": "Santa",
+      "lastName": "Padberg",
+      "isActive": false
+    },
+    {
+      "id": 8,
+      "email": "Wiley_Klocko@yahoo.com",
+      "firstName": "Alicia",
+      "lastName": "Harris",
+      "isActive": false
+    },
+    {
+      "id": 9,
+      "email": "Aniya.Littel95@gmail.com",
+      "firstName": "Sam",
+      "lastName": "Hammes",
+      "isActive": true
+    },
+    {
+      "id": 10,
+      "email": "Gretchen.Treutel2@yahoo.com",
+      "firstName": "Daniella",
+      "lastName": "Cronin",
+      "isActive": true
+    }
+  ],
+  "rooms": [
+    {
+      "id": 1,
+      "title": "proident occa"
+    },
+    {
+      "id": 2,
+      "title": "velit mollit sunt Duis tempor"
+    },
+    {
+      "id": 3,
+      "title": "tempor"
+    },
+    {
+      "id": 4,
+      "title": "ad sed Loremdsd"
+    },
+    {
+      "id": 5,
+      "title": "aute"
+    },
+    {
+      "id": 6,
+      "title": "proident voluptate"
+    },
+    {
+      "id": 7,
+      "title": "fugiat enim"
+    },
+    {
+      "id": 8,
+      "title": "nisi commodo sint ex"
+    },
+    {
+      "id": 9,
+      "title": "Excepteur ex enim qui"
+    },
+    {
+      "id": 10,
+      "title": "magna ea qui dolore consequat"
+    },
+    {
+      "id": 11,
+      "title": "dolore sint ipsum nulla"
+    },
+    {
+      "id": 12,
+      "title": "sunt ex elit"
+    },
+    {
+      "id": 13,
+      "title": "ea"
+    },
+    {
+      "id": 14,
+      "title": "sed esse aliqua ullamco cupidatat"
+    },
+    {
+      "id": 15,
+      "title": "anim"
+    },
+    {
+      "id": 16,
+      "title": "consectetur pariatur"
+    },
+    {
+      "id": 17,
+      "title": "aliquip sed occaecat dolore"
+    },
+    {
+      "id": 18,
+      "title": "aliqua id incididunt in"
+    },
+    {
+      "title": "Test room",
+      "id": 19
+    }
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "title": "nisi ea",
+      "content": "<p>officia adipisicing sintdsjfhsdfh</p>\n"
+    }
+  ],
+  "emails": [
+    {
+      "id": 1,
+      "title": "sit non dolor consectetur occ",
+      "content": "qui id incidi",
+      "variables": [
+        {
+          "name": "Lecturer Email",
+          "variable": "[%lecturer_email%]",
+          "example": "Steve.Smith@test.com"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "aliqua",
+      "content": "dolor cillum minim",
+      "variables": [
+        {
+          "name": "End Time",
+          "variable": "[%end_time%]",
+          "example": "12:30 pm"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "dolor ut",
+      "content": "occaecat nostrud proident amet",
+      "variables": [
+        {
+          "name": "Date",
+          "variable": "[%date%]",
+          "example": "12 July 2019"
+        }
+      ]
+    }
+  ],
+  "reports": [
+    {
+      "id": 1,
+      "title": "et in ex ut do",
+      "skillSet": "in ",
+      "topic": "incididunt"
+    },
+    {
+      "id": 2,
+      "title": "commodo",
+      "skillSet": "incididunt esse ea magna",
+      "topic": "incididunt cillum ullamco labore"
+    },
+    {
+      "id": 3,
+      "title": "ea labore consectetur in",
+      "skillSet": "consequat ex dolor d",
+      "topic": "Excepteur mollit consectetur proident"
+    },
+    {
+      "id": 4,
+      "title": "Ut magna cupidatat aliquip exercitation",
+      "skillSet": "commodo",
+      "topic": "amet voluptate"
+    }
+  ]
+}

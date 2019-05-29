@@ -5,7 +5,6 @@ import {Email, EmailVariable} from '../../types/model/Email';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import {ContentState, EditorState, Modifier} from 'draft-js';
 import {Editor} from 'react-draft-wysiwyg';
-import './EmailEdit.css';
 import Button from 'react-bootstrap/Button';
 // @ts-ignore
 import htmlToDraft from 'html-to-draftjs';

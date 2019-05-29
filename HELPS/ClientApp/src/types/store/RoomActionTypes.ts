@@ -1,4 +1,4 @@
-import { RoomModel } from '../model/Room';
+import { Room } from '../model/Room';
 
 export enum RoomActionTypes {
     EDIT = 'ROOM_ACTION_UPDATE_NAME',
@@ -9,7 +9,7 @@ export enum RoomActionTypes {
 
 export interface RoomAction {
     type: RoomActionTypes;
-    room?: RoomModel;
+    room?: Room;
     error?: string;
-    rooms?: RoomModel[];
+    rooms?: Room[];
 }

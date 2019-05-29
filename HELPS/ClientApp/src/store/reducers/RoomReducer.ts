@@ -1,10 +1,10 @@
 import { RoomAction, RoomActionTypes } from '../../types/store/RoomActionTypes';
 import { RoomState } from '../../types/store/RoomReducerTypes';
-import { RoomModel } from '../../types/model/Room';
+import { Room } from '../../types/model/Room';
 import { isUndefined } from 'util';
 import { NO_MATCH, getIdentifiableIndexById } from '../../util';
 
-const room1: RoomModel = { id: 1, title: 'room1' };
+const room1: Room = { id: 1, title: 'room1' };
 const initialState: RoomState = {
     rooms: [room1, { id: 2, title: 'room2' }, { id: 3, title: 'room3' }],
     selectedRoom: room1,

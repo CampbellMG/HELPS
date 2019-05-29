@@ -6,7 +6,11 @@ const jsf = require('json-schema-faker');
 const faker = require('faker');
 const databaseSchema = require('./schema');
 
-const DATABASE_DEST = './database/database.json';
+const DYNAMIC_DATABASE = './database/database.json';
+const FIXED_DATABASE = './database/fixed_database.json';
+const isFixed = true;
+
+const DATABASE_DEST = isFixed ? FIXED_DATABASE : DYNAMIC_DATABASE;
 const SECRET_KEY = '123456789';
 const expiresIn = '1h';
 let noAuth = false;
@@ -17,9 +21,11 @@ process.argv.forEach(arg => {
     }
 });
 
-jsf.extend('faker', () => faker);
-const json = JSON.stringify(jsf.generate(databaseSchema));
-fs.writeFileSync(DATABASE_DEST, json);
+if (!isFixed) {
+    jsf.extend('faker', () => faker);
+    const json = JSON.stringify(jsf.generate(databaseSchema));
+    fs.writeFileSync(DATABASE_DEST, json);
+}
 
 const server = jsonServer.create();
 
@@ -47,7 +53,7 @@ server.all(/^(?!(\/register|\/login)).*$/, (req, res, next) => {
             return
         }
 
-        if (/students/g.test(req.url) && !/students\/[0-9]+/g.test(req.url)) {
+        if (!decode.isAdmin && /students/g.test(req.url) && !/students\/[0-9]+/g.test(req.url)) {
             req.url = req.url.replace(/students/g, `students/${decode.userId}`);
             req.url = req.url.replace(/workshops/g, 'studentWorkshops');
 

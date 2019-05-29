@@ -1,9 +1,28 @@
 import * as React from 'react';
-import {Field, InjectedFormProps, reduxForm} from 'redux-form';
-import {Student} from '../../types/model/Student';
+import {Field, reduxForm, submit} from 'redux-form';
 import Form from 'react-bootstrap/Form';
+import {Button} from 'react-bootstrap';
+import {
+    StudentFormData,
+    StudentFormDispatchProps, UserFormExtraProps,
+    UserFormProps,
+    UserFormState
+} from '../../types/components/UserTypes';
+import {ThunkDispatch} from 'redux-thunk';
+import {connect} from 'react-redux';
+import {AppState} from '../../types/store/StoreTypes';
+import {renderEditButtons} from '../../types/util/Editable';
 
-class UserDetailsForm extends React.Component<InjectedFormProps<Student>> {
+class UserDetailsForm extends React.Component<UserFormProps, UserFormState> {
+    constructor(props: UserFormProps) {
+        super(props);
+
+        this.state = {
+            editing: false,
+            isNewMode: false
+        };
+    }
+
     TextInput = (props: any) => (
         <Form.Group controlId='login'>
             <Form.Control name='email'
@@ -16,7 +35,7 @@ class UserDetailsForm extends React.Component<InjectedFormProps<Student>> {
 
     render() {
         return (
-            <form onSubmit={this.props.handleSubmit}>
+            <form onSubmit={this.props.handleSubmit} className='m-5'>
                 <div className='row'>
                     <Form.Group className='col'>
                         <Form.Label>Student ID</Form.Label>
@@ -173,11 +192,56 @@ class UserDetailsForm extends React.Component<InjectedFormProps<Student>> {
                             placeholder='Other'/>
                     </Form.Group>
                 </div>
+                {this.props.isAdmin &&
+                <div className='row'>
+                    <div className='col'/>
+                    <div className='col-lg-4 mx-auto mt-4'>
+                        {this.renderEditButtons()}
+                        <Button className='w-100 mt-1'
+                                onClick={() => this.props.change('delete', true)}
+                                type='submit'>
+                            Delete
+                        </Button>
+                    </div>
+                    <div className='col'/>
+                </div>}
             </form>
         );
+
     }
+
+    private renderEditButtons = (): JSX.Element => renderEditButtons(
+        this.state,
+        this.state.editing && this.props.pristine,
+        this.onCancel,
+        this.editOrSave
+    );
+
+    private editOrSave = (): void => {
+        if (this.state.editing) {
+            this.props.change('delete', false);
+            this.props.submit();
+        }
+
+        this.setState({editing: !this.state.editing});
+    };
+
+    private onCancel = () => {
+        this.setState({editing: false});
+        this.props.reset();
+    };
 }
 
-export default reduxForm<Student>({
-    form: 'user_details'
-})(UserDetailsForm);
+const mapDispatchToProps = (dispatch: ThunkDispatch<{}, {}, any>): StudentFormDispatchProps => ({
+    submit: () => dispatch(submit('user_details'))
+});
+
+const userForm = connect<{}, StudentFormDispatchProps, {}, AppState>(
+    undefined,
+    mapDispatchToProps
+)(UserDetailsForm);
+
+export default reduxForm<StudentFormData, UserFormExtraProps>({
+    form: 'user_details',
+    enableReinitialize: true
+})(userForm);

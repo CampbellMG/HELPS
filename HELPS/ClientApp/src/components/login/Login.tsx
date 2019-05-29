@@ -19,13 +19,13 @@ class Login extends Component<HomeProps> {
 
     render(): React.ReactNode {
         return (
-            <div className='d-flex h-100 justify-content-center'>
+            <div className='d-flex h-100 justify-content-center flex-fill'>
                 <div className='align-self-center w-50 h-50'>
                     <div className='shadow bg-white d-flex h-100 justify-content-center flex-column login-container'>
                         <div className='logo-wrapper'>
                             <img src={uts} className='logo' alt='UTS Logo' width='30%' />
                         </div>
-                        <div className='align-self-center w-50 mt-5'>
+                        <div className='align-self-center w-50 m-5 pt-5'>
                             <LoginForm onSubmit={this.onLogin} />
                             <Link to='register/'><Button className='w-100 mt-4'>Register</Button></Link>
                         </div>

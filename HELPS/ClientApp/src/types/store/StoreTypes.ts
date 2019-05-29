@@ -5,6 +5,8 @@ import {EmailState} from './EmailReducerTypes';
 import {AdvisorState} from './AdvisorReducerTypes'
 import { MessageState } from './MessageReducerTypes';
 import { RoomState } from './RoomReducerTypes';
+import {SessionState} from './SessionReducerTypes';
+import {SkillState} from './SkillReducerTypes';
 
 export interface AppState {
     auth: AuthState,
@@ -14,4 +16,6 @@ export interface AppState {
     workshops: WorkshopState
     advisors: AdvisorState
     message: MessageState
+    session: SessionState
+    skill: SkillState
 }

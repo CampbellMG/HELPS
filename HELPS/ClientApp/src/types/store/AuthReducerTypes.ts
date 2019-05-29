@@ -1,5 +1,6 @@
 export interface AuthState {
     isAuthenticating: boolean,
     authenticated: boolean
-    error?: string
+    error?: string,
+    isAdmin: boolean
 }

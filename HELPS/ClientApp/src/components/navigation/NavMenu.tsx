@@ -5,9 +5,18 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import uts from '../../res/uts-white.png';
 import {IndexLinkContainer} from 'react-router-bootstrap';
+import {AppState} from '../../types/store/StoreTypes';
+import {connect} from 'react-redux';
+import {NavMenuProps, NavMenuStateProps} from '../../types/components/NavMenuTypes';
+import {AdminMenu, StudentMenu} from './Menu';
+import {withRouter} from 'react-router';
 
-export default class NavMenu extends Component<{}> {
+class NavMenu extends Component<NavMenuProps> {
+
     render() {
+        let {isAdmin, location} = this.props;
+        const menuItems = isAdmin ? AdminMenu : StudentMenu;
+        const currentPath = this.stripSlash(location.pathname)
         return (
             <header className='nav-menu'>
                 <Navbar className='navbar-custom d-flex shadow'>
@@ -15,34 +24,18 @@ export default class NavMenu extends Component<{}> {
                         <img src={uts} alt='UTS Logo'/>
                     </Navbar.Brand>
                     <ul className='navbar-nav col ml-5'>
-                        <IndexLinkContainer to='/user' className='text-light font-weight-bold link'>
-                            <Nav.Item className='mr-5'>
-                                My Information
-                            </Nav.Item>
-                        </IndexLinkContainer>
-                        <IndexLinkContainer to='/workshop_registration' className='text-light font-weight-bold link'>
-                            <Nav.Item className='mr-5'>
-                                Workshop Registration
-                            </Nav.Item>
-                        </IndexLinkContainer>
-                        <IndexLinkContainer to='/info' className='text-light font-weight-bold link'>
-                            <Nav.Item className='mr-5'>
-                                Information
-                            </Nav.Item>
-                        </IndexLinkContainer>
-                        <IndexLinkContainer to='/email' className='text-light font-weight-bold link'>
-                            <Nav.Item className='mr-5'>
-                                Email
-                            </Nav.Item>
-                        </IndexLinkContainer>
-                        <IndexLinkContainer to='/advisors' className='text-light font-weight-bold link'>
-                            <Nav.Item className='mr-5'>
-                                Advisors
-                            </Nav.Item>
-                        </IndexLinkContainer>
+                        {menuItems.map((menuItem, index) => (
+                            <IndexLinkContainer to={`/${menuItem.route}`}
+                                                key={`${menuItem.route} ${index}`}
+                                                className='text-light font-weight-bold link'>
+                                <Nav.Item className={`mr-5 pb-1 ${currentPath === this.stripSlash(menuItem.route) ? 'border-bottom border-white' : ''}`}>
+                                    {menuItem.title}
+                                </Nav.Item>
+                            </IndexLinkContainer>
+                        ))}
                     </ul>
                     <IndexLinkContainer to='/' className='text-light font-weight-bold link'>
-                        <Nav.Item className='mr-3'>
+                        <Nav.Item className='mr-3 border border-white rounded p-1'>
                             Logout
                         </Nav.Item>
                     </IndexLinkContainer>
@@ -50,4 +43,16 @@ export default class NavMenu extends Component<{}> {
             </header>
         );
     }
+
+    private stripSlash = (path: string) => path.replace(/\//g, '');
 }
+
+const mapStateToProps = (state: AppState): NavMenuStateProps => ({
+    isAdmin: state.auth.isAdmin
+});
+
+const connectedNavMenu = connect<NavMenuStateProps, {}, {}, AppState>(
+    mapStateToProps
+)(NavMenu);
+
+export default withRouter(connectedNavMenu);

@@ -1,0 +1,398 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "Steve Smith",
+      "prefFirstName": "Steve",
+      "registeredDate": "Sat Aug 11 2018 21:57:38 GMT+1000 (Australian Eastern Standard Time)",
+      "faculty": "Engineering",
+      "course": "Software Engineering",
+      "email": "Steve.Smith@student.uts.edu.au",
+      "homePhone": "0244445555",
+      "mobile": "04555123456",
+      "bestContactNumber": "04555123456",
+      "dob": "Sat Feb 16 1995 05:06:44 GMT+1100 (Australian Eastern Daylight Time)",
+      "gender": "Male",
+      "degree": "Software Engineering",
+      "year": "3",
+      "status": "Active",
+      "firstLanguage": "English",
+      "countryOfOrigin": "Australia",
+      "educationalBackground": "TAFE",
+      "CAFCompleted": true,
+      "specialNeeds": false,
+      "other": ""
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "prefFirstName": "Jane",
+      "registeredDate": "Sat Aug 11 2018 21:57:38 GMT+1000 (Australian Eastern Standard Time)",
+      "faculty": "Engineering",
+      "course": "Software Engineering",
+      "email": "Jane.Smith@student.uts.edu.au",
+      "homePhone": "0244445555",
+      "mobile": "04555123456",
+      "bestContactNumber": "04555123456",
+      "dob": "Sat Feb 16 1995 05:06:44 GMT+1100 (Australian Eastern Daylight Time)",
+      "gender": "Female",
+      "degree": "Software Engineering",
+      "year": "3",
+      "status": "Active",
+      "firstLanguage": "English",
+      "countryOfOrigin": "Australia",
+      "educationalBackground": "TAFE",
+      "CAFCompleted": true,
+      "specialNeeds": false,
+      "other": ""
+    },
+    {
+      "id": 3,
+      "name": "Jane Doe",
+      "prefFirstName": "Jane",
+      "registeredDate": "Sat Aug 11 2018 21:57:38 GMT+1000 (Australian Eastern Standard Time)",
+      "faculty": "Engineering",
+      "course": "Software Engineering",
+      "email": "Jane.Doe@student.uts.edu.au",
+      "homePhone": "0244445555",
+      "mobile": "04555123456",
+      "bestContactNumber": "04555123456",
+      "dob": "Sat Feb 16 1995 05:06:44 GMT+1100 (Australian Eastern Daylight Time)",
+      "gender": "Female",
+      "degree": "Software Engineering",
+      "year": "3",
+      "status": "Active",
+      "firstLanguage": "English",
+      "countryOfOrigin": "Australia",
+      "educationalBackground": "TAFE",
+      "CAFCompleted": true,
+      "specialNeeds": false,
+      "other": ""
+    }
+  ],
+  "workshops": [
+    {
+      "start": "2019-05-23T17:00:00.000Z",
+      "end": "2019-05-23T21:00:00.000Z",
+      "startDate": "2019-05-23T17:00:00.000Z",
+      "endDate": "2019-05-23T21:00:00.000Z",
+      "roomId": -1,
+      "time": "Fri May 24 2019 03:00:00 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": "240",
+      "title": "Second Workshop Topic",
+      "cutOff": 0,
+      "maximum": 0,
+      "targetGroup": "",
+      "description": "",
+      "availablePlaces": 0,
+      "skillId": -1,
+      "assignedStudentIds": [],
+      "id": 1
+    },
+    {
+      "start": "2019-05-22T18:30:00.000Z",
+      "end": "2019-05-22T22:00:00.000Z",
+      "startDate": "2019-05-22T16:00:00.000Z",
+      "endDate": "2019-05-23T00:00:00.000Z",
+      "roomId": "1",
+      "time": "Thu May 23 2019 04:30:00 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": "210",
+      "title": "Workshop topic",
+      "cutOff": 0,
+      "maximum": 0,
+      "targetGroup": "",
+      "description": "Description",
+      "availablePlaces": 0,
+      "skillId": "1",
+      "assignedStudentIds": [],
+      "id": 2,
+      "studentIds": [
+        "1"
+      ]
+    },
+    {
+      "start": "2019-05-20T20:00:00.000Z",
+      "end": "2019-05-20T23:00:00.000Z",
+      "startDate": "2019-05-21T17:00:00.000Z",
+      "endDate": "2019-05-22T03:00:00.000Z",
+      "roomId": -1,
+      "time": "Tue May 21 2019 06:00:00 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": "180",
+      "title": "",
+      "cutOff": 0,
+      "maximum": 0,
+      "targetGroup": "",
+      "description": "",
+      "availablePlaces": 0,
+      "skillId": -1,
+      "assignedStudentIds": [],
+      "id": 3
+    },
+    {
+      "start": "2019-05-28T18:30:00.000Z",
+      "end": "2019-05-28T21:30:00.000Z",
+      "startDate": "Wed May 29 2019 04:30:00 GMT+1000 (Australian Eastern Standard Time)",
+      "endDate": "Wed May 29 2019 07:30:00 GMT+1000 (Australian Eastern Standard Time)",
+      "roomId": -1,
+      "time": "Wed May 29 2019 04:30:00 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": "180",
+      "title": "",
+      "cutOff": 0,
+      "maximum": 0,
+      "targetGroup": "",
+      "description": "",
+      "availablePlaces": 0,
+      "skillId": -1,
+      "assignedStudentIds": [],
+      "id": 4
+    },
+    {
+      "start": "2019-05-29T18:30:00.000Z",
+      "end": "2019-05-29T19:00:00.000Z",
+      "startDate": "Thu May 30 2019 04:30:00 GMT+1000 (Australian Eastern Standard Time)",
+      "endDate": "Thu May 30 2019 05:00:00 GMT+1000 (Australian Eastern Standard Time)",
+      "roomId": -1,
+      "time": "Thu May 30 2019 04:30:00 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": "30",
+      "title": "",
+      "cutOff": 0,
+      "maximum": 0,
+      "targetGroup": "",
+      "description": "",
+      "availablePlaces": 0,
+      "skillId": -1,
+      "assignedStudentIds": [],
+      "id": 5
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "Admin",
+      "password": "admin",
+      "isAdmin": true
+    },
+    {
+      "id": 2,
+      "username": "Student",
+      "password": "student",
+      "isAdmin": false
+    }
+  ],
+  "studentWorkshops": [],
+  "sessions": [
+    {
+      "start": "2019-05-24T17:00:00.000Z",
+      "end": "2019-05-24T20:00:00.000Z",
+      "startDate": "Sat May 25 2019 03:00:00 GMT+1000 (Australian Eastern Standard Time)",
+      "endDate": "2019-05-24T20:00:00.000Z",
+      "roomId": "1",
+      "time": "Sat May 25 2019 03:00:00 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": "180",
+      "advisorId": "1",
+      "studentId": "2",
+      "type": "Session Type",
+      "purpose": "",
+      "subjectName": "Project Management",
+      "assignmentType": "",
+      "groupAssignment": true,
+      "assistance": "",
+      "attendance": false,
+      "comments": "",
+      "files": [],
+      "id": 1
+    },
+    {
+      "start": "2019-05-19T17:30:00.000Z",
+      "end": "2019-05-19T18:00:00.000Z",
+      "startDate": "2019-05-19T17:30:00.000Z",
+      "endDate": "2019-05-19T21:00:00.000Z",
+      "roomId": -1,
+      "time": "Mon May 20 2019 03:30:00 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": "30",
+      "advisorId": -1,
+      "studentId": -1,
+      "type": "",
+      "purpose": "",
+      "subjectName": "",
+      "assignmentType": "",
+      "groupAssignment": false,
+      "assistance": "",
+      "attendance": false,
+      "comments": "",
+      "files": [],
+      "id": 2
+    },
+    {
+      "start": "2019-05-28T23:00:00.000Z",
+      "end": "2019-05-29T02:00:00.000Z",
+      "startDate": "Wed May 29 2019 09:00:00 GMT+1000 (Australian Eastern Standard Time)",
+      "endDate": "Wed May 29 2019 12:00:00 GMT+1000 (Australian Eastern Standard Time)",
+      "roomId": -1,
+      "time": "Wed May 29 2019 09:00:00 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": "180",
+      "advisorId": -1,
+      "studentId": -1,
+      "type": "",
+      "purpose": "",
+      "subjectName": "",
+      "assignmentType": "",
+      "groupAssignment": false,
+      "assistance": "",
+      "attendance": false,
+      "comments": "",
+      "files": [],
+      "id": 3
+    }
+  ],
+  "advisors": [
+    {
+      "id": 1,
+      "email": "Advisor.One@hotmail.com",
+      "firstName": "Advisor",
+      "lastName": "One",
+      "isActive": true
+    },
+    {
+      "id": 2,
+      "email": "Advisor.Two@gmail.com",
+      "firstName": "Advisor",
+      "lastName": "Two",
+      "isActive": true
+    }
+  ],
+  "rooms": [
+    {
+      "id": 1,
+      "title": "CB11.01.01"
+    },
+    {
+      "id": 2,
+      "title": "CB05.02.111"
+    },
+    {
+      "id": 3,
+      "title": "CB01.01.22"
+    },
+    {
+      "title": "CB11.01.301",
+      "id": 4
+    }
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "title": "Welcome Message",
+      "content": "<p>Welcome!</p>\n"
+    },
+    {
+      "id": 2,
+      "title": "Notification",
+      "content": "<p>Classes are not running on 04/05/19!</p>\n"
+    }
+  ],
+  "emails": [
+    {
+      "id": 1,
+      "title": "Confirmation Email",
+      "content": "<p>Dear [%student_givenname%] [%student_surname%],</p>\n<p>Please note that your class at: [%campus%] has been <strong>confirmed</strong>.&nbsp;</p>\n<p>Thanks</p>\n",
+      "variables": [
+        {
+          "name": "Student Given Name",
+          "variable": "[%student_givenname%]",
+          "example": "Steve"
+        },
+        {
+          "name": "Student Surname",
+          "variable": "[%student_surname%]",
+          "example": "Smith"
+        },
+        {
+          "name": "Campus",
+          "variable": "[%campus%]",
+          "example": "Ultimo"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Cancellation Email",
+      "content": "<p style=\"text-align:start;\"><span style=\"color: rgb(33,37,41);background-color: rgb(252,252,252);font-size: 16px;\">Dear </span>[%student_givenname%] [%student_surname%]<span style=\"color: rgb(33,37,41);background-color: rgb(252,252,252);font-size: 16px;\">,</span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(33,37,41);background-color: rgb(252,252,252);font-size: 16px;\">Please note that your class at: </span>[%campus%] <span style=\"color: rgb(33,37,41);background-color: rgb(252,252,252);font-size: 16px;\">has been <strong>cancelled</strong>. </span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(33,37,41);background-color: rgb(252,252,252);font-size: 16px;\">Thanks</span>&nbsp;</p>\n",
+      "variables": [
+        {
+          "name": "Student Given Name",
+          "variable": "[%student_givenname%]",
+          "example": "Steve"
+        },
+        {
+          "name": "Student Surname",
+          "variable": "[%student_surname%]",
+          "example": "Smith"
+        },
+        {
+          "name": "Campus",
+          "variable": "[%campus%]",
+          "example": "Ultimo"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Change Email",
+      "content": "<p style=\"text-align:start;\"><span style=\"color: rgb(33,37,41);background-color: rgb(252,252,252);font-size: 16px;\">Dear </span>[%student_givenname%][%student_surname%]<span style=\"color: rgb(33,37,41);background-color: rgb(252,252,252);font-size: 16px;\">,</span></p>\n<p style=\"text-align:left;\"><span style=\"color: rgb(33,37,41);background-color: rgb(252,252,252);font-size: 16px;\">Please note that your class at: </span><a href=\"http://localhost:3000/undefined\" class=\"wysiwyg-mention\" data-mention data-value=\"[%campus%]\"><span style=\"color: rgb(33,37,41);background-color: rgb(252,252,252);font-size: 16px;\"> [%campus%]</span></a><span style=\"color: rgb(33,37,41);background-color: rgb(252,252,252);font-size: 16px;\"> has been <strong>changed</strong>. </span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(33,37,41);background-color: rgb(252,252,252);font-size: 16px;\">Thanks</span>&nbsp;</p>\n",
+      "variables": [
+        {
+          "name": "Student Given Name",
+          "variable": "[%student_givenname%]",
+          "example": "Steve"
+        },
+        {
+          "name": "Student Surname",
+          "variable": "[%student_surname%]",
+          "example": "Smith"
+        },
+        {
+          "name": "Campus",
+          "variable": "[%campus%]",
+          "example": "Ultimo"
+        }
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "title": "Essays",
+      "id": 1
+    },
+    {
+      "title": "Reports",
+      "id": 2
+    }
+  ],
+  "reports": [
+    {
+      "id": 1,
+      "title": "et in ex ut do",
+      "skillSet": "in ",
+      "topic": "incididunt"
+    },
+    {
+      "id": 2,
+      "title": "commodo",
+      "skillSet": "incididunt esse ea magna",
+      "topic": "incididunt cillum ullamco labore"
+    },
+    {
+      "id": 3,
+      "title": "ea labore consectetur in",
+      "skillSet": "consequat ex dolor d",
+      "topic": "Excepteur mollit consectetur proident"
+    },
+    {
+      "id": 4,
+      "title": "Ut magna cupidatat aliquip exercitation",
+      "skillSet": "commodo",
+      "topic": "amet voluptate"
+    }
+  ]
+}

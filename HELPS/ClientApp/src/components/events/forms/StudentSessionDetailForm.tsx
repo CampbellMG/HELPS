@@ -1,11 +1,14 @@
 import * as React from 'react';
-import {Field, InjectedFormProps, reduxForm} from 'redux-form';
+import {Field, reduxForm} from 'redux-form';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import {Workshop} from '../../types/model/Workshop';
-import {WorkshopDetailsFormProps} from '../../types/components/WorkshopRegistrationTypes';
+import {
+    SessionFormData,
+    StudentSessionDetailFormProps,
+    StudentSessionDetailProps
+} from '../../../types/components/WorkshopRegistrationTypes';
 
-class WorkshopDetailsForm extends React.Component<WorkshopDetailsFormProps & InjectedFormProps<Workshop, WorkshopDetailsFormProps>> {
+class StudentSessionDetailForm extends React.Component<StudentSessionDetailFormProps> {
     TextInput = (props: any) => (
         <Form.Group controlId='login'>
             <Form.Control disabled
@@ -31,8 +34,14 @@ class WorkshopDetailsForm extends React.Component<WorkshopDetailsFormProps & Inj
                            type='text'/>
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label>Date / Time</Form.Label>
-                    <Field name='time'
+                    <Form.Label>Start</Form.Label>
+                    <Field name='startDate'
+                           component={this.TextInput}
+                           type='text'/>
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label>End</Form.Label>
+                    <Field name='endDate'
                            component={this.TextInput}
                            type='text'/>
                 </Form.Group>
@@ -68,8 +77,7 @@ class WorkshopDetailsForm extends React.Component<WorkshopDetailsFormProps & Inj
                         type='text'/>
                 </Form.Group>
                 <Button type='submit'
-                        className='w-100 mt-4'
-                        disabled={this.props.disabled}>
+                        className='w-100 mt-4'>
                     {this.props.booked ? 'Cancel' : 'Book'}
                 </Button>
             </form>
@@ -77,7 +85,7 @@ class WorkshopDetailsForm extends React.Component<WorkshopDetailsFormProps & Inj
     }
 }
 
-export default reduxForm<Workshop, WorkshopDetailsFormProps>({
-    form: 'workshop_details',
+export default reduxForm<SessionFormData, StudentSessionDetailProps>({
+    form: 'student_session_detail',
     enableReinitialize: true
-})(WorkshopDetailsForm);
+})(StudentSessionDetailForm);

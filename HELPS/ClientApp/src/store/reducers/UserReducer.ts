@@ -2,6 +2,7 @@ import {UserState} from '../../types/store/UserReducerTypes';
 import {UserAction, UserActionType} from '../../types/store/UserActionTypes';
 
 const initialState: UserState = {
+    user: [],
     isLoading: false
 };
 

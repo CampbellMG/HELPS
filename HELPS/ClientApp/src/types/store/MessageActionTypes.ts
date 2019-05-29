@@ -1,14 +1,13 @@
-import { MessageModel } from '../model/Message';
+import { Message } from '../model/Message';
 
 export interface MessageAction {
     type: MessageActionTypes;
-    messages?: MessageModel[];
-    message?: MessageModel;
+    messages?: Message[];
+    message?: Message;
     payload?: any;
 }
 
 export enum MessageActionTypes {
     RECEIVE = 'MESSAGE_ACTION_RECEIVE_MESSAGES',
-    ERROR = 'MESSAGE_ACTION_ERROR',
-    SELECT = 'MESSAGE_ACTION_SELECT'
+    ERROR = 'MESSAGE_ACTION_ERROR'
 }
