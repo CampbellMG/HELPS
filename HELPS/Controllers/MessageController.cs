@@ -48,9 +48,9 @@ namespace HELPS.Controllers
             return toDoItem;
         }
 
-        [HttpPost("id")]
+        [HttpPut("{id}")]
 
-        public async Task<ActionResult> PutMessage(int id, Message message)
+        public async Task<IActionResult> PutMessage(int id, [FromBody] Message message)
         {
             if (id != message.MessageId)
             {
@@ -62,9 +62,18 @@ namespace HELPS.Controllers
             return NoContent();
         }
 
-        [HttpDelete("id")]
+        [HttpPost]
+        public async Task<ActionResult<Message>> PostMessage([FromBody] Message message)
+        {
+            _context.Messages.Add(message);
+            await _context.SaveChangesAsync();
+            return CreatedAtAction(nameof(GetMessage),new { id = message.MessageId}, message);
 
-        public async Task<ActionResult> DeleteMessage(int id)
+        }
+
+        [HttpDelete("{id}")]
+
+        public async Task<IActionResult> DeleteMessage(int id)
         {
             var todoItem = await _context.Messages.FindAsync(id);
 
