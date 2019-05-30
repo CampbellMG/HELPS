@@ -44,13 +44,11 @@ namespace HELPS.Controllers
             _context.Reports.Add(report);
             await _context.SaveChangesAsync();
 
-            if (report.From == null) return BadRequest();
-
             return CreatedAtAction(nameof(GetReport), new { id = report.Id }, report);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutReport(int id, Report report)
+        public async Task<IActionResult> PutReport(int id, [FromBody] Report report)
         {
             if (id != report.Id)
             {
