@@ -10,11 +10,11 @@ using Microsoft.EntityFrameworkCore;
 namespace HELPS.Controllers
 {
     [Route("api/[controller]")]
-    public class ReportController : Controller
+    public class ReportsController : Controller
     {
         private readonly HelpsContext _context;
 
-        public ReportController(HelpsContext context)
+        public ReportsController(HelpsContext context)
         {
             _context = context;
         }
@@ -39,10 +39,12 @@ namespace HELPS.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Report>> PostReport(Report report)
+        public async Task<ActionResult<Report>> PostReport([FromBody] Report report)
         {
             _context.Reports.Add(report);
             await _context.SaveChangesAsync();
+
+            if (report.From == null) return BadRequest();
 
             return CreatedAtAction(nameof(GetReport), new { id = report.Id }, report);
         }
