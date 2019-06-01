@@ -146,6 +146,24 @@ namespace HELPS.Migrations
                     b.ToTable("Students");
                 });
 
+            modelBuilder.Entity("HELPS.Models.User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Password");
+
+                    b.Property<string>("Token");
+
+                    b.Property<string>("Username");
+
+                    b.Property<bool>("isAdmin");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
+                });
+
             modelBuilder.Entity("HELPS.Models.Workshop", b =>
                 {
                     b.Property<int>("Id")

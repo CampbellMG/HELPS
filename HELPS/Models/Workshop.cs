@@ -11,9 +11,11 @@ namespace HELPS.Models
         public string Title { get; set; }
         public string Time { get; set; } //ISO 8601, no fractional seconds
         public int Duration { get; set; }
-        public string Room_id { get; set; }
+        public int RoomId { get; set; }
         public string TargetGroup { get; set; }
         public string Description { get; set; }
-        public int Available_places { get; set; }
-    }
+        public int AvailablePlaces { get; set; }
+        public int AdvisorId { get; set; }
+        public int[] StudentIds { get; set; }
+    } 
 }
