@@ -1,10 +1,7 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using HELPS.Models;
 using Microsoft.AspNetCore.Mvc;
-using AppContext = System.AppContext;
 using Microsoft.EntityFrameworkCore;
 
 namespace HELPS.Controllers
@@ -44,7 +41,7 @@ namespace HELPS.Controllers
             _context.Reports.Add(report);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetReport), new { id = report.Id }, report);
+            return CreatedAtAction(nameof(GetReport), new {id = report.Id}, report);
         }
 
         [HttpPut("{id}")]
@@ -76,6 +73,5 @@ namespace HELPS.Controllers
 
             return NoContent();
         }
-
     }
 }

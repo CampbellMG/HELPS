@@ -19,42 +19,42 @@ namespace HELPS.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Sessions>>> GetSessions()
+        public async Task<ActionResult<IEnumerable<Session>>> GetSessions()
         {
             return await _context.Sessions.ToListAsync();
         }
 
         [HttpGet("{Id}")]
-        async Task<ActionResult<IEnumerable<Sessions>>> GetSessions(int Id)
+        async Task<ActionResult<IEnumerable<Session>>> GetSessions(int id)
         {
-            var todoItem = await _context.Sessions.FindAsync(Id);
+            var todoItem = await _context.Sessions.FindAsync(id);
 
             if (todoItem == null)
             {
                 return NotFound();
             }
 
-            return await GetSessions(Id);
+            return await GetSessions(id);
         }
 
         [HttpPost("{Id}")]
-        public async Task<ActionResult<Sessions>> PostSession(Sessions sessions)
+        public async Task<ActionResult<Session>> PostSession(Session session)
         {
-            _context.Sessions.Add(sessions);
+            _context.Sessions.Add(session);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetSessions), new { id = sessions.Id }, sessions);
+            return CreatedAtAction(nameof(GetSessions), new { id = session.Id }, session);
         }
 
         [HttpPut("{Id}")]
-        public async Task<IActionResult> PutSessions(int Id, Sessions sessions)
+        public async Task<IActionResult> PutSessions(int id, Session session)
         {
-            if (Id != sessions.Id)
+            if (id != session.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(Id).State = EntityState.Modified;
+            _context.Entry(session).State = EntityState.Modified;
             await _context.SaveChangesAsync();
 
             return NoContent();
