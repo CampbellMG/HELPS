@@ -2,51 +2,23 @@
 using HELPS.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace HELPS.Migrations
 {
     [DbContext(typeof(HelpsContext))]
-    partial class HelpsContextModelSnapshot : ModelSnapshot
+    [Migration("20190528104231_StudentPropertiesComplete")]
+    partial class StudentPropertiesComplete
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn)
-                .HasAnnotation("ProductVersion", "2.2.4-servicing-10062")
+                .HasAnnotation("ProductVersion", "2.2.3-servicing-35854")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
-
-            modelBuilder.Entity("HELPS.Models.Advisor", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Email");
-
-                    b.Property<string>("FirstName");
-
-                    b.Property<bool>("IsActive");
-
-                    b.Property<string>("LastName");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Advisors");
-                });
-
-            modelBuilder.Entity("HELPS.Models.Room", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Title");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Rooms");
-                });
 
             modelBuilder.Entity("HELPS.Models.Student", b =>
                 {
@@ -96,30 +68,6 @@ namespace HELPS.Migrations
                     b.HasKey("StudentId");
 
                     b.ToTable("Students");
-                });
-
-            modelBuilder.Entity("HELPS.Models.student_workshops", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int>("available_places");
-
-                    b.Property<string>("description");
-
-                    b.Property<int>("duration");
-
-                    b.Property<string>("room_id");
-
-                    b.Property<string>("targetGroup");
-
-                    b.Property<string>("time");
-
-                    b.Property<string>("title");
-
-                    b.HasKey("id");
-
-                    b.ToTable("s_workshop");
                 });
 #pragma warning restore 612, 618
         }
