@@ -10,6 +10,7 @@ namespace HELPS.Models
         { }
 
         public DbSet<Student> Students { get; set; }
+        public DbSet<student_workshops> s_workshop { get; set; }
         public DbSet<Report> Reports { get; set; }
        
         public DbSet<Message> Messages { get; set; }

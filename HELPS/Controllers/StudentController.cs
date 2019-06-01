@@ -61,6 +61,5 @@ namespace HELPS.Controllers
         {
             return await _context.Students.ToListAsync();
         }
-        
     }
 }

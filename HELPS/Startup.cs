@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System.Data.SqlClient;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 

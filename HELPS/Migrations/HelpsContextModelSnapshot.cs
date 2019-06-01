@@ -97,6 +97,30 @@ namespace HELPS.Migrations
 
                     b.ToTable("Students");
                 });
+
+            modelBuilder.Entity("HELPS.Models.student_workshops", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("available_places");
+
+                    b.Property<string>("description");
+
+                    b.Property<int>("duration");
+
+                    b.Property<string>("room_id");
+
+                    b.Property<string>("targetGroup");
+
+                    b.Property<string>("time");
+
+                    b.Property<string>("title");
+
+                    b.HasKey("id");
+
+                    b.ToTable("s_workshop");
+                });
 #pragma warning restore 612, 618
         }
     }
