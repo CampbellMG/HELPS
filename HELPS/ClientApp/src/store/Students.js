@@ -6,7 +6,7 @@ export const actionCreators = {
   requestStudents: () => async (dispatch, getState) => {
     dispatch({ type: requestStudentsType });
 
-    const url = 'api/Student/Students';
+    const url = 'api/Student';
     const response = await fetch(url);
     const students = await response.json();
 
