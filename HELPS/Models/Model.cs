@@ -11,6 +11,9 @@ namespace HELPS.Models
 
         public DbSet<Student> Students { get; set; }
         public DbSet<Report> Reports { get; set; }
+       
+        public DbSet<Message> Messages { get; set; }
+
     }
 
     public class Student
@@ -29,4 +32,16 @@ namespace HELPS.Models
         public int SessionId { get; set; }
         public bool Generate { get; set; }
     }
+
+
+    public class Message
+    {
+        public int MessageId { get; set; }
+        public string Title { get; set; }
+        public string Content { get; set; }
+    }
+
+
+
+
 }
