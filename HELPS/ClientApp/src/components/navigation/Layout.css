@@ -1,0 +1,12 @@
+.full-container {
+    background: #EFEFEF;
+}
+
+.full-wrapper {
+    border-radius: 30px;
+}
+
+.content-wrapper {
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}

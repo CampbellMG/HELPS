@@ -1,0 +1,36 @@
+import {Route} from 'react-router';
+import Layout from './components/navigation/Layout';
+import * as React from 'react';
+import User from './components/user/User';
+import Login from './components/login/Login';
+import Info from './components/information/Info';
+import Register from './components/register/Register';
+import EmailList from './components/email/EmailList';
+import RoomEdit from './components/room/RoomEdit';
+import MessageEdit from './components/message/MessageEdit';
+import AdvisorEdit from './components/advisors/AdvisorEdit';
+import ReportGenerate from './components/reports/ReportGenerate';
+import SkillEdit from './components/skill/SkillEdit';
+import ConsultationView from './components/events/ConsultationView';
+import WorkshopView from './components/events/WorkshopView';
+import WorkshopConsultationView from './components/events/WorkshopConsultationView';
+
+export default () => (
+    <div className='p-3 h-100'>
+        <Layout>
+            <Route exact path='/' component={Login}/>
+            <Route path='/register/' component={Register} />
+            <Route path='/consultations/' component={ConsultationView}/>
+            <Route path='/workshops/' component={WorkshopView}/>
+            <Route path='/workshopsConsultations/' component={WorkshopConsultationView}/>
+            <Route path='/message/' component={MessageEdit} />
+            <Route path='/room/' component={RoomEdit} />
+            <Route path='/user/' component={User}/>
+            <Route path='/info/' component={Info}/>
+            <Route path='/email' component={EmailList}/>
+            <Route path='/advisors/' component={AdvisorEdit}/>
+            <Route path='/skill/' component={SkillEdit}/>
+            <Route path='/reports/' component={ReportGenerate}/>
+        </Layout>
+    </div>
+);
