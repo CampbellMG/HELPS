@@ -14,6 +14,7 @@ namespace HELPS.Models
        
         public DbSet<Message> Messages { get; set; }
 
+        public DbSet<Advisor> Advisors { get; set; }
     }
 
     public class Student
@@ -65,4 +66,13 @@ namespace HELPS.Models
 		public string Other { get; set; }
 
 	}
+
+    public class Advisor
+    {
+        public int Id { get; set; }
+        public string Email{ get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public bool IsActive { get; set; }
+    }
 }
