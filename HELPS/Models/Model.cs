@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace HELPS.Models
 {
+	
+	
     public class HelpsContext : DbContext
     {
         public HelpsContext(DbContextOptions<HelpsContext> options)
@@ -16,6 +18,7 @@ namespace HELPS.Models
         public DbSet<Message> Messages { get; set; }
 
         public DbSet<Advisor> Advisors { get; set; }
+        public DbSet<Sessions> Sessions { get; set; }
     }
 
     public class Student
@@ -76,4 +79,16 @@ namespace HELPS.Models
         public string LastName { get; set; }
         public bool IsActive { get; set; }
     }
+
+public class Sessions
+{
+	public int Id { get; set; }
+	public string Starttime { get; set; }
+	public int Duration { get; set; }
+	public int RoomId { get; set; }
+	public string AdvisorId { get; set; }
+	public string AdvisorName { get; set; }
+	public string StudentId { get; set; }
+	public string Type { get; set; }
+}
 }
