@@ -25,13 +25,15 @@ function renderStudentTable(props) {
         <tr>
           <th>Student ID</th>
           <th>Name</th>
+          <th>Best Contact Number</th>
         </tr>
       </thead>
       <tbody>
         {props.students.map(student =>
           <tr key={student.studentId}>
             <td>{student.studentId}</td>
-            <td>{student.name}</td>
+			<td>{student.name}</td>
+			<td>{student.bestContactNumber}</td>
           </tr>
         )}
       </tbody>
