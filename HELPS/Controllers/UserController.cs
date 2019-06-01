@@ -1,24 +1,22 @@
-﻿using HELPS.Models;
+﻿using System.Threading.Tasks;
+using HELPS.Models;
 using HELPS.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HELPS.Controllers
 {
-    [Authorize]
-    [ApiController]
-    [Route("api/login")]
+    [Route("api")]
     public class UsersController : ControllerBase
     {
-        private IUserService _userService;
+        private readonly IUserService _userService;
 
         public UsersController(IUserService userService)
         {
             _userService = userService;
         }
 
-        [AllowAnonymous]
-        [HttpPost("authenticate")]
+        [HttpPost("login")]
         public IActionResult Authenticate([FromBody] User userParam)
         {
             var user = _userService.Authenticate(userParam.Username, userParam.Password);
@@ -26,17 +24,27 @@ namespace HELPS.Controllers
             if (user == null)
                 return Unauthorized();
 
-            var returndata = new {acessToken = user.Token, isAdmin = user.admin};
-            return Ok(returndata);
+            return Ok(new {acessToken = user.Token, user.isAdmin});
+        }
+        
+        [HttpPost("register")]
+        public async Task<ActionResult<User>> Register([FromBody] User user)
+        {
+            user = await _userService.Register(user);
+            
+            return CreatedAtAction(nameof(GetUser), new {id = user.Id}, user);
         }
 
-
-        //for testing only
-        [HttpGet]
-        public IActionResult GetAll()
+        public async Task<ActionResult<User>> GetUser(int id)
         {
-            var users = _userService.GetAll();
-            return Ok(users);
+            var user = await _userService.GetUser(id);
+            
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            return user;
         }
     }
 }

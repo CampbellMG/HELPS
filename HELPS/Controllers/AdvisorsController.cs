@@ -6,8 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace HELPS.Controllers
 {
-    [Route("api/advisor")]
-    [ApiController]
+    [Route("api/[controller]")]
     public class AdvisorController : ControllerBase
     {
         private readonly HelpsContext _context;
