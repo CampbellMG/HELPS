@@ -1,10 +1,8 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using HELPS.Models;
 using Microsoft.AspNetCore.Mvc;
-using AppContext = System.AppContext;
 using Microsoft.EntityFrameworkCore;
 
 namespace HELPS.Controllers
@@ -20,23 +18,19 @@ namespace HELPS.Controllers
             _context = context;
         }
 
-           [HttpGet("[action]")]
-           public List<Message> Messages()
-           {
-               return _context.Messages.ToList();
-           }
+        [HttpGet("[action]")]
+        public List<Message> Messages()
+        {
+            return _context.Messages.ToList();
+        }
 
-
-
-        // Edited from here...
-            [HttpGet]
+        [HttpGet]
         public async Task<ActionResult<IEnumerable<Message>>> GetMessages()
         {
             return await _context.Messages.ToListAsync();
         }
 
         [HttpGet("{id}")]
-
         public async Task<ActionResult<Message>> GetMessage(int id)
         {
             var toDoItem = await _context.Messages.FindAsync(id);
@@ -45,17 +39,18 @@ namespace HELPS.Controllers
             {
                 return NotFound();
             }
+
             return toDoItem;
         }
 
         [HttpPut("{id}")]
-
         public async Task<IActionResult> PutMessage(int id, [FromBody] Message message)
         {
-            if (id != message.MessageId)
+            if (id != message.Id)
             {
                 return BadRequest();
             }
+
             _context.Entry(message).State = EntityState.Modified;
             await _context.SaveChangesAsync();
 
@@ -67,12 +62,10 @@ namespace HELPS.Controllers
         {
             _context.Messages.Add(message);
             await _context.SaveChangesAsync();
-            return CreatedAtAction(nameof(GetMessage),new { id = message.MessageId}, message);
-
+            return CreatedAtAction(nameof(GetMessage), new {id = message.Id}, message);
         }
 
         [HttpDelete("{id}")]
-
         public async Task<IActionResult> DeleteMessage(int id)
         {
             var todoItem = await _context.Messages.FindAsync(id);
@@ -81,15 +74,11 @@ namespace HELPS.Controllers
             {
                 return NotFound();
             }
+
             _context.Messages.Remove(todoItem);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
-
-        // to here.
-
-
-
     }
 }

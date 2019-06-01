@@ -1,14 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Authorization;
+﻿using HELPS.Models;
 using HELPS.Services;
-using HELPS.Models;
-using System.Collections.Generic;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace HELPS.Controllers
 {
     [Authorize]
     [ApiController]
-    [Route("api/login")] 
+    [Route("api/login")]
     public class UsersController : ControllerBase
     {
         private IUserService _userService;
@@ -20,14 +19,14 @@ namespace HELPS.Controllers
 
         [AllowAnonymous]
         [HttpPost("authenticate")]
-        public IActionResult Authenticate([FromBody]User userParam)
+        public IActionResult Authenticate([FromBody] User userParam)
         {
             var user = _userService.Authenticate(userParam.Username, userParam.Password);
 
             if (user == null)
                 return Unauthorized();
 
-            var returndata = new { acessToken = user.Token, isAdmin = user.admin };
+            var returndata = new {acessToken = user.Token, isAdmin = user.admin};
             return Ok(returndata);
         }
 

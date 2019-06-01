@@ -15,7 +15,7 @@ namespace HELPS.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn)
-                .HasAnnotation("ProductVersion", "2.2.4-servicing-10062")
+                .HasAnnotation("ProductVersion", "2.2.3-servicing-35854")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             modelBuilder.Entity("HELPS.Models.Advisor", b =>
@@ -36,16 +36,64 @@ namespace HELPS.Migrations
                     b.ToTable("Advisors");
                 });
 
-            modelBuilder.Entity("HELPS.Models.Room", b =>
+            modelBuilder.Entity("HELPS.Models.Message", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Content");
 
                     b.Property<string>("Title");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Rooms");
+                    b.ToTable("Messages");
+                });
+
+            modelBuilder.Entity("HELPS.Models.Report", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("From");
+
+                    b.Property<bool>("Generate");
+
+                    b.Property<int>("SessionId");
+
+                    b.Property<string>("SkillSet");
+
+                    b.Property<string>("To");
+
+                    b.Property<string>("Topic");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Reports");
+                });
+
+            modelBuilder.Entity("HELPS.Models.Session", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("AdvisorId");
+
+                    b.Property<string>("AdvisorName");
+
+                    b.Property<int>("Duration");
+
+                    b.Property<int>("RoomId");
+
+                    b.Property<string>("Starttime");
+
+                    b.Property<string>("StudentId");
+
+                    b.Property<string>("Type");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Sessions");
                 });
 
             modelBuilder.Entity("HELPS.Models.Student", b =>
@@ -98,28 +146,28 @@ namespace HELPS.Migrations
                     b.ToTable("Students");
                 });
 
-            modelBuilder.Entity("HELPS.Models.student_workshops", b =>
+            modelBuilder.Entity("HELPS.Models.Workshop", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("available_places");
+                    b.Property<int>("Available_places");
 
-                    b.Property<string>("description");
+                    b.Property<string>("Description");
 
-                    b.Property<int>("duration");
+                    b.Property<int>("Duration");
 
-                    b.Property<string>("room_id");
+                    b.Property<string>("Room_id");
 
-                    b.Property<string>("targetGroup");
+                    b.Property<string>("TargetGroup");
 
-                    b.Property<string>("time");
+                    b.Property<string>("Time");
 
-                    b.Property<string>("title");
+                    b.Property<string>("Title");
 
-                    b.HasKey("id");
+                    b.HasKey("Id");
 
-                    b.ToTable("s_workshop");
+                    b.ToTable("Workshops");
                 });
 #pragma warning restore 612, 618
         }
