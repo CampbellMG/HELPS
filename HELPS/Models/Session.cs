@@ -6,9 +6,9 @@ namespace HELPS.Models
         public string Starttime { get; set; }
         public int Duration { get; set; }
         public int RoomId { get; set; }
-        public string AdvisorId { get; set; }
+        public int AdvisorId { get; set; }
         public string AdvisorName { get; set; }
-        public string StudentId { get; set; }
+        public int StudentId { get; set; }
         public string Type { get; set; }
     }
 }

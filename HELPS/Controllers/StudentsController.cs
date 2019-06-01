@@ -1,30 +1,33 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using HELPS.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace HELPS.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
-    public class StudentController : Controller
+    public class StudentsController : StudentUserController
     {
-        private readonly HelpsContext _context;
-
-        public StudentController(HelpsContext context)
+        public StudentsController(HelpsContext context) : base(context)
         {
-            _context = context;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Student>>> GetAllStudents()
+        {
+            return IsAdmin() ? Context.Students.ToList() : new List<Student> {Student.Value};
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<Student>> GetStudent(int id)
         {
-            var student = await _context.Students.FindAsync(id);
+            var student = IsAdmin() ? Context.Students.Find(id) : Student.Value;
 
-            if (student == null)
-            {
-                return NotFound();
-            }
+            if (student == null) return NotFound();
 
             return student;
         }
@@ -32,21 +35,12 @@ namespace HELPS.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutStudent(int id, [FromBody] Student student)
         {
-            if (id != student.StudentId)
-            {
-                return NotFound();
-            }
+            if (id != student.Id) return NotFound();
 
-            _context.Entry(student).State = EntityState.Modified;
-            await _context.SaveChangesAsync();
+            Context.Entry(student).State = EntityState.Modified;
+            await Context.SaveChangesAsync();
 
             return NoContent();
-        }
-
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Student>>> GetAllStudents()
-        {
-            return await _context.Students.ToListAsync();
         }
     }
 }

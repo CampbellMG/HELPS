@@ -16,5 +16,7 @@ namespace HELPS.Models
         public DbSet<Advisor> Advisors { get; set; }
         public DbSet<Session> Sessions { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<Room> Rooms { get; set; }
+        public DbSet<Email> Emails { get; set; }
     }
 }

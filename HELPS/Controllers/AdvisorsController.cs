@@ -1,50 +1,71 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using HELPS.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace HELPS.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
-    public class AdvisorController : ControllerBase
+    public class AdvisorsController : StudentUserController
     {
-        private readonly HelpsContext _context;
-
-        public AdvisorController(HelpsContext context)
+        public AdvisorsController(HelpsContext context) : base(context)
         {
-            _context = context;
         }
-
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Advisor>>> GetAdvisors()
         {
-            return await _context.Advisors.ToListAsync();
+            return !IsAdmin() ? StudentAdvisors.Value.ToList() : Context.Advisors.ToList();
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Advisor>> GetAdvisor(int id)
+        {
+            if (IsAdmin())
+            {
+                var advisor = Context.Advisors.Find(id);
+                if (advisor == null) return NotFound();
+                return advisor;
+            }
+
+
+            try
+            {
+                return StudentAdvisors.Value.First(advisor => advisor.Id == id);
+            }
+            catch (InvalidOperationException)
+            {
+                return NotFound();
+            }
         }
 
         [HttpPost]
         public async Task<ActionResult<IEnumerable<Advisor>>> AddAdvisor(Advisor advisor)
         {
-            _context.Advisors.Add(advisor);
-            await _context.SaveChangesAsync();
+            if (!IsAdmin()) return Unauthorized();
 
-            return CreatedAtAction(nameof(GetAdvisors), new { id = advisor.Id }, advisor);
+            Context.Advisors.Add(advisor);
+            await Context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(GetAdvisors), new {id = advisor.Id}, advisor);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutAdvisor (int id, Advisor advisor)
+        public async Task<IActionResult> PutAdvisor(int id, Advisor advisor)
         {
-            if (id != advisor.Id)
-            {
-                return BadRequest();
-            }
+            if (!IsAdmin()) return Unauthorized();
 
-            _context.Entry(advisor).State = EntityState.Modified;
-            await _context.SaveChangesAsync();
+            if (id != advisor.Id) return BadRequest();
+
+            Context.Entry(advisor).State = EntityState.Modified;
+            await Context.SaveChangesAsync();
 
             return NoContent();
         }
-
     }
 }

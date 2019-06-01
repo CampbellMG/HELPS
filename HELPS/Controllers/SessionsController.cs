@@ -1,77 +1,83 @@
-﻿using HELPS.Models;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using HELPS.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace HELPS.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
-    public class SessionsController : Controller
+    public class SessionsController : StudentUserController
     {
-        private readonly HelpsContext _context;
-
-        public SessionsController(HelpsContext context)
+        public SessionsController(HelpsContext context) : base(context)
         {
-            _context = context;
         }
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Session>>> GetSessions()
         {
-            return await _context.Sessions.ToListAsync();
+            return IsAdmin() ? Context.Sessions.ToList() : StudentSessions.Value.ToList();
         }
 
-        [HttpGet("{Id}")]
-        async Task<ActionResult<IEnumerable<Session>>> GetSessions(int id)
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Session>> GetSession(int id)
         {
-            var todoItem = await _context.Sessions.FindAsync(id);
+            if (IsAdmin())
+            {
+                var session = Context.Sessions.Find(id);
+                if (session == null) return NotFound();
+                return session;
+            }
 
-            if (todoItem == null)
+            try
+            {
+                return StudentSessions.Value.First(session => session.Id == id);
+            }
+            catch (InvalidOperationException)
             {
                 return NotFound();
             }
-
-            return await GetSessions(id);
         }
 
-        [HttpPost("{Id}")]
+        [HttpPost("{id}")]
         public async Task<ActionResult<Session>> PostSession(Session session)
         {
-            _context.Sessions.Add(session);
-            await _context.SaveChangesAsync();
+            if (!IsAdmin()) return Unauthorized();
 
-            return CreatedAtAction(nameof(GetSessions), new { id = session.Id }, session);
+            Context.Sessions.Add(session);
+            await Context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(GetSessions), new {id = session.Id}, session);
         }
 
-        [HttpPut("{Id}")]
+        [HttpPut("{id}")]
         public async Task<IActionResult> PutSessions(int id, Session session)
         {
-            if (id != session.Id)
-            {
-                return BadRequest();
-            }
+            if (!IsAdmin()) return Unauthorized();
 
-            _context.Entry(session).State = EntityState.Modified;
-            await _context.SaveChangesAsync();
+            if (id != session.Id) return BadRequest();
+
+            Context.Entry(session).State = EntityState.Modified;
+            await Context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        [HttpDelete("{Id}")]
-        public async Task<IActionResult> DeleteSessions(int Id)
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteSessions(int id)
         {
-            var todoItem = await _context.Sessions.FindAsync(Id);
+            if (!IsAdmin()) return Unauthorized();
 
-            if (todoItem == null)
-            {
-                return NotFound();
-            }
+            var todoItem = await Context.Sessions.FindAsync(id);
 
-            _context.Sessions.Remove(todoItem);
-            await _context.SaveChangesAsync();
+            if (todoItem == null) return NotFound();
+
+            Context.Sessions.Remove(todoItem);
+            await Context.SaveChangesAsync();
 
             return NoContent();
         }

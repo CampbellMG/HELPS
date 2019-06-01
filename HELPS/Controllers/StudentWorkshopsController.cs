@@ -13,28 +13,21 @@ namespace HELPS.Controllers
 {
     [Authorize]
     [Route("api/[controller]")]
-    public class WorkshopsController : StudentUserController
+    public class StudentWorkshops : StudentUserController
     {
-        public WorkshopsController(HelpsContext context) : base(context)
+        public StudentWorkshops(HelpsContext context) : base(context)
         {
         }
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Workshop>>> GetWorkshops()
         {
-            return IsAdmin() ? Context.Workshops.ToList() : StudentWorkshops.Value.ToList();
+            return StudentWorkshops.Value.ToList();
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<Workshop>> GetWorkshop(int id)
         {
-            if (IsAdmin())
-            {
-                var workshop = Context.Workshops.Find(id);
-                if (workshop == null) return NotFound();
-                return workshop;
-            }
-
             try
             {
                 return StudentWorkshops.Value.First(workshop => workshop.Id == id);
@@ -48,20 +41,9 @@ namespace HELPS.Controllers
         [HttpPost]
         public async Task<ActionResult<Workshop>> AddWorkshop(Workshop workshop)
         {
-            if (!IsAdmin()) return Unauthorized();
-
-            Context.Workshops.Add(workshop);
-            await Context.SaveChangesAsync();
-
-            return CreatedAtAction(nameof(GetWorkshop), new {id = workshop.Id}, workshop);
-        }
-
-        [HttpPut("{id}")]
-        public async Task<IActionResult> AddWorkshop(int id, Workshop workshop)
-        {
-            if (!IsAdmin()) return Unauthorized();
-
-            if (id != workshop.Id) return BadRequest();
+            var studentIds = workshop.StudentIds.ToList();
+            studentIds.Add(StudentUser.Value.Id);
+            workshop.StudentIds = studentIds.ToArray();
 
             Context.Entry(workshop).State = EntityState.Modified;
             await Context.SaveChangesAsync();
@@ -77,7 +59,11 @@ namespace HELPS.Controllers
 
             if (workshop == null) return NotFound();
 
-            Context.Workshops.Remove(workshop);
+            var studentIds = workshop.StudentIds.ToList();
+            studentIds.Remove(StudentUser.Value.Id);
+            workshop.StudentIds = studentIds.ToArray();
+            
+            Context.Entry(workshop).State = EntityState.Modified;
             await Context.SaveChangesAsync();
 
             return NoContent();
