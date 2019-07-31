@@ -70,6 +70,9 @@
     "test": "react-scripts test",
     "lint": "tslint src/**/*.ts"
   },
+  "jest": {
+    "snapshotSerializers": [ "enzyme-to-json/serializer" ]
+  },
   "browserslist": [
     ">0.2%",
     "not dead",

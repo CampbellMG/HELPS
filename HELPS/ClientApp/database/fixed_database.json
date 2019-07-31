@@ -163,6 +163,24 @@
       "skillId": -1,
       "assignedStudentIds": [],
       "id": 5
+    },
+    {
+      "start": "2019-07-27T17:30:00.000Z",
+      "end": "2019-07-27T18:00:00.000Z",
+      "startDate": "Sun Jul 28 2019 03:30:00 GMT+1000 (Australian Eastern Standard Time)",
+      "endDate": "Sun Jul 28 2019 04:00:00 GMT+1000 (Australian Eastern Standard Time)",
+      "roomId": -1,
+      "time": "Sun Jul 28 2019 03:30:00 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": "30",
+      "title": "",
+      "cutOff": 0,
+      "maximum": 0,
+      "targetGroup": "",
+      "description": "",
+      "availablePlaces": 0,
+      "skillId": -1,
+      "assignedStudentIds": [],
+      "id": 6
     }
   ],
   "users": [
