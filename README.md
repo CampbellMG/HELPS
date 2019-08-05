@@ -1,4 +1,4 @@
-## UTS HELPS Project (41095 - Software Engineering Studio 2A)
+## UTS HELPS Project (41095 - Software Engineering Studio 2A/2B)
 
 ### Setting up a development environment
 
