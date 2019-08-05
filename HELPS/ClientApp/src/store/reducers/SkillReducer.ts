@@ -4,14 +4,14 @@ import { Skill } from '../../types/model/Skill';
 import { isUndefined } from 'util';
 import { NO_MATCH, getIdentifiableIndexById } from '../../util';
 
-const skill1: Skill = { id: 1, title: 'skill1' };
+const initialSkill: Skill = { id: 0, title: '' };
 const initialState: SkillState = {
-    skills: [skill1, { id: 2, title: 'skill2' }, { id: 3, title: 'skill3' }],
-    selectedSkill: skill1,
+    skills: [],
+    selectedSkill: initialSkill,
     searchTerm: '',
     editing: false,
     filter: '',
-    newSkillTitle: skill1.title,
+    newSkillTitle: initialSkill.title,
     isNewMode: false
 };
 

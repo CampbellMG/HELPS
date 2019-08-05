@@ -57,13 +57,13 @@ namespace HELPS.Controllers
             return NoContent();
         }
 
-        [HttpPost("{id}")]
-        public async Task<ActionResult<Room>> PostRoom(Room session)
+        [HttpPost]
+        public async Task<ActionResult<Room>> PostRoom([FromBody] Room room)
         {
-            Context.Rooms.Add(session);
+            Context.Rooms.Add(room);
             await Context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetRoom), new {id = session.Id}, session);
+            return CreatedAtAction(nameof(GetRoom), new {id = room.Id}, room);
         }
 
         [HttpDelete("{id}")]

@@ -43,7 +43,7 @@ namespace HELPS.Controllers
             }
         }
 
-        [HttpPost("{id}")]
+        [HttpPost]
         public async Task<ActionResult<Session>> PostSession(Session session)
         {
             if (!IsAdmin()) return Unauthorized();

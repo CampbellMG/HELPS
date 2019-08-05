@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\campbell\.Rider2018.3\config\consoles\db" t="IncludeRecursive" />
+    <e p="C:\Users\campbell\.Rider2018.3\config\extensions" t="IncludeRecursive" />
+    <e p="C:\Users\campbell\.Rider2018.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\campbell\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_HELPS.-431221546.00" t="ExcludeRecursive" />
+    <e p="C:\Users\campbell\IdeaProjects\HELPS" t="IncludeFlat">
+      <e p="HELPS" t="IncludeRecursive">
+        <e p=".gitignore" t="Include" />
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="ClientApp" t="Include">
+          <e p=".gitignore" t="Include" />
+          <e p="database" t="Include">
+            <e p="database.json" t="Include" />
+            <e p="fixed_database.json" t="Include" />
+            <e p="schema.js" t="Include" />
+            <e p="server.js" t="Include" />
+          </e>
+          <e p="node_modules" t="ExcludeRecursive">
+            <e p="@types" t="IncludeRecursive">
+              <e p="bootstrap" t="IncludeRecursive" />
+              <e p="draft-js" t="IncludeRecursive" />
+              <e p="history" t="IncludeRecursive" />
+              <e p="hoist-non-react-statics" t="IncludeRecursive" />
+              <e p="jest" t="IncludeRecursive" />
+              <e p="jest-diff" t="IncludeRecursive" />
+              <e p="jquery" t="IncludeRecursive" />
+              <e p="moment" t="IncludeRecursive" />
+              <e p="node" t="IncludeRecursive" />
+              <e p="prop-types" t="IncludeRecursive" />
+              <e p="react" t="IncludeRecursive" />
+              <e p="react-big-calendar" t="IncludeRecursive" />
+              <e p="react-bootstrap" t="IncludeRecursive" />
+              <e p="react-dom" t="IncludeRecursive" />
+              <e p="react-draft-wysiwyg" t="IncludeRecursive" />
+              <e p="react-icons" t="IncludeRecursive" />
+              <e p="react-redux" t="IncludeRecursive" />
+              <e p="react-router" t="IncludeRecursive" />
+              <e p="react-router-bootstrap" t="IncludeRecursive" />
+              <e p="react-router-dom" t="IncludeRecursive" />
+              <e p="react-router-redux" t="IncludeRecursive" />
+              <e p="redux" t="IncludeRecursive" />
+              <e p="redux-form" t="IncludeRecursive" />
+              <e p="redux-thunk" t="IncludeRecursive" />
+              <e p="sizzle" t="IncludeRecursive" />
+              <e p="unist" t="IncludeRecursive" />
+              <e p="vfile-message" t="IncludeRecursive" />
+            </e>
+            <e p="ajv" t="IncludeRecursive" />
+            <e p="bootstrap" t="IncludeRecursive" />
+            <e p="concurrently" t="IncludeRecursive" />
+            <e p="cross-env" t="IncludeRecursive" />
+            <e p="csstype" t="IncludeRecursive" />
+            <e p="draft-js" t="IncludeRecursive" />
+            <e p="draftjs-to-html" t="IncludeRecursive" />
+            <e p="faker" t="IncludeRecursive" />
+            <e p="hoist-non-react-statics" t="IncludeRecursive" />
+            <e p="html-to-draftjs" t="IncludeRecursive" />
+            <e p="immutable" t="IncludeRecursive" />
+            <e p="jquery" t="IncludeRecursive" />
+            <e p="json-schema-faker" t="IncludeRecursive" />
+            <e p="json-server" t="IncludeRecursive" />
+            <e p="jsonwebtoken" t="IncludeRecursive" />
+            <e p="moment" t="IncludeRecursive" />
+            <e p="node-sass" t="IncludeRecursive" />
+            <e p="popper.js" t="IncludeRecursive" />
+            <e p="react" t="IncludeRecursive" />
+            <e p="react-big-calendar" t="IncludeRecursive" />
+            <e p="react-bootstrap" t="IncludeRecursive" />
+            <e p="react-chips" t="IncludeRecursive" />
+            <e p="react-datetime" t="IncludeRecursive" />
+            <e p="react-dom" t="IncludeRecursive" />
+            <e p="react-draft-wysiwyg" t="IncludeRecursive" />
+            <e p="react-dropzone" t="IncludeRecursive" />
+            <e p="react-icons" t="IncludeRecursive" />
+            <e p="react-redux" t="IncludeRecursive" />
+            <e p="react-router-bootstrap" t="IncludeRecursive" />
+            <e p="react-router-dom" t="IncludeRecursive" />
+            <e p="react-router-redux" t="IncludeRecursive" />
+            <e p="react-rrule-generator" t="IncludeRecursive" />
+            <e p="react-scripts" t="IncludeRecursive" />
+            <e p="redux" t="IncludeRecursive" />
+            <e p="redux-form" t="IncludeRecursive" />
+            <e p="redux-thunk" t="IncludeRecursive" />
+            <e p="rrule" t="IncludeRecursive" />
+            <e p="tslint" t="IncludeRecursive" />
+          </e>
+          <e p="package-lock.json" t="Include" />
+          <e p="package.json" t="Include" />
+          <e p="public" t="Include">
+            <e p="favicon.ico" t="Include" />
+            <e p="index.html" t="Include" />
+            <e p="manifest.json" t="Include" />
+          </e>
+          <e p="src" t="Include">
+            <e p="App.scss" t="Include" />
+            <e p="App.test.js" t="Include" />
+            <e p="App.test.tsx" t="Include" />
+            <e p="App.tsx" t="Include" />
+            <e p="components" t="Include">
+              <e p="advisors" t="Include">
+                <e p="AdvisorEdit.tsx" t="Include" />
+                <e p="AdvisorForm.tsx" t="Include" />
+              </e>
+              <e p="dialog" t="Include">
+                <e p="Dialog.tsx" t="Include" />
+              </e>
+              <e p="editorlist" t="Include">
+                <e p="EditorList.css" t="Include" />
+                <e p="EditorList.tsx" t="Include" />
+              </e>
+              <e p="email" t="Include">
+                <e p="EmailEdit.tsx" t="Include" />
+                <e p="EmailList.tsx" t="Include" />
+              </e>
+              <e p="events" t="Include">
+                <e p="ConsultationView.tsx" t="Include" />
+                <e p="eventView" t="Include">
+                  <e p="CalendarFilter.tsx" t="Include" />
+                  <e p="EmailSubmit.tsx" t="Include" />
+                  <e p="EventForm.tsx" t="Include" />
+                </e>
+                <e p="EventView.tsx" t="Include" />
+                <e p="forms" t="Include">
+                  <e p="AdminSessionDetailForm.tsx" t="Include" />
+                  <e p="AdminWorkshopDetailForm.tsx" t="Include" />
+                  <e p="EventForm.css" t="Include" />
+                  <e p="StudentSessionDetailForm.tsx" t="Include" />
+                  <e p="StudentWorkshopDetailForm.tsx" t="Include" />
+                </e>
+                <e p="lists" t="Include">
+                  <e p="AdvisorList.tsx" t="Include" />
+                  <e p="RoomList.tsx" t="Include" />
+                  <e p="SkillList.tsx" t="Include" />
+                  <e p="StudentList.tsx" t="Include" />
+                </e>
+                <e p="WorkshopConsultationView.tsx" t="Include" />
+                <e p="WorkshopView.tsx" t="Include" />
+              </e>
+              <e p="information" t="Include">
+                <e p="Info.tsx" t="Include" />
+              </e>
+              <e p="login" t="Include">
+                <e p="Login.css" t="Include" />
+                <e p="Login.tsx" t="Include" />
+                <e p="LoginForm.tsx" t="Include" />
+              </e>
+              <e p="message" t="Include">
+                <e p="MessageEdit.tsx" t="Include" />
+              </e>
+              <e p="navigation" t="Include">
+                <e p="Layout.css" t="Include" />
+                <e p="Layout.tsx" t="Include" />
+                <e p="Menu.ts" t="Include" />
+                <e p="NavMenu.css" t="Include" />
+                <e p="NavMenu.tsx" t="Include" />
+              </e>
+              <e p="register" t="Include">
+                <e p="Register.css" t="Include" />
+                <e p="Register.tsx" t="Include" />
+              </e>
+              <e p="reports" t="Include">
+                <e p="ReportForm.tsx" t="Include" />
+                <e p="ReportGenerate.tsx" t="Include" />
+              </e>
+              <e p="room" t="Include">
+                <e p="RoomEdit.tsx" t="Include" />
+              </e>
+              <e p="skill" t="Include">
+                <e p="SkillEdit.tsx" t="Include" />
+              </e>
+              <e p="user" t="Include">
+                <e p="User.tsx" t="Include" />
+                <e p="UserDetailsForm.tsx" t="Include" />
+              </e>
+            </e>
+            <e p="index.tsx" t="Include" />
+            <e p="react-app-env.d.ts" t="Include" />
+            <e p="res" t="Include">
+              <e p="plus.png" t="Include" />
+              <e p="uts-white.png" t="Include" />
+              <e p="uts.png" t="Include" />
+            </e>
+            <e p="serviceWorker.ts" t="Include" />
+            <e p="store" t="Include">
+              <e p="actions" t="Include">
+                <e p="AdvisorActions.ts" t="Include" />
+                <e p="AuthActions.ts" t="Include" />
+                <e p="EmailActions.ts" t="Include" />
+                <e p="MessageActions.ts" t="Include" />
+                <e p="RoomActions.ts" t="Include" />
+                <e p="SessionActions.ts" t="Include" />
+                <e p="SkillActions.ts" t="Include" />
+                <e p="UserActions.ts" t="Include" />
+                <e p="WorkshopActions.ts" t="Include" />
+              </e>
+              <e p="reducers" t="Include">
+                <e p="AdvisorReducer.ts" t="Include" />
+                <e p="AuthReducer.ts" t="Include" />
+                <e p="EmailReducer.ts" t="Include" />
+                <e p="MessageReducer.ts" t="Include" />
+                <e p="RoomReducer.ts" t="Include" />
+                <e p="SessionReducer.ts" t="Include" />
+                <e p="SkillReducer.ts" t="Include" />
+                <e p="UserReducer.ts" t="Include" />
+                <e p="WorkshopReducer.ts" t="Include" />
+              </e>
+              <e p="Store.ts" t="Include" />
+            </e>
+            <e p="types" t="Include">
+              <e p="components" t="Include">
+                <e p="AdvisorTypes.ts" t="Include" />
+                <e p="AppTypes.ts" t="Include" />
+                <e p="DialogTypes.ts" t="Include" />
+                <e p="EditorListTypes.ts" t="Include" />
+                <e p="EmailTypes.ts" t="Include" />
+                <e p="InfoTypes.ts" t="Include" />
+                <e p="LayoutTypes.ts" t="Include" />
+                <e p="LoginTypes.ts" t="Include" />
+                <e p="MessageTypes.ts" t="Include" />
+                <e p="NavMenuTypes.ts" t="Include" />
+                <e p="RegisterTypes.ts" t="Include" />
+                <e p="RoomTypes.ts" t="Include" />
+                <e p="SkillTypes.ts" t="Include" />
+                <e p="UserTypes.ts" t="Include" />
+                <e p="WorkshopRegistrationTypes.ts" t="Include" />
+              </e>
+              <e p="model" t="Include">
+                <e p="Advisor.ts" t="Include" />
+                <e p="Email.ts" t="Include" />
+                <e p="HELPSEvent.ts" t="Include" />
+                <e p="Identifiable.ts" t="Include" />
+                <e p="Message.ts" t="Include" />
+                <e p="Room.ts" t="Include" />
+                <e p="Session.ts" t="Include" />
+                <e p="Skill.ts" t="Include" />
+                <e p="Student.ts" t="Include" />
+                <e p="Workshop.ts" t="Include" />
+              </e>
+              <e p="store" t="Include">
+                <e p="AdvisorActionTypes.ts" t="Include" />
+                <e p="AdvisorReducerTypes.ts" t="Include" />
+                <e p="AuthActionTypes.ts" t="Include" />
+                <e p="AuthReducerTypes.ts" t="Include" />
+                <e p="EmailActionTypes.ts" t="Include" />
+                <e p="EmailReducerTypes.ts" t="Include" />
+                <e p="MessageActionTypes.ts" t="Include" />
+                <e p="MessageReducerTypes.ts" t="Include" />
+                <e p="RoomActionTypes.ts" t="Include" />
+                <e p="RoomReducerTypes.ts" t="Include" />
+                <e p="SessionActionTypes.ts" t="Include" />
+                <e p="SessionReducerTypes.ts" t="Include" />
+                <e p="SkillActionTypes.ts" t="Include" />
+                <e p="SkillReducerTypes.ts" t="Include" />
+                <e p="StoreTypes.ts" t="Include" />
+                <e p="UserActionTypes.ts" t="Include" />
+                <e p="UserReducerTypes.ts" t="Include" />
+                <e p="WorkshopActionTypes.ts" t="Include" />
+                <e p="WorkshopReducerTypes.ts" t="Include" />
+              </e>
+              <e p="util" t="Include">
+                <e p="Editable.tsx" t="Include" />
+              </e>
+            </e>
+            <e p="util.ts" t="Include" />
+          </e>
+          <e p="tsconfig.json" t="Include" />
+          <e p="tslint.json" t="Include" />
+        </e>
+        <e p="Controllers" t="Include">
+          <e p="AdvisorsController.cs" t="Include" />
+          <e p="EmailsController.cs" t="Include" />
+          <e p="MessagesController.cs" t="Include" />
+          <e p="ReportsController.cs" t="Include" />
+          <e p="RoomsController.cs" t="Include" />
+          <e p="SessionsController.cs" t="Include" />
+          <e p="StudentsController.cs" t="Include" />
+          <e p="StudentUserController.cs" t="Include" />
+          <e p="StudentWorkshopsController.cs" t="Include" />
+          <e p="UserController.cs" t="Include" />
+          <e p="WorkshopsController.cs" t="Include" />
+        </e>
+        <e p="Helpers" t="Include">
+          <e p="AppSettings.cs" t="Include" />
+        </e>
+        <e p="HELPS.csproj" t="IncludeRecursive" />
+        <e p="Migrations" t="Include">
+          <e p="20190805020418_SemesterOne.cs" t="Include" />
+          <e p="20190805020418_SemesterOne.Designer.cs" t="Include" />
+          <e p="HelpsContextModelSnapshot.cs" t="Include" />
+        </e>
+        <e p="Models" t="Include">
+          <e p="Advisor.cs" t="Include" />
+          <e p="Email.cs" t="Include" />
+          <e p="HelpsContext.cs" t="Include" />
+          <e p="Message.cs" t="Include" />
+          <e p="Report.cs" t="Include" />
+          <e p="Room.cs" t="Include" />
+          <e p="Session.cs" t="Include" />
+          <e p="Student.cs" t="Include" />
+          <e p="User.cs" t="Include" />
+          <e p="Workshop.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.2" t="Include">
+              <e p="HELPS.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Pages" t="Include">
+          <e p="_ViewImports.cshtml" t="Include" />
+          <e p="Error.cshtml" t="Include" />
+          <e p="Error.cshtml.cs" t="Include" />
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="Services" t="Include">
+          <e p="UserService.cs" t="Include" />
+        </e>
+        <e p="Startup.cs" t="Include" />
+      </e>
+      <e p="HELPS.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

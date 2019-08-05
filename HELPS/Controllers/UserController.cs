@@ -24,7 +24,7 @@ namespace HELPS.Controllers
             if (user == null)
                 return Unauthorized();
 
-            return Ok(new {acessToken = user.Token, user.isAdmin});
+            return Ok(new {accessToken = user.Token, user.isAdmin});
         }
         
         [HttpPost("register")]

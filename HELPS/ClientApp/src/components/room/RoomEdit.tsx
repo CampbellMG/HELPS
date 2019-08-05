@@ -17,10 +17,10 @@ class RoomEdit extends React.Component<RoomProps, RoomState> {
         this.props.fetchRooms();
         this.state = {
             rooms: props.rooms,
-            selectedRoom: props.rooms[0],
+            selectedRoom: props.selectedRoom,
             editing: false,
             filter: '',
-            newRoomTitle: props.rooms[0].title,
+            newRoomTitle: props.selectedRoom.title,
             isNewMode: false
         };
     }

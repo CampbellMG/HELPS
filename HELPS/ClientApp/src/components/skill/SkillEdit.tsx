@@ -17,10 +17,10 @@ class SkillEdit extends React.Component<SkillProps, SkillState> {
         this.props.fetchSkills();
         this.state = {
             skills: props.skills,
-            selectedSkill: props.skills[0],
+            selectedSkill: props.selectedSkill,
             editing: false,
             filter: '',
-            newSkillTitle: props.skills[0].title,
+            newSkillTitle: props.selectedSkill.title,
             isNewMode: false
         };
     }

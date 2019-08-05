@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace HELPS.Migrations
@@ -21,6 +22,20 @@ namespace HELPS.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Advisors", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Emails",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
+                    Title = table.Column<int>(nullable: false),
+                    Content = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Emails", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -56,6 +71,19 @@ namespace HELPS.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Rooms",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
+                    Title = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Rooms", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Sessions",
                 columns: table => new
                 {
@@ -64,9 +92,9 @@ namespace HELPS.Migrations
                     Starttime = table.Column<string>(nullable: true),
                     Duration = table.Column<int>(nullable: false),
                     RoomId = table.Column<int>(nullable: false),
-                    AdvisorId = table.Column<string>(nullable: true),
+                    AdvisorId = table.Column<int>(nullable: false),
                     AdvisorName = table.Column<string>(nullable: true),
-                    StudentId = table.Column<string>(nullable: true),
+                    StudentId = table.Column<int>(nullable: false),
                     Type = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
@@ -78,7 +106,7 @@ namespace HELPS.Migrations
                 name: "Students",
                 columns: table => new
                 {
-                    StudentId = table.Column<int>(nullable: false)
+                    Id = table.Column<int>(nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Name = table.Column<string>(nullable: true),
                     RegisteredDate = table.Column<string>(nullable: true),
@@ -103,7 +131,23 @@ namespace HELPS.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Students", x => x.StudentId);
+                    table.PrimaryKey("PK_Students", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Users",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
+                    Username = table.Column<string>(nullable: true),
+                    Password = table.Column<string>(nullable: true),
+                    isAdmin = table.Column<bool>(nullable: false),
+                    Token = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Users", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -115,15 +159,43 @@ namespace HELPS.Migrations
                     Title = table.Column<string>(nullable: true),
                     Time = table.Column<string>(nullable: true),
                     Duration = table.Column<int>(nullable: false),
-                    Room_id = table.Column<string>(nullable: true),
+                    RoomId = table.Column<int>(nullable: false),
                     TargetGroup = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
-                    Available_places = table.Column<int>(nullable: false)
+                    AvailablePlaces = table.Column<int>(nullable: false),
+                    AdvisorId = table.Column<int>(nullable: false),
+                    StudentIds = table.Column<int[]>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Workshops", x => x.Id);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "EmailVariable",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
+                    Variable = table.Column<string>(nullable: true),
+                    Example = table.Column<string>(nullable: true),
+                    EmailId = table.Column<int>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_EmailVariable", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_EmailVariable_Emails_EmailId",
+                        column: x => x.EmailId,
+                        principalTable: "Emails",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_EmailVariable_EmailId",
+                table: "EmailVariable",
+                column: "EmailId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -132,10 +204,16 @@ namespace HELPS.Migrations
                 name: "Advisors");
 
             migrationBuilder.DropTable(
+                name: "EmailVariable");
+
+            migrationBuilder.DropTable(
                 name: "Messages");
 
             migrationBuilder.DropTable(
                 name: "Reports");
+
+            migrationBuilder.DropTable(
+                name: "Rooms");
 
             migrationBuilder.DropTable(
                 name: "Sessions");
@@ -144,7 +222,13 @@ namespace HELPS.Migrations
                 name: "Students");
 
             migrationBuilder.DropTable(
+                name: "Users");
+
+            migrationBuilder.DropTable(
                 name: "Workshops");
+
+            migrationBuilder.DropTable(
+                name: "Emails");
         }
     }
 }

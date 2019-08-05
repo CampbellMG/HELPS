@@ -32,7 +32,8 @@ namespace HELPS.Controllers
             try
             {
                 var userId = User.Claims.First(claim => claim.Type == ClaimTypes.Name).Value;
-                return Context.Users.Find(userId);
+                var parsedUserId = Int32.Parse(userId);
+                return Context.Users.Find(parsedUserId);
             }
             catch (Exception)
             {

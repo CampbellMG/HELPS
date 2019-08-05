@@ -58,6 +58,8 @@ export const login = (username: string, password: string) => async (dispatch: Di
         body: JSON.stringify({ username, password })
     });
 
+
+
     const loginResult = await loginResponse.json();
 
     if (!loginResponse.ok || !loginResult.accessToken) {

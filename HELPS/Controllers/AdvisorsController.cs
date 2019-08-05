@@ -45,7 +45,7 @@ namespace HELPS.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<IEnumerable<Advisor>>> AddAdvisor(Advisor advisor)
+        public async Task<ActionResult<IEnumerable<Advisor>>> AddAdvisor([FromBody] Advisor advisor)
         {
             if (!IsAdmin()) return Unauthorized();
 
