@@ -9,9 +9,9 @@ import {
     AdvisorFormState
 } from '../../types/components/AdvisorTypes';
 import {Button} from 'react-bootstrap';
-import {AppState} from "../../types/store/StoreTypes";
-import {ThunkDispatch} from "redux-thunk";
-import {connect} from "react-redux";
+import {AppState} from '../../types/store/StoreTypes';
+import {ThunkDispatch} from 'redux-thunk';
+import {connect} from 'react-redux';
 
 class AdvisorForm extends React.Component<AdvisorFormProps, AdvisorFormState> {
     TextInput = (props: any) => (
