@@ -14,6 +14,21 @@ namespace HELPS.Controllers
         public class GenerateReport
         {
             public string SkillSet { get; set; }
+            public int SessionId { get; set; }
+            public string StartTime { get; set; }
+            public string EndTime { get; set; }
+            public string Campus { get; set; }
+            public string Lecturer { get; set; }
+            public string Type { get; set; }
+            public string BookedBy { get; set; }
+            public string PreferredFirstName { get; set; }
+            public int StudentId { get; set; }
+            public string Faculty { get; set; }
+            public string Status { get; set; }
+            public string Degree { get; set; }
+            public string DegreeDetails { get; set; }
+            public bool Attended { get; set; }
+            public string SubjectName { get; set; }
         }
 
         public ReportsController(HelpsContext context) : base(context)
