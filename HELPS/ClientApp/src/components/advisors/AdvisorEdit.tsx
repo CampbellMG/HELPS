@@ -54,6 +54,13 @@ class AdvisorEdit extends Component<AdvisorProps, AdvisorState> {
         this.props.loadAdvisorList();
     }
 
+    componentWillReceiveProps(props: AdvisorProps): void {
+        const advisors: Advisor[] = props.advisors;
+        if (advisors.length > 0) {
+            this.setState({ selectedAdvisor: advisors[0] });
+        }
+    }
+
     render() {
         return (
             <EditorList items={this.filteredAdvisors}
