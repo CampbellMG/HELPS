@@ -243,6 +243,27 @@
       "comments": "",
       "files": [],
       "id": 3
+    },
+    {
+      "start": "2019-08-16T17:30:00.000Z",
+      "end": "2019-08-16T19:30:00.000Z",
+      "startDate": "Sat Aug 17 2019 03:30:00 GMT+1000 (Australian Eastern Standard Time)",
+      "endDate": "Sat Aug 17 2019 05:30:00 GMT+1000 (Australian Eastern Standard Time)",
+      "roomId": -1,
+      "time": "Sat Aug 17 2019 03:30:00 GMT+1000 (Australian Eastern Standard Time)",
+      "duration": "120",
+      "advisorId": -1,
+      "studentId": -1,
+      "type": "",
+      "purpose": "",
+      "subjectName": "",
+      "assignmentType": "",
+      "groupAssignment": false,
+      "assistance": "",
+      "attendance": false,
+      "comments": "",
+      "files": [],
+      "id": 4
     }
   ],
   "advisors": [
@@ -287,7 +308,22 @@
     },
     {
       "id": 2,
-      "title": "Notification",
+      "title": "Event Message",
+      "content": "<p>Classes are not running on 04/05/19!</p>"
+    },
+    {
+      "id": 3,
+      "title": "Information Collection Notice",
+      "content": "<p>Classes are not running on 04/05/19!</p>"
+    },
+    {
+      "id": 4,
+      "title": "Programs",
+      "content": "<p>Classes are not running on 04/05/19!</p>"
+    },
+    {
+      "id": 5,
+      "title": "FAQ",
       "content": "<p>Classes are not running on 04/05/19!</p>"
     }
   ],

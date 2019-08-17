@@ -1,12 +1,20 @@
 import {Identifiable} from './Identifiable';
 import {isUndefined} from 'util';
 
-export const MessageDictionaryMap: {[key: number]: keyof MessageDictionary} = {
-    1: 'loginNotification'
+export const MessageDictionaryMap: { [key: number]: keyof MessageDictionary } = {
+    1: 'loginNotification',
+    2: 'eventNotification',
+    3: 'informationCollection',
+    4: 'programs',
+    5: 'FAQ'
 };
 
 export interface MessageDictionary {
     loginNotification?: string
+    eventNotification?: string
+    informationCollection?: string
+    programs?: string
+    FAQ?: string
 };
 
 export interface Message extends Identifiable {

@@ -37,6 +37,7 @@ import {HELPSEvent} from '../../types/model/HELPSEvent';
 import {CalendarFilter} from './eventView/CalendarFilter';
 import {EventForm} from './eventView/EventForm';
 import {rrulestr} from 'rrule';
+import {fetchMessages} from '../../store/actions/MessageActions';
 
 export default abstract class EventView extends Component<EventViewProps, EventViewState> {
     abstract showWorkshops: boolean;
@@ -100,6 +101,7 @@ export default abstract class EventView extends Component<EventViewProps, EventV
     componentDidMount(): void {
         this.props.retrieveWorkshops();
         this.props.retrieveSessions();
+        this.props.retrieveMessages();
 
         if (!this.props.isAdmin) {
             this.props.retrieveUserSessions();
@@ -117,7 +119,7 @@ export default abstract class EventView extends Component<EventViewProps, EventV
     }
 
     render(): React.ReactNode {
-        const {isAdmin, newEventRef, selectedEvent} = {...this.props, ...this.state};
+        const {isAdmin, messages, selectedEvent} = {...this.props, ...this.state};
         return (
             <div className='row h-100 overflow-auto'>
 
@@ -129,6 +131,12 @@ export default abstract class EventView extends Component<EventViewProps, EventV
 
                 <div className='col m-3'>
                     <div className='h-100 flex-column'>
+
+                        {
+                            messages.eventNotification &&
+                            <div className='bg-primary login-container mb-2 text-light justify-content-center d-flex pt-3'
+                                 dangerouslySetInnerHTML={{__html: messages.eventNotification}}/>
+                        }
 
                         <CalendarFilter onSearchUpdated={this.onSearchUpdated}
                                         onFilterUpdated={this.onFiltersUpdated}/>
@@ -282,6 +290,7 @@ export const mapEventViewStateToProps = (state: AppState): EventViewStateProps =
     userWorkshops: state.workshops.userWorkshops,
     sessions: state.session.sessions,
     userSessions: state.session.userSessions,
+    messages: state.message.indexedMessages
 });
 
 export const mapEventViewDispatchToProps = (dispatch: ThunkDispatch<{}, {}, any>): EventViewDispatchProps => ({
@@ -297,5 +306,7 @@ export const mapEventViewDispatchToProps = (dispatch: ThunkDispatch<{}, {}, any>
     bookSession: session => dispatch(bookSession(session)),
     cancelSession: session => dispatch(cancelSession(session)),
     addSession: session => dispatch(addSession(session)),
-    updateSession: session => dispatch(updateSession(session))
+    updateSession: session => dispatch(updateSession(session)),
+
+    retrieveMessages: () => dispatch(fetchMessages())
 });
