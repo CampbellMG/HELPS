@@ -283,12 +283,12 @@
     {
       "id": 1,
       "title": "Welcome Message",
-      "content": "<p>Welcome!</p>\n"
+      "content": "<p>This is another welcome message! 😀</p>\n"
     },
     {
       "id": 2,
       "title": "Notification",
-      "content": "<p>Classes are not running on 04/05/19!</p>\n"
+      "content": "<p>Classes are not running on 04/05/19!</p>"
     }
   ],
   "emails": [

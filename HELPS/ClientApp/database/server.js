@@ -37,7 +37,7 @@ server.all('/api/*', (req, res, next) => {
     server.handle(req, res, next)
 });
 
-server.all(/^(?!(\/register|\/login)).*$/, (req, res, next) => {
+server.all(/^(?!(\/register|\/login|\/messages)).*$/, (req, res, next) => {
     if (req.headers.authorization === undefined || req.headers.authorization.split(' ')[0] !== 'Bearer') {
         const status = 401;
         const message = 'Missing or invalid authorization';

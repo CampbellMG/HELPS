@@ -2,7 +2,8 @@ import {MessageState} from '../../types/store/MessageReducerTypes';
 import {MessageAction, MessageActionTypes} from '../../types/store/MessageActionTypes';
 
 const initialState: MessageState = {
-    messages: []
+    messages: [],
+    indexedMessages: {}
 };
 
 export function MessageReducer(state: MessageState = initialState, action: MessageAction): MessageState {
@@ -10,7 +11,8 @@ export function MessageReducer(state: MessageState = initialState, action: Messa
         case (MessageActionTypes.RECEIVE):
             return {
                 ...state,
-                messages: action.payload,
+                messages: action.payload.messages,
+                indexedMessages: action.payload.messageDictionary
             };
         default:
             return state;

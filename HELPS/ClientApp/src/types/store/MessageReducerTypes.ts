@@ -1,7 +1,7 @@
-import { Message } from '../model/Message';
-import { Editable } from '../util/Editable';
+import {Message, MessageDictionary} from '../model/Message';
 
 export interface MessageState {
     error?: string
     messages: Message[]
+    indexedMessages: MessageDictionary
 }

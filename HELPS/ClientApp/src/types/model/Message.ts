@@ -1,5 +1,13 @@
-import { Identifiable } from './Identifiable';
-import { isUndefined } from 'util';
+import {Identifiable} from './Identifiable';
+import {isUndefined} from 'util';
+
+export const MessageDictionaryMap: {[key: number]: keyof MessageDictionary} = {
+    1: 'loginNotification'
+};
+
+export interface MessageDictionary {
+    loginNotification?: string
+};
 
 export interface Message extends Identifiable {
     title: string;
@@ -13,4 +21,4 @@ export const messageEquals = (messageA: Message, messageB: Message, compareIds: 
 
 export const isMessage: (message: Message) => boolean = (message: Message) => {
     return !isUndefined(message.title) && !isUndefined(message.content);
-}
+};
