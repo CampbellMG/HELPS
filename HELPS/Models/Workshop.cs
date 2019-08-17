@@ -17,5 +17,6 @@ namespace HELPS.Models
         public int AvailablePlaces { get; set; }
         public int AdvisorId { get; set; }
         public int[] StudentIds { get; set; }
+        public string SkillSet { get; set; }
     } 
 }

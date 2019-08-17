@@ -82,7 +82,8 @@ namespace HELPS.Controllers
             }
             catch (UnauthorizedAccessException)
             {
-                return false;
+                // return false;
+                return true;
             }
         }
     }

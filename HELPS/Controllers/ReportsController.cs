@@ -11,6 +11,11 @@ namespace HELPS.Controllers
     [Route("api/[controller]")]
     public class ReportsController : StudentUserController
     {
+        public class GenerateReport
+        {
+            public string SkillSet { get; set; }
+        }
+
         public ReportsController(HelpsContext context) : base(context)
         {
         }
@@ -33,6 +38,36 @@ namespace HELPS.Controllers
             if (reportItem == null) return NotFound();
 
             return reportItem;
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<IEnumerable<GenerateReport>>> PostReport([FromBody] Report report)
+        {
+            if (!IsAdmin()) return Unauthorized();
+
+            Context.Reports.Add(report);
+            await Context.SaveChangesAsync();
+
+            var generateReport = new List<GenerateReport>();
+
+            //var workshops = await Context.Workshops.ToListAsync();
+
+            // look for workshop entries that have matching attributes in request
+            // TODO: look for session entries that have matching attributes in request
+            if (report.Generate) {
+                foreach (var workshop in await Context.Workshops.ToListAsync())
+                {
+                    if (workshop.SkillSet == report.SkillSet) // TODO: check other workshop attributes. see https://youtu.be/RucrASRk9NA.
+                        generateReport.Add(
+                            new GenerateReport {
+                                SkillSet = workshop.SkillSet
+                            }
+                        );
+                }
+                return generateReport;
+            }
+
+            return CreatedAtAction(nameof(GetReport), new { id = report.Id }, report);
         }
     }
 }
