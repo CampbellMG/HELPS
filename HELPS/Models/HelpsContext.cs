@@ -11,7 +11,6 @@ namespace HELPS.Models
 
         public DbSet<Student> Students { get; set; }
         public DbSet<Workshop> Workshops { get; set; }
-        public DbSet<Report> Reports { get; set; }
         public DbSet<Message> Messages { get; set; }
         public DbSet<Advisor> Advisors { get; set; }
         public DbSet<Session> Sessions { get; set; }
