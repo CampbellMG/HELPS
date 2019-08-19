@@ -1,82 +1,48 @@
 import * as React from 'react';
-import {Field, reduxForm} from 'redux-form';
+import {Field, InjectedFormProps, reduxForm} from 'redux-form';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import {Workshop} from '../../types/model/Workshop';
+import ReportList from './ReportList';
+import moment from 'moment';
+import {ReportGenerateData} from '../../types/components/ReportTypes';
+import Datetime from 'react-datetime';
 
-class ReportForm extends React.Component<any> {
-    TextInput = (props: any) => (
-        <Form.Group controlId='login'>
-            <Form.Control disabled
-                          value={props.input.value}
-                          onChange={props.input.onChange}
-                          {...props}/>
-        </Form.Group>
-    );
+class ReportForm extends React.Component<InjectedFormProps<ReportGenerateData>> {
 
     render() {
         return (
             <form onSubmit={this.props.handleSubmit} className='p-3 pl-4'>
                 <Form.Group>
-                    <Form.Label>Workshop ID</Form.Label>
+                    <Form.Label>Report</Form.Label>
                     <Field name='id'
-                           component={this.TextInput}
-                           type='text'/>
+                           component={this.ReportListInput}/>
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label>Workshop Title</Form.Label>
-                    <Field name='title'
-                           component={this.TextInput}
-                           type='text'/>
+                    <Form.Label>From</Form.Label>
+                    <Field name='from'
+                           component={this.DatePickerInput}/>
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label>Date / Time</Form.Label>
-                    <Field name='time'
-                           component={this.TextInput}
-                           type='text'/>
-                </Form.Group>
-                <Form.Group>
-                    <Form.Label>Duration</Form.Label>
-                    <Field name='duration'
-                           component={this.TextInput}
-                           type='text'/>
-                </Form.Group>
-                <Form.Group>
-                    <Form.Label>Room</Form.Label>
-                    <Field name='room'
-                           component={this.TextInput}
-                           type='text'/>
-                </Form.Group>
-                <Form.Group>
-                    <Form.Label>Target Group</Form.Label>
-                    <Field name='targetGroup'
-                           component={this.TextInput}
-                           type='text'/>
-                </Form.Group>
-                <Form.Group>
-                    <Form.Label>Description</Form.Label>
-                    <Field name='description'
-                           component={this.TextInput}
-                           type='text'/>
-                </Form.Group>
-                <Form.Group>
-                    <Form.Label>Available Places</Form.Label>
-                    <Field
-                        name='availablePlaces'
-                        component={this.TextInput}
-                        type='text'/>
+                    <Form.Label>To</Form.Label>
+                    <Field name='to'
+                           component={this.DatePickerInput}/>
                 </Form.Group>
                 <Button type='submit'
-                        className='w-100 mt-4'
-                        disabled={this.props.disabled}>
-                    {this.props.booked ? 'Cancel' : 'Book'}
+                        className='w-100 mt-4'>
+                    Generate
                 </Button>
             </form>
         );
     }
+
+    private DatePickerInput = (props: any) => <Datetime {...props} value={moment(props.input.value)}
+                                                        onChange={props.input.onChange}/>;
+
+    private ReportListInput = (props: any) => <ReportList {...props} value={props.input.value}
+                                                          onChange={props.input.onChange}/>;
 }
 
-export default reduxForm<Workshop, any>({
-    form: 'workshop_details',
+export default reduxForm<ReportGenerateData, any>({
+    form: 'report_generate',
     enableReinitialize: true
 })(ReportForm);

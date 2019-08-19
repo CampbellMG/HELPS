@@ -32,6 +32,10 @@ export const AdminMenu: MenuItem[] = [
     {
         route: 'advisors',
         title: 'Advisors'
+    },
+    {
+        route: 'reports',
+        title: 'Reports'
     }
 ];
 
