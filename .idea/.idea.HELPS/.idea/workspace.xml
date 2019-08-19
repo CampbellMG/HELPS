@@ -2,21 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66cfea10-8c9f-4e80-b2f0-37497a1490b6" name="Default Changelist" comment="Added report framework with booked sessions report">
-      <change afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/components/reports/ReportList.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/ReportActions.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/store/reducers/ReportReducer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/types/components/ReportTypes.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/types/model/Report.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/types/store/ReportActionTypes.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/types/store/ReportReducerTypes.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HELPS/Reports/CancelledSessions.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/components/navigation/Menu.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/components/navigation/Menu.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/components/reports/ReportForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/components/reports/ReportForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/components/reports/ReportGenerate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/components/reports/ReportGenerate.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/store/Store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/store/Store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/types/store/StoreTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/types/store/StoreTypes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/ReportActions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/ReportActions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/store/reducers/ReportReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/store/reducers/ReportReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/types/store/ReportReducerTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/types/store/ReportReducerTypes.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HELPS/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/appsettings.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/HELPS/ClientApp/node_modules/" />
@@ -91,7 +82,7 @@
         <entry file="file://$PROJECT_DIR$/HELPS/Reports/CancelledSessions.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="391">
-              <caret line="25" column="36" lean-forward="true" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
+              <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
               <folding>
                 <marker date="1566213184963" expanded="false" signature="6:52" ph="..." />
                 <marker date="1566213184963" expanded="true" signature="77:767" ph="{...}" />
@@ -108,8 +99,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/HELPS/Controllers/ReportsController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="64" column="44" lean-forward="true" selection-start-line="64" selection-start-column="44" selection-end-line="64" selection-end-column="44" />
+            <state relative-caret-position="227">
+              <caret line="50" column="26" lean-forward="true" selection-start-line="50" selection-start-column="26" selection-end-line="50" selection-end-column="26" />
               <folding>
                 <marker date="1566212921947" expanded="false" signature="6:219" ph="..." />
                 <marker date="1566212921947" expanded="true" signature="248:2137" ph="{...}" />
@@ -272,6 +263,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="C:\Users\Campbell\RiderProjects\HELPS\HELPS\ClientApp\node_modules\typescript\lib" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -317,11 +309,18 @@
       <option name="project" value="LOCAL" />
       <updated>1566213093890</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added report route, component, store and network requests">
+      <created>1566216881449</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1566216881453</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9150000" />
+    <option name="totallyTimeSpent" value="9927000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -336,11 +335,12 @@
     <frame x="1912" y="-453" width="1066" height="1666" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24950299" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.24950299" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Image Layers" order="4" />
+      <window_info anchor="bottom" id="TypeScript" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32941943" />
@@ -432,7 +432,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added report framework with booked sessions report" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added report framework with booked sessions report" />
+    <MESSAGE value="Added report route, component, store and network requests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added report route, component, store and network requests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -861,7 +862,7 @@
     <entry file="file://$PROJECT_DIR$/HELPS/Reports/CancelledSessions.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
-          <caret line="25" column="36" lean-forward="true" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
+          <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
           <folding>
             <marker date="1566213184963" expanded="false" signature="6:52" ph="..." />
             <marker date="1566213184963" expanded="true" signature="77:767" ph="{...}" />
@@ -876,8 +877,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/HELPS/Controllers/ReportsController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="64" column="44" lean-forward="true" selection-start-line="64" selection-start-column="44" selection-end-line="64" selection-end-column="44" />
+        <state relative-caret-position="227">
+          <caret line="50" column="26" lean-forward="true" selection-start-line="50" selection-start-column="26" selection-end-line="50" selection-end-column="26" />
           <folding>
             <marker date="1566212921947" expanded="false" signature="6:219" ph="..." />
             <marker date="1566212921947" expanded="true" signature="248:2137" ph="{...}" />

@@ -3,7 +3,7 @@ import {ReportState} from '../../types/store/ReportReducerTypes';
 
 const initialState: ReportState = {
     reports: [],
-    data: {}
+    data: []
 };
 
 export function ReportReducer(state: ReportState = initialState, action: ReportAction): ReportState {

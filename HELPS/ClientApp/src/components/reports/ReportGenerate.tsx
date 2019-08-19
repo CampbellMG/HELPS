@@ -11,12 +11,9 @@ import {
 import {ThunkDispatch} from 'redux-thunk';
 import {generateReport} from '../../store/actions/ReportActions';
 import {connect} from 'react-redux';
+import {Table} from 'react-bootstrap';
 
 class ReportGenerate extends Component<ReportProps, any> {
-
-    componentWillReceiveProps(nextProps: Readonly<ReportProps>, nextContext: any): void {
-        console.log(nextProps.data);
-    }
 
     render(): React.ReactNode {
         return (
@@ -25,9 +22,35 @@ class ReportGenerate extends Component<ReportProps, any> {
                     <ReportForm onSubmit={this.props.generateReport}/>
                 </div>
                 <div className='d-flex flex-column flex-fill overflow-auto content'>
-                    {this.props.children}
+                    {this.renderDataTable()}
                 </div>
             </div>
+        );
+    }
+
+    private renderDataTable(): React.ReactElement {
+        const {data} = this.props;
+        if (!data || !data.length) {
+            return <div/>;
+        }
+
+        const keys = Object.keys(data[0]);
+
+        return (
+            <Table>
+                <thead>
+                <tr>
+                    {keys.map(key => <th>{key}</th>)}
+                </tr>
+                </thead>
+                <tbody>
+                {data.map((datum: any) => (
+                    <tr>
+                        {keys.map(key => <td>{datum[key]}</td>)}
+                    </tr>
+                ))}
+                </tbody>
+            </Table>
         );
     }
 }

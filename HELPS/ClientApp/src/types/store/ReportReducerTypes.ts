@@ -4,6 +4,6 @@ import {Report} from '../model/Report';
 
 export interface ReportState {
     reports: Report[]
-    data: any
+    data: any[]
     error?: string
 }

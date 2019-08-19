@@ -60,8 +60,7 @@ export const generateReport = (data: ReportGenerateData) => async (dispatch: Dis
                 true
             );
 
-            console.log(result);
-            receiveData(result);
+            dispatch(receiveData(result));
         } catch (e) {
             dispatch(reportError(`Error deleting room - ${e}`));
         }
