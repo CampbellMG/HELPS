@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using HELPS.Helpers;
 using HELPS.Models;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 
@@ -16,6 +17,7 @@ namespace HELPS.Services
         User Authenticate(string username, string password);
         Task<User> Register(User user);
         Task<User> GetUser(int id);
+        Task<User> GetUsername(string Username);
     }
 
     public class UserService : IUserService
@@ -71,6 +73,11 @@ namespace HELPS.Services
         public async Task<User> GetUser(int id)
         {
             return await _helpsContext.Users.FindAsync(id);
+        }
+
+        public async Task<User> GetUsername(string username)
+        {
+            return await _helpsContext.Users.FirstOrDefaultAsync(user => user.Username == username);
         }
     }
 }

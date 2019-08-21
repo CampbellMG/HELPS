@@ -3,6 +3,7 @@ import {fetchToken, NO_TOKEN_MESSAGE} from './AuthActions';
 import {AdvisorAction, AdvisorActionType} from '../../types/store/AdvisorActionTypes';
 import {Advisor} from '../../types/model/Advisor';
 import {fetchRequest} from '../../util';
+import { push } from 'react-router-redux';
 
 const API_ADVISOR_PATH = 'api/advisors';
 
