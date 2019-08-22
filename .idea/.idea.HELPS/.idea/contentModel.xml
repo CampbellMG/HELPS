@@ -31,7 +31,6 @@
             <e p="workspace.xml" t="Include" />
           </e>
           <e p="database" t="Include">
-            <e p="database.json" t="Include" />
             <e p="fixed_database.json" t="Include" />
             <e p="schema.js" t="Include" />
             <e p="server.js" t="Include" />
@@ -194,14 +193,18 @@
                   <e p="StudentSessionDetailForm.tsx" t="Include" />
                   <e p="StudentWorkshopDetailForm.tsx" t="Include" />
                 </e>
+                <e p="WorkshopConsultationView.tsx" t="Include" />
+                <e p="WorkshopView.tsx" t="Include" />
+              </e>
+              <e p="forms" t="Include">
+                <e p="Components.tsx" t="Include" />
                 <e p="lists" t="Include">
                   <e p="AdvisorList.tsx" t="Include" />
+                  <e p="ReportList.tsx" t="Include" />
                   <e p="RoomList.tsx" t="Include" />
                   <e p="SkillList.tsx" t="Include" />
                   <e p="StudentList.tsx" t="Include" />
                 </e>
-                <e p="WorkshopConsultationView.tsx" t="Include" />
-                <e p="WorkshopView.tsx" t="Include" />
               </e>
               <e p="information" t="Include">
                 <e p="Info.tsx" t="Include" />
@@ -254,6 +257,7 @@
                 <e p="AuthActions.ts" t="Include" />
                 <e p="EmailActions.ts" t="Include" />
                 <e p="MessageActions.ts" t="Include" />
+                <e p="ReportActions.ts" t="Include" />
                 <e p="RoomActions.ts" t="Include" />
                 <e p="SessionActions.ts" t="Include" />
                 <e p="SkillActions.ts" t="Include" />
@@ -265,6 +269,7 @@
                 <e p="AuthReducer.ts" t="Include" />
                 <e p="EmailReducer.ts" t="Include" />
                 <e p="MessageReducer.ts" t="Include" />
+                <e p="ReportReducer.ts" t="Include" />
                 <e p="RoomReducer.ts" t="Include" />
                 <e p="SessionReducer.ts" t="Include" />
                 <e p="SkillReducer.ts" t="Include" />
@@ -286,6 +291,7 @@
                 <e p="MessageTypes.ts" t="Include" />
                 <e p="NavMenuTypes.ts" t="Include" />
                 <e p="RegisterTypes.ts" t="Include" />
+                <e p="ReportTypes.ts" t="Include" />
                 <e p="RoomTypes.ts" t="Include" />
                 <e p="SkillTypes.ts" t="Include" />
                 <e p="UserTypes.ts" t="Include" />
@@ -297,6 +303,7 @@
                 <e p="HELPSEvent.ts" t="Include" />
                 <e p="Identifiable.ts" t="Include" />
                 <e p="Message.ts" t="Include" />
+                <e p="Report.ts" t="Include" />
                 <e p="Room.ts" t="Include" />
                 <e p="Session.ts" t="Include" />
                 <e p="Skill.ts" t="Include" />
@@ -312,6 +319,8 @@
                 <e p="EmailReducerTypes.ts" t="Include" />
                 <e p="MessageActionTypes.ts" t="Include" />
                 <e p="MessageReducerTypes.ts" t="Include" />
+                <e p="ReportActionTypes.ts" t="Include" />
+                <e p="ReportReducerTypes.ts" t="Include" />
                 <e p="RoomActionTypes.ts" t="Include" />
                 <e p="RoomReducerTypes.ts" t="Include" />
                 <e p="SessionActionTypes.ts" t="Include" />

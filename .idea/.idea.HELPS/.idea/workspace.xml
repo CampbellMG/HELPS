@@ -3,10 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="66cfea10-8c9f-4e80-b2f0-37497a1490b6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/Reports/CancelledSessions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/components/navigation/Menu.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/components/navigation/Menu.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/components/navigation/NavMenu.css" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/components/navigation/NavMenu.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/components/navigation/NavMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/components/navigation/NavMenu.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HELPS/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/HELPS/ClientApp/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -92,7 +94,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HELPS/appsettings.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
@@ -101,66 +103,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HELPS/Reports/StudentHistory.cs">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/77cdd827-5000-4d06-abd9-d5e509619b4f/console.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="30" column="57" selection-start-line="30" selection-start-column="57" selection-end-line="30" selection-end-column="57" />
-              <folding>
-                <marker date="1566440568840" expanded="true" signature="6:52" ph="..." />
-                <marker date="1566440568840" expanded="true" signature="77:1592" ph="{...}" />
-                <marker date="1566440568840" expanded="true" signature="133:1590" ph="{...}" />
-                <marker date="1566440568840" expanded="true" signature="273:293" ph="{...}" />
-                <marker date="1566440568840" expanded="true" signature="336:394" ph="{...}" />
-                <marker date="1566440568840" expanded="true" signature="449:623" ph="{...}" />
-                <marker date="1566440568840" expanded="true" signature="498:612" ph="{...}" />
-                <marker date="1566440568840" expanded="true" signature="720:1584" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HELPS/Models/Report.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="753">
-              <caret line="87" column="55" selection-start-line="87" selection-start-column="55" selection-end-line="87" selection-end-column="55" />
-              <folding>
-                <marker date="1566439891471" expanded="false" signature="6:36" ph="..." />
-                <marker date="1566439891471" expanded="true" signature="60:2950" ph="{...}" />
-                <marker date="1566439891471" expanded="true" signature="90:774" ph="{...}" />
-                <marker date="1566439891471" expanded="true" signature="134:405" ph="{...}" />
-                <marker date="1566439891471" expanded="true" signature="285:395" ph="{...}" />
-                <marker date="1566439891471" expanded="true" signature="638:768" ph="{...}" />
-                <marker date="1566439891471" expanded="true" signature="807:1101" ph="{...}" />
-                <marker date="1566439891471" expanded="true" signature="973:1095" ph="{...}" />
-                <marker date="1566439891471" expanded="true" signature="1139:1997" ph="{...}" />
-                <marker date="1566439891471" expanded="true" signature="1681:1991" ph="{...}" />
-                <marker date="1566439891471" expanded="true" signature="2038:2050" ph="{...}" />
-                <marker date="1566439891471" expanded="true" signature="2089:2948" ph="{...}" />
-                <marker date="1566439891471" expanded="true" signature="2632:2942" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HELPS/Controllers/ReportsController.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="719">
-              <caret line="53" column="23" lean-forward="true" selection-start-line="53" selection-start-column="23" selection-end-line="53" selection-end-column="23" />
-              <folding>
-                <marker date="1566436121286" expanded="false" signature="6:219" ph="..." />
-                <marker date="1566436121286" expanded="true" signature="248:1948" ph="{...}" />
-                <marker date="1566436121286" expanded="true" signature="357:1946" ph="{...}" />
-                <marker date="1566436121286" expanded="true" signature="503:710" ph="{...}" />
-                <marker date="1566436121286" expanded="true" signature="585:699" ph="{...}" />
-                <marker date="1566436121286" expanded="true" signature="800:1155" ph="{...}" />
-                <marker date="1566436121286" expanded="true" signature="1251:1940" ph="{...}" />
-                <marker date="1566436121286" expanded="true" signature="1329:1677" ph="{...}" />
-                <marker date="1566436121286" expanded="true" signature="1709:1917" ph="{...}" />
-                <marker date="1566436121286" expanded="true" signature="1798:1879" ph="{...}" />
-              </folding>
+            <state relative-caret-position="136">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
             </state>
           </provider>
         </entry>
@@ -187,47 +134,37 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA/schema/information_schema.FNRwLQ.meta" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B4EF600F-4A59-4FE2-865A-8F97F915FB9D/e4/c712921b/OkResult.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Models/Report.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Reports/StudentHistory.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HELPS/Reports/BookedSessions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HELPS/Reports/AbstractReport.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B4EF600F-4A59-4FE2-865A-8F97F915FB9D/dc/dbb3ca64/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HELPS/Controllers/EmailsController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Helpers/AppSettings.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HELPS/Controllers/EmailsController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Services/UserService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HELPS/Controllers/UserController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2D506C52-CF4B-4BDB-B896-80B6E2C92982/bf/7d40ab30/DbSet`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HELPS/Controllers/StudentsController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HELPS/Controllers/UserController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Models/Message.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HELPS/Controllers/StudentsController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Controllers/WorkshopsController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Controllers/ReportsController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HELPS/Controllers/SessionsController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Models/Workshop.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HELPS/Controllers/SessionsController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Startup.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HELPS/Controllers/AdvisorsController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Models/Advisor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HELPS/Controllers/AdvisorsController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Models/Session.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HELPS/Controllers/StudentUserController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Models/Email.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HELPS/Controllers/StudentUserController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Models/HelpsContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Controllers/RoomsController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Models/Room.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Controllers/MessagesController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Models/Student.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Models/User.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HELPS/Reports/BookedSessions.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HELPS/Reports/AbstractReport.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA/schema/information_schema.FNRwLQ.meta" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -240,7 +177,6 @@
         <option value="$PROJECT_DIR$/HELPS/Models/Email.cs" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_1.sql" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/77cdd827-5000-4d06-abd9-d5e509619b4f/console.sql" />
         <option value="$PROJECT_DIR$/HELPS/ClientApp/.gitignore" />
         <option value="$PROJECT_DIR$/HELPS/.gitignore" />
         <option value="$PROJECT_DIR$/HELPS/ClientApp/src/components/reports/ReportGenerate.tsx" />
@@ -252,6 +188,7 @@
         <option value="$PROJECT_DIR$/HELPS/Reports/CancelledSessions.cs" />
         <option value="$PROJECT_DIR$/HELPS/Reports/StudentHistory.cs" />
         <option value="$PROJECT_DIR$/HELPS/appsettings.json" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/77cdd827-5000-4d06-abd9-d5e509619b4f/console.sql" />
       </list>
     </option>
   </component>
@@ -285,13 +222,13 @@
               <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
               <item name="HELPS" type="24d0babc:SolutionExplorerModelNode" />
               <item name="HELPS" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="ClientApp" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Controllers" type="24d0babc:SolutionExplorerModelNode" />
             </path>
             <path>
               <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
               <item name="HELPS" type="24d0babc:SolutionExplorerModelNode" />
               <item name="HELPS" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Controllers" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Migrations" type="24d0babc:SolutionExplorerModelNode" />
             </path>
             <path>
               <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
@@ -299,19 +236,13 @@
               <item name="HELPS" type="24d0babc:SolutionExplorerModelNode" />
               <item name="Models" type="24d0babc:SolutionExplorerModelNode" />
             </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="HELPS" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="HELPS" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Reports" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
           </expand>
           <select />
         </subPane>
         <option name="show-all-files" value="false" />
       </pane>
-      <pane id="AssemblyExplorer" />
       <pane id="FileSystemExplorer" />
+      <pane id="AssemblyExplorer" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -360,6 +291,7 @@
       <option name="presentableId" value="Default" />
       <updated>1566205808377</updated>
       <workItem from="1566205811262" duration="4073000" />
+      <workItem from="1566446574011" duration="1693000" />
     </task>
     <task id="LOCAL-00001" summary="Added report framework with booked sessions report">
       <created>1566213093890</created>
@@ -393,7 +325,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21459000" />
+    <option name="totallyTimeSpent" value="23429000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -406,19 +338,20 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1096" height="1906" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
-      <window_info content_ui="combo" id="Project" order="4" weight="0.28088802" />
+      <window_info content_ui="combo" id="Project" order="4" visible="true" weight="0.28088802" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32938522" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32938522" />
       <window_info anchor="bottom" x="-1478" y="565" width="1036" height="711" id="Debug" maximized="true" order="3" type="WINDOWED" weight="0.40117416" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info active="true" anchor="bottom" x="-1920" y="410" width="1920" height="1027" id="Version Control" maximized="true" order="6" type="WINDOWED" visible="true" weight="0.32941943" />
+      <window_info anchor="bottom" x="-1920" y="410" width="1920" height="1027" id="Version Control" maximized="true" order="6" type="WINDOWED" weight="0.32941943" />
       <window_info anchor="bottom" id="TODO" order="7" />
       <window_info anchor="bottom" id="Build" order="8" weight="0.32938522" />
       <window_info anchor="bottom" id="REST Client" order="9" />
@@ -500,9 +433,9 @@
     <option name="LAST_COMMIT_MESSAGE" value="Added dynamic fields, student history report and tidied form components" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="168" height="1221" key="Git.Branch.Popup" />
-    <state width="168" height="1221" key="Git.Branch.Popup/1920.1080/1080.1920" />
-    <state width="168" height="1221" key="Git.Branch.Popup@1080.1920" />
+    <state width="172" height="1225" key="Git.Branch.Popup" />
+    <state width="172" height="1225" key="Git.Branch.Popup/1920.1080/1080.1920" />
+    <state width="172" height="1225" key="Git.Branch.Popup@1080.1920" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -731,45 +664,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://77cdd827-5000-4d06-abd9-d5e509619b4f/database/HELPS/schema/public/table/Users">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/Migrations/20190819103312_Reports.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="73" column="25" selection-start-line="73" selection-start-column="20" selection-end-line="73" selection-end-column="25" />
-          <folding>
-            <marker date="1566210794094" expanded="false" signature="6:115" ph="..." />
-            <marker date="1566210794094" expanded="true" signature="143:9328" ph="{...}" />
-            <marker date="1566210794094" expanded="true" signature="190:9326" ph="{...}" />
-            <marker date="1566210794094" expanded="true" signature="266:8546" ph="{...}" />
-            <marker date="1566210794094" expanded="true" signature="407:873" ph="{...}" />
-            <marker date="1566210794094" expanded="true" signature="912:1012" ph="{...}" />
-            <marker date="1566210794094" expanded="true" signature="1144:1469" ph="{...}" />
-            <marker date="1566210794094" expanded="true" signature="1508:1606" ph="{...}" />
-            <marker date="1566210794094" expanded="true" signature="1740:2067" ph="{...}" />
-            <marker date="1566210794094" expanded="true" signature="2106:2206" ph="{...}" />
-            <marker date="1566210794094" expanded="true" signature="2337:2596" ph="{...}" />
-            <marker date="1566210794094" expanded="true" signature="2635:2732" ph="{...}" />
-            <marker date="1566210794094" expanded="true" signature="2866:3537" ph="{...}" />
-            <marker date="1566210794094" expanded="true" signature="3576:3676" ph="{...}" />
-            <marker date="1566210794094" expanded="true" signature="3810:5416" ph="{...}" />
-            <marker date="1566210794094" expanded="true" signature="5455:5555" ph="{...}" />
-            <marker date="1566210794094" expanded="true" signature="5686:6150" ph="{...}" />
-            <marker date="1566210794094" expanded="true" signature="6189:6286" ph="{...}" />
-            <marker date="1566210794094" expanded="true" signature="6421:7236" ph="{...}" />
-            <marker date="1566210794094" expanded="true" signature="7275:7376" ph="{...}" />
-            <marker date="1566210794094" expanded="true" signature="7515:7910" ph="{...}" />
-            <marker date="1566210794094" expanded="true" signature="7949:8365" ph="{...}" />
-            <marker date="1566210794094" expanded="true" signature="8619:9320" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/HELPS/Migrations/20190819103312_Reports.cs" />
     <entry file="file://$PROJECT_DIR$/HELPS/Models/Workshop.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -847,13 +742,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://77cdd827-5000-4d06-abd9-d5e509619b4f/database/HELPS/schema/public/table/Sessions">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://77cdd827-5000-4d06-abd9-d5e509619b4f/database/HELPS/schema/public/table/Sessions" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -964,13 +853,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/77cdd827-5000-4d06-abd9-d5e509619b4f/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HELPS/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2589">
@@ -990,13 +872,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/Reports/CancelledSessions.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/HELPS/Reports/CancelledSessions.cs" />
     <entry file="file://$PROJECT_DIR$/HELPS/Reports/AbstractReport.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -1030,18 +906,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="719">
           <caret line="53" column="23" lean-forward="true" selection-start-line="53" selection-start-column="23" selection-end-line="53" selection-end-column="23" />
-          <folding>
-            <marker date="1566436121286" expanded="false" signature="6:219" ph="..." />
-            <marker date="1566436121286" expanded="true" signature="248:1948" ph="{...}" />
-            <marker date="1566436121286" expanded="true" signature="357:1946" ph="{...}" />
-            <marker date="1566436121286" expanded="true" signature="503:710" ph="{...}" />
-            <marker date="1566436121286" expanded="true" signature="585:699" ph="{...}" />
-            <marker date="1566436121286" expanded="true" signature="800:1155" ph="{...}" />
-            <marker date="1566436121286" expanded="true" signature="1251:1940" ph="{...}" />
-            <marker date="1566436121286" expanded="true" signature="1329:1677" ph="{...}" />
-            <marker date="1566436121286" expanded="true" signature="1709:1917" ph="{...}" />
-            <marker date="1566436121286" expanded="true" signature="1798:1879" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1049,16 +913,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="30" column="57" selection-start-line="30" selection-start-column="57" selection-end-line="30" selection-end-column="57" />
-          <folding>
-            <marker date="1566440568840" expanded="true" signature="6:52" ph="..." />
-            <marker date="1566440568840" expanded="true" signature="77:1592" ph="{...}" />
-            <marker date="1566440568840" expanded="true" signature="133:1590" ph="{...}" />
-            <marker date="1566440568840" expanded="true" signature="273:293" ph="{...}" />
-            <marker date="1566440568840" expanded="true" signature="336:394" ph="{...}" />
-            <marker date="1566440568840" expanded="true" signature="449:623" ph="{...}" />
-            <marker date="1566440568840" expanded="true" signature="498:612" ph="{...}" />
-            <marker date="1566440568840" expanded="true" signature="720:1584" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1066,21 +920,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="753">
           <caret line="87" column="55" selection-start-line="87" selection-start-column="55" selection-end-line="87" selection-end-column="55" />
-          <folding>
-            <marker date="1566439891471" expanded="false" signature="6:36" ph="..." />
-            <marker date="1566439891471" expanded="true" signature="60:2950" ph="{...}" />
-            <marker date="1566439891471" expanded="true" signature="90:774" ph="{...}" />
-            <marker date="1566439891471" expanded="true" signature="134:405" ph="{...}" />
-            <marker date="1566439891471" expanded="true" signature="285:395" ph="{...}" />
-            <marker date="1566439891471" expanded="true" signature="638:768" ph="{...}" />
-            <marker date="1566439891471" expanded="true" signature="807:1101" ph="{...}" />
-            <marker date="1566439891471" expanded="true" signature="973:1095" ph="{...}" />
-            <marker date="1566439891471" expanded="true" signature="1139:1997" ph="{...}" />
-            <marker date="1566439891471" expanded="true" signature="1681:1991" ph="{...}" />
-            <marker date="1566439891471" expanded="true" signature="2038:2050" ph="{...}" />
-            <marker date="1566439891471" expanded="true" signature="2089:2948" ph="{...}" />
-            <marker date="1566439891471" expanded="true" signature="2632:2942" ph="{...}" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://77cdd827-5000-4d06-abd9-d5e509619b4f/database/HELPS/schema/public/table/Users">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -1088,6 +934,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/77cdd827-5000-4d06-abd9-d5e509619b4f/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>

@@ -27,7 +27,7 @@ export const AdminMenu: MenuItem[] = [
     },
     {
         route: 'skill',
-        title: 'Workshop Skill Sets'
+        title: 'Skills'
     },
     {
         route: 'advisors',

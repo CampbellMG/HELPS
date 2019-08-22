@@ -9,30 +9,18 @@ html {
     }
 }
 
-.box-shadow {
-    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
-}
-
 .navbar-custom {
     background: #dc001a;
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
 
-.navbar-custom .navbar-brand,
-.navbar-custom .navbar-text {
-    color: white;
-}
-
-.navbar-custom .navbar-nav .nav-link {
-    color: white;
-}
-
-.navbar-custom .nav-item.active .nav-link,
-.navbar-custom .nav-item:hover .nav-link {
-    color: white;
-}
-
-.link {
+.menu-item {
     cursor: pointer;
+}
+
+.logout {
+    color: white !important;
+    position: absolute;
+    right: 20px;
 }
