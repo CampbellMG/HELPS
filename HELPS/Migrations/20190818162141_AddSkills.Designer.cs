@@ -3,15 +3,17 @@ using System;
 using HELPS.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace HELPS.Migrations
 {
     [DbContext(typeof(HelpsContext))]
-    partial class HelpsContextModelSnapshot : ModelSnapshot
+    [Migration("20190818162141_AddSkills")]
+    partial class AddSkills
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -44,7 +46,7 @@ namespace HELPS.Migrations
 
                     b.Property<string>("Content");
 
-                    b.Property<string>("Title");
+                    b.Property<int>("Title");
 
                     b.HasKey("Id");
 
@@ -83,6 +85,28 @@ namespace HELPS.Migrations
                     b.ToTable("Messages");
                 });
 
+            modelBuilder.Entity("HELPS.Models.Report", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("From");
+
+                    b.Property<bool>("Generate");
+
+                    b.Property<int>("SessionId");
+
+                    b.Property<string>("SkillSet");
+
+                    b.Property<string>("To");
+
+                    b.Property<string>("Topic");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Reports");
+                });
+
             modelBuilder.Entity("HELPS.Models.Room", b =>
                 {
                     b.Property<int>("Id")
@@ -108,7 +132,7 @@ namespace HELPS.Migrations
 
                     b.Property<int>("RoomId");
 
-                    b.Property<DateTime>("Starttime");
+                    b.Property<string>("Starttime");
 
                     b.Property<int>("StudentId");
 
@@ -206,7 +230,7 @@ namespace HELPS.Migrations
 
                     b.Property<string>("TargetGroup");
 
-                    b.Property<DateTime>("Time");
+                    b.Property<string>("Time");
 
                     b.Property<string>("Title");
 
