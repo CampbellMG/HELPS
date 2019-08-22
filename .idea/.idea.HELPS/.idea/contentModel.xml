@@ -386,7 +386,6 @@
         <e p="reports" t="Include">
           <e p="AbstractReport.cs" t="Include" />
           <e p="BookedSessions.cs" t="Include" />
-          <e p="CancelledSessions.cs" t="Include" />
           <e p="StudentHistory.cs" t="Include" />
         </e>
         <e p="Services" t="Include">

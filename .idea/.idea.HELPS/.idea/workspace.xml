@@ -2,33 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66cfea10-8c9f-4e80-b2f0-37497a1490b6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/components/forms/Components.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HELPS/Models/Report.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HELPS/Reports/StudentHistory.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/components/advisors/AdvisorForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/components/advisors/AdvisorForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/forms/AdminSessionDetailForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/forms/AdminSessionDetailForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/forms/AdminWorkshopDetailForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/forms/AdminWorkshopDetailForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/forms/StudentSessionDetailForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/forms/StudentSessionDetailForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/forms/StudentWorkshopDetailForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/forms/StudentWorkshopDetailForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/lists/AdvisorList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/components/forms/lists/AdvisorList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/lists/RoomList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/components/forms/lists/RoomList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/lists/SkillList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/components/forms/lists/SkillList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/lists/StudentList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/components/forms/lists/StudentList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/components/login/LoginForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/components/login/LoginForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/components/reports/ReportForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/components/reports/ReportForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/components/reports/ReportGenerate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/components/reports/ReportGenerate.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/components/reports/ReportList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/components/forms/lists/ReportList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/components/user/UserDetailsForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/components/user/UserDetailsForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/ReportActions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/ReportActions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/types/components/ReportTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/types/components/ReportTypes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/types/model/Report.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/types/model/Report.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/Controllers/ReportsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/Controllers/ReportsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/Reports/AbstractReport.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/Reports/AbstractReport.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/Reports/BookedSessions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/Reports/BookedSessions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/Reports/CancelledSessions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/Reports/CancelledSessions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HELPS/Reports/CancelledSessions.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/HELPS/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/HELPS/ClientApp/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -115,19 +93,52 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/HELPS/appsettings.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HELPS/Reports/StudentHistory.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="33" column="57" selection-start-line="33" selection-start-column="57" selection-end-line="33" selection-end-column="57" />
+            <state relative-caret-position="459">
+              <caret line="30" column="57" selection-start-line="30" selection-start-column="57" selection-end-line="30" selection-end-column="57" />
               <folding>
-                <marker date="1566440420280" expanded="false" signature="6:134" ph="..." />
-                <marker date="1566440420280" expanded="true" signature="159:1674" ph="{...}" />
-                <marker date="1566440420280" expanded="true" signature="215:1672" ph="{...}" />
-                <marker date="1566440420280" expanded="true" signature="355:375" ph="{...}" />
-                <marker date="1566440420280" expanded="true" signature="418:476" ph="{...}" />
-                <marker date="1566440420280" expanded="true" signature="531:705" ph="{...}" />
-                <marker date="1566440420280" expanded="true" signature="580:694" ph="{...}" />
-                <marker date="1566440420280" expanded="true" signature="802:1666" ph="{...}" />
+                <marker date="1566440568840" expanded="true" signature="6:52" ph="..." />
+                <marker date="1566440568840" expanded="true" signature="77:1592" ph="{...}" />
+                <marker date="1566440568840" expanded="true" signature="133:1590" ph="{...}" />
+                <marker date="1566440568840" expanded="true" signature="273:293" ph="{...}" />
+                <marker date="1566440568840" expanded="true" signature="336:394" ph="{...}" />
+                <marker date="1566440568840" expanded="true" signature="449:623" ph="{...}" />
+                <marker date="1566440568840" expanded="true" signature="498:612" ph="{...}" />
+                <marker date="1566440568840" expanded="true" signature="720:1584" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HELPS/Models/Report.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="753">
+              <caret line="87" column="55" selection-start-line="87" selection-start-column="55" selection-end-line="87" selection-end-column="55" />
+              <folding>
+                <marker date="1566439891471" expanded="false" signature="6:36" ph="..." />
+                <marker date="1566439891471" expanded="true" signature="60:2950" ph="{...}" />
+                <marker date="1566439891471" expanded="true" signature="90:774" ph="{...}" />
+                <marker date="1566439891471" expanded="true" signature="134:405" ph="{...}" />
+                <marker date="1566439891471" expanded="true" signature="285:395" ph="{...}" />
+                <marker date="1566439891471" expanded="true" signature="638:768" ph="{...}" />
+                <marker date="1566439891471" expanded="true" signature="807:1101" ph="{...}" />
+                <marker date="1566439891471" expanded="true" signature="973:1095" ph="{...}" />
+                <marker date="1566439891471" expanded="true" signature="1139:1997" ph="{...}" />
+                <marker date="1566439891471" expanded="true" signature="1681:1991" ph="{...}" />
+                <marker date="1566439891471" expanded="true" signature="2038:2050" ph="{...}" />
+                <marker date="1566439891471" expanded="true" signature="2089:2948" ph="{...}" />
+                <marker date="1566439891471" expanded="true" signature="2632:2942" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -215,7 +226,6 @@
     <setting file="file://$PROJECT_DIR$/HELPS/Models/User.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Reports/BookedSessions.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HELPS/Reports/CancelledSessions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Reports/AbstractReport.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -234,13 +244,14 @@
         <option value="$PROJECT_DIR$/HELPS/ClientApp/.gitignore" />
         <option value="$PROJECT_DIR$/HELPS/.gitignore" />
         <option value="$PROJECT_DIR$/HELPS/ClientApp/src/components/reports/ReportGenerate.tsx" />
-        <option value="$PROJECT_DIR$/HELPS/appsettings.json" />
         <option value="$PROJECT_DIR$/HELPS/Controllers/ReportsController.cs" />
-        <option value="$PROJECT_DIR$/HELPS/Reports/BookedSessions.cs" />
-        <option value="$PROJECT_DIR$/HELPS/Reports/AbstractReport.cs" />
-        <option value="$PROJECT_DIR$/HELPS/Reports/CancelledSessions.cs" />
         <option value="$PROJECT_DIR$/HELPS/Models/Report.cs" />
+        <option value="$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/ReportActions.ts" />
+        <option value="$PROJECT_DIR$/HELPS/Reports/AbstractReport.cs" />
+        <option value="$PROJECT_DIR$/HELPS/Reports/BookedSessions.cs" />
+        <option value="$PROJECT_DIR$/HELPS/Reports/CancelledSessions.cs" />
         <option value="$PROJECT_DIR$/HELPS/Reports/StudentHistory.cs" />
+        <option value="$PROJECT_DIR$/HELPS/appsettings.json" />
       </list>
     </option>
   </component>
@@ -371,11 +382,18 @@
       <option name="project" value="LOCAL" />
       <updated>1566434868384</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added dynamic fields, student history report and tidied form components">
+      <created>1566440591362</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1566440591362</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20543000" />
+    <option name="totallyTimeSpent" value="21459000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -388,7 +406,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1096" height="1906" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
@@ -397,21 +414,21 @@
       <window_info content_ui="combo" id="Project" order="4" weight="0.28088802" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32938522" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32938522" />
       <window_info anchor="bottom" x="-1478" y="565" width="1036" height="711" id="Debug" maximized="true" order="3" type="WINDOWED" weight="0.40117416" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Build" order="7" visible="true" weight="0.32938522" />
-      <window_info anchor="bottom" id="REST Client" order="8" />
-      <window_info anchor="bottom" id="Database Console" order="9" weight="0.3316413" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3288212" />
-      <window_info anchor="bottom" id="Performance Profiler" order="11" />
-      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" weight="0.32941943" />
-      <window_info anchor="bottom" id="NuGet" order="13" />
-      <window_info anchor="bottom" id="Unit Tests" order="14" />
-      <window_info anchor="bottom" id="Database Changes" order="15" weight="0.32994923" />
-      <window_info anchor="bottom" x="-1480" y="604" width="1181" height="428" id="Version Control" maximized="true" order="16" type="WINDOWED" weight="0.32941943" />
+      <window_info active="true" anchor="bottom" x="-1920" y="410" width="1920" height="1027" id="Version Control" maximized="true" order="6" type="WINDOWED" visible="true" weight="0.32941943" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="Build" order="8" weight="0.32938522" />
+      <window_info anchor="bottom" id="REST Client" order="9" />
+      <window_info anchor="bottom" id="Database Console" order="10" weight="0.3316413" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3288212" />
+      <window_info anchor="bottom" id="Performance Profiler" order="12" />
+      <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" weight="0.32941943" />
+      <window_info anchor="bottom" id="NuGet" order="14" />
+      <window_info anchor="bottom" id="Unit Tests" order="15" />
+      <window_info anchor="bottom" id="Database Changes" order="16" weight="0.32994923" />
       <window_info anchor="bottom" id="Docker" order="17" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="18" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -439,17 +456,6 @@
               </option>
               <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
                 <collection />
-              </option>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="develop" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
               </option>
               <option name="COLUMN_ORDER">
                 <list>
@@ -490,7 +496,8 @@
     <MESSAGE value="Added report framework with booked sessions report" />
     <MESSAGE value="Added report route, component, store and network requests" />
     <MESSAGE value="Added functional CSV downloads and report data formatting" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added functional CSV downloads and report data formatting" />
+    <MESSAGE value="Added dynamic fields, student history report and tidied form components" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added dynamic fields, student history report and tidied form components" />
   </component>
   <component name="WindowStateProjectService">
     <state width="168" height="1221" key="Git.Branch.Popup" />
@@ -506,13 +513,13 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/HELPS/Reports/StudentHistory.cs</url>
-          <line>33</line>
+          <line>30</line>
           <properties documentPath="$PROJECT_DIR$/HELPS/Reports/StudentHistory.cs" initialLine="33">
             <startOffsets>
-              <option value="825" />
+              <option value="743" />
             </startOffsets>
             <endOffsets>
-              <option value="872" />
+              <option value="790" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="5" />
@@ -530,6 +537,18 @@
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
+      <expression>
+        <expression-string>extraData[&quot;student_id&quot;]</expression-string>
+        <language-id>C#</language-id>
+        <custom-info>RiderImportsList:</custom-info>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>extraData.student_id</expression-string>
+        <language-id>C#</language-id>
+        <custom-info>RiderImportsList:</custom-info>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>((object)extraData).GetType().GetProperties()</expression-string>
         <language-id>C#</language-id>
@@ -574,18 +593,6 @@
       </expression>
       <expression>
         <expression-string>data.from</expression-string>
-        <language-id>C#</language-id>
-        <custom-info>RiderImportsList:</custom-info>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>Request.Form</expression-string>
-        <language-id>C#</language-id>
-        <custom-info>RiderImportsList:</custom-info>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>Request.Form.AllKeys</expression-string>
         <language-id>C#</language-id>
         <custom-info>RiderImportsList:</custom-info>
         <evaluation-mode>EXPRESSION</evaluation-mode>
@@ -971,13 +978,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/appsettings.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HELPS/Models/User.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -994,15 +994,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
-          <folding>
-            <marker date="1566436370241" expanded="false" signature="6:58" ph="..." />
-            <marker date="1566436370241" expanded="true" signature="83:627" ph="{...}" />
-            <marker date="1566436370241" expanded="true" signature="137:625" ph="{...}" />
-            <marker date="1566436370241" expanded="true" signature="215:235" ph="{...}" />
-            <marker date="1566436370241" expanded="true" signature="278:339" ph="{...}" />
-            <marker date="1566436370241" expanded="true" signature="394:452" ph="{...}" />
-            <marker date="1566436370241" expanded="true" signature="549:619" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1011,10 +1002,10 @@
         <state relative-caret-position="153">
           <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
           <folding>
-            <marker date="1566436327207" expanded="false" signature="6:58" ph="..." />
-            <marker date="1566436327207" expanded="true" signature="83:492" ph="{...}" />
-            <marker date="1566436327207" expanded="true" signature="126:490" ph="{...}" />
-            <marker date="1566436327207" expanded="true" signature="237:288" ph="{...}" />
+            <marker date="1566440552531" expanded="false" signature="6:33" ph="..." />
+            <marker date="1566440552531" expanded="true" signature="58:467" ph="{...}" />
+            <marker date="1566440552531" expanded="true" signature="101:465" ph="{...}" />
+            <marker date="1566440552531" expanded="true" signature="212:263" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1024,35 +1015,13 @@
         <state relative-caret-position="170">
           <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
           <folding>
-            <marker date="1566436327218" expanded="false" signature="6:134" ph="..." />
-            <marker date="1566436327218" expanded="true" signature="159:1385" ph="{...}" />
-            <marker date="1566436327218" expanded="true" signature="215:1383" ph="{...}" />
-            <marker date="1566436327218" expanded="true" signature="290:310" ph="{...}" />
-            <marker date="1566436327218" expanded="true" signature="353:411" ph="{...}" />
-            <marker date="1566436327218" expanded="true" signature="466:524" ph="{...}" />
-            <marker date="1566436327218" expanded="true" signature="621:1377" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/Models/Report.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-148">
-          <caret line="33" column="22" lean-forward="true" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
-          <folding>
-            <marker date="1566439891471" expanded="true" signature="6:36" ph="..." />
-            <marker date="1566439891471" expanded="true" signature="60:2950" ph="{...}" />
-            <marker date="1566439891471" expanded="true" signature="90:774" ph="{...}" />
-            <marker date="1566439891471" expanded="true" signature="134:405" ph="{...}" />
-            <marker date="1566439891471" expanded="true" signature="285:395" ph="{...}" />
-            <marker date="1566439891471" expanded="true" signature="638:768" ph="{...}" />
-            <marker date="1566439891471" expanded="true" signature="807:1101" ph="{...}" />
-            <marker date="1566439891471" expanded="true" signature="973:1095" ph="{...}" />
-            <marker date="1566439891471" expanded="true" signature="1139:1997" ph="{...}" />
-            <marker date="1566439891471" expanded="true" signature="1681:1991" ph="{...}" />
-            <marker date="1566439891471" expanded="true" signature="2038:2050" ph="{...}" />
-            <marker date="1566439891471" expanded="true" signature="2089:2948" ph="{...}" />
-            <marker date="1566439891471" expanded="true" signature="2632:2942" ph="{...}" />
+            <marker date="1566440560588" expanded="false" signature="6:53" ph="..." />
+            <marker date="1566440560588" expanded="true" signature="77:1303" ph="{...}" />
+            <marker date="1566440560588" expanded="true" signature="133:1301" ph="{...}" />
+            <marker date="1566440560588" expanded="true" signature="208:228" ph="{...}" />
+            <marker date="1566440560588" expanded="true" signature="271:329" ph="{...}" />
+            <marker date="1566440560588" expanded="true" signature="384:442" ph="{...}" />
+            <marker date="1566440560588" expanded="true" signature="539:1295" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1078,18 +1047,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/HELPS/Reports/StudentHistory.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="33" column="57" selection-start-line="33" selection-start-column="57" selection-end-line="33" selection-end-column="57" />
+        <state relative-caret-position="459">
+          <caret line="30" column="57" selection-start-line="30" selection-start-column="57" selection-end-line="30" selection-end-column="57" />
           <folding>
-            <marker date="1566440420280" expanded="false" signature="6:134" ph="..." />
-            <marker date="1566440420280" expanded="true" signature="159:1674" ph="{...}" />
-            <marker date="1566440420280" expanded="true" signature="215:1672" ph="{...}" />
-            <marker date="1566440420280" expanded="true" signature="355:375" ph="{...}" />
-            <marker date="1566440420280" expanded="true" signature="418:476" ph="{...}" />
-            <marker date="1566440420280" expanded="true" signature="531:705" ph="{...}" />
-            <marker date="1566440420280" expanded="true" signature="580:694" ph="{...}" />
-            <marker date="1566440420280" expanded="true" signature="802:1666" ph="{...}" />
+            <marker date="1566440568840" expanded="true" signature="6:52" ph="..." />
+            <marker date="1566440568840" expanded="true" signature="77:1592" ph="{...}" />
+            <marker date="1566440568840" expanded="true" signature="133:1590" ph="{...}" />
+            <marker date="1566440568840" expanded="true" signature="273:293" ph="{...}" />
+            <marker date="1566440568840" expanded="true" signature="336:394" ph="{...}" />
+            <marker date="1566440568840" expanded="true" signature="449:623" ph="{...}" />
+            <marker date="1566440568840" expanded="true" signature="498:612" ph="{...}" />
+            <marker date="1566440568840" expanded="true" signature="720:1584" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HELPS/Models/Report.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="753">
+          <caret line="87" column="55" selection-start-line="87" selection-start-column="55" selection-end-line="87" selection-end-column="55" />
+          <folding>
+            <marker date="1566439891471" expanded="false" signature="6:36" ph="..." />
+            <marker date="1566439891471" expanded="true" signature="60:2950" ph="{...}" />
+            <marker date="1566439891471" expanded="true" signature="90:774" ph="{...}" />
+            <marker date="1566439891471" expanded="true" signature="134:405" ph="{...}" />
+            <marker date="1566439891471" expanded="true" signature="285:395" ph="{...}" />
+            <marker date="1566439891471" expanded="true" signature="638:768" ph="{...}" />
+            <marker date="1566439891471" expanded="true" signature="807:1101" ph="{...}" />
+            <marker date="1566439891471" expanded="true" signature="973:1095" ph="{...}" />
+            <marker date="1566439891471" expanded="true" signature="1139:1997" ph="{...}" />
+            <marker date="1566439891471" expanded="true" signature="1681:1991" ph="{...}" />
+            <marker date="1566439891471" expanded="true" signature="2038:2050" ph="{...}" />
+            <marker date="1566439891471" expanded="true" signature="2089:2948" ph="{...}" />
+            <marker date="1566439891471" expanded="true" signature="2632:2942" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HELPS/appsettings.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
