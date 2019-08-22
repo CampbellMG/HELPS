@@ -10,7 +10,7 @@ export const NOOP = () => ({});
 export const fetchRequest = (
     path: string,
     method: 'POST' | 'GET' | 'PUT' | 'DELETE',
-    token: string,
+    token?: string,
     body: {} = {},
     includeJsonContentType: boolean = false
 ): any => {

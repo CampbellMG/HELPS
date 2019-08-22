@@ -10,6 +10,7 @@ import {Student} from '../model/Student';
 import {Advisor} from '../model/Advisor';
 import {Skill} from '../model/Skill';
 import {RouteComponentProps} from 'react-router';
+import {MessageDictionary} from '../model/Message';
 
 export type EventFormProps<E extends DeleteableHELPSEvent, P> = P & InjectedFormProps<E, P>;
 
@@ -79,6 +80,7 @@ export interface EventViewStateProps {
     userSessions: Session[]
     error?: string
     isAdmin: boolean
+    messages: MessageDictionary
 }
 
 export interface EventViewDispatchProps {
@@ -95,6 +97,8 @@ export interface EventViewDispatchProps {
     cancelSession: (session: Session) => void
     addSession: (session: Session) => void
     updateSession: (session: Session) => void
+
+    retrieveMessages: () => void
 }
 
 export interface EventViewProps extends EventViewStateProps, EventViewDispatchProps, RouteComponentProps {
