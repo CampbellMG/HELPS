@@ -44,7 +44,7 @@ namespace HELPS.Migrations
 
                     b.Property<string>("Content");
 
-                    b.Property<int>("Title");
+                    b.Property<string>("Title");
 
                     b.HasKey("Id");
 
@@ -83,28 +83,6 @@ namespace HELPS.Migrations
                     b.ToTable("Messages");
                 });
 
-            modelBuilder.Entity("HELPS.Models.Report", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("From");
-
-                    b.Property<bool>("Generate");
-
-                    b.Property<int>("SessionId");
-
-                    b.Property<string>("SkillSet");
-
-                    b.Property<string>("To");
-
-                    b.Property<string>("Topic");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Reports");
-                });
-
             modelBuilder.Entity("HELPS.Models.Room", b =>
                 {
                     b.Property<int>("Id")
@@ -130,7 +108,7 @@ namespace HELPS.Migrations
 
                     b.Property<int>("RoomId");
 
-                    b.Property<string>("Starttime");
+                    b.Property<DateTime>("Starttime");
 
                     b.Property<int>("StudentId");
 
@@ -228,7 +206,7 @@ namespace HELPS.Migrations
 
                     b.Property<string>("TargetGroup");
 
-                    b.Property<string>("Time");
+                    b.Property<DateTime>("Time");
 
                     b.Property<string>("Title");
 

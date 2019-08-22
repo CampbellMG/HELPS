@@ -12,6 +12,7 @@ import { MessageReducer } from './reducers/MessageReducer';
 import {AdvisorReducer} from './reducers/AdvisorReducer';
 import {SessionReducer} from './reducers/SessionReducer';
 import {SkillReducer} from './reducers/SkillReducer';
+import {ReportReducer} from './reducers/ReportReducer';
 
 export default function configureStore(history: History) {
     const reducers = {
@@ -24,7 +25,8 @@ export default function configureStore(history: History) {
         advisors: AdvisorReducer,
         message: MessageReducer,
         session: SessionReducer,
-        skill: SkillReducer
+        skill: SkillReducer,
+        report: ReportReducer
     };
 
     const middleware = [

@@ -7,6 +7,7 @@ import { MessageState } from './MessageReducerTypes';
 import { RoomState } from './RoomReducerTypes';
 import {SessionState} from './SessionReducerTypes';
 import {SkillState} from './SkillReducerTypes';
+import {ReportState} from './ReportReducerTypes';
 
 export interface AppState {
     auth: AuthState,
@@ -18,4 +19,5 @@ export interface AppState {
     message: MessageState
     session: SessionState
     skill: SkillState
+    report: ReportState
 }

@@ -1,3 +1,4 @@
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -8,7 +9,7 @@ namespace HELPS.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        public string Starttime { get; set; }
+        public DateTime Starttime { get; set; }
         public int Duration { get; set; }
         public int RoomId { get; set; }
         public int AdvisorId { get; set; }

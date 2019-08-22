@@ -1,70 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e763258b-8afe-4964-8ee6-6614528ad430" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/contentModel.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA/schema/information_schema.FNRwLQ.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA/schema/pg_catalog.0S1ZNQ.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA/schema/pg_temp_1.zkWuFg.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA/schema/pg_toast.33HYYw.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA/schema/pg_toast_temp_1.5ixBaA.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA/schema/public.abK9xQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/postgres.edMnLQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/riderModule.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/38bd02d9-40fa-4cff-92e4-8cf98847c430.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/38bd02d9-40fa-4cff-92e4-8cf98847c430/storage_v2/_src_/database/HELPS.MiEXBA.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/38bd02d9-40fa-4cff-92e4-8cf98847c430/storage_v2/_src_/database/HELPS.MiEXBA/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/38bd02d9-40fa-4cff-92e4-8cf98847c430/storage_v2/_src_/database/HELPS.MiEXBA/schema/information_schema.FNRwLQ.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/38bd02d9-40fa-4cff-92e4-8cf98847c430/storage_v2/_src_/database/HELPS.MiEXBA/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/38bd02d9-40fa-4cff-92e4-8cf98847c430/storage_v2/_src_/database/HELPS.MiEXBA/schema/pg_catalog.0S1ZNQ.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/38bd02d9-40fa-4cff-92e4-8cf98847c430/storage_v2/_src_/database/HELPS.MiEXBA/schema/pg_temp_1.zkWuFg.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/38bd02d9-40fa-4cff-92e4-8cf98847c430/storage_v2/_src_/database/HELPS.MiEXBA/schema/pg_toast.33HYYw.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/38bd02d9-40fa-4cff-92e4-8cf98847c430/storage_v2/_src_/database/HELPS.MiEXBA/schema/pg_toast_temp_1.5ixBaA.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/38bd02d9-40fa-4cff-92e4-8cf98847c430/storage_v2/_src_/database/HELPS.MiEXBA/schema/public.abK9xQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/38bd02d9-40fa-4cff-92e4-8cf98847c430/storage_v2/_src_/database/postgres.edMnLQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/38bd02d9-40fa-4cff-92e4-8cf98847c430/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/components/FetchData.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/components/room/RoomEdit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/components/room/RoomEdit.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/components/skill/SkillEdit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/components/skill/SkillEdit.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/AuthActions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/AuthActions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/store/reducers/RoomReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/store/reducers/RoomReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/store/reducers/SkillReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/store/reducers/SkillReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/Controllers/AdvisorsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/Controllers/AdvisorsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/Controllers/RoomsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/Controllers/RoomsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/Controllers/SessionsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/Controllers/SessionsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/Controllers/StudentUserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/Controllers/StudentUserController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/Controllers/UserController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/Migrations/20190601031429_SemesterOne.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/Migrations/20190601031429_SemesterOne.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/Migrations/HelpsContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/Migrations/HelpsContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/Models/Email.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/Models/Email.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/Models/Message.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/Models/Message.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/Models/Report.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/Models/Report.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/Models/Room.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/Models/Room.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/Models/Session.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/Models/Session.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/Models/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/Models/Workshop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/Models/Workshop.cs" afterDir="false" />
+    <list default="true" id="66cfea10-8c9f-4e80-b2f0-37497a1490b6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HELPS/Reports/CancelledSessions.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/HELPS/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
+    <ignored path="$PROJECT_DIR$/HELPS/ClientApp/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -117,57 +71,96 @@
         <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
         <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="postgres@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="HELPS: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="Emails: table" type="69fad909:PgImplModel$LocalTable" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="postgres@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="postgres: database" type="162271b6:PgImplModel$Database" />
+      </path>
     </expand>
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="das://77cdd827-5000-4d06-abd9-d5e509619b4f/database/HELPS/schema/public/table/Users">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/HELPS/appsettings.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/77cdd827-5000-4d06-abd9-d5e509619b4f/console.sql">
+        <entry file="file://$PROJECT_DIR$/HELPS/Reports/StudentHistory.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="57" selection-start-line="1" selection-start-column="57" selection-end-line="1" selection-end-column="57" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HELPS/Controllers/RoomsController.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="565">
-              <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
+            <state relative-caret-position="459">
+              <caret line="30" column="57" selection-start-line="30" selection-start-column="57" selection-end-line="30" selection-end-column="57" />
               <folding>
-                <marker date="1564969607177" expanded="false" signature="6:257" ph="..." />
-                <marker date="1564969607177" expanded="true" signature="286:2205" ph="{...}" />
-                <marker date="1564969607177" expanded="true" signature="393:2203" ph="{...}" />
-                <marker date="1564969607177" expanded="true" signature="468:488" ph="{...}" />
-                <marker date="1564969607177" expanded="true" signature="580:686" ph="{...}" />
-                <marker date="1564969607177" expanded="true" signature="775:1209" ph="{...}" />
-                <marker date="1564969607177" expanded="true" signature="812:973" ph="{...}" />
-                <marker date="1564969607177" expanded="true" signature="990:1090" ph="{...}" />
-                <marker date="1564969607177" expanded="true" signature="1136:1199" ph="{...}" />
-                <marker date="1564969607177" expanded="true" signature="1315:1579" ph="{...}" />
-                <marker date="1564969607177" expanded="true" signature="1676:1859" ph="{...}" />
-                <marker date="1564969607177" expanded="true" signature="1949:2197" ph="{...}" />
+                <marker date="1566440568840" expanded="true" signature="6:52" ph="..." />
+                <marker date="1566440568840" expanded="true" signature="77:1592" ph="{...}" />
+                <marker date="1566440568840" expanded="true" signature="133:1590" ph="{...}" />
+                <marker date="1566440568840" expanded="true" signature="273:293" ph="{...}" />
+                <marker date="1566440568840" expanded="true" signature="336:394" ph="{...}" />
+                <marker date="1566440568840" expanded="true" signature="449:623" ph="{...}" />
+                <marker date="1566440568840" expanded="true" signature="498:612" ph="{...}" />
+                <marker date="1566440568840" expanded="true" signature="720:1584" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/HELPS/appsettings.json">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HELPS/Models/Report.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="78" selection-start-line="12" selection-start-column="78" selection-end-line="12" selection-end-column="78" />
+            <state relative-caret-position="753">
+              <caret line="87" column="55" selection-start-line="87" selection-start-column="55" selection-end-line="87" selection-end-column="55" />
+              <folding>
+                <marker date="1566439891471" expanded="false" signature="6:36" ph="..." />
+                <marker date="1566439891471" expanded="true" signature="60:2950" ph="{...}" />
+                <marker date="1566439891471" expanded="true" signature="90:774" ph="{...}" />
+                <marker date="1566439891471" expanded="true" signature="134:405" ph="{...}" />
+                <marker date="1566439891471" expanded="true" signature="285:395" ph="{...}" />
+                <marker date="1566439891471" expanded="true" signature="638:768" ph="{...}" />
+                <marker date="1566439891471" expanded="true" signature="807:1101" ph="{...}" />
+                <marker date="1566439891471" expanded="true" signature="973:1095" ph="{...}" />
+                <marker date="1566439891471" expanded="true" signature="1139:1997" ph="{...}" />
+                <marker date="1566439891471" expanded="true" signature="1681:1991" ph="{...}" />
+                <marker date="1566439891471" expanded="true" signature="2038:2050" ph="{...}" />
+                <marker date="1566439891471" expanded="true" signature="2089:2948" ph="{...}" />
+                <marker date="1566439891471" expanded="true" signature="2632:2942" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HELPS/Controllers/ReportsController.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="719">
+              <caret line="53" column="23" lean-forward="true" selection-start-line="53" selection-start-column="23" selection-end-line="53" selection-end-column="23" />
+              <folding>
+                <marker date="1566436121286" expanded="false" signature="6:219" ph="..." />
+                <marker date="1566436121286" expanded="true" signature="248:1948" ph="{...}" />
+                <marker date="1566436121286" expanded="true" signature="357:1946" ph="{...}" />
+                <marker date="1566436121286" expanded="true" signature="503:710" ph="{...}" />
+                <marker date="1566436121286" expanded="true" signature="585:699" ph="{...}" />
+                <marker date="1566436121286" expanded="true" signature="800:1155" ph="{...}" />
+                <marker date="1566436121286" expanded="true" signature="1251:1940" ph="{...}" />
+                <marker date="1566436121286" expanded="true" signature="1329:1677" ph="{...}" />
+                <marker date="1566436121286" expanded="true" signature="1709:1917" ph="{...}" />
+                <marker date="1566436121286" expanded="true" signature="1798:1879" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -176,70 +169,88 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>.find(</find>
-      <find>parse</find>
-      <find>frombod</find>
-      <find>incremen</find>
+      <find>frombody</find>
+      <find>FromBody</find>
+      <find>start</find>
+      <find>_context</find>
     </findStrings>
+    <replaceStrings>
+      <replace>Context</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="develop" />
+      </map>
+    </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA/schema/information_schema.FNRwLQ.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B4EF600F-4A59-4FE2-865A-8F97F915FB9D/e4/c712921b/OkResult.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HELPS/Models/Report.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HELPS/Reports/StudentHistory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B4EF600F-4A59-4FE2-865A-8F97F915FB9D/dc/dbb3ca64/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Controllers/EmailsController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HELPS/Helpers/AppSettings.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Services/UserService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Controllers/UserController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2D506C52-CF4B-4BDB-B896-80B6E2C92982/bf/7d40ab30/DbSet`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Controllers/StudentsController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Models/Message.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Controllers/WorkshopsController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Controllers/ReportsController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HELPS/Models/Report.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Controllers/SessionsController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Models/Workshop.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HELPS/Startup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Controllers/AdvisorsController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Models/Advisor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Models/Session.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Controllers/StudentUserController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Models/Email.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Models/HelpsContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Controllers/RoomsController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Models/Room.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HELPS/Controllers/MessagesController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Models/Student.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Models/User.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HELPS/Reports/BookedSessions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HELPS/Reports/AbstractReport.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/HELPS/Services/UserService.cs" />
-        <option value="$PROJECT_DIR$/HELPS/Controllers/UserController.cs" />
+        <option value="$PROJECT_DIR$/HELPS/Models/HelpsContext.cs" />
         <option value="$PROJECT_DIR$/HELPS/Controllers/StudentUserController.cs" />
-        <option value="$PROJECT_DIR$/HELPS/Controllers/SessionsController.cs" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
-        <option value="$PROJECT_DIR$/HELPS/Models/Email.cs" />
-        <option value="$PROJECT_DIR$/HELPS/Models/Message.cs" />
-        <option value="$PROJECT_DIR$/HELPS/Models/Report.cs" />
         <option value="$PROJECT_DIR$/HELPS/Models/Session.cs" />
-        <option value="$PROJECT_DIR$/HELPS/Models/User.cs" />
         <option value="$PROJECT_DIR$/HELPS/Models/Workshop.cs" />
+        <option value="$PROJECT_DIR$/HELPS/Models/Advisor.cs" />
+        <option value="$PROJECT_DIR$/HELPS/Models/Email.cs" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_1.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/77cdd827-5000-4d06-abd9-d5e509619b4f/console.sql" />
-        <option value="$PROJECT_DIR$/HELPS/Controllers/AdvisorsController.cs" />
-        <option value="$PROJECT_DIR$/HELPS/Controllers/RoomsController.cs" />
-        <option value="$PROJECT_DIR$/HELPS/Models/Room.cs" />
+        <option value="$PROJECT_DIR$/HELPS/ClientApp/.gitignore" />
+        <option value="$PROJECT_DIR$/HELPS/.gitignore" />
+        <option value="$PROJECT_DIR$/HELPS/ClientApp/src/components/reports/ReportGenerate.tsx" />
+        <option value="$PROJECT_DIR$/HELPS/Controllers/ReportsController.cs" />
+        <option value="$PROJECT_DIR$/HELPS/Models/Report.cs" />
+        <option value="$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/ReportActions.ts" />
+        <option value="$PROJECT_DIR$/HELPS/Reports/AbstractReport.cs" />
+        <option value="$PROJECT_DIR$/HELPS/Reports/BookedSessions.cs" />
+        <option value="$PROJECT_DIR$/HELPS/Reports/CancelledSessions.cs" />
+        <option value="$PROJECT_DIR$/HELPS/Reports/StudentHistory.cs" />
         <option value="$PROJECT_DIR$/HELPS/appsettings.json" />
       </list>
     </option>
@@ -250,12 +261,14 @@
     <option name="width" value="1060" />
     <option name="height" value="1000" />
   </component>
+  <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="false" id="Update" />
+  </component>
   <component name="ProjectView">
     <navigator currentView="SolutionExplorer" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AssemblyExplorer" />
       <pane id="SolutionExplorer">
         <subPane>
           <expand>
@@ -272,6 +285,12 @@
               <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
               <item name="HELPS" type="24d0babc:SolutionExplorerModelNode" />
               <item name="HELPS" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="ClientApp" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="HELPS" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="HELPS" type="24d0babc:SolutionExplorerModelNode" />
               <item name="Controllers" type="24d0babc:SolutionExplorerModelNode" />
             </path>
             <path>
@@ -280,21 +299,30 @@
               <item name="HELPS" type="24d0babc:SolutionExplorerModelNode" />
               <item name="Models" type="24d0babc:SolutionExplorerModelNode" />
             </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="HELPS" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="HELPS" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Reports" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
           </expand>
           <select />
         </subPane>
         <option name="show-all-files" value="false" />
       </pane>
+      <pane id="AssemblyExplorer" />
       <pane id="FileSystemExplorer" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="DatabaseDriversLRU" value="postgresql" />
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
     <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="ts.external.directory.path" value="C:\Users\campbell\IdeaProjects\HELPS\HELPS\ClientApp\node_modules\typescript\lib" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -326,17 +354,46 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e763258b-8afe-4964-8ee6-6614528ad430" name="Default Changelist" comment="" />
-      <created>1564962494386</created>
+      <changelist id="66cfea10-8c9f-4e80-b2f0-37497a1490b6" name="Default Changelist" comment="" />
+      <created>1566205808377</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1564962494386</updated>
-      <workItem from="1564962498581" duration="7696000" />
+      <updated>1566205808377</updated>
+      <workItem from="1566205811262" duration="4073000" />
     </task>
+    <task id="LOCAL-00001" summary="Added report framework with booked sessions report">
+      <created>1566213093890</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1566213093890</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added report route, component, store and network requests">
+      <created>1566216881449</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1566216881453</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added functional CSV downloads and report data formatting">
+      <created>1566434868384</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1566434868384</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added dynamic fields, student history report and tidied form components">
+      <created>1566440591362</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1566440591362</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7696000" />
+    <option name="totallyTimeSpent" value="21459000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -349,46 +406,104 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1096" height="1906" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Image Layers" />
-      <window_info id="Capture Tool" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Build" visible="true" weight="0.32994923" />
-      <window_info anchor="bottom" id="Database Console" weight="0.32994923" />
-      <window_info anchor="bottom" id="REST Client" />
-      <window_info anchor="bottom" id="TypeScript" />
-      <window_info anchor="bottom" id="Terminal" weight="0.32994923" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Performance Profiler" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="NuGet" />
-      <window_info anchor="bottom" id="Unit Tests" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" weight="0.32994923" />
+      <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="1" side_tool="true" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info content_ui="combo" id="Project" order="4" weight="0.28088802" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" x="-1887" y="594" width="1036" height="646" id="Run" maximized="true" order="2" type="WINDOWED" weight="0.67343485" />
-      <window_info anchor="bottom" x="-1478" y="566" width="1036" height="709" id="Debug" maximized="true" order="3" type="WINDOWED" weight="0.3998872" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32938522" />
+      <window_info anchor="bottom" x="-1478" y="565" width="1036" height="711" id="Debug" maximized="true" order="3" type="WINDOWED" weight="0.40117416" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Database" weight="0.3291506" />
-      <window_info anchor="right" id="Unit Tests Coverage" weight="0.3291506" />
-      <window_info anchor="right" id="Errors In Solution" />
+      <window_info active="true" anchor="bottom" x="-1920" y="410" width="1920" height="1027" id="Version Control" maximized="true" order="6" type="WINDOWED" visible="true" weight="0.32941943" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="Build" order="8" weight="0.32938522" />
+      <window_info anchor="bottom" id="REST Client" order="9" />
+      <window_info anchor="bottom" id="Database Console" order="10" weight="0.3316413" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3288212" />
+      <window_info anchor="bottom" id="Performance Profiler" order="12" />
+      <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" weight="0.32941943" />
+      <window_info anchor="bottom" id="NuGet" order="14" />
+      <window_info anchor="bottom" id="Unit Tests" order="15" />
+      <window_info anchor="bottom" id="Database Changes" order="16" weight="0.32994923" />
+      <window_info anchor="bottom" id="Docker" order="17" show_stripe_button="false" />
+      <window_info anchor="bottom" id="TypeScript" order="18" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Errors In Solution" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Database" order="5" weight="0.32818532" />
+      <window_info anchor="right" id="Unit Tests Coverage" order="6" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="develop" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="backend" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="true" />
+    <MESSAGE value="Added report framework with booked sessions report" />
+    <MESSAGE value="Added report route, component, store and network requests" />
+    <MESSAGE value="Added functional CSV downloads and report data formatting" />
+    <MESSAGE value="Added dynamic fields, student history report and tidied form components" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added dynamic fields, student history report and tidied form components" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="168" height="1221" key="Git.Branch.Popup" />
+    <state width="168" height="1221" key="Git.Branch.Popup/1920.1080/1080.1920" />
+    <state width="168" height="1221" key="Git.Branch.Popup@1080.1920" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -396,61 +511,88 @@
           <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/HELPS/Reports/StudentHistory.cs</url>
+          <line>30</line>
+          <properties documentPath="$PROJECT_DIR$/HELPS/Reports/StudentHistory.cs" initialLine="33">
+            <startOffsets>
+              <option value="743" />
+            </startOffsets>
+            <endOffsets>
+              <option value="790" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="LaunchSettings">
-        <watch expression="Request." language="C#" custom="RiderImportsList:" />
-        <watch expression="ModelState" language="C#" custom="RiderImportsList:" />
+        <watch expression="((object)extraData).GetType().GetProperties()" language="C#" custom="RiderImportsList:" />
+        <watch expression="extraData.student_id" language="C#" custom="RiderImportsList:" />
+        <watch expression="extraData[&quot;student_id&quot;]" language="C#" custom="RiderImportsList:" />
+        <watch expression="extraData" language="C#" custom="RiderImportsList:" />
       </configuration>
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
       <expression>
-        <expression-string>ModelState</expression-string>
+        <expression-string>extraData[&quot;student_id&quot;]</expression-string>
         <language-id>C#</language-id>
         <custom-info>RiderImportsList:</custom-info>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>Request.</expression-string>
+        <expression-string>extraData.student_id</expression-string>
         <language-id>C#</language-id>
         <custom-info>RiderImportsList:</custom-info>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>HttpContext.Request</expression-string>
+        <expression-string>((object)extraData).GetType().GetProperties()</expression-string>
         <language-id>C#</language-id>
         <custom-info>RiderImportsList:</custom-info>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>userId</expression-string>
+        <expression-string>extraData.GetType().GetProperties()</expression-string>
         <language-id>C#</language-id>
         <custom-info>RiderImportsList:</custom-info>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>User.Claims</expression-string>
+        <expression-string>extraData</expression-string>
         <language-id>C#</language-id>
         <custom-info>RiderImportsList:</custom-info>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>StudentUser.Value</expression-string>
+        <expression-string>extraData.GetType().GetProperty(&quot;student_id&quot;)</expression-string>
         <language-id>C#</language-id>
         <custom-info>RiderImportsList:</custom-info>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>StudentUser</expression-string>
+        <expression-string>extraData.GetType().GetProperty(student_id)</expression-string>
         <language-id>C#</language-id>
         <custom-info>RiderImportsList:</custom-info>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>IsAdmin()</expression-string>
+        <expression-string>extraData.GetType()</expression-string>
+        <language-id>C#</language-id>
+        <custom-info>RiderImportsList:</custom-info>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>extraData.GetType().GetProperty(IdentifierStudentId).GetValue()</expression-string>
+        <language-id>C#</language-id>
+        <custom-info>RiderImportsList:</custom-info>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>data.from</expression-string>
         <language-id>C#</language-id>
         <custom-info>RiderImportsList:</custom-info>
         <evaluation-mode>EXPRESSION</evaluation-mode>
@@ -458,764 +600,133 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="das://2a7344b2-98d0-41c7-af68-74b99a1075a0/database/HELPS/schema/public/table/Users">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
+    <entry file="file://$PROJECT_DIR$/HELPS/Services/UserService.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+          <folding>
+            <marker date="1566001644827" expanded="false" signature="6:265" ph="..." />
+            <marker date="1566001644827" expanded="true" signature="291:2338" ph="{...}" />
+            <marker date="1566001644827" expanded="true" signature="327:476" ph="{...}" />
+            <marker date="1566001644827" expanded="true" signature="521:2336" ph="{...}" />
+            <marker date="1566001644827" expanded="true" signature="721:829" ph="{...}" />
+            <marker date="1566001644827" expanded="true" signature="897:2007" ph="{...}" />
+            <marker date="1566001644827" expanded="true" signature="1387:1763" ph="{...}" />
+            <marker date="1566001644827" expanded="true" signature="1456:1542" ph="{...}" />
+            <marker date="1566001644827" expanded="true" signature="2060:2201" ph="{...}" />
+            <marker date="1566001644827" expanded="true" signature="2250:2330" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/Migrations/20190601031429_SemesterOne.cs">
+    <entry file="file://$PROJECT_DIR$/HELPS/Helpers/AppSettings.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="73" column="37" lean-forward="true" selection-start-line="73" selection-start-column="37" selection-end-line="73" selection-end-column="37" />
+        <state relative-caret-position="68">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding>
+            <marker date="1566001644819" expanded="false" signature="6:96" ph="..." />
+            <marker date="1566001644819" expanded="true" signature="121:209" ph="{...}" />
+            <marker date="1566001644819" expanded="true" signature="152:207" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/Migrations/HelpsContextModelSnapshot.cs">
+    <entry file="file://$PROJECT_DIR$/HELPS/Controllers/StudentsController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1190">
-          <caret line="71" column="22" selection-start-line="71" selection-start-column="22" selection-end-line="71" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/Migrations/20190804235431_SemesterOne.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="582">
-          <caret line="206" column="35" selection-start-line="206" selection-start-column="35" selection-end-line="206" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/Migrations/20190804235402_SemesterOne.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1591">
-          <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+        <state relative-caret-position="102">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+          <folding>
+            <marker date="1566001644816" expanded="false" signature="6:213" ph="..." />
+            <marker date="1566001644816" expanded="true" signature="242:1281" ph="{...}" />
+            <marker date="1566001644816" expanded="true" signature="352:1279" ph="{...}" />
+            <marker date="1566001644816" expanded="true" signature="430:450" ph="{...}" />
+            <marker date="1566001644816" expanded="true" signature="548:662" ph="{...}" />
+            <marker date="1566001644816" expanded="true" signature="757:940" ph="{...}" />
+            <marker date="1566001644816" expanded="true" signature="1055:1273" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HELPS/Controllers/EmailsController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="20" column="50" lean-forward="true" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
+        <state relative-caret-position="102">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
           <folding>
-            <marker date="1564960842100" expanded="false" signature="6:194" ph="..." />
-            <marker date="1564960842100" expanded="true" signature="223:1332" ph="{...}" />
-            <marker date="1564960842100" expanded="true" signature="331:1330" ph="{...}" />
-            <marker date="1564960842100" expanded="true" signature="407:427" ph="{...}" />
-            <marker date="1564960842100" expanded="true" signature="521:648" ph="{...}" />
-            <marker date="1564960842100" expanded="true" signature="739:949" ph="{...}" />
-            <marker date="1564960842100" expanded="true" signature="1058:1324" ph="{...}" />
+            <marker date="1566001644813" expanded="false" signature="6:194" ph="..." />
+            <marker date="1566001644813" expanded="true" signature="223:1332" ph="{...}" />
+            <marker date="1566001644813" expanded="true" signature="331:1330" ph="{...}" />
+            <marker date="1566001644813" expanded="true" signature="407:427" ph="{...}" />
+            <marker date="1566001644813" expanded="true" signature="521:648" ph="{...}" />
+            <marker date="1566001644813" expanded="true" signature="739:949" ph="{...}" />
+            <marker date="1566001644813" expanded="true" signature="1058:1324" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B4EF600F-4A59-4FE2-865A-8F97F915FB9D/e4/c712921b/OkResult.cs">
+    <entry file="file://$PROJECT_DIR$/HELPS/Controllers/MessagesController.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="17" lean-forward="true" selection-start-column="17" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/Controllers/UserController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="29" column="30" lean-forward="true" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
           <folding>
-            <marker date="1564964053150" expanded="true" signature="6:145" ph="..." />
-            <marker date="1564964053150" expanded="true" signature="174:1330" ph="{...}" />
-            <marker date="1564964053150" expanded="true" signature="245:1328" ph="{...}" />
-            <marker date="1564964053150" expanded="true" signature="361:421" ph="{...}" />
-            <marker date="1564964053150" expanded="true" signature="519:769" ph="{...}" />
-            <marker date="1564964053150" expanded="true" signature="886:1052" ph="{...}" />
-            <marker date="1564964053150" expanded="true" signature="1115:1322" ph="{...}" />
-            <marker date="1564964053150" expanded="true" signature="1223:1286" ph="{...}" />
+            <marker date="1566001644813" expanded="false" signature="6:194" ph="..." />
+            <marker date="1566001644813" expanded="true" signature="223:1387" ph="{...}" />
+            <marker date="1566001644813" expanded="true" signature="357:1385" ph="{...}" />
+            <marker date="1566001644813" expanded="true" signature="435:455" ph="{...}" />
+            <marker date="1566001644813" expanded="true" signature="550:679" ph="{...}" />
+            <marker date="1566001644813" expanded="true" signature="774:992" ph="{...}" />
+            <marker date="1566001644813" expanded="true" signature="1107:1379" ph="{...}" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/Services/UserService.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="59" column="19" lean-forward="true" selection-start-line="59" selection-start-column="19" selection-end-line="59" selection-end-column="19" />
-          <folding>
-            <marker date="1564963583400" expanded="false" signature="6:265" ph="..." />
-            <marker date="1564963583400" expanded="true" signature="291:2338" ph="{...}" />
-            <marker date="1564963583400" expanded="true" signature="327:476" ph="{...}" />
-            <marker date="1564963583400" expanded="true" signature="521:2336" ph="{...}" />
-            <marker date="1564963583400" expanded="true" signature="721:829" ph="{...}" />
-            <marker date="1564963583400" expanded="true" signature="897:2007" ph="{...}" />
-            <marker date="1564963583400" expanded="true" signature="1387:1763" ph="{...}" />
-            <marker date="1564963583400" expanded="true" signature="1456:1542" ph="{...}" />
-            <marker date="1564963583400" expanded="true" signature="2060:2201" ph="{...}" />
-            <marker date="1564963583400" expanded="true" signature="2250:2330" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B4EF600F-4A59-4FE2-865A-8F97F915FB9D/dc/dbb3ca64/ControllerBase.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="250" column="27" selection-start-line="250" selection-start-column="27" selection-end-line="250" selection-end-column="27" />
-          <folding>
-            <marker date="1552604054801" expanded="true" signature="0:403" ph="/* Decompiled with JetBrains decompiler ... */" />
-            <marker date="1552604054801" expanded="false" signature="411:1054" ph="..." />
-            <marker date="1552604054801" expanded="true" signature="1090:156203" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="1095:1188" ph="/// A base class for an MVC controller without view support. ... " />
-            <marker date="1552604054801" expanded="true" signature="1242:156201" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="1490:1620" ph="/// Gets the &lt;see cref=&quot;T:Microsoft.AspNetCore.Http.HttpContext&quot; /&gt; for the executing action. ... " />
-            <marker date="1552604054801" expanded="true" signature="1655:1744" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="1671:1738" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="1750:1880" ph="/// Gets the &lt;see cref=&quot;T:Microsoft.AspNetCore.Http.HttpRequest&quot; /&gt; for the executing action. ... " />
-            <marker date="1552604054801" expanded="true" signature="1911:1991" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="1927:1985" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="1997:2128" ph="/// Gets the &lt;see cref=&quot;T:Microsoft.AspNetCore.Http.HttpResponse&quot; /&gt; for the executing action. ... " />
-            <marker date="1552604054801" expanded="true" signature="2161:2242" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="2177:2236" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="2248:2379" ph="/// Gets the &lt;see cref=&quot;T:Microsoft.AspNetCore.Routing.RouteData&quot; /&gt; for the executing action. ... " />
-            <marker date="1552604054801" expanded="true" signature="2410:2497" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="2426:2491" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="2503:2698" ph="/// Gets the &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary&quot; /&gt; that contains the state  ... " />
-            <marker date="1552604054801" expanded="true" signature="2741:2829" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="2757:2823" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="2835:3281" ph="/// Gets or sets the &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.ControllerContext&quot; /&gt;. ... " />
-            <marker date="1552604054801" expanded="true" signature="3352:3689" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="3368:3530" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="3540:3683" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="3695:3831" ph="/// Gets or sets the &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.ModelBinding.IModelMetadataProvider&quot; /&gt;. ... " />
-            <marker date="1552604054801" expanded="true" signature="3882:4720" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="3898:4562" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="3950:4515" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="4100:4186" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="4201:4452" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="4572:4714" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="4726:4859" ph="/// Gets or sets the &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.ModelBinding.IModelBinderFactory&quot; /&gt;. ... " />
-            <marker date="1552604054801" expanded="true" signature="4909:5751" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="4925:5591" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="4979:5542" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="5128:5213" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="5228:5475" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="5601:5745" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="5757:5868" ph="/// Gets or sets the &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.IUrlHelper&quot; /&gt;. ... " />
-            <marker date="1552604054801" expanded="true" signature="5894:6714" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="5910:6569" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="5949:6535" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="6094:6175" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="6190:6431" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="6579:6708" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="6720:6866" ph="/// Gets or sets the &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.ModelBinding.Validation.IObjectModelValidator&quot; /&gt;. ... " />
-            <marker date="1552604054801" expanded="true" signature="6915:7761" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="6931:7604" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="6982:7558" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="7135:7224" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="7239:7492" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="7614:7755" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="7767:7919" ph="/// Gets the &lt;see cref=&quot;T:System.Security.Claims.ClaimsPrincipal&quot; /&gt; for user associated with the executing actio ... " />
-            <marker date="1552604054801" expanded="true" signature="7951:8028" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="7967:8022" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="8034:8402" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.StatusCodeResult&quot; /&gt; object by specifying a &lt;paramref name=&quot;s ... " />
-            <marker date="1552604054801" expanded="true" signature="8506:8565" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="8571:9076" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.ObjectResult&quot; /&gt; object by specifying a &lt;paramref name=&quot;statu ... " />
-            <marker date="1552604054801" expanded="true" signature="9216:9324" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="9266:9317" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="9330:9771" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.ContentResult&quot; /&gt; object with &lt;see cref=&quot;F:Microsoft.AspNetCo ... " />
-            <marker date="1552604054801" expanded="true" signature="9844:9921" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="9927:10459" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.ContentResult&quot; /&gt; object with &lt;see cref=&quot;F:Microsoft.AspNetCo ... " />
-            <marker date="1552604054801" expanded="true" signature="10552:10657" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="10663:11563" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.ContentResult&quot; /&gt; object with &lt;see cref=&quot;F:Microsoft.AspNetCo ... " />
-            <marker date="1552604054801" expanded="true" signature="11701:11934" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="11940:12491" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.ContentResult&quot; /&gt; object with &lt;see cref=&quot;F:Microsoft.AspNetCo ... " />
-            <marker date="1552604054801" expanded="true" signature="12611:12746" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="12657:12739" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="12752:13104" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.NoContentResult&quot; /&gt; object that produces an empty ... " />
-            <marker date="1552604054801" expanded="true" signature="13167:13215" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="13221:13537" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.OkResult&quot; /&gt; object that produces an empty &lt;see cref=&quot;F:Micro ... " />
-            <marker date="1552604054801" expanded="true" signature="13586:13627" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="13633:14040" ph="/// Creates an &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.OkObjectResult&quot; /&gt; object that produces an &lt;see cref=&quot;F:Micr ... " />
-            <marker date="1552604054801" expanded="true" signature="14133:14185" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="14191:14614" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.RedirectResult&quot; /&gt; object that redirects (&lt;see cref=&quot;F:Micros ... " />
-            <marker date="1552604054801" expanded="true" signature="14685:14892" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="14898:15404" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.RedirectResult&quot; /&gt; object with &lt;see cref=&quot;P:Microsoft.AspNetC ... " />
-            <marker date="1552604054801" expanded="true" signature="15484:15697" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="15703:16307" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.RedirectResult&quot; /&gt; object with &lt;see cref=&quot;P:Microsoft.AspNetC ... " />
-            <marker date="1552604054801" expanded="true" signature="16392:16612" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="16618:17221" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.RedirectResult&quot; /&gt; object with &lt;see cref=&quot;P:Microsoft.AspNetC ... " />
-            <marker date="1552604054801" expanded="true" signature="17315:17534" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="17540:17995" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.LocalRedirectResult&quot; /&gt; object that redirects ... " />
-            <marker date="1552604054801" expanded="true" signature="18081:18308" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="18314:18851" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.LocalRedirectResult&quot; /&gt; object with &lt;see cref=&quot;P:Microsoft.As ... " />
-            <marker date="1552604054801" expanded="true" signature="18946:19179" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="19185:19825" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.LocalRedirectResult&quot; /&gt; object with &lt;see cref=&quot;P:Microsoft.As ... " />
-            <marker date="1552604054801" expanded="true" signature="19932:20172" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="20178:20817" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.LocalRedirectResult&quot; /&gt; object with &lt;see cref=&quot;P:Microsoft.As ... " />
-            <marker date="1552604054801" expanded="true" signature="20933:21172" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="21178:22161" ph="/// Redirects (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.StatusCodes.Status302Found&quot; /&gt;) to an action with the same  ... " />
-            <marker date="1552604054801" expanded="true" signature="22238:22301" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="22307:22682" ph="/// Redirects (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.StatusCodes.Status302Found&quot; /&gt;) to the specified action usi ... " />
-            <marker date="1552604054801" expanded="true" signature="22776:22851" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="22857:23346" ph="/// Redirects (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.StatusCodes.Status302Found&quot; /&gt;) to the specified action usi ... " />
-            <marker date="1552604054801" expanded="true" signature="23473:23561" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="23567:24066" ph="/// Redirects (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.StatusCodes.Status302Found&quot; /&gt;) to the specified action usi ... " />
-            <marker date="1552604054801" expanded="true" signature="24196:24287" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="24293:24902" ph="/// Redirects (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.StatusCodes.Status302Found&quot; /&gt;) to the specified action usi ... " />
-            <marker date="1552604054801" expanded="true" signature="25058:25162" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="25168:25775" ph="/// Redirects (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.StatusCodes.Status302Found&quot; /&gt;) to the specified action usi ... " />
-            <marker date="1552604054801" expanded="true" signature="25928:26029" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="26035:26745" ph="/// Redirects (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.StatusCodes.Status302Found&quot; /&gt;) to the specified action usi ... " />
-            <marker date="1552604054801" expanded="true" signature="26924:27073" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="27028:27066" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="27079:28025" ph="/// Redirects (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.StatusCodes.Status307TemporaryRedirect&quot; /&gt;) to the specifie ... " />
-            <marker date="1552604054801" expanded="true" signature="28246:28408" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="28363:28401" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="28414:28910" ph="/// Redirects (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.StatusCodes.Status301MovedPermanently&quot; /&gt;) to the specified ... " />
-            <marker date="1552604054801" expanded="true" signature="29020:29104" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="29110:29720" ph="/// Redirects (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.StatusCodes.Status301MovedPermanently&quot; /&gt;) to the specified ... " />
-            <marker date="1552604054801" expanded="true" signature="29856:29953" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="29959:30575" ph="/// Redirects (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.StatusCodes.Status301MovedPermanently&quot; /&gt;) to the specified ... " />
-            <marker date="1552604054801" expanded="true" signature="30714:30814" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="30820:31538" ph="/// Redirects (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.StatusCodes.Status301MovedPermanently&quot; /&gt;) to the specified ... " />
-            <marker date="1552604054801" expanded="true" signature="31700:31810" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="31816:32536" ph="/// Redirects (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.StatusCodes.Status301MovedPermanently&quot; /&gt;) to the specified ... " />
-            <marker date="1552604054801" expanded="true" signature="32701:32814" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="32820:33641" ph="/// Redirects (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.StatusCodes.Status301MovedPermanently&quot; /&gt;) to the specified ... " />
-            <marker date="1552604054801" expanded="true" signature="33829:33984" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="33939:33977" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="33990:34935" ph="/// Redirects (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.StatusCodes.Status308PermanentRedirect&quot; /&gt;) to the specifie ... " />
-            <marker date="1552604054801" expanded="true" signature="35165:35326" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="35281:35319" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="35332:35712" ph="/// Redirects (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.StatusCodes.Status302Found&quot; /&gt;) to the specified route usin ... " />
-            <marker date="1552604054801" expanded="true" signature="35803:35876" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="35882:36271" ph="/// Redirects (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.StatusCodes.Status302Found&quot; /&gt;) to the specified route usin ... " />
-            <marker date="1552604054801" expanded="true" signature="36364:36439" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="36445:36939" ph="/// Redirects (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.StatusCodes.Status302Found&quot; /&gt;) to the specified route usin ... " />
-            <marker date="1552604054801" expanded="true" signature="37063:37149" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="37155:37647" ph="/// Redirects (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.StatusCodes.Status302Found&quot; /&gt;) to the specified route usin ... " />
-            <marker date="1552604054801" expanded="true" signature="37768:37851" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="37857:38453" ph="/// Redirects (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.StatusCodes.Status302Found&quot; /&gt;) to the specified route usin ... " />
-            <marker date="1552604054801" expanded="true" signature="38600:38731" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="38686:38724" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="38737:39559" ph="/// Redirects (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.StatusCodes.Status307TemporaryRedirect&quot; /&gt;) to the specifie ... " />
-            <marker date="1552604054801" expanded="true" signature="39741:39885" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="39840:39878" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="39891:40381" ph="/// Redirects (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.StatusCodes.Status301MovedPermanently&quot; /&gt;) to the specified ... " />
-            <marker date="1552604054801" expanded="true" signature="40488:40570" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="40576:41075" ph="/// Redirects (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.StatusCodes.Status301MovedPermanently&quot; /&gt;) to the specified ... " />
-            <marker date="1552604054801" expanded="true" signature="41184:41268" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="41274:41878" ph="/// Redirects (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.StatusCodes.Status301MovedPermanently&quot; /&gt;) to the specified ... " />
-            <marker date="1552604054801" expanded="true" signature="42011:42106" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="42112:42714" ph="/// Redirects (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.StatusCodes.Status301MovedPermanently&quot; /&gt;) to the specified ... " />
-            <marker date="1552604054801" expanded="true" signature="42844:42936" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="42942:43648" ph="/// Redirects (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.StatusCodes.Status301MovedPermanently&quot; /&gt;) to the specified ... " />
-            <marker date="1552604054801" expanded="true" signature="43804:43941" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="43896:43934" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="43947:44768" ph="/// Redirects (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.StatusCodes.Status308PermanentRedirect&quot; /&gt;) to the specifie ... " />
-            <marker date="1552604054801" expanded="true" signature="44959:45102" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="45057:45095" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="45108:45433" ph="/// Redirects (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.StatusCodes.Status302Found&quot; /&gt;) to the specified &lt;paramref  ... " />
-            <marker date="1552604054801" expanded="true" signature="45521:45592" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="45598:46053" ph="/// Redirects (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.StatusCodes.Status302Found&quot; /&gt;) to the specified &lt;paramref  ... " />
-            <marker date="1552604054801" expanded="true" signature="46174:46273" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="46279:46739" ph="/// Redirects (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.StatusCodes.Status302Found&quot; /&gt;) to the specified &lt;paramref  ... " />
-            <marker date="1552604054801" expanded="true" signature="46860:46944" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="46950:47420" ph="/// Redirects (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.StatusCodes.Status302Found&quot; /&gt;) to the specified &lt;paramref  ... " />
-            <marker date="1552604054801" expanded="true" signature="47567:47664" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="47670:48198" ph="/// Redirects (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.StatusCodes.Status302Found&quot; /&gt;) to the specified &lt;paramref  ... " />
-            <marker date="1552604054801" expanded="true" signature="48342:48436" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="48442:49076" ph="/// Redirects (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.StatusCodes.Status302Found&quot; /&gt;) to the specified &lt;paramref  ... " />
-            <marker date="1552604054801" expanded="true" signature="49246:49343" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="49349:49767" ph="/// Redirects (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.StatusCodes.Status301MovedPermanently&quot; /&gt;) to the specified ... " />
-            <marker date="1552604054801" expanded="true" signature="49864:49944" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="49950:50498" ph="/// Redirects (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.StatusCodes.Status301MovedPermanently&quot; /&gt;) to the specified ... " />
-            <marker date="1552604054801" expanded="true" signature="50628:50736" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="50742:51295" ph="/// Redirects (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.StatusCodes.Status301MovedPermanently&quot; /&gt;) to the specified ... " />
-            <marker date="1552604054801" expanded="true" signature="51425:51533" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="51539:52160" ph="/// Redirects (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.StatusCodes.Status301MovedPermanently&quot; /&gt;) to the specified ... " />
-            <marker date="1552604054801" expanded="true" signature="52313:52416" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="52422:53149" ph="/// Redirects (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.StatusCodes.Status301MovedPermanently&quot; /&gt;) to the specified ... " />
-            <marker date="1552604054801" expanded="true" signature="53328:53431" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="53437:54330" ph="/// Redirects (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.StatusCodes.Status307TemporaryRedirect&quot; /&gt;) to the specifie ... " />
-            <marker date="1552604054801" expanded="true" signature="54535:54733" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="54739:55632" ph="/// Redirects (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.StatusCodes.Status308PermanentRedirect&quot; /&gt;) to the specifie ... " />
-            <marker date="1552604054801" expanded="true" signature="55846:56043" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="56049:56813" ph="/// Returns a file with the specified &lt;paramref name=&quot;fileContents&quot; /&gt; as content (&lt;see cref=&quot;F:Microsoft.AspNetC ... " />
-            <marker date="1552604054801" expanded="true" signature="56912:56990" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="56996:57868" ph="/// Returns a file with the specified &lt;paramref name=&quot;fileContents&quot; /&gt; as content (&lt;see cref=&quot;F:Microsoft.AspNetC ... " />
-            <marker date="1552604054801" expanded="true" signature="58014:58115" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="58121:59035" ph="/// Returns a file with the specified &lt;paramref name=&quot;fileContents&quot; /&gt; as content (&lt;see cref=&quot;F:Microsoft.AspNetC ... " />
-            <marker date="1552604054801" expanded="true" signature="59178:59377" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="59383:60405" ph="/// Returns a file with the specified &lt;paramref name=&quot;fileContents&quot; /&gt; as content (&lt;see cref=&quot;F:Microsoft.AspNetC ... " />
-            <marker date="1552604054801" expanded="true" signature="60582:60852" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="60858:61879" ph="/// Returns a file with the specified &lt;paramref name=&quot;fileContents&quot; /&gt; as content (&lt;see cref=&quot;F:Microsoft.AspNetC ... " />
-            <marker date="1552604054801" expanded="true" signature="62065:62303" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="62309:63438" ph="/// Returns a file with the specified &lt;paramref name=&quot;fileContents&quot; /&gt; as content (&lt;see cref=&quot;F:Microsoft.AspNetC ... " />
-            <marker date="1552604054801" expanded="true" signature="63658:63967" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="63973:65145" ph="/// Returns a file with the specified &lt;paramref name=&quot;fileContents&quot; /&gt; as content (&lt;see cref=&quot;F:Microsoft.AspNetC ... " />
-            <marker date="1552604054801" expanded="true" signature="65362:65661" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="65667:66947" ph="/// Returns a file with the specified &lt;paramref name=&quot;fileContents&quot; /&gt; as content (&lt;see cref=&quot;F:Microsoft.AspNetC ... " />
-            <marker date="1552604054801" expanded="true" signature="67198:67568" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="67574:68371" ph="/// Returns a file in the specified &lt;paramref name=&quot;fileStream&quot; /&gt; (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.Status ... " />
-            <marker date="1552604054801" expanded="true" signature="68467:68543" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="68549:69454" ph="/// Returns a file in the specified &lt;paramref name=&quot;fileStream&quot; /&gt; (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.Status ... " />
-            <marker date="1552604054801" expanded="true" signature="69597:69696" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="69702:70660" ph="/// Returns a file in the specified &lt;paramref name=&quot;fileStream&quot; /&gt; (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.Status ... " />
-            <marker date="1552604054801" expanded="true" signature="70800:70992" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="70998:72064" ph="/// Returns a file in the specified &lt;paramref name=&quot;fileStream&quot; /&gt; (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.Status ... " />
-            <marker date="1552604054801" expanded="true" signature="72238:72500" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="72506:73559" ph="/// Returns a file in the specified &lt;paramref name=&quot;fileStream&quot; /&gt; (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.Status ... " />
-            <marker date="1552604054801" expanded="true" signature="73742:73972" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="73978:75139" ph="/// Returns a file in the specified &lt;paramref name=&quot;fileStream&quot; /&gt; (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.Status ... " />
-            <marker date="1552604054801" expanded="true" signature="75356:75656" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="75662:76866" ph="/// Returns a file in the specified &lt;paramref name=&quot;fileStream&quot; /&gt; (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.Status ... " />
-            <marker date="1552604054801" expanded="true" signature="77080:77370" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="77376:78688" ph="/// Returns a file in the specified &lt;paramref name=&quot;fileStream&quot; /&gt; (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.Status ... " />
-            <marker date="1552604054801" expanded="true" signature="78936:79296" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="79302:80075" ph="/// Returns the file specified by &lt;paramref name=&quot;virtualPath&quot; /&gt; (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.StatusC ... " />
-            <marker date="1552604054801" expanded="true" signature="80173:80250" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="80256:81137" ph="/// Returns the file specified by &lt;paramref name=&quot;virtualPath&quot; /&gt; (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.StatusC ... " />
-            <marker date="1552604054801" expanded="true" signature="81282:81382" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="81388:82323" ph="/// Returns the file specified by &lt;paramref name=&quot;virtualPath&quot; /&gt; (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.StatusC ... " />
-            <marker date="1552604054801" expanded="true" signature="82465:82663" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="82669:83712" ph="/// Returns the file specified by &lt;paramref name=&quot;virtualPath&quot; /&gt; (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.StatusC ... " />
-            <marker date="1552604054801" expanded="true" signature="83888:84157" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="84163:85193" ph="/// Returns the file specified by &lt;paramref name=&quot;virtualPath&quot; /&gt; (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.StatusC ... " />
-            <marker date="1552604054801" expanded="true" signature="85378:85615" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="85621:86759" ph="/// Returns the file specified by &lt;paramref name=&quot;virtualPath&quot; /&gt; (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.StatusC ... " />
-            <marker date="1552604054801" expanded="true" signature="86978:87286" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="87292:88473" ph="/// Returns the file specified by &lt;paramref name=&quot;virtualPath&quot; /&gt; (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.StatusC ... " />
-            <marker date="1552604054801" expanded="true" signature="88689:88987" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="88993:90282" ph="/// Returns the file specified by &lt;paramref name=&quot;virtualPath&quot; /&gt; (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.StatusC ... " />
-            <marker date="1552604054801" expanded="true" signature="90532:90901" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="90907:91695" ph="/// Returns the file specified by &lt;paramref name=&quot;physicalPath&quot; /&gt; (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.Status ... " />
-            <marker date="1552604054801" expanded="true" signature="91816:91902" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="91908:92804" ph="/// Returns the file specified by &lt;paramref name=&quot;physicalPath&quot; /&gt; (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.Status ... " />
-            <marker date="1552604054801" expanded="true" signature="92959:93068" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="93074:94024" ph="/// Returns the file specified by &lt;paramref name=&quot;physicalPath&quot; /&gt; (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.Status ... " />
-            <marker date="1552604054801" expanded="true" signature="94176:94380" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="94386:95444" ph="/// Returns the file specified by &lt;paramref name=&quot;physicalPath&quot; /&gt; (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.Status ... " />
-            <marker date="1552604054801" expanded="true" signature="95630:95906" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="95912:96957" ph="/// Returns the file specified by &lt;paramref name=&quot;physicalPath&quot; /&gt; (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.Status ... " />
-            <marker date="1552604054801" expanded="true" signature="97152:97396" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="97402:98555" ph="/// Returns the file specified by &lt;paramref name=&quot;physicalPath&quot; /&gt; (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.Status ... " />
-            <marker date="1552604054801" expanded="true" signature="98784:99100" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="99106:100302" ph="/// Returns the file specified by &lt;paramref name=&quot;physicalPath&quot; /&gt; (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.Status ... " />
-            <marker date="1552604054801" expanded="true" signature="100528:100834" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="100840:102144" ph="/// Returns the file specified by &lt;paramref name=&quot;physicalPath&quot; /&gt; (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.Status ... " />
-            <marker date="1552604054801" expanded="true" signature="102404:102782" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="102788:103122" ph="/// Creates an &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.UnauthorizedResult&quot; /&gt; that produces an &lt;see cref=&quot;F:Microso ... " />
-            <marker date="1552604054801" expanded="true" signature="103191:103242" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="103248:103593" ph="/// Creates an &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.UnauthorizedObjectResult&quot; /&gt; that produces a &lt;see cref=&quot;F:Mi ... " />
-            <marker date="1552604054801" expanded="true" signature="103706:103768" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="103774:104095" ph="/// Creates an &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.NotFoundResult&quot; /&gt; that produces a &lt;see cref=&quot;F:Microsoft.As ... " />
-            <marker date="1552604054801" expanded="true" signature="104156:104203" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="104209:104542" ph="/// Creates an &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.NotFoundObjectResult&quot; /&gt; that produces a &lt;see cref=&quot;F:Micros ... " />
-            <marker date="1552604054801" expanded="true" signature="104647:104705" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="104711:105038" ph="/// Creates an &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.BadRequestResult&quot; /&gt; that produces a &lt;see cref=&quot;F:Microsoft. ... " />
-            <marker date="1552604054801" expanded="true" signature="105103:105152" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="105158:105579" ph="/// Creates an &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.BadRequestObjectResult&quot; /&gt; that produces a &lt;see cref=&quot;F:Micr ... " />
-            <marker date="1552604054801" expanded="true" signature="105688:105748" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="105754:106262" ph="/// Creates an &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.BadRequestObjectResult&quot; /&gt; that produces a &lt;see cref=&quot;F:Micr ... " />
-            <marker date="1552604054801" expanded="true" signature="106397:106554" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="106560:106914" ph="/// Creates an &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.UnprocessableEntityResult&quot; /&gt; that produces a &lt;see cref=&quot;F:M ... " />
-            <marker date="1552604054801" expanded="true" signature="106997:107055" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="107061:107509" ph="/// Creates an &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.UnprocessableEntityObjectResult&quot; /&gt; that produces a &lt;see cre ... " />
-            <marker date="1552604054801" expanded="true" signature="107643:107712" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="107718:108253" ph="/// Creates an &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.UnprocessableEntityObjectResult&quot; /&gt; that produces a &lt;see cre ... " />
-            <marker date="1552604054801" expanded="true" signature="108406:108572" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="108578:108899" ph="/// Creates an &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.ConflictResult&quot; /&gt; that produces a &lt;see cref=&quot;F:Microsoft.As ... " />
-            <marker date="1552604054801" expanded="true" signature="108960:109007" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="109013:109428" ph="/// Creates an &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.ConflictObjectResult&quot; /&gt; that produces a &lt;see cref=&quot;F:Micros ... " />
-            <marker date="1552604054801" expanded="true" signature="109533:109591" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="109597:110099" ph="/// Creates an &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.ConflictObjectResult&quot; /&gt; that produces a &lt;see cref=&quot;F:Micros ... " />
-            <marker date="1552604054801" expanded="true" signature="110223:110286" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="110292:110631" ph="/// Creates an &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.BadRequestObjectResult&quot; /&gt; that produces a &lt;see cref=&quot;F:Micr ... " />
-            <marker date="1552604054801" expanded="true" signature="110760:110941" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="110947:111286" ph="/// Creates an &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.BadRequestObjectResult&quot; /&gt; that produces a &lt;see cref=&quot;F:Micr ... " />
-            <marker date="1552604054801" expanded="true" signature="111428:111669" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="111675:112118" ph="/// Creates an &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.BadRequestObjectResult&quot; /&gt; that produces a &lt;see cref=&quot;F:Micr ... " />
-            <marker date="1552604054801" expanded="true" signature="112186:112310" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="112316:112805" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.CreatedResult&quot; /&gt; object that produces a &lt;see cref=&quot;F:Microso ... " />
-            <marker date="1552604054801" expanded="true" signature="112914:113048" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="113054:113543" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.CreatedResult&quot; /&gt; object that produces a &lt;see cref=&quot;F:Microso ... " />
-            <marker date="1552604054801" expanded="true" signature="113649:113789" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="113795:114314" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.CreatedAtActionResult&quot; /&gt; object that produces a &lt;see cref=&quot;F ... " />
-            <marker date="1552604054801" expanded="true" signature="114459:114540" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="114546:115153" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.CreatedAtActionResult&quot; /&gt; object that produces a &lt;see cref=&quot;F ... " />
-            <marker date="1552604054801" expanded="true" signature="115324:115418" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="115424:116134" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.CreatedAtActionResult&quot; /&gt; object that produces a &lt;see cref=&quot;F ... " />
-            <marker date="1552604054801" expanded="true" signature="116334:116434" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="116440:116955" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.CreatedAtRouteResult&quot; /&gt; object that produces a &lt;see cref=&quot;F: ... " />
-            <marker date="1552604054801" expanded="true" signature="117097:117176" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="117182:117692" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.CreatedAtRouteResult&quot; /&gt; object that produces a &lt;see cref=&quot;F: ... " />
-            <marker date="1552604054801" expanded="true" signature="117836:117917" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="117923:118526" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.CreatedAtRouteResult&quot; /&gt; object that produces a &lt;see cref=&quot;F: ... " />
-            <marker date="1552604054801" expanded="true" signature="118694:118776" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="118782:119110" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.AcceptedResult&quot; /&gt; object that produces an &lt;see cref=&quot;F:Micro ... " />
-            <marker date="1552604054801" expanded="true" signature="119171:119218" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="119224:119658" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.AcceptedResult&quot; /&gt; object that produces an &lt;see cref=&quot;F:Micro ... " />
-            <marker date="1552604054801" expanded="true" signature="119757:119824" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="119830:120307" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.AcceptedResult&quot; /&gt; object that produces an &lt;see cref=&quot;F:Micro ... " />
-            <marker date="1552604054801" expanded="true" signature="120375:120524" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="120530:121007" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.AcceptedResult&quot; /&gt; object that produces an &lt;see cref=&quot;F:Micro ... " />
-            <marker date="1552604054801" expanded="true" signature="121078:121143" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="121149:121702" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.AcceptedResult&quot; /&gt; object that produces an &lt;see cref=&quot;F:Micro ... " />
-            <marker date="1552604054801" expanded="true" signature="121813:121870" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="121876:122429" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.AcceptedResult&quot; /&gt; object that produces an &lt;see cref=&quot;F:Micro ... " />
-            <marker date="1552604054801" expanded="true" signature="122537:122678" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="122684:123123" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.AcceptedAtActionResult&quot; /&gt; object that produces an &lt;see cref= ... " />
-            <marker date="1552604054801" expanded="true" signature="123217:123307" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="123313:123855" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.AcceptedAtActionResult&quot; /&gt; object that produces an &lt;see cref= ... " />
-            <marker date="1552604054801" expanded="true" signature="123985:124091" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="124097:124642" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.AcceptedAtActionResult&quot; /&gt; object that produces an &lt;see cref= ... " />
-            <marker date="1552604054801" expanded="true" signature="124789:124871" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="124877:125507" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.AcceptedAtActionResult&quot; /&gt; object that produces an &lt;see cref= ... " />
-            <marker date="1552604054801" expanded="true" signature="125689:125793" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="125799:126432" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.AcceptedAtActionResult&quot; /&gt; object that produces an &lt;see cref= ... " />
-            <marker date="1552604054801" expanded="true" signature="126605:126700" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="126706:127442" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.AcceptedAtActionResult&quot; /&gt; object that produces an &lt;see cref= ... " />
-            <marker date="1552604054801" expanded="true" signature="127644:127745" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="127751:128181" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.AcceptedAtRouteResult&quot; /&gt; object that produces an &lt;see cref=&quot; ... " />
-            <marker date="1552604054801" expanded="true" signature="128300:128390" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="128396:128831" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.AcceptedAtRouteResult&quot; /&gt; object that produces an &lt;see cref=&quot; ... " />
-            <marker date="1552604054801" expanded="true" signature="128922:129010" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="129016:129539" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.AcceptedAtRouteResult&quot; /&gt; object that produces an &lt;see cref=&quot; ... " />
-            <marker date="1552604054801" expanded="true" signature="129663:129749" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="129755:130291" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.AcceptedAtRouteResult&quot; /&gt; object that produces an &lt;see cref=&quot; ... " />
-            <marker date="1552604054801" expanded="true" signature="130437:130519" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="130525:131154" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.AcceptedAtRouteResult&quot; /&gt; object that produces an &lt;see cref=&quot; ... " />
-            <marker date="1552604054801" expanded="true" signature="131324:131407" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="131413:132013" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.ChallengeResult&quot; /&gt;. ... " />
-            <marker date="1552604054801" expanded="true" signature="132076:132124" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="132130:132865" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.ChallengeResult&quot; /&gt; with the specified authentication schemes ... " />
-            <marker date="1552604054801" expanded="true" signature="132965:133050" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="133056:133879" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.ChallengeResult&quot; /&gt; with the specified &lt;paramref name=&quot;proper ... " />
-            <marker date="1552604054801" expanded="true" signature="133977:134035" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="134041:134992" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.ChallengeResult&quot; /&gt; with the specified authentication schemes ... " />
-            <marker date="1552604054801" expanded="true" signature="135142:135239" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="135245:135772" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.ForbidResult&quot; /&gt; (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.Stat ... " />
-            <marker date="1552604054801" expanded="true" signature="135829:135874" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="135880:136550" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.ForbidResult&quot; /&gt; (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.Stat ... " />
-            <marker date="1552604054801" expanded="true" signature="136644:136726" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="136732:137490" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.ForbidResult&quot; /&gt; (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.Stat ... " />
-            <marker date="1552604054801" expanded="true" signature="137582:137637" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="137643:138521" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.ForbidResult&quot; /&gt; (&lt;see cref=&quot;F:Microsoft.AspNetCore.Http.Stat ... " />
-            <marker date="1552604054801" expanded="true" signature="138665:138759" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="138765:139263" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.SignInResult&quot; /&gt; with the specified authentication scheme. ... " />
-            <marker date="1552604054801" expanded="true" signature="139387:139463" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="139469:140168" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.SignInResult&quot; /&gt; with the specified authentication scheme and ... " />
-            <marker date="1552604054801" expanded="true" signature="140335:140423" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="140429:140805" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.SignOutResult&quot; /&gt; with the specified authentication schemes. ... " />
-            <marker date="1552604054801" expanded="true" signature="140901:140984" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="140990:141567" ph="/// Creates a &lt;see cref=&quot;T:Microsoft.AspNetCore.Mvc.SignOutResult&quot; /&gt; with the specified authentication schemes a ... " />
-            <marker date="1552604054801" expanded="true" signature="141713:141808" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="141814:142316" ph="/// Updates the specified &lt;paramref name=&quot;model&quot; /&gt; instance using values from the controller's current ... " />
-            <marker date="1552604054801" expanded="true" signature="142425:142596" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="142602:143310" ph="/// Updates the specified &lt;paramref name=&quot;model&quot; /&gt; instance using values from the controller's current ... " />
-            <marker date="1552604054801" expanded="true" signature="143440:143831" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="143837:144578" ph="/// Updates the specified &lt;paramref name=&quot;model&quot; /&gt; instance using the &lt;paramref name=&quot;valueProvider&quot; /&gt; and a ... " />
-            <marker date="1552604054801" expanded="true" signature="144757:145243" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="145249:146156" ph="/// Updates the specified &lt;paramref name=&quot;model&quot; /&gt; instance using values from the controller's current ... " />
-            <marker date="1552604054801" expanded="true" signature="146365:146924" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="146930:147746" ph="/// Updates the specified &lt;paramref name=&quot;model&quot; /&gt; instance using values from the controller's current ... " />
-            <marker date="1552604054801" expanded="true" signature="147935:148482" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="148488:149428" ph="/// Updates the specified &lt;paramref name=&quot;model&quot; /&gt; instance using the &lt;paramref name=&quot;valueProvider&quot; /&gt; and a ... " />
-            <marker date="1552604054801" expanded="true" signature="149667:150197" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="150203:151052" ph="/// Updates the specified &lt;paramref name=&quot;model&quot; /&gt; instance using the &lt;paramref name=&quot;valueProvider&quot; /&gt; and a ... " />
-            <marker date="1552604054801" expanded="true" signature="151271:151789" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="151795:152506" ph="/// Updates the specified &lt;paramref name=&quot;model&quot; /&gt; instance using values from the controller's current ... " />
-            <marker date="1552604054801" expanded="true" signature="152642:153155" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="153161:154013" ph="/// Updates the specified &lt;paramref name=&quot;model&quot; /&gt; instance using the &lt;paramref name=&quot;valueProvider&quot; /&gt; and a ... " />
-            <marker date="1552604054801" expanded="true" signature="154219:154828" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="154834:155141" ph="/// Validates the specified &lt;paramref name=&quot;model&quot; /&gt; instance. ... " />
-            <marker date="1552604054801" expanded="true" signature="155212:155364" ph="{...}" />
-            <marker date="1552604054801" expanded="true" signature="155370:155837" ph="/// Validates the specified &lt;paramref name=&quot;model&quot; /&gt; instance. ... " />
-            <marker date="1552604054801" expanded="true" signature="155923:156197" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://77cdd827-5000-4d06-abd9-d5e509619b4f/database/HELPS/schema/public/table/Workshops">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2D506C52-CF4B-4BDB-B896-80B6E2C92982/bf/7d40ab30/DbSet`1.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="82" column="27" selection-start-line="82" selection-start-column="27" selection-end-line="82" selection-end-column="27" />
+        <state relative-caret-position="544">
+          <caret line="44" column="24" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://2a7344b2-98d0-41c7-af68-74b99a1075a0/database/HELPS/schema/public/table/Users" />
+    <entry file="file://$PROJECT_DIR$/HELPS/Controllers/UserController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
           <folding>
-            <marker date="1564967203321" expanded="true" signature="0:401" ph="/* Decompiled with JetBrains decompiler ... */" />
-            <marker date="1564967203321" expanded="false" signature="409:840" ph="..." />
-            <marker date="1564967203321" expanded="true" signature="881:30382" ph="{...}" />
-            <marker date="1564967203321" expanded="true" signature="886:2452" ph="///     &lt;para&gt; ... " />
-            <marker date="1564967203321" expanded="true" signature="2669:30380" ph="{...}" />
-            <marker date="1564967203321" expanded="true" signature="2678:3887" ph="///     &lt;para&gt; ... " />
-            <marker date="1564967203321" expanded="true" signature="3931:4014" ph="{...}" />
-            <marker date="1564967203321" expanded="true" signature="3947:4008" ph="{...}" />
-            <marker date="1564967203321" expanded="true" signature="4020:4674" ph="///     Finds an entity with the given primary key values. If an entity with the given primary key values ... " />
-            <marker date="1564967203321" expanded="true" signature="4745:4800" ph="{...}" />
-            <marker date="1564967203321" expanded="true" signature="4806:5460" ph="///     Finds an entity with the given primary key values. If an entity with the given primary key values ... " />
-            <marker date="1564967203321" expanded="true" signature="5542:5597" ph="{...}" />
-            <marker date="1564967203321" expanded="true" signature="5603:6410" ph="///     Finds an entity with the given primary key values. If an entity with the given primary key values ... " />
-            <marker date="1564967203321" expanded="true" signature="6535:6590" ph="{...}" />
-            <marker date="1564967203321" expanded="true" signature="6596:7515" ph="///     &lt;para&gt; ... " />
-            <marker date="1564967203321" expanded="true" signature="7585:7640" ph="{...}" />
-            <marker date="1564967203321" expanded="true" signature="7646:9166" ph="///     &lt;para&gt; ... " />
-            <marker date="1564967203321" expanded="true" signature="9327:9382" ph="{...}" />
-            <marker date="1564967203321" expanded="true" signature="9388:11042" ph="///     &lt;para&gt; ... " />
-            <marker date="1564967203321" expanded="true" signature="11115:11170" ph="{...}" />
-            <marker date="1564967203321" expanded="true" signature="11176:12873" ph="///     Begins tracking the given entity in the &lt;see cref=&quot;F:Microsoft.EntityFrameworkCore.EntityState.Deleted&quot; / ... " />
-            <marker date="1564967203321" expanded="true" signature="12946:13001" ph="{...}" />
-            <marker date="1564967203321" expanded="true" signature="13007:15158" ph="///     &lt;para&gt; ... " />
-            <marker date="1564967203321" expanded="true" signature="15231:15286" ph="{...}" />
-            <marker date="1564967203321" expanded="true" signature="15292:15740" ph="///     Begins tracking the given entities, and any other reachable entities that are ... " />
-            <marker date="1564967203321" expanded="true" signature="15810:15865" ph="{...}" />
-            <marker date="1564967203321" expanded="true" signature="15871:16806" ph="///     &lt;para&gt; ... " />
-            <marker date="1564967203321" expanded="true" signature="16881:16936" ph="{...}" />
-            <marker date="1564967203321" expanded="true" signature="16942:18178" ph="///     &lt;para&gt; ... " />
-            <marker date="1564967203321" expanded="true" signature="18251:18306" ph="{...}" />
-            <marker date="1564967203321" expanded="true" signature="18312:19617" ph="///     Begins tracking the given entities in the &lt;see cref=&quot;F:Microsoft.EntityFrameworkCore.EntityState.Deleted&quot; ... " />
-            <marker date="1564967203321" expanded="true" signature="19690:19745" ph="{...}" />
-            <marker date="1564967203321" expanded="true" signature="19751:21488" ph="///     &lt;para&gt; ... " />
-            <marker date="1564967203321" expanded="true" signature="21561:21616" ph="{...}" />
-            <marker date="1564967203321" expanded="true" signature="21622:22070" ph="///     Begins tracking the given entities, and any other reachable entities that are ... " />
-            <marker date="1564967203321" expanded="true" signature="22144:22199" ph="{...}" />
-            <marker date="1564967203321" expanded="true" signature="22205:23293" ph="///     &lt;para&gt; ... " />
-            <marker date="1564967203321" expanded="true" signature="23452:23507" ph="{...}" />
-            <marker date="1564967203321" expanded="true" signature="23513:24749" ph="///     &lt;para&gt; ... " />
-            <marker date="1564967203321" expanded="true" signature="24826:24881" ph="{...}" />
-            <marker date="1564967203321" expanded="true" signature="24887:26230" ph="///     Begins tracking the given entities in the &lt;see cref=&quot;F:Microsoft.EntityFrameworkCore.EntityState.Deleted&quot; ... " />
-            <marker date="1564967203321" expanded="true" signature="26307:26362" ph="{...}" />
-            <marker date="1564967203321" expanded="true" signature="26368:28105" ph="///     &lt;para&gt; ... " />
-            <marker date="1564967203321" expanded="true" signature="28182:28237" ph="{...}" />
-            <marker date="1564967203321" expanded="true" signature="28300:28355" ph="{...}" />
-            <marker date="1564967203321" expanded="true" signature="28400:28455" ph="{...}" />
-            <marker date="1564967203321" expanded="true" signature="28536:28619" ph="{...}" />
-            <marker date="1564967203321" expanded="true" signature="28552:28613" ph="{...}" />
-            <marker date="1564967203321" expanded="true" signature="28652:28735" ph="{...}" />
-            <marker date="1564967203321" expanded="true" signature="28668:28729" ph="{...}" />
-            <marker date="1564967203321" expanded="true" signature="28773:28856" ph="{...}" />
-            <marker date="1564967203321" expanded="true" signature="28789:28850" ph="{...}" />
-            <marker date="1564967203321" expanded="true" signature="28896:28979" ph="{...}" />
-            <marker date="1564967203321" expanded="true" signature="28912:28973" ph="{...}" />
-            <marker date="1564967203321" expanded="true" signature="29044:29127" ph="{...}" />
-            <marker date="1564967203321" expanded="true" signature="29060:29121" ph="{...}" />
-            <marker date="1564967203321" expanded="true" signature="29160:29251" ph="{...}" />
-            <marker date="1564967203321" expanded="true" signature="29296:29356" ph="{...}" />
-            <marker date="1564967203321" expanded="true" signature="29312:29350" ph="{...}" />
-            <marker date="1564967203321" expanded="true" signature="29362:29533" ph="///     Returns a string that represents the current object. ... " />
-            <marker date="1564967203321" expanded="true" signature="29621:29663" ph="{...}" />
-            <marker date="1564967203321" expanded="true" signature="29669:29976" ph="///     Determines whether the specified object is equal to the current object. ... " />
-            <marker date="1564967203321" expanded="true" signature="30070:30113" ph="{...}" />
-            <marker date="1564967203321" expanded="true" signature="30119:30243" ph="///Serves as the default hash function. ... " />
-            <marker date="1564967203321" expanded="true" signature="30331:30376" ph="{...}" />
+            <marker date="1566205576266" expanded="false" signature="6:145" ph="..." />
+            <marker date="1566205576266" expanded="true" signature="174:1329" ph="{...}" />
+            <marker date="1566205576266" expanded="true" signature="245:1327" ph="{...}" />
+            <marker date="1566205576266" expanded="true" signature="361:421" ph="{...}" />
+            <marker date="1566205576266" expanded="true" signature="519:768" ph="{...}" />
+            <marker date="1566205576266" expanded="true" signature="885:1051" ph="{...}" />
+            <marker date="1566205576266" expanded="true" signature="1114:1321" ph="{...}" />
+            <marker date="1566205576266" expanded="true" signature="1222:1285" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="das://77cdd827-5000-4d06-abd9-d5e509619b4f/database/HELPS/schema/public/table/Rooms">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
+    <entry file="file://$PROJECT_DIR$/HELPS/ClientApp/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="43" column="25" lean-forward="true" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/Controllers/ReportsController.cs">
+    <entry file="file://$PROJECT_DIR$/HELPS/Controllers/WorkshopsController.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
           <folding>
-            <marker date="1564960842101" expanded="false" signature="6:194" ph="..." />
-            <marker date="1564960842101" expanded="true" signature="223:977" ph="{...}" />
-            <marker date="1564960842101" expanded="true" signature="332:975" ph="{...}" />
-            <marker date="1564960842101" expanded="true" signature="409:429" ph="{...}" />
-            <marker date="1564960842101" expanded="true" signature="522:650" ph="{...}" />
-            <marker date="1564960842101" expanded="true" signature="743:969" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/Controllers/SessionsController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="48" column="50" lean-forward="true" selection-start-line="48" selection-start-column="50" selection-end-line="48" selection-end-column="50" />
-          <folding>
-            <marker date="1564967819980" expanded="false" signature="6:227" ph="..." />
-            <marker date="1564967819980" expanded="true" signature="256:2366" ph="{...}" />
-            <marker date="1564967819980" expanded="true" signature="366:2364" ph="{...}" />
-            <marker date="1564967819980" expanded="true" signature="444:464" ph="{...}" />
-            <marker date="1564967819980" expanded="true" signature="559:670" ph="{...}" />
-            <marker date="1564967819980" expanded="true" signature="765:1220" ph="{...}" />
-            <marker date="1564967819980" expanded="true" signature="802:975" ph="{...}" />
-            <marker date="1564967819980" expanded="true" signature="992:1101" ph="{...}" />
-            <marker date="1564967819980" expanded="true" signature="1147:1210" ph="{...}" />
-            <marker date="1564967819980" expanded="true" signature="1318:1569" ph="{...}" />
-            <marker date="1564967819980" expanded="true" signature="1674:1946" ph="{...}" />
-            <marker date="1564967819980" expanded="true" signature="2040:2358" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/Models/Report.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
-          <folding>
-            <marker date="1564968548583" expanded="true" signature="6:96" ph="..." />
-            <marker date="1564968548583" expanded="true" signature="120:525" ph="{...}" />
-            <marker date="1564968548583" expanded="true" signature="146:523" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/Models/Session.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
-          <folding>
-            <marker date="1564968559238" expanded="true" signature="6:96" ph="..." />
-            <marker date="1564968559238" expanded="true" signature="120:576" ph="{...}" />
-            <marker date="1564968559238" expanded="true" signature="147:574" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/Models/Student.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-          <folding>
-            <marker date="1564960842116" expanded="true" signature="22:1030" ph="{...}" />
-            <marker date="1564960842116" expanded="true" signature="49:1028" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/Models/User.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="12" column="61" selection-start-line="12" selection-start-column="61" selection-end-line="12" selection-end-column="61" />
-          <folding>
-            <marker date="1564968566046" expanded="false" signature="6:193" ph="..." />
-            <marker date="1564968566046" expanded="true" signature="217:541" ph="{...}" />
-            <marker date="1564968566046" expanded="true" signature="241:539" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/Models/Workshop.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="12" column="61" selection-start-line="12" selection-start-column="61" selection-end-line="12" selection-end-column="61" />
-          <folding>
-            <marker date="1564968570801" expanded="false" signature="6:193" ph="..." />
-            <marker date="1564968570801" expanded="true" signature="217:805" ph="{...}" />
-            <marker date="1564968570801" expanded="true" signature="245:802" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/Migrations/20190805012955_SemesterOne.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2369">
-          <caret line="198" column="9" selection-start-line="198" selection-start-column="9" selection-end-line="198" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://77cdd827-5000-4d06-abd9-d5e509619b4f/database/HELPS/schema/public/table/Advisors">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/Controllers/StudentUserController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-13">
-          <caret line="35" column="16" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
-          <folding>
-            <marker date="1564967313953" expanded="false" signature="6:148" ph="..." />
-            <marker date="1564967313953" expanded="true" signature="177:3186" ph="{...}" />
-            <marker date="1564967313953" expanded="true" signature="244:3184" ph="{...}" />
-            <marker date="1564967313953" expanded="true" signature="743:1174" ph="{...}" />
-            <marker date="1564967313953" expanded="true" signature="1213:1599" ph="{...}" />
-            <marker date="1564967313953" expanded="true" signature="1239:1474" ph="{...}" />
-            <marker date="1564967313953" expanded="true" signature="1504:1589" ph="{...}" />
-            <marker date="1564967313953" expanded="true" signature="1660:1804" ph="{...}" />
-            <marker date="1564967313953" expanded="true" signature="1863:1980" ph="{...}" />
-            <marker date="1564967313953" expanded="true" signature="2033:2373" ph="{...}" />
-            <marker date="1564967313953" expanded="true" signature="2432:2802" ph="{...}" />
-            <marker date="1564967313953" expanded="true" signature="2840:2924" ph="{...}" />
-            <marker date="1564967313953" expanded="true" signature="2958:3178" ph="{...}" />
-            <marker date="1564967313953" expanded="true" signature="2984:3062" ph="{...}" />
-            <marker date="1564967313953" expanded="true" signature="3110:3168" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/Models/Room.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-          <folding>
-            <marker date="1564970635476" expanded="false" signature="6:96" ph="..." />
-            <marker date="1564970635476" expanded="true" signature="120:312" ph="{...}" />
-            <marker date="1564970635476" expanded="true" signature="144:310" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/Controllers/AdvisorsController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="47" column="82" selection-start-line="47" selection-start-column="74" selection-end-line="47" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/Models/Advisor.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-          <folding>
-            <marker date="1564960842111" expanded="true" signature="22:275" ph="{...}" />
-            <marker date="1564960842111" expanded="true" signature="49:273" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/Models/Email.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="18" column="61" selection-start-line="18" selection-start-column="61" selection-end-line="18" selection-end-column="61" />
-          <folding>
-            <marker date="1564968535440" expanded="false" signature="6:96" ph="..." />
-            <marker date="1564968535440" expanded="true" signature="120:654" ph="{...}" />
-            <marker date="1564968535440" expanded="true" signature="145:407" ph="{...}" />
-            <marker date="1564968535440" expanded="true" signature="439:652" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/Models/HelpsContext.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
-          <folding>
-            <marker date="1564960842112" expanded="true" signature="60:696" ph="{...}" />
-            <marker date="1564960842112" expanded="true" signature="104:694" ph="{...}" />
-            <marker date="1564960842112" expanded="true" signature="206:226" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/Models/Message.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="8" column="61" selection-start-line="8" selection-start-column="61" selection-end-line="8" selection-end-column="61" />
-          <folding>
-            <marker date="1564968541088" expanded="false" signature="6:96" ph="..." />
-            <marker date="1564968541088" expanded="true" signature="120:359" ph="{...}" />
-            <marker date="1564968541088" expanded="true" signature="147:357" ph="{...}" />
+            <marker date="1566210204228" expanded="false" signature="6:290" ph="..." />
+            <marker date="1566210204228" expanded="true" signature="319:2413" ph="{...}" />
+            <marker date="1566210204228" expanded="true" signature="430:2411" ph="{...}" />
+            <marker date="1566210204228" expanded="true" signature="509:529" ph="{...}" />
+            <marker date="1566210204228" expanded="true" signature="626:739" ph="{...}" />
+            <marker date="1566210204228" expanded="true" signature="836:1298" ph="{...}" />
+            <marker date="1566210204228" expanded="true" signature="873:1050" ph="{...}" />
+            <marker date="1566210204228" expanded="true" signature="1067:1179" ph="{...}" />
+            <marker date="1566210204228" expanded="true" signature="1225:1288" ph="{...}" />
+            <marker date="1566210204228" expanded="true" signature="1399:1654" ph="{...}" />
+            <marker date="1566210204228" expanded="true" signature="1761:2035" ph="{...}" />
+            <marker date="1566210204228" expanded="true" signature="2137:2405" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1227,17 +738,208 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/77cdd827-5000-4d06-abd9-d5e509619b4f/console.sql">
+    <entry file="file://$PROJECT_DIR$/HELPS/Migrations/20190819103312_Reports.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="57" selection-start-line="1" selection-start-column="57" selection-end-line="1" selection-end-column="57" />
+        <state relative-caret-position="325">
+          <caret line="73" column="25" selection-start-line="73" selection-start-column="20" selection-end-line="73" selection-end-column="25" />
+          <folding>
+            <marker date="1566210794094" expanded="false" signature="6:115" ph="..." />
+            <marker date="1566210794094" expanded="true" signature="143:9328" ph="{...}" />
+            <marker date="1566210794094" expanded="true" signature="190:9326" ph="{...}" />
+            <marker date="1566210794094" expanded="true" signature="266:8546" ph="{...}" />
+            <marker date="1566210794094" expanded="true" signature="407:873" ph="{...}" />
+            <marker date="1566210794094" expanded="true" signature="912:1012" ph="{...}" />
+            <marker date="1566210794094" expanded="true" signature="1144:1469" ph="{...}" />
+            <marker date="1566210794094" expanded="true" signature="1508:1606" ph="{...}" />
+            <marker date="1566210794094" expanded="true" signature="1740:2067" ph="{...}" />
+            <marker date="1566210794094" expanded="true" signature="2106:2206" ph="{...}" />
+            <marker date="1566210794094" expanded="true" signature="2337:2596" ph="{...}" />
+            <marker date="1566210794094" expanded="true" signature="2635:2732" ph="{...}" />
+            <marker date="1566210794094" expanded="true" signature="2866:3537" ph="{...}" />
+            <marker date="1566210794094" expanded="true" signature="3576:3676" ph="{...}" />
+            <marker date="1566210794094" expanded="true" signature="3810:5416" ph="{...}" />
+            <marker date="1566210794094" expanded="true" signature="5455:5555" ph="{...}" />
+            <marker date="1566210794094" expanded="true" signature="5686:6150" ph="{...}" />
+            <marker date="1566210794094" expanded="true" signature="6189:6286" ph="{...}" />
+            <marker date="1566210794094" expanded="true" signature="6421:7236" ph="{...}" />
+            <marker date="1566210794094" expanded="true" signature="7275:7376" ph="{...}" />
+            <marker date="1566210794094" expanded="true" signature="7515:7910" ph="{...}" />
+            <marker date="1566210794094" expanded="true" signature="7949:8365" ph="{...}" />
+            <marker date="1566210794094" expanded="true" signature="8619:9320" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HELPS/Models/Workshop.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+          <folding>
+            <marker date="1566210528806" expanded="false" signature="6:193" ph="..." />
+            <marker date="1566210528806" expanded="true" signature="217:807" ph="{...}" />
+            <marker date="1566210528806" expanded="true" signature="245:804" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HELPS/Controllers/SessionsController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="658">
+          <caret line="46" column="70" selection-start-line="46" selection-start-column="70" selection-end-line="46" selection-end-column="70" />
+          <folding>
+            <marker date="1566210204225" expanded="false" signature="6:227" ph="..." />
+            <marker date="1566210204225" expanded="true" signature="256:2366" ph="{...}" />
+            <marker date="1566210204225" expanded="true" signature="366:2364" ph="{...}" />
+            <marker date="1566210204225" expanded="true" signature="444:464" ph="{...}" />
+            <marker date="1566210204225" expanded="true" signature="559:670" ph="{...}" />
+            <marker date="1566210204225" expanded="true" signature="765:1220" ph="{...}" />
+            <marker date="1566210204225" expanded="true" signature="802:975" ph="{...}" />
+            <marker date="1566210204225" expanded="true" signature="992:1101" ph="{...}" />
+            <marker date="1566210204225" expanded="true" signature="1147:1210" ph="{...}" />
+            <marker date="1566210204225" expanded="true" signature="1318:1569" ph="{...}" />
+            <marker date="1566210204225" expanded="true" signature="1674:1946" ph="{...}" />
+            <marker date="1566210204225" expanded="true" signature="2040:2358" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HELPS/Controllers/AdvisorsController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="38" column="29" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
+          <folding>
+            <marker date="1566210204222" expanded="false" signature="6:227" ph="..." />
+            <marker date="1566210204222" expanded="true" signature="256:1978" ph="{...}" />
+            <marker date="1566210204222" expanded="true" signature="366:1976" ph="{...}" />
+            <marker date="1566210204222" expanded="true" signature="444:464" ph="{...}" />
+            <marker date="1566210204222" expanded="true" signature="559:671" ph="{...}" />
+            <marker date="1566210204222" expanded="true" signature="766:1222" ph="{...}" />
+            <marker date="1566210204222" expanded="true" signature="803:976" ph="{...}" />
+            <marker date="1566210204222" expanded="true" signature="994:1103" ph="{...}" />
+            <marker date="1566210204222" expanded="true" signature="1149:1212" ph="{...}" />
+            <marker date="1566210204222" expanded="true" signature="1343:1594" ph="{...}" />
+            <marker date="1566210204222" expanded="true" signature="1698:1970" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HELPS/Controllers/StudentUserController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="808">
+          <caret line="63" column="37" selection-start-line="63" selection-start-column="37" selection-end-line="63" selection-end-column="37" />
+          <folding>
+            <marker date="1566210204226" expanded="false" signature="6:148" ph="..." />
+            <marker date="1566210204226" expanded="true" signature="177:3186" ph="{...}" />
+            <marker date="1566210204226" expanded="true" signature="244:3184" ph="{...}" />
+            <marker date="1566210204226" expanded="true" signature="743:1174" ph="{...}" />
+            <marker date="1566210204226" expanded="true" signature="1213:1599" ph="{...}" />
+            <marker date="1566210204226" expanded="true" signature="1239:1474" ph="{...}" />
+            <marker date="1566210204226" expanded="true" signature="1504:1589" ph="{...}" />
+            <marker date="1566210204226" expanded="true" signature="1660:1804" ph="{...}" />
+            <marker date="1566210204226" expanded="true" signature="1863:1980" ph="{...}" />
+            <marker date="1566210204226" expanded="true" signature="2033:2373" ph="{...}" />
+            <marker date="1566210204226" expanded="true" signature="2432:2802" ph="{...}" />
+            <marker date="1566210204226" expanded="true" signature="2840:2924" ph="{...}" />
+            <marker date="1566210204226" expanded="true" signature="2958:3178" ph="{...}" />
+            <marker date="1566210204226" expanded="true" signature="2984:3062" ph="{...}" />
+            <marker date="1566210204226" expanded="true" signature="3110:3168" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://77cdd827-5000-4d06-abd9-d5e509619b4f/database/HELPS/schema/public/table/Sessions">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HELPS/Models/HelpsContext.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+          <folding>
+            <marker date="1566426579557" expanded="true" signature="60:645" ph="{...}" />
+            <marker date="1566426579557" expanded="true" signature="104:643" ph="{...}" />
+            <marker date="1566426579557" expanded="true" signature="206:226" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HELPS/Models/Room.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <folding>
+            <marker date="1564970635476" expanded="false" signature="6:96" ph="..." />
+            <marker date="1564970635476" expanded="true" signature="120:312" ph="{...}" />
+            <marker date="1564970635476" expanded="true" signature="144:310" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HELPS/Models/Session.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="9" selection-end-column="61" />
+          <folding>
+            <marker date="1566426579558" expanded="false" signature="6:110" ph="..." />
+            <marker date="1566426579558" expanded="true" signature="134:592" ph="{...}" />
+            <marker date="1566426579558" expanded="true" signature="161:590" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_1.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HELPS/Models/Advisor.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <marker date="1566428738606" expanded="true" signature="6:96" ph="..." />
+            <marker date="1566428738606" expanded="true" signature="120:449" ph="{...}" />
+            <marker date="1566428738606" expanded="true" signature="147:447" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HELPS/Models/Student.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+          <folding>
+            <marker date="1564960842116" expanded="true" signature="22:1030" ph="{...}" />
+            <marker date="1564960842116" expanded="true" signature="49:1028" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HELPS/Models/Email.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+          <folding>
+            <marker date="1566428753133" expanded="false" signature="6:96" ph="..." />
+            <marker date="1566428753133" expanded="true" signature="120:657" ph="{...}" />
+            <marker date="1566428753133" expanded="true" signature="145:410" ph="{...}" />
+            <marker date="1566428753133" expanded="true" signature="442:655" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HELPS/Controllers/RoomsController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="565">
-          <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
+        <state relative-caret-position="68">
+          <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
           <folding>
             <marker date="1564969607177" expanded="false" signature="6:257" ph="..." />
             <marker date="1564969607177" expanded="true" signature="286:2205" ph="{...}" />
@@ -1255,10 +957,137 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/HELPS/ClientApp/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1127">
+          <caret line="122" column="9" selection-start-line="122" selection-start-column="9" selection-end-line="122" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/77cdd827-5000-4d06-abd9-d5e509619b4f/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HELPS/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2589">
+          <caret line="331" selection-start-line="331" selection-end-line="331" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HELPS/Models/User.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding>
+            <marker date="1564968566046" expanded="false" signature="6:193" ph="..." />
+            <marker date="1564968566046" expanded="true" signature="217:541" ph="{...}" />
+            <marker date="1564968566046" expanded="true" signature="241:539" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HELPS/Reports/CancelledSessions.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HELPS/Reports/AbstractReport.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding>
+            <marker date="1566440552531" expanded="false" signature="6:33" ph="..." />
+            <marker date="1566440552531" expanded="true" signature="58:467" ph="{...}" />
+            <marker date="1566440552531" expanded="true" signature="101:465" ph="{...}" />
+            <marker date="1566440552531" expanded="true" signature="212:263" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HELPS/Reports/BookedSessions.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+          <folding>
+            <marker date="1566440560588" expanded="false" signature="6:53" ph="..." />
+            <marker date="1566440560588" expanded="true" signature="77:1303" ph="{...}" />
+            <marker date="1566440560588" expanded="true" signature="133:1301" ph="{...}" />
+            <marker date="1566440560588" expanded="true" signature="208:228" ph="{...}" />
+            <marker date="1566440560588" expanded="true" signature="271:329" ph="{...}" />
+            <marker date="1566440560588" expanded="true" signature="384:442" ph="{...}" />
+            <marker date="1566440560588" expanded="true" signature="539:1295" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HELPS/Controllers/ReportsController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="719">
+          <caret line="53" column="23" lean-forward="true" selection-start-line="53" selection-start-column="23" selection-end-line="53" selection-end-column="23" />
+          <folding>
+            <marker date="1566436121286" expanded="false" signature="6:219" ph="..." />
+            <marker date="1566436121286" expanded="true" signature="248:1948" ph="{...}" />
+            <marker date="1566436121286" expanded="true" signature="357:1946" ph="{...}" />
+            <marker date="1566436121286" expanded="true" signature="503:710" ph="{...}" />
+            <marker date="1566436121286" expanded="true" signature="585:699" ph="{...}" />
+            <marker date="1566436121286" expanded="true" signature="800:1155" ph="{...}" />
+            <marker date="1566436121286" expanded="true" signature="1251:1940" ph="{...}" />
+            <marker date="1566436121286" expanded="true" signature="1329:1677" ph="{...}" />
+            <marker date="1566436121286" expanded="true" signature="1709:1917" ph="{...}" />
+            <marker date="1566436121286" expanded="true" signature="1798:1879" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HELPS/Reports/StudentHistory.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="30" column="57" selection-start-line="30" selection-start-column="57" selection-end-line="30" selection-end-column="57" />
+          <folding>
+            <marker date="1566440568840" expanded="true" signature="6:52" ph="..." />
+            <marker date="1566440568840" expanded="true" signature="77:1592" ph="{...}" />
+            <marker date="1566440568840" expanded="true" signature="133:1590" ph="{...}" />
+            <marker date="1566440568840" expanded="true" signature="273:293" ph="{...}" />
+            <marker date="1566440568840" expanded="true" signature="336:394" ph="{...}" />
+            <marker date="1566440568840" expanded="true" signature="449:623" ph="{...}" />
+            <marker date="1566440568840" expanded="true" signature="498:612" ph="{...}" />
+            <marker date="1566440568840" expanded="true" signature="720:1584" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HELPS/Models/Report.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="753">
+          <caret line="87" column="55" selection-start-line="87" selection-start-column="55" selection-end-line="87" selection-end-column="55" />
+          <folding>
+            <marker date="1566439891471" expanded="false" signature="6:36" ph="..." />
+            <marker date="1566439891471" expanded="true" signature="60:2950" ph="{...}" />
+            <marker date="1566439891471" expanded="true" signature="90:774" ph="{...}" />
+            <marker date="1566439891471" expanded="true" signature="134:405" ph="{...}" />
+            <marker date="1566439891471" expanded="true" signature="285:395" ph="{...}" />
+            <marker date="1566439891471" expanded="true" signature="638:768" ph="{...}" />
+            <marker date="1566439891471" expanded="true" signature="807:1101" ph="{...}" />
+            <marker date="1566439891471" expanded="true" signature="973:1095" ph="{...}" />
+            <marker date="1566439891471" expanded="true" signature="1139:1997" ph="{...}" />
+            <marker date="1566439891471" expanded="true" signature="1681:1991" ph="{...}" />
+            <marker date="1566439891471" expanded="true" signature="2038:2050" ph="{...}" />
+            <marker date="1566439891471" expanded="true" signature="2089:2948" ph="{...}" />
+            <marker date="1566439891471" expanded="true" signature="2632:2942" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/HELPS/appsettings.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="78" selection-start-line="12" selection-start-column="78" selection-end-line="12" selection-end-column="78" />
+        <state relative-caret-position="255">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>

@@ -12,6 +12,7 @@ import {ThunkDispatch} from 'redux-thunk';
 import {connect} from 'react-redux';
 import {AppState} from '../../types/store/StoreTypes';
 import {renderEditButtons} from '../../types/util/Editable';
+import {TextInput} from '../forms/Components';
 
 class UserDetailsForm extends React.Component<UserFormProps, UserFormState> {
     constructor(props: UserFormProps) {
@@ -23,16 +24,6 @@ class UserDetailsForm extends React.Component<UserFormProps, UserFormState> {
         };
     }
 
-    TextInput = (props: any) => (
-        <Form.Group controlId='login'>
-            <Form.Control name='email'
-                          placeholder='Login'
-                          value={props.input.value}
-                          onChange={props.input.onChange}
-                          {...props}/>
-        </Form.Group>
-    );
-
     render() {
         return (
             <form onSubmit={this.props.handleSubmit} className='m-5'>
@@ -41,7 +32,7 @@ class UserDetailsForm extends React.Component<UserFormProps, UserFormState> {
                         <Form.Label>Student ID</Form.Label>
                         <Field
                             name='id'
-                            component={this.TextInput}
+                            component={TextInput}
                             type='text'
                             placeholder='Id'/>
                     </Form.Group>
@@ -49,7 +40,7 @@ class UserDetailsForm extends React.Component<UserFormProps, UserFormState> {
                         <Form.Label>First Name</Form.Label>
                         <Field
                             name='name'
-                            component={this.TextInput}
+                            component={TextInput}
                             type='text'
                             placeholder='First Name'/>
                     </Form.Group>
@@ -57,7 +48,7 @@ class UserDetailsForm extends React.Component<UserFormProps, UserFormState> {
                         <Form.Label>Preferred First Name</Form.Label>
                         <Field
                             name='prefFirstName'
-                            component={this.TextInput}
+                            component={TextInput}
                             type='text'
                             placeholder='Preferred First Name'/>
                     </Form.Group>
@@ -67,7 +58,7 @@ class UserDetailsForm extends React.Component<UserFormProps, UserFormState> {
                         <Form.Label>Faculty</Form.Label>
                         <Field
                             name='faculty'
-                            component={this.TextInput}
+                            component={TextInput}
                             type='text'
                             placeholder='Faculty'/>
                     </Form.Group>
@@ -75,7 +66,7 @@ class UserDetailsForm extends React.Component<UserFormProps, UserFormState> {
                         <Form.Label>Course</Form.Label>
                         <Field
                             name='course'
-                            component={this.TextInput}
+                            component={TextInput}
                             type='text'
                             placeholder='Course'/>
                     </Form.Group>
@@ -83,7 +74,7 @@ class UserDetailsForm extends React.Component<UserFormProps, UserFormState> {
                         <Form.Label>Email</Form.Label>
                         <Field
                             name='email'
-                            component={this.TextInput}
+                            component={TextInput}
                             type='text'
                             placeholder='Email'/>
                     </Form.Group>
@@ -93,7 +84,7 @@ class UserDetailsForm extends React.Component<UserFormProps, UserFormState> {
                         <Form.Label>Home Phone</Form.Label>
                         <Field
                             name='homePhone'
-                            component={this.TextInput}
+                            component={TextInput}
                             type='text'
                             placeholder='Home Phone'/>
                     </Form.Group>
@@ -101,7 +92,7 @@ class UserDetailsForm extends React.Component<UserFormProps, UserFormState> {
                         <Form.Label>Mobile</Form.Label>
                         <Field
                             name='mobile'
-                            component={this.TextInput}
+                            component={TextInput}
                             type='text'
                             placeholder='Mobile'/>
                     </Form.Group>
@@ -109,7 +100,7 @@ class UserDetailsForm extends React.Component<UserFormProps, UserFormState> {
                         <Form.Label>Best Contact Number</Form.Label>
                         <Field
                             name='bestContactNumber'
-                            component={this.TextInput}
+                            component={TextInput}
                             type='text'
                             placeholder='Best Contact Number'/>
                     </Form.Group>
@@ -119,7 +110,7 @@ class UserDetailsForm extends React.Component<UserFormProps, UserFormState> {
                         <Form.Label>Date of Birth</Form.Label>
                         <Field
                             name='dob'
-                            component={this.TextInput}
+                            component={TextInput}
                             type='text'
                             placeholder='Date of Birth'/>
                     </Form.Group>
@@ -127,7 +118,7 @@ class UserDetailsForm extends React.Component<UserFormProps, UserFormState> {
                         <Form.Label>Gender</Form.Label>
                         <Field
                             name='gender'
-                            component={this.TextInput}
+                            component={TextInput}
                             type='text'
                             placeholder='Gender'/>
                     </Form.Group>
@@ -135,7 +126,7 @@ class UserDetailsForm extends React.Component<UserFormProps, UserFormState> {
                         <Form.Label>Degree</Form.Label>
                         <Field
                             name='degree'
-                            component={this.TextInput}
+                            component={TextInput}
                             type='text'
                             placeholder='Degree'/>
                     </Form.Group>
@@ -145,7 +136,7 @@ class UserDetailsForm extends React.Component<UserFormProps, UserFormState> {
                         <Form.Label>Year</Form.Label>
                         <Field
                             name='year'
-                            component={this.TextInput}
+                            component={TextInput}
                             type='text'
                             placeholder='Year'/>
                     </Form.Group>
@@ -153,7 +144,7 @@ class UserDetailsForm extends React.Component<UserFormProps, UserFormState> {
                         <Form.Label>Status</Form.Label>
                         <Field
                             name='status'
-                            component={this.TextInput}
+                            component={TextInput}
                             type='text'
                             placeholder='Status'/>
                     </Form.Group>
@@ -161,7 +152,7 @@ class UserDetailsForm extends React.Component<UserFormProps, UserFormState> {
                         <Form.Label>First Language</Form.Label>
                         <Field
                             name='firstLanguage'
-                            component={this.TextInput}
+                            component={TextInput}
                             type='text'
                             placeholder='First Language'/>
                     </Form.Group>
@@ -171,7 +162,7 @@ class UserDetailsForm extends React.Component<UserFormProps, UserFormState> {
                         <Form.Label>Country of Origin</Form.Label>
                         <Field
                             name='countryOfOrigin'
-                            component={this.TextInput}
+                            component={TextInput}
                             type='text'
                             placeholder='Country Of Origin'/>
                     </Form.Group>
@@ -179,7 +170,7 @@ class UserDetailsForm extends React.Component<UserFormProps, UserFormState> {
                         <Form.Label>Educational Background</Form.Label>
                         <Field
                             name='educationalBackground'
-                            component={this.TextInput}
+                            component={TextInput}
                             type='text'
                             placeholder='Educational Background'/>
                     </Form.Group>
@@ -187,7 +178,7 @@ class UserDetailsForm extends React.Component<UserFormProps, UserFormState> {
                         <Form.Label>Other</Form.Label>
                         <Field
                             name='other'
-                            component={this.TextInput}
+                            component={TextInput}
                             type='text'
                             placeholder='Other'/>
                     </Form.Group>

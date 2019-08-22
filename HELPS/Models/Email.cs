@@ -8,7 +8,7 @@ namespace HELPS.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        public int Title { get; set; }
+        public string Title { get; set; }
         public string Content { get; set; }
         public EmailVariable[] variables { get; set; }
     }

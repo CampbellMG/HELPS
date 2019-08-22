@@ -11,12 +11,12 @@ import {
 } from '../../../types/components/WorkshopRegistrationTypes';
 import Datetime from 'react-datetime';
 import 'react-datetime/css/react-datetime.css';
-import RoomList from '../lists/RoomList';
+import RoomList from '../../forms/lists/RoomList';
 import {Button, ListGroup, Modal} from 'react-bootstrap';
-import SkillList from '../lists/SkillList';
+import SkillList from '../../forms/lists/SkillList';
 import {MdAdd, MdDelete} from 'react-icons/md';
 import EmailSubmit from '../eventView/EmailSubmit';
-import StudentList from '../lists/StudentList';
+import StudentList from '../../forms/lists/StudentList';
 // @ts-ignore
 import RRuleGenerator from 'react-rrule-generator';
 import './EventForm.css';
@@ -25,6 +25,7 @@ import {ThunkDispatch} from 'redux-thunk';
 import {connect} from 'react-redux';
 import {AppState} from '../../../types/store/StoreTypes';
 import {retrieveUser} from '../../../store/actions/UserActions';
+import {DatePickerInput, RoomListInput, SkillListInput, TextArea, TextInput} from '../../forms/Components';
 
 class AdminWorkshopDetailForm extends React.Component<AdminWorkshopDetailFormProps, AdminWorkshopDetailFormState> {
 
@@ -50,13 +51,13 @@ class AdminWorkshopDetailForm extends React.Component<AdminWorkshopDetailFormPro
                     <Form.Label>Topic</Form.Label>
                     <Field name='title'
                            type='text'
-                           component={this.TextInput}/>
+                           component={TextInput}/>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Start</Form.Label>
                     <div className='d-flex'>
                         <Field name='startDate'
-                               component={this.DatePickerInput}/>
+                               component={DatePickerInput}/>
                         <Button onClick={() => this.setState({recurrenceModalVisible: true})}>
                             <MdAdd size={22}/>
                         </Button>
@@ -65,33 +66,34 @@ class AdminWorkshopDetailForm extends React.Component<AdminWorkshopDetailFormPro
                 <Form.Group>
                     <Form.Label>End</Form.Label>
                     <Field name='endDate'
-                           component={this.DatePickerInput}/>
+                           component={DatePickerInput}/>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Skill Set</Form.Label>
                     <Field name='skillId'
-                           component={this.SkillListInput}/>
+                           component={SkillListInput}/>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Room</Form.Label>
                     <Field name='roomId'
-                           component={this.RoomListInput}/>
+                           component={RoomListInput}/>
                 </Form.Group>
+
                 <Form.Group>
                     <Form.Label>Target Group</Form.Label>
                     <Field name='targetGroup'
-                           component={this.TextInput}/>
+                           component={TextInput}/>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Description</Form.Label>
                     <Field name='description'
-                           component={this.TextArea}/>
+                           component={TextArea}/>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Available Places</Form.Label>
                     <Field
                         name='availablePlaces'
-                        component={this.TextInput}/>
+                        component={TextInput}/>
                 </Form.Group>
                 <ListGroup as='ul'>
                     {workshopStudentIds.map(studentId => (
@@ -132,18 +134,6 @@ class AdminWorkshopDetailForm extends React.Component<AdminWorkshopDetailFormPro
             </form>
         );
     }
-
-    private TextArea = (props: any) => <Form.Control as="textarea" {...props}
-                                                     value={props.input.value}
-                                                     onChange={props.input.onChange}/>;
-    private TextInput = (props: any) => <Form.Control {...props} value={props.input.value}
-                                                      onChange={props.input.onChange}/>;
-    private DatePickerInput = (props: any) => <Datetime {...props} value={props.input.value}
-                                                        onChange={props.input.onChange}/>;
-    private RoomListInput = (props: any) => <RoomList {...props} value={props.input.value}
-                                                      onChange={props.input.onChange}/>;
-    private SkillListInput = (props: any) => <SkillList {...props} value={props.input.value}
-                                                        onChange={props.input.onChange}/>;
 
     private onStudentSelected = (id: number) => {
         const workshopStudentIds = this.state.workshopStudentIds;

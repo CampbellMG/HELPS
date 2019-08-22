@@ -3,17 +3,9 @@ import {Field, InjectedFormProps, reduxForm} from 'redux-form';
 import {LoginFields} from '../../types/components/LoginTypes';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import {TextInput} from '../forms/Components';
 
 class LoginForm extends React.Component<InjectedFormProps<LoginFields>> {
-    TextInput = (props: any) => (
-        <Form.Group controlId='login'>
-            <Form.Control name='email'
-                          placeholder='Login'
-                          value={props.input.value}
-                          onChange={props.input.onChange}
-                          {...props}/>
-        </Form.Group>
-    );
 
     render() {
         return (
@@ -22,7 +14,7 @@ class LoginForm extends React.Component<InjectedFormProps<LoginFields>> {
                     <Form.Label>Username</Form.Label>
                     <Field
                         name='username'
-                        component={this.TextInput}
+                        component={TextInput}
                         type='text'
                         placeholder='Username'/>
                 </Form.Group>
@@ -30,7 +22,7 @@ class LoginForm extends React.Component<InjectedFormProps<LoginFields>> {
                     <Form.Label>Password</Form.Label>
                     <Field
                         name='password'
-                        component={this.TextInput}
+                        component={TextInput}
                         type='password'
                         placeholder='Password'/>
                 </Form.Group>
