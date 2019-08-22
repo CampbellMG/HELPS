@@ -51,7 +51,7 @@ class User extends Component<UserProps, UserState> {
             return (
                 <div className='row h-100 overflow-auto'>
                     {error && <p>{error}</p>}
-                    <div className='col-lg-2 border-right m-3'>
+                    <div className='col-lg-3 border-right m-3'>
                         {
                             messages.informationCollection &&
                             <div dangerouslySetInnerHTML={{__html: messages.informationCollection}}/>

@@ -14,7 +14,7 @@ export default class EditorList<T> extends Component<EditorListProps<T>> {
     render() {
         return (
             <div className='h-100 d-flex flex-fill'>
-                <div className='col-lg-2 border-right overflow-auto list shadow'>
+                <div className='col-lg-3 border-right overflow-auto list shadow'>
                     {this.renderList()}
                 </div>
                 <div className='d-flex flex-column flex-fill overflow-auto content'>

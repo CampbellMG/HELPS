@@ -36,7 +36,7 @@ export const EventForm: FunctionComponent<EventFormComponentProps> = props => {
     };
 
     return (
-        <div className='col-lg-2 border-right sticky-top h-100 no-gutters overflow-auto list shadow'>
+        <div className='col-lg-3 border-right sticky-top h-100 no-gutters overflow-auto list shadow'>
             {getForm(selectedEvent)}
         </div>
     );

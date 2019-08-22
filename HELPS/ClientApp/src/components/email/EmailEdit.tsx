@@ -60,7 +60,7 @@ export default class EmailEdit extends Component<EmailEditProps, EmailEditState>
                 <div className='col border mr-2 d-flex flex-column overflow-hidden p-1'>
                     {this.getEmailContent()}
                 </div>
-                <div className='col-lg-2 border overflow-auto pt-2 pb-2'>
+                <div className='col-lg-3 border overflow-auto pt-2 pb-2'>
                     {this.getEmailVariables()}
                 </div>
             </div>
