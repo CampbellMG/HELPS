@@ -15,7 +15,9 @@ export interface ReportListProps extends ReportListDispatchProps, ReportListStat
 }
 
 export interface ReportStateProps {
-    data: any
+    data: any[]
+    selectedReportId: string
+    reports: Report[]
 }
 
 export interface ReportDispatchProps {
@@ -29,5 +31,10 @@ export interface ReportProps extends ReportStateProps, ReportDispatchProps {
 export interface ReportGenerateData {
     from: Moment,
     to: Moment,
-    id: number
+    report: number
+}
+
+export interface ReportFormExtraProps {
+    onDownload: () => void
+    downloadAvailable: boolean
 }

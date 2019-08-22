@@ -1,11 +1,14 @@
 using System;
-using System.Linq;
 using HELPS.Models;
 
 namespace HELPS.Reports
 {
-    public class CancelledSessions: AbstractReport
+    public class CancelledSessions : AbstractReport
     {
+        public class CancelledSessionResult
+        {
+        }
+
         private readonly HelpsContext _context;
 
         public CancelledSessions(HelpsContext context) : base(context)
@@ -25,8 +28,7 @@ namespace HELPS.Reports
 
         public override object GetData(DateTime startDate, DateTime endTime, dynamic extraData)
         {
-            return _context.Sessions.Where(session =>
-                session.Starttime > startDate && session.Starttime < endTime);
+            return new CancelledSessionResult[0];
         }
     }
 }

@@ -44,7 +44,7 @@ namespace HELPS.Migrations
 
                     b.Property<string>("Content");
 
-                    b.Property<int>("Title");
+                    b.Property<string>("Title");
 
                     b.HasKey("Id");
 

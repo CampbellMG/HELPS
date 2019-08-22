@@ -60,7 +60,7 @@ namespace HELPS.Controllers
             {
                 var from = DateTime.Parse((string)data.from);
                 var to = DateTime.Parse((string)data.to);
-                var id = (int) data.id;
+                var id = (int) data.report;
                 
                 return _reports[id].GetData(
                     from,

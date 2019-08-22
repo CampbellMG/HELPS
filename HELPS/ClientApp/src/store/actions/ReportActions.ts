@@ -54,8 +54,8 @@ export const generateReport = (data: ReportGenerateData) => async (dispatch: Dis
                 token,
                 {
                     ...data,
-                    from: data.from.format(),
-                    to: data.to.format()
+                    from: data.from.format('DD/MM/YYYY'),
+                    to: data.to.format('DD/MM/YYYY')
                 },
                 true
             );

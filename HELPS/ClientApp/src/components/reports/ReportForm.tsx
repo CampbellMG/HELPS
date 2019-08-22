@@ -4,17 +4,17 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import ReportList from './ReportList';
 import moment from 'moment';
-import {ReportGenerateData} from '../../types/components/ReportTypes';
+import {ReportFormExtraProps, ReportGenerateData} from '../../types/components/ReportTypes';
 import Datetime from 'react-datetime';
 
-class ReportForm extends React.Component<InjectedFormProps<ReportGenerateData>> {
+class ReportForm extends React.Component<ReportFormExtraProps & InjectedFormProps<ReportGenerateData, ReportFormExtraProps>> {
 
     render() {
         return (
             <form onSubmit={this.props.handleSubmit} className='p-3 pl-4'>
                 <Form.Group>
                     <Form.Label>Report</Form.Label>
-                    <Field name='id'
+                    <Field name='report'
                            component={this.ReportListInput}/>
                 </Form.Group>
                 <Form.Group>
@@ -31,18 +31,29 @@ class ReportForm extends React.Component<InjectedFormProps<ReportGenerateData>> 
                         className='w-100 mt-4'>
                     Generate
                 </Button>
+                <Button className='w-100 mt-4'
+                        onClick={this.props.onDownload}
+                        disabled={!this.props.downloadAvailable}>
+                    Download
+                </Button>
             </form>
         );
     }
 
     private DatePickerInput = (props: any) => <Datetime {...props} value={moment(props.input.value)}
+                                                        dateFormat='DD/MM/YYYY'
                                                         onChange={props.input.onChange}/>;
 
     private ReportListInput = (props: any) => <ReportList {...props} value={props.input.value}
                                                           onChange={props.input.onChange}/>;
 }
 
-export default reduxForm<ReportGenerateData, any>({
+export default reduxForm<ReportGenerateData, ReportFormExtraProps>({
     form: 'report_generate',
-    enableReinitialize: true
+    enableReinitialize: true,
+    initialValues: {
+        report: 0,
+        from: moment().subtract(14, 'days'),
+        to: moment()
+    }
 })(ReportForm);
