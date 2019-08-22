@@ -360,6 +360,7 @@
           <e p="Email.cs" t="Include" />
           <e p="HelpsContext.cs" t="Include" />
           <e p="Message.cs" t="Include" />
+          <e p="Report.cs" t="Include" />
           <e p="Room.cs" t="Include" />
           <e p="Session.cs" t="Include" />
           <e p="Student.cs" t="Include" />
@@ -386,6 +387,7 @@
           <e p="AbstractReport.cs" t="Include" />
           <e p="BookedSessions.cs" t="Include" />
           <e p="CancelledSessions.cs" t="Include" />
+          <e p="StudentHistory.cs" t="Include" />
         </e>
         <e p="Services" t="Include">
           <e p="UserService.cs" t="Include" />

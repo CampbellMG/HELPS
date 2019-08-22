@@ -5,15 +5,15 @@ namespace HELPS.Reports
 {
     public abstract class AbstractReport
     {
-        private readonly HelpsContext _context;
+        protected readonly HelpsContext Context;
 
         protected AbstractReport(HelpsContext context)
         {
-            _context = context;
+            Context = context;
         }
 
         public abstract string GetTitle();
-        public abstract object GetExtraFields();
+        public abstract ExtraField[] GetExtraFields();
         public abstract object GetData(DateTime startDate, DateTime endTime, dynamic extraData);
     }
 }

@@ -9,15 +9,23 @@ import {
 } from '../../../types/components/WorkshopRegistrationTypes';
 import Datetime from 'react-datetime';
 import 'react-datetime/css/react-datetime.css';
-import RoomList from '../lists/RoomList';
-import StudentList from '../lists/StudentList';
-import AdvisorList from '../lists/AdvisorList';
+import RoomList from '../../forms/lists/RoomList';
+import StudentList from '../../forms/lists/StudentList';
+import AdvisorList from '../../forms/lists/AdvisorList';
 import {Button, ListGroup, Row} from 'react-bootstrap';
 import {MdDelete, MdFileDownload} from 'react-icons/md';
 import EmailSubmit from '../eventView/EmailSubmit';
 import Dropzone from 'react-dropzone';
 import './EventForm.css';
 import moment from 'moment';
+import {
+    AdvisorListInput,
+    BooleanInput,
+    DatePickerInput,
+    RoomListInput,
+    StudentListInput, TextArea,
+    TextInput
+} from '../../forms/Components';
 
 class AdminSessionDetailForm extends React.Component<AdminSessionDetailFormProps, AdminSessionDetailFormState> {
 
@@ -41,32 +49,32 @@ class AdminSessionDetailForm extends React.Component<AdminSessionDetailFormProps
                 <Form.Group>
                     <Form.Label>Type</Form.Label>
                     <Field name='type'
-                           component={this.TextInput}/>
+                           component={TextInput}/>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Start</Form.Label>
                     <Field name='startDate'
-                           component={this.DatePickerInput}/>
+                           component={DatePickerInput}/>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>End</Form.Label>
                     <Field name='endDate'
-                           component={this.DatePickerInput}/>
+                           component={DatePickerInput}/>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Room</Form.Label>
                     <Field name='roomId'
-                           component={this.RoomListInput}/>
+                           component={RoomListInput}/>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Advisor</Form.Label>
                     <Field name='advisorId'
-                           component={this.AdvisorListInput}/>
+                           component={AdvisorListInput}/>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Student</Form.Label>
                     <Field name='studentId'
-                           component={this.StudentListInput}/>
+                           component={StudentListInput}/>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Appointment Purpose</Form.Label>
@@ -76,7 +84,7 @@ class AdminSessionDetailForm extends React.Component<AdminSessionDetailFormProps
                 <Form.Group>
                     <Form.Label>Subject Name</Form.Label>
                     <Field name='subjectName'
-                           component={this.TextInput}/>
+                           component={TextInput}/>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Assignment Type</Form.Label>
@@ -86,22 +94,22 @@ class AdminSessionDetailForm extends React.Component<AdminSessionDetailFormProps
                 <Form.Group >
                     <Form.Label>Group Assignment</Form.Label>
                     <Field name='groupAssignment'
-                           component={this.BooleanInput}/>
+                           component={BooleanInput}/>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Student Assistance Requirements</Form.Label>
                     <Field name='assistance'
-                           component={this.TextInput}/>
+                           component={TextInput}/>
                 </Form.Group>
                 <Form.Group >
                     <Form.Label>Student Attendance</Form.Label>
                     <Field name='attendance'
-                           component={this.BooleanInput}/>
+                           component={BooleanInput}/>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Comments</Form.Label>
                     <Field name='comments'
-                           component={this.TextArea}/>
+                           component={TextArea}/>
                 </Form.Group>
                 <ListGroup as='ul'>
                     {sessionFiles.map(file => (
@@ -133,22 +141,6 @@ class AdminSessionDetailForm extends React.Component<AdminSessionDetailFormProps
             </form>
         );
     }
-
-    private TextArea = (props: any) => <Form.Control as='textarea' {...props}
-                                                     value={props.input.value}
-                                                     onChange={props.input.onChange}/>;
-    private TextInput = (props: any) => <Form.Control {...props} value={props.input.value}
-                                                      onChange={props.input.onChange}/>;
-    private BooleanInput = (props: any) => <Form.Check {...props} value={props.input.value}
-                                                       onChange={props.input.onChange}/>;
-    private DatePickerInput = (props: any) => <Datetime {...props} value={moment(props.input.value)}
-                                                        onChange={props.input.onChange}/>;
-    private RoomListInput = (props: any) => <RoomList {...props} value={props.input.value}
-                                                      onChange={props.input.onChange}/>;
-    private AdvisorListInput = (props: any) => <AdvisorList {...props} value={props.input.value}
-                                                            onChange={props.input.onChange}/>;
-    private StudentListInput = (props: any) => <StudentList {...props} value={props.input.value}
-                                                            onChange={props.input.onChange}/>;
 
     private ReasonListInput = (props: any) => (
         <Form.Control as='select' {...props}>

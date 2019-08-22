@@ -13,27 +13,14 @@ namespace HELPS.Controllers
     [Route("api/[controller]")]
     public class ReportsController : StudentUserController
     {
-        public class ReportListItem
-        {
-            public int id;
-            public string title;
-            public object extraFields;
-
-            public ReportListItem(int id, string title, object extraFields)
-            {
-                this.id = id;
-                this.title = title;
-                this.extraFields = extraFields;
-            }
-        }
-
         private readonly IDictionary<int, AbstractReport> _reports;
 
         public ReportsController(HelpsContext context) : base(context)
         {
             _reports = new Dictionary<int, AbstractReport>
             {
-                {0, new BookedSessions(context)}
+                {0, new BookedSessions(context)},
+                {1, new StudentHistory(context)}
             };
         }
 
@@ -68,9 +55,14 @@ namespace HELPS.Controllers
                     data
                 );
             }
-            catch (RuntimeBinderException)
+            catch (Exception e)
             {
-                return BadRequest();
+                if (e is RuntimeBinderException || e is ArgumentException)
+                {
+                    return BadRequest();    
+                }
+
+                throw;
             }
             
         }

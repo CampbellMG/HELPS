@@ -2,10 +2,9 @@ import * as React from 'react';
 import {Field, InjectedFormProps, reduxForm} from 'redux-form';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import ReportList from './ReportList';
 import moment from 'moment';
 import {ReportFormExtraProps, ReportGenerateData} from '../../types/components/ReportTypes';
-import Datetime from 'react-datetime';
+import {DatePickerInput, ReportListInput} from '../forms/Components';
 
 class ReportForm extends React.Component<ReportFormExtraProps & InjectedFormProps<ReportGenerateData, ReportFormExtraProps>> {
 
@@ -15,18 +14,19 @@ class ReportForm extends React.Component<ReportFormExtraProps & InjectedFormProp
                 <Form.Group>
                     <Form.Label>Report</Form.Label>
                     <Field name='report'
-                           component={this.ReportListInput}/>
+                           component={ReportListInput}/>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>From</Form.Label>
                     <Field name='from'
-                           component={this.DatePickerInput}/>
+                           component={DatePickerInput}/>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>To</Form.Label>
                     <Field name='to'
-                           component={this.DatePickerInput}/>
+                           component={DatePickerInput}/>
                 </Form.Group>
+                {this.props.extraFields && this.props.extraFields}
                 <Button type='submit'
                         className='w-100 mt-4'>
                     Generate
@@ -39,13 +39,6 @@ class ReportForm extends React.Component<ReportFormExtraProps & InjectedFormProp
             </form>
         );
     }
-
-    private DatePickerInput = (props: any) => <Datetime {...props} value={moment(props.input.value)}
-                                                        dateFormat='DD/MM/YYYY'
-                                                        onChange={props.input.onChange}/>;
-
-    private ReportListInput = (props: any) => <ReportList {...props} value={props.input.value}
-                                                          onChange={props.input.onChange}/>;
 }
 
 export default reduxForm<ReportGenerateData, ReportFormExtraProps>({

@@ -4,11 +4,11 @@ import {
     ReportListDispatchProps,
     ReportListProps,
     ReportListStateProps
-} from '../../types/components/ReportTypes';
-import {AppState} from '../../types/store/StoreTypes';
+} from '../../../types/components/ReportTypes';
+import {AppState} from '../../../types/store/StoreTypes';
 import {ThunkDispatch} from 'redux-thunk';
 import {connect} from 'react-redux';
-import {retrieveReports} from '../../store/actions/ReportActions';
+import {retrieveReports} from '../../../store/actions/ReportActions';
 import {Form} from 'react-bootstrap';
 
 class ReportList extends Component<ReportListProps> {

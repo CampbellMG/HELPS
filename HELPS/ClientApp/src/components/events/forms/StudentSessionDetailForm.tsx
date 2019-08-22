@@ -7,16 +7,9 @@ import {
     StudentSessionDetailFormProps,
     StudentSessionDetailProps
 } from '../../../types/components/WorkshopRegistrationTypes';
+import {TextInput} from '../../forms/Components';
 
 class StudentSessionDetailForm extends React.Component<StudentSessionDetailFormProps> {
-    TextInput = (props: any) => (
-        <Form.Group controlId='login'>
-            <Form.Control disabled
-                          value={props.input.value}
-                          onChange={props.input.onChange}
-                          {...props}/>
-        </Form.Group>
-    );
 
     render() {
         return (
@@ -24,56 +17,56 @@ class StudentSessionDetailForm extends React.Component<StudentSessionDetailFormP
                 <Form.Group>
                     <Form.Label>Workshop ID</Form.Label>
                     <Field name='id'
-                           component={this.TextInput}
+                           component={TextInput}
                            type='text'/>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Workshop Title</Form.Label>
                     <Field name='title'
-                           component={this.TextInput}
+                           component={TextInput}
                            type='text'/>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Start</Form.Label>
                     <Field name='startDate'
-                           component={this.TextInput}
+                           component={TextInput}
                            type='text'/>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>End</Form.Label>
                     <Field name='endDate'
-                           component={this.TextInput}
+                           component={TextInput}
                            type='text'/>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Duration</Form.Label>
                     <Field name='duration'
-                           component={this.TextInput}
+                           component={TextInput}
                            type='text'/>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Room</Form.Label>
                     <Field name='room'
-                           component={this.TextInput}
+                           component={TextInput}
                            type='text'/>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Target Group</Form.Label>
                     <Field name='targetGroup'
-                           component={this.TextInput}
+                           component={TextInput}
                            type='text'/>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Description</Form.Label>
                     <Field name='description'
-                           component={this.TextInput}
+                           component={TextInput}
                            type='text'/>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Available Places</Form.Label>
                     <Field
                         name='availablePlaces'
-                        component={this.TextInput}
+                        component={TextInput}
                         type='text'/>
                 </Form.Group>
                 <Button type='submit'

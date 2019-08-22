@@ -5,15 +5,8 @@ namespace HELPS.Reports
 {
     public class CancelledSessions : AbstractReport
     {
-        public class CancelledSessionResult
-        {
-        }
-
-        private readonly HelpsContext _context;
-
         public CancelledSessions(HelpsContext context) : base(context)
         {
-            _context = context;
         }
 
         public override string GetTitle()
@@ -21,9 +14,9 @@ namespace HELPS.Reports
             return "Cancelled Sessions";
         }
 
-        public override object GetExtraFields()
+        public override ExtraField[] GetExtraFields()
         {
-            return new { };
+            return new ExtraField[0];
         }
 
         public override object GetData(DateTime startDate, DateTime endTime, dynamic extraData)

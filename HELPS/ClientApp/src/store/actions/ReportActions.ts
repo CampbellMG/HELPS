@@ -29,14 +29,15 @@ export const retrieveReports = () => async (dispatch: Dispatch<ReportAction>) =>
         dispatch(reportError(NO_TOKEN_MESSAGE));
     } else {
         try {
-            const rooms: Report[] = await fetchRequest(
+            const reports: Report[] = await fetchRequest(
                 API_REPORT_PATH,
                 'GET',
                 token
             );
-            dispatch(receiveReports(rooms));
+            
+            dispatch(receiveReports(reports));
         } catch (e) {
-            dispatch(reportError(`Error fetching rooms list`));
+            dispatch(reportError(`Error fetching report list`));
         }
     }
 };
@@ -62,7 +63,7 @@ export const generateReport = (data: ReportGenerateData) => async (dispatch: Dis
 
             dispatch(receiveData(result));
         } catch (e) {
-            dispatch(reportError(`Error deleting room - ${e}`));
+            dispatch(reportError(`Error generating report - ${e}`));
         }
     }
 };

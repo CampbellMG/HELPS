@@ -1,6 +1,7 @@
 import {Report} from '../model/Report';
 import {FormControlProps} from 'react-bootstrap';
 import {Moment} from 'moment';
+import {ReactElement} from 'react';
 
 export interface ReportListStateProps {
     reports: Report[]
@@ -37,4 +38,5 @@ export interface ReportGenerateData {
 export interface ReportFormExtraProps {
     onDownload: () => void
     downloadAvailable: boolean
+    extraFields?: ReactElement[]
 }

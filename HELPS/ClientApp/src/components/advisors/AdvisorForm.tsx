@@ -12,16 +12,9 @@ import {Button} from 'react-bootstrap';
 import {AppState} from "../../types/store/StoreTypes";
 import {ThunkDispatch} from "redux-thunk";
 import {connect} from "react-redux";
+import {TextInput} from '../forms/Components';
 
 class AdvisorForm extends React.Component<AdvisorFormProps, AdvisorFormState> {
-    TextInput = (props: any) => (
-        <Form.Group controlId='login'>
-            <Form.Control value={props.input.value}
-                          onChange={props.input.onChange}
-                          {...props} />
-        </Form.Group>
-    );
-
     constructor(props: AdvisorFormProps) {
         super(props);
 
@@ -40,7 +33,7 @@ class AdvisorForm extends React.Component<AdvisorFormProps, AdvisorFormState> {
                         <Form.Label>Staff Number</Form.Label>
                         <Field
                             name='id'
-                            component={this.TextInput}
+                            component={TextInput}
                             disabled={!editing}
                             type='text'
                             placeholder='123456789'/>
@@ -49,7 +42,7 @@ class AdvisorForm extends React.Component<AdvisorFormProps, AdvisorFormState> {
                         <Form.Label>Email</Form.Label>
                         <Field
                             name='email'
-                            component={this.TextInput}
+                            component={TextInput}
                             disabled={!editing}
                             type='text'
                             placeholder='Steve.Smith@uts.edu.au'/>
@@ -60,7 +53,7 @@ class AdvisorForm extends React.Component<AdvisorFormProps, AdvisorFormState> {
                         <Form.Label>First Name</Form.Label>
                         <Field
                             name='firstName'
-                            component={this.TextInput}
+                            component={TextInput}
                             disabled={!editing}
                             type='text'
                             placeholder='Steve'/>
@@ -69,7 +62,7 @@ class AdvisorForm extends React.Component<AdvisorFormProps, AdvisorFormState> {
                         <Form.Label>Last Name</Form.Label>
                         <Field
                             name='lastName'
-                            component={this.TextInput}
+                            component={TextInput}
                             disabled={!editing}
                             type='text'
                             placeholder='Smith'/>
@@ -80,7 +73,7 @@ class AdvisorForm extends React.Component<AdvisorFormProps, AdvisorFormState> {
                         <Form.Label>Status</Form.Label>
                         <Field
                             name='isActive'
-                            component={this.TextInput}
+                            component={TextInput}
                             disabled={!editing}
                             type='text'
                             placeholder='Active'/>

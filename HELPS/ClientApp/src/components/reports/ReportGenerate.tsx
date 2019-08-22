@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Component} from 'react';
+import {Component, ReactElement} from 'react';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import ReportForm from './ReportForm';
 import {AppState} from '../../types/store/StoreTypes';
@@ -8,10 +8,48 @@ import {ThunkDispatch} from 'redux-thunk';
 import {generateReport} from '../../store/actions/ReportActions';
 import {connect} from 'react-redux';
 import {Table} from 'react-bootstrap';
-import {formValueSelector} from 'redux-form';
+import {Field, formValueSelector} from 'redux-form';
 import moment from 'moment';
+import {Report} from '../../types/model/Report';
+import Form from 'react-bootstrap/Form';
+import {TextInput} from '../forms/Components';
 
-class ReportGenerate extends Component<ReportProps, any> {
+class ReportGenerate extends Component<ReportProps, {}> {
+
+    private get selectedReport(): Report | undefined {
+        const {selectedReportId, reports} = this.props;
+
+        if (reports && selectedReportId !== undefined && selectedReportId !== null) {
+            const reportIndex = reports.findIndex(report => report.id.toString() === selectedReportId.toString());
+            if (reportIndex !== -1) {
+                return reports[reportIndex];
+            }
+        }
+
+        return undefined;
+    }
+
+    private get extraFields(): ReactElement[] | undefined {
+        const report = this.selectedReport;
+
+        if (!report || !report.extraFields) {
+            return undefined;
+        }
+
+        return report.extraFields.map(extraField => {
+            if (extraField.options.length === 0) {
+                return (
+                    <Form.Group>
+                        <Form.Label>{extraField.title}</Form.Label>
+                        <Field name={extraField.identifier}
+                               component={TextInput}/>
+                    </Form.Group>
+                );
+            }
+
+            return <div/>;
+        });
+    }
 
     render(): React.ReactNode {
         return (
@@ -19,7 +57,8 @@ class ReportGenerate extends Component<ReportProps, any> {
                 <div className='col-lg-2 border-right overflow-auto list shadow'>
                     <ReportForm onSubmit={this.props.generateReport}
                                 onDownload={this.onDownload}
-                                downloadAvailable={this.props.data.length > 0}/>
+                                downloadAvailable={this.props.data.length > 0}
+                                extraFields={this.extraFields}/>
                 </div>
                 <div className='d-flex flex-column flex-fill overflow-auto content'>
                     {this.renderDataTable()}
@@ -56,17 +95,16 @@ class ReportGenerate extends Component<ReportProps, any> {
 
     private onDownload = () => {
         let fileName = 'report';
-        const {selectedReportId, data, reports} = this.props;
+        const {data} = this.props;
+        const link = document.createElement('a');
+        const selectedReport = this.selectedReport;
 
         if (!data) {
             return;
         }
 
-        if (reports && selectedReportId !== undefined && selectedReportId !== null) {
-            const reportIndex = reports.findIndex(report => report.id.toString() === selectedReportId.toString());
-            if (reportIndex !== -1) {
-                fileName = reports[reportIndex].title.toLowerCase().replace(' ', '_');
-            }
+        if (selectedReport) {
+            fileName = selectedReport.title.toLowerCase().replace(' ', '_');
         }
 
         fileName += moment().format('_DD_MM_YY_HH_mm') + '.csv';
@@ -77,7 +115,6 @@ class ReportGenerate extends Component<ReportProps, any> {
 
         const csvData = 'data:text/csv;charset=utf-8,' + formattedData.map(datum => datum.join(',')).join('\n');
 
-        const link = document.createElement('a');
         link.setAttribute('href', encodeURI(csvData));
         link.setAttribute('download', fileName);
         document.body.appendChild(link);
