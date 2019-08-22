@@ -30,7 +30,7 @@ class Login extends Component<HomeProps> {
             <div className='d-flex h-100 justify-content-center flex-fill'>
                 <div className='align-self-center w-50 h-50'>
                     <div
-                        className='shadow bg-white d-flex h-100 justify-content-center flex-column login-container'>
+                        className='shadow bg-white d-flex justify-content-center flex-column login-container pt-5'>
                         <div className='logo-wrapper'>
                             <img src={uts} className='logo' alt='UTS Logo' width='30%'/>
                         </div>

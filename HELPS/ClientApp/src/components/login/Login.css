@@ -3,11 +3,12 @@
     border: 3px #DC001A solid;
     height: 250px;
     width: 250px;
-    top: -38%;
     margin-left: auto;
     margin-right: auto;
     left: 0;
     right: 0;
+    top: 0;
+    transform: translateY(-50%);
     background-size: cover;
     background: white;
     border-radius: 50%;
