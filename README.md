@@ -21,7 +21,7 @@
     > Now listening on: https://localhost:5001
 12. You should be presented with the HELPS login page
 
-    ![alt text](https://imgur.com/a/ipPlbzY "Initial State")
+    ![alt text](https://i.imgur.com/AZ80Tfx.png "Initial State")
 
 13. If the project displays something like **"Unhandled Rejection (SyntaxError)"**, you likely have clicked the wrong output link or have not configured your database correctly.
 
