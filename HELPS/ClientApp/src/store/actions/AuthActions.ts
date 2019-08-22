@@ -73,7 +73,7 @@ export const login = (username: string, password: string) => async (dispatch: Di
 
     dispatch(receiveLogin(loginResult.isAdmin));
 
-    dispatch(push('/events'));
+    dispatch(push(loginResult.isAdmin ? '/consultations' : '/workshopsConsultations'));
 };
 
 export const logout = () => async (dispatch: Dispatch<any>) => {
