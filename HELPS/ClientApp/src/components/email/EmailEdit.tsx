@@ -14,7 +14,7 @@ import {MdSave, MdSend} from 'react-icons/md';
 export default class EmailEdit extends Component<EmailEditProps, EmailEditState> {
 
     private get variables(): EmailVariable[] {
-        return !this.props.email ? [] : this.props.email.variables;
+        return this.props.email && this.props.email.variables ? this.props.email.variables : [];
     }
 
     private originalEmailText: string = '';
@@ -113,7 +113,8 @@ export default class EmailEdit extends Component<EmailEditProps, EmailEditState>
         return [
             <div className='rdw-remove-wrapper'>
                 <div className='rdw-option-wrapper pl-2 pr-2 text-danger'
-                     onClick={() => {/*todo*/}}>
+                     onClick={() => {/*todo*/
+                     }}>
                     <MdSend color='red'/>
                 </div>
             </div>,
