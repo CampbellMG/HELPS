@@ -25,12 +25,12 @@ export const retrieveAdvisorList = () => async (dispatch: Dispatch<any>) => {
 };
 
 export const addAdvisor = (advisor: Advisor) => async (dispatch: Dispatch<AdvisorAction>) => {
-    await saveAdvisor(advisor, false, dispatch);
+    await saveAdvisor(advisor, true, dispatch);
     await retrieveAdvisors(dispatch);
 };
 
 export const updateAdvisor = (advisor: Advisor) => async (dispatch: Dispatch<AdvisorAction>) => {
-    await saveAdvisor(advisor, true, dispatch);
+    await saveAdvisor(advisor, false, dispatch);
     await retrieveAdvisors(dispatch);
 };
 
@@ -78,6 +78,7 @@ async function saveAdvisor(advisor: Advisor, isNew: boolean, dispatch: Dispatch<
             true
         );
 
+        await retrieveAdvisors(dispatch);
     } catch (e) {
         dispatch(advisorError(`Error updating advisor title: ${e}`));
     }

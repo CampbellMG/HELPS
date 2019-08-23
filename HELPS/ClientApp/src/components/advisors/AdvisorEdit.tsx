@@ -46,7 +46,8 @@ class AdvisorEdit extends Component<AdvisorProps, AdvisorState> {
         super(props);
 
         this.state = {
-            filter: ''
+            filter: '',
+            editingFromAdd: false
         };
     }
 
@@ -57,7 +58,7 @@ class AdvisorEdit extends Component<AdvisorProps, AdvisorState> {
     componentWillReceiveProps(props: AdvisorProps): void {
         const advisors: Advisor[] = props.advisors;
         if (advisors.length > 0) {
-            this.setState({ selectedAdvisor: advisors[0] });
+            this.setState({selectedAdvisor: advisors[0]});
         }
     }
 
@@ -66,25 +67,34 @@ class AdvisorEdit extends Component<AdvisorProps, AdvisorState> {
             <EditorList items={this.filteredAdvisors}
                         activeItem={this.state.selectedAdvisor}
                         onFilter={filter => this.setState({filter})}
-                        onAdd={() => this.setState({selectedAdvisor: AdvisorEdit.EMPTY_ADVISOR})}
+                        onAdd={this.onAddAdvisor}
                         onSelect={selectedAdvisor => this.setState({selectedAdvisor})}
                         keyExtractor={advisor => advisor.id.toString()}
                         titleExtractor={advisor => `[${advisor.id}] ${advisor.firstName} ${advisor.lastName}`}>
 
                 <div className='col-lg-10 mx-auto flex-fill d-flex flex-column justify-content-center'>
                     <AdvisorForm initialValues={{...this.state.selectedAdvisor, delete: false}}
+                                 editingFromAdd={this.state.editingFromAdd}
+                                 onEditStateChanged={editingFromAdd => this.setState({editingFromAdd})}
                                  onSubmit={this.onSubmit}/>
                 </div>
             </EditorList>
         );
     }
 
+    private onAddAdvisor = () => {
+        this.setState({editingFromAdd: true});
+        this.setState({selectedAdvisor: AdvisorEdit.EMPTY_ADVISOR});
+    };
+
     private onSubmit = (advisorFormData: AdvisorFormData) => {
+        this.setState({editingFromAdd: false});
+
         if (advisorFormData.delete) {
             return this.props.deleteAdvisor(advisorFormData);
         }
 
-        if (advisorFormData.id === AdvisorEdit.EMPTY_ADVISOR.id) {
+        if (this.state.editingFromAdd) {
             return this.props.addAdvisor(advisorFormData);
         }
 

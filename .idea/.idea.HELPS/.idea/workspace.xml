@@ -3,20 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="66cfea10-8c9f-4e80-b2f0-37497a1490b6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/EventView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/EventView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/forms/AdminSessionDetailForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/forms/AdminSessionDetailForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/forms/AdminWorkshopDetailForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/forms/AdminWorkshopDetailForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/forms/StudentSessionDetailForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/forms/StudentSessionDetailForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/forms/StudentWorkshopDetailForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/forms/StudentWorkshopDetailForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/MessageActions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/MessageActions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/SessionActions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/SessionActions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/WorkshopActions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/WorkshopActions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/types/model/HELPSEvent.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/types/model/HELPSEvent.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/Controllers/AdvisorsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/Controllers/AdvisorsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/Controllers/SessionsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/Controllers/SessionsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/Controllers/StudentWorkshopsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/Controllers/StudentWorkshopsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/Controllers/WorkshopsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/Controllers/WorkshopsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/Models/Session.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/Models/Session.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/components/advisors/AdvisorEdit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/components/advisors/AdvisorEdit.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/components/advisors/AdvisorForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/components/advisors/AdvisorForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/AdvisorActions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/AdvisorActions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/types/components/AdvisorTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/types/components/AdvisorTypes.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/HELPS/ClientApp/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -116,7 +106,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HELPS/Controllers/SessionsController.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="362">
@@ -139,11 +129,24 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="das://77cdd827-5000-4d06-abd9-d5e509619b4f/database/HELPS/schema/public/table/Sessions">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/HELPS/Controllers/AdvisorsController.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+              <folding>
+                <marker date="1566516799039" expanded="false" signature="6:227" ph="..." />
+                <marker date="1566516799039" expanded="true" signature="256:1989" ph="{...}" />
+                <marker date="1566516799039" expanded="true" signature="366:1987" ph="{...}" />
+                <marker date="1566516799039" expanded="true" signature="444:464" ph="{...}" />
+                <marker date="1566516799039" expanded="true" signature="559:671" ph="{...}" />
+                <marker date="1566516799039" expanded="true" signature="766:1222" ph="{...}" />
+                <marker date="1566516799039" expanded="true" signature="803:976" ph="{...}" />
+                <marker date="1566516799039" expanded="true" signature="994:1103" ph="{...}" />
+                <marker date="1566516799039" expanded="true" signature="1149:1212" ph="{...}" />
+                <marker date="1566516799039" expanded="true" signature="1343:1594" ph="{...}" />
+                <marker date="1566516799039" expanded="true" signature="1709:1981" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -338,7 +341,7 @@
       <option name="presentableId" value="Default" />
       <updated>1566205808377</updated>
       <workItem from="1566205811262" duration="4073000" />
-      <workItem from="1566446574011" duration="9097000" />
+      <workItem from="1566446574011" duration="11149000" />
     </task>
     <task id="LOCAL-00001" summary="Added report framework with booked sessions report">
       <created>1566213093890</created>
@@ -368,11 +371,25 @@
       <option name="project" value="LOCAL" />
       <updated>1566440591362</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Tidied workshop and session communication between front and backe ends&#10;&#10; fixes #46">
+      <created>1566521331383</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1566521331383</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Bugfix: syntax error or null check&#10;&#10; fixes #49">
+      <created>1566521861266</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1566521861266</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30833000" />
+    <option name="totallyTimeSpent" value="32885000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -384,7 +401,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1096" height="1906" extended-state="7" />
+    <frame x="-8" y="-8" width="1096" height="1906" extended-state="6" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
@@ -415,7 +432,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Errors In Solution" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Database" order="5" visible="true" weight="0.32818532" />
+      <window_info anchor="right" id="Database" order="5" weight="0.32818532" />
       <window_info anchor="right" id="Unit Tests Coverage" order="6" />
     </layout>
   </component>
@@ -476,7 +493,9 @@
     <MESSAGE value="Added report route, component, store and network requests" />
     <MESSAGE value="Added functional CSV downloads and report data formatting" />
     <MESSAGE value="Added dynamic fields, student history report and tidied form components" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added dynamic fields, student history report and tidied form components" />
+    <MESSAGE value="Tidied workshop and session communication between front and backe ends&#10;&#10; fixes #46" />
+    <MESSAGE value="Bugfix: syntax error or null check&#10;&#10; fixes #49" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bugfix: syntax error or null check&#10;&#10; fixes #49" />
   </component>
   <component name="WindowStateProjectService">
     <state width="172" height="1225" key="Git.Branch.Popup" />
@@ -824,42 +843,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/Controllers/AdvisorsController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="58" column="71" selection-start-line="58" selection-start-column="71" selection-end-line="58" selection-end-column="71" />
-          <folding>
-            <marker date="1566516799039" expanded="false" signature="6:227" ph="..." />
-            <marker date="1566516799039" expanded="true" signature="256:1989" ph="{...}" />
-            <marker date="1566516799039" expanded="true" signature="366:1987" ph="{...}" />
-            <marker date="1566516799039" expanded="true" signature="444:464" ph="{...}" />
-            <marker date="1566516799039" expanded="true" signature="559:671" ph="{...}" />
-            <marker date="1566516799039" expanded="true" signature="766:1222" ph="{...}" />
-            <marker date="1566516799039" expanded="true" signature="803:976" ph="{...}" />
-            <marker date="1566516799039" expanded="true" signature="994:1103" ph="{...}" />
-            <marker date="1566516799039" expanded="true" signature="1149:1212" ph="{...}" />
-            <marker date="1566516799039" expanded="true" signature="1343:1594" ph="{...}" />
-            <marker date="1566516799039" expanded="true" signature="1709:1981" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/Controllers/EmailsController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-          <folding>
-            <marker date="1564960842100" expanded="false" signature="6:194" ph="..." />
-            <marker date="1564960842100" expanded="true" signature="223:1332" ph="{...}" />
-            <marker date="1564960842100" expanded="true" signature="331:1330" ph="{...}" />
-            <marker date="1564960842100" expanded="true" signature="407:427" ph="{...}" />
-            <marker date="1564960842100" expanded="true" signature="521:648" ph="{...}" />
-            <marker date="1564960842100" expanded="true" signature="739:949" ph="{...}" />
-            <marker date="1564960842100" expanded="true" signature="1058:1324" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HELPS/Controllers/MessagesController.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -890,27 +873,6 @@
             <marker date="1566442729822" expanded="true" signature="1329:1677" ph="{...}" />
             <marker date="1566442729822" expanded="true" signature="1709:1917" ph="{...}" />
             <marker date="1566442729822" expanded="true" signature="1798:1879" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/Controllers/RoomsController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
-          <folding>
-            <marker date="1566442729824" expanded="false" signature="6:257" ph="..." />
-            <marker date="1566442729824" expanded="true" signature="286:2205" ph="{...}" />
-            <marker date="1566442729824" expanded="true" signature="393:2203" ph="{...}" />
-            <marker date="1566442729824" expanded="true" signature="468:488" ph="{...}" />
-            <marker date="1566442729824" expanded="true" signature="580:686" ph="{...}" />
-            <marker date="1566442729824" expanded="true" signature="775:1209" ph="{...}" />
-            <marker date="1566442729824" expanded="true" signature="812:973" ph="{...}" />
-            <marker date="1566442729824" expanded="true" signature="990:1090" ph="{...}" />
-            <marker date="1566442729824" expanded="true" signature="1136:1199" ph="{...}" />
-            <marker date="1566442729824" expanded="true" signature="1315:1579" ph="{...}" />
-            <marker date="1566442729824" expanded="true" signature="1676:1859" ph="{...}" />
-            <marker date="1566442729824" expanded="true" signature="1949:2197" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1031,6 +993,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="das://77cdd827-5000-4d06-abd9-d5e509619b4f/database/HELPS/schema/public/table/Emails">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/HELPS/Controllers/SessionsController.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="362">
@@ -1048,6 +1017,63 @@
             <marker date="1566516806308" expanded="true" signature="1328:1579" ph="{...}" />
             <marker date="1566516806308" expanded="true" signature="1695:1967" ph="{...}" />
             <marker date="1566516806308" expanded="true" signature="2061:2379" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HELPS/Controllers/RoomsController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-247">
+          <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
+          <folding>
+            <marker date="1566442729824" expanded="false" signature="6:257" ph="..." />
+            <marker date="1566442729824" expanded="true" signature="286:2205" ph="{...}" />
+            <marker date="1566442729824" expanded="true" signature="393:2203" ph="{...}" />
+            <marker date="1566442729824" expanded="true" signature="468:488" ph="{...}" />
+            <marker date="1566442729824" expanded="true" signature="580:686" ph="{...}" />
+            <marker date="1566442729824" expanded="true" signature="775:1209" ph="{...}" />
+            <marker date="1566442729824" expanded="true" signature="812:973" ph="{...}" />
+            <marker date="1566442729824" expanded="true" signature="990:1090" ph="{...}" />
+            <marker date="1566442729824" expanded="true" signature="1136:1199" ph="{...}" />
+            <marker date="1566442729824" expanded="true" signature="1315:1579" ph="{...}" />
+            <marker date="1566442729824" expanded="true" signature="1676:1859" ph="{...}" />
+            <marker date="1566442729824" expanded="true" signature="1949:2197" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HELPS/Controllers/EmailsController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+          <folding>
+            <marker date="1564960842100" expanded="false" signature="6:194" ph="..." />
+            <marker date="1564960842100" expanded="true" signature="223:1332" ph="{...}" />
+            <marker date="1564960842100" expanded="true" signature="331:1330" ph="{...}" />
+            <marker date="1564960842100" expanded="true" signature="407:427" ph="{...}" />
+            <marker date="1564960842100" expanded="true" signature="521:648" ph="{...}" />
+            <marker date="1564960842100" expanded="true" signature="739:949" ph="{...}" />
+            <marker date="1564960842100" expanded="true" signature="1058:1324" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HELPS/Controllers/AdvisorsController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+          <folding>
+            <marker date="1566516799039" expanded="false" signature="6:227" ph="..." />
+            <marker date="1566516799039" expanded="true" signature="256:1989" ph="{...}" />
+            <marker date="1566516799039" expanded="true" signature="366:1987" ph="{...}" />
+            <marker date="1566516799039" expanded="true" signature="444:464" ph="{...}" />
+            <marker date="1566516799039" expanded="true" signature="559:671" ph="{...}" />
+            <marker date="1566516799039" expanded="true" signature="766:1222" ph="{...}" />
+            <marker date="1566516799039" expanded="true" signature="803:976" ph="{...}" />
+            <marker date="1566516799039" expanded="true" signature="994:1103" ph="{...}" />
+            <marker date="1566516799039" expanded="true" signature="1149:1212" ph="{...}" />
+            <marker date="1566516799039" expanded="true" signature="1343:1594" ph="{...}" />
+            <marker date="1566516799039" expanded="true" signature="1709:1981" ph="{...}" />
           </folding>
         </state>
       </provider>
