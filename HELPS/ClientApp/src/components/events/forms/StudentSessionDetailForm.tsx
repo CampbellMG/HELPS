@@ -28,13 +28,13 @@ class StudentSessionDetailForm extends React.Component<StudentSessionDetailFormP
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Start</Form.Label>
-                    <Field name='startDate'
+                    <Field name='startTime'
                            component={TextInput}
                            type='text'/>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>End</Form.Label>
-                    <Field name='endDate'
+                    <Field name='endTime'
                            component={TextInput}
                            type='text'/>
                 </Form.Group>

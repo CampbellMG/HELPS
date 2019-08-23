@@ -56,7 +56,7 @@ class AdminWorkshopDetailForm extends React.Component<AdminWorkshopDetailFormPro
                 <Form.Group>
                     <Form.Label>Start</Form.Label>
                     <div className='d-flex'>
-                        <Field name='startDate'
+                        <Field name='startTime'
                                component={DatePickerInput}/>
                         <Button onClick={() => this.setState({recurrenceModalVisible: true})}>
                             <MdAdd size={22}/>
@@ -65,7 +65,7 @@ class AdminWorkshopDetailForm extends React.Component<AdminWorkshopDetailFormPro
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>End</Form.Label>
-                    <Field name='endDate'
+                    <Field name='endTime'
                            component={DatePickerInput}/>
                 </Form.Group>
                 <Form.Group>
@@ -109,7 +109,7 @@ class AdminWorkshopDetailForm extends React.Component<AdminWorkshopDetailFormPro
                     <StudentList
                         onChange={(event: any) => this.onStudentSelected(event.target.value)}/>
                 </div>
-                <EmailSubmit buttonText='Send' onSubmit={NOOP}/>
+                <EmailSubmit buttonText='Save' onSubmit={NOOP}/>
                 <EmailSubmit buttonText='Cancel'
                              onSubmit={this.onDialogOpened}/>
 

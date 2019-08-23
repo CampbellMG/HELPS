@@ -86,8 +86,8 @@ export default abstract class EventView extends Component<EventViewProps, EventV
 
         return events
             .map(event => {
-                const startTime = moment(event.startDate);
-                const endTime = moment(event.endDate);
+                const startTime = moment(event.startTime);
+                const endTime = moment(event.endTime);
 
                 return {
                     ...event,
@@ -227,15 +227,16 @@ export default abstract class EventView extends Component<EventViewProps, EventV
         const startTime = moment(start);
         const endTime = moment(end);
         const duration = moment.duration(endTime.diff(startTime));
+
         const newEvent = {
             id: -1,
             start: startTime.toDate(),
             end: endTime.toDate(),
-            startDate: start.toString(),
-            endDate: end.toString(),
+            startTime: startTime.format('YYYY-MM-DDTHH:mm:ss'),
+            endTime: endTime.format('YYYY-MM-DDTHH:mm:ss'),
             roomId: -1,
             time: start.toString(),
-            duration: duration.asMinutes().toString()
+            duration: duration.asMinutes()
         };
 
         this.onEventCreated(newEvent);

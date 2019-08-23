@@ -53,12 +53,12 @@ class AdminSessionDetailForm extends React.Component<AdminSessionDetailFormProps
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Start</Form.Label>
-                    <Field name='startDate'
+                    <Field name='startTime'
                            component={DatePickerInput}/>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>End</Form.Label>
-                    <Field name='endDate'
+                    <Field name='endTime'
                            component={DatePickerInput}/>
                 </Form.Group>
                 <Form.Group>
@@ -134,7 +134,7 @@ class AdminSessionDetailForm extends React.Component<AdminSessionDetailFormProps
                         </section>
                     )}
                 </Dropzone>
-                <EmailSubmit buttonText='Send' onSubmit={() => {
+                <EmailSubmit buttonText='Save' onSubmit={() => {
                 }}/>
                 <EmailSubmit buttonText='Cancel'
                              onSubmit={() => this.props.change('delete', true)}/>
