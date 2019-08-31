@@ -19,6 +19,7 @@ namespace HELPS.Controllers
         [HttpPost("login")]
         public IActionResult Authenticate([FromBody] User userParam)
         {
+
             var user = _userService.Authenticate(userParam.Username, userParam.Password);
 
             if (user == null)
@@ -30,9 +31,15 @@ namespace HELPS.Controllers
         [HttpPost("register")]
         public async Task<ActionResult<User>> Register([FromBody] User user)
         {
-            user = await _userService.Register(user);
-            
-            return CreatedAtAction(nameof(GetUser), new {id = user.Id}, user);
+
+            if (await _userService.GetUsername(user.Username) == null)
+            {
+                user = await _userService.Register(user);
+
+                return CreatedAtAction(nameof(GetUser), new { id = user.Id }, user);
+            }
+
+            return StatusCode(409, "Username exists.");
         }
 
         public async Task<ActionResult<User>> GetUser(int id)
@@ -41,7 +48,7 @@ namespace HELPS.Controllers
             
             if (user == null)
             {
-                return NotFound();
+                return StatusCode(404, "User not found.");
             }
 
             return user;
