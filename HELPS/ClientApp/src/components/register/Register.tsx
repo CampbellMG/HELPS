@@ -9,6 +9,7 @@ import { RegisterFields } from '../../types/components/LoginTypes';
 import { isUndefined } from 'util';
 import { isEmpty } from '../../util';
 import { Button, Form, FormControl } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const CHECKBOX_TYPE = 'checkbox';
 
@@ -39,9 +40,8 @@ export class Register extends Component<RegisterProps> {
                                     <Form.Label className='mr-2'>Admin</Form.Label>
                                     {this.inputControl('isAdmin', CHECKBOX_TYPE, false)}
                                 </Form.Group>
-                                <Button type='submit' className='w-100 mt-4'>
-                                    Register
-                </Button>
+                                <Link to='/'><Button className='w-50 mt-4'>Cancel</Button></Link>
+                                <Button type='submit' className='w-50 mt-4'>Register</Button>
                             </Form>
                         </div>
                     </div>
