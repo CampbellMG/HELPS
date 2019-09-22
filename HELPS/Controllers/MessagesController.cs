@@ -1,13 +1,11 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using HELPS.Models;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace HELPS.Controllers
 {
-    [Authorize]
     [Route("api/[controller]")]
     //The Message class
     public class MessagesController : StudentUserController
@@ -19,16 +17,12 @@ namespace HELPS.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Message>>> GetMessages()
         {
-            if (!IsAdmin()) return Unauthorized();
-
             return await Context.Messages.ToListAsync();
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<Message>> GetMessage(int id)
         {
-            if (!IsAdmin()) return Unauthorized();
-
             var message = await Context.Messages.FindAsync(id);
 
             if (message == null) return NotFound();
