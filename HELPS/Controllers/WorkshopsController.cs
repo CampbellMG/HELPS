@@ -22,7 +22,7 @@ namespace HELPS.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Workshop>>> GetWorkshops()
         {
-            return IsAdmin() ? Context.Workshops.ToList() : StudentWorkshops.Value.ToList();
+            return Context.Workshops.ToList();
         }
 
         [HttpGet("{id}")]

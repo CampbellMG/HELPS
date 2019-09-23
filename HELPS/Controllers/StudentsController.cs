@@ -42,5 +42,17 @@ namespace HELPS.Controllers
 
             return NoContent();
         }
+        
+        [HttpGet("/workshops")]
+        public async Task<ActionResult<IEnumerable<Workshop>>> GetStudentWorkshops()
+        {
+            return StudentWorkshops.Value.ToList();
+        }
+        
+        [HttpGet("/sessions")]
+        public async Task<ActionResult<IEnumerable<Session>>> GetStudentSessions()
+        {
+            return StudentSessions.Value.ToList();
+        }
     }
 }
