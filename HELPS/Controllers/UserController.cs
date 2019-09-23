@@ -26,19 +26,20 @@ namespace HELPS.Controllers
 
             return Ok(new {accessToken = user.Token, user.isAdmin});
         }
-        
+
         [HttpPost("register")]
         public async Task<ActionResult<User>> Register([FromBody] User user)
         {
             user = await _userService.Register(user);
-            
+
             return CreatedAtAction(nameof(GetUser), new {id = user.Id}, user);
         }
 
+        [HttpGet]
         public async Task<ActionResult<User>> GetUser(int id)
         {
             var user = await _userService.GetUser(id);
-            
+
             if (user == null)
             {
                 return NotFound();
