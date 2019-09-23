@@ -47,8 +47,10 @@ Skip to [OpenAPI Specification](#openapi-specification) to view the backend API 
 
 ### OpenAPI Specification
 
-The Swagger UI will allow you to see and test all backend endpoints from your browser. This is helpful for beginners who want to perform test the endpoints but don't know where to start.
+The Swagger UI will allow you to see and test all backend endpoints from your browser. This is helpful for beginners who want to test the endpoints but don't know where to start.
 
-The Swagger UI can be found at `http://localhost:<port>/swagger`. To learn more about Swagger / OpenAPI, refer to [ASP.NET Core web API help pages with Swagger / OpenAPI](https://docs.microsoft.com/en-us/aspnet/core/tutorials/web-api-help-pages-using-swagger?view=aspnetcore-2.2)
+The Swagger UI can be found at `http://localhost:<port>/swagger`.
+
+To learn more about Swagger / OpenAPI, refer to [ASP.NET Core web API help pages with Swagger / OpenAPI](https://docs.microsoft.com/en-us/aspnet/core/tutorials/web-api-help-pages-using-swagger?view=aspnetcore-2.2)
 
 ![](images/localhost_5001_swagger_index.html.png)
