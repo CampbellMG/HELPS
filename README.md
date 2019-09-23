@@ -1,5 +1,7 @@
 ## UTS HELPS Project (41095 - Software Engineering Studio 2A/2B)
 
+Skip to [OpenAPI Specification](openapi-specification) to view the backend API help pages with Swagger / OpenAPI.
+
 ### Setting up a development environment [Front & Backend]
 
 1. Download and install [ASP.net Core](https://dotnet.microsoft.com/download)
@@ -29,3 +31,9 @@
 
 14. Ensure there is a database "HELPS" that contains a public schema with tables representing each of the models (except reports) within the Models directory, if any are not present repeat step **8** and ensure there are no errors in the output
 15. Add a new row to the "Users" table and use those details to login
+
+### OpenAPI Specification
+
+The Swagger UI will allow you to see and test all backend endpoints from your browser. This is helpful for beginners who want to perform test the endpoints but don't know where to start.
+
+The Swagger UI can be found at `http://localhost:<port>/swagger`. To learn more about Swagger / OpenAPI, refer to [ASP.NET Core web API help pages with Swagger / OpenAPI](https://docs.microsoft.com/en-us/aspnet/core/tutorials/web-api-help-pages-using-swagger?view=aspnetcore-2.2)
