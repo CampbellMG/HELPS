@@ -13,15 +13,25 @@ Skip to [OpenAPI Specification](#openapi-specification) to view the backend API 
 4. Clone this repo and open in your preferred IDE (Must support C#, if unsure use Visual Studio)
 5. Open HELPS/appsettings.json and replace \<POSTGRESQL PASSWORD> with the password from step **3**
 6. Open a terminal and move into the ClientApp directory
-    > cd \<Project Directory>/HELPS/ClientApp
+    ```
+    cd <Project Directory>/HELPS/ClientApp
+    ```
 7. Run the following command to install node dependencies
-    > npm install
+    ```
+    npm install
+    ```
 8. Move back into the HELPS directory
-    > cd ..
+    ```
+    cd ..
+    ```
 9. Run the following command to build a database per the .net entity model
-    > dotnet ef database update
+    ```
+    dotnet ef database update
+    ```
 10. Start the project by running the following command or through your IDE's run config:
-    > dotnet run
+    ```
+    dotnet run
+    ```
 11. The command should output the local address of the project, open the link
     > Now listening on: https://localhost:5001
 12. You should be presented with the HELPS login page
