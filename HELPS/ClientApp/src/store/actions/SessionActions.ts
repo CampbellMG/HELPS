@@ -65,7 +65,8 @@ export const bookSession = (session: Session) => async (dispatch: Dispatch<any>)
             ENDPOINT_STUDENT_SESSION,
             'POST',
             session,
-            true
+            true,
+            false
         );
         await dispatchUserSessions(dispatch);
     } catch (e) {
@@ -75,7 +76,8 @@ export const bookSession = (session: Session) => async (dispatch: Dispatch<any>)
 
 export const cancelSession = (session: Session) => async (dispatch: Dispatch<any>) => {
     try {
-        await authenticatedFetch(`api/studentSessions/${session.id}`, 'DELETE');
+        await authenticatedFetch(`${ENDPOINT_STUDENT_SESSION}/${session.id}`, 'DELETE', undefined, undefined, false);
+        await dispatchSessions(dispatch);
         await dispatchUserSessions(dispatch);
     } catch (e) {
         dispatch(sessionError(e.message));

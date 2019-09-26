@@ -46,15 +46,11 @@ export default abstract class EventView extends Component<EventViewProps, EventV
     private localizer = BigCalendar.momentLocalizer(moment);
 
     private get sessions(): Session[] {
-        let {filters, searchTerm, selectedEvent, sessions} = {...this.state, ...this.props};
+        let {searchTerm, selectedEvent, sessions} = {...this.state, ...this.props};
 
         if (selectedEvent && isSession(selectedEvent)) {
             sessions = sessions.filter(session => selectedEvent && session.id !== selectedEvent.id);
             sessions.push(selectedEvent);
-        }
-
-        if (filters.includes('Booked')) {
-            sessions = sessions.filter(session => session.studentId);
         }
 
         return sessions
@@ -62,11 +58,15 @@ export default abstract class EventView extends Component<EventViewProps, EventV
     }
 
     private get workshops(): Workshop[] {
-        let {searchTerm, selectedEvent, workshops} = {...this.state, ...this.props};
+        let {searchTerm, selectedEvent, workshops, filters} = {...this.state, ...this.props};
 
         if (selectedEvent && isWorkshop(selectedEvent)) {
             workshops = workshops.filter(workshop => selectedEvent && workshop.id !== selectedEvent.id);
             workshops.push(selectedEvent);
+        }
+        
+        if(filters.includes("Booked")){
+            workshops = workshops.filter(workshop => this.eventSelected(workshop))
         }
 
         return workshops
@@ -74,13 +74,14 @@ export default abstract class EventView extends Component<EventViewProps, EventV
     }
 
     private get events(): CalendarEvent[] {
+        const {filters} = this.state;
         let events: HELPSEvent[] = [];
 
-        if (this.showWorkshops) {
+        if (this.showWorkshops && !filters.includes("Sessions")) {
             events = events.concat(this.workshops);
         }
 
-        if (this.showSessions) {
+        if (this.showSessions && !filters.includes("Workshops")) {
             events = events.concat(this.sessions);
         }
 

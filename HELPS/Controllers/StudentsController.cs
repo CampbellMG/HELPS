@@ -70,6 +70,25 @@ namespace HELPS.Controllers
             return NoContent();
         }
         
+        [HttpDelete("workshops/{id}")]
+        public async Task<IActionResult> CancelWorkshop(int id)
+        {
+            Workshop workshop = await Context.Workshops.FindAsync(id);
+            int userId = Student.Value.Id;
+
+            if (workshop?.StudentIds == null || !workshop.StudentIds.Contains(userId))
+            {
+                return NotFound();
+            }
+
+            workshop.StudentIds = workshop.StudentIds.Where(studentId => studentId != userId).ToArray();
+            
+            Context.Entry(workshop).State = EntityState.Modified;
+            await Context.SaveChangesAsync();
+            
+            return NoContent();
+        }
+        
         [HttpGet("sessions")]
         public async Task<ActionResult<IEnumerable<Session>>> GetStudentSessions()
         {
@@ -80,6 +99,24 @@ namespace HELPS.Controllers
         public async Task<IActionResult> BookSession([FromBody] Session session)
         {
             session.StudentId = Student.Value.Id;
+            
+            Context.Entry(session).State = EntityState.Modified;
+            await Context.SaveChangesAsync();
+            
+            return NoContent();
+        }
+        
+        [HttpDelete("sessions/{id}")]
+        public async Task<IActionResult> CancelSession(int id)
+        {
+            Session session = await Context.Sessions.FindAsync(id);
+
+            if (session?.StudentId == null || session.StudentId != Student.Value.Id)
+            {
+                return NotFound();
+            }
+
+            session.StudentId = -1;
             
             Context.Entry(session).State = EntityState.Modified;
             await Context.SaveChangesAsync();

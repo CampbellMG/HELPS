@@ -44,6 +44,12 @@ class User extends Component<UserProps, UserState> {
             this.props.loadUserDetails();
         }
     }
+    
+    componentDidUpdate(prevProps: Readonly<UserProps>, prevState: Readonly<UserState>, snapshot?: any): void {
+        if(!this.props.isAdmin && !this.state.selectedStudent && this.props.students && this.props.students.length === 1){
+            this.setState({selectedStudent: this.props.students[0]})
+        }
+    }
 
     render() {
         const {isAdmin, error, loading, messages} = this.props;

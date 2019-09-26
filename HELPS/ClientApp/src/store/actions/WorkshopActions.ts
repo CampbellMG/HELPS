@@ -65,7 +65,8 @@ export const bookWorkshop = (workshop: Workshop) => async (dispatch: Dispatch<an
             ENDPOINT_STUDENT_WORKSHOP,
             'POST',
             workshop,
-            true
+            true,
+            false
         );
         await dispatchUserWorkshops(dispatch);
     } catch (e) {
@@ -75,7 +76,7 @@ export const bookWorkshop = (workshop: Workshop) => async (dispatch: Dispatch<an
 
 export const cancelWorkshop = (workshop: Workshop) => async (dispatch: Dispatch<any>) => {
     try {
-        await authenticatedFetch(`api/studentWorkshops/${workshop.id}`, 'DELETE');
+        await authenticatedFetch(`${ENDPOINT_STUDENT_WORKSHOP}/${workshop.id}`, 'DELETE', undefined, undefined, false);
         await dispatchUserWorkshops(dispatch);
     } catch (e) {
         dispatch(workshopError(e.message));
