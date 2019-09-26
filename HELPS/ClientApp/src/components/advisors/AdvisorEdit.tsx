@@ -25,6 +25,9 @@ class AdvisorEdit extends Component<AdvisorProps, AdvisorState> {
         isActive: false
     };
 
+    componentDidUpdate(prevProps: Readonly<AdvisorProps>, prevState: Readonly<AdvisorState>, snapshot?: any): void {
+    }
+
     private get filteredAdvisors(): Advisor[] {
         let {advisors, filter} = {...this.state, ...this.props};
         if (!advisors) return [];

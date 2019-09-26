@@ -51,6 +51,7 @@ namespace HELPS.Controllers
             Context.Sessions.Add(session);
             await Context.SaveChangesAsync();
 
+
             return CreatedAtAction(nameof(GetSessions), new {id = session.Id}, session);
         }
 
