@@ -43,16 +43,48 @@ namespace HELPS.Controllers
             return NoContent();
         }
         
-        [HttpGet("/workshops")]
+        [HttpGet("workshops")]
         public async Task<ActionResult<IEnumerable<Workshop>>> GetStudentWorkshops()
         {
             return StudentWorkshops.Value.ToList();
         }
         
-        [HttpGet("/sessions")]
+        [HttpPost("workshops")]
+        public async Task<IActionResult> BookWorkshop([FromBody] Workshop workshop)
+        {
+            if (workshop.StudentIds == null)
+            {
+                workshop.StudentIds = new []{Student.Value.Id};
+            }
+            else
+            {
+                IList<int> studentIds = workshop.StudentIds.ToList();
+                studentIds.Add(Student.Value.Id);
+                workshop.StudentIds = studentIds.ToArray();
+            }
+
+            
+            Context.Entry(workshop).State = EntityState.Modified;
+            await Context.SaveChangesAsync();
+            
+            return NoContent();
+        }
+        
+        [HttpGet("sessions")]
         public async Task<ActionResult<IEnumerable<Session>>> GetStudentSessions()
         {
             return StudentSessions.Value.ToList();
+        }
+        
+        [HttpPost("sessions")]
+        public async Task<IActionResult> BookSession([FromBody] Session session)
+        {
+            session.StudentId = Student.Value.Id;
+            
+            Context.Entry(session).State = EntityState.Modified;
+            await Context.SaveChangesAsync();
+            
+            return NoContent();
         }
     }
 }
