@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace HELPS.Models
 {
@@ -13,6 +14,7 @@ namespace HELPS.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string Title { get; set; }
+        [JsonProperty("startTime")] // TODO - rename this column
         public DateTime Time { get; set; } //ISO 8601, no fractional seconds
         public int Duration { get; set; }
         public int RoomId { get; set; }

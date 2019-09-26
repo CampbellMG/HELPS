@@ -7,7 +7,7 @@ import {
     StudentWorkshopDetailFormProps,
     StudentWorkshopDetailProps, WorkshopFormData
 } from '../../../types/components/WorkshopRegistrationTypes';
-import {TextInput} from '../../forms/Components';
+import {DisabledTextInput} from '../../forms/Components';
 
 class StudentWorkshopDetailForm extends React.Component<StudentWorkshopDetailFormProps> {
 

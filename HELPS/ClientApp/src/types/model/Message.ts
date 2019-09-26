@@ -10,7 +10,7 @@ export const MessageDictionaryMap: { [key: number]: keyof MessageDictionary } = 
 };
 
 export interface MessageDictionary {
-    loginNotification?: string
+        loginNotification?: string
     eventNotification?: string
     informationCollection?: string
     programs?: string
