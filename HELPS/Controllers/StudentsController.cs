@@ -32,11 +32,9 @@ namespace HELPS.Controllers
             return student;
         }
 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutStudent(int id, [FromBody] Student student)
+        [HttpPut]
+        public async Task<IActionResult> PutStudent([FromBody] Student student)
         {
-            if (id != student.Id) return NotFound();
-
             Context.Entry(student).State = EntityState.Modified;
             await Context.SaveChangesAsync();
 

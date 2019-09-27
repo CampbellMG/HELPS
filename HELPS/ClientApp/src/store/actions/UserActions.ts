@@ -27,32 +27,19 @@ export const updateUser = (user: Student) => async (dispatch: Dispatch<any>) => 
         return;
     }
 
-    const userResponse = await fetch('api/students', {
+    await fetch('api/students', {
         method: 'PUT',
         headers: new Headers({
             'Authorization': `Bearer ${token}`,
             'content-type': 'application/json'
         }),
-        body: JSON.stringify(user)
+        body: JSON.stringify(user),
     });
 
-    let userResult = await userResponse.json();
-
-    if (!userResponse.ok || !userResult.id || !userResult.name) {
-        dispatch(userError(userResult.message ? userResult.message : 'Update request failed'));
-        return;
-    }
-
-    if (!Array.isArray(userResult)) {
-        userResult = [userResult];
-    }
-
-    const students = userResult as Student[];
-
-    dispatch(receiveUser(students));
+    await dispatchUser(dispatch)
 };
 
-export const retrieveUser = () => async (dispatch: Dispatch<any>) => {
+async function dispatchUser(dispatch: Dispatch<any>) {
     dispatch(requestUser());
 
     const token = localStorage.getItem(LS_STORAGE_KEY);
@@ -82,4 +69,8 @@ export const retrieveUser = () => async (dispatch: Dispatch<any>) => {
     const students = userResult as Student[];
 
     dispatch(receiveUser(students));
+}
+
+export const retrieveUser = () => async (dispatch: Dispatch<any>) => {
+    await dispatchUser(dispatch);
 };
