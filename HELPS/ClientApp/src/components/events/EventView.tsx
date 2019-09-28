@@ -94,7 +94,8 @@ export default abstract class EventView extends Component<EventViewProps, EventV
                     ...event,
                     endDate: endTime.toISOString(),
                     start: startTime.toDate(),
-                    end: endTime.toDate()
+                    end: endTime.toDate(),
+                    title: isSession(event) ? `${event.subjectName} - ${event.assignmentType}` : (event as Workshop).title
                 };
             });
     }

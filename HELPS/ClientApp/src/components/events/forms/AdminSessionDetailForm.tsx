@@ -142,18 +142,20 @@ class AdminSessionDetailForm extends React.Component<AdminSessionDetailFormProps
     );
 
     private ReasonListInput = (props: any) => (
-        <Form.Control as='select' {...props}>
-            <option>Discussing an assignment draft</option>
-            <option>Practicing a seminar presentation</option>
-            <option>Other</option>
+        <Form.Control as='select' {...props} value={props.input.value} onChange={props.input.onChange}>
+            <option/>
+            <option value='Discussing an assignment draft'>Discussing an assignment draft</option>
+            <option value='Practicing a seminar presentation'>Practicing a seminar presentation</option>
+            <option value='Other'>Other</option>
         </Form.Control>
     );
 
     private AssignmentTypeInput = (props: any) => (
-        <Form.Control as='select' {...props}>
-            <option>Essay</option>
-            <option>Report</option>
-            <option>Other</option>
+        <Form.Control as='select' {...props} value={props.input.value} onChange={props.input.onChange}>
+            <option/>
+            <option value='Essay'>Essay</option>
+            <option value='Report'>Report</option>
+            <option value='Other'>Other</option>
         </Form.Control>
     );
 

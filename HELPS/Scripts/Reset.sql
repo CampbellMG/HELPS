@@ -1,9 +1,9 @@
 delete
 from "Advisors";
 delete
-from "Emails";
-delete
 from "EmailVariable";
+delete
+from "Emails";
 delete
 from "Messages";
 delete

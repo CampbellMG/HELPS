@@ -426,10 +426,8 @@
           <e p="AppSettings.cs" t="Include" />
         </e>
         <e p="Migrations" t="Include">
-          <e p="20190821230731_Reports.Designer.cs" t="Include" />
-          <e p="20190821230731_Reports.cs" t="Include" />
-          <e p="20190927062159_final.Designer.cs" t="Include" />
-          <e p="20190927062159_final.cs" t="Include" />
+          <e p="20190928091656_session.Designer.cs" t="Include" />
+          <e p="20190928091656_session.cs" t="Include" />
           <e p="HelpsContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="Models" t="Include">

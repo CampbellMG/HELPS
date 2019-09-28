@@ -10,13 +10,20 @@ namespace HELPS.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+
         [JsonProperty("startTime")] // TODO - rename this column
         public DateTime Starttime { get; set; }
+
         public int Duration { get; set; }
         public int RoomId { get; set; }
         public int AdvisorId { get; set; }
         public string AdvisorName { get; set; }
         public int StudentId { get; set; }
         public string Type { get; set; }
+        public string AssignmentType { get; set; }
+        public bool GroupAssignment { get; set; }
+        public string Purpose { get; set; }
+        public string SubjectName { get; set; }
+        public string Comments { get; set; }
     }
 }
