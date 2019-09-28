@@ -21,7 +21,7 @@ class Layout extends React.Component<LayoutProps> {
                     <NavMenu/>
                 }
                 {
-                    <div className={(this.props.authenticated ? 'bg-white content-wrapper' : ' full-container') + ' flex-fill d-flex flex-column'}>
+                    <div className={(this.props.authenticated ? 'bg-white content-wrapper' : ' full-container') + ' flex-fill d-flex flex-column container-fluid'}>
                         {this.props.children}
                     </div>
                 }
