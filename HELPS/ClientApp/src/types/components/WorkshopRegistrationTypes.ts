@@ -15,6 +15,7 @@ import {MessageDictionary} from '../model/Message';
 export type EventFormProps<E extends DeleteableHELPSEvent, P> = P & InjectedFormProps<E, P>;
 
 export interface AdminSessionDetailProps {
+    isAssigning: boolean
 }
 
 export type AdminSessionDetailFormProps = EventFormProps<SessionFormData, AdminSessionDetailProps>;
@@ -38,6 +39,7 @@ export interface AdminWorkshopFormDispatchProps {
 }
 
 export interface AdminWorkshopDetailProps{
+
 }
 
 export type AdminWorkshopDetailFormProps = EventFormProps<WorkshopFormData, AdminWorkshopDetailProps> &  AdminWorkshopFormDispatchProps & AdminWorkshopFormStateProps;
@@ -153,6 +155,12 @@ export interface EventFormComponentProps {
     onEventSubmitted: (event: DeleteableHELPSEvent) => void
     eventSelected: boolean
     eventChanged: (event: CalendarEvent) => void
+}
+
+export type EventFormComponentTabType = 'BOOKING' | 'ASSIGNING'
+
+export interface EventFormComponentState {
+    selectedTab: EventFormComponentTabType
 }
 
 export interface RoomListStateProps {

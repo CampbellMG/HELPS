@@ -1,27 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\campbell\.Rider2018.3\config\consoles\db" t="IncludeRecursive" />
-    <e p="C:\Users\campbell\.Rider2018.3\config\extensions" t="IncludeRecursive" />
-    <e p="C:\Users\campbell\.Rider2018.3\config\scratches" t="IncludeRecursive" />
-    <e p="C:\Users\campbell\.Rider2018.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\campbell\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_HELPS.-431221546.00" t="ExcludeRecursive" />
-    <e p="C:\Users\campbell\IdeaProjects\HELPS" t="IncludeFlat">
+    <e p="$APPLICATION_CONFIG_DIR$/consoles/db" t="IncludeRecursive" />
+    <e p="$APPLICATION_CONFIG_DIR$/extensions" t="IncludeRecursive" />
+    <e p="$APPLICATION_CONFIG_DIR$/scratches" t="IncludeRecursive" />
+    <e p="$USER_HOME$/.Rider2019.2/system/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/.Rider2019.2/system/resharper-host/local/Transient/ReSharperHost/v192/SolutionCaches/_HELPS.221709418.00" t="ExcludeRecursive" />
+    <e p="$PROJECT_DIR$" t="IncludeFlat">
       <e p="HELPS" t="IncludeRecursive">
         <e p=".gitignore" t="Include" />
-        <e p="appsettings.Development.json" t="Include" />
-        <e p="appsettings.json" t="Include" />
-        <e p="bin" t="ExcludeRecursive" />
         <e p="ClientApp" t="Include">
           <e p=".gitignore" t="Include" />
           <e p=".idea" t="Include">
             <e p="ClientApp.iml" t="Include" />
             <e p="codeStyles" t="Include">
-              <e p="codeStyleConfig.xml" t="Include" />
               <e p="Project.xml" t="Include" />
+              <e p="codeStyleConfig.xml" t="Include" />
             </e>
+            <e p="dataSources" t="Include">
+              <e p="22bd081b-5570-4f9e-956f-bb3cbb767c14" t="Include">
+                <e p="storage_v2" t="Include">
+                  <e p="_src_" t="Include">
+                    <e p="database" t="Include">
+                      <e p="HELPS.MiEXBA" t="Include">
+                        <e p="schema" t="Include">
+                          <e p="information_schema.FNRwLQ.meta" t="Include" />
+                          <e p="information_schema.FNRwLQ.zip" t="Include" />
+                          <e p="pg_catalog.0S1ZNQ.meta" t="Include" />
+                          <e p="pg_catalog.0S1ZNQ.zip" t="Include" />
+                          <e p="pg_temp_1.zkWuFg.meta" t="Include" />
+                          <e p="pg_toast.33HYYw.meta" t="Include" />
+                          <e p="pg_toast_temp_1.5ixBaA.meta" t="Include" />
+                          <e p="public.abK9xQ.meta" t="Include" />
+                        </e>
+                      </e>
+                      <e p="HELPS.MiEXBA.meta" t="Include" />
+                      <e p="postgres.edMnLQ" t="Include">
+                        <e p="schema" t="Include">
+                          <e p="information_schema.FNRwLQ.meta" t="Include" />
+                          <e p="information_schema.FNRwLQ.zip" t="Include" />
+                          <e p="pg_catalog.0S1ZNQ.meta" t="Include" />
+                          <e p="pg_catalog.0S1ZNQ.zip" t="Include" />
+                          <e p="pg_temp_1.zkWuFg.meta" t="Include" />
+                          <e p="pg_toast.33HYYw.meta" t="Include" />
+                          <e p="pg_toast_temp_1.5ixBaA.meta" t="Include" />
+                          <e p="public.abK9xQ.meta" t="Include" />
+                        </e>
+                      </e>
+                      <e p="postgres.edMnLQ.meta" t="Include" />
+                    </e>
+                  </e>
+                </e>
+              </e>
+              <e p="22bd081b-5570-4f9e-956f-bb3cbb767c14.xml" t="Include" />
+            </e>
+            <e p="dataSources.local.xml" t="Include" />
+            <e p="dataSources.xml" t="Include" />
             <e p="deployment.xml" t="Include" />
             <e p="encodings.xml" t="Include" />
+            <e p="httpRequests" t="Include">
+              <e p="2019-05-23T065211.500.txt" t="Include" />
+              <e p="2019-05-23T065224.500.txt" t="Include" />
+              <e p="2019-05-23T065254.500.txt" t="Include" />
+              <e p="2019-05-23T065507.404.html" t="Include" />
+              <e p="2019-05-23T065529.404.html" t="Include" />
+              <e p="2019-05-23T065621.404.html" t="Include" />
+              <e p="2019-05-23T065633.404.html" t="Include" />
+              <e p="2019-05-23T070607.404.html" t="Include" />
+              <e p="2019-05-23T070614.404.html" t="Include" />
+              <e p="2019-05-23T070741.404.html" t="Include" />
+              <e p="2019-05-23T070900.200.json" t="Include" />
+              <e p="2019-05-23T070907.404.html" t="Include" />
+              <e p="2019-05-23T070921.404.html" t="Include" />
+              <e p="2019-05-23T071153.200.json" t="Include" />
+              <e p="2019-05-23T071156.404.html" t="Include" />
+              <e p="2019-05-23T071159.200.json" t="Include" />
+              <e p="2019-05-23T071926.200.json" t="Include" />
+              <e p="http-requests-log.http" t="Include" />
+            </e>
             <e p="inspectionProfiles" t="Include">
               <e p="Project_Default.xml" t="Include" />
             </e>
@@ -35,121 +91,131 @@
             <e p="schema.js" t="Include" />
             <e p="server.js" t="Include" />
           </e>
-          <e p="node_modules" t="ExcludeRecursive">
-            <e p="@types" t="IncludeRecursive">
-              <e p="bootstrap" t="IncludeRecursive" />
-              <e p="draft-js" t="IncludeRecursive" />
-              <e p="history" t="IncludeRecursive" />
-              <e p="hoist-non-react-statics" t="IncludeRecursive" />
-              <e p="jest" t="IncludeRecursive" />
-              <e p="jest-diff" t="IncludeRecursive" />
-              <e p="jquery" t="IncludeRecursive" />
-              <e p="moment" t="IncludeRecursive" />
-              <e p="node" t="IncludeRecursive" />
-              <e p="prop-types" t="IncludeRecursive" />
-              <e p="react" t="IncludeRecursive" />
-              <e p="react-big-calendar" t="IncludeRecursive" />
-              <e p="react-bootstrap" t="IncludeRecursive" />
-              <e p="react-dom" t="IncludeRecursive" />
-              <e p="react-draft-wysiwyg" t="IncludeRecursive" />
-              <e p="react-icons" t="IncludeRecursive" />
-              <e p="react-redux" t="IncludeRecursive" />
-              <e p="react-router" t="IncludeRecursive" />
-              <e p="react-router-bootstrap" t="IncludeRecursive" />
-              <e p="react-router-dom" t="IncludeRecursive" />
-              <e p="react-router-redux" t="IncludeRecursive" />
-              <e p="redux" t="IncludeRecursive" />
-              <e p="redux-form" t="IncludeRecursive" />
-              <e p="redux-thunk" t="IncludeRecursive" />
-              <e p="sizzle" t="IncludeRecursive" />
-              <e p="unist" t="IncludeRecursive" />
-              <e p="vfile-message" t="IncludeRecursive" />
-            </e>
-            <e p="ajv" t="IncludeRecursive" />
+          <e p="node_modules/@mrmlnc/readdir-enhanced" t="IncludeRecursive" />
+          <e p="node_modules/@nodelib/fs.stat" t="IncludeRecursive" />
+          <e p="node_modules/@types" t="IncludeRecursive">
             <e p="bootstrap" t="IncludeRecursive" />
-            <e p="concurrently" t="IncludeRecursive" />
-            <e p="cross-env" t="IncludeRecursive" />
-            <e p="csstype" t="IncludeRecursive" />
             <e p="draft-js" t="IncludeRecursive" />
-            <e p="draftjs-to-html" t="IncludeRecursive" />
-            <e p="faker" t="IncludeRecursive" />
+            <e p="history" t="IncludeRecursive" />
             <e p="hoist-non-react-statics" t="IncludeRecursive" />
-            <e p="html-to-draftjs" t="IncludeRecursive" />
-            <e p="immutable" t="IncludeRecursive" />
+            <e p="jest" t="IncludeRecursive" />
+            <e p="jest-diff" t="IncludeRecursive" />
             <e p="jquery" t="IncludeRecursive" />
-            <e p="json-schema-faker" t="IncludeRecursive" />
-            <e p="json-server" t="IncludeRecursive" />
-            <e p="jsonwebtoken" t="IncludeRecursive" />
             <e p="moment" t="IncludeRecursive" />
-            <e p="node-sass" t="IncludeRecursive" />
-            <e p="popper.js" t="IncludeRecursive" />
+            <e p="node" t="IncludeRecursive" />
+            <e p="prop-types" t="IncludeRecursive" />
             <e p="react" t="IncludeRecursive" />
             <e p="react-big-calendar" t="IncludeRecursive" />
             <e p="react-bootstrap" t="IncludeRecursive" />
-            <e p="react-chips" t="IncludeRecursive" />
-            <e p="react-datetime" t="IncludeRecursive" />
             <e p="react-dom" t="IncludeRecursive" />
             <e p="react-draft-wysiwyg" t="IncludeRecursive" />
-            <e p="react-dropzone" t="IncludeRecursive" />
             <e p="react-icons" t="IncludeRecursive" />
             <e p="react-redux" t="IncludeRecursive" />
+            <e p="react-router" t="IncludeRecursive" />
             <e p="react-router-bootstrap" t="IncludeRecursive" />
             <e p="react-router-dom" t="IncludeRecursive" />
             <e p="react-router-redux" t="IncludeRecursive" />
-            <e p="react-rrule-generator" t="IncludeRecursive" />
-            <e p="react-scripts" t="IncludeRecursive" />
             <e p="redux" t="IncludeRecursive" />
             <e p="redux-form" t="IncludeRecursive" />
             <e p="redux-thunk" t="IncludeRecursive" />
-            <e p="rrule" t="IncludeRecursive" />
-            <e p="tslint" t="IncludeRecursive" />
-            <e p="typescript\lib\lib.d.ts" t="IncludeRecursive" />
-            <e p="typescript\lib\lib.dom.d.ts" t="IncludeRecursive" />
-            <e p="typescript\lib\lib.dom.iterable.d.ts" t="IncludeRecursive" />
-            <e p="typescript\lib\lib.es2015.collection.d.ts" t="IncludeRecursive" />
-            <e p="typescript\lib\lib.es2015.core.d.ts" t="IncludeRecursive" />
-            <e p="typescript\lib\lib.es2015.d.ts" t="IncludeRecursive" />
-            <e p="typescript\lib\lib.es2015.generator.d.ts" t="IncludeRecursive" />
-            <e p="typescript\lib\lib.es2015.iterable.d.ts" t="IncludeRecursive" />
-            <e p="typescript\lib\lib.es2015.promise.d.ts" t="IncludeRecursive" />
-            <e p="typescript\lib\lib.es2015.proxy.d.ts" t="IncludeRecursive" />
-            <e p="typescript\lib\lib.es2015.reflect.d.ts" t="IncludeRecursive" />
-            <e p="typescript\lib\lib.es2015.symbol.d.ts" t="IncludeRecursive" />
-            <e p="typescript\lib\lib.es2015.symbol.wellknown.d.ts" t="IncludeRecursive" />
-            <e p="typescript\lib\lib.es2016.array.include.d.ts" t="IncludeRecursive" />
-            <e p="typescript\lib\lib.es2016.d.ts" t="IncludeRecursive" />
-            <e p="typescript\lib\lib.es2016.full.d.ts" t="IncludeRecursive" />
-            <e p="typescript\lib\lib.es2017.d.ts" t="IncludeRecursive" />
-            <e p="typescript\lib\lib.es2017.full.d.ts" t="IncludeRecursive" />
-            <e p="typescript\lib\lib.es2017.intl.d.ts" t="IncludeRecursive" />
-            <e p="typescript\lib\lib.es2017.object.d.ts" t="IncludeRecursive" />
-            <e p="typescript\lib\lib.es2017.sharedmemory.d.ts" t="IncludeRecursive" />
-            <e p="typescript\lib\lib.es2017.string.d.ts" t="IncludeRecursive" />
-            <e p="typescript\lib\lib.es2017.typedarrays.d.ts" t="IncludeRecursive" />
-            <e p="typescript\lib\lib.es2018.asynciterable.d.ts" t="IncludeRecursive" />
-            <e p="typescript\lib\lib.es2018.d.ts" t="IncludeRecursive" />
-            <e p="typescript\lib\lib.es2018.full.d.ts" t="IncludeRecursive" />
-            <e p="typescript\lib\lib.es2018.intl.d.ts" t="IncludeRecursive" />
-            <e p="typescript\lib\lib.es2018.promise.d.ts" t="IncludeRecursive" />
-            <e p="typescript\lib\lib.es2018.regexp.d.ts" t="IncludeRecursive" />
-            <e p="typescript\lib\lib.es2019.array.d.ts" t="IncludeRecursive" />
-            <e p="typescript\lib\lib.es2019.d.ts" t="IncludeRecursive" />
-            <e p="typescript\lib\lib.es2019.full.d.ts" t="IncludeRecursive" />
-            <e p="typescript\lib\lib.es2019.string.d.ts" t="IncludeRecursive" />
-            <e p="typescript\lib\lib.es2019.symbol.d.ts" t="IncludeRecursive" />
-            <e p="typescript\lib\lib.es5.d.ts" t="IncludeRecursive" />
-            <e p="typescript\lib\lib.es6.d.ts" t="IncludeRecursive" />
-            <e p="typescript\lib\lib.esnext.array.d.ts" t="IncludeRecursive" />
-            <e p="typescript\lib\lib.esnext.asynciterable.d.ts" t="IncludeRecursive" />
-            <e p="typescript\lib\lib.esnext.bigint.d.ts" t="IncludeRecursive" />
-            <e p="typescript\lib\lib.esnext.d.ts" t="IncludeRecursive" />
-            <e p="typescript\lib\lib.esnext.full.d.ts" t="IncludeRecursive" />
-            <e p="typescript\lib\lib.esnext.intl.d.ts" t="IncludeRecursive" />
-            <e p="typescript\lib\lib.esnext.symbol.d.ts" t="IncludeRecursive" />
-            <e p="typescript\lib\lib.scripthost.d.ts" t="IncludeRecursive" />
-            <e p="typescript\lib\lib.webworker.d.ts" t="IncludeRecursive" />
-            <e p="typescript\lib\lib.webworker.importscripts.d.ts" t="IncludeRecursive" />
+            <e p="sizzle" t="IncludeRecursive" />
+            <e p="unist" t="IncludeRecursive" />
+            <e p="vfile-message" t="IncludeRecursive" />
           </e>
+          <e p="node_modules/ajv" t="IncludeRecursive" />
+          <e p="node_modules/bootstrap" t="IncludeRecursive" />
+          <e p="node_modules/chokidar" t="IncludeRecursive" />
+          <e p="node_modules/commander" t="IncludeRecursive" />
+          <e p="node_modules/concurrently" t="IncludeRecursive" />
+          <e p="node_modules/cross-env" t="IncludeRecursive" />
+          <e p="node_modules/csstype" t="IncludeRecursive" />
+          <e p="node_modules/dotenv-expand" t="IncludeRecursive" />
+          <e p="node_modules/draft-js" t="IncludeRecursive" />
+          <e p="node_modules/draftjs-to-html" t="IncludeRecursive" />
+          <e p="node_modules/faker" t="IncludeRecursive" />
+          <e p="node_modules/fast-deep-equal" t="IncludeRecursive" />
+          <e p="node_modules/fast-glob" t="IncludeRecursive" />
+          <e p="node_modules/file-selector" t="IncludeRecursive" />
+          <e p="node_modules/html-to-draftjs" t="IncludeRecursive" />
+          <e p="node_modules/immutable" t="IncludeRecursive" />
+          <e p="node_modules/jquery" t="IncludeRecursive" />
+          <e p="node_modules/json-schema-faker" t="IncludeRecursive" />
+          <e p="node_modules/json-server" t="IncludeRecursive" />
+          <e p="node_modules/jsonwebtoken" t="IncludeRecursive" />
+          <e p="node_modules/moment" t="IncludeRecursive" />
+          <e p="node_modules/node-sass" t="IncludeRecursive" />
+          <e p="node_modules/popper.js" t="IncludeRecursive" />
+          <e p="node_modules/react" t="IncludeRecursive" />
+          <e p="node_modules/react-big-calendar" t="IncludeRecursive" />
+          <e p="node_modules/react-bootstrap" t="IncludeRecursive" />
+          <e p="node_modules/react-chips" t="IncludeRecursive" />
+          <e p="node_modules/react-datetime" t="IncludeRecursive" />
+          <e p="node_modules/react-dom" t="IncludeRecursive" />
+          <e p="node_modules/react-draft-wysiwyg" t="IncludeRecursive" />
+          <e p="node_modules/react-dropzone" t="IncludeRecursive" />
+          <e p="node_modules/react-icons" t="IncludeRecursive" />
+          <e p="node_modules/react-redux" t="IncludeRecursive" />
+          <e p="node_modules/react-router-bootstrap" t="IncludeRecursive" />
+          <e p="node_modules/react-router-dom" t="IncludeRecursive" />
+          <e p="node_modules/react-router-redux" t="IncludeRecursive" />
+          <e p="node_modules/react-rrule-generator" t="IncludeRecursive" />
+          <e p="node_modules/react-scripts" t="IncludeRecursive" />
+          <e p="node_modules/redux" t="IncludeRecursive" />
+          <e p="node_modules/redux-form" t="IncludeRecursive" />
+          <e p="node_modules/redux-thunk" t="IncludeRecursive" />
+          <e p="node_modules/rrule" t="IncludeRecursive" />
+          <e p="node_modules/rxjs" t="IncludeRecursive" />
+          <e p="node_modules/symbol-observable" t="IncludeRecursive" />
+          <e p="node_modules/tslib" t="IncludeRecursive" />
+          <e p="node_modules/tslint" t="IncludeRecursive" />
+          <e p="node_modules/typescript/lib/lib.d.ts" t="IncludeRecursive" />
+          <e p="node_modules/typescript/lib/lib.dom.d.ts" t="IncludeRecursive" />
+          <e p="node_modules/typescript/lib/lib.dom.iterable.d.ts" t="IncludeRecursive" />
+          <e p="node_modules/typescript/lib/lib.es2015.collection.d.ts" t="IncludeRecursive" />
+          <e p="node_modules/typescript/lib/lib.es2015.core.d.ts" t="IncludeRecursive" />
+          <e p="node_modules/typescript/lib/lib.es2015.d.ts" t="IncludeRecursive" />
+          <e p="node_modules/typescript/lib/lib.es2015.generator.d.ts" t="IncludeRecursive" />
+          <e p="node_modules/typescript/lib/lib.es2015.iterable.d.ts" t="IncludeRecursive" />
+          <e p="node_modules/typescript/lib/lib.es2015.promise.d.ts" t="IncludeRecursive" />
+          <e p="node_modules/typescript/lib/lib.es2015.proxy.d.ts" t="IncludeRecursive" />
+          <e p="node_modules/typescript/lib/lib.es2015.reflect.d.ts" t="IncludeRecursive" />
+          <e p="node_modules/typescript/lib/lib.es2015.symbol.d.ts" t="IncludeRecursive" />
+          <e p="node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts" t="IncludeRecursive" />
+          <e p="node_modules/typescript/lib/lib.es2016.array.include.d.ts" t="IncludeRecursive" />
+          <e p="node_modules/typescript/lib/lib.es2016.d.ts" t="IncludeRecursive" />
+          <e p="node_modules/typescript/lib/lib.es2016.full.d.ts" t="IncludeRecursive" />
+          <e p="node_modules/typescript/lib/lib.es2017.d.ts" t="IncludeRecursive" />
+          <e p="node_modules/typescript/lib/lib.es2017.full.d.ts" t="IncludeRecursive" />
+          <e p="node_modules/typescript/lib/lib.es2017.intl.d.ts" t="IncludeRecursive" />
+          <e p="node_modules/typescript/lib/lib.es2017.object.d.ts" t="IncludeRecursive" />
+          <e p="node_modules/typescript/lib/lib.es2017.sharedmemory.d.ts" t="IncludeRecursive" />
+          <e p="node_modules/typescript/lib/lib.es2017.string.d.ts" t="IncludeRecursive" />
+          <e p="node_modules/typescript/lib/lib.es2017.typedarrays.d.ts" t="IncludeRecursive" />
+          <e p="node_modules/typescript/lib/lib.es2018.asynciterable.d.ts" t="IncludeRecursive" />
+          <e p="node_modules/typescript/lib/lib.es2018.d.ts" t="IncludeRecursive" />
+          <e p="node_modules/typescript/lib/lib.es2018.full.d.ts" t="IncludeRecursive" />
+          <e p="node_modules/typescript/lib/lib.es2018.intl.d.ts" t="IncludeRecursive" />
+          <e p="node_modules/typescript/lib/lib.es2018.promise.d.ts" t="IncludeRecursive" />
+          <e p="node_modules/typescript/lib/lib.es2018.regexp.d.ts" t="IncludeRecursive" />
+          <e p="node_modules/typescript/lib/lib.es2019.array.d.ts" t="IncludeRecursive" />
+          <e p="node_modules/typescript/lib/lib.es2019.d.ts" t="IncludeRecursive" />
+          <e p="node_modules/typescript/lib/lib.es2019.full.d.ts" t="IncludeRecursive" />
+          <e p="node_modules/typescript/lib/lib.es2019.string.d.ts" t="IncludeRecursive" />
+          <e p="node_modules/typescript/lib/lib.es2019.symbol.d.ts" t="IncludeRecursive" />
+          <e p="node_modules/typescript/lib/lib.es5.d.ts" t="IncludeRecursive" />
+          <e p="node_modules/typescript/lib/lib.es6.d.ts" t="IncludeRecursive" />
+          <e p="node_modules/typescript/lib/lib.esnext.array.d.ts" t="IncludeRecursive" />
+          <e p="node_modules/typescript/lib/lib.esnext.asynciterable.d.ts" t="IncludeRecursive" />
+          <e p="node_modules/typescript/lib/lib.esnext.bigint.d.ts" t="IncludeRecursive" />
+          <e p="node_modules/typescript/lib/lib.esnext.d.ts" t="IncludeRecursive" />
+          <e p="node_modules/typescript/lib/lib.esnext.full.d.ts" t="IncludeRecursive" />
+          <e p="node_modules/typescript/lib/lib.esnext.intl.d.ts" t="IncludeRecursive" />
+          <e p="node_modules/typescript/lib/lib.esnext.symbol.d.ts" t="IncludeRecursive" />
+          <e p="node_modules/typescript/lib/lib.scripthost.d.ts" t="IncludeRecursive" />
+          <e p="node_modules/typescript/lib/lib.webworker.d.ts" t="IncludeRecursive" />
+          <e p="node_modules/typescript/lib/lib.webworker.importscripts.d.ts" t="IncludeRecursive" />
+          <e p="node_modules/upath" t="IncludeRecursive" />
+          <e p="node_modules/uri-js" t="IncludeRecursive" />
           <e p="package-lock.json" t="Include" />
           <e p="package.json" t="Include" />
           <e p="public" t="Include">
@@ -180,12 +246,14 @@
               </e>
               <e p="events" t="Include">
                 <e p="ConsultationView.tsx" t="Include" />
+                <e p="EventView.tsx" t="Include" />
+                <e p="WorkshopConsultationView.tsx" t="Include" />
+                <e p="WorkshopView.tsx" t="Include" />
                 <e p="eventView" t="Include">
                   <e p="CalendarFilter.tsx" t="Include" />
                   <e p="EmailSubmit.tsx" t="Include" />
                   <e p="EventForm.tsx" t="Include" />
                 </e>
-                <e p="EventView.tsx" t="Include" />
                 <e p="forms" t="Include">
                   <e p="AdminSessionDetailForm.tsx" t="Include" />
                   <e p="AdminWorkshopDetailForm.tsx" t="Include" />
@@ -193,8 +261,6 @@
                   <e p="StudentSessionDetailForm.tsx" t="Include" />
                   <e p="StudentWorkshopDetailForm.tsx" t="Include" />
                 </e>
-                <e p="WorkshopConsultationView.tsx" t="Include" />
-                <e p="WorkshopView.tsx" t="Include" />
               </e>
               <e p="forms" t="Include">
                 <e p="Components.tsx" t="Include" />
@@ -252,6 +318,7 @@
             </e>
             <e p="serviceWorker.ts" t="Include" />
             <e p="store" t="Include">
+              <e p="Store.ts" t="Include" />
               <e p="actions" t="Include">
                 <e p="AdvisorActions.ts" t="Include" />
                 <e p="AuthActions.ts" t="Include" />
@@ -276,7 +343,6 @@
                 <e p="UserReducer.ts" t="Include" />
                 <e p="WorkshopReducer.ts" t="Include" />
               </e>
-              <e p="Store.ts" t="Include" />
             </e>
             <e p="types" t="Include">
               <e p="components" t="Include">
@@ -349,19 +415,21 @@
           <e p="ReportsController.cs" t="Include" />
           <e p="RoomsController.cs" t="Include" />
           <e p="SessionsController.cs" t="Include" />
-          <e p="StudentsController.cs" t="Include" />
           <e p="StudentUserController.cs" t="Include" />
           <e p="StudentWorkshopsController.cs" t="Include" />
+          <e p="StudentsController.cs" t="Include" />
           <e p="UserController.cs" t="Include" />
           <e p="WorkshopsController.cs" t="Include" />
         </e>
+        <e p="HELPS.csproj" t="IncludeRecursive" />
         <e p="Helpers" t="Include">
           <e p="AppSettings.cs" t="Include" />
         </e>
-        <e p="HELPS.csproj" t="IncludeRecursive" />
         <e p="Migrations" t="Include">
-          <e p="20190821230731_Reports.cs" t="Include" />
           <e p="20190821230731_Reports.Designer.cs" t="Include" />
+          <e p="20190821230731_Reports.cs" t="Include" />
+          <e p="20190927062159_final.Designer.cs" t="Include" />
+          <e p="20190927062159_final.cs" t="Include" />
           <e p="HelpsContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
@@ -376,6 +444,30 @@
           <e p="User.cs" t="Include" />
           <e p="Workshop.cs" t="Include" />
         </e>
+        <e p="Pages" t="Include">
+          <e p="Error.cshtml" t="Include" />
+          <e p="Error.cshtml.cs" t="Include" />
+          <e p="_ViewImports.cshtml" t="Include" />
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="Reports" t="Include">
+          <e p="AbstractReport.cs" t="Include" />
+          <e p="BookedSessions.cs" t="Include" />
+          <e p="StudentHistory.cs" t="Include" />
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="Reset.sql" t="Include" />
+        </e>
+        <e p="Services" t="Include">
+          <e p="UserService.cs" t="Include" />
+        </e>
+        <e p="Startup.cs" t="Include" />
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp2.2" t="Include">
@@ -383,24 +475,6 @@
             </e>
           </e>
         </e>
-        <e p="Pages" t="Include">
-          <e p="_ViewImports.cshtml" t="Include" />
-          <e p="Error.cshtml" t="Include" />
-          <e p="Error.cshtml.cs" t="Include" />
-        </e>
-        <e p="Program.cs" t="Include" />
-        <e p="Properties" t="Include">
-          <e p="launchSettings.json" t="Include" />
-        </e>
-        <e p="reports" t="Include">
-          <e p="AbstractReport.cs" t="Include" />
-          <e p="BookedSessions.cs" t="Include" />
-          <e p="StudentHistory.cs" t="Include" />
-        </e>
-        <e p="Services" t="Include">
-          <e p="UserService.cs" t="Include" />
-        </e>
-        <e p="Startup.cs" t="Include" />
       </e>
       <e p="HELPS.sln" t="IncludeFlat" />
       <e p="packages" t="ExcludeRecursive" />
