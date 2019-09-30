@@ -38,6 +38,9 @@ import {CalendarFilter} from './eventView/CalendarFilter';
 import {EventForm} from './eventView/EventForm';
 import {rrulestr} from 'rrule';
 import {fetchMessages} from '../../store/actions/MessageActions';
+import {retrieveUser} from "../../store/actions/UserActions";
+import {retrieveAdvisorList} from "../../store/actions/AdvisorActions";
+import {fetchRooms} from "../../store/actions/RoomActions";
 
 export default abstract class EventView extends Component<EventViewProps, EventViewState> {
     abstract showWorkshops: boolean;
@@ -51,6 +54,12 @@ export default abstract class EventView extends Component<EventViewProps, EventV
         if (selectedEvent && isSession(selectedEvent)) {
             sessions = sessions.filter(session => selectedEvent && session.id !== selectedEvent.id);
             sessions.push(selectedEvent);
+        }
+
+        if(this.state.filters.includes("Not Booked")){
+            sessions = sessions.filter(session => session.studentId <= 0)
+        }else if (this.state.filters.includes("Booked")){
+            sessions = sessions.filter(session => session.studentId > 0)
         }
 
         return sessions
@@ -95,15 +104,34 @@ export default abstract class EventView extends Component<EventViewProps, EventV
                     endDate: endTime.toISOString(),
                     start: startTime.toDate(),
                     end: endTime.toDate(),
-                    title: isSession(event) ? `${event.subjectName} - ${event.assignmentType}` : (event as Workshop).title
+                    title: this.getEventTitle(event)
                 };
             });
+    }
+
+    private getEventTitle(event: HELPSEvent){
+        if(isSession(event)){
+            if(event.subjectName){
+                const student = this.props.students.find(currentStudent => currentStudent.id === event.studentId);
+                return `${student ? student.name : event.subjectName} - ${event.assignmentType}`
+            }
+
+            const room = this.props.rooms.find(currentRoom => currentRoom.id === event.roomId);
+            const advisor = this.props.advisors.find(currentAdvisor => currentAdvisor.id === event.advisorId);
+
+            return `${advisor ? advisor.firstName + ' ' + advisor.lastName : 'Unassigned'} - ${room ? room.title : 'Unassigned'}`
+        }
+
+        return (event as Workshop).title
     }
 
     componentDidMount(): void {
         this.props.retrieveWorkshops();
         this.props.retrieveSessions();
         this.props.retrieveMessages();
+        this.props.retrieveStudents();
+        this.props.retrieveAdvisors();
+        this.props.retrieveRooms();
 
         if (!this.props.isAdmin) {
             this.props.retrieveUserSessions();
@@ -293,7 +321,10 @@ export const mapEventViewStateToProps = (state: AppState): EventViewStateProps =
     userWorkshops: state.workshops.userWorkshops,
     sessions: state.session.sessions,
     userSessions: state.session.userSessions,
-    messages: state.message.indexedMessages
+    messages: state.message.indexedMessages,
+    advisors: state.advisors.advisors,
+    rooms: state.room.rooms,
+    students: state.user.user
 });
 
 export const mapEventViewDispatchToProps = (dispatch: ThunkDispatch<{}, {}, any>): EventViewDispatchProps => ({
@@ -311,5 +342,8 @@ export const mapEventViewDispatchToProps = (dispatch: ThunkDispatch<{}, {}, any>
     addSession: session => dispatch(addSession(session)),
     updateSession: session => dispatch(updateSession(session)),
 
-    retrieveMessages: () => dispatch(fetchMessages())
+    retrieveMessages: () => dispatch(fetchMessages()),
+    retrieveStudents: () => dispatch(retrieveUser()),
+    retrieveAdvisors: () => dispatch(retrieveAdvisorList()),
+    retrieveRooms: () => dispatch(fetchRooms())
 });

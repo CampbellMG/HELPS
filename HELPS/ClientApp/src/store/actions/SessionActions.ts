@@ -104,7 +104,8 @@ export const updateSession = (session: Session) => async (dispatch: Dispatch<any
             `${ENDPOINT_SESSION}/${session.id}`,
             'PUT',
             session,
-            true
+            true,
+            false
         );
         await dispatchSessions(dispatch);
     } catch (e) {

@@ -83,11 +83,17 @@ export interface EventViewStateProps {
     error?: string
     isAdmin: boolean
     messages: MessageDictionary
+    advisors: Advisor[],
+    rooms: Room[]
+    students: Student[]
 }
 
 export interface EventViewDispatchProps {
     retrieveWorkshops: () => void
     retrieveUserWorkshops: () => void
+    retrieveStudents: () => void
+    retrieveAdvisors: () => void
+    retrieveRooms: () => void
     bookWorkshop: (workshop: Workshop) => void
     cancelWorkshop: (workshop: Workshop) => void
     addWorkshops: (workshop: Workshop[]) => void
@@ -129,7 +135,7 @@ export interface NewEventOverlayProps {
     onSelect: (type: HELPSEventType) => void
 }
 
-export type Filter = 'Booked' | 'Sessions' | 'Workshops';
+export type Filter = 'Booked' | 'Not Booked' | 'Sessions' | 'Workshops';
 
 export interface CalendarFilterProps {
     onSearchUpdated: (event: any) => void

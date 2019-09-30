@@ -44,11 +44,6 @@ class AdminSessionDetailForm extends React.Component<AdminSessionDetailFormProps
     private getAssigningForm = () => (
         <form onSubmit={this.props.handleSubmit} className='p-3 pl-4'>
             <Form.Group>
-                <Form.Label>Type</Form.Label>
-                <Field name='type'
-                       component={TextInput}/>
-            </Form.Group>
-            <Form.Group>
                 <Form.Label>Start</Form.Label>
                 <Field name='startTime'
                        component={DatePickerInput}/>
@@ -82,6 +77,11 @@ class AdminSessionDetailForm extends React.Component<AdminSessionDetailFormProps
                 <Form.Label>Student</Form.Label>
                 <Field name='studentId'
                        component={StudentListInput}/>
+            </Form.Group>
+            <Form.Group>
+                <Form.Label>Type</Form.Label>
+                <Field name='type'
+                       component={TextInput}/>
             </Form.Group>
             <Form.Group>
                 <Form.Label>Appointment Purpose</Form.Label>

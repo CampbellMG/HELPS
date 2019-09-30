@@ -68,6 +68,7 @@ export const bookWorkshop = (workshop: Workshop) => async (dispatch: Dispatch<an
             true,
             false
         );
+
         await dispatchUserWorkshops(dispatch);
     } catch (e) {
         dispatch(workshopError(e.message));
@@ -105,7 +106,8 @@ export const updateWorkshop = (workshop: Workshop) => async (dispatch: Dispatch<
             `${ENDPOINT_WORKSHOP}/${workshop.id}`,
             'PUT',
             workshop,
-            true
+            true,
+            false
         );
         await dispatchWorkshops(dispatch);
     } catch (e) {

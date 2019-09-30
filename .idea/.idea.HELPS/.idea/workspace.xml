@@ -2,20 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66cfea10-8c9f-4e80-b2f0-37497a1490b6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA/schema/information_schema.FNRwLQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/EventView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/EventView.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/eventView/CalendarFilter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/eventView/CalendarFilter.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/forms/AdminSessionDetailForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/forms/AdminSessionDetailForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/Migrations/20190821230731_Reports.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/Migrations/20190821230731_Reports.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/Migrations/20190927062159_final.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/Migrations/20190927062159_final.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/Migrations/HelpsContextModelSnapshot.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/Models/Session.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/Models/Session.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/SessionActions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/SessionActions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/WorkshopActions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/WorkshopActions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/types/components/WorkshopRegistrationTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/types/components/WorkshopRegistrationTypes.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HELPS/Scripts/Reset.sql" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/Scripts/Reset.sql" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -156,15 +149,17 @@
         <option value="$PROJECT_DIR$/HELPS/Migrations/20190927062159_final.cs" />
         <option value="$PROJECT_DIR$/HELPS/Controllers/StudentsController.cs" />
         <option value="$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/UserActions.ts" />
-        <option value="$PROJECT_DIR$/HELPS/ClientApp/src/types/components/WorkshopRegistrationTypes.ts" />
         <option value="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/eventView/EventForm.tsx" />
         <option value="$PROJECT_DIR$/HELPS/ClientApp/src/components/navigation/Layout.tsx" />
         <option value="$PROJECT_DIR$/HELPS/ClientApp/src/components/editorlist/EditorList.tsx" />
-        <option value="$PROJECT_DIR$/HELPS/Scripts/Reset.sql" />
         <option value="$PROJECT_DIR$/HELPS/Models/Session.cs" />
         <option value="$PROJECT_DIR$/HELPS/ClientApp/src/types/model/Session.ts" />
+        <option value="$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/WorkshopActions.ts" />
         <option value="$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/SessionActions.ts" />
         <option value="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/forms/AdminSessionDetailForm.tsx" />
+        <option value="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/eventView/CalendarFilter.tsx" />
+        <option value="$PROJECT_DIR$/HELPS/ClientApp/src/types/components/WorkshopRegistrationTypes.ts" />
+        <option value="$PROJECT_DIR$/HELPS/Scripts/Reset.sql" />
         <option value="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/EventView.tsx" />
       </list>
     </option>
@@ -226,22 +221,17 @@
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@94b8f61d" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@47708867" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@94b8f61d" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@51c71a3d" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@47708867" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@58e22a29" type="9fbbdea:ServiceModel$ServiceNode" />
             </path>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@94b8f61d" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@2393e42d" type="9fbbdea:ServiceModel$ServiceNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@94b8f61d" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@6d6d9733" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@47708867" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@1c042f89" type="9fbbdea:ServiceModel$ServiceNode" />
             </path>
           </expand>
           <select />
@@ -263,6 +253,7 @@
       <workItem from="1566446574011" duration="11149000" />
       <workItem from="1569564182528" duration="5002000" />
       <workItem from="1569655355912" duration="6277000" />
+      <workItem from="1569847195840" duration="3229000" />
     </task>
     <task id="LOCAL-00001" summary="Added report framework with booked sessions report">
       <created>1566213093890</created>

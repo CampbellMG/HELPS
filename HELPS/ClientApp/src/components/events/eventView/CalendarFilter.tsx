@@ -10,7 +10,7 @@ import Chips from 'react-chips';
 
 export class CalendarFilter extends Component<CalendarFilterProps, CalendarFilterState> {
 
-    private static readonly FILTERS: Filter[] = ['Booked', 'Sessions', 'Workshops'];
+    private static readonly FILTERS: Filter[] = ['Booked', 'Not Booked', 'Sessions', 'Workshops'];
 
     constructor(props: CalendarFilterProps) {
         super(props);
