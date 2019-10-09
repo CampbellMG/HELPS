@@ -15,6 +15,7 @@ import {MessageDictionary} from '../model/Message';
 export type EventFormProps<E extends DeleteableHELPSEvent, P> = P & InjectedFormProps<E, P>;
 
 export interface AdminSessionDetailProps {
+    isAssigning: boolean
 }
 
 export type AdminSessionDetailFormProps = EventFormProps<SessionFormData, AdminSessionDetailProps>;
@@ -38,6 +39,7 @@ export interface AdminWorkshopFormDispatchProps {
 }
 
 export interface AdminWorkshopDetailProps{
+
 }
 
 export type AdminWorkshopDetailFormProps = EventFormProps<WorkshopFormData, AdminWorkshopDetailProps> &  AdminWorkshopFormDispatchProps & AdminWorkshopFormStateProps;
@@ -81,11 +83,17 @@ export interface EventViewStateProps {
     error?: string
     isAdmin: boolean
     messages: MessageDictionary
+    advisors: Advisor[],
+    rooms: Room[]
+    students: Student[]
 }
 
 export interface EventViewDispatchProps {
     retrieveWorkshops: () => void
     retrieveUserWorkshops: () => void
+    retrieveStudents: () => void
+    retrieveAdvisors: () => void
+    retrieveRooms: () => void
     bookWorkshop: (workshop: Workshop) => void
     cancelWorkshop: (workshop: Workshop) => void
     addWorkshops: (workshop: Workshop[]) => void
@@ -127,7 +135,7 @@ export interface NewEventOverlayProps {
     onSelect: (type: HELPSEventType) => void
 }
 
-export type Filter = 'Booked' | 'Sessions' | 'Workshops';
+export type Filter = 'Booked' | 'Not Booked' | 'Sessions' | 'Workshops';
 
 export interface CalendarFilterProps {
     onSearchUpdated: (event: any) => void
@@ -153,6 +161,12 @@ export interface EventFormComponentProps {
     onEventSubmitted: (event: DeleteableHELPSEvent) => void
     eventSelected: boolean
     eventChanged: (event: CalendarEvent) => void
+}
+
+export type EventFormComponentTabType = 'BOOKING' | 'ASSIGNING'
+
+export interface EventFormComponentState {
+    selectedTab: EventFormComponentTabType
 }
 
 export interface RoomListStateProps {

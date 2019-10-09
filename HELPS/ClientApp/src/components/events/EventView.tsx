@@ -38,6 +38,9 @@ import {CalendarFilter} from './eventView/CalendarFilter';
 import {EventForm} from './eventView/EventForm';
 import {rrulestr} from 'rrule';
 import {fetchMessages} from '../../store/actions/MessageActions';
+import {retrieveUser} from "../../store/actions/UserActions";
+import {retrieveAdvisorList} from "../../store/actions/AdvisorActions";
+import {fetchRooms} from "../../store/actions/RoomActions";
 
 export default abstract class EventView extends Component<EventViewProps, EventViewState> {
     abstract showWorkshops: boolean;
@@ -46,15 +49,17 @@ export default abstract class EventView extends Component<EventViewProps, EventV
     private localizer = BigCalendar.momentLocalizer(moment);
 
     private get sessions(): Session[] {
-        let {filters, searchTerm, selectedEvent, sessions} = {...this.state, ...this.props};
+        let {searchTerm, selectedEvent, sessions} = {...this.state, ...this.props};
 
         if (selectedEvent && isSession(selectedEvent)) {
             sessions = sessions.filter(session => selectedEvent && session.id !== selectedEvent.id);
             sessions.push(selectedEvent);
         }
 
-        if (filters.includes('Booked')) {
-            sessions = sessions.filter(session => session.studentId);
+        if(this.state.filters.includes("Not Booked")){
+            sessions = sessions.filter(session => session.studentId <= 0)
+        }else if (this.state.filters.includes("Booked")){
+            sessions = sessions.filter(session => session.studentId > 0)
         }
 
         return sessions
@@ -62,11 +67,15 @@ export default abstract class EventView extends Component<EventViewProps, EventV
     }
 
     private get workshops(): Workshop[] {
-        let {searchTerm, selectedEvent, workshops} = {...this.state, ...this.props};
+        let {searchTerm, selectedEvent, workshops, filters} = {...this.state, ...this.props};
 
         if (selectedEvent && isWorkshop(selectedEvent)) {
             workshops = workshops.filter(workshop => selectedEvent && workshop.id !== selectedEvent.id);
             workshops.push(selectedEvent);
+        }
+        
+        if(filters.includes("Booked")){
+            workshops = workshops.filter(workshop => this.eventSelected(workshop))
         }
 
         return workshops
@@ -74,34 +83,55 @@ export default abstract class EventView extends Component<EventViewProps, EventV
     }
 
     private get events(): CalendarEvent[] {
+        const {filters} = this.state;
         let events: HELPSEvent[] = [];
 
-        if (this.showWorkshops) {
+        if (this.showWorkshops && !filters.includes("Sessions")) {
             events = events.concat(this.workshops);
         }
 
-        if (this.showSessions) {
+        if (this.showSessions && !filters.includes("Workshops")) {
             events = events.concat(this.sessions);
         }
 
         return events
             .map(event => {
-                const startTime = moment(event.startDate);
-                const endTime = moment(event.endDate);
+                const startTime = moment(event.startTime);
+                const endTime = moment(event.endTime);
 
                 return {
                     ...event,
                     endDate: endTime.toISOString(),
                     start: startTime.toDate(),
-                    end: endTime.toDate()
+                    end: endTime.toDate(),
+                    title: this.getEventTitle(event)
                 };
             });
+    }
+
+    private getEventTitle(event: HELPSEvent){
+        if(isSession(event)){
+            if(event.subjectName){
+                const student = this.props.students.find(currentStudent => currentStudent.id === event.studentId);
+                return `${student ? student.name : event.subjectName} - ${event.assignmentType}`
+            }
+
+            const room = this.props.rooms.find(currentRoom => currentRoom.id === event.roomId);
+            const advisor = this.props.advisors.find(currentAdvisor => currentAdvisor.id === event.advisorId);
+
+            return `${advisor ? advisor.firstName + ' ' + advisor.lastName : 'Unassigned'} - ${room ? room.title : 'Unassigned'}`
+        }
+
+        return (event as Workshop).title
     }
 
     componentDidMount(): void {
         this.props.retrieveWorkshops();
         this.props.retrieveSessions();
         this.props.retrieveMessages();
+        this.props.retrieveStudents();
+        this.props.retrieveAdvisors();
+        this.props.retrieveRooms();
 
         if (!this.props.isAdmin) {
             this.props.retrieveUserSessions();
@@ -227,15 +257,16 @@ export default abstract class EventView extends Component<EventViewProps, EventV
         const startTime = moment(start);
         const endTime = moment(end);
         const duration = moment.duration(endTime.diff(startTime));
+
         const newEvent = {
             id: -1,
             start: startTime.toDate(),
             end: endTime.toDate(),
-            startDate: start.toString(),
-            endDate: end.toString(),
+            startTime: startTime.format('YYYY-MM-DDTHH:mm:ss'),
+            endTime: endTime.format('YYYY-MM-DDTHH:mm:ss'),
             roomId: -1,
             time: start.toString(),
-            duration: duration.asMinutes().toString()
+            duration: duration.asMinutes()
         };
 
         this.onEventCreated(newEvent);
@@ -290,7 +321,10 @@ export const mapEventViewStateToProps = (state: AppState): EventViewStateProps =
     userWorkshops: state.workshops.userWorkshops,
     sessions: state.session.sessions,
     userSessions: state.session.userSessions,
-    messages: state.message.indexedMessages
+    messages: state.message.indexedMessages,
+    advisors: state.advisors.advisors,
+    rooms: state.room.rooms,
+    students: state.user.user
 });
 
 export const mapEventViewDispatchToProps = (dispatch: ThunkDispatch<{}, {}, any>): EventViewDispatchProps => ({
@@ -308,5 +342,8 @@ export const mapEventViewDispatchToProps = (dispatch: ThunkDispatch<{}, {}, any>
     addSession: session => dispatch(addSession(session)),
     updateSession: session => dispatch(updateSession(session)),
 
-    retrieveMessages: () => dispatch(fetchMessages())
+    retrieveMessages: () => dispatch(fetchMessages()),
+    retrieveStudents: () => dispatch(retrieveUser()),
+    retrieveAdvisors: () => dispatch(retrieveAdvisorList()),
+    retrieveRooms: () => dispatch(fetchRooms())
 });

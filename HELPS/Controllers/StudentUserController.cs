@@ -25,6 +25,7 @@ namespace HELPS.Controllers
             StudentSessions = new Lazy<IEnumerable<Session>>(GetStudentSessions);
             StudentRooms = new Lazy<IEnumerable<Room>>(GetStudentRooms);
             StudentAdvisors = new Lazy<IEnumerable<Advisor>>(GetStudentAdvisors);
+            Student = new Lazy<Student>(GetStudent);
         }
 
         private User GetStudentUser()

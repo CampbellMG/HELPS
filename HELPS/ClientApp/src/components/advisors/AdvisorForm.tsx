@@ -5,23 +5,30 @@ import {renderEditButtons} from '../../types/util/Editable';
 import {
     AdvisorFormData,
     AdvisorFormDispatcProps,
+    AdvisorFormOwnProps,
     AdvisorFormProps,
     AdvisorFormState
 } from '../../types/components/AdvisorTypes';
 import {Button} from 'react-bootstrap';
-import {AppState} from "../../types/store/StoreTypes";
-import {ThunkDispatch} from "redux-thunk";
-import {connect} from "react-redux";
+import {AppState} from '../../types/store/StoreTypes';
+import {ThunkDispatch} from 'redux-thunk';
+import {connect} from 'react-redux';
 import {TextInput} from '../forms/Components';
 
-class AdvisorForm extends React.Component<AdvisorFormProps, AdvisorFormState> {
-    constructor(props: AdvisorFormProps) {
+class AdvisorForm extends React.Component<AdvisorFormOwnProps & AdvisorFormProps, AdvisorFormState> {
+    constructor(props: AdvisorFormOwnProps & AdvisorFormProps) {
         super(props);
 
         this.state = {
             editing: false,
             isNewMode: false
         };
+    }
+
+    componentWillReceiveProps(nextProps: Readonly<AdvisorFormOwnProps & AdvisorFormProps>, nextContext: any): void {
+        if (!this.props.editingFromAdd && nextProps.editingFromAdd) {
+            this.setState({editing: true});
+        }
     }
 
     render() {
@@ -106,10 +113,12 @@ class AdvisorForm extends React.Component<AdvisorFormProps, AdvisorFormState> {
             this.props.submit();
         }
 
+        this.props.onEditStateChanged(!this.state.editing);
         this.setState({editing: !this.state.editing});
     };
 
     private onCancel = () => {
+        this.props.onEditStateChanged(false);
         this.setState({editing: false});
         this.props.reset();
     };
@@ -124,7 +133,7 @@ const advisorForm = connect<{}, AdvisorFormDispatcProps, {}, AppState>(
     mapDispatchToProps
 )(AdvisorForm);
 
-export default reduxForm<AdvisorFormData>({
+export default reduxForm<AdvisorFormData, AdvisorFormOwnProps>({
     form: 'advisor_details',
     enableReinitialize: true
 })(advisorForm);

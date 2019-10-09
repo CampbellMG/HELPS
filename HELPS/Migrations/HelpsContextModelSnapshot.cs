@@ -104,13 +104,23 @@ namespace HELPS.Migrations
 
                     b.Property<string>("AdvisorName");
 
+                    b.Property<string>("AssignmentType");
+
+                    b.Property<string>("Comments");
+
                     b.Property<int>("Duration");
+
+                    b.Property<bool>("GroupAssignment");
+
+                    b.Property<string>("Purpose");
 
                     b.Property<int>("RoomId");
 
                     b.Property<DateTime>("Starttime");
 
                     b.Property<int>("StudentId");
+
+                    b.Property<string>("SubjectName");
 
                     b.Property<string>("Type");
 

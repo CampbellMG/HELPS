@@ -51,8 +51,6 @@ async function retrieveMessages(dispatch: Dispatch<any>) {
         );
 
         const dictionary = messages.reduce((previous: any, current) => {
-            console.log(previous)
-            console.log(current)
             previous[MessageDictionaryMap[current.id]] = current.content;
             return previous;
         }, {});

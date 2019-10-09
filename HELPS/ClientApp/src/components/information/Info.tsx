@@ -35,7 +35,7 @@ class Info extends Component<InfoProps, InfoState> {
     render() {
         return (
             <div className='row h-100 overflow-auto'>
-                <div className='col-lg-2 border-right'>
+                <div className='col-lg-3 border-right'>
                     <ListGroup className='m-3 sticky-top'>
                         <ListGroupItem onClick={this.showActivities}
                                        style={{cursor: 'pointer'}}

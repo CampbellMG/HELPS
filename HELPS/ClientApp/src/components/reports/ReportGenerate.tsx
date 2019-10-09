@@ -54,7 +54,7 @@ class ReportGenerate extends Component<ReportProps, {}> {
     render(): React.ReactNode {
         return (
             <div className='h-100 d-flex flex-fill'>
-                <div className='col-lg-2 border-right overflow-auto list shadow'>
+                <div className='col-lg-3 border-right overflow-auto list shadow'>
                     <ReportForm onSubmit={this.props.generateReport}
                                 onDownload={this.onDownload}
                                 downloadAvailable={this.props.data.length > 0}

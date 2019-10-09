@@ -39,7 +39,7 @@ namespace HELPS.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Workshop>> AddWorkshop(Workshop workshop)
+        public async Task<ActionResult<Workshop>> AddWorkshop([FromBody] Workshop workshop)
         {
             var studentIds = workshop.StudentIds.ToList();
             studentIds.Add(StudentUser.Value.Id);

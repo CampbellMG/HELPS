@@ -56,7 +56,7 @@ namespace HELPS.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutAdvisor(int id, Advisor advisor)
+        public async Task<IActionResult> PutAdvisor(int id, [FromBody] Advisor advisor)
         {
             if (!IsAdmin()) return Unauthorized();
 

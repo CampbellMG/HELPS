@@ -4,47 +4,48 @@ import {Component} from 'react';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import uts from '../../res/uts-white.png';
-import {IndexLinkContainer} from 'react-router-bootstrap';
 import {AppState} from '../../types/store/StoreTypes';
 import {connect} from 'react-redux';
 import {NavMenuProps, NavMenuStateProps} from '../../types/components/NavMenuTypes';
 import {AdminMenu, StudentMenu} from './Menu';
 import {withRouter} from 'react-router';
+import {IndexLinkContainer} from 'react-router-bootstrap';
 
 class NavMenu extends Component<NavMenuProps> {
 
     render() {
-        let {isAdmin, location} = this.props;
+        let {isAdmin} = this.props;
         const menuItems = isAdmin ? AdminMenu : StudentMenu;
-        const currentPath = this.stripSlash(location.pathname)
         return (
-            <header className='nav-menu'>
-                <Navbar className='navbar-custom d-flex shadow'>
-                    <Navbar.Brand href='/user' className='text-light ml-3'>
-                        <img src={uts} alt='UTS Logo'/>
-                    </Navbar.Brand>
-                    <ul className='navbar-nav col ml-5'>
+            <Navbar className='navbar-custom' expand='lg' variant='dark' >
+                <Navbar.Brand href='/user'>
+                    <img src={uts} alt='UTS Logos'/>
+                </Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav"/>
+                <Navbar.Collapse >
+                    <Nav className='w-100'>
                         {menuItems.map((menuItem, index) => (
                             <IndexLinkContainer to={`/${menuItem.route}`}
                                                 key={`${menuItem.route} ${index}`}
-                                                className='text-light font-weight-bold link'>
-                                <Nav.Item className={`mr-5 pb-1 ${currentPath === this.stripSlash(menuItem.route) ? 'border-bottom border-white' : ''}`}>
+                                                className='nav-link'>
+
+                                <span className='menu-item'>
                                     {menuItem.title}
-                                </Nav.Item>
+                                </span>
                             </IndexLinkContainer>
                         ))}
-                    </ul>
-                    <IndexLinkContainer to='/' className='text-light font-weight-bold link'>
-                        <Nav.Item className='mr-3 border border-white rounded p-1'>
-                            Logout
-                        </Nav.Item>
-                    </IndexLinkContainer>
-                </Navbar>
-            </header>
+                        <IndexLinkContainer to='/'
+                                            key='logout'
+                                            className='nav-link'>
+                                <span className='border border-white rounded menu-item ml-3 logout'>
+                                    Logout
+                                </span>
+                        </IndexLinkContainer>
+                    </Nav>
+                </Navbar.Collapse>
+            </Navbar>
         );
     }
-
-    private stripSlash = (path: string) => path.replace(/\//g, '');
 }
 
 const mapStateToProps = (state: AppState): NavMenuStateProps => ({

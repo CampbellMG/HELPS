@@ -2,6 +2,7 @@ import {Dispatch} from 'redux';
 import {WorkshopAction, WorkshopActionType} from '../../types/store/WorkshopActionTypes';
 import {Workshop} from '../../types/model/Workshop';
 import {authenticatedFetch} from '../../util';
+import moment from 'moment';
 
 const ENDPOINT_WORKSHOP = 'api/workshops';
 const ENDPOINT_STUDENT_WORKSHOP = 'api/students/workshops';
@@ -21,9 +22,19 @@ const workshopError = (message: string): WorkshopAction => ({
     payload: message
 });
 
+function formatWorkshops(workshops: Workshop[]): Workshop[] {
+    return workshops.map(workshop => {
+        if (!workshop.endTime) {
+            workshop.endTime = moment(workshop.startTime).add(workshop.duration, 'minutes').toLocaleString();
+        }
+        return workshop;
+    });
+}
+
 async function dispatchUserWorkshops(dispatch: Dispatch<any>) {
     try {
-        const workshops: Workshop[] = await authenticatedFetch(ENDPOINT_STUDENT_WORKSHOP);
+        let workshops: Workshop[] = await authenticatedFetch(ENDPOINT_STUDENT_WORKSHOP);
+        workshops = formatWorkshops(workshops);
         dispatch(receiveUserWorkshops(workshops));
     } catch (e) {
         dispatch(workshopError(e.message));
@@ -32,7 +43,8 @@ async function dispatchUserWorkshops(dispatch: Dispatch<any>) {
 
 async function dispatchWorkshops(dispatch: Dispatch<any>) {
     try {
-        const workshops: Workshop[] = await authenticatedFetch(ENDPOINT_WORKSHOP);
+        let workshops: Workshop[] = await authenticatedFetch(ENDPOINT_WORKSHOP);
+        workshops = formatWorkshops(workshops);
         dispatch(receiveWorkshops(workshops));
     } catch (e) {
         dispatch(workshopError(e.message));
@@ -53,8 +65,10 @@ export const bookWorkshop = (workshop: Workshop) => async (dispatch: Dispatch<an
             ENDPOINT_STUDENT_WORKSHOP,
             'POST',
             workshop,
-            true
+            true,
+            false
         );
+
         await dispatchUserWorkshops(dispatch);
     } catch (e) {
         dispatch(workshopError(e.message));
@@ -63,7 +77,7 @@ export const bookWorkshop = (workshop: Workshop) => async (dispatch: Dispatch<an
 
 export const cancelWorkshop = (workshop: Workshop) => async (dispatch: Dispatch<any>) => {
     try {
-        await authenticatedFetch(`api/studentWorkshops/${workshop.id}`, 'DELETE');
+        await authenticatedFetch(`${ENDPOINT_STUDENT_WORKSHOP}/${workshop.id}`, 'DELETE', undefined, undefined, false);
         await dispatchUserWorkshops(dispatch);
     } catch (e) {
         dispatch(workshopError(e.message));
@@ -92,7 +106,8 @@ export const updateWorkshop = (workshop: Workshop) => async (dispatch: Dispatch<
             `${ENDPOINT_WORKSHOP}/${workshop.id}`,
             'PUT',
             workshop,
-            true
+            true,
+            false
         );
         await dispatchWorkshops(dispatch);
     } catch (e) {

@@ -7,7 +7,7 @@ import {
     StudentWorkshopDetailFormProps,
     StudentWorkshopDetailProps, WorkshopFormData
 } from '../../../types/components/WorkshopRegistrationTypes';
-import {TextInput} from '../../forms/Components';
+import {DisabledTextInput} from '../../forms/Components';
 
 class StudentWorkshopDetailForm extends React.Component<StudentWorkshopDetailFormProps> {
 
@@ -15,58 +15,39 @@ class StudentWorkshopDetailForm extends React.Component<StudentWorkshopDetailFor
         return (
             <form onSubmit={this.props.handleSubmit} className='p-3 pl-4'>
                 <Form.Group>
-                    <Form.Label>Workshop ID</Form.Label>
-                    <Field name='id'
-                           component={TextInput}
-                           type='text'/>
-                </Form.Group>
-                <Form.Group>
                     <Form.Label>Workshop Title</Form.Label>
                     <Field name='title'
-                           component={TextInput}
+                           component={DisabledTextInput}
                            type='text'/>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Start</Form.Label>
-                    <Field name='startDate'
-                           component={TextInput}
+                    <Field name='startTime'
+                           component={DisabledTextInput}
                            type='text'/>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>End</Form.Label>
-                    <Field name='endDate'
-                           component={TextInput}/>
-                </Form.Group>
-                <Form.Group>
-                    <Form.Label>Duration</Form.Label>
-                    <Field name='duration'
-                           component={TextInput}
-                           type='text'/>
+                    <Field name='endTime'
+                           component={DisabledTextInput}/>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Room</Form.Label>
                     <Field name='room'
-                           component={TextInput}
+                           component={DisabledTextInput}
                            type='text'/>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Target Group</Form.Label>
                     <Field name='targetGroup'
-                           component={TextInput}
+                           component={DisabledTextInput}
                            type='text'/>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Description</Form.Label>
                     <Field name='description'
-                           component={TextInput}
+                           component={DisabledTextInput}
                            type='text'/>
-                </Form.Group>
-                <Form.Group>
-                    <Form.Label>Available Places</Form.Label>
-                    <Field
-                        name='availablePlaces'
-                        component={TextInput}
-                        type='text'/>
                 </Form.Group>
                 <Button type='submit'
                         className='w-100 mt-4'>

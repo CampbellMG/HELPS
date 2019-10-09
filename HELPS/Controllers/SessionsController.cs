@@ -44,18 +44,19 @@ namespace HELPS.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Session>> PostSession(Session session)
+        public async Task<ActionResult<Session>> PostSession([FromBody]Session session)
         {
             if (!IsAdmin()) return Unauthorized();
 
             Context.Sessions.Add(session);
             await Context.SaveChangesAsync();
 
+
             return CreatedAtAction(nameof(GetSessions), new {id = session.Id}, session);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutSessions(int id, Session session)
+        public async Task<IActionResult> PutSessions(int id, [FromBody] Session session)
         {
             if (!IsAdmin()) return Unauthorized();
 

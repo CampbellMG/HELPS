@@ -22,6 +22,7 @@ export interface AdvisorProps extends AdvisorStateProps, AdvisorDispatchProps {
 export interface AdvisorState {
     filter: string
     selectedAdvisor?: Advisor
+    editingFromAdd: boolean
 }
 
 export interface AdvisorFormState extends Editable {
@@ -35,6 +36,11 @@ export interface AdvisorFormDispatcProps {
     submit: () => void
 }
 
-export interface AdvisorFormProps extends InjectedFormProps<AdvisorFormData>, AdvisorFormDispatcProps{
+export interface AdvisorFormOwnProps {
+    editingFromAdd: boolean
+    onEditStateChanged: (editing: boolean) => void
+}
+
+export interface AdvisorFormProps extends InjectedFormProps<AdvisorFormData, AdvisorFormOwnProps>, AdvisorFormDispatcProps {
 
 }

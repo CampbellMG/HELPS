@@ -22,7 +22,7 @@ namespace HELPS.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Workshop>>> GetWorkshops()
         {
-            return IsAdmin() ? Context.Workshops.ToList() : StudentWorkshops.Value.ToList();
+            return Context.Workshops.ToList();
         }
 
         [HttpGet("{id}")]
@@ -46,7 +46,7 @@ namespace HELPS.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Workshop>> AddWorkshop(Workshop workshop)
+        public async Task<ActionResult<Workshop>> AddWorkshop([FromBody] Workshop workshop)
         {
             if (!IsAdmin()) return Unauthorized();
 
@@ -57,7 +57,7 @@ namespace HELPS.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> AddWorkshop(int id, Workshop workshop)
+        public async Task<IActionResult> AddWorkshop(int id, [FromBody] Workshop workshop)
         {
             if (!IsAdmin()) return Unauthorized();
 

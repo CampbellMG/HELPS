@@ -12,6 +12,9 @@ export const TextArea = (props: any) => <Form.Control as='textarea' {...props} v
                                                       onChange={props.input.onChange}/>;
 export const TextInput = (props: any) => <Form.Control {...props} value={props.input.value}
                                                        onChange={props.input.onChange}/>;
+export const DisabledTextInput = (props: any) => <Form.Control {...props} value={props.input.value}
+                                                               disabled
+                                                               onChange={props.input.onChange}/>;
 export const BooleanInput = (props: any) => <Form.Check {...props} value={props.input.value}
                                                         onChange={props.input.onChange}/>;
 export const RoomListInput = (props: any) => <RoomList {...props} value={props.input.value}
