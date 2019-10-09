@@ -50,30 +50,37 @@ export const getExistingSession = () => async (dispatch: Dispatch<any>) => {
 export const login = (username: string, password: string) => async (dispatch: Dispatch<any>) => {
     dispatch(requestLogin());
 
-    const loginResponse = await fetch('api/login', {
-        method: 'POST',
-        headers: new Headers({
-            'content-type': 'application/json'
-        }),
-        body: JSON.stringify({ username, password })
-    });
+    try {
 
+        const loginResponse = await fetch('api/login', {
+            method: 'POST',
+            headers: new Headers({
+                'content-type': 'application/json'
+            }),
+            body: JSON.stringify({ username, password })
+        });
 
+        const loginResult = await loginResponse.json();
 
-    const loginResult = await loginResponse.json();
+        if (!loginResponse.ok || !loginResult.accessToken) {
+            dispatch(loginError(loginResult.message ? loginResult.message : 'Login request failed'));
+            return;
+        }
 
-    if (!loginResponse.ok || !loginResult.accessToken) {
-        dispatch(loginError(loginResult.message ? loginResult.message : 'Login request failed'));
-        return;
+        // This is a bit sketchy but will work for now
+        localStorage.setItem(LS_STORAGE_KEY, loginResult.accessToken);
+        localStorage.setItem(LS_ADMIN_KEY, loginResult.isAdmin ? '1' : '0');
+
+        dispatch(receiveLogin(loginResult.isAdmin));
+
+        if (loginResult.isAdmin) {
+            dispatch(push('/events'));
+        } else {
+            dispatch(push('/user'));
+        }
+    } catch (error) {
+        dispatch(loginError(`Login request failed: ${error}`));
     }
-
-    // This is a bit sketchy but will work for now
-    localStorage.setItem(LS_STORAGE_KEY, loginResult.accessToken);
-    localStorage.setItem(LS_ADMIN_KEY, loginResult.isAdmin ? '1' : '0');
-
-    dispatch(receiveLogin(loginResult.isAdmin));
-
-    dispatch(push(loginResult.isAdmin ? '/consultations' : '/workshopsConsultations'));
 };
 
 export const logout = () => async (dispatch: Dispatch<any>) => {
@@ -93,9 +100,9 @@ export const register = (registerRequest: RegisterFields | undefined) => async (
             body: JSON.stringify(registerRequest)
         });
         if (registerResponse.ok) {
-            dispatch(push('/user'));
+            dispatch(push('/'));
         } else {
-            alert('Register failed: ' + registerResponse.statusText);
+            dispatch(registerError(`Register failed: ${registerResponse.statusText}`));
         }
     }
 };
