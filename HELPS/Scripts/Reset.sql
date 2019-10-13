@@ -63,3 +63,14 @@ values (1, 'Steve', 'password', false, null),
 
 insert into "Skills" ("Id", "Title")
 values (1, 'Essay Writing');
+
+ALTER SEQUENCE "Advisors_Id_seq" RESTART WITH 10;
+ALTER SEQUENCE "Emails_Id_seq" RESTART WITH 10;
+ALTER SEQUENCE "Messages_Id_seq" RESTART WITH 10;
+ALTER SEQUENCE "Rooms_Id_seq" RESTART WITH 10;
+ALTER SEQUENCE "Sessions_Id_seq" RESTART WITH 10;
+ALTER SEQUENCE "Skills_Id_seq" RESTART WITH 10;
+ALTER SEQUENCE "Students_Id_seq" RESTART WITH 10;
+ALTER SEQUENCE "Users_Id_seq" RESTART WITH 10;
+ALTER SEQUENCE "Workshops_Id_seq" RESTART WITH 10;
+ALTER SEQUENCE "EmailVariable_Id_seq" RESTART WITH 10;

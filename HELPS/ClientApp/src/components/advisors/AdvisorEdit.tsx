@@ -14,6 +14,7 @@ import {addAdvisor, deleteAdvisor, retrieveAdvisorList, updateAdvisor} from '../
 import AdvisorForm from './AdvisorForm';
 import EditorList from '../editorlist/EditorList';
 import {Advisor} from '../../types/model/Advisor';
+import {NOOP} from "../../util";
 
 class AdvisorEdit extends Component<AdvisorProps, AdvisorState> {
 
@@ -78,7 +79,7 @@ class AdvisorEdit extends Component<AdvisorProps, AdvisorState> {
                 <div className='col-lg-10 mx-auto flex-fill d-flex flex-column justify-content-center'>
                     <AdvisorForm initialValues={{...this.state.selectedAdvisor, delete: false}}
                                  editingFromAdd={this.state.editingFromAdd}
-                                 onEditStateChanged={editingFromAdd => this.setState({editingFromAdd})}
+                                 onEditStateChanged={NOOP}
                                  onSubmit={this.onSubmit}/>
                 </div>
             </EditorList>
@@ -91,8 +92,6 @@ class AdvisorEdit extends Component<AdvisorProps, AdvisorState> {
     };
 
     private onSubmit = (advisorFormData: AdvisorFormData) => {
-        this.setState({editingFromAdd: false});
-
         if (advisorFormData.delete) {
             return this.props.deleteAdvisor(advisorFormData);
         }
@@ -102,6 +101,8 @@ class AdvisorEdit extends Component<AdvisorProps, AdvisorState> {
         }
 
         this.props.updateAdvisor(advisorFormData);
+        
+        this.setState({editingFromAdd: false});
     };
 }
 

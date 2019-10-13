@@ -1,8 +1,8 @@
-import { SkillActionTypes, SkillAction } from '../../types/store/SkillActionTypes';
-import { Dispatch } from 'react';
-import { fetchToken } from './AuthActions';
-import { Skill } from '../../types/model/Skill';
-import { fetchRequest } from '../../util';
+import {SkillAction, SkillActionTypes} from '../../types/store/SkillActionTypes';
+import {Dispatch} from 'react';
+import {fetchToken} from './AuthActions';
+import {Skill} from '../../types/model/Skill';
+import {fetchRequest} from '../../util';
 
 const NO_TOKEN_MESSAGE: string = 'No token, have you authenticated?',
     API_SKILL_PATH = `api/skills`;
@@ -22,7 +22,7 @@ const selectSkillAction = (skill: Skill): SkillAction => ({
     skill
 });
 
-export const fetchSkills = () => async (dispatch: Dispatch<SkillAction>) => {
+async function doFetchSkills(dispatch: React.Dispatch<SkillAction>) {
     const token = fetchToken();
     if (token === null) {
         dispatch(skillError(NO_TOKEN_MESSAGE));
@@ -38,6 +38,10 @@ export const fetchSkills = () => async (dispatch: Dispatch<SkillAction>) => {
             dispatch(skillError(`Error fetching skills list`));
         }
     }
+}
+
+export const fetchSkills = () => async (dispatch: Dispatch<SkillAction>) => {
+    await doFetchSkills(dispatch);
 };
 
 export const deleteSkill = (skill: Skill) => async (dispatch: Dispatch<any>) => {
@@ -70,11 +74,11 @@ export const updateSkillName = (skillId: number, newTitle: string, isNewMode: bo
                     `${API_SKILL_PATH}`,
                     'POST',
                     token,
-                    { title: newTitle },
+                    {title: newTitle},
                     true
                 );
             } else {
-                const updatedSkill = { id: skillId, title: newTitle };
+                const updatedSkill = {id: skillId, title: newTitle};
                 await fetchRequest(
                     `${API_SKILL_PATH}/${skillId}`,
                     'PUT',
@@ -86,6 +90,8 @@ export const updateSkillName = (skillId: number, newTitle: string, isNewMode: bo
         } catch (e) {
             dispatch(skillError(`Error updating skill title: ${e}`));
         }
+
+        await doFetchSkills(dispatch)
     }
 };
 

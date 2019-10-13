@@ -110,6 +110,7 @@ class AdvisorForm extends React.Component<AdvisorFormOwnProps & AdvisorFormProps
     private editOrSave = (): void => {
         if (this.state.editing) {
             this.props.change('delete', false);
+            console.log('submitting')
             this.props.submit();
         }
 

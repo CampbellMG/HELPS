@@ -37,11 +37,9 @@ namespace HELPS.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutEmail(int id, [FromBody] Email email)
+        public async Task<IActionResult> PutEmail([FromBody] Email email)
         {
             if (!IsAdmin()) return Unauthorized();
-
-            if (id != email.Id) return NotFound();
 
             Context.Entry(email).State = EntityState.Modified;
             await Context.SaveChangesAsync();

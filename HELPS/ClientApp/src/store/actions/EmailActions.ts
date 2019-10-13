@@ -2,6 +2,7 @@ import {Dispatch} from 'redux';
 import {LS_STORAGE_KEY} from './AuthActions';
 import {EmailAction, EmailActionsType} from '../../types/store/EmailActionTypes';
 import {Email} from '../../types/model/Email';
+import {authenticatedFetch} from "../../util";
 
 const requestEmails = (): EmailAction => ({
     type: EmailActionsType.REQUEST_EMAIL
@@ -74,15 +75,14 @@ export const updateEmail = (email: Email) => async (dispatch: Dispatch<any>) => 
         dispatch(emailError('No token, have you authenticated?'));
         return;
     }
+    email.variables = [];
 
-    const emailResponse = await fetch(`api/emails/${email.id}`, {
-        method: 'PUT',
-        headers: new Headers({
-            'Authorization': `Bearer ${token}`,
-            'content-type': 'application/json'
-        }),
-        body: JSON.stringify(email)
-    });
+    const emailResponse = await authenticatedFetch(`api/emails/${email.id}`,
+        'PUT',
+        JSON.stringify(email),
+        true,
+        false
+    );
 
     const emailResult = await emailResponse.json();
 

@@ -55,7 +55,7 @@ class User extends Component<UserProps, UserState> {
         const {isAdmin, error, loading, messages} = this.props;
         if (!isAdmin) {
             return (
-                <div className='row h-100 overflow-auto'>
+                <div className='row h-100 overflow-auto'>e
                     {error && <p>{error}</p>}
                     <div className='col-lg-3 border-right m-3'>
                         {

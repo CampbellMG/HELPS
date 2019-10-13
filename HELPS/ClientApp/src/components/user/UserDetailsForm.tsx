@@ -188,11 +188,6 @@ class UserDetailsForm extends React.Component<UserFormProps, UserFormState> {
                     <div className='col'/>
                     <div className='col-lg-4 mx-auto mt-4'>
                         {this.renderEditButtons()}
-                        <Button className='w-100 mt-1'
-                                onClick={() => this.props.change('delete', true)}
-                                type='submit'>
-                            Delete
-                        </Button>
                     </div>
                     <div className='col'/>
                 </div>}
