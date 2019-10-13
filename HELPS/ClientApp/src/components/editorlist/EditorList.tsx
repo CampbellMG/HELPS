@@ -13,7 +13,7 @@ export default class EditorList<T> extends Component<EditorListProps<T>> {
 
     render() {
         return (
-            <div className='h-100 d-flex flex-fill row'>
+            <div className='h-100 d-flex flex-fill row flex-nowrap'>
                 <div className='col-lg-3 border-right overflow-auto list shadow'>
                     {this.renderList()}
                 </div>

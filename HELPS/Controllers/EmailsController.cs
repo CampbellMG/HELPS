@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace HELPS.Controllers
 {
+    
     [Authorize]
     [Route("api/[controller]")]
     public class EmailsController : StudentUserController
@@ -20,7 +21,7 @@ namespace HELPS.Controllers
         {
             if (!IsAdmin()) return Unauthorized();
 
-            return await Context.Emails.ToListAsync();
+            return await Context.Emails.Include(email => email.variables).ToListAsync();
         }
 
         [HttpGet("{id}")]

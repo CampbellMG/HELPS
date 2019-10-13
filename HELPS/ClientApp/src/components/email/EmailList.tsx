@@ -177,7 +177,7 @@ class EmailList extends Component<EmailProps, EmailState> {
     });
 
     private variableSpan = (props: any) => {
-        const index = this.variables.findIndex(variable => variable.variable === props.decoratedText);
+        const index = this.variables ? this.variables.findIndex(variable => variable.variable === props.decoratedText) : -1;
         return <span>{index === -1 ? props.decoratedText : this.variables[index].example}</span>;
     };
 

@@ -60,6 +60,8 @@ namespace HELPS.Migrations
 
                     b.Property<string>("Example");
 
+                    b.Property<string>("Name");
+
                     b.Property<string>("Variable");
 
                     b.HasKey("Id");
@@ -127,6 +129,18 @@ namespace HELPS.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Sessions");
+                });
+
+            modelBuilder.Entity("HELPS.Models.Skill", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Title");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Skills");
                 });
 
             modelBuilder.Entity("HELPS.Models.Student", b =>
