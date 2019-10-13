@@ -300,7 +300,8 @@ export default abstract class EventView extends Component<EventViewProps, EventV
             description: '',
             availablePlaces: 0,
             skillId: -1,
-            assignedStudentIds: []
+            assignedStudentIds: [],
+            attendingStudentIds: []
         }]);
     };
 

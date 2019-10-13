@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Field, reduxForm} from 'redux-form';
+import {Field, reduxForm, formValueSelector} from 'redux-form';
 import Form from 'react-bootstrap/Form';
 import {
     AdminWorkshopDetailFormProps,
@@ -9,11 +9,8 @@ import {
     AdminWorkshopFormStateProps,
     WorkshopFormData
 } from '../../../types/components/WorkshopRegistrationTypes';
-import Datetime from 'react-datetime';
 import 'react-datetime/css/react-datetime.css';
-import RoomList from '../../forms/lists/RoomList';
 import {Button, ListGroup, Modal} from 'react-bootstrap';
-import SkillList from '../../forms/lists/SkillList';
 import {MdAdd, MdDelete} from 'react-icons/md';
 import EmailSubmit from '../eventView/EmailSubmit';
 import StudentList from '../../forms/lists/StudentList';
@@ -25,22 +22,38 @@ import {ThunkDispatch} from 'redux-thunk';
 import {connect} from 'react-redux';
 import {AppState} from '../../../types/store/StoreTypes';
 import {retrieveUser} from '../../../store/actions/UserActions';
-import {DatePickerInput, RoomListInput, SkillListInput, TextArea, TextInput} from '../../forms/Components';
+import {
+    DatePickerInput,
+    RoomListInput,
+    SkillListInput,
+    TextArea,
+    TextInput
+} from '../../forms/Components';
 
 class AdminWorkshopDetailForm extends React.Component<AdminWorkshopDetailFormProps, AdminWorkshopDetailFormState> {
 
     constructor(props: AdminWorkshopDetailFormProps) {
         super(props);
-
         this.state = {
             recurrenceModalVisible: false,
             recurrenceRule: '',
-            workshopStudentIds: []
+            workshopStudentIds: [],
+            attendingWorkshopIds: []
         };
     }
 
     componentDidMount(): void {
         this.props.retrieveStudents();
+    }
+
+    componentWillReceiveProps(nextProps: Readonly<AdminWorkshopDetailFormProps>, nextContext: any): void {
+        if (this.state.workshopStudentIds.length === 0 && this.props.initialValues.assignedStudentIds) {
+            this.setState({workshopStudentIds: this.props.initialValues.assignedStudentIds})
+        }
+
+        if (this.state.attendingWorkshopIds.length === 0 && this.props.initialValues.attendingStudentIds) {
+            this.setState({attendingWorkshopIds: this.props.initialValues.attendingStudentIds})
+        }
     }
 
     render() {
@@ -95,20 +108,28 @@ class AdminWorkshopDetailForm extends React.Component<AdminWorkshopDetailFormPro
                         name='availablePlaces'
                         component={TextInput}/>
                 </Form.Group>
+                <Form.Label>Students</Form.Label>
                 <ListGroup as='ul'>
                     {workshopStudentIds.map(studentId => (
                         <ListGroup.Item className='d-flex justify-content-between'>
                             {this.getStudentName(studentId)}
+                            <Form.Check type="checkbox" label="Attending" 
+                                        checked={this.state.attendingWorkshopIds.includes(studentId)}
+                                        onChange={() => this.onStudentAttendanceToggled(studentId)}/>
                             <Button onClick={() => this.onStudentDeleted(studentId)}>
                                 <MdDelete/>
                             </Button>
                         </ListGroup.Item>
                     ))}
                 </ListGroup>
-                <div className='mt-2'>
-                    <StudentList
-                        onChange={(event: any) => this.onStudentSelected(event.target.value)}/>
-                </div>
+                {
+                    this.props.availablePlaces > this.state.workshopStudentIds.length &&
+                    <div className='mt-2'>
+                        <StudentList
+                            onChange={(event: any) => this.onStudentSelected(event.target.value)}/>
+                    </div>
+                }
+                
                 <EmailSubmit buttonText='Save' onSubmit={NOOP}/>
                 <EmailSubmit buttonText='Cancel'
                              onSubmit={this.onDialogOpened}/>
@@ -135,18 +156,35 @@ class AdminWorkshopDetailForm extends React.Component<AdminWorkshopDetailFormPro
         );
     }
 
+    private onStudentAttendanceToggled = (id: number) => {
+        let {attendingWorkshopIds} = this.state;
+        
+        if (attendingWorkshopIds.includes(id)) {
+            attendingWorkshopIds = attendingWorkshopIds.filter(currentId => currentId !== id)
+        } else {
+            attendingWorkshopIds.push(id);
+        }
+
+        this.setState({attendingWorkshopIds});
+        this.props.change('attendingStudentIds', attendingWorkshopIds);
+    };
+
     private onStudentSelected = (id: number) => {
         const workshopStudentIds = this.state.workshopStudentIds;
+        if(workshopStudentIds.includes(id)){
+            return
+        }
+        
         workshopStudentIds.push(id);
         this.setState({workshopStudentIds});
-        this.props.change('studentIds', workshopStudentIds);
+        this.props.change('assignedStudentIds', workshopStudentIds);
     };
 
     private onStudentDeleted = (id: number) => {
         let workshopStudentIds = this.state.workshopStudentIds;
         workshopStudentIds = workshopStudentIds.filter(studentId => studentId !== id);
         this.setState({workshopStudentIds});
-        this.props.change('studentIds', workshopStudentIds);
+        this.props.change('assignedStudentIds', workshopStudentIds);
     };
 
     private onDialogClosed = () => this.setState({recurrenceModalVisible: false});
@@ -163,8 +201,11 @@ class AdminWorkshopDetailForm extends React.Component<AdminWorkshopDetailFormPro
     }
 }
 
+const availablePlacesSelector = formValueSelector('admin_workshop_detail');
+
 const mapStateToProps = (state: AppState): AdminWorkshopFormStateProps => ({
-    students: state.user.user
+    students: state.user.user,
+    availablePlaces: availablePlacesSelector(state, 'availablePlaces')
 });
 
 const mapDispatchToProps = (dispatch: ThunkDispatch<{}, {}, any>): AdminWorkshopFormDispatchProps => ({

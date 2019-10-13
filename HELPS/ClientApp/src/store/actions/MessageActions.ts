@@ -55,9 +55,6 @@ async function retrieveMessages(dispatch: Dispatch<any>) {
             return previous;
         }, {});
 
-        console.log(messages);
-        console.log(dictionary);
-
         dispatch(receiveMessages(messages, dictionary));
     } catch (e) {
         dispatch(messageError(`Error fetching messges list`));

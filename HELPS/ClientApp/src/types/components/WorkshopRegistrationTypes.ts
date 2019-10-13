@@ -28,10 +28,12 @@ export interface AdminWorkshopDetailFormState {
     recurrenceModalVisible: boolean
     recurrenceRule: string
     workshopStudentIds: number[]
+    attendingWorkshopIds: number[]
 }
 
 export interface AdminWorkshopFormStateProps {
     students: Student[]
+    availablePlaces: number
 }
 
 export interface AdminWorkshopFormDispatchProps {

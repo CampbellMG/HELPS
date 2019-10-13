@@ -411,8 +411,8 @@
         </e>
         <e p="HELPS.csproj" t="IncludeRecursive" />
         <e p="Migrations" t="Include">
-          <e p="20191013070531_final.cs" t="Include" />
-          <e p="20191013070531_final.Designer.cs" t="Include" />
+          <e p="20191013112032_final.cs" t="Include" />
+          <e p="20191013112032_final.Designer.cs" t="Include" />
           <e p="HelpsContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="Models" t="Include">

@@ -22,6 +22,8 @@ namespace HELPS.Models
         public string Description { get; set; }
         public int AvailablePlaces { get; set; }
         public int AdvisorId { get; set; }
+        [JsonProperty("assignedStudentIds")]
         public int[] StudentIds { get; set; }
+        public int[] AttendingStudentIds { get; set; }
     } 
 }

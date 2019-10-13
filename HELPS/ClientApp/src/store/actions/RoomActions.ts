@@ -22,7 +22,7 @@ const selectRoomAction = (room: Room): RoomAction => ({
     room
 });
 
-export const fetchRooms = () => async (dispatch: Dispatch<RoomAction>) => {
+async function doFetchRooms(dispatch: React.Dispatch<RoomAction>) {
     const token = fetchToken();
     if (token === null) {
         dispatch(roomError(NO_TOKEN_MESSAGE));
@@ -38,6 +38,10 @@ export const fetchRooms = () => async (dispatch: Dispatch<RoomAction>) => {
             dispatch(roomError(`Error fetching rooms list`));
         }
     }
+}
+
+export const fetchRooms = () => async (dispatch: Dispatch<RoomAction>) => {
+    await doFetchRooms(dispatch);
 };
 
 export const deleteRoom = (room: Room) => async (dispatch: Dispatch<any>) => {
@@ -86,6 +90,8 @@ export const updateRoomName = (roomId: number, newTitle: string, isNewMode: bool
         } catch (e) {
             dispatch(roomError(`Error updating room title: ${e}`));
         }
+        
+        await doFetchRooms(dispatch)
     }
 };
 
