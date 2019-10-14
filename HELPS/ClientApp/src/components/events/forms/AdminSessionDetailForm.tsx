@@ -33,7 +33,7 @@ class AdminSessionDetailForm extends React.Component<AdminSessionDetailFormProps
 
         this.state = {
             sessionFiles: []
-        };s
+        };
     }
 
     render() {
