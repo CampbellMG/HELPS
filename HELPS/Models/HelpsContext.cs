@@ -18,5 +18,6 @@ namespace HELPS.Models
         public DbSet<Room> Rooms { get; set; }
         public DbSet<Email> Emails { get; set; }
         public DbSet<Skill> Skills { get; set; }
+        public DbSet<File> Files { get; set; }
     }
 }

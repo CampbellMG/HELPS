@@ -2,7 +2,7 @@ import {HELPSEvent} from './HELPSEvent';
 
 export interface SessionFile {
     id: number
-    title: string
+    name: string
 }
 
 export interface Session extends HELPSEvent {
@@ -16,7 +16,8 @@ export interface Session extends HELPSEvent {
     assistance: string
     attendance: boolean
     comments: string
-    files: SessionFile[]
+    fileIds: number[]
+    files?: SessionFile[]
 }
 
 export function isSession(event: HELPSEvent): event is Session {

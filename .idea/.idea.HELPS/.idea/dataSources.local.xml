@@ -2,13 +2,36 @@
 <project version="4">
   <component name="dataSourceStorageLocal">
     <data-source name="postgres@localhost" uuid="77cdd827-5000-4d06-abd9-d5e509619b4f">
-      <database-info product="PostgreSQL" version="11.2" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.2.5" dbms="POSTGRES" exact-version="11.2" exact-driver-version="42.2">
+      <database-info product="PostgreSQL" version="11.4" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.2.5" dbms="POSTGRES" exact-version="11.4" exact-driver-version="42.2">
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
       <secret-storage>master_key</secret-storage>
       <user-name>postgres</user-name>
-      <introspection-schemas>*:*</introspection-schemas>
+      <schema-mapping>
+        <introspection-scope>
+          <node kind="database" negative="1">
+            <node kind="schema" negative="1" />
+          </node>
+          <node kind="database" qname="@">
+            <node kind="schema" qname="@" />
+          </node>
+          <node kind="database" qname="HELPS">
+            <node kind="schema" negative="1" />
+            <node kind="schema" qname="@" />
+          </node>
+          <node kind="database" qname="postgres">
+            <node kind="schema" negative="1" />
+            <node kind="schema" qname="@" />
+            <node kind="schema" qname="information_schema" />
+            <node kind="schema" qname="pg_catalog" />
+            <node kind="schema" qname="pg_temp_1" />
+            <node kind="schema" qname="pg_toast" />
+            <node kind="schema" qname="pg_toast_temp_1" />
+            <node kind="schema" qname="public" />
+          </node>
+        </introspection-scope>
+      </schema-mapping>
     </data-source>
   </component>
 </project>

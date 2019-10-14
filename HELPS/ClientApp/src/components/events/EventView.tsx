@@ -61,7 +61,7 @@ export default abstract class EventView extends Component<EventViewProps, EventV
         }else if (this.state.filters.includes("Booked")){
             sessions = sessions.filter(session => session.studentId > 0)
         }
-
+        
         return sessions
             .filter(workshop => searchTerm.length === 0 || workshop.type.toLowerCase().includes(searchTerm.toLowerCase()));
     }
@@ -94,6 +94,8 @@ export default abstract class EventView extends Component<EventViewProps, EventV
             events = events.concat(this.sessions);
         }
 
+        
+        
         return events
             .map(event => {
                 const startTime = moment(event.startTime);
@@ -287,6 +289,7 @@ export default abstract class EventView extends Component<EventViewProps, EventV
                 assistance: '',
                 attendance: false,
                 comments: '',
+                fileIds: [],
                 files: []
             });
         }

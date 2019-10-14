@@ -13,5 +13,5 @@ export interface Workshop extends HELPSEvent {
 }
 
 export function isWorkshop(event: HELPSEvent): event is Workshop {
-    return 'title' in event;
+    return 'skillId' in event;
 }

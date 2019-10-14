@@ -6,6 +6,7 @@ using HELPS.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 
 namespace HELPS.Controllers
 {
@@ -13,34 +14,61 @@ namespace HELPS.Controllers
     [Route("api/[controller]")]
     public class SessionsController : StudentUserController
     {
+        public class SessionResult : Session
+        {
+            [JsonProperty("files")]
+            private FileInfo[] _files;
+            
+            public SessionResult(Session session, FileInfo[] files) : base(session)
+            {
+                this._files = files;
+            }
+        }
+        
         public SessionsController(HelpsContext context) : base(context)
         {
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Session>>> GetSessions()
+        public async Task<ActionResult<IEnumerable<SessionResult>>> GetSessions()
         {
-            return IsAdmin() ? Context.Sessions.ToList() : StudentSessions.Value.ToList();
+            var sessions = IsAdmin() ? Context.Sessions.ToList() : StudentSessions.Value.ToList();
+            return sessions.Select(session =>
+            {
+                var files = GetSessionFiles(session);
+                return new SessionResult(session, files);
+            }).ToList();
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Session>> GetSession(int id)
+        public async Task<ActionResult<SessionResult>> GetSession(int id)
         {
             if (IsAdmin())
             {
                 var session = Context.Sessions.Find(id);
                 if (session == null) return NotFound();
-                return session;
+                var files = GetSessionFiles(session);
+                return new SessionResult(session, files);
             }
 
             try
             {
-                return StudentSessions.Value.First(session => session.Id == id);
+                var session = StudentSessions.Value.First(selectedSession => selectedSession.Id == id);
+                var files = GetSessionFiles(session);
+                return new SessionResult(session, files);
             }
             catch (InvalidOperationException)
             {
                 return NotFound();
             }
+        }
+        
+        private FileInfo[] GetSessionFiles(Session session)
+        {
+            return Context.Files
+                .Where(file => Array.Exists(session.FileIds, fileId => fileId == file.Id))
+                .Select(file => new FileInfo(file.Id, file.Name))
+                .ToArray();
         }
 
         [HttpPost]

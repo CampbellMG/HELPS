@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66cfea10-8c9f-4e80-b2f0-37497a1490b6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HELPS/Controllers/FilesController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HELPS/Models/File.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA/schema/information_schema.FNRwLQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA/schema/information_schema.FNRwLQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA/schema/information_schema.FNRwLQ.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA/schema/information_schema.FNRwLQ.zip" afterDir="false" />
@@ -12,31 +16,25 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA/schema/pg_toast.33HYYw.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA/schema/pg_toast.33HYYw.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA/schema/pg_toast_temp_1.5ixBaA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA/schema/pg_toast_temp_1.5ixBaA.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/my_meal_checker.7Ao_YQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/my_meal_checker.7Ao_YQ/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/my_meal_checker.7Ao_YQ/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/my_meal_checker.7Ao_YQ/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/my_meal_checker.7Ao_YQ/schema/pg_temp_1.zkWuFg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/my_meal_checker.7Ao_YQ/schema/pg_temp_1.zkWuFg.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/my_meal_checker.7Ao_YQ/schema/pg_toast.33HYYw.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/my_meal_checker.7Ao_YQ/schema/pg_toast.33HYYw.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/my_meal_checker.7Ao_YQ/schema/pg_toast_temp_1.5ixBaA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/my_meal_checker.7Ao_YQ/schema/pg_toast_temp_1.5ixBaA.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/my_meal_checker.7Ao_YQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/my_meal_checker.7Ao_YQ/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/postgres.edMnLQ/schema/my_meal_checker.7Ao_YQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/postgres.edMnLQ/schema/my_meal_checker.7Ao_YQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_temp_1.zkWuFg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_temp_1.zkWuFg.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_toast.33HYYw.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_toast.33HYYw.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_toast_temp_1.5ixBaA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_toast_temp_1.5ixBaA.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/components/advisors/AdvisorForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/components/advisors/AdvisorForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/EventView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/EventView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/forms/AdminWorkshopDetailForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/forms/AdminWorkshopDetailForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/MessageActions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/MessageActions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/RoomActions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/RoomActions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/types/components/WorkshopRegistrationTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/types/components/WorkshopRegistrationTypes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/types/model/Workshop.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/types/model/Workshop.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/Migrations/20191013070531_final.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/Migrations/20191013070531_final.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/Migrations/HelpsContextModelSnapshot.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/Models/Workshop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/Models/Workshop.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/forms/AdminSessionDetailForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/forms/AdminSessionDetailForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/forms/StudentSessionDetailForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/forms/StudentSessionDetailForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/AuthActions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/AuthActions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/SessionActions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/SessionActions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/types/model/Session.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/types/model/Session.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HELPS/Controllers/SessionsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/Controllers/SessionsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HELPS/Models/HelpsContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/Models/HelpsContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HELPS/Models/Session.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/Models/Session.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HELPS/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/appsettings.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -103,36 +101,15 @@
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="postgres@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="roles" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="HELPS: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="Files: table" type="69fad909:PgImplModel$LocalTable" />
       </path>
     </expand>
     <select />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/HELPS/ClientApp/src/components/events/forms/AdminWorkshopDetailForm.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="110" column="36" selection-start-line="110" selection-start-column="36" selection-end-line="110" selection-end-column="36" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-                <element signature="e#654#705#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HELPS/ClientApp/src/types/components/WorkshopRegistrationTypes.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="35" column="27" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -141,97 +118,75 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>Room</find>
-      <find>skills</find>
-      <find>variables.findin</find>
-      <find>.css</find>
-      <find>saveAdvisor</find>
-      <find>editingFromAdd</find>
-      <find>nsole.log</find>
-      <find>console.log</find>
-      <find>assignedStudentIds</find>
-      <find>addworkshops</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>Skill</replace>
-    </replaceStrings>
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="bugs" />
       </map>
     </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/HELPS/Models/Skill.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HELPS/Controllers/WorkshopsController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HELPS/Controllers/MessagesController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HELPS/Controllers/EmailsController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/047D3346-D6C9-445B-8BEC-2E800AD7A4AF/36/250304ba/Queryable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HELPS/Controllers/FilesController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HELPS/Services/UserService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Controllers/SessionsController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HELPS/Controllers/RoomsController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HELPS/Helpers/AppSettings.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HELPS/Controllers/ReportsController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HELPS/Models/User.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HELPS/Models/Report.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HELPS/Models/Message.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HELPS/Models/Room.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HELPS/Models/Student.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HELPS/Models/Workshop.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HELPS/Models/HelpsContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HELPS/Models/Advisor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HELPS/Models/Email.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HELPS/Controllers/StudentUserController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HELPS/Controllers/EmailsController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Controllers/StudentWorkshopsController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HELPS/Controllers/StudentsController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HELPS/Models/Session.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B4EF600F-4A59-4FE2-865A-8F97F915FB9D/e4/c712921b/OkResult.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B4EF600F-4A59-4FE2-865A-8F97F915FB9D/a0/51444e4a/FileContentResult.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HELPS/Reports/AbstractReport.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B4EF600F-4A59-4FE2-865A-8F97F915FB9D/dc/dbb3ca64/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HELPS/Reports/BookedSessions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HELPS/Startup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2D506C52-CF4B-4BDB-B896-80B6E2C92982/bf/7d40ab30/DbSet`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Controllers/UserController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Controllers/AdvisorsController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HELPS/Controllers/RoomsController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HELPS/Controllers/ReportsController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HELPS/Controllers/StudentUserController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/my_meal_checker.7Ao_YQ/schema/information_schema.FNRwLQ.meta" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HELPS/Reports/AbstractReport.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Reports/StudentHistory.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HELPS/Helpers/AppSettings.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HELPS/Models/Report.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HELPS/Reports/BookedSessions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/my_meal_checker.7Ao_YQ/schema/information_schema.FNRwLQ.meta" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HELPS/Controllers/WorkshopsController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HELPS/Controllers/StudentsController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CA55E692-DA2C-4C8A-912D-364A352AAD35/5f/534b7bb5/Array.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HELPS/Models/Skill.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HELPS/Services/UserService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2D506C52-CF4B-4BDB-B896-80B6E2C92982/bf/7d40ab30/DbSet`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HELPS/Models/HelpsContext.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HELPS/Models/Workshop.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HELPS/Models/Message.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HELPS/Startup.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HELPS/Models/User.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HELPS/Models/Session.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HELPS/Models/Email.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HELPS/Models/Student.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HELPS/Models/Advisor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HELPS/Models/Room.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Controllers/SkillsController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HELPS/Models/File.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HELPS/Controllers/MessagesController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/HELPS/Controllers/ReportsController.cs" />
-        <option value="$PROJECT_DIR$/HELPS/Models/Report.cs" />
-        <option value="$PROJECT_DIR$/HELPS/Reports/AbstractReport.cs" />
-        <option value="$PROJECT_DIR$/HELPS/Reports/CancelledSessions.cs" />
-        <option value="$PROJECT_DIR$/HELPS/Reports/StudentHistory.cs" />
-        <option value="$PROJECT_DIR$/HELPS/appsettings.json" />
-        <option value="$PROJECT_DIR$/HELPS/Controllers/SessionsController.cs" />
-        <option value="$PROJECT_DIR$/HELPS/Controllers/AdvisorsController.cs" />
-        <option value="$PROJECT_DIR$/HELPS/Controllers/StudentWorkshopsController.cs" />
-        <option value="$PROJECT_DIR$/HELPS/Controllers/WorkshopsController.cs" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$PROJECT_DIR$/HELPS/Migrations/20190927062159_final.cs" />
         <option value="$PROJECT_DIR$/HELPS/Controllers/StudentsController.cs" />
         <option value="$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/UserActions.ts" />
         <option value="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/eventView/EventForm.tsx" />
         <option value="$PROJECT_DIR$/HELPS/ClientApp/src/components/navigation/Layout.tsx" />
-        <option value="$PROJECT_DIR$/HELPS/Models/Session.cs" />
-        <option value="$PROJECT_DIR$/HELPS/ClientApp/src/types/model/Session.ts" />
         <option value="$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/WorkshopActions.ts" />
-        <option value="$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/SessionActions.ts" />
-        <option value="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/forms/AdminSessionDetailForm.tsx" />
         <option value="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/eventView/CalendarFilter.tsx" />
         <option value="$PROJECT_DIR$/HELPS/ClientApp/src/types/model/Skill.ts" />
         <option value="$PROJECT_DIR$/HELPS/Models/Skill.cs" />
-        <option value="$PROJECT_DIR$/HELPS/Models/HelpsContext.cs" />
         <option value="$PROJECT_DIR$/HELPS/Controllers/StudentUserController.cs" />
         <option value="$PROJECT_DIR$/HELPS/Controllers/SkillsController.cs" />
         <option value="$PROJECT_DIR$/HELPS/Models/Email.cs" />
@@ -242,9 +197,7 @@
         <option value="$PROJECT_DIR$/HELPS/ClientApp/src/components/user/User.tsx" />
         <option value="$PROJECT_DIR$/HELPS/Controllers/EmailsController.cs" />
         <option value="$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/EmailActions.ts" />
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.json" />
         <option value="$PROJECT_DIR$/HELPS/ClientApp/src/components/user/UserDetailsForm.tsx" />
-        <option value="$PROJECT_DIR$/HELPS/Scripts/Reset.sql" />
         <option value="$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/SkillActions.ts" />
         <option value="$PROJECT_DIR$/HELPS/ClientApp/src/components/advisors/AdvisorEdit.tsx" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/77cdd827-5000-4d06-abd9-d5e509619b4f/console.sql" />
@@ -253,11 +206,28 @@
         <option value="$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/RoomActions.ts" />
         <option value="$PROJECT_DIR$/HELPS/ClientApp/src/components/advisors/AdvisorForm.tsx" />
         <option value="$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/MessageActions.ts" />
-        <option value="$PROJECT_DIR$/HELPS/Models/Workshop.cs" />
-        <option value="$PROJECT_DIR$/HELPS/ClientApp/src/types/model/Workshop.ts" />
-        <option value="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/EventView.tsx" />
-        <option value="$PROJECT_DIR$/HELPS/ClientApp/src/types/components/WorkshopRegistrationTypes.ts" />
         <option value="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/forms/AdminWorkshopDetailForm.tsx" />
+        <option value="$PROJECT_DIR$/HELPS/Models/HelpsContext.cs" />
+        <option value="$PROJECT_DIR$/HELPS/Controllers/FileController.cs" />
+        <option value="$PROJECT_DIR$/HELPS/Models/Workshop.cs" />
+        <option value="$PROJECT_DIR$/HELPS/Controllers/WorkshopsController.cs" />
+        <option value="$PROJECT_DIR$/HELPS/ClientApp/src/types/model/Session.ts" />
+        <option value="$PROJECT_DIR$/HELPS/Models/Session.cs" />
+        <option value="$PROJECT_DIR$/HELPS/appsettings.json" />
+        <option value="$PROJECT_DIR$/HELPS/Scripts/Reset.sql" />
+        <option value="$PROJECT_DIR$/HELPS/Controllers/FilesController.cs" />
+        <option value="$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/SessionActions.ts" />
+        <option value="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/forms/StudentWorkshopDetailForm.tsx" />
+        <option value="$PROJECT_DIR$/HELPS/ClientApp/src/types/components/WorkshopRegistrationTypes.ts" />
+        <option value="$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/AuthActions.ts" />
+        <option value="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/forms/StudentSessionDetailForm.tsx" />
+        <option value="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/forms/AdminSessionDetailForm.tsx" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.json" />
+        <option value="$PROJECT_DIR$/HELPS/Models/File.cs" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_1.json" />
+        <option value="$PROJECT_DIR$/HELPS/Controllers/SessionsController.cs" />
+        <option value="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/EventView.tsx" />
+        <option value="$PROJECT_DIR$/HELPS/ClientApp/src/types/model/Workshop.ts" />
       </list>
     </option>
   </component>
@@ -270,38 +240,6 @@
   <component name="ProjectId" id="1RSL3FHDtPIbJPK6ZWtchpxMKDd" />
   <component name="ProjectLevelVcsManager">
     <OptionsSetting value="false" id="Update" />
-  </component>
-  <component name="ProjectView">
-    <navigator currentView="SolutionExplorer" proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="SolutionExplorer">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="HELPS" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="HELPS" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="HELPS" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="HELPS" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="HELPS" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Scripts" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-        <option name="show-all-files" value="false" />
-      </pane>
-      <pane id="FileSystemExplorer" />
-      <pane id="AssemblyExplorer" />
-    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
@@ -320,6 +258,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="settings.typescriptcompiler" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/HELPS/ClientApp/node_modules/typescript/lib" />
   </component>
   <component name="RunDashboard">
@@ -342,6 +281,10 @@
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="0" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="0" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
       <method v="2">
         <option name="Build" enabled="true" />
       </method>
@@ -354,17 +297,12 @@
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@47708867" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@ce9ca79b" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@47708867" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@58e22a29" type="9fbbdea:ServiceModel$ServiceNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@47708867" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@1c042f89" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@ce9ca79b" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@4dd8329e" type="9fbbdea:ServiceModel$ServiceNode" />
             </path>
           </expand>
           <select />
@@ -475,46 +413,6 @@
     <option name="localTasksCounter" value="13" />
     <servers />
   </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9949000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="1912" y="-453" width="1066" height="1666" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="Image Layers" order="3" />
-      <window_info content_ui="combo" id="Project" order="4" weight="0.47017893" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.48206133" />
-      <window_info anchor="bottom" x="-7" y="351" width="1421" height="581" id="Debug" maximized="true" order="3" type="WINDOWED" weight="0.40117416" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" x="638" y="317" width="644" height="428" id="Version Control" maximized="true" order="6" type="WINDOWED" weight="0.32941943" />
-      <window_info anchor="bottom" id="TODO" order="7" />
-      <window_info anchor="bottom" id="Build" order="8" weight="0.32876712" />
-      <window_info anchor="bottom" id="REST Client" order="9" />
-      <window_info anchor="bottom" id="Database Console" order="10" weight="0.33072406" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3274625" />
-      <window_info anchor="bottom" id="Performance Profiler" order="12" />
-      <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" weight="0.32941943" />
-      <window_info anchor="bottom" id="NuGet" order="14" />
-      <window_info anchor="bottom" id="Unit Tests" order="15" />
-      <window_info anchor="bottom" id="Database Changes" order="16" weight="0.32994923" />
-      <window_info anchor="bottom" id="Docker" order="17" show_stripe_button="false" />
-      <window_info anchor="bottom" id="TypeScript" order="18" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Errors In Solution" order="3" weight="0.32902583" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Database" order="5" weight="0.5477137" />
-      <window_info anchor="right" id="Unit Tests Coverage" order="6" />
-    </layout>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
@@ -526,12 +424,6 @@
         <entry key="MAIN">
           <value>
             <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
               <option name="COLUMN_ORDER" />
             </State>
           </value>
@@ -575,9 +467,65 @@
     <option name="LAST_COMMIT_MESSAGE" value="Bugfixes" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="132" y="605" key="#com.intellij.execution.impl.EditConfigurationsDialog" />
+    <state x="132" y="605" key="#com.intellij.execution.impl.EditConfigurationsDialog/1080.1920/1680.1050/1920.1080" />
     <state width="172" height="1225" key="Git.Branch.Popup" />
     <state width="172" height="1225" key="Git.Branch.Popup/1920.1080/1080.1920" />
     <state width="172" height="1225" key="Git.Branch.Popup@1080.1920" />
+    <state width="1037" height="834" key="GridCell.Tab.0.bottom" />
+    <state width="1037" height="834" key="GridCell.Tab.0.bottom/1080.1920/1680.1050/1920.1080" />
+    <state width="1037" height="834" key="GridCell.Tab.0.center" />
+    <state width="1037" height="834" key="GridCell.Tab.0.center/1080.1920/1680.1050/1920.1080" />
+    <state width="1037" height="834" key="GridCell.Tab.0.left" />
+    <state width="1037" height="834" key="GridCell.Tab.0.left/1080.1920/1680.1050/1920.1080" />
+    <state width="1037" height="834" key="GridCell.Tab.0.right" />
+    <state width="1037" height="834" key="GridCell.Tab.0.right/1080.1920/1680.1050/1920.1080" />
+    <state width="1681" height="962" key="GridCell.Tab.1.bottom" />
+    <state width="1681" height="962" key="GridCell.Tab.1.bottom/1080.1920/1680.1050/1920.1080" />
+    <state width="1681" height="962" key="GridCell.Tab.1.center" />
+    <state width="1681" height="962" key="GridCell.Tab.1.center/1080.1920/1680.1050/1920.1080" />
+    <state width="1681" height="962" key="GridCell.Tab.1.left" />
+    <state width="1681" height="962" key="GridCell.Tab.1.left/1080.1920/1680.1050/1920.1080" />
+    <state width="1681" height="962" key="GridCell.Tab.1.right" />
+    <state width="1681" height="962" key="GridCell.Tab.1.right/1080.1920/1680.1050/1920.1080" />
+    <state width="1681" height="994" key="GridCell.Tab.2.bottom" />
+    <state width="1681" height="994" key="GridCell.Tab.2.bottom/1080.1920/1680.1050/1920.1080" />
+    <state width="1681" height="994" key="GridCell.Tab.2.center" />
+    <state width="1681" height="994" key="GridCell.Tab.2.center/1080.1920/1680.1050/1920.1080" />
+    <state width="1681" height="994" key="GridCell.Tab.2.left" />
+    <state width="1681" height="994" key="GridCell.Tab.2.left/1080.1920/1680.1050/1920.1080" />
+    <state width="1681" height="994" key="GridCell.Tab.2.right" />
+    <state width="1681" height="994" key="GridCell.Tab.2.right/1080.1920/1680.1050/1920.1080" />
+    <state width="1681" height="994" key="GridCell.Tab.3.bottom" />
+    <state width="1681" height="994" key="GridCell.Tab.3.bottom/1080.1920/1680.1050/1920.1080" />
+    <state width="1681" height="994" key="GridCell.Tab.3.center" />
+    <state width="1681" height="994" key="GridCell.Tab.3.center/1080.1920/1680.1050/1920.1080" />
+    <state width="1681" height="994" key="GridCell.Tab.3.left" />
+    <state width="1681" height="994" key="GridCell.Tab.3.left/1080.1920/1680.1050/1920.1080" />
+    <state width="1681" height="994" key="GridCell.Tab.3.right" />
+    <state width="1681" height="994" key="GridCell.Tab.3.right/1080.1920/1680.1050/1920.1080" />
+    <state width="1681" height="994" key="GridCell.Tab.4.bottom" />
+    <state width="1681" height="994" key="GridCell.Tab.4.bottom/1080.1920/1680.1050/1920.1080" />
+    <state width="1681" height="994" key="GridCell.Tab.4.center" />
+    <state width="1681" height="994" key="GridCell.Tab.4.center/1080.1920/1680.1050/1920.1080" />
+    <state width="1681" height="994" key="GridCell.Tab.4.left" />
+    <state width="1681" height="994" key="GridCell.Tab.4.left/1080.1920/1680.1050/1920.1080" />
+    <state width="1681" height="994" key="GridCell.Tab.4.right" />
+    <state width="1681" height="994" key="GridCell.Tab.4.right/1080.1920/1680.1050/1920.1080" />
+    <state width="205" height="458" key="HiddenNamespacesPopup" />
+    <state width="205" height="458" key="HiddenNamespacesPopup/1080.1920/1680.1050/1920.1080" />
+    <state x="250" y="631" key="RiderGenerateDialog" />
+    <state x="250" y="631" key="RiderGenerateDialog/1080.1920/1680.1050/1920.1080" />
+    <state x="351" y="655" key="RollbackChangesDialog" />
+    <state x="351" y="655" key="RollbackChangesDialog/1080.1920/1680.1050/1920.1080" />
+    <state x="25" y="587" key="SettingsEditor" />
+    <state x="25" y="587" key="SettingsEditor/1080.1920/1680.1050/1920.1080" />
+    <state x="425" y="844" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" />
+    <state x="425" y="844" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/1080.1920/1680.1050/1920.1080" />
+    <state x="220" y="648" width="640" height="594" key="find.popup" />
+    <state x="220" y="648" width="640" height="594" key="find.popup/1080.1920/1680.1050/1920.1080" />
+    <state x="203" y="437" width="672" height="678" key="search.everywhere.popup" />
+    <state x="203" y="437" width="672" height="678" key="search.everywhere.popup/1080.1920/1680.1050/1920.1080" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -612,596 +560,64 @@
           </properties>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/HELPS/Controllers/FilesController.cs</url>
+          <line>40</line>
+          <properties documentPath="$PROJECT_DIR$/HELPS/Controllers/FilesController.cs" initialLine="37">
+            <startOffsets>
+              <option value="1212" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1236" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/HELPS/Controllers/SessionsController.cs</url>
+          <line>57</line>
+          <properties documentPath="$PROJECT_DIR$/HELPS/Controllers/SessionsController.cs" initialLine="55">
+            <startOffsets>
+              <option value="1812" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1853" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/HELPS/Controllers/SessionsController.cs</url>
+          <line>50</line>
+          <properties documentPath="$PROJECT_DIR$/HELPS/Controllers/SessionsController.cs" initialLine="48">
+            <startOffsets>
+              <option value="1551" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1592" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/HELPS/Controllers/SessionsController.cs</url>
+          <line>38</line>
+          <properties documentPath="$PROJECT_DIR$/HELPS/Controllers/SessionsController.cs" initialLine="36">
+            <startOffsets>
+              <option value="1139" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1180" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="LaunchSettings">
-        <watch expression="ModelState" language="C#" custom="RiderImportsList:" />
+        <watch expression="GetSessionFiles(session)" language="C#" custom="RiderImportsList:" />
       </configuration>
     </watches-manager>
-  </component>
-  <component name="debuggerHistoryManager">
-    <expressions id="watch">
-      <expression>
-        <expression-string>ModelState</expression-string>
-        <language-id>C#</language-id>
-        <custom-info>RiderImportsList:</custom-info>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>StateManager</expression-string>
-        <language-id>C#</language-id>
-        <custom-info>RiderImportsList:Microsoft.EntityFrameworkCore.ChangeTracking.Internal</custom-info>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>EntityState</expression-string>
-        <language-id>C#</language-id>
-        <custom-info>RiderImportsList:</custom-info>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>Context.Emails.ToList()</expression-string>
-        <language-id>C#</language-id>
-        <custom-info>RiderImportsList:System.Linq</custom-info>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>extraData[&quot;student_id&quot;]</expression-string>
-        <language-id>C#</language-id>
-        <custom-info>RiderImportsList:</custom-info>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>extraData.student_id</expression-string>
-        <language-id>C#</language-id>
-        <custom-info>RiderImportsList:</custom-info>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>((object)extraData).GetType().GetProperties()</expression-string>
-        <language-id>C#</language-id>
-        <custom-info>RiderImportsList:</custom-info>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>extraData.GetType().GetProperties()</expression-string>
-        <language-id>C#</language-id>
-        <custom-info>RiderImportsList:</custom-info>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>extraData</expression-string>
-        <language-id>C#</language-id>
-        <custom-info>RiderImportsList:</custom-info>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>extraData.GetType().GetProperty(&quot;student_id&quot;)</expression-string>
-        <language-id>C#</language-id>
-        <custom-info>RiderImportsList:</custom-info>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-    </expressions>
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/HELPS/Controllers/RoomsController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-          <folding>
-            <marker date="1566210204224" expanded="false" signature="6:257" ph="..." />
-            <marker date="1566210204224" expanded="true" signature="286:2205" ph="{...}" />
-            <marker date="1566210204224" expanded="true" signature="393:2203" ph="{...}" />
-            <marker date="1566210204224" expanded="true" signature="468:488" ph="{...}" />
-            <marker date="1566210204224" expanded="true" signature="580:686" ph="{...}" />
-            <marker date="1566210204224" expanded="true" signature="775:1209" ph="{...}" />
-            <marker date="1566210204224" expanded="true" signature="812:973" ph="{...}" />
-            <marker date="1566210204224" expanded="true" signature="990:1090" ph="{...}" />
-            <marker date="1566210204224" expanded="true" signature="1136:1199" ph="{...}" />
-            <marker date="1566210204224" expanded="true" signature="1315:1579" ph="{...}" />
-            <marker date="1566210204224" expanded="true" signature="1676:1859" ph="{...}" />
-            <marker date="1566210204224" expanded="true" signature="1949:2197" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/Controllers/StudentUserController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="16" column="70" selection-start-line="16" selection-start-column="70" selection-end-line="16" selection-end-column="70" />
-          <folding>
-            <marker date="1570948158208" expanded="false" signature="6:148" ph="..." />
-            <marker date="1570948158208" expanded="true" signature="177:3239" ph="{...}" />
-            <marker date="1570948158208" expanded="true" signature="244:3237" ph="{...}" />
-            <marker date="1570948158208" expanded="true" signature="743:1227" ph="{...}" />
-            <marker date="1570948158208" expanded="true" signature="1266:1652" ph="{...}" />
-            <marker date="1570948158208" expanded="true" signature="1292:1527" ph="{...}" />
-            <marker date="1570948158208" expanded="true" signature="1557:1642" ph="{...}" />
-            <marker date="1570948158208" expanded="true" signature="1713:1857" ph="{...}" />
-            <marker date="1570948158208" expanded="true" signature="1916:2033" ph="{...}" />
-            <marker date="1570948158208" expanded="true" signature="2086:2426" ph="{...}" />
-            <marker date="1570948158208" expanded="true" signature="2485:2855" ph="{...}" />
-            <marker date="1570948158208" expanded="true" signature="2893:2977" ph="{...}" />
-            <marker date="1570948158208" expanded="true" signature="3011:3231" ph="{...}" />
-            <marker date="1570948158208" expanded="true" signature="3037:3115" ph="{...}" />
-            <marker date="1570948158208" expanded="true" signature="3163:3221" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/Controllers/SkillsController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="39" column="50" selection-start-line="39" selection-start-column="50" selection-end-line="39" selection-end-column="50" />
-          <folding>
-            <marker date="1570948743459" expanded="false" signature="6:257" ph="..." />
-            <marker date="1570948743459" expanded="true" signature="286:1900" ph="{...}" />
-            <marker date="1570948743459" expanded="true" signature="394:1898" ph="{...}" />
-            <marker date="1570948743459" expanded="true" signature="470:490" ph="{...}" />
-            <marker date="1570948743459" expanded="true" signature="584:648" ph="{...}" />
-            <marker date="1570948743459" expanded="true" signature="739:884" ph="{...}" />
-            <marker date="1570948743459" expanded="true" signature="993:1259" ph="{...}" />
-            <marker date="1570948743459" expanded="true" signature="1360:1548" ph="{...}" />
-            <marker date="1570948743459" expanded="true" signature="1639:1892" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/Migrations/20191013064004_final.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="92" column="29" selection-start-line="92" selection-start-column="23" selection-end-line="92" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://77cdd827-5000-4d06-abd9-d5e509619b4f/database/HELPS/schema/public/table/Emails">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://77cdd827-5000-4d06-abd9-d5e509619b4f/database/HELPS/schema/public/table/EmailVariable">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/ClientApp/src/types/components/EmailTypes.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/Models/Email.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="13" column="59" selection-start-line="13" selection-start-column="59" selection-end-line="13" selection-end-column="59" />
-          <folding>
-            <marker date="1570950285167" expanded="false" signature="6:130" ph="..." />
-            <marker date="1570950285167" expanded="true" signature="154:743" ph="{...}" />
-            <marker date="1570950285167" expanded="true" signature="179:455" ph="{...}" />
-            <marker date="1570950285167" expanded="true" signature="487:741" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/ClientApp/src/components/email/EmailEdit.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="62" column="71" lean-forward="true" selection-start-line="62" selection-start-column="71" selection-end-line="62" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/ClientApp/src/components/email/EmailList.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="1" lean-forward="true" selection-end-line="3" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/ClientApp/src/components/email/EmailList.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1105">
-          <caret line="66" column="26" lean-forward="true" selection-start-line="66" selection-start-column="26" selection-end-line="66" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/ClientApp/src/components/message/MessageEdit.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1360">
-          <caret line="151" column="39" selection-start-line="151" selection-start-column="39" selection-end-line="151" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/MessageActions.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="58" column="32" selection-start-line="58" selection-start-column="32" selection-end-line="58" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/Controllers/UserController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-          <folding>
-            <marker date="1570948158210" expanded="false" signature="6:145" ph="..." />
-            <marker date="1570948158210" expanded="true" signature="174:1316" ph="{...}" />
-            <marker date="1570948158210" expanded="true" signature="245:1314" ph="{...}" />
-            <marker date="1570948158210" expanded="true" signature="361:421" ph="{...}" />
-            <marker date="1570948158210" expanded="true" signature="519:769" ph="{...}" />
-            <marker date="1570948158210" expanded="true" signature="878:1032" ph="{...}" />
-            <marker date="1570948158210" expanded="true" signature="1113:1308" ph="{...}" />
-            <marker date="1570948158210" expanded="true" signature="1209:1272" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/EmailActions.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="77" column="25" selection-start-line="77" selection-start-column="25" selection-end-line="77" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/Controllers/EmailsController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="43" column="12" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="12" />
-          <folding>
-            <marker date="1570951848036" expanded="false" signature="6:194" ph="..." />
-            <marker date="1570951848036" expanded="true" signature="223:1311" ph="{...}" />
-            <marker date="1570951848036" expanded="true" signature="336:1309" ph="{...}" />
-            <marker date="1570951848036" expanded="true" signature="412:432" ph="{...}" />
-            <marker date="1570951848036" expanded="true" signature="526:687" ph="{...}" />
-            <marker date="1570951848036" expanded="true" signature="778:988" ph="{...}" />
-            <marker date="1570951848036" expanded="true" signature="1089:1303" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="17" lean-forward="true" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/ClientApp/src/types/model/Email.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="8" lean-forward="true" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/ClientApp/src/components/editorlist/EditorList.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="37" column="33" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/Controllers/StudentsController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-144">
-          <caret line="44" column="60" selection-start-line="44" selection-start-column="60" selection-end-line="44" selection-end-column="60" />
-          <folding>
-            <marker date="1570948158209" expanded="false" signature="6:213" ph="..." />
-            <marker date="1570948158209" expanded="true" signature="242:3865" ph="{...}" />
-            <marker date="1570948158209" expanded="true" signature="352:3863" ph="{...}" />
-            <marker date="1570948158209" expanded="true" signature="430:450" ph="{...}" />
-            <marker date="1570948158209" expanded="true" signature="548:662" ph="{...}" />
-            <marker date="1570948158209" expanded="true" signature="757:940" ph="{...}" />
-            <marker date="1570948158209" expanded="true" signature="1039:1203" ph="{...}" />
-            <marker date="1570948158209" expanded="true" signature="1328:1400" ph="{...}" />
-            <marker date="1570948158209" expanded="true" signature="1525:2078" ph="{...}" />
-            <marker date="1570948158209" expanded="true" signature="1580:1672" ph="{...}" />
-            <marker date="1570948158209" expanded="true" signature="1689:1897" ph="{...}" />
-            <marker date="1570948158209" expanded="true" signature="2190:2751" ph="{...}" />
-            <marker date="1570948158209" expanded="true" signature="2402:2465" ph="{...}" />
-            <marker date="1570948158209" expanded="true" signature="2873:2944" ph="{...}" />
-            <marker date="1570948158209" expanded="true" signature="3065:3304" ph="{...}" />
-            <marker date="1570948158209" expanded="true" signature="3414:3857" ph="{...}" />
-            <marker date="1570948158209" expanded="true" signature="3578:3641" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/ClientApp/src/components/user/User.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="921">
-          <caret line="91" column="25" selection-start-line="91" selection-start-column="25" selection-end-line="91" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/ClientApp/src/components/user/UserDetailsForm.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
-          <caret line="192" column="23" selection-start-line="192" selection-start-column="23" selection-end-line="192" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://77cdd827-5000-4d06-abd9-d5e509619b4f/database/HELPS/schema/public/table/Advisors">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/ClientApp/src/types/components/SkillTypes.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/ClientApp/src/components/skill/SkillEdit.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="148" column="86" selection-start-line="148" selection-start-column="86" selection-end-line="148" selection-end-column="86" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/SkillActions.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="75" column="26" lean-forward="true" selection-start-line="75" selection-start-column="26" selection-end-line="75" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#81#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/ClientApp/src/types/store/AdvisorActionTypes.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/AdvisorActions.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/ClientApp/src/types/util/Editable.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/ClientApp/src/types/components/AdvisorTypes.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="35" column="4" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/ClientApp/src/components/advisors/AdvisorEdit.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/ClientApp/src/components/advisors/AdvisorForm.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="978">
-          <caret line="113" column="29" selection-start-line="113" selection-start-column="23" selection-end-line="113" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/Controllers/ReportsController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="56" column="13" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
-          <folding>
-            <marker date="1568520312466" expanded="false" signature="6:219" ph="..." />
-            <marker date="1568520312466" expanded="true" signature="248:1948" ph="{...}" />
-            <marker date="1568520312466" expanded="true" signature="357:1946" ph="{...}" />
-            <marker date="1568520312466" expanded="true" signature="503:710" ph="{...}" />
-            <marker date="1568520312466" expanded="true" signature="585:699" ph="{...}" />
-            <marker date="1568520312466" expanded="true" signature="800:1155" ph="{...}" />
-            <marker date="1568520312466" expanded="true" signature="1251:1940" ph="{...}" />
-            <marker date="1568520312466" expanded="true" signature="1329:1677" ph="{...}" />
-            <marker date="1568520312466" expanded="true" signature="1709:1917" ph="{...}" />
-            <marker date="1568520312466" expanded="true" signature="1798:1879" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/77cdd827-5000-4d06-abd9-d5e509619b4f/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="16" lean-forward="true" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/Reports/StudentHistory.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-          <folding>
-            <marker date="1568520312478" expanded="false" signature="6:52" ph="..." />
-            <marker date="1568520312478" expanded="true" signature="77:1592" ph="{...}" />
-            <marker date="1568520312478" expanded="true" signature="133:1590" ph="{...}" />
-            <marker date="1568520312478" expanded="true" signature="273:293" ph="{...}" />
-            <marker date="1568520312478" expanded="true" signature="336:394" ph="{...}" />
-            <marker date="1568520312478" expanded="true" signature="449:623" ph="{...}" />
-            <marker date="1568520312478" expanded="true" signature="498:612" ph="{...}" />
-            <marker date="1568520312478" expanded="true" signature="720:1584" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/ClientApp/src/components/reports/ReportGenerate.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="133" column="42" lean-forward="true" selection-start-line="133" selection-start-column="42" selection-end-line="133" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/Reports/BookedSessions.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="26" column="18" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="18" />
-          <folding>
-            <marker date="1570964054124" expanded="false" signature="6:52" ph="..." />
-            <marker date="1570964054124" expanded="true" signature="77:1303" ph="{...}" />
-            <marker date="1570964054124" expanded="true" signature="133:1301" ph="{...}" />
-            <marker date="1570964054124" expanded="true" signature="208:228" ph="{...}" />
-            <marker date="1570964054124" expanded="true" signature="271:329" ph="{...}" />
-            <marker date="1570964054124" expanded="true" signature="384:442" ph="{...}" />
-            <marker date="1570964054124" expanded="true" signature="539:1295" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/ReportActions.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="45" column="31" lean-forward="true" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/RoomActions.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
-          <caret line="49" column="46" lean-forward="true" selection-start-line="49" selection-start-column="46" selection-end-line="49" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#80#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/ClientApp/src/components/events/WorkshopView.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="31" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#93#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/ClientApp/src/components/events/eventView/EventForm.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1057">
-          <caret line="63" column="21" lean-forward="true" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/Models/Workshop.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="22" column="48" lean-forward="true" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="48" />
-          <folding>
-            <marker date="1570965092691" expanded="false" signature="6:216" ph="..." />
-            <marker date="1570965092691" expanded="true" signature="240:995" ph="{...}" />
-            <marker date="1570965092691" expanded="true" signature="268:992" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/ClientApp/src/types/model/Workshop.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="23" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/Scripts/Reset.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="14" lean-forward="true" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://77cdd827-5000-4d06-abd9-d5e509619b4f/database/HELPS/schema/public/table/Workshops">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/ClientApp/src/components/events/EventView.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="303" column="34" selection-start-line="303" selection-start-column="34" selection-end-line="303" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/ClientApp/node_modules/react-bootstrap/Form.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="26" column="29" lean-forward="true" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/ClientApp/node_modules/react-bootstrap/FormCheck.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/ClientApp/node_modules/@types/redux-form/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/ClientApp/src/types/components/WorkshopRegistrationTypes.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="35" column="27" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HELPS/ClientApp/src/components/events/forms/AdminWorkshopDetailForm.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="110" column="36" selection-start-line="110" selection-start-column="36" selection-end-line="110" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-            <element signature="e#654#705#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
   </component>
 </project>

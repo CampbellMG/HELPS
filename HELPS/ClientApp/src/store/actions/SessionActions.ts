@@ -6,6 +6,7 @@ import moment from 'moment';
 
 const ENDPOINT_SESSION = 'api/sessions';
 const ENDPOINT_STUDENT_SESSION = 'api/students/sessions';
+export const ENDPOINT_FILE = 'api/files';
 
 const receiveSessions = (sessions: Session[]): SessionAction => ({
     type: SessionActionType.RECEIVE_SESSIONS,

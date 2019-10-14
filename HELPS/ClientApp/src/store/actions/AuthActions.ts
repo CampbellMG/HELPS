@@ -74,7 +74,7 @@ export const login = (username: string, password: string) => async (dispatch: Di
         dispatch(receiveLogin(loginResult.isAdmin));
 
         if (loginResult.isAdmin) {
-            dispatch(push('/events'));
+            dispatch(push('/consultations'));
         } else {
             dispatch(push('/user'));
         }
