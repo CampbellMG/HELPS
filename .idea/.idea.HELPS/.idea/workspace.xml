@@ -9,8 +9,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA/schema/pg_toast.33HYYw.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA/schema/pg_toast.33HYYw.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA/schema/pg_toast_temp_1.5ixBaA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA/schema/pg_toast_temp_1.5ixBaA.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/forms/AdminSessionDetailForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/forms/AdminSessionDetailForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/EventView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/EventView.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/forms/StudentSessionDetailForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/forms/StudentSessionDetailForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HELPS/Controllers/StudentsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/Controllers/StudentsController.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -157,7 +159,6 @@
       <list>
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$PROJECT_DIR$/HELPS/Migrations/20190927062159_final.cs" />
-        <option value="$PROJECT_DIR$/HELPS/Controllers/StudentsController.cs" />
         <option value="$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/UserActions.ts" />
         <option value="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/eventView/EventForm.tsx" />
         <option value="$PROJECT_DIR$/HELPS/ClientApp/src/components/navigation/Layout.tsx" />
@@ -203,9 +204,10 @@
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_1.json" />
         <option value="$PROJECT_DIR$/HELPS/Controllers/SessionsController.cs" />
         <option value="$PROJECT_DIR$/HELPS/ClientApp/src/types/model/Workshop.ts" />
-        <option value="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/EventView.tsx" />
         <option value="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/forms/AdminSessionDetailForm.tsx" />
+        <option value="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/EventView.tsx" />
         <option value="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/forms/StudentSessionDetailForm.tsx" />
+        <option value="$PROJECT_DIR$/HELPS/Controllers/StudentsController.cs" />
       </list>
     </option>
   </component>
@@ -395,7 +397,21 @@
       <option name="project" value="LOCAL" />
       <updated>1571018321745</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Bugfix to session from">
+      <created>1571018429559</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1571018429559</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Bugfix to session form">
+      <created>1571018466660</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1571018466660</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -450,7 +466,9 @@
     <MESSAGE value="Functional fixes&#10;&#10; 1. Fixed email rendering&#10; 2. Included email variables in request&#10; 3. Added email variable names&#10; 4. Added skills endpoint" />
     <MESSAGE value="Bugfixes" />
     <MESSAGE value="Added support for session files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added support for session files" />
+    <MESSAGE value="Bugfix to session from" />
+    <MESSAGE value="Bugfix to session form" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bugfix to session form" />
   </component>
   <component name="WindowStateProjectService">
     <state x="132" y="605" key="#com.intellij.execution.impl.EditConfigurationsDialog" />

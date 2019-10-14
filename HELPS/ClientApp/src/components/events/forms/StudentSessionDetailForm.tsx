@@ -96,7 +96,7 @@ class StudentSessionDetailForm extends React.Component<StudentSessionDetailFormP
                 </Dropzone>
                 <Button type='submit'
                         className='w-100 mt-4'>
-                    {this.props.booked ? 'Cancel' : 'Book'}
+                    Save
                 </Button>
             </form>
         );

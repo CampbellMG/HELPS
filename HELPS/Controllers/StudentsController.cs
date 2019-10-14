@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -88,9 +89,13 @@ namespace HELPS.Controllers
         }
         
         [HttpGet("sessions")]
-        public async Task<ActionResult<IEnumerable<Session>>> GetStudentSessions()
+        public async Task<ActionResult<IEnumerable<SessionsController.SessionResult>>> GetStudentSessions()
         {
-            return StudentSessions.Value.ToList();
+            return StudentSessions.Value.Select(session =>
+            {
+                var files = GetSessionFiles(session);
+                return new SessionsController.SessionResult(session, files);
+            }).ToList();
         }
         
         [HttpPost("sessions")]
@@ -120,6 +125,14 @@ namespace HELPS.Controllers
             await Context.SaveChangesAsync();
             
             return NoContent();
+        }
+        
+        private FileInfo[] GetSessionFiles(Session session)
+        {
+            return Context.Files
+                .Where(file => Array.Exists(session.FileIds, fileId => fileId == file.Id))
+                .Select(file => new FileInfo(file.Id, file.Name))
+                .ToArray();
         }
     }
 }

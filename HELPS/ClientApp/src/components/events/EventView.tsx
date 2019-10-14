@@ -217,10 +217,6 @@ export default abstract class EventView extends Component<EventViewProps, EventV
                 return this.props.updateSession(event);
             }
 
-            if (this.eventSelected(event)) {
-                return this.props.cancelSession(event);
-            }
-
             this.props.bookSession(event);
         }
 
