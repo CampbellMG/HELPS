@@ -33,7 +33,7 @@ class AdminSessionDetailForm extends React.Component<AdminSessionDetailFormProps
 
         this.state = {
             sessionFiles: []
-        };
+        };s
     }
 
     render() {
@@ -43,7 +43,7 @@ class AdminSessionDetailForm extends React.Component<AdminSessionDetailFormProps
 
     componentDidUpdate(): void {
         console.log(this.props.initialValues);
-        if(this.state.sessionFiles.length === 0 && this.props.initialValues.files){
+        if(this.state.sessionFiles.length === 0 && this.props.initialValues.files && this.props.initialValues.files.length > 0){
             this.setState({sessionFiles: this.props.initialValues.files})
         }
     }

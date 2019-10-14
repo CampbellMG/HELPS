@@ -27,7 +27,7 @@ class StudentSessionDetailForm extends React.Component<StudentSessionDetailFormP
     }
     
     componentDidUpdate(prevProps: Readonly<StudentSessionDetailFormProps>, prevState: Readonly<AdminSessionDetailFormState>, snapshot?: any): void {
-        if(this.state.sessionFiles.length === 0 && this.props.initialValues.files){
+        if(this.state.sessionFiles.length === 0 && this.props.initialValues.files && this.props.initialValues.files.length > 0){
             this.setState({sessionFiles: this.props.initialValues.files})
         }
     }

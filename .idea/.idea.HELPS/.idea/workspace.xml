@@ -2,39 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66cfea10-8c9f-4e80-b2f0-37497a1490b6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HELPS/Controllers/FilesController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HELPS/Models/File.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA/schema/information_schema.FNRwLQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA/schema/information_schema.FNRwLQ.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA/schema/information_schema.FNRwLQ.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA/schema/pg_catalog.0S1ZNQ.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA/schema/pg_catalog.0S1ZNQ.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA/schema/pg_temp_1.zkWuFg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA/schema/pg_temp_1.zkWuFg.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA/schema/pg_toast.33HYYw.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA/schema/pg_toast.33HYYw.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA/schema/pg_toast_temp_1.5ixBaA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA/schema/pg_toast_temp_1.5ixBaA.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_temp_1.zkWuFg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_temp_1.zkWuFg.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_toast.33HYYw.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_toast.33HYYw.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_toast_temp_1.5ixBaA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_toast_temp_1.5ixBaA.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HELPS/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/EventView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/EventView.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/forms/AdminSessionDetailForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/forms/AdminSessionDetailForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/forms/StudentSessionDetailForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/forms/StudentSessionDetailForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/AuthActions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/AuthActions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/SessionActions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/SessionActions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/ClientApp/src/types/model/Session.ts" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/ClientApp/src/types/model/Session.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/Controllers/SessionsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/Controllers/SessionsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/Models/HelpsContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/Models/HelpsContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/Models/Session.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/Models/Session.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELPS/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/HELPS/appsettings.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -131,48 +107,50 @@
     <setting file="file://$PROJECT_DIR$/HELPS/Controllers/FilesController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Services/UserService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Controllers/SessionsController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Controllers/RoomsController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Helpers/AppSettings.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HELPS/Controllers/ReportsController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Models/User.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Models/Report.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Models/Message.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Models/Room.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Models/Student.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Models/Workshop.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Models/HelpsContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Models/Advisor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Models/Email.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HELPS/Controllers/StudentUserController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Controllers/EmailsController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HELPS/Models/Session.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HELPS/Reports/AbstractReport.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HELPS/Reports/BookedSessions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2D506C52-CF4B-4BDB-B896-80B6E2C92982/bf/7d40ab30/DbSet`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HELPS/Controllers/AdvisorsController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CA55E692-DA2C-4C8A-912D-364A352AAD35/5f/534b7bb5/Array.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HELPS/Controllers/MessagesController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/HELPS.MiEXBA/schema/information_schema.FNRwLQ.meta" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HELPS/Controllers/ReportsController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HELPS/Controllers/StudentUserController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Controllers/StudentWorkshopsController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HELPS/Models/Session.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B4EF600F-4A59-4FE2-865A-8F97F915FB9D/e4/c712921b/OkResult.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B4EF600F-4A59-4FE2-865A-8F97F915FB9D/a0/51444e4a/FileContentResult.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HELPS/Reports/AbstractReport.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B4EF600F-4A59-4FE2-865A-8F97F915FB9D/dc/dbb3ca64/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HELPS/Reports/BookedSessions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Startup.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2D506C52-CF4B-4BDB-B896-80B6E2C92982/bf/7d40ab30/DbSet`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Controllers/UserController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HELPS/Controllers/AdvisorsController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Reports/StudentHistory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/my_meal_checker.7Ao_YQ/schema/information_schema.FNRwLQ.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Controllers/WorkshopsController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Controllers/StudentsController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CA55E692-DA2C-4C8A-912D-364A352AAD35/5f/534b7bb5/Array.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Models/Skill.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/.idea/.idea.HELPS/.idea/dataSources/77cdd827-5000-4d06-abd9-d5e509619b4f/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Controllers/SkillsController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HELPS/Models/File.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/HELPS/Controllers/MessagesController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/HELPS/Migrations/20191013235019_final.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -220,14 +198,14 @@
         <option value="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/forms/StudentWorkshopDetailForm.tsx" />
         <option value="$PROJECT_DIR$/HELPS/ClientApp/src/types/components/WorkshopRegistrationTypes.ts" />
         <option value="$PROJECT_DIR$/HELPS/ClientApp/src/store/actions/AuthActions.ts" />
-        <option value="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/forms/StudentSessionDetailForm.tsx" />
-        <option value="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/forms/AdminSessionDetailForm.tsx" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.json" />
         <option value="$PROJECT_DIR$/HELPS/Models/File.cs" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_1.json" />
         <option value="$PROJECT_DIR$/HELPS/Controllers/SessionsController.cs" />
-        <option value="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/EventView.tsx" />
         <option value="$PROJECT_DIR$/HELPS/ClientApp/src/types/model/Workshop.ts" />
+        <option value="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/EventView.tsx" />
+        <option value="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/forms/AdminSessionDetailForm.tsx" />
+        <option value="$PROJECT_DIR$/HELPS/ClientApp/src/components/events/forms/StudentSessionDetailForm.tsx" />
       </list>
     </option>
   </component>
@@ -410,7 +388,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570963376852</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Added support for session files">
+      <created>1571018321745</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1571018321745</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -464,7 +449,8 @@
     <MESSAGE value="Fixed bootstrap nonsense" />
     <MESSAGE value="Functional fixes&#10;&#10; 1. Fixed email rendering&#10; 2. Included email variables in request&#10; 3. Added email variable names&#10; 4. Added skills endpoint" />
     <MESSAGE value="Bugfixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bugfixes" />
+    <MESSAGE value="Added support for session files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added support for session files" />
   </component>
   <component name="WindowStateProjectService">
     <state x="132" y="605" key="#com.intellij.execution.impl.EditConfigurationsDialog" />
@@ -520,6 +506,8 @@
     <state x="351" y="655" key="RollbackChangesDialog/1080.1920/1680.1050/1920.1080" />
     <state x="25" y="587" key="SettingsEditor" />
     <state x="25" y="587" key="SettingsEditor/1080.1920/1680.1050/1920.1080" />
+    <state x="216" y="678" key="Vcs.Push.Dialog" />
+    <state x="216" y="678" key="Vcs.Push.Dialog/1080.1920/1680.1050/1920.1080" />
     <state x="425" y="844" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" />
     <state x="425" y="844" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/1080.1920/1680.1050/1920.1080" />
     <state x="220" y="648" width="640" height="594" key="find.popup" />
